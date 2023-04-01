@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_EMBOSS_PROP")]
     public enum EmbossProp : int
     {
-        [Obsolete("Deprecated in favour of \"Height\"")]
-        [NativeName("Name", "D2D1_EMBOSS_PROP_HEIGHT")]
-        EmbossPropHeight = 0x0,
-        [Obsolete("Deprecated in favour of \"Direction\"")]
-        [NativeName("Name", "D2D1_EMBOSS_PROP_DIRECTION")]
-        EmbossPropDirection = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_EMBOSS_PROP_FORCE_DWORD")]
-        EmbossPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_EMBOSS_PROP_HEIGHT")]
         Height = 0x0,
         [NativeName("Name", "D2D1_EMBOSS_PROP_DIRECTION")]

@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION")]
     public enum ShadowOptimization : int
     {
-        [Obsolete("Deprecated in favour of \"Speed\"")]
-        [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION_SPEED")]
-        ShadowOptimizationSpeed = 0x0,
-        [Obsolete("Deprecated in favour of \"Balanced\"")]
-        [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION_BALANCED")]
-        ShadowOptimizationBalanced = 0x1,
-        [Obsolete("Deprecated in favour of \"Quality\"")]
-        [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION_QUALITY")]
-        ShadowOptimizationQuality = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION_FORCE_DWORD")]
-        ShadowOptimizationForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION_SPEED")]
         Speed = 0x0,
         [NativeName("Name", "D2D1_SHADOW_OPTIMIZATION_BALANCED")]

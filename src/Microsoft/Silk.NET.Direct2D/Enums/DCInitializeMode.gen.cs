@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DC_INITIALIZE_MODE")]
     public enum DCInitializeMode : int
     {
-        [Obsolete("Deprecated in favour of \"Copy\"")]
-        [NativeName("Name", "D2D1_DC_INITIALIZE_MODE_COPY")]
-        DCInitializeModeCopy = 0x0,
-        [Obsolete("Deprecated in favour of \"Clear\"")]
-        [NativeName("Name", "D2D1_DC_INITIALIZE_MODE_CLEAR")]
-        DCInitializeModeClear = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_DC_INITIALIZE_MODE_FORCE_DWORD")]
-        DCInitializeModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_DC_INITIALIZE_MODE_COPY")]
         Copy = 0x0,
         [NativeName("Name", "D2D1_DC_INITIALIZE_MODE_CLEAR")]

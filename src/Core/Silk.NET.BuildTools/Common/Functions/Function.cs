@@ -269,10 +269,10 @@ namespace Silk.NET.BuildTools.Common.Functions
                 switch (parameter.Flow)
                 {
                     case FlowDirection.In:
-                        attributes.Add("Flow(FlowDirection.In)");
+                        attributes.Add("Flow(Silk.NET.Core.Native.FlowDirection.In)");
                         break;
                     case FlowDirection.Out:
-                        attributes.Add("Flow(FlowDirection.Out)");
+                        attributes.Add("Flow(Silk.NET.Core.Native.FlowDirection.Out)");
                         break;
                 }
 

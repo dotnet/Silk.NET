@@ -181,7 +181,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateSegmentData([Flow(FlowDirection.In)] float* data, uint dataCount, uint startIndex)
+        public readonly unsafe int UpdateSegmentData([Flow(Silk.NET.Core.Native.FlowDirection.In)] float* data, uint dataCount, uint startIndex)
         {
             var @this = (ID2D1SvgPathData*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateSegmentData([Flow(FlowDirection.In)] in float data, uint dataCount, uint startIndex)
+        public readonly int UpdateSegmentData([Flow(Silk.NET.Core.Native.FlowDirection.In)] in float data, uint dataCount, uint startIndex)
         {
             var @this = (ID2D1SvgPathData*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -241,7 +241,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateCommands([Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, uint startIndex)
+        public readonly unsafe int UpdateCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPathData*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -250,7 +250,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateCommands([Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, uint startIndex)
+        public readonly int UpdateCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPathData*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -205,7 +205,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMaximumSupportedFeatureLevel([Flow(FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
+        public readonly unsafe int GetMaximumSupportedFeatureLevel([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -214,7 +214,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMaximumSupportedFeatureLevel([Flow(FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
+        public readonly unsafe int GetMaximumSupportedFeatureLevel([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -226,7 +226,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMaximumSupportedFeatureLevel([Flow(FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
+        public readonly unsafe int GetMaximumSupportedFeatureLevel([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -238,7 +238,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMaximumSupportedFeatureLevel([Flow(FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
+        public readonly int GetMaximumSupportedFeatureLevel([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -301,7 +301,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(FlowDirection.In)] BlendDescription* blendDescription, ID2D1BlendTransform** transform)
+        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, ID2D1BlendTransform** transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -310,7 +310,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(FlowDirection.In)] BlendDescription* blendDescription, ref ID2D1BlendTransform* transform)
+        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, ref ID2D1BlendTransform* transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -322,7 +322,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(FlowDirection.In)] in BlendDescription blendDescription, ID2D1BlendTransform** transform)
+        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, ID2D1BlendTransform** transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -334,7 +334,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(FlowDirection.In)] in BlendDescription blendDescription, ref ID2D1BlendTransform* transform)
+        public readonly unsafe int CreateBlendTransform(uint numInputs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, ref ID2D1BlendTransform* transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -391,7 +391,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -400,7 +400,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -412,7 +412,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -424,7 +424,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -439,7 +439,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPixelShader(Guid* shaderId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadPixelShader(Guid* shaderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -448,7 +448,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPixelShader(Guid* shaderId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadPixelShader(Guid* shaderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -460,7 +460,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPixelShader(Guid* shaderId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadPixelShader(Guid* shaderId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -471,7 +471,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPixelShader(ref Guid shaderId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadPixelShader(ref Guid shaderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -483,7 +483,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadPixelShader(ref Guid shaderId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
+        public readonly int LoadPixelShader(ref Guid shaderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -498,7 +498,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadPixelShader(ref Guid shaderId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+        public readonly int LoadPixelShader(ref Guid shaderId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -512,7 +512,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadVertexShader(Guid* resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadVertexShader(Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -521,7 +521,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadVertexShader(Guid* resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadVertexShader(Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -533,7 +533,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadVertexShader(Guid* resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadVertexShader(Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -544,7 +544,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadVertexShader(ref Guid resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadVertexShader(ref Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -556,7 +556,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadVertexShader(ref Guid resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
+        public readonly int LoadVertexShader(ref Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -571,7 +571,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadVertexShader(ref Guid resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+        public readonly int LoadVertexShader(ref Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -585,7 +585,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputeShader(Guid* resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadComputeShader(Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -594,7 +594,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputeShader(Guid* resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadComputeShader(Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -606,7 +606,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputeShader(Guid* resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadComputeShader(Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -617,7 +617,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputeShader(ref Guid resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
+        public readonly unsafe int LoadComputeShader(ref Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -629,7 +629,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadComputeShader(ref Guid resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
+        public readonly int LoadComputeShader(ref Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -644,7 +644,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadComputeShader(ref Guid resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+        public readonly int LoadComputeShader(ref Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -679,7 +679,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -688,7 +688,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -700,7 +700,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -712,7 +712,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -727,7 +727,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -739,7 +739,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -754,7 +754,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -769,7 +769,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -787,7 +787,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -798,7 +798,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -812,7 +812,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -826,7 +826,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -843,7 +843,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -855,7 +855,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -870,7 +870,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -885,7 +885,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -903,7 +903,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -918,7 +918,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -936,7 +936,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -954,7 +954,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -975,7 +975,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -989,7 +989,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1006,7 +1006,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1023,7 +1023,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1043,7 +1043,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1055,7 +1055,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1070,7 +1070,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1085,7 +1085,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1103,7 +1103,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1118,7 +1118,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1136,7 +1136,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1154,7 +1154,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1175,7 +1175,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1189,7 +1189,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1206,7 +1206,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1223,7 +1223,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1243,7 +1243,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1258,7 +1258,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1276,7 +1276,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1294,7 +1294,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1315,7 +1315,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1333,7 +1333,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1354,7 +1354,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1375,7 +1375,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1399,7 +1399,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1416,7 +1416,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1436,7 +1436,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1456,7 +1456,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int CreateResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1479,7 +1479,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int FindResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1488,7 +1488,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindResourceTexture([Flow(FlowDirection.In)] Guid* resourceId, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int FindResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1500,7 +1500,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, ID2D1ResourceTexture** resourceTexture)
+        public readonly unsafe int FindResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, ID2D1ResourceTexture** resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1512,7 +1512,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindResourceTexture([Flow(FlowDirection.In)] in Guid resourceId, ref ID2D1ResourceTexture* resourceTexture)
+        public readonly unsafe int FindResourceTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, ref ID2D1ResourceTexture* resourceTexture)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1527,7 +1527,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1536,7 +1536,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1548,7 +1548,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1560,7 +1560,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1575,7 +1575,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1587,7 +1587,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1602,7 +1602,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1617,7 +1617,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1635,7 +1635,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1647,7 +1647,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1662,7 +1662,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1677,7 +1677,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1695,7 +1695,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1710,7 +1710,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1728,7 +1728,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1746,7 +1746,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int CreateVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1767,7 +1767,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindVertexBuffer([Flow(FlowDirection.In)] Guid* resourceId, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int FindVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1776,7 +1776,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindVertexBuffer([Flow(FlowDirection.In)] Guid* resourceId, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int FindVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1788,7 +1788,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindVertexBuffer([Flow(FlowDirection.In)] in Guid resourceId, ID2D1VertexBuffer** buffer)
+        public readonly unsafe int FindVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, ID2D1VertexBuffer** buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1800,7 +1800,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindVertexBuffer([Flow(FlowDirection.In)] in Guid resourceId, ref ID2D1VertexBuffer* buffer)
+        public readonly unsafe int FindVertexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, ref ID2D1VertexBuffer* buffer)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1815,7 +1815,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1824,7 +1824,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1836,7 +1836,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1848,7 +1848,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1863,7 +1863,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1874,7 +1874,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1888,7 +1888,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] char* filename, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filename, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1897,7 +1897,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] char* filename, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filename, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1909,7 +1909,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] in char filename, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char filename, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1921,7 +1921,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] in char filename, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char filename, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1936,7 +1936,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1947,7 +1947,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2039,7 +2039,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2048,7 +2048,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2060,7 +2060,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2072,7 +2072,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2087,7 +2087,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2099,7 +2099,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2114,7 +2114,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2129,7 +2129,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2147,7 +2147,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2158,7 +2158,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2172,7 +2172,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2186,7 +2186,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2203,7 +2203,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2215,7 +2215,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2230,7 +2230,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2245,7 +2245,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2263,7 +2263,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2278,7 +2278,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2296,7 +2296,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2314,7 +2314,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2335,7 +2335,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2349,7 +2349,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2366,7 +2366,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2383,7 +2383,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2424,7 +2424,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(FlowDirection.In)] SimpleColorProfile* simpleProfile, ID2D1ColorContext1** colorContext)
+        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] SimpleColorProfile* simpleProfile, ID2D1ColorContext1** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2433,7 +2433,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(FlowDirection.In)] SimpleColorProfile* simpleProfile, ref ID2D1ColorContext1* colorContext)
+        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] SimpleColorProfile* simpleProfile, ref ID2D1ColorContext1* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2445,7 +2445,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(FlowDirection.In)] in SimpleColorProfile simpleProfile, ID2D1ColorContext1** colorContext)
+        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] in SimpleColorProfile simpleProfile, ID2D1ColorContext1** colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2457,7 +2457,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(FlowDirection.In)] in SimpleColorProfile simpleProfile, ref ID2D1ColorContext1* colorContext)
+        public readonly unsafe int CreateColorContextFromSimpleColorProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] in SimpleColorProfile simpleProfile, ref ID2D1ColorContext1* colorContext)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2522,7 +2522,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlendTransform<TI0>(uint numInputs, [Flow(FlowDirection.In)] BlendDescription* blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
+        public readonly unsafe int CreateBlendTransform<TI0>(uint numInputs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2530,7 +2530,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBlendTransform<TI0>(uint numInputs, [Flow(FlowDirection.In)] in BlendDescription blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
+        public readonly int CreateBlendTransform<TI0>(uint numInputs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2554,7 +2554,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
+        public readonly unsafe int CreateBoundsAdjustmentTransform<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2562,7 +2562,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBoundsAdjustmentTransform<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
+        public readonly int CreateBoundsAdjustmentTransform<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2570,7 +2570,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2578,7 +2578,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2586,7 +2586,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2594,7 +2594,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2602,7 +2602,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2610,7 +2610,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2618,7 +2618,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2626,7 +2626,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2634,7 +2634,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2642,7 +2642,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2650,7 +2650,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2658,7 +2658,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2666,7 +2666,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2674,7 +2674,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2682,7 +2682,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2690,7 +2690,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2698,7 +2698,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2706,7 +2706,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2714,7 +2714,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2722,7 +2722,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2730,7 +2730,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2738,7 +2738,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2746,7 +2746,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly unsafe int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2754,7 +2754,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly int CreateResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2771,7 +2771,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindResourceTexture<TI0>([Flow(FlowDirection.In)] in Guid resourceId, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+        public readonly int FindResourceTexture<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2779,7 +2779,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2787,7 +2787,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2795,7 +2795,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2803,7 +2803,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2811,7 +2811,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2819,7 +2819,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2827,7 +2827,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly unsafe int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2835,7 +2835,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateVertexBuffer<TI0>([Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly int CreateVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2852,7 +2852,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindVertexBuffer<TI0>([Flow(FlowDirection.In)] in Guid resourceId, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+        public readonly int FindVertexBuffer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid resourceId, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2860,7 +2860,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext<TI0>(ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly unsafe int CreateColorContext<TI0>(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2868,7 +2868,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2876,7 +2876,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2884,7 +2884,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename<TI0>([Flow(FlowDirection.In)] char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly unsafe int CreateColorContextFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2892,7 +2892,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContextFromFilename<TI0>([Flow(FlowDirection.In)] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContextFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2900,7 +2900,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContextFromFilename<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContextFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2924,7 +2924,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2932,7 +2932,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2940,7 +2940,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2948,7 +2948,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2956,7 +2956,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2964,7 +2964,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2972,7 +2972,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2980,7 +2980,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2988,7 +2988,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2996,7 +2996,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3004,7 +3004,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3012,7 +3012,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3028,7 +3028,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromSimpleColorProfile<TI0>([Flow(FlowDirection.In)] SimpleColorProfile* simpleProfile, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext1>, IComVtbl<TI0>
+        public readonly unsafe int CreateColorContextFromSimpleColorProfile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SimpleColorProfile* simpleProfile, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext1>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3036,7 +3036,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContextFromSimpleColorProfile<TI0>([Flow(FlowDirection.In)] in SimpleColorProfile simpleProfile, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext1>, IComVtbl<TI0>
+        public readonly int CreateColorContextFromSimpleColorProfile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in SimpleColorProfile simpleProfile, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext1>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

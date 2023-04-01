@@ -148,14 +148,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescription([Flow(FlowDirection.In)] DrawingStateDescription* stateDescription)
+        public readonly unsafe void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* stateDescription)
         {
             var @this = (ID2D1DrawingStateBlock*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DrawingStateBlock*, DrawingStateDescription*, void>)@this->LpVtbl[5])(@this, stateDescription);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDescription([Flow(FlowDirection.In)] in DrawingStateDescription stateDescription)
+        public readonly void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription stateDescription)
         {
             var @this = (ID2D1DrawingStateBlock*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DrawingStateDescription* stateDescriptionPtr = &stateDescription)

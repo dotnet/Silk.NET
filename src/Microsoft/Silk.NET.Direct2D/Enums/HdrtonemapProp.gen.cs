@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_HDRTONEMAP_PROP")]
     public enum HdrtonemapProp : int
     {
-        [Obsolete("Deprecated in favour of \"InputMaxLuminance\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE")]
-        HdrtonemapPropInputMaxLuminance = 0x0,
-        [Obsolete("Deprecated in favour of \"OutputMaxLuminance\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_PROP_OUTPUT_MAX_LUMINANCE")]
-        HdrtonemapPropOutputMaxLuminance = 0x1,
-        [Obsolete("Deprecated in favour of \"DisplayMode\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_PROP_DISPLAY_MODE")]
-        HdrtonemapPropDisplayMode = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_PROP_FORCE_DWORD")]
-        HdrtonemapPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE")]
         InputMaxLuminance = 0x0,
         [NativeName("Name", "D2D1_HDRTONEMAP_PROP_OUTPUT_MAX_LUMINANCE")]

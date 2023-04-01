@@ -102,7 +102,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -111,7 +111,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -123,7 +123,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -135,7 +135,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -150,7 +150,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -159,7 +159,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -171,7 +171,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,7 +183,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -198,7 +198,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -210,7 +210,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -225,7 +225,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -240,7 +240,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -258,7 +258,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -279,7 +279,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -306,7 +306,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -318,7 +318,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -333,7 +333,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -348,7 +348,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
+    public static int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -366,7 +366,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -375,7 +375,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
+    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -387,7 +387,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -399,7 +399,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
+    public static int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -414,7 +414,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -423,7 +423,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -435,7 +435,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -447,7 +447,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -462,7 +462,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,7 +474,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -489,7 +489,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -504,7 +504,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
+    public static int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -522,7 +522,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -531,7 +531,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -543,7 +543,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -555,7 +555,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -570,7 +570,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
+    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -579,7 +579,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink)
+    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -591,7 +591,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
+    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -603,7 +603,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink)
+    public static int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -618,7 +618,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -627,7 +627,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -639,7 +639,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -651,7 +651,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -666,7 +666,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -678,7 +678,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -693,7 +693,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -708,7 +708,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -726,7 +726,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -735,7 +735,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -747,7 +747,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -759,7 +759,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -774,7 +774,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, float* area)
+    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, float* area)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -783,7 +783,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref float area)
+    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref float area)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -795,7 +795,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, float* area)
+    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, float* area)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -807,7 +807,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref float area)
+    public static int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref float area)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -822,7 +822,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, float* length)
+    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, float* length)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -831,7 +831,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref float length)
+    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref float length)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -843,7 +843,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, float* length)
+    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, float* length)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -855,7 +855,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref float length)
+    public static int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref float length)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -870,7 +870,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -879,7 +879,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -891,7 +891,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -903,7 +903,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -918,7 +918,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -930,7 +930,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -945,7 +945,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -960,7 +960,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
+    public static int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -978,7 +978,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -987,7 +987,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -999,7 +999,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1011,7 +1011,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1026,7 +1026,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1038,7 +1038,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1053,7 +1053,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1068,7 +1068,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1136,7 +1136,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1144,7 +1144,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1152,7 +1152,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static int GetBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1160,7 +1160,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1168,7 +1168,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1176,7 +1176,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1184,7 +1184,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1192,7 +1192,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1200,7 +1200,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1208,7 +1208,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static int GetWidenedBounds<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1216,7 +1216,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1224,7 +1224,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1232,7 +1232,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1240,7 +1240,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static int GetWidenedBounds(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1248,7 +1248,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1256,7 +1256,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<int> contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<int> contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1264,7 +1264,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1272,7 +1272,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1280,7 +1280,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1288,7 +1288,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<int> contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<int> contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1296,7 +1296,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static int StrokeContainsPoint<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1304,7 +1304,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1312,7 +1312,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<int> contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<int> contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1320,7 +1320,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1328,7 +1328,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<int> contains)
+    public static int StrokeContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<int> contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1336,7 +1336,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<int> contains)
+    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<int> contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1344,7 +1344,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, int* contains)
+    public static unsafe int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, int* contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1352,7 +1352,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<int> contains)
+    public static int FillContainsPoint(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Silk.NET.Maths.Vector2D<float> point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<int> contains)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1360,7 +1360,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1368,7 +1368,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1376,7 +1376,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1384,7 +1384,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1392,7 +1392,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1400,7 +1400,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1408,7 +1408,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static int CompareWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1416,7 +1416,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1424,7 +1424,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1432,7 +1432,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
+    public static unsafe int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1440,7 +1440,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
+    public static int CompareWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<GeometryRelation> relation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1448,7 +1448,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Simplify<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static unsafe int Simplify<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1456,7 +1456,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1464,7 +1464,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1472,7 +1472,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Simplify<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static int Simplify<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1480,7 +1480,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static int Simplify(this ComPtr<ID2D1RectangleGeometry> thisVtbl, GeometrySimplificationOption simplificationOption, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1488,7 +1488,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Tessellate<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> tessellationSink) where TI0 : unmanaged, IComVtbl<ID2D1TessellationSink>, IComVtbl<TI0>
+    public static unsafe int Tessellate<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> tessellationSink) where TI0 : unmanaged, IComVtbl<ID2D1TessellationSink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1496,7 +1496,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1TessellationSink> tessellationSink)
+    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1TessellationSink> tessellationSink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1504,7 +1504,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
+    public static unsafe int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1512,7 +1512,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Tessellate<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> tessellationSink) where TI0 : unmanaged, IComVtbl<ID2D1TessellationSink>, IComVtbl<TI0>
+    public static int Tessellate<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> tessellationSink) where TI0 : unmanaged, IComVtbl<ID2D1TessellationSink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1520,7 +1520,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1TessellationSink> tessellationSink)
+    public static int Tessellate(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1TessellationSink> tessellationSink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1528,7 +1528,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static unsafe int CombineWithGeometry<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1536,7 +1536,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1544,7 +1544,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1552,7 +1552,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1560,7 +1560,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CombineWithGeometry<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static int CombineWithGeometry<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1568,7 +1568,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ID2D1Geometry* inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1576,7 +1576,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ComPtr<TI0> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1584,7 +1584,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1592,7 +1592,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static unsafe int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1600,7 +1600,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1608,7 +1608,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1616,7 +1616,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static int CombineWithGeometry<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, ref ID2D1Geometry inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1624,7 +1624,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static int CombineWithGeometry(this ComPtr<ID2D1RectangleGeometry> thisVtbl, Span<ID2D1Geometry> inputGeometry, CombineMode combineMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> inputGeometryTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1632,7 +1632,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Outline<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static unsafe int Outline<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1640,7 +1640,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1648,7 +1648,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1656,7 +1656,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Outline<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static int Outline<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1664,7 +1664,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static int Outline(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1672,7 +1672,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<float> area)
+    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<float> area)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1680,7 +1680,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, float* area)
+    public static unsafe int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, float* area)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1688,7 +1688,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<float> area)
+    public static int ComputeArea(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<float> area)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1696,7 +1696,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<float> length)
+    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<float> length)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1704,7 +1704,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, float* length)
+    public static unsafe int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, float* length)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1712,7 +1712,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<float> length)
+    public static int ComputeLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<float> length)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1720,7 +1720,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1728,7 +1728,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1736,7 +1736,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1744,7 +1744,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1752,7 +1752,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1760,7 +1760,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
+    public static unsafe int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1768,7 +1768,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
+    public static int ComputePointAtLength(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<Silk.NET.Maths.Vector2D<float>> point, Span<Silk.NET.Maths.Vector2D<float>> unitTangentVector)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1776,7 +1776,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static unsafe int Widen<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1784,7 +1784,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1792,7 +1792,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1800,7 +1800,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1808,7 +1808,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Widen<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static int Widen<TI0, TI1>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1816,7 +1816,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1824,7 +1824,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ComPtr<TI0> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1832,7 +1832,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1840,7 +1840,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static unsafe int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1848,7 +1848,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1856,7 +1856,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1864,7 +1864,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static int Widen<TI0>(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1872,7 +1872,7 @@ public unsafe static class D2D1RectangleGeometryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static int Widen(this ComPtr<ID2D1RectangleGeometry> thisVtbl, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

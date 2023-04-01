@@ -123,7 +123,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -132,7 +132,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -156,7 +156,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -171,7 +171,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,7 +183,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -198,7 +198,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -213,7 +213,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -258,7 +258,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -273,7 +273,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -306,7 +306,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -324,7 +324,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -342,7 +342,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -443,7 +443,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -451,7 +451,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -459,7 +459,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -467,7 +467,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -475,7 +475,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -483,7 +483,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -491,7 +491,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -499,7 +499,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -507,7 +507,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -515,7 +515,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, IWICImagingFactory* wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -523,7 +523,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -531,7 +531,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -539,7 +539,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -547,7 +547,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -555,7 +555,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -563,7 +563,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -571,7 +571,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -579,7 +579,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static unsafe int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -587,7 +587,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -595,7 +595,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ID2D1PrintControl** printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -603,7 +603,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+    public static int CreatePrintControl<TI0>(this ComPtr<ID2D1Device1> thisVtbl, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -611,7 +611,7 @@ public unsafe static class D2D1Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
+    public static unsafe int CreatePrintControl(this ComPtr<ID2D1Device1> thisVtbl, Span<IWICImagingFactory> wicFactory, Span<IPrintDocumentPackageTarget> documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrintControlProperties> printControlProperties, ref ID2D1PrintControl* printControl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

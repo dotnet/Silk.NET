@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_VIGNETTE_PROP")]
     public enum VignetteProp : int
     {
-        [Obsolete("Deprecated in favour of \"Color\"")]
-        [NativeName("Name", "D2D1_VIGNETTE_PROP_COLOR")]
-        VignettePropColor = 0x0,
-        [Obsolete("Deprecated in favour of \"TransitionSize\"")]
-        [NativeName("Name", "D2D1_VIGNETTE_PROP_TRANSITION_SIZE")]
-        VignettePropTransitionSize = 0x1,
-        [Obsolete("Deprecated in favour of \"Strength\"")]
-        [NativeName("Name", "D2D1_VIGNETTE_PROP_STRENGTH")]
-        VignettePropStrength = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_VIGNETTE_PROP_FORCE_DWORD")]
-        VignettePropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_VIGNETTE_PROP_COLOR")]
         Color = 0x0,
         [NativeName("Name", "D2D1_VIGNETTE_PROP_TRANSITION_SIZE")]

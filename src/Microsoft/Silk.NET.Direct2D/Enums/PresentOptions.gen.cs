@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_PRESENT_OPTIONS")]
     public enum PresentOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_PRESENT_OPTIONS_NONE")]
-        PresentOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"RetainContents\"")]
-        [NativeName("Name", "D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS")]
-        PresentOptionsRetainContents = 0x1,
-        [Obsolete("Deprecated in favour of \"Immediately\"")]
-        [NativeName("Name", "D2D1_PRESENT_OPTIONS_IMMEDIATELY")]
-        PresentOptionsImmediately = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_PRESENT_OPTIONS_FORCE_DWORD")]
-        PresentOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_PRESENT_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS")]

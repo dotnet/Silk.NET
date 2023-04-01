@@ -141,14 +141,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+        public readonly unsafe void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transform);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetTransform([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
+        public readonly void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
         {
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -184,14 +184,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetColor([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
+        public readonly unsafe void SetColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
         {
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue*, void>)@this->LpVtbl[8])(@this, color);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetColor([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
+        public readonly void SetColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
         {
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)

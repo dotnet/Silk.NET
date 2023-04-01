@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_BORDER_PROP")]
     public enum BorderProp : int
     {
-        [Obsolete("Deprecated in favour of \"EdgeModeX\"")]
-        [NativeName("Name", "D2D1_BORDER_PROP_EDGE_MODE_X")]
-        BorderPropEdgeModeX = 0x0,
-        [Obsolete("Deprecated in favour of \"EdgeModeY\"")]
-        [NativeName("Name", "D2D1_BORDER_PROP_EDGE_MODE_Y")]
-        BorderPropEdgeModeY = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_BORDER_PROP_FORCE_DWORD")]
-        BorderPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_BORDER_PROP_EDGE_MODE_X")]
         EdgeModeX = 0x0,
         [NativeName("Name", "D2D1_BORDER_PROP_EDGE_MODE_Y")]

@@ -131,14 +131,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetStartPoint([Flow(FlowDirection.In)] InkPoint* startPoint)
+        public readonly unsafe void SetStartPoint([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkPoint* startPoint)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, void>)@this->LpVtbl[4])(@this, startPoint);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetStartPoint([Flow(FlowDirection.In)] in InkPoint startPoint)
+        public readonly void SetStartPoint([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkPoint startPoint)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (InkPoint* startPointPtr = &startPoint)
@@ -159,7 +159,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSegments([Flow(FlowDirection.In)] InkBezierSegment* segments, uint segmentsCount)
+        public readonly unsafe int AddSegments([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkBezierSegment* segments, uint segmentsCount)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -168,7 +168,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddSegments([Flow(FlowDirection.In)] in InkBezierSegment segments, uint segmentsCount)
+        public readonly int AddSegments([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkBezierSegment segments, uint segmentsCount)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -189,7 +189,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSegments(uint startSegment, [Flow(FlowDirection.In)] InkBezierSegment* segments, uint segmentsCount)
+        public readonly unsafe int SetSegments(uint startSegment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkBezierSegment* segments, uint segmentsCount)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -198,7 +198,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSegments(uint startSegment, [Flow(FlowDirection.In)] in InkBezierSegment segments, uint segmentsCount)
+        public readonly int SetSegments(uint startSegment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkBezierSegment segments, uint segmentsCount)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSegmentAtEnd([Flow(FlowDirection.In)] InkBezierSegment* segment)
+        public readonly unsafe int SetSegmentAtEnd([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkBezierSegment* segment)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -219,7 +219,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSegmentAtEnd([Flow(FlowDirection.In)] in InkBezierSegment segment)
+        public readonly int SetSegmentAtEnd([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkBezierSegment segment)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -261,7 +261,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -270,7 +270,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -282,7 +282,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+        public readonly unsafe int StreamAsGeometry(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+        public readonly unsafe int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+        public readonly unsafe int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+        public readonly unsafe int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -351,7 +351,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+        public readonly int StreamAsGeometry(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -369,7 +369,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -378,7 +378,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -390,7 +390,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -402,7 +402,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+        public readonly unsafe int GetBounds(ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -417,7 +417,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+        public readonly unsafe int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -429,7 +429,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+        public readonly unsafe int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+        public readonly unsafe int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -459,7 +459,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+        public readonly int GetBounds(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -494,7 +494,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry<TI0, TI1>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        public readonly unsafe int StreamAsGeometry<TI0, TI1>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -502,7 +502,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry<TI0>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly unsafe int StreamAsGeometry<TI0>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -510,7 +510,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StreamAsGeometry<TI0, TI1>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        public readonly int StreamAsGeometry<TI0, TI1>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -518,7 +518,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StreamAsGeometry<TI0>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly int StreamAsGeometry<TI0>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -526,7 +526,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StreamAsGeometry<TI0>(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        public readonly unsafe int StreamAsGeometry<TI0>(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -534,7 +534,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StreamAsGeometry<TI0>(ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        public readonly int StreamAsGeometry<TI0>(ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -542,7 +542,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -550,7 +550,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -558,7 +558,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -566,7 +566,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly int GetBounds<TI0>(ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

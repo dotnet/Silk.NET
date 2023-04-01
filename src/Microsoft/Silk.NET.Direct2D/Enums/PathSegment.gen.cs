@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_PATH_SEGMENT")]
     public enum PathSegment : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_PATH_SEGMENT_NONE")]
-        PathSegmentNone = 0x0,
-        [Obsolete("Deprecated in favour of \"ForceUnstroked\"")]
-        [NativeName("Name", "D2D1_PATH_SEGMENT_FORCE_UNSTROKED")]
-        PathSegmentForceUnstroked = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceRoundLineJoin\"")]
-        [NativeName("Name", "D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN")]
-        PathSegmentForceRoundLineJoin = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_PATH_SEGMENT_FORCE_DWORD")]
-        PathSegmentForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_PATH_SEGMENT_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_PATH_SEGMENT_FORCE_UNSTROKED")]

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SWEEP_DIRECTION")]
     public enum SweepDirection : int
     {
-        [Obsolete("Deprecated in favour of \"CounterClockwise\"")]
-        [NativeName("Name", "D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE")]
-        SweepDirectionCounterClockwise = 0x0,
-        [Obsolete("Deprecated in favour of \"Clockwise\"")]
-        [NativeName("Name", "D2D1_SWEEP_DIRECTION_CLOCKWISE")]
-        SweepDirectionClockwise = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SWEEP_DIRECTION_FORCE_DWORD")]
-        SweepDirectionForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE")]
         CounterClockwise = 0x0,
         [NativeName("Name", "D2D1_SWEEP_DIRECTION_CLOCKWISE")]

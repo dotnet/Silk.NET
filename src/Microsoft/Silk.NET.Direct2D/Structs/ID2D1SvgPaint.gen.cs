@@ -190,7 +190,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetColor([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
+        public readonly unsafe int SetColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -199,7 +199,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetColor([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
+        public readonly int SetColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -228,7 +228,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetId([Flow(FlowDirection.In)] char* id)
+        public readonly unsafe int SetId([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -237,7 +237,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetId([Flow(FlowDirection.In)] in char id)
+        public readonly int SetId([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char id)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetId([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id)
+        public readonly int SetId([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

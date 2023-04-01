@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_CHROMAKEY_PROP")]
     public enum ChromakeyProp : int
     {
-        [Obsolete("Deprecated in favour of \"Color\"")]
-        [NativeName("Name", "D2D1_CHROMAKEY_PROP_COLOR")]
-        ChromakeyPropColor = 0x0,
-        [Obsolete("Deprecated in favour of \"Tolerance\"")]
-        [NativeName("Name", "D2D1_CHROMAKEY_PROP_TOLERANCE")]
-        ChromakeyPropTolerance = 0x1,
-        [Obsolete("Deprecated in favour of \"InvertAlpha\"")]
-        [NativeName("Name", "D2D1_CHROMAKEY_PROP_INVERT_ALPHA")]
-        ChromakeyPropInvertAlpha = 0x2,
-        [Obsolete("Deprecated in favour of \"Feather\"")]
-        [NativeName("Name", "D2D1_CHROMAKEY_PROP_FEATHER")]
-        ChromakeyPropFeather = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_CHROMAKEY_PROP_FORCE_DWORD")]
-        ChromakeyPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_CHROMAKEY_PROP_COLOR")]
         Color = 0x0,
         [NativeName("Name", "D2D1_CHROMAKEY_PROP_TOLERANCE")]

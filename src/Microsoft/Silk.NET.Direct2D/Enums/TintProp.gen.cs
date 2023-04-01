@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_TINT_PROP")]
     public enum TintProp : int
     {
-        [Obsolete("Deprecated in favour of \"Color\"")]
-        [NativeName("Name", "D2D1_TINT_PROP_COLOR")]
-        TintPropColor = 0x0,
-        [Obsolete("Deprecated in favour of \"ClampOutput\"")]
-        [NativeName("Name", "D2D1_TINT_PROP_CLAMP_OUTPUT")]
-        TintPropClampOutput = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_TINT_PROP_FORCE_DWORD")]
-        TintPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_TINT_PROP_COLOR")]
         Color = 0x0,
         [NativeName("Name", "D2D1_TINT_PROP_CLAMP_OUTPUT")]

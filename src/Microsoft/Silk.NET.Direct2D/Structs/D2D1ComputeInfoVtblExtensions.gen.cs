@@ -117,7 +117,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
+    public static unsafe int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -138,7 +138,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -216,7 +216,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
