@@ -28,6 +28,14 @@ namespace Silk.NET.Core.Loader
         {
             return LoadNativeLibrary(name, PathResolver.Default);
         }
+        
+        public void RegisterDependencies(params string[] names)
+        {
+            foreach (var name in names)
+            {
+                    LoadNativeLibrary(name);
+            }
+        }
 
         private static void ThrowLibNotFound(string name, PathResolver resolver)
         {

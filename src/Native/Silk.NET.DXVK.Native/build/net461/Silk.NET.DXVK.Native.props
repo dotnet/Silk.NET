@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Silk_NativePackages_DXVK_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Silk_NativePackages_DXVK_IsWindows>
+    <_Silk_NativePackages_DXVK_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Silk_NativePackages_DXVK_IsMacOS>
+    <_Silk_NativePackages_DXVK_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Silk_NativePackages_DXVK_IsLinux>
+
+    <_Silk_NativePackages_DXVK_NativeRuntime Condition=" '$(_Silk_NativePackages_DXVK_NativeRuntime)' == '' And '$(_Silk_NativePackages_DXVK_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Silk_NativePackages_DXVK_NativeRuntime>
+    <_Silk_NativePackages_DXVK_NativeRuntime Condition=" '$(_Silk_NativePackages_DXVK_NativeRuntime)' == '' And '$(_Silk_NativePackages_DXVK_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">linux-x86</_Silk_NativePackages_DXVK_NativeRuntime>
+    <_Silk_NativePackages_DXVK_NativeRuntime Condition=" '$(_Silk_NativePackages_DXVK_NativeRuntime)' == '' And '$(_Silk_NativePackages_DXVK_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Silk_NativePackages_DXVK_NativeRuntime>
+    <_Silk_NativePackages_DXVK_NativeRuntime Condition=" '$(_Silk_NativePackages_DXVK_NativeRuntime)' == '' And '$(_Silk_NativePackages_DXVK_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Silk_NativePackages_DXVK_NativeRuntime>
+
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x86'">dxvk-d3d11.dll</_Silk_NativePackages_DXVK_NativeLibName>
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x86'">dxvk-dxgi.dll</_Silk_NativePackages_DXVK_NativeLibName>
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x86'">dxvk-d3d9.dll</_Silk_NativePackages_DXVK_NativeLibName>
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x86'">dxvk-d3d10core.dll</_Silk_NativePackages_DXVK_NativeLibName>
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x64'">dxvk-d3d11.dll</_Silk_NativePackages_DXVK_NativeLibName>
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x64'">dxvk-dxgi.dll</_Silk_NativePackages_DXVK_NativeLibName>
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x64'">dxvk-d3d9.dll</_Silk_NativePackages_DXVK_NativeLibName>    
+    <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'win-x64'">dxvk-d3d10core.dll</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">glfw-libdxvk_d3d9.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">glfw-libdxvk_d3d10core.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">glfw-libdxvk_d3d11.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">glfw-libdxvk_dxgi.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">glfw-libdxvk_d3d9.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">glfw-libdxvk_d3d10core.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">glfw-libdxvk_d3d11.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">glfw-libdxvk_dxgi.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">sdl2-libdxvk_d3d9.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">sdl2-libdxvk_d3d10core.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">sdl2-libdxvk_d3d11.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x64'">sdl2-libdxvk_dxgi.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">sdl2-libdxvk_d3d9.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">sdl2-libdxvk_d3d10core.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">sdl2-libdxvk_d3d11.so</_Silk_NativePackages_DXVK_NativeLibName>
+      <_Silk_NativePackages_DXVK_NativeLibName Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' == 'linux-x86'">sdl2-libdxvk_dxgi.so</_Silk_NativePackages_DXVK_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Silk_NativePackages_DXVK_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NativePackages_DXVK_NativeRuntime)\native\$(_Silk_NativePackages_DXVK_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
