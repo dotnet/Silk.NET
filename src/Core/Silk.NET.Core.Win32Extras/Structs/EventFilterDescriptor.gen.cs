@@ -19,5 +19,43 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "_EVENT_FILTER_DESCRIPTOR")]
     public unsafe partial struct EventFilterDescriptor
     {
+        public EventFilterDescriptor
+        (
+            ulong? ptr = null,
+            uint? size = null,
+            uint? type = null
+        ) : this()
+        {
+            if (ptr is not null)
+            {
+                Ptr = ptr.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+        }
+
+
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "Ptr")]
+        public ulong Ptr;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "Size")]
+        public uint Size;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "Type")]
+        public uint Type;
     }
 }

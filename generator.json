@@ -1022,7 +1022,8 @@
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"

@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <rpcdcep.h>
 #include <WTypesbase.h>
+#include <evntprov.h>
 #include <evntrace.h>
 #include <minwinbase.h>
 #include <timezoneapi.h>
