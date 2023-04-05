@@ -1023,7 +1023,8 @@
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/Documenttarget.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h",
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -1057,7 +1058,18 @@
                     "_WNODE_HEADER": "WnodeHeader",
                     "_EXCEPTION_RECORD": "ExceptionRecord",
                     "_FILE_SEGMENT_ELEMENT": "FileSegmentElement",
-                    "_RPC_MESSAGE": "RPCMessage"
+                    "_RPC_MESSAGE": "RPCMessage",
+                    "IDispatch": "Silk.NET.Core.Native.IUnknown",
+                    "IRecordInfo": "Silk.NET.Core.Native.IUnknown",
+                    "ITypeInfo": "Silk.NET.Core.Native.IUnknown",
+                    "tagEXCEPINFO": "TagExceptionInfo",
+                    "tagVARIANT": "TagVariant",
+                    "tagDISPPARAMS": "TagDispatchParams",
+                    "tagSAFEARRAY": "TagSafeArray",
+                    "tagCY": "TagCY",
+                    "tagDEC": "TagDecimal",
+                    "tagSAFEARRAYBOUND": "TagSafeArrayBound",
+                    "PfnTagEXCEPINFOvI": "PfnTagExceptionInfovI"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
