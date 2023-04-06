@@ -10905,6 +10905,358 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, Span<ulong> RegHandle)
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(ProviderId, EnableCallback, CallbackContext, ref RegHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, Span<T0> CallbackContext, ulong* RegHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(ProviderId, EnableCallback, ref CallbackContext.GetPinnableReference(), RegHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, Span<T0> CallbackContext, Span<ulong> RegHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(ProviderId, EnableCallback, ref CallbackContext.GetPinnableReference(), ref RegHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, ulong* RegHandle)
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(in ProviderId.GetPinnableReference(), EnableCallback, CallbackContext, RegHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, Span<ulong> RegHandle)
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(in ProviderId.GetPinnableReference(), EnableCallback, CallbackContext, ref RegHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, PfnPenablecallback EnableCallback, Span<T0> CallbackContext, ulong* RegHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(in ProviderId.GetPinnableReference(), EnableCallback, ref CallbackContext.GetPinnableReference(), RegHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        public static unsafe uint EventRegister<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, PfnPenablecallback EnableCallback, Span<T0> CallbackContext, Span<ulong> RegHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.EventRegister(in ProviderId.GetPinnableReference(), EnableCallback, ref CallbackContext.GetPinnableReference(), ref RegHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 568, Column 1 in evntprov.h")]
+        public static unsafe uint EventSetInformation<T0>(this Windows thisApi, ulong RegHandle, EventInfoClass InformationClass, Span<T0> EventInformation, uint InformationLength) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.EventSetInformation(RegHandle, InformationClass, ref EventInformation.GetPinnableReference(), InformationLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 611, Column 1 in evntprov.h")]
+        public static unsafe byte EventEnabled(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor)
+        {
+            // SpanOverloader
+            return thisApi.EventEnabled(RegHandle, in EventDescriptor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        public static unsafe uint EventWrite(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWrite(RegHandle, EventDescriptor, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        public static unsafe uint EventWrite(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWrite(RegHandle, in EventDescriptor.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        public static unsafe uint EventWrite(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWrite(RegHandle, in EventDescriptor.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, ActivityId, RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, EventDescriptor, in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), ActivityId, RelatedActivityId, UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), ActivityId, RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteTransfer(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteTransfer(RegHandle, in EventDescriptor.GetPinnableReference(), in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, ActivityId, RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, EventDescriptor, Filter, Flags, in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, ActivityId, RelatedActivityId, UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, ActivityId, RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, ActivityId, in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, in ActivityId.GetPinnableReference(), RelatedActivityId, UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, UserData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteEx(this Windows thisApi, ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventDescriptor> EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> RelatedActivityId, uint UserDataCount, Span<EventDataDescriptor> UserData)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteEx(RegHandle, in EventDescriptor.GetPinnableReference(), Filter, Flags, in ActivityId.GetPinnableReference(), in RelatedActivityId.GetPinnableReference(), UserDataCount, ref UserData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 754, Column 1 in evntprov.h")]
+        public static unsafe uint EventWriteString(this Windows thisApi, ulong RegHandle, byte Level, ulong Keyword, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> String)
+        {
+            // SpanOverloader
+            return thisApi.EventWriteString(RegHandle, Level, Keyword, in String.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 781, Column 1 in evntprov.h")]
+        public static unsafe uint EventActivityIdControl(this Windows thisApi, uint ControlCode, Span<Guid> ActivityId)
+        {
+            // SpanOverloader
+            return thisApi.EventActivityIdControl(ControlCode, ref ActivityId.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1671, Column 1 in evntrace.h")]
         public static unsafe uint StartTraceW(this Windows thisApi, ulong* TraceHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* InstanceName, Span<EventTraceProperties> Properties)
         {

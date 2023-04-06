@@ -117,118 +117,118 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBuffer(TagRPCOLEMESSAGE* pMessage, Guid* riid)
+        public readonly unsafe int GetBuffer(RPCOLEMessage* pMessage, Guid* riid)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBuffer(TagRPCOLEMESSAGE* pMessage, ref Guid riid)
+        public readonly unsafe int GetBuffer(RPCOLEMessage* pMessage, ref Guid riid)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBuffer(ref TagRPCOLEMESSAGE pMessage, Guid* riid)
+        public readonly unsafe int GetBuffer(ref RPCOLEMessage pMessage, Guid* riid)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBuffer(ref TagRPCOLEMESSAGE pMessage, ref Guid riid)
+        public readonly int GetBuffer(ref RPCOLEMessage pMessage, ref Guid riid)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SendReceive(TagRPCOLEMESSAGE* pMessage, uint* pStatus)
+        public readonly unsafe int SendReceive(RPCOLEMessage* pMessage, uint* pStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SendReceive(TagRPCOLEMESSAGE* pMessage, ref uint pStatus)
+        public readonly unsafe int SendReceive(RPCOLEMessage* pMessage, ref uint pStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SendReceive(ref TagRPCOLEMESSAGE pMessage, uint* pStatus)
+        public readonly unsafe int SendReceive(ref RPCOLEMessage pMessage, uint* pStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SendReceive(ref TagRPCOLEMESSAGE pMessage, ref uint pStatus)
+        public readonly int SendReceive(ref RPCOLEMessage pMessage, ref uint pStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
             {
                 fixed (uint* pStatusPtr = &pStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FreeBuffer(TagRPCOLEMESSAGE* pMessage)
+        public readonly unsafe int FreeBuffer(RPCOLEMessage* pMessage)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessage);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessage);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FreeBuffer(ref TagRPCOLEMESSAGE pMessage)
+        public readonly int FreeBuffer(ref RPCOLEMessage pMessage)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
             }
             return ret;
         }
@@ -312,157 +312,157 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Send(TagRPCOLEMESSAGE* pMsg, uint* pulStatus)
+        public readonly unsafe int Send(RPCOLEMessage* pMsg, uint* pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pulStatus);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Send(TagRPCOLEMESSAGE* pMsg, ref uint pulStatus)
+        public readonly unsafe int Send(RPCOLEMessage* pMsg, ref uint pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pulStatusPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Send(ref TagRPCOLEMESSAGE pMsg, uint* pulStatus)
+        public readonly unsafe int Send(ref RPCOLEMessage pMsg, uint* pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pulStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pulStatus);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Send(ref TagRPCOLEMESSAGE pMsg, ref uint pulStatus)
+        public readonly int Send(ref RPCOLEMessage pMsg, ref uint pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (uint* pulStatusPtr = &pulStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pulStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pulStatusPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Receive(TagRPCOLEMESSAGE* pMsg, uint ulSize, uint* pulStatus)
+        public readonly unsafe int Receive(RPCOLEMessage* pMsg, uint ulSize, uint* pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsg, ulSize, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsg, ulSize, pulStatus);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Receive(TagRPCOLEMESSAGE* pMsg, uint ulSize, ref uint pulStatus)
+        public readonly unsafe int Receive(RPCOLEMessage* pMsg, uint ulSize, ref uint pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsg, ulSize, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsg, ulSize, pulStatusPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Receive(ref TagRPCOLEMESSAGE pMsg, uint ulSize, uint* pulStatus)
+        public readonly unsafe int Receive(ref RPCOLEMessage pMsg, uint ulSize, uint* pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, ulSize, pulStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, ulSize, pulStatus);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Receive(ref TagRPCOLEMESSAGE pMsg, uint ulSize, ref uint pulStatus)
+        public readonly int Receive(ref RPCOLEMessage pMsg, uint ulSize, ref uint pulStatus)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (uint* pulStatusPtr = &pulStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, ulSize, pulStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, ulSize, pulStatusPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Cancel(TagRPCOLEMESSAGE* pMsg)
+        public readonly unsafe int Cancel(RPCOLEMessage* pMsg)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[11])(@this, pMsg);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, int>)@this->LpVtbl[11])(@this, pMsg);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Cancel(ref TagRPCOLEMESSAGE pMsg)
+        public readonly int Cancel(ref RPCOLEMessage pMsg)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[11])(@this, pMsgPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, int>)@this->LpVtbl[11])(@this, pMsgPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(TagRPCOLEMESSAGE* pMsg, Guid* riid, void** pInterface)
+        public readonly unsafe int GetCallContext(RPCOLEMessage* pMsg, Guid* riid, void** pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riid, pInterface);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riid, pInterface);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(TagRPCOLEMESSAGE* pMsg, Guid* riid, ref void* pInterface)
+        public readonly unsafe int GetCallContext(RPCOLEMessage* pMsg, Guid* riid, ref void* pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pInterfacePtr = &pInterface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riid, pInterfacePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riid, pInterfacePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(TagRPCOLEMESSAGE* pMsg, ref Guid riid, void** pInterface)
+        public readonly unsafe int GetCallContext(RPCOLEMessage* pMsg, ref Guid riid, void** pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riidPtr, pInterface);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riidPtr, pInterface);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(TagRPCOLEMESSAGE* pMsg, ref Guid riid, ref void* pInterface)
+        public readonly unsafe int GetCallContext(RPCOLEMessage* pMsg, ref Guid riid, ref void* pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -470,66 +470,66 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** pInterfacePtr = &pInterface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riidPtr, pInterfacePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsg, riidPtr, pInterfacePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(ref TagRPCOLEMESSAGE pMsg, Guid* riid, void** pInterface)
+        public readonly unsafe int GetCallContext(ref RPCOLEMessage pMsg, Guid* riid, void** pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riid, pInterface);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riid, pInterface);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(ref TagRPCOLEMESSAGE pMsg, Guid* riid, ref void* pInterface)
+        public readonly unsafe int GetCallContext(ref RPCOLEMessage pMsg, Guid* riid, ref void* pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (void** pInterfacePtr = &pInterface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riid, pInterfacePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riid, pInterfacePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(ref TagRPCOLEMESSAGE pMsg, ref Guid riid, void** pInterface)
+        public readonly unsafe int GetCallContext(ref RPCOLEMessage pMsg, ref Guid riid, void** pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riidPtr, pInterface);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riidPtr, pInterface);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext(ref TagRPCOLEMESSAGE pMsg, ref Guid riid, ref void* pInterface)
+        public readonly unsafe int GetCallContext(ref RPCOLEMessage pMsg, ref Guid riid, ref void* pInterface)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** pInterfacePtr = &pInterface)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riidPtr, pInterfacePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pMsgPtr, riidPtr, pInterfacePtr);
                     }
                 }
             }
@@ -537,40 +537,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(TagRPCOLEMESSAGE* pMsg, uint* pdwDestContext, void** ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(RPCOLEMessage* pMsg, uint* pdwDestContext, void** ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContext, ppvDestContext);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContext, ppvDestContext);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(TagRPCOLEMESSAGE* pMsg, uint* pdwDestContext, ref void* ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(RPCOLEMessage* pMsg, uint* pdwDestContext, ref void* ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppvDestContextPtr = &ppvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContext, ppvDestContextPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContext, ppvDestContextPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(TagRPCOLEMESSAGE* pMsg, ref uint pdwDestContext, void** ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(RPCOLEMessage* pMsg, ref uint pdwDestContext, void** ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pdwDestContextPtr = &pdwDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContextPtr, ppvDestContext);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContextPtr, ppvDestContext);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(TagRPCOLEMESSAGE* pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(RPCOLEMessage* pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -578,66 +578,66 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvDestContextPtr = &ppvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContextPtr, ppvDestContextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsg, pdwDestContextPtr, ppvDestContextPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(ref TagRPCOLEMESSAGE pMsg, uint* pdwDestContext, void** ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(ref RPCOLEMessage pMsg, uint* pdwDestContext, void** ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContext, ppvDestContext);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContext, ppvDestContext);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(ref TagRPCOLEMESSAGE pMsg, uint* pdwDestContext, ref void* ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(ref RPCOLEMessage pMsg, uint* pdwDestContext, ref void* ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (void** ppvDestContextPtr = &ppvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContext, ppvDestContextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContext, ppvDestContextPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(ref TagRPCOLEMESSAGE pMsg, ref uint pdwDestContext, void** ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(ref RPCOLEMessage pMsg, ref uint pdwDestContext, void** ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (uint* pdwDestContextPtr = &pdwDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContext);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContext);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtxEx(ref TagRPCOLEMESSAGE pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
+        public readonly unsafe int GetDestCtxEx(ref RPCOLEMessage pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (uint* pdwDestContextPtr = &pdwDestContext)
                 {
                     fixed (void** ppvDestContextPtr = &ppvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContextPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[13])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContextPtr);
                     }
                 }
             }
@@ -645,96 +645,96 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetState(TagRPCOLEMESSAGE* pMsg, uint* pState)
+        public readonly unsafe int GetState(RPCOLEMessage* pMsg, uint* pState)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[14])(@this, pMsg, pState);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[14])(@this, pMsg, pState);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetState(TagRPCOLEMESSAGE* pMsg, ref uint pState)
+        public readonly unsafe int GetState(RPCOLEMessage* pMsg, ref uint pState)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pStatePtr = &pState)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[14])(@this, pMsg, pStatePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[14])(@this, pMsg, pStatePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetState(ref TagRPCOLEMESSAGE pMsg, uint* pState)
+        public readonly unsafe int GetState(ref RPCOLEMessage pMsg, uint* pState)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[14])(@this, pMsgPtr, pState);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[14])(@this, pMsgPtr, pState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetState(ref TagRPCOLEMESSAGE pMsg, ref uint pState)
+        public readonly int GetState(ref RPCOLEMessage pMsg, ref uint pState)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (uint* pStatePtr = &pState)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[14])(@this, pMsgPtr, pStatePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[14])(@this, pMsgPtr, pStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterAsync(TagRPCOLEMESSAGE* pMsg, IAsyncManager* pAsyncMgr)
+        public readonly unsafe int RegisterAsync(RPCOLEMessage* pMsg, IAsyncManager* pAsyncMgr)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsg, pAsyncMgr);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsg, pAsyncMgr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterAsync(TagRPCOLEMESSAGE* pMsg, ref IAsyncManager pAsyncMgr)
+        public readonly unsafe int RegisterAsync(RPCOLEMessage* pMsg, ref IAsyncManager pAsyncMgr)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IAsyncManager* pAsyncMgrPtr = &pAsyncMgr)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsg, pAsyncMgrPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsg, pAsyncMgrPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterAsync(ref TagRPCOLEMESSAGE pMsg, IAsyncManager* pAsyncMgr)
+        public readonly unsafe int RegisterAsync(ref RPCOLEMessage pMsg, IAsyncManager* pAsyncMgr)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsgPtr, pAsyncMgr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsgPtr, pAsyncMgr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterAsync(ref TagRPCOLEMESSAGE pMsg, ref IAsyncManager pAsyncMgr)
+        public readonly int RegisterAsync(ref RPCOLEMessage pMsg, ref IAsyncManager pAsyncMgr)
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
                 fixed (IAsyncManager* pAsyncMgrPtr = &pAsyncMgr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, TagRPCOLEMESSAGE*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsgPtr, pAsyncMgrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer3*, RPCOLEMessage*, IAsyncManager*, int>)@this->LpVtbl[15])(@this, pMsgPtr, pAsyncMgrPtr);
                 }
             }
             return ret;
@@ -750,7 +750,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCallContext<TI0>(TagRPCOLEMESSAGE* pMsg, out ComPtr<TI0> pInterface) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int GetCallContext<TI0>(RPCOLEMessage* pMsg, out ComPtr<TI0> pInterface) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -759,7 +759,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetCallContext<TI0>(ref TagRPCOLEMESSAGE pMsg, out ComPtr<TI0> pInterface) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int GetCallContext<TI0>(ref RPCOLEMessage pMsg, out ComPtr<TI0> pInterface) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -768,7 +768,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterAsync<TI0>(TagRPCOLEMESSAGE* pMsg, ComPtr<TI0> pAsyncMgr) where TI0 : unmanaged, IComVtbl<IAsyncManager>, IComVtbl<TI0>
+        public readonly unsafe int RegisterAsync<TI0>(RPCOLEMessage* pMsg, ComPtr<TI0> pAsyncMgr) where TI0 : unmanaged, IComVtbl<IAsyncManager>, IComVtbl<TI0>
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -776,7 +776,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterAsync<TI0>(ref TagRPCOLEMESSAGE pMsg, ComPtr<TI0> pAsyncMgr) where TI0 : unmanaged, IComVtbl<IAsyncManager>, IComVtbl<TI0>
+        public readonly int RegisterAsync<TI0>(ref RPCOLEMessage pMsg, ComPtr<TI0> pAsyncMgr) where TI0 : unmanaged, IComVtbl<IAsyncManager>, IComVtbl<TI0>
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> GetCallContext<TI0>(TagRPCOLEMESSAGE* pMsg) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> GetCallContext<TI0>(RPCOLEMessage* pMsg) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -802,7 +802,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> GetCallContext<TI0>(ref TagRPCOLEMESSAGE pMsg) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> GetCallContext<TI0>(ref RPCOLEMessage pMsg) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IRpcChannelBuffer3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

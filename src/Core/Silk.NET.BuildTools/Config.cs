@@ -90,6 +90,13 @@ namespace Silk.NET.BuildTools
         public string Folder { get; set; }
 
         /// <summary>
+        /// Gets or sets the folder within the base output path where the binder will write the generated files, with
+        /// the exception of the csproj.
+        /// </summary>
+        [JsonProperty("innerPath")]
+        public string? Subfolder { get; set; }
+
+        /// <summary>
         /// Gets or sets the path to the license header.
         /// </summary>
         [JsonProperty("licenseFile")]

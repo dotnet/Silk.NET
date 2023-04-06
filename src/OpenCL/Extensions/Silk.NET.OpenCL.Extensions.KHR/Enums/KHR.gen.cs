@@ -41,6 +41,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         PropertiesArray = 0x1298,
         [NativeName("Name", "CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
         CommandBufferPropertiesArrayKhr = 0x1298,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CONTEXT_KHR")]
+        Context = 0x1299,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CONTEXT_KHR")]
+        CommandBufferContextKhr = 0x1299,
         [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
         Flags = 0x1293,
         [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
@@ -119,8 +123,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Packed = 0x1,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]
         DeviceIntegerDotProductInput4x8BitPackedKhr = 0x1,
-        [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_CONTEXT_KHR")]
-        Context = 0x1,
         [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_CONTEXT_KHR")]
         DeviceTerminateCapabilityContextKhr = 0x1,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]

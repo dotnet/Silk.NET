@@ -148,6 +148,7 @@
               "Clean",
               "Compile",
               "DeclareApi",
+              "Dxvk",
               "EnsureApiDeclared",
               "FullCompile",
               "FullPack",
@@ -164,6 +165,7 @@
               "SwiftShader",
               "Test",
               "ValidateSolution",
+              "Vkd3d",
               "VulkanLoader",
               "Wgpu"
             ]
@@ -185,6 +187,7 @@
               "Clean",
               "Compile",
               "DeclareApi",
+              "Dxvk",
               "EnsureApiDeclared",
               "FullCompile",
               "FullPack",
@@ -201,6 +204,7 @@
               "SwiftShader",
               "Test",
               "ValidateSolution",
+              "Vkd3d",
               "VulkanLoader",
               "Wgpu"
             ]

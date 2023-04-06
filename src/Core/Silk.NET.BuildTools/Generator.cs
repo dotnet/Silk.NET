@@ -83,7 +83,9 @@ namespace Silk.NET.BuildTools
                 if(Debugger.IsAttached)
                     throw;
 
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.Error.WriteLine($"Unhandled exception when running BuildTools for {task.Name}: {ex}");
+                Console.ResetColor();
                 if (sw is not null)
                 {
                     Program.ConsoleWriter.Instance.Timings.Value =

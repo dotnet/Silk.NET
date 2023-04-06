@@ -194,7 +194,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
-            foreach (var comBase in @struct.ComBases)
+            foreach (var comBase in @struct.ComBases.RemoveDuplicates())
             {
                 var asSuffix = comBase.Split('.').Last();
                 asSuffix = asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase;

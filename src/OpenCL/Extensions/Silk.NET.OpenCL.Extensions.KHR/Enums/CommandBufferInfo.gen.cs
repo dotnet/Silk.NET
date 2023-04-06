@@ -22,5 +22,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         State = 0x1297,
         [NativeName("Name", "CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
         PropertiesArray = 0x1298,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CONTEXT_KHR")]
+        Context = 0x1299,
     }
 }

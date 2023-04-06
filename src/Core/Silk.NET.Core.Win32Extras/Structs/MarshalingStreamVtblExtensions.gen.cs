@@ -355,22 +355,22 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Stat(this ComPtr<IMarshalingStream> thisVtbl, TagSTATSTG* pstatstg, uint grfStatFlag)
+    public static unsafe int Stat(this ComPtr<IMarshalingStream> thisVtbl, STATSTG* pstatstg, uint grfStatFlag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
+        ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, ref TagSTATSTG pstatstg, uint grfStatFlag)
+    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, ref STATSTG pstatstg, uint grfStatFlag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagSTATSTG* pstatstgPtr = &pstatstg)
+        fixed (STATSTG* pstatstgPtr = &pstatstg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
         }
         return ret;
     }
@@ -587,7 +587,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, Span<TagSTATSTG> pstatstg, uint grfStatFlag)
+    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, Span<STATSTG> pstatstg, uint grfStatFlag)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

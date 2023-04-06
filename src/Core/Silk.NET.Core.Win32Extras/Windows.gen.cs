@@ -9121,6 +9121,111 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "int")]
         [NativeName("Name", "DCOMSCM_PING_DISALLOW_UNSECURE_CALL")]
         public const int DcomscmPingDisallowUnsecureCall = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_MIN_LEVEL")]
+        public const int EventMinLevel = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_MAX_LEVEL")]
+        public const int EventMaxLevel = unchecked((int) 0xFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_ACTIVITY_CTRL_GET_ID")]
+        public const int EventActivityCtrlGetID = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_ACTIVITY_CTRL_SET_ID")]
+        public const int EventActivityCtrlSetID = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_ACTIVITY_CTRL_CREATE_ID")]
+        public const int EventActivityCtrlCreateID = unchecked((int) 0x3);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_ACTIVITY_CTRL_GET_SET_ID")]
+        public const int EventActivityCtrlGetSetID = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_ACTIVITY_CTRL_CREATE_SET_ID")]
+        public const int EventActivityCtrlCreateSetID = unchecked((int) 0x5);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_DATA_DESCRIPTORS")]
+        public const int MaxEventDataDescriptors = unchecked((int) 0x80);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_FILTER_DATA_SIZE")]
+        public const int MaxEventFilterDataSize = unchecked((int) 0x400);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_FILTER_PAYLOAD_SIZE")]
+        public const int MaxEventFilterPayloadSize = unchecked((int) 0x1000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_FILTER_EVENT_NAME_SIZE")]
+        public const int MaxEventFilterEventNameSize = unchecked((int) 0x1000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_FILTERS_COUNT")]
+        public const int MaxEventFiltersCount = unchecked((int) 0xD);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_FILTER_PID_COUNT")]
+        public const int MaxEventFilterPidCount = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MAX_EVENT_FILTER_EVENT_ID_COUNT")]
+        public const int MaxEventFilterEventIDCount = unchecked((int) 0x40);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_NONE")]
+        public const int EventFilterTypeNone = unchecked((int) 0x0);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_SCHEMATIZED")]
+        public const uint EventFilterTypeSchematized = unchecked((uint) 0xFFFFFFFF80000000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_SYSTEM_FLAGS")]
+        public const uint EventFilterTypeSystemFlags = unchecked((uint) 0xFFFFFFFF80000001);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_TRACEHANDLE")]
+        public const uint EventFilterTypeTracehandle = unchecked((uint) 0xFFFFFFFF80000002);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_PID")]
+        public const uint EventFilterTypePid = unchecked((uint) 0xFFFFFFFF80000004);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_EXECUTABLE_NAME")]
+        public const uint EventFilterTypeExecutableName = unchecked((uint) 0xFFFFFFFF80000008);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_PACKAGE_ID")]
+        public const uint EventFilterTypePackageID = unchecked((uint) 0xFFFFFFFF80000010);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_PACKAGE_APP_ID")]
+        public const uint EventFilterTypePackageAppID = unchecked((uint) 0xFFFFFFFF80000020);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_PAYLOAD")]
+        public const uint EventFilterTypePayload = unchecked((uint) 0xFFFFFFFF80000100);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_EVENT_ID")]
+        public const uint EventFilterTypeEventID = unchecked((uint) 0xFFFFFFFF80000200);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_EVENT_NAME")]
+        public const uint EventFilterTypeEventName = unchecked((uint) 0xFFFFFFFF80000400);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_STACKWALK")]
+        public const uint EventFilterTypeStackwalk = unchecked((uint) 0xFFFFFFFF80001000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_STACKWALK_NAME")]
+        public const uint EventFilterTypeStackwalkName = unchecked((uint) 0xFFFFFFFF80002000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_STACKWALK_LEVEL_KW")]
+        public const uint EventFilterTypeStackwalkLevelKW = unchecked((uint) 0xFFFFFFFF80004000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "EVENT_FILTER_TYPE_CONTAINER")]
+        public const uint EventFilterTypeContainer = unchecked((uint) 0xFFFFFFFF80008000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_DATA_DESCRIPTOR_TYPE_NONE")]
+        public const int EventDataDescriptorTypeNone = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_DATA_DESCRIPTOR_TYPE_EVENT_METADATA")]
+        public const int EventDataDescriptorTypeEventMetadata = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_DATA_DESCRIPTOR_TYPE_PROVIDER_METADATA")]
+        public const int EventDataDescriptorTypeProviderMetadata = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_DATA_DESCRIPTOR_TYPE_TIMESTAMP_OVERRIDE")]
+        public const int EventDataDescriptorTypeTimestampOverride = unchecked((int) 0x3);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_WRITE_FLAG_NO_FAULTING")]
+        public const int EventWriteFlagNoFaulting = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "EVENT_WRITE_FLAG_INPRIVATE")]
+        public const int EventWriteFlagInprivate = unchecked((int) 0x2);
         [NativeName("Type", "")]
         [NativeName("Name", "KERNEL_LOGGER_NAMEW")]
         public const string KernelLoggerNamew = unchecked((string) "NT Kernel Logger");
@@ -18244,6 +18349,281 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Src", "Line 8537, Column 43 in objidlbase.h")]
         [NativeApi(EntryPoint = "IStream_CopyTo_Stub")]
         public partial int IStreamCopyToStub(ref Silk.NET.Core.Win32Extras.IStream This, ref Silk.NET.Core.Win32Extras.IStream pstm, ulong cb, ref ulong pcbRead, ref ulong pcbWritten);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, ulong* RegHandle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, ref ulong RegHandle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, ref T0 CallbackContext, ulong* RegHandle) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, ref T0 CallbackContext, ref ulong RegHandle) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, ulong* RegHandle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, ref ulong RegHandle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public unsafe partial uint EventRegister<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ProviderId, PfnPenablecallback EnableCallback, ref T0 CallbackContext, ulong* RegHandle) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventRegister")]
+        public partial uint EventRegister<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ProviderId, PfnPenablecallback EnableCallback, ref T0 CallbackContext, ref ulong RegHandle) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 555, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventUnregister")]
+        public partial uint EventUnregister(ulong RegHandle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 568, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventSetInformation")]
+        public unsafe partial uint EventSetInformation(ulong RegHandle, EventInfoClass InformationClass, void* EventInformation, uint InformationLength);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 568, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventSetInformation")]
+        public partial uint EventSetInformation<T0>(ulong RegHandle, EventInfoClass InformationClass, ref T0 EventInformation, uint InformationLength) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 611, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventEnabled")]
+        public unsafe partial byte EventEnabled(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 611, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventEnabled")]
+        public partial byte EventEnabled(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 652, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventProviderEnabled")]
+        public partial byte EventProviderEnabled(ulong RegHandle, byte Level, ulong Keyword);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWrite")]
+        public unsafe partial uint EventWrite(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWrite")]
+        public unsafe partial uint EventWrite(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWrite")]
+        public unsafe partial uint EventWrite(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 677, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWrite")]
+        public partial uint EventWrite(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public unsafe partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 702, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteTransfer")]
+        public partial uint EventWriteTransfer(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventDescriptor* EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public unsafe partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, EventDataDescriptor* UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteEx")]
+        public partial uint EventWriteEx(ulong RegHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EventDescriptor EventDescriptor, ulong Filter, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid ActivityId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid RelatedActivityId, uint UserDataCount, ref EventDataDescriptor UserData);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 754, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteString")]
+        public unsafe partial uint EventWriteString(ulong RegHandle, byte Level, ulong Keyword, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* String);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 754, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteString")]
+        public partial uint EventWriteString(ulong RegHandle, byte Level, ulong Keyword, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char String);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 754, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventWriteString")]
+        public partial uint EventWriteString(ulong RegHandle, byte Level, ulong Keyword, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string String);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 781, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventActivityIdControl")]
+        public unsafe partial uint EventActivityIdControl(uint ControlCode, Guid* ActivityId);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 781, Column 1 in evntprov.h")]
+        [NativeApi(EntryPoint = "EventActivityIdControl")]
+        public partial uint EventActivityIdControl(uint ControlCode, ref Guid ActivityId);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1671, Column 1 in evntrace.h")]

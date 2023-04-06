@@ -523,7 +523,7 @@
             ]
         },
         {
-            "profileName": "Vulkan Video",
+            "profileName": "VulkanVideo",
             "sources": [
                 "src/Vulkan/vk_video.h"
             ],
@@ -1022,7 +1022,9 @@
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/Documenttarget.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -1032,7 +1034,14 @@
                 "_SECURITY_ATTRIBUTES"
             ],
             "rename": {
-                "ETW_COMPRESSION_RESUMPTION_MODE": "EtwCompressionResumptionMode"
+                "ETW_COMPRESSION_RESUMPTION_MODE": "EtwCompressionResumptionMode",
+                "tagBLOB": "Blob",
+                "tagMULTI_QI": "MultiQi",
+                "tagRPCOLEMESSAGE": "RPCOLEMessage",
+                "tagSOLE_AUTHENTICATION_LIST": "SoleAuthenticationList",
+                "tagSOLE_AUTHENTICATION_SERVICE": "SoleAuthenticationService",
+                "tagSOLE_AUTHENTICATION_INFO": "SoleAuthenticationInfo",
+                "tagSTATSTG": "STATSTG"
             },
             "bakery": {
                 "profileNames": [
@@ -1056,7 +1065,18 @@
                     "_WNODE_HEADER": "WnodeHeader",
                     "_EXCEPTION_RECORD": "ExceptionRecord",
                     "_FILE_SEGMENT_ELEMENT": "FileSegmentElement",
-                    "_RPC_MESSAGE": "RPCMessage"
+                    "_RPC_MESSAGE": "RPCMessage",
+                    "IDispatch": "Silk.NET.Core.Native.IUnknown",
+                    "IRecordInfo": "Silk.NET.Core.Native.IUnknown",
+                    "ITypeInfo": "Silk.NET.Core.Native.IUnknown",
+                    "tagEXCEPINFO": "ExceptionInfo",
+                    "tagVARIANT": "Variant",
+                    "tagDISPPARAMS": "DispatchParams",
+                    "tagSAFEARRAY": "SafeArray",
+                    "tagCY": "CY",
+                    "tagDEC": "TagDecimal",
+                    "tagSAFEARRAYBOUND": "SafeArrayBound",
+                    "PfnTagEXCEPINFOvI": "PfnExceptionInfovI"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -1355,6 +1375,7 @@
             "output": {
                 "mode": "Default",
                 "path": "src/Microsoft",
+                "innerPath": "Direct2D",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
@@ -1394,7 +1415,9 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-obsolete-enum"
+                "no-obsolete-enum",
+                "no-csproj",
+                "no-extra-dir"
             ],
             "converter": {},
             "prefix": "DWRITE_",
@@ -1470,7 +1493,8 @@
             },
             "output": {
                 "mode": "Default",
-                "path": "src/Microsoft",
+                "path": "src/Microsoft/Silk.NET.Direct2D",
+                "innerPath": "DirectWrite",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
