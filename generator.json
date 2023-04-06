@@ -1375,6 +1375,7 @@
             "output": {
                 "mode": "Default",
                 "path": "src/Microsoft",
+                "innerPath": "Direct2D",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
@@ -1415,7 +1416,8 @@
                 "convert-windows-only",
                 "typemap-native",
                 "no-obsolete-enum",
-                "no-csproj"
+                "no-csproj",
+                "no-extra-dir"
             ],
             "converter": {},
             "prefix": "DWRITE_",
@@ -1492,6 +1494,7 @@
             "output": {
                 "mode": "Default",
                 "path": "src/Microsoft/Silk.NET.Direct2D",
+                "innerPath": "DirectWrite",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },

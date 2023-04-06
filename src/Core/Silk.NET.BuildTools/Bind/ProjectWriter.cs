@@ -41,7 +41,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project to write.</param>
         /// <param name="folder">The folder to write this project to.</param>
         /// <param name="profile">The parent subsystem.</param>
-        public static void Write(this Project project, string folder, Profile profile, BindState task)
+        public static void WriteGeneratedCode(this Project project, string folder, Profile profile, BindState task)
         {
             if (!Directory.Exists(folder))
             {
@@ -57,8 +57,6 @@ namespace Silk.NET.BuildTools.Bind
             {
                 Directory.CreateDirectory(Path.Combine(folder, ProfileWriter.StructsSubfolder));
             }
-
-            project.WriteProjectFile(folder, profile, task);
 
             Project coreProject = profile.Projects["Core"];
 
@@ -103,7 +101,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project to write.</param>
         /// <param name="folder">The folder that should contain the project file.</param>
         /// <param name="prof">The parent profile.</param>
-        private static void WriteProjectFile(this Project project, string folder, Profile prof, BindState task)
+        public static void WriteProjectFile(this Project project, string folder, Profile prof, BindState task)
         {
             if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj")) ||
                 task.Task.Controls.Contains("no-csproj"))
