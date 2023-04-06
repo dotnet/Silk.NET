@@ -1024,7 +1024,7 @@
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/Documenttarget.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -1041,7 +1041,7 @@
                 "tagSOLE_AUTHENTICATION_LIST": "SoleAuthenticationList",
                 "tagSOLE_AUTHENTICATION_SERVICE": "SoleAuthenticationService",
                 "tagSOLE_AUTHENTICATION_INFO": "SoleAuthenticationInfo",
-                "tagSTATSTG": "STATSTG",
+                "tagSTATSTG": "STATSTG"
             },
             "bakery": {
                 "profileNames": [
@@ -1490,7 +1490,7 @@
             },
             "output": {
                 "mode": "Default",
-                "path": "src/Microsoft",
+                "path": "src/Microsoft/Silk.NET.Direct2D",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
