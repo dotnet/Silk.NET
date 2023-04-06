@@ -1414,7 +1414,8 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-obsolete-enum"
+                "no-obsolete-enum",
+                "no-csproj"
             ],
             "converter": {},
             "prefix": "DWRITE_",
