@@ -3,13 +3,11 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
-  <Import Project="..\..\..\build\props\bindings.props" />
-
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Silk.NET.Core.Win32Extras\Silk.NET.Core.Win32Extras.csproj" />
-    <ProjectReference Include="..\Silk.NET.DXGI\Silk.NET.DXGI.csproj" />
   </ItemGroup>
+
+  <Import Project="D:\a\Silk.NET\Silk.NET\build\props\bindings.props" />
 </Project>

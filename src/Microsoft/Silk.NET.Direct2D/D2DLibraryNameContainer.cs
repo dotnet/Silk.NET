@@ -20,12 +20,12 @@ namespace Silk.NET.Direct2D
         public override string[] Android => new[] { "libd2d1.so" };
 
         /// <inheritdoc />
-        public override string[] IOS => new[] { "__Internal" };
+        public override string[] IOS => { "__Internal" };
 
         /// <inheritdoc />
-        public override string[] Windows64 => new[] { "d2d1.dll" };
+        public override string[] Windows64 => { "d2d1.dll" };
 
         /// <inheritdoc />
-        public override string[] Windows86 => new[] { "d2d1.dll" };
+        public override string[] Windows86 => { "d2d1.dll" };
     }
 }

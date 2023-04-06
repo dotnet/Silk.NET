@@ -25,6 +25,9 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"Disconnected\"")]
         [NativeName("Name", "SDL_DISPLAYEVENT_DISCONNECTED")]
         DisplayeventDisconnected = 0x3,
+        [Obsolete("Deprecated in favour of \"Moved\"")]
+        [NativeName("Name", "SDL_DISPLAYEVENT_MOVED")]
+        DisplayeventMoved = 0x4,
         [NativeName("Name", "SDL_DISPLAYEVENT_NONE")]
         None = 0x0,
         [NativeName("Name", "SDL_DISPLAYEVENT_ORIENTATION")]
@@ -33,5 +36,7 @@ namespace Silk.NET.SDL
         Connected = 0x2,
         [NativeName("Name", "SDL_DISPLAYEVENT_DISCONNECTED")]
         Disconnected = 0x3,
+        [NativeName("Name", "SDL_DISPLAYEVENT_MOVED")]
+        Moved = 0x4,
     }
 }
