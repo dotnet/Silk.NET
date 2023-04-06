@@ -71,7 +71,7 @@ partial class Build
         {
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git("add src build/cache Silk.NET.sln", RootDirectory);
+            Git("add src build/cache build/submodules Silk.NET.sln", RootDirectory);
             var newBranch = $"ci/{curBranch}/bindings_regen";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell
