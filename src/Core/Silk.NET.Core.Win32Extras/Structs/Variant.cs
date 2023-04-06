@@ -17,12 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    [NativeName("Name", "TagVariant")]
-    public unsafe partial struct TagVariant
+    [NativeName("Name", "Variant")]
+    public unsafe partial struct Variant
     {
-        public TagVariant
+        public Variant
         (
-            TagVariantUnion? anonymous = null,
+            VariantUnion? anonymous = null,
             TagDecimal? decVal = null,
             ushort? vt = null,
             ushort? wReserved1 = null,
@@ -42,7 +42,7 @@ namespace Silk.NET.Core.Win32Extras
             char* bstrVal = null,
             Silk.NET.Core.Native.IUnknown* punkVal = null,
             Silk.NET.Core.Native.IUnknown* pdispVal = null,
-            TagSafeArray* parray = null,
+            SafeArray* parray = null,
             byte* pbVal = null,
             short* piVal = null,
             int* plVal = null,
@@ -57,8 +57,8 @@ namespace Silk.NET.Core.Win32Extras
             char** pbstrVal = null,
             Silk.NET.Core.Native.IUnknown** ppunkVal = null,
             Silk.NET.Core.Native.IUnknown** ppdispVal = null,
-            TagSafeArray** pparray = null,
-            TagVariant* pvarVal = null,
+            SafeArray** pparray = null,
+            Variant* pvarVal = null,
             void* byref = null,
             byte? cVal = null,
             ushort? uiVal = null,
@@ -347,7 +347,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "")]
         [NativeName("Type.Name", "__AnonymousRecord_oaidl_L478_C5")]
         [NativeName("Name", "anonymous1")]
-        public TagVariantUnion Anonymous;
+        public VariantUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref TagDecimal DecVal
         {
@@ -615,13 +615,13 @@ namespace Silk.NET.Core.Win32Extras
 #endif
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref TagSafeArray* Parray
+        public ref SafeArray* Parray
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Parray;
         }
 #else
-        public TagSafeArray* Parray
+        public SafeArray* Parray
         {
             get => Anonymous.Parray;
             set => Anonymous.Parray = value;
@@ -825,13 +825,13 @@ namespace Silk.NET.Core.Win32Extras
 #endif
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref TagSafeArray** Pparray
+        public ref SafeArray** Pparray
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Pparray;
         }
 #else
-        public TagSafeArray** Pparray
+        public SafeArray** Pparray
         {
             get => Anonymous.Pparray;
             set => Anonymous.Pparray = value;
@@ -839,13 +839,13 @@ namespace Silk.NET.Core.Win32Extras
 #endif
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref TagVariant* PvarVal
+        public ref Variant* PvarVal
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PvarVal;
         }
 #else
-        public TagVariant* PvarVal
+        public Variant* PvarVal
         {
             get => Anonymous.PvarVal;
             set => Anonymous.PvarVal = value;

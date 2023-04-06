@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "tagRPCOLEMESSAGE")]
-    public unsafe partial struct TagRPCOLEMESSAGE
+    public unsafe partial struct RPCOLEMessage
     {
-        public TagRPCOLEMESSAGE
+        public RPCOLEMessage
         (
             void* reserved1 = null,
             uint? dataRepresentation = null,

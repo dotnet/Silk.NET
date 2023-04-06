@@ -18,9 +18,9 @@ namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "tagSTATSTG")]
-    public unsafe partial struct TagSTATSTG
+    public unsafe partial struct STATSTG
     {
-        public TagSTATSTG
+        public STATSTG
         (
             char* pwcsName = null,
             uint? type = null,

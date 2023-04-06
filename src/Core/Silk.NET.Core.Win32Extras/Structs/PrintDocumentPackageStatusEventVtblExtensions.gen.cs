@@ -235,200 +235,107 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* puArgErrPtr = &puArgErr)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+        fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-        {
-            fixed (uint* puArgErrPtr = &puArgErr)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (TagVariant* pVarResultPtr = &pVarResult)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (TagVariant* pVarResultPtr = &pVarResult)
+        fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
         {
             fixed (uint* puArgErrPtr = &puArgErr)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagVariant* pVarResultPtr = &pVarResult)
+        fixed (Variant* pVarResultPtr = &pVarResult)
         {
-            fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagVariant* pVarResultPtr = &pVarResult)
-        {
-            fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-            {
-                fixed (uint* puArgErrPtr = &puArgErr)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+        fixed (Variant* pVarResultPtr = &pVarResult)
         {
             fixed (uint* puArgErrPtr = &puArgErr)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+        fixed (Variant* pVarResultPtr = &pVarResult)
         {
-            fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+        fixed (Variant* pVarResultPtr = &pVarResult)
         {
-            fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-            {
-                fixed (uint* puArgErrPtr = &puArgErr)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
-        {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
-        {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
                 fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                 }
             }
         }
@@ -436,17 +343,59 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
         {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+        {
+            fixed (uint* puArgErrPtr = &puArgErr)
             {
-                fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+        {
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+        {
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+            {
+                fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
                 }
             }
         }
@@ -454,19 +403,70 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
         {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
+            fixed (Variant* pVarResultPtr = &pVarResult)
             {
-                fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+        {
+            fixed (Variant* pVarResultPtr = &pVarResult)
+            {
+                fixed (uint* puArgErrPtr = &puArgErr)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+        {
+            fixed (Variant* pVarResultPtr = &pVarResult)
+            {
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+        {
+            fixed (Variant* pVarResultPtr = &pVarResult)
+            {
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
                     fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                     }
                 }
             }
@@ -475,19 +475,19 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,72 +495,39 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
         {
             fixed (uint* puArgErrPtr = &puArgErr)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-            {
-                fixed (uint* puArgErrPtr = &puArgErr)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
                 fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
                 }
             }
         }
@@ -568,71 +535,32 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
+            fixed (Variant* pVarResultPtr = &pVarResult)
             {
-                fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
-                }
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagVariant* pVarResultPtr = &pVarResult)
-            {
-                fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-                {
-                    fixed (uint* puArgErrPtr = &puArgErr)
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+            fixed (Variant* pVarResultPtr = &pVarResult)
             {
                 fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
                 }
             }
         }
@@ -640,17 +568,17 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+            fixed (Variant* pVarResultPtr = &pVarResult)
             {
-                fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
                 }
             }
         }
@@ -658,58 +586,19 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, TagVariant* pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+            fixed (Variant* pVarResultPtr = &pVarResult)
             {
-                fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
-                {
-                    fixed (uint* puArgErrPtr = &puArgErr)
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
-            {
-                fixed (TagVariant* pVarResultPtr = &pVarResult)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, TagExceptionInfo* pExcepInfo, ref uint puArgErr)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
-            {
-                fixed (TagVariant* pVarResultPtr = &pVarResult)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
                     fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                     }
                 }
             }
@@ -718,19 +607,70 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
             {
-                fixed (TagVariant* pVarResultPtr = &pVarResult)
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                {
+                    fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
                     }
                 }
             }
@@ -739,21 +679,81 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref TagDispatchParams pDispParams, ref TagVariant pVarResult, ref TagExceptionInfo pExcepInfo, ref uint puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            fixed (TagDispatchParams* pDispParamsPtr = &pDispParams)
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
             {
-                fixed (TagVariant* pVarResultPtr = &pVarResult)
+                fixed (Variant* pVarResultPtr = &pVarResult)
                 {
-                    fixed (TagExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                    ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (uint* puArgErrPtr = &puArgErr)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                     {
                         fixed (uint* puArgErrPtr = &puArgErr)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, TagDispatchParams*, TagVariant*, TagExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                         }
                     }
                 }
@@ -921,7 +921,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -929,7 +929,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -937,7 +937,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -945,7 +945,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -953,7 +953,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -961,7 +961,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -969,7 +969,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -977,7 +977,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -985,7 +985,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -993,7 +993,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1001,7 +1001,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1009,7 +1009,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1017,7 +1017,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1025,7 +1025,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1033,7 +1033,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1041,7 +1041,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1049,7 +1049,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1057,7 +1057,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1065,7 +1065,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1073,7 +1073,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1081,7 +1081,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1089,7 +1089,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1097,7 +1097,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, TagDispatchParams* pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1105,7 +1105,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1113,7 +1113,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1121,7 +1121,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1129,7 +1129,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, TagVariant* pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1137,7 +1137,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1145,7 +1145,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, TagExceptionInfo* pExcepInfo, Span<uint> puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1153,7 +1153,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, uint* puArgErr)
+    public static unsafe int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1161,7 +1161,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<TagDispatchParams> pDispParams, Span<TagVariant> pVarResult, Span<TagExceptionInfo> pExcepInfo, Span<uint> puArgErr)
+    public static int Invoke(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

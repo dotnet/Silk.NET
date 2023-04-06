@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "tagSAFEARRAY")]
-    public unsafe partial struct TagSafeArray
+    public unsafe partial struct SafeArray
     {
-        public TagSafeArray
+        public SafeArray
         (
             ushort? cDims = null,
             ushort? fFeatures = null,
@@ -87,8 +87,8 @@ namespace Silk.NET.Core.Win32Extras
 
         public struct RgsaboundBuffer
         {
-            public TagSafeArrayBound Element0;
-            public ref TagSafeArrayBound this[int index]
+            public SafeArrayBound Element0;
+            public ref SafeArrayBound this[int index]
             {
                 get
                 {
@@ -97,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
                         throw new ArgumentOutOfRangeException(nameof(index));
                     }
 
-                    fixed (TagSafeArrayBound* ptr = &Element0)
+                    fixed (SafeArrayBound* ptr = &Element0)
                     {
                         return ref ptr[index];
                     }
@@ -105,7 +105,7 @@ namespace Silk.NET.Core.Win32Extras
             }
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-            public Span<TagSafeArrayBound> AsSpan()
+            public Span<SafeArrayBound> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 1);
 #endif
         }

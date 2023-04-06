@@ -16,35 +16,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("Name", "__AnonymousRecord_wtypes_L679_C5")]
-    public unsafe partial struct TagCYUnion
+    [NativeName("Name", "tagBLOB")]
+    public unsafe partial struct Blob
     {
-        public TagCYUnion
+        public Blob
         (
-            uint? lo = null,
-            int? hi = null
+            uint? cbSize = null,
+            byte* pBlobData = null
         ) : this()
         {
-            if (lo is not null)
+            if (cbSize is not null)
             {
-                Lo = lo.Value;
+                CbSize = cbSize.Value;
             }
 
-            if (hi is not null)
+            if (pBlobData is not null)
             {
-                Hi = hi.Value;
+                PBlobData = pBlobData;
             }
         }
 
 
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
-        [NativeName("Name", "Lo")]
-        public uint Lo;
+        [NativeName("Name", "cbSize")]
+        public uint CbSize;
 
-        [NativeName("Type", "LONG")]
-        [NativeName("Type.Name", "LONG")]
-        [NativeName("Name", "Hi")]
-        public int Hi;
+        [NativeName("Type", "BYTE *")]
+        [NativeName("Type.Name", "BYTE *")]
+        [NativeName("Name", "pBlobData")]
+        public byte* PBlobData;
     }
 }

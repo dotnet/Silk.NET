@@ -17,10 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    [NativeName("Name", "TagExceptionInfo")]
-    public unsafe partial struct TagExceptionInfo
+    [NativeName("Name", "ExceptionInfo")]
+    public unsafe partial struct ExceptionInfo
     {
-        public TagExceptionInfo
+        public ExceptionInfo
         (
             ushort? wCode = null,
             ushort? wReserved = null,
@@ -29,7 +29,7 @@ namespace Silk.NET.Core.Win32Extras
             char* bstrHelpFile = null,
             uint? dwHelpContext = null,
             void* pvReserved = null,
-            PfnTagExceptionInfovI? pfnDeferredFillIn = null,
+            PfnExceptionInfovI? pfnDeferredFillIn = null,
             int? scode = null
         ) : this()
         {
@@ -115,10 +115,10 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "pvReserved")]
         public void* PvReserved;
 
-        [NativeName("Type", "HRESULT (*)(struct TagExceptionInfo *) __attribute__((stdcall))")]
-        [NativeName("Type.Name", "HRESULT (*)(struct TagExceptionInfo *) __attribute__((stdcall))")]
+        [NativeName("Type", "HRESULT (*)(struct ExceptionInfo *) __attribute__((stdcall))")]
+        [NativeName("Type.Name", "HRESULT (*)(struct ExceptionInfo *) __attribute__((stdcall))")]
         [NativeName("Name", "pfnDeferredFillIn")]
-        public PfnTagExceptionInfovI PfnDeferredFillIn;
+        public PfnExceptionInfovI PfnDeferredFillIn;
 
         [NativeName("Type", "SCODE")]
         [NativeName("Type.Name", "SCODE")]

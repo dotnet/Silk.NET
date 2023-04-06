@@ -16,12 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("Name", "TagDispatchParams")]
-    public unsafe partial struct TagDispatchParams
+    [NativeName("Name", "DispatchParams")]
+    public unsafe partial struct DispatchParams
     {
-        public TagDispatchParams
+        public DispatchParams
         (
-            TagVariant* rgvarg = null,
+            Variant* rgvarg = null,
             int* rgdispidNamedArgs = null,
             uint? cArgs = null,
             uint? cNamedArgs = null
@@ -52,7 +52,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "VARIANTARG *")]
         [NativeName("Type.Name", "VARIANTARG *")]
         [NativeName("Name", "rgvarg")]
-        public TagVariant* Rgvarg;
+        public Variant* Rgvarg;
 
         [NativeName("Type", "DISPID *")]
         [NativeName("Type.Name", "DISPID *")]

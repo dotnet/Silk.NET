@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "tagSOLE_AUTHENTICATION_INFO")]
-    public unsafe partial struct TagSOLEAUTHENTICATIONINFO
+    public unsafe partial struct SoleAuthenticationInfo
     {
-        public TagSOLEAUTHENTICATIONINFO
+        public SoleAuthenticationInfo
         (
             uint? dwAuthnSvc = null,
             uint? dwAuthzSvc = null,

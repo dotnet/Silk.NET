@@ -18,11 +18,11 @@ namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "tagCY")]
-    public unsafe partial struct TagCY
+    public unsafe partial struct CY
     {
-        public TagCY
+        public CY
         (
-            TagCYUnion? anonymous = null,
+            CYUnion? anonymous = null,
             long? int64 = null,
             uint? lo = null,
             int? hi = null
@@ -54,7 +54,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "")]
         [NativeName("Type.Name", "__AnonymousRecord_wtypes_L679_C5")]
         [NativeName("Name", "anonymous1")]
-        public TagCYUnion Anonymous;
+        public CYUnion Anonymous;
 
         [FieldOffset(0)]
         [NativeName("Type", "LONGLONG")]

@@ -85,22 +85,22 @@ public unsafe static class RpcSyntaxNegotiateVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int NegotiateSyntax(this ComPtr<IRpcSyntaxNegotiate> thisVtbl, TagRPCOLEMESSAGE* pMsg)
+    public static unsafe int NegotiateSyntax(this ComPtr<IRpcSyntaxNegotiate> thisVtbl, RPCOLEMessage* pMsg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[3])(@this, pMsg);
+        ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, RPCOLEMessage*, int>)@this->LpVtbl[3])(@this, pMsg);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int NegotiateSyntax(this ComPtr<IRpcSyntaxNegotiate> thisVtbl, ref TagRPCOLEMESSAGE pMsg)
+    public static int NegotiateSyntax(this ComPtr<IRpcSyntaxNegotiate> thisVtbl, ref RPCOLEMessage pMsg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[3])(@this, pMsgPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, RPCOLEMessage*, int>)@this->LpVtbl[3])(@this, pMsgPtr);
         }
         return ret;
     }
@@ -131,7 +131,7 @@ public unsafe static class RpcSyntaxNegotiateVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int NegotiateSyntax(this ComPtr<IRpcSyntaxNegotiate> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg)
+    public static int NegotiateSyntax(this ComPtr<IRpcSyntaxNegotiate> thisVtbl, Span<RPCOLEMessage> pMsg)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

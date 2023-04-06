@@ -18,9 +18,9 @@ namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
     [NativeName("Name", "__AnonymousRecord_oaidl_L486_C13")]
-    public unsafe partial struct TagVariantUnionUnionUnion
+    public unsafe partial struct VariantUnionUnionUnion
     {
-        public TagVariantUnionUnionUnion
+        public VariantUnionUnionUnion
         (
             long? llVal = null,
             int? lVal = null,
@@ -36,7 +36,7 @@ namespace Silk.NET.Core.Win32Extras
             char* bstrVal = null,
             Silk.NET.Core.Native.IUnknown* punkVal = null,
             Silk.NET.Core.Native.IUnknown* pdispVal = null,
-            TagSafeArray* parray = null,
+            SafeArray* parray = null,
             byte* pbVal = null,
             short* piVal = null,
             int* plVal = null,
@@ -51,8 +51,8 @@ namespace Silk.NET.Core.Win32Extras
             char** pbstrVal = null,
             Silk.NET.Core.Native.IUnknown** ppunkVal = null,
             Silk.NET.Core.Native.IUnknown** ppdispVal = null,
-            TagSafeArray** pparray = null,
-            TagVariant* pvarVal = null,
+            SafeArray** pparray = null,
+            Variant* pvarVal = null,
             void* byref = null,
             byte? cVal = null,
             ushort? uiVal = null,
@@ -67,7 +67,7 @@ namespace Silk.NET.Core.Win32Extras
             ulong* pullVal = null,
             int* pintVal = null,
             uint* puintVal = null,
-            TagVariantUnionUnionUnionUnion? anonymous = null,
+            VariantUnionUnionUnionUnion? anonymous = null,
             void* pvRecord = null,
             Silk.NET.Core.Native.IUnknown* pRecInfo = null
         ) : this()
@@ -402,7 +402,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "SAFEARRAY *")]
         [NativeName("Type.Name", "SAFEARRAY *")]
         [NativeName("Name", "parray")]
-        public TagSafeArray* Parray;
+        public SafeArray* Parray;
 
         [FieldOffset(0)]
         [NativeName("Type", "BYTE *")]
@@ -492,13 +492,13 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "SAFEARRAY **")]
         [NativeName("Type.Name", "SAFEARRAY **")]
         [NativeName("Name", "pparray")]
-        public TagSafeArray** Pparray;
+        public SafeArray** Pparray;
 
         [FieldOffset(0)]
         [NativeName("Type", "VARIANT *")]
         [NativeName("Type.Name", "VARIANT *")]
         [NativeName("Name", "pvarVal")]
-        public TagVariant* PvarVal;
+        public Variant* PvarVal;
 
         [FieldOffset(0)]
         [NativeName("Type", "PVOID")]
@@ -588,7 +588,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "")]
         [NativeName("Type.Name", "__AnonymousRecord_oaidl_L533_C17")]
         [NativeName("Name", "anonymous1")]
-        public TagVariantUnionUnionUnionUnion Anonymous;
+        public VariantUnionUnionUnionUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref void* PvRecord
         {

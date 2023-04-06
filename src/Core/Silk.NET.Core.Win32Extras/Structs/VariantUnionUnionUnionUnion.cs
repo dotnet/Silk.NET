@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "__AnonymousRecord_oaidl_L533_C17")]
-    public unsafe partial struct TagVariantUnionUnionUnionUnion
+    public unsafe partial struct VariantUnionUnionUnionUnion
     {
-        public TagVariantUnionUnionUnionUnion
+        public VariantUnionUnionUnionUnion
         (
             void* pvRecord = null,
             Silk.NET.Core.Native.IUnknown* pRecInfo = null

@@ -1034,7 +1034,14 @@
                 "_SECURITY_ATTRIBUTES"
             ],
             "rename": {
-                "ETW_COMPRESSION_RESUMPTION_MODE": "EtwCompressionResumptionMode"
+                "ETW_COMPRESSION_RESUMPTION_MODE": "EtwCompressionResumptionMode",
+                "tagBLOB": "Blob",
+                "tagMULTI_QI": "MultiQi",
+                "tagRPCOLEMESSAGE": "RPCOLEMessage",
+                "tagSOLE_AUTHENTICATION_LIST": "SoleAuthenticationList",
+                "tagSOLE_AUTHENTICATION_SERVICE": "SoleAuthenticationService",
+                "tagSOLE_AUTHENTICATION_INFO": "SoleAuthenticationInfo",
+                "tagSTATSTG": "STATSTG",
             },
             "bakery": {
                 "profileNames": [
@@ -1062,14 +1069,14 @@
                     "IDispatch": "Silk.NET.Core.Native.IUnknown",
                     "IRecordInfo": "Silk.NET.Core.Native.IUnknown",
                     "ITypeInfo": "Silk.NET.Core.Native.IUnknown",
-                    "tagEXCEPINFO": "TagExceptionInfo",
-                    "tagVARIANT": "TagVariant",
-                    "tagDISPPARAMS": "TagDispatchParams",
-                    "tagSAFEARRAY": "TagSafeArray",
-                    "tagCY": "TagCY",
+                    "tagEXCEPINFO": "ExceptionInfo",
+                    "tagVARIANT": "Variant",
+                    "tagDISPPARAMS": "DispatchParams",
+                    "tagSAFEARRAY": "SafeArray",
+                    "tagCY": "CY",
                     "tagDEC": "TagDecimal",
-                    "tagSAFEARRAYBOUND": "TagSafeArrayBound",
-                    "PfnTagEXCEPINFOvI": "PfnTagExceptionInfovI"
+                    "tagSAFEARRAYBOUND": "SafeArrayBound",
+                    "PfnTagEXCEPINFOvI": "PfnExceptionInfovI"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

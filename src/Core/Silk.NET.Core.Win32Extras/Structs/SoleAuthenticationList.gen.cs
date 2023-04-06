@@ -17,12 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "tagSOLE_AUTHENTICATION_LIST")]
-    public unsafe partial struct TagSOLEAUTHENTICATIONLIST
+    public unsafe partial struct SoleAuthenticationList
     {
-        public TagSOLEAUTHENTICATIONLIST
+        public SoleAuthenticationList
         (
             uint? cAuthInfo = null,
-            TagSOLEAUTHENTICATIONINFO* aAuthInfo = null
+            SoleAuthenticationInfo* aAuthInfo = null
         ) : this()
         {
             if (cAuthInfo is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "SOLE_AUTHENTICATION_INFO *")]
         [NativeName("Type.Name", "SOLE_AUTHENTICATION_INFO *")]
         [NativeName("Name", "aAuthInfo")]
-        public TagSOLEAUTHENTICATIONINFO* AAuthInfo;
+        public SoleAuthenticationInfo* AAuthInfo;
     }
 }

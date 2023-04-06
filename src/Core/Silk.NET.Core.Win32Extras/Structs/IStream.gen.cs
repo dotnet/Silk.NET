@@ -384,22 +384,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Stat(TagSTATSTG* pstatstg, uint grfStatFlag)
+        public readonly unsafe int Stat(STATSTG* pstatstg, uint grfStatFlag)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
+            ret = ((delegate* unmanaged[Cdecl]<IStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Stat(ref TagSTATSTG pstatstg, uint grfStatFlag)
+        public readonly int Stat(ref STATSTG pstatstg, uint grfStatFlag)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTATSTG* pstatstgPtr = &pstatstg)
+            fixed (STATSTG* pstatstgPtr = &pstatstg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
+                ret = ((delegate* unmanaged[Cdecl]<IStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
             }
             return ret;
         }

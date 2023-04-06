@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "tagMULTI_QI")]
-    public unsafe partial struct TagMULTIQI
+    public unsafe partial struct MultiQi
     {
-        public TagMULTIQI
+        public MultiQi
         (
             Guid* pIID = null,
             Silk.NET.Core.Native.IUnknown* pItf = null,

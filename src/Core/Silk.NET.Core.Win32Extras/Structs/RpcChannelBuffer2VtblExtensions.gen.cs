@@ -85,118 +85,118 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage, Guid* riid)
+    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage, Guid* riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
+        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage, ref Guid riid)
+    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage, ref Guid riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref TagRPCOLEMESSAGE pMessage, Guid* riid)
+    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref RPCOLEMessage pMessage, Guid* riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref TagRPCOLEMESSAGE pMessage, ref Guid riid)
+    public static int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref RPCOLEMessage pMessage, ref Guid riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage, uint* pStatus)
+    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage, uint* pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
+        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage, ref uint pStatus)
+    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage, ref uint pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pStatusPtr = &pStatus)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref TagRPCOLEMESSAGE pMessage, uint* pStatus)
+    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref RPCOLEMessage pMessage, uint* pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref TagRPCOLEMESSAGE pMessage, ref uint pStatus)
+    public static int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref RPCOLEMessage pMessage, ref uint pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
             fixed (uint* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FreeBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage)
+    public static unsafe int FreeBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessage);
+        ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessage);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int FreeBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref TagRPCOLEMESSAGE pMessage)
+    public static int FreeBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, ref RPCOLEMessage pMessage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
         }
         return ret;
     }
@@ -305,7 +305,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage, Span<Guid> riid)
+    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage, Span<Guid> riid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -313,7 +313,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, Guid* riid)
+    public static unsafe int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<RPCOLEMessage> pMessage, Guid* riid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -321,7 +321,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, Span<Guid> riid)
+    public static int GetBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<RPCOLEMessage> pMessage, Span<Guid> riid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -329,7 +329,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, TagRPCOLEMESSAGE* pMessage, Span<uint> pStatus)
+    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, RPCOLEMessage* pMessage, Span<uint> pStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -337,7 +337,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, uint* pStatus)
+    public static unsafe int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<RPCOLEMessage> pMessage, uint* pStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -345,7 +345,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, Span<uint> pStatus)
+    public static int SendReceive(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<RPCOLEMessage> pMessage, Span<uint> pStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -353,7 +353,7 @@ public unsafe static class RpcChannelBuffer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FreeBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage)
+    public static int FreeBuffer(this ComPtr<IRpcChannelBuffer2> thisVtbl, Span<RPCOLEMessage> pMessage)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

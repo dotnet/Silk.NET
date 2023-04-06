@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "tagSAFEARRAYBOUND")]
-    public unsafe partial struct TagSafeArrayBound
+    public unsafe partial struct SafeArrayBound
     {
-        public TagSafeArrayBound
+        public SafeArrayBound
         (
             uint? cElements = null,
             int? lLbound = null

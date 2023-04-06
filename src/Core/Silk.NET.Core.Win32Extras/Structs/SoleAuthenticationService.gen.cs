@@ -18,9 +18,9 @@ namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "tagSOLE_AUTHENTICATION_SERVICE")]
-    public unsafe partial struct TagSOLEAUTHENTICATIONSERVICE
+    public unsafe partial struct SoleAuthenticationService
     {
-        public TagSOLEAUTHENTICATIONSERVICE
+        public SoleAuthenticationService
         (
             uint? dwAuthnSvc = null,
             uint? dwAuthzSvc = null,
