@@ -41,13 +41,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public unsafe void FlushVertexArrayRange<T0>([Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            FlushVertexArrayRange((uint) pointer.Length, out pointer.GetPinnableReference());
+            FlushVertexArrayRange((uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), out pointer.GetPinnableReference());
         }
 
         public unsafe void VertexArrayRange<T0>([Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            VertexArrayRange((uint) pointer.Length, out pointer.GetPinnableReference());
+            VertexArrayRange((uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), out pointer.GetPinnableReference());
         }
 
         public unsafe T0 FlushVertexArrayRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged

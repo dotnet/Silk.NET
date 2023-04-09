@@ -425,7 +425,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, (nuint) pData.Length, ref pData.GetPinnableReference(), stride);
+            return WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>
@@ -439,7 +439,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, (nuint) pData.Length, ref pData.GetPinnableReference(), stride);
+            return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>

@@ -59,31 +59,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ARB* binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, length, binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), length, binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ARB binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, length, out binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), length, out binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ARB* binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, out length, binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), out length, binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ARB binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, out length, out binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), out length, out binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void ProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe T0 GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ARB* binaryFormat) where T0 : unmanaged

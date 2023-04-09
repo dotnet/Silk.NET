@@ -167,25 +167,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return NewObjectBuffer((uint) pointer.Length, in pointer.GetPinnableReference(), usage);
+            return NewObjectBuffer((uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
         }
 
         public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return NewObjectBuffer((uint) pointer.Length, in pointer.GetPinnableReference(), usage);
+            return NewObjectBuffer((uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
         }
 
         public unsafe void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            UpdateObjectBuffer(buffer, offset, (uint) pointer.Length, in pointer.GetPinnableReference(), preserve);
+            UpdateObjectBuffer(buffer, offset, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
         }
 
         public unsafe void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            UpdateObjectBuffer(buffer, offset, (uint) pointer.Length, in pointer.GetPinnableReference(), preserve);
+            UpdateObjectBuffer(buffer, offset, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
         }
 
         public unsafe float GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname)

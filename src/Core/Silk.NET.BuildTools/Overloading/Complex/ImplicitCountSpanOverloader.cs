@@ -143,7 +143,7 @@ namespace Silk.NET.BuildTools.Overloading
                         $"$VAR${original.Parameters[spanParamIndex].Count?.Expression}"
                     ).Replace("$VAR$", $"{original.Parameters[spanParamIndex].Name}.Length");
                     var lengthParam = $"({original.Parameters[countParamIndex].Type}) " + (
-                        original.Parameters[spanParamIndex].Type.IsSinglePointerTo("void")
+                        original.Parameters[spanParamIndex].Type.IsGenericTypeParameterReference
                             ? $"(({lengthExpr}) * Unsafe.SizeOf<{original.Parameters[spanParamIndex].Type.Name}>())"
                             : lengthExpr);
                     parameters[countParamIndex] = null;

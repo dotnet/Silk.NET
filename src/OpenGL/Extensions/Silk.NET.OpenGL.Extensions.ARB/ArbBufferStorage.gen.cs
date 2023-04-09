@@ -47,25 +47,25 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageTarget target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageTarget target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public ArbBufferStorage(INativeContext ctx)

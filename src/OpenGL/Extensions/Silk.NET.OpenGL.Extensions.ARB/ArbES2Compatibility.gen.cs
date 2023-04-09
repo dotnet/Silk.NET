@@ -128,7 +128,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -140,13 +140,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -158,13 +158,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -176,13 +176,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -194,7 +194,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe int GetShaderPrecisionFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* range)

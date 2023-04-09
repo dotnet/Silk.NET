@@ -2039,13 +2039,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe void PathString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV format, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pathString) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            PathString(path, format, (uint) pathString.Length, in pathString.GetPinnableReference());
+            PathString(path, format, (uint) ((pathString.Length) * Unsafe.SizeOf<T0>()), in pathString.GetPinnableReference());
         }
 
         public unsafe void PathString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathStringFormat format, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pathString) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            PathString(path, format, (uint) pathString.Length, in pathString.GetPinnableReference());
+            PathString(path, format, (uint) ((pathString.Length) * Unsafe.SizeOf<T0>()), in pathString.GetPinnableReference());
         }
 
         public unsafe void PathSubCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* coords)

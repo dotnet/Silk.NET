@@ -134,61 +134,61 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void GetnCompressedTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnCompressedTexImage(target, lod, (uint) img.Length, out img.GetPinnableReference());
+            GetnCompressedTexImage(target, lod, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnCompressedTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnCompressedTexImage(target, lod, (uint) img.Length, out img.GetPinnableReference());
+            GetnCompressedTexImage(target, lod, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) img.Length, out img.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((img.Length) * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
         public unsafe float GetnUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location)
@@ -227,25 +227,25 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe T0 GetnCompressedTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize) where T0 : unmanaged

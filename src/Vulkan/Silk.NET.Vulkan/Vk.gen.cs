@@ -3201,7 +3201,7 @@ namespace Silk.NET.Vulkan
         public unsafe void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CmdPushConstants(commandBuffer, layout, stageFlags, offset, (uint) pValues.Length, ref pValues.GetPinnableReference());
+            CmdPushConstants(commandBuffer, layout, stageFlags, offset, (uint) ((pValues.Length) * Unsafe.SizeOf<T0>()), ref pValues.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3229,7 +3229,7 @@ namespace Silk.NET.Vulkan
         public unsafe void CmdUpdateBuffer<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, (ulong) pData.Length, ref pData.GetPinnableReference());
+            CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, (ulong) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3473,7 +3473,7 @@ namespace Silk.NET.Vulkan
         public unsafe Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, (nuint) pData.Length, ref pData.GetPinnableReference(), stride, flags);
+            return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride, flags);
         }
 
         /// <summary>To be documented.</summary>

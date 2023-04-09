@@ -250,14 +250,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe Result GetRayTracingCaptureReplayShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return GetRayTracingCaptureReplayShaderGroupHandles(device, pipeline, firstGroup, groupCount, (nuint) pData.Length, ref pData.GetPinnableReference());
+            return GetRayTracingCaptureReplayShaderGroupHandles(device, pipeline, firstGroup, groupCount, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         public unsafe Result GetRayTracingShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return GetRayTracingShaderGroupHandles(device, pipeline, firstGroup, groupCount, (nuint) pData.Length, ref pData.GetPinnableReference());
+            return GetRayTracingShaderGroupHandles(device, pipeline, firstGroup, groupCount, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference());
         }
 
         public KhrRayTracingPipeline(INativeContext ctx)
