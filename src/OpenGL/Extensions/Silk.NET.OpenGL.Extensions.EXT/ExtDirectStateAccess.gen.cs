@@ -4904,433 +4904,433 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedMultiTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage1D(texture, target, level, internalformat, width, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) bits.Length, in bits.GetPinnableReference());
+            CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((bits.Length) * Unsafe.SizeOf<T0>()), in bits.GetPinnableReference());
         }
 
         public unsafe void FramebufferDrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EXT> bufs)
@@ -5348,13 +5348,13 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         public unsafe void NamedBufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferStorage(buffer, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            NamedBufferStorage(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void NamedBufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferStorage(buffer, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            NamedBufferStorage(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void NamedProgramLocalParameters4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
@@ -5396,25 +5396,25 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         public unsafe void NamedProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedProgramString(program, target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            NamedProgramString(program, target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void NamedProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedProgramString(program, target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            NamedProgramString(program, target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void NamedProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedProgramString(program, target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            NamedProgramString(program, target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void NamedProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedProgramString(program, target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            NamedProgramString(program, target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> value)

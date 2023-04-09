@@ -192,14 +192,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public unsafe void GetDescriptor<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorGetInfoEXT* pDescriptorInfo, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetDescriptor(device, pDescriptorInfo, (nuint) pDescriptor.Length, ref pDescriptor.GetPinnableReference());
+            GetDescriptor(device, pDescriptorInfo, (nuint) ((pDescriptor.Length) * Unsafe.SizeOf<T0>()), ref pDescriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         public unsafe void GetDescriptor<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorGetInfoEXT pDescriptorInfo, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetDescriptor(device, in pDescriptorInfo, (nuint) pDescriptor.Length, ref pDescriptor.GetPinnableReference());
+            GetDescriptor(device, in pDescriptorInfo, (nuint) ((pDescriptor.Length) * Unsafe.SizeOf<T0>()), ref pDescriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

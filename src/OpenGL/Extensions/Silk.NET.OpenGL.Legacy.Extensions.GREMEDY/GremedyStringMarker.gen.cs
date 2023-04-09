@@ -29,7 +29,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
         public unsafe void StringMarker<T0>([Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            StringMarker((uint) @string.Length, in @string.GetPinnableReference());
+            StringMarker((uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public GremedyStringMarker(INativeContext ctx)

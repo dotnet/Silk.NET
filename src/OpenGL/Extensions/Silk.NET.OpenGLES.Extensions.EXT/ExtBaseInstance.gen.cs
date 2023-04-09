@@ -77,49 +77,49 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public ExtBaseInstance(INativeContext ctx)

@@ -103,7 +103,7 @@ namespace Silk.NET.BuildTools.Bind
                     Directory.CreateDirectory(folder);
                 }
 
-                proj.Value.WriteGeneratedCode(tmpFolder, profile, task);
+                proj.Value.WriteGeneratedCode(tmpFolder, folder, profile, task);
                 if (doCheck)
                 {
                     var filesBefore = Directory.GetFiles(folder, "*", SearchOption.AllDirectories)

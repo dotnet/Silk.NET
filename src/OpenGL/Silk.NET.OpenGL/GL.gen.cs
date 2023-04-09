@@ -11181,37 +11181,37 @@ namespace Silk.NET.OpenGL
         public unsafe void CompressedTextureSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage1D(texture, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTextureSubImage1D(texture, level, xoffset, width, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage1D(texture, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTextureSubImage1D(texture, level, xoffset, width, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTextureSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe uint CreateBuffer()
@@ -11448,223 +11448,223 @@ namespace Silk.NET.OpenGL
         public unsafe void GetCompressedTextureImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetCompressedTextureImage(texture, level, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetCompressedTextureImage(texture, level, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetCompressedTextureSubImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetNamedBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetNamedBufferSubData(buffer, offset, (nuint) data.Length, out data.GetPinnableReference());
+            GetNamedBufferSubData(buffer, offset, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+            GetnColorTable(target, format, type, (uint) ((table.Length) * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
         }
 
         public unsafe void GetnCompressedTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnCompressedTexImage(target, lod, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnCompressedTexImage(target, lod, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnCompressedTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnCompressedTexImage(target, lod, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnCompressedTexImage(target, lod, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnConvolutionFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+            GetnConvolutionFilter(target, format, type, (uint) ((image.Length) * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnHistogram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnHistogram(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe void GetnMinmax<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+            GetnMinmax(target, reset, format, type, (uint) ((values.Length) * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
         public unsafe byte GetnPolygonStipple()
@@ -11691,337 +11691,337 @@ namespace Silk.NET.OpenGL
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) ((column.Length) * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnSeparableFilter<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
         }
 
         public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SeparableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+            GetnSeparableFilter(target, format, type, (uint) ((row.Length) * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) ((column.Length) * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetnTexImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetnTexImage(target, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe double GetnUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location)
@@ -12060,49 +12060,49 @@ namespace Silk.NET.OpenGL
         public unsafe void GetTextureImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureImage(texture, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureImage(texture, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureImage(texture, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureImage(texture, level, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureSubImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureSubImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureSubImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void GetTextureSubImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) ((pixels.Length) * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
         }
 
         public unsafe void InvalidateNamedFramebufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GLEnum> attachments)
@@ -12132,31 +12132,31 @@ namespace Silk.NET.OpenGL
         public unsafe void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferData(buffer, (nuint) data.Length, in data.GetPinnableReference(), usage);
+            NamedBufferData(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
         public unsafe void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferData(buffer, (nuint) data.Length, in data.GetPinnableReference(), usage);
+            NamedBufferData(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
         public unsafe void NamedBufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferStorage(buffer, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            NamedBufferStorage(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void NamedBufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferStorage(buffer, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            NamedBufferStorage(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void NamedBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            NamedBufferSubData(buffer, offset, (nuint) data.Length, in data.GetPinnableReference());
+            NamedBufferSubData(buffer, offset, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void NamedFramebufferDrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GLEnum> bufs)
@@ -12174,25 +12174,25 @@ namespace Silk.NET.OpenGL
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void ReadnPixels<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+            ReadnPixels(x, y, width, height, format, type, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void VertexArrayVertexBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vaobj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> strides)
@@ -12594,25 +12594,25 @@ namespace Silk.NET.OpenGL
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageTarget target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void BufferStorage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageTarget target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+            BufferStorage(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public unsafe void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum severity, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled)
@@ -17698,49 +17698,49 @@ namespace Silk.NET.OpenGL
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+            DrawElementsInstancedBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint baseinstance) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) ((indices.Length) * Unsafe.SizeOf<T0>()), type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
         }
 
         public unsafe void GetInternalformat([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
@@ -17853,25 +17853,25 @@ namespace Silk.NET.OpenGL
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, length, binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), length, binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, length, out binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), length, out binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, out length, binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), out length, binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetProgramBinary(program, (uint) binary.Length, out length, out binaryFormat, out binary.GetPinnableReference());
+            GetProgramBinary(program, (uint) ((binary.Length) * Unsafe.SizeOf<T0>()), out length, out binaryFormat, out binary.GetPinnableReference());
         }
 
         public unsafe void GetProgramPipelineInfoLog([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pipeline, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> infoLog)
@@ -17901,7 +17901,7 @@ namespace Silk.NET.OpenGL
         public unsafe void ProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ProgramUniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> value)
@@ -18111,7 +18111,7 @@ namespace Silk.NET.OpenGL
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -18123,13 +18123,13 @@ namespace Silk.NET.OpenGL
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -18141,13 +18141,13 @@ namespace Silk.NET.OpenGL
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -18159,13 +18159,13 @@ namespace Silk.NET.OpenGL
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
@@ -18177,7 +18177,7 @@ namespace Silk.NET.OpenGL
         public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) ((binary.Length) * Unsafe.SizeOf<T0>()));
         }
 
         public unsafe void DeleteTransformFeedback([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ids)
@@ -19696,37 +19696,37 @@ namespace Silk.NET.OpenGL
         public unsafe void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+            BufferData(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
         public unsafe void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+            BufferData(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
         public unsafe void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+            BufferData(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
         public unsafe void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+            BufferData(target, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
         public unsafe void BufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferSubData(target, offset, (nuint) data.Length, in data.GetPinnableReference());
+            BufferSubData(target, offset, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void BufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            BufferSubData(target, offset, (nuint) data.Length, in data.GetPinnableReference());
+            BufferSubData(target, offset, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void DeleteBuffer([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffers)
@@ -19810,13 +19810,13 @@ namespace Silk.NET.OpenGL
         public unsafe void GetBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetBufferSubData(target, offset, (nuint) data.Length, out data.GetPinnableReference());
+            GetBufferSubData(target, offset, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void GetBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            GetBufferSubData(target, offset, (nuint) data.Length, out data.GetPinnableReference());
+            GetBufferSubData(target, offset, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "drawcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count)
@@ -19906,145 +19906,145 @@ namespace Silk.NET.OpenGL
         public unsafe void CompressedTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage1D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void CompressedTexSubImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
         public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint textures)

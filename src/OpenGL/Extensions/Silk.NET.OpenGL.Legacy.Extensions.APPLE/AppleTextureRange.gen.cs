@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public unsafe void TextureRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            TextureRange(target, (uint) pointer.Length, in pointer.GetPinnableReference());
+            TextureRange(target, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference());
         }
 
         public unsafe void* GetTexParameterPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE pname)

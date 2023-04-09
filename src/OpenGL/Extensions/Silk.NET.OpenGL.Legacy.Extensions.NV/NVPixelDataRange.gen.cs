@@ -41,13 +41,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            PixelDataRange(target, (uint) pointer.Length, in pointer.GetPinnableReference());
+            PixelDataRange(target, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference());
         }
 
         public unsafe void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelDataRangeTargetNV target, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            PixelDataRange(target, (uint) pointer.Length, in pointer.GetPinnableReference());
+            PixelDataRange(target, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference());
         }
 
         public NVPixelDataRange(INativeContext ctx)

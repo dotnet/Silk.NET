@@ -530,25 +530,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe void ProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ProgramString(target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            ProgramString(target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void ProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ProgramString(target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            ProgramString(target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void ProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ProgramString(target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            ProgramString(target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe void ProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            ProgramString(target, format, (uint) @string.Length, in @string.GetPinnableReference());
+            ProgramString(target, format, (uint) ((@string.Length) * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public unsafe uint GenProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n)
