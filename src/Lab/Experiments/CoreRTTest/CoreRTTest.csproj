@@ -53,7 +53,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.4-*" />
+        <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.5-*" />
     </ItemGroup>
 
 </Project>
