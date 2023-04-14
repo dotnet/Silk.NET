@@ -26,13 +26,13 @@ namespace Silk.NET.SPIRVReflect
             uint? entryPointId = null,
             uint? entryPointCount = null,
             ReflectEntryPoint* entryPoints = null,
-            SourceLanguage? sourceLanguage = null,
+            Silk.NET.SPIRV.SourceLanguage? sourceLanguage = null,
             uint? sourceLanguageVersion = null,
             byte* sourceFile = null,
             byte* sourceSource = null,
             uint? capabilityCount = null,
             ReflectCapability* capabilities = null,
-            ExecutionModel? spirvExecutionModel = null,
+            Silk.NET.SPIRV.ExecutionModel? spirvExecutionModel = null,
             ReflectShaderStageFlagBits? shaderStage = null,
             uint? descriptorBindingCount = null,
             ReflectDescriptorBinding* descriptorBindings = null,
@@ -203,7 +203,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvSourceLanguage")]
         [NativeName("Type.Name", "SpvSourceLanguage")]
         [NativeName("Name", "source_language")]
-        public SourceLanguage SourceLanguage;
+        public Silk.NET.SPIRV.SourceLanguage SourceLanguage;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -233,7 +233,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvExecutionModel")]
         [NativeName("Type.Name", "SpvExecutionModel")]
         [NativeName("Name", "spirv_execution_model")]
-        public ExecutionModel SpirvExecutionModel;
+        public Silk.NET.SPIRV.ExecutionModel SpirvExecutionModel;
 
         [NativeName("Type", "SpvReflectShaderStageFlagBits")]
         [NativeName("Type.Name", "SpvReflectShaderStageFlagBits")]

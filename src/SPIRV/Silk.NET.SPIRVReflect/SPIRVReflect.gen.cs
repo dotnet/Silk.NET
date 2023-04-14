@@ -16,21 +16,6 @@ namespace Silk.NET.SPIRVReflect
 {
     public unsafe partial class SPIRVReflect : NativeAPI
     {
-        [NativeName("Type", "const unsigned int")]
-        [NativeName("Name", "SpvMagicNumber")]
-        public const uint MagicNumber = unchecked((uint) 0x7230203);
-        [NativeName("Type", "const unsigned int")]
-        [NativeName("Name", "SpvVersion")]
-        public const uint Version = unchecked((uint) 0x10600);
-        [NativeName("Type", "const unsigned int")]
-        [NativeName("Name", "SpvRevision")]
-        public const uint Revision = unchecked((uint) 0x1);
-        [NativeName("Type", "const unsigned int")]
-        [NativeName("Name", "SpvOpCodeMask")]
-        public const uint OpCodeMask = unchecked((uint) 0xFFFF);
-        [NativeName("Type", "const unsigned int")]
-        [NativeName("Name", "SpvWordCountShift")]
-        public const uint WordCountShift = unchecked((uint) 0x10);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 528, Column 18 in spirv_reflect.h")]
@@ -2195,13 +2180,13 @@ namespace Silk.NET.SPIRVReflect
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1430, Column 13 in spirv_reflect.h")]
         [NativeApi(EntryPoint = "spvReflectSourceLanguage")]
-        public unsafe partial byte* ReflectSourceLanguage(SourceLanguage source_lang);
+        public unsafe partial byte* ReflectSourceLanguage(Silk.NET.SPIRV.SourceLanguage source_lang);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1430, Column 13 in spirv_reflect.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "spvReflectSourceLanguage")]
-        public partial string ReflectSourceLanguageS(SourceLanguage source_lang);
+        public partial string ReflectSourceLanguageS(Silk.NET.SPIRV.SourceLanguage source_lang);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1438, Column 13 in spirv_reflect.h")]

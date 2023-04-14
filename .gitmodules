@@ -40,3 +40,6 @@
 [submodule "build/submodules/SPIRV-Reflect"]
 	path = build/submodules/SPIRV-Reflect
 	url = https://github.com/KhronosGroup/SPIRV-Reflect
+[submodule "build/submodules/SPIRV-Headers"]
+	path = build/submodules/SPIRV-Headers
+	url = https://github.com/KhronosGroup/SPIRV-Headers
