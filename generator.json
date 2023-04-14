@@ -2394,6 +2394,86 @@
             ]
         },
         {
+            "profileName": "SPIRVReflect",
+            "sources": [
+                "build/submodules/SPIRV-Reflect/spirv_reflect.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "spirv-reflect",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-obsolete-enum",
+                "typemap-native",
+                "no-extra-dir",
+                "use-enum-name-as-prefix"
+            ],
+            "converter": {},
+            "prefix": "spv",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/SPIRV-Reflect"
+                ],
+                "traverse": [
+                    "build/submodules/SPIRV-Reflect/spirv_reflect.h",
+                    "build/submodules/SPIRV-Reflect/include/spirv/unified1/spirv.h"
+                ],
+                "classes": {
+                    "spirv_reflect.h": "[Core]SPIRVReflect"
+                }
+            },
+            "exclude": [
+                "SPV_REVISION",
+                "SPV_VERSION"
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "spirv_reflect"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.SPIRVReflect",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.SPIRVReflect",
+            "extensionsNamespace": "Silk.NET.SPIRVReflect.Extensions",
+            "nameContainer": {
+                "linux-x64": "libspirv-reflect.so",
+                "win-x64": "spirv-reflect.dll",
+                "win-x86": "spirv-reflect.dll",
+                "osx-x64": "libspirv-reflect.dylib",
+                "android": "libspirv-reflect.so",
+                "className": "SPIRVReflectLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "SpvReflectTypeDescription::Traits": "Traits",
+                    "SpvReflectShaderModule::Internal": "Internal",
+                    "SpvReflectNumericTraits::Scalar": "Scalar",
+                    "SpvReflectNumericTraits::Vector": "Vector",
+                    "SpvReflectNumericTraits::Matrix": "Matrix",
+                    "SpvReflectEntryPoint::LocalSize": "LocalSize"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "WGL",
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
