@@ -23,9 +23,9 @@ namespace Silk.NET.WebGPU
         public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string[] Windows64 => new[] { "libwgpu_native.dll" };
+        public override string[] Windows64 => new[] { "wgpu_native.dll" };
 
         /// <inheritdoc />
-        public override string[] Windows86 => new[] { "libwgpu_native.dll" };
+        public override string[] Windows86 => new[] { "wgpu_native.dll" };
     }
 }
