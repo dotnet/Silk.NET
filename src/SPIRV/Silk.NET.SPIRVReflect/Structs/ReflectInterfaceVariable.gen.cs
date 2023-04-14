@@ -24,10 +24,10 @@ namespace Silk.NET.SPIRVReflect
             uint? spirvId = null,
             byte* name = null,
             uint? location = null,
-            StorageClass? storageClass = null,
+            Silk.NET.SPIRV.StorageClass? storageClass = null,
             byte* semantic = null,
             uint? decorationFlags = null,
-            BuiltIn? builtIn = null,
+            Silk.NET.SPIRV.BuiltIn? builtIn = null,
             ReflectNumericTraits? numeric = null,
             ReflectArrayTraits? array = null,
             uint? memberCount = null,
@@ -127,7 +127,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvStorageClass")]
         [NativeName("Type.Name", "SpvStorageClass")]
         [NativeName("Name", "storage_class")]
-        public StorageClass StorageClass;
+        public Silk.NET.SPIRV.StorageClass StorageClass;
 
         [NativeName("Type", "const char *")]
         [NativeName("Type.Name", "const char *")]
@@ -142,7 +142,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvBuiltIn")]
         [NativeName("Type.Name", "SpvBuiltIn")]
         [NativeName("Name", "built_in")]
-        public BuiltIn BuiltIn;
+        public Silk.NET.SPIRV.BuiltIn BuiltIn;
 
         [NativeName("Type", "SpvReflectNumericTraits")]
         [NativeName("Type.Name", "SpvReflectNumericTraits")]

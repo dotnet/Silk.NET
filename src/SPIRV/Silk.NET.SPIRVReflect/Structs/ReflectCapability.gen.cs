@@ -21,7 +21,7 @@ namespace Silk.NET.SPIRVReflect
     {
         public ReflectCapability
         (
-            Capability? value = null,
+            Silk.NET.SPIRV.Capability? value = null,
             uint? wordOffset = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvCapability")]
         [NativeName("Type.Name", "SpvCapability")]
         [NativeName("Name", "value")]
-        public Capability Value;
+        public Silk.NET.SPIRV.Capability Value;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

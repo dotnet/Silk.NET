@@ -21,12 +21,12 @@ namespace Silk.NET.SPIRVReflect
     {
         public ReflectImageTraits
         (
-            Dim? dim = null,
+            Silk.NET.SPIRV.Dim? dim = null,
             uint? depth = null,
             uint? arrayed = null,
             uint? ms = null,
             uint? sampled = null,
-            ImageFormat? imageFormat = null
+            Silk.NET.SPIRV.ImageFormat? imageFormat = null
         ) : this()
         {
             if (dim is not null)
@@ -64,7 +64,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvDim")]
         [NativeName("Type.Name", "SpvDim")]
         [NativeName("Name", "dim")]
-        public Dim Dim;
+        public Silk.NET.SPIRV.Dim Dim;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -89,6 +89,6 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvImageFormat")]
         [NativeName("Type.Name", "SpvImageFormat")]
         [NativeName("Name", "image_format")]
-        public ImageFormat ImageFormat;
+        public Silk.NET.SPIRV.ImageFormat ImageFormat;
     }
 }

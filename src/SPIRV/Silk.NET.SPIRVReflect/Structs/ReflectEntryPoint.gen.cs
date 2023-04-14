@@ -23,7 +23,7 @@ namespace Silk.NET.SPIRVReflect
         (
             byte* name = null,
             uint? id = null,
-            ExecutionModel? spirvExecutionModel = null,
+            Silk.NET.SPIRV.ExecutionModel? spirvExecutionModel = null,
             ReflectShaderStageFlagBits? shaderStage = null,
             uint? inputVariableCount = null,
             ReflectInterfaceVariable** inputVariables = null,
@@ -38,7 +38,7 @@ namespace Silk.NET.SPIRVReflect
             uint? usedPushConstantCount = null,
             uint* usedPushConstants = null,
             uint? executionModeCount = null,
-            ExecutionMode* executionModes = null,
+            Silk.NET.SPIRV.ExecutionMode* executionModes = null,
             LocalSize? localSize = null,
             uint? invocations = null,
             uint? outputVertices = null
@@ -164,7 +164,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvExecutionModel")]
         [NativeName("Type.Name", "SpvExecutionModel")]
         [NativeName("Name", "spirv_execution_model")]
-        public ExecutionModel SpirvExecutionModel;
+        public Silk.NET.SPIRV.ExecutionModel SpirvExecutionModel;
 
         [NativeName("Type", "SpvReflectShaderStageFlagBits")]
         [NativeName("Type.Name", "SpvReflectShaderStageFlagBits")]
@@ -239,7 +239,7 @@ namespace Silk.NET.SPIRVReflect
         [NativeName("Type", "SpvExecutionMode *")]
         [NativeName("Type.Name", "SpvExecutionMode *")]
         [NativeName("Name", "execution_modes")]
-        public ExecutionMode* ExecutionModes;
+        public Silk.NET.SPIRV.ExecutionMode* ExecutionModes;
 
         [NativeName("Type", "struct LocalSize")]
         [NativeName("Type.Name", "struct LocalSize")]
