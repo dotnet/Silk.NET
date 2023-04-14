@@ -56,23 +56,37 @@ public static class EnumPostProcessor
             {
                 testName = testName.Underscore();
             }
-            
-            var prefix = @enum.Tokens.Count == 1
-                ? Utilities.FindCommonPrefix
-                    (new List<string> { @enum.Tokens[0].NativeName, testName }, true, false)
-                : Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.NativeName).ToList(), false, false);
 
-            if (@enum.Tokens.Any(x => x.NativeName.Length <= prefix.Length))
+            foreach(var token in @enum.Tokens) {
+                token.TrimmingName = @enum.NativeName.Underscore();
+            }
+
+            string prefix;
+            if (@enum.Tokens.Count == 1) 
+            {
+                prefix = Utilities.FindCommonPrefix(new List<string> { @enum.Tokens[0].TrimmingName, testName }, true, false);
+            }
+            // else if (@enum.Tokens.Any(x => x.NativeName.Contains('_')))
+            // {
+            //     prefix = Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.NativeName).ToList(), false, false);
+            // }
+            else
+            {
+                prefix = Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.TrimmingName).ToList(), false, false);
+                prefix = prefix[..(prefix.Length - prefix.Count(y => y == '_'))];
+            }
+            
+            if (@enum.Tokens.Any(x => x.TrimmingName.Length <= prefix.Length))
             {
                 // Second pass, put the enum name in the loop to see if it makes a difference
                 prefix = Utilities.FindCommonPrefix
                 (
-                    @enum.Tokens.Select(x => x.NativeName).Concat(Enumerable.Repeat(testName, 1)).ToList(),
+                    @enum.Tokens.Select(x => x.TrimmingName).Concat(Enumerable.Repeat(testName, 1)).ToList(),
                     false, false
                 );
             }
 
-            if (@enum.Tokens.Any(x => x.NativeName.Length <= prefix.Length))
+            if (@enum.Tokens.Any(x => x.TrimmingName.Length <= prefix.Length))
             {
                 // Skip
                 continue;
@@ -98,7 +112,7 @@ public static class EnumPostProcessor
                 (
                     x =>
                     {
-                        var newName = Naming.Translate(x.NativeName[prefix.Length..], task.FunctionPrefix);
+                        var newName = Naming.Translate(x.TrimmingName[prefix.Length..], task.FunctionPrefix);
                         if (newName == x.Name)
                         {
                             return null;

@@ -21,6 +21,13 @@ namespace Silk.NET.BuildTools.Common.Enums
         /// </summary>
         public string NativeName { get; set; } = string.Empty;
 
+        private string? _trimmingName;
+        public string TrimmingName
+        {
+            get => _trimmingName ?? NativeName;
+            set => _trimmingName = value;
+        }
+
         /// <summary>
         /// Gets or sets the numeric value of this token.
         /// </summary>
