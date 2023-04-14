@@ -77,7 +77,10 @@ namespace Silk.NET.Core.Loader
         /// </summary>
         public virtual string[] IOS => MacOS;
 
-        public virtual string Browser => throw new NotImplementedException("No Browser library available");
+        /// <summary>
+        /// Gets the library name to use on a browser
+        /// </summary>
+        public virtual string[] Browser => throw new NotImplementedException("No Browser library available");
 
         /// <summary>
         /// Gets the possible library names to use for the current platform.
