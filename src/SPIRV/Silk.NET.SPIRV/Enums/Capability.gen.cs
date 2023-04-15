@@ -105,7 +105,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvCapabilityImageBuffer")]
         ImageBuffer = 0x2F,
         [NativeName("Name", "SpvCapabilityImageMSArray")]
-        ImageMsarray = 0x30,
+        ImageMSArray = 0x30,
         [NativeName("Name", "SpvCapabilityStorageImageExtendedFormats")]
         StorageImageExtendedFormats = 0x31,
         [NativeName("Name", "SpvCapabilityImageQuery")]
@@ -351,7 +351,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvCapabilityFragmentShaderShadingRateInterlockEXT")]
         FragmentShaderShadingRateInterlockExt = 0x14FC,
         [NativeName("Name", "SpvCapabilityShaderSMBuiltinsNV")]
-        ShaderSmbuiltinsNV = 0x14FD,
+        ShaderSMBuiltinsNV = 0x14FD,
         [NativeName("Name", "SpvCapabilityFragmentShaderPixelInterlockEXT")]
         FragmentShaderPixelInterlockExt = 0x1502,
         [NativeName("Name", "SpvCapabilityDemoteToHelperInvocation")]
@@ -407,9 +407,9 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvCapabilityFunctionFloatControlINTEL")]
         FunctionFloatControlIntel = 0x16BD,
         [NativeName("Name", "SpvCapabilityFPGAMemoryAttributesINTEL")]
-        FpgamemoryAttributesIntel = 0x16C0,
+        FpgaMemoryAttributesIntel = 0x16C0,
         [NativeName("Name", "SpvCapabilityFPFastMathModeINTEL")]
-        FpfastMathModeIntel = 0x16CD,
+        FPFastMathModeIntel = 0x16CD,
         [NativeName("Name", "SpvCapabilityArbitraryPrecisionIntegersINTEL")]
         ArbitraryPrecisionIntegersIntel = 0x16D4,
         [NativeName("Name", "SpvCapabilityArbitraryPrecisionFloatingPointINTEL")]
@@ -417,37 +417,37 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvCapabilityUnstructuredLoopControlsINTEL")]
         UnstructuredLoopControlsIntel = 0x16FE,
         [NativeName("Name", "SpvCapabilityFPGALoopControlsINTEL")]
-        FpgaloopControlsIntel = 0x1700,
+        FpgaLoopControlsIntel = 0x1700,
         [NativeName("Name", "SpvCapabilityKernelAttributesINTEL")]
         KernelAttributesIntel = 0x1704,
         [NativeName("Name", "SpvCapabilityFPGAKernelAttributesINTEL")]
-        FpgakernelAttributesIntel = 0x1709,
+        FpgaKernelAttributesIntel = 0x1709,
         [NativeName("Name", "SpvCapabilityFPGAMemoryAccessesINTEL")]
-        FpgamemoryAccessesIntel = 0x170A,
+        FpgaMemoryAccessesIntel = 0x170A,
         [NativeName("Name", "SpvCapabilityFPGAClusterAttributesINTEL")]
-        FpgaclusterAttributesIntel = 0x1710,
+        FpgaClusterAttributesIntel = 0x1710,
         [NativeName("Name", "SpvCapabilityLoopFuseINTEL")]
         LoopFuseIntel = 0x1712,
         [NativeName("Name", "SpvCapabilityFPGADSPControlINTEL")]
-        FpgadspcontrolIntel = 0x1714,
+        FpgadspControlIntel = 0x1714,
         [NativeName("Name", "SpvCapabilityMemoryAccessAliasingINTEL")]
         MemoryAccessAliasingIntel = 0x1716,
         [NativeName("Name", "SpvCapabilityFPGAInvocationPipeliningAttributesINTEL")]
-        FpgainvocationPipeliningAttributesIntel = 0x171C,
+        FpgaInvocationPipeliningAttributesIntel = 0x171C,
         [NativeName("Name", "SpvCapabilityFPGABufferLocationINTEL")]
-        FpgabufferLocationIntel = 0x1720,
+        FpgaBufferLocationIntel = 0x1720,
         [NativeName("Name", "SpvCapabilityArbitraryPrecisionFixedPointINTEL")]
         ArbitraryPrecisionFixedPointIntel = 0x1722,
         [NativeName("Name", "SpvCapabilityUSMStorageClassesINTEL")]
-        UsmstorageClassesIntel = 0x172F,
+        UsmStorageClassesIntel = 0x172F,
         [NativeName("Name", "SpvCapabilityRuntimeAlignedAttributeINTEL")]
         RuntimeAlignedAttributeIntel = 0x1733,
         [NativeName("Name", "SpvCapabilityIOPipesINTEL")]
-        IopipesIntel = 0x1737,
+        IOPipesIntel = 0x1737,
         [NativeName("Name", "SpvCapabilityBlockingPipesINTEL")]
         BlockingPipesIntel = 0x1739,
         [NativeName("Name", "SpvCapabilityFPGARegINTEL")]
-        FpgaregIntel = 0x173C,
+        FpgaRegIntel = 0x173C,
         [NativeName("Name", "SpvCapabilityDotProductInputAll")]
         DotProductInputAll = 0x1780,
         [NativeName("Name", "SpvCapabilityDotProductInputAllKHR")]
@@ -483,15 +483,15 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvCapabilityDebugInfoModuleINTEL")]
         DebugInfoModuleIntel = 0x17E2,
         [NativeName("Name", "SpvCapabilityBFloat16ConversionINTEL")]
-        BFloat16ConversionIntel = 0x17E3,
+        Float16ConversionIntel = 0x17E3,
         [NativeName("Name", "SpvCapabilitySplitBarrierINTEL")]
         SplitBarrierIntel = 0x17FD,
         [NativeName("Name", "SpvCapabilityFPGAKernelAttributesv2INTEL")]
-        FpgakernelAttributesv2intel = 0x1811,
+        FpgaKernelAttributesv2intel = 0x1811,
         [NativeName("Name", "SpvCapabilityFPGALatencyControlINTEL")]
-        FpgalatencyControlIntel = 0x181B,
+        FpgaLatencyControlIntel = 0x181B,
         [NativeName("Name", "SpvCapabilityFPGAArgumentInterfacesINTEL")]
-        FpgaargumentInterfacesIntel = 0x181E,
+        FpgaArgumentInterfacesIntel = 0x181E,
         [NativeName("Name", "SpvCapabilityGroupUniformArithmeticKHR")]
         GroupUniformArithmeticKhr = 0x1900,
         [NativeName("Name", "SpvCapabilityMax")]

@@ -99,33 +99,33 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "WGPUTextureFormat_Depth32FloatStencil8")]
         Depth32floatStencil8 = 0x2A,
         [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnorm")]
-        BC1Rgbaunorm = 0x2B,
+        BC1RgbaUnorm = 0x2B,
         [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnormSrgb")]
-        BC1RgbaunormSrgb = 0x2C,
+        BC1RgbaUnormSrgb = 0x2C,
         [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnorm")]
-        BC2Rgbaunorm = 0x2D,
+        BC2RgbaUnorm = 0x2D,
         [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnormSrgb")]
-        BC2RgbaunormSrgb = 0x2E,
+        BC2RgbaUnormSrgb = 0x2E,
         [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnorm")]
-        BC3Rgbaunorm = 0x2F,
+        BC3RgbaUnorm = 0x2F,
         [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnormSrgb")]
-        BC3RgbaunormSrgb = 0x30,
+        BC3RgbaUnormSrgb = 0x30,
         [NativeName("Name", "WGPUTextureFormat_BC4RUnorm")]
         BC4RUnorm = 0x31,
         [NativeName("Name", "WGPUTextureFormat_BC4RSnorm")]
         BC4RSnorm = 0x32,
         [NativeName("Name", "WGPUTextureFormat_BC5RGUnorm")]
-        BC5Rgunorm = 0x33,
+        BC5RGUnorm = 0x33,
         [NativeName("Name", "WGPUTextureFormat_BC5RGSnorm")]
-        BC5Rgsnorm = 0x34,
+        BC5RGSnorm = 0x34,
         [NativeName("Name", "WGPUTextureFormat_BC6HRGBUfloat")]
-        BC6Hrgbufloat = 0x35,
+        BC6HrgbUfloat = 0x35,
         [NativeName("Name", "WGPUTextureFormat_BC6HRGBFloat")]
-        BC6Hrgbfloat = 0x36,
+        BC6HrgbFloat = 0x36,
         [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnorm")]
-        BC7Rgbaunorm = 0x37,
+        BC7RgbaUnorm = 0x37,
         [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnormSrgb")]
-        BC7RgbaunormSrgb = 0x38,
+        BC7RgbaUnormSrgb = 0x38,
         [NativeName("Name", "WGPUTextureFormat_ETC2RGB8Unorm")]
         Etc2Rgb8Unorm = 0x39,
         [NativeName("Name", "WGPUTextureFormat_ETC2RGB8UnormSrgb")]

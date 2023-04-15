@@ -27,7 +27,7 @@ namespace Silk.NET.Assimp
         [Obsolete("Deprecated in favour of \"Polygon\"")]
         [NativeName("Name", "aiPrimitiveType_POLYGON")]
         PrimitiveTypePolygon = 0x8,
-        [Obsolete("Deprecated in favour of \"NgonencodingFlag\"")]
+        [Obsolete("Deprecated in favour of \"NgonEncodingFlag\"")]
         [NativeName("Name", "aiPrimitiveType_NGONEncodingFlag")]
         PrimitiveTypeNgonencodingFlag = 0x10,
         [NativeName("Name", "aiPrimitiveType_POINT")]
@@ -39,6 +39,6 @@ namespace Silk.NET.Assimp
         [NativeName("Name", "aiPrimitiveType_POLYGON")]
         Polygon = 0x8,
         [NativeName("Name", "aiPrimitiveType_NGONEncodingFlag")]
-        NgonencodingFlag = 0x10,
+        NgonEncodingFlag = 0x10,
     }
 }

@@ -31,19 +31,19 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvImageOperandsMakeTexelAvailableShift")]
         MakeTexelAvailableShift = 0x8,
         [NativeName("Name", "SpvImageOperandsMakeTexelAvailableKHRShift")]
-        MakeTexelAvailableKhrshift = 0x8,
+        MakeTexelAvailableKhrShift = 0x8,
         [NativeName("Name", "SpvImageOperandsMakeTexelVisibleShift")]
         MakeTexelVisibleShift = 0x9,
         [NativeName("Name", "SpvImageOperandsMakeTexelVisibleKHRShift")]
-        MakeTexelVisibleKhrshift = 0x9,
+        MakeTexelVisibleKhrShift = 0x9,
         [NativeName("Name", "SpvImageOperandsNonPrivateTexelShift")]
         NonPrivateTexelShift = 0xA,
         [NativeName("Name", "SpvImageOperandsNonPrivateTexelKHRShift")]
-        NonPrivateTexelKhrshift = 0xA,
+        NonPrivateTexelKhrShift = 0xA,
         [NativeName("Name", "SpvImageOperandsVolatileTexelShift")]
         VolatileTexelShift = 0xB,
         [NativeName("Name", "SpvImageOperandsVolatileTexelKHRShift")]
-        VolatileTexelKhrshift = 0xB,
+        VolatileTexelKhrShift = 0xB,
         [NativeName("Name", "SpvImageOperandsSignExtendShift")]
         SignExtendShift = 0xC,
         [NativeName("Name", "SpvImageOperandsZeroExtendShift")]

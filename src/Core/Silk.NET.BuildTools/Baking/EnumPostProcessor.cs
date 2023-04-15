@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Humanizer;
 using Silk.NET.BuildTools.Common;
@@ -51,31 +52,18 @@ public static class EnumPostProcessor
                 continue;
             }
 
-            var testName = @enum.NativeName;
-            if (!testName.Contains('_'))
+            foreach (var tok in @enum.Tokens)
             {
-                testName = testName.Underscore();
+                tok.TrimmingName = tok.NativeName.LenientUnderscore();
             }
 
-            foreach(var token in @enum.Tokens) {
-                token.TrimmingName = @enum.NativeName.Underscore();
-            }
-
-            string prefix;
-            if (@enum.Tokens.Count == 1) 
-            {
-                prefix = Utilities.FindCommonPrefix(new List<string> { @enum.Tokens[0].TrimmingName, testName }, true, false);
-            }
-            // else if (@enum.Tokens.Any(x => x.NativeName.Contains('_')))
-            // {
-            //     prefix = Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.NativeName).ToList(), false, false);
-            // }
-            else
-            {
-                prefix = Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.TrimmingName).ToList(), false, false);
-                prefix = prefix[..(prefix.Length - prefix.Count(y => y == '_'))];
-            }
+            var testName = @enum.NativeName.LenientUnderscore();
             
+            var prefix = @enum.Tokens.Count == 1
+                ? Utilities.FindCommonPrefix
+                    (new List<string> { @enum.Tokens[0].TrimmingName, testName }, true, false)
+                : Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.TrimmingName).ToList(), false, false);
+
             if (@enum.Tokens.Any(x => x.TrimmingName.Length <= prefix.Length))
             {
                 // Second pass, put the enum name in the loop to see if it makes a difference

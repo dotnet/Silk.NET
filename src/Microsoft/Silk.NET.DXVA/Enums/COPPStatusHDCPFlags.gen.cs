@@ -12,15 +12,15 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_StatusHDCPFlags")]
     public enum COPPStatusHDCPFlags : int
     {
-        [Obsolete("Deprecated in favour of \"Hdcprepeater\"")]
+        [Obsolete("Deprecated in favour of \"Repeater\"")]
         [NativeName("Name", "COPP_HDCPRepeater")]
         CoppHdcprepeater = 0x1,
-        [Obsolete("Deprecated in favour of \"HdcpflagsReserved\"")]
+        [Obsolete("Deprecated in favour of \"FlagsReserved\"")]
         [NativeName("Name", "COPP_HDCPFlagsReserved")]
         CoppHdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
         [NativeName("Name", "COPP_HDCPRepeater")]
-        Hdcprepeater = 0x1,
+        Repeater = 0x1,
         [NativeName("Name", "COPP_HDCPFlagsReserved")]
-        HdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
+        FlagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
     }
 }

@@ -34,24 +34,24 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvLoopControlPartialCountMask")]
         PartialCountMask = 0x100,
         [NativeName("Name", "SpvLoopControlInitiationIntervalINTELMask")]
-        InitiationIntervalIntelmask = 0x10000,
+        InitiationIntervalIntelMask = 0x10000,
         [NativeName("Name", "SpvLoopControlMaxConcurrencyINTELMask")]
-        MaxConcurrencyIntelmask = 0x20000,
+        MaxConcurrencyIntelMask = 0x20000,
         [NativeName("Name", "SpvLoopControlDependencyArrayINTELMask")]
-        DependencyArrayIntelmask = 0x40000,
+        DependencyArrayIntelMask = 0x40000,
         [NativeName("Name", "SpvLoopControlPipelineEnableINTELMask")]
-        PipelineEnableIntelmask = 0x80000,
+        PipelineEnableIntelMask = 0x80000,
         [NativeName("Name", "SpvLoopControlLoopCoalesceINTELMask")]
-        LoopCoalesceIntelmask = 0x100000,
+        LoopCoalesceIntelMask = 0x100000,
         [NativeName("Name", "SpvLoopControlMaxInterleavingINTELMask")]
-        MaxInterleavingIntelmask = 0x200000,
+        MaxInterleavingIntelMask = 0x200000,
         [NativeName("Name", "SpvLoopControlSpeculatedIterationsINTELMask")]
-        SpeculatedIterationsIntelmask = 0x400000,
+        SpeculatedIterationsIntelMask = 0x400000,
         [NativeName("Name", "SpvLoopControlNoFusionINTELMask")]
-        NoFusionIntelmask = 0x800000,
+        NoFusionIntelMask = 0x800000,
         [NativeName("Name", "SpvLoopControlLoopCountINTELMask")]
-        LoopCountIntelmask = 0x1000000,
+        LoopCountIntelMask = 0x1000000,
         [NativeName("Name", "SpvLoopControlMaxReinvocationDelayINTELMask")]
-        MaxReinvocationDelayIntelmask = 0x2000000,
+        MaxReinvocationDelayIntelMask = 0x2000000,
     }
 }

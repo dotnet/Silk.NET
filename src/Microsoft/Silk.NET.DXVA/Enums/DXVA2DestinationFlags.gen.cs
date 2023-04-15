@@ -36,7 +36,7 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"RffTffPresent\"")]
         [NativeName("Name", "DXVA2_DestinationFlag_RFF_TFF_Present")]
         DXVA2DestinationFlagRffTffPresent = 0x40000,
-        [Obsolete("Deprecated in favour of \"Ask\"")]
+        [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_DestinationFlagMask")]
         DXVA2DestinationFlagMask = unchecked((int) 0xFFFFFFFFFFFF000F),
         [NativeName("Name", "DXVA2_DestinationFlag_Background_Changed")]
@@ -54,6 +54,6 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "DXVA2_DestinationFlag_RFF_TFF_Present")]
         RffTffPresent = 0x40000,
         [NativeName("Name", "DXVA2_DestinationFlagMask")]
-        Ask = unchecked((int) 0xFFFFFFFFFFFF000F),
+        Mask = unchecked((int) 0xFFFFFFFFFFFF000F),
     }
 }

@@ -22,7 +22,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvFunctionControlConstShift")]
         ConstShift = 0x3,
         [NativeName("Name", "SpvFunctionControlOptNoneINTELShift")]
-        OptNoneIntelshift = 0x10,
+        OptNoneIntelShift = 0x10,
         [NativeName("Name", "SpvFunctionControlMax")]
         Max = 0x7FFFFFFF,
     }

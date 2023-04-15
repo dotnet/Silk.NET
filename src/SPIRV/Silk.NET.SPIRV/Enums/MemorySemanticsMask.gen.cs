@@ -38,15 +38,15 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvMemorySemanticsOutputMemoryMask")]
         OutputMemoryMask = 0x1000,
         [NativeName("Name", "SpvMemorySemanticsOutputMemoryKHRMask")]
-        OutputMemoryKhrmask = 0x1000,
+        OutputMemoryKhrMask = 0x1000,
         [NativeName("Name", "SpvMemorySemanticsMakeAvailableMask")]
         MakeAvailableMask = 0x2000,
         [NativeName("Name", "SpvMemorySemanticsMakeAvailableKHRMask")]
-        MakeAvailableKhrmask = 0x2000,
+        MakeAvailableKhrMask = 0x2000,
         [NativeName("Name", "SpvMemorySemanticsMakeVisibleMask")]
         MakeVisibleMask = 0x4000,
         [NativeName("Name", "SpvMemorySemanticsMakeVisibleKHRMask")]
-        MakeVisibleKhrmask = 0x4000,
+        MakeVisibleKhrMask = 0x4000,
         [NativeName("Name", "SpvMemorySemanticsVolatileMask")]
         VolatileMask = 0x8000,
     }

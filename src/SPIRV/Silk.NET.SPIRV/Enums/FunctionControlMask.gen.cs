@@ -24,6 +24,6 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvFunctionControlConstMask")]
         ConstMask = 0x8,
         [NativeName("Name", "SpvFunctionControlOptNoneINTELMask")]
-        OptNoneIntelmask = 0x10000,
+        OptNoneIntelMask = 0x10000,
     }
 }

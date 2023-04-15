@@ -35,15 +35,15 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvMemorySemanticsOutputMemoryShift")]
         OutputMemoryShift = 0xC,
         [NativeName("Name", "SpvMemorySemanticsOutputMemoryKHRShift")]
-        OutputMemoryKhrshift = 0xC,
+        OutputMemoryKhrShift = 0xC,
         [NativeName("Name", "SpvMemorySemanticsMakeAvailableShift")]
         MakeAvailableShift = 0xD,
         [NativeName("Name", "SpvMemorySemanticsMakeAvailableKHRShift")]
-        MakeAvailableKhrshift = 0xD,
+        MakeAvailableKhrShift = 0xD,
         [NativeName("Name", "SpvMemorySemanticsMakeVisibleShift")]
         MakeVisibleShift = 0xE,
         [NativeName("Name", "SpvMemorySemanticsMakeVisibleKHRShift")]
-        MakeVisibleKhrshift = 0xE,
+        MakeVisibleKhrShift = 0xE,
         [NativeName("Name", "SpvMemorySemanticsVolatileShift")]
         VolatileShift = 0xF,
         [NativeName("Name", "SpvMemorySemanticsMax")]

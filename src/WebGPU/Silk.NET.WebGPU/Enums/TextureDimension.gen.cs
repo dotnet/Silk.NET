@@ -13,12 +13,12 @@ namespace Silk.NET.WebGPU
     public enum TextureDimension : int
     {
         [NativeName("Name", "WGPUTextureDimension_1D")]
-        TextureDimension1D = 0x0,
+        Dimension1D = 0x0,
         [NativeName("Name", "WGPUTextureDimension_2D")]
-        TextureDimension2D = 0x1,
+        Dimension2D = 0x1,
         [NativeName("Name", "WGPUTextureDimension_3D")]
-        TextureDimension3D = 0x2,
+        Dimension3D = 0x2,
         [NativeName("Name", "WGPUTextureDimension_Force32")]
-        TextureDimensionForce32 = 0x7FFFFFFF,
+        DimensionForce32 = 0x7FFFFFFF,
     }
 }

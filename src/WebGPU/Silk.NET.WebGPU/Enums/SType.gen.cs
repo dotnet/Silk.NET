@@ -21,11 +21,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "WGPUSType_SurfaceDescriptorFromXlibWindow")]
         SurfaceDescriptorFromXlibWindow = 0x3,
         [NativeName("Name", "WGPUSType_SurfaceDescriptorFromCanvasHTMLSelector")]
-        SurfaceDescriptorFromCanvasHtmlselector = 0x4,
+        SurfaceDescriptorFromCanvasHtmlSelector = 0x4,
         [NativeName("Name", "WGPUSType_ShaderModuleSPIRVDescriptor")]
-        ShaderModuleSpirvdescriptor = 0x5,
+        ShaderModuleSpirvDescriptor = 0x5,
         [NativeName("Name", "WGPUSType_ShaderModuleWGSLDescriptor")]
-        ShaderModuleWgsldescriptor = 0x6,
+        ShaderModuleWgslDescriptor = 0x6,
         [NativeName("Name", "WGPUSType_PrimitiveDepthClipControl")]
         PrimitiveDepthClipControl = 0x7,
         [NativeName("Name", "WGPUSType_SurfaceDescriptorFromWaylandSurface")]
