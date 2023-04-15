@@ -13,28 +13,28 @@ namespace Silk.NET.SPIRV
     public enum MemoryAccessShift : int
     {
         [NativeName("Name", "SpvMemoryAccessVolatileShift")]
-        MemoryAccessVolatileShift = 0x0,
+        VolatileShift = 0x0,
         [NativeName("Name", "SpvMemoryAccessAlignedShift")]
-        MemoryAccessAlignedShift = 0x1,
+        AlignedShift = 0x1,
         [NativeName("Name", "SpvMemoryAccessNontemporalShift")]
-        MemoryAccessNontemporalShift = 0x2,
+        NontemporalShift = 0x2,
         [NativeName("Name", "SpvMemoryAccessMakePointerAvailableShift")]
-        MemoryAccessMakePointerAvailableShift = 0x3,
+        MakePointerAvailableShift = 0x3,
         [NativeName("Name", "SpvMemoryAccessMakePointerAvailableKHRShift")]
-        MemoryAccessMakePointerAvailableKhrshift = 0x3,
+        MakePointerAvailableKhrShift = 0x3,
         [NativeName("Name", "SpvMemoryAccessMakePointerVisibleShift")]
-        MemoryAccessMakePointerVisibleShift = 0x4,
+        MakePointerVisibleShift = 0x4,
         [NativeName("Name", "SpvMemoryAccessMakePointerVisibleKHRShift")]
-        MemoryAccessMakePointerVisibleKhrshift = 0x4,
+        MakePointerVisibleKhrShift = 0x4,
         [NativeName("Name", "SpvMemoryAccessNonPrivatePointerShift")]
-        MemoryAccessNonPrivatePointerShift = 0x5,
+        NonPrivatePointerShift = 0x5,
         [NativeName("Name", "SpvMemoryAccessNonPrivatePointerKHRShift")]
-        MemoryAccessNonPrivatePointerKhrshift = 0x5,
+        NonPrivatePointerKhrShift = 0x5,
         [NativeName("Name", "SpvMemoryAccessAliasScopeINTELMaskShift")]
-        MemoryAccessAliasScopeIntelmaskShift = 0x10,
+        AliasScopeIntelMaskShift = 0x10,
         [NativeName("Name", "SpvMemoryAccessNoAliasINTELMaskShift")]
-        MemoryAccessNoAliasIntelmaskShift = 0x11,
+        NoAliasIntelMaskShift = 0x11,
         [NativeName("Name", "SpvMemoryAccessMax")]
-        MemoryAccessMax = 0x7FFFFFFF,
+        Max = 0x7FFFFFFF,
     }
 }

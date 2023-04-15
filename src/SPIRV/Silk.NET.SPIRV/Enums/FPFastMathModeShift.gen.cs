@@ -18,15 +18,15 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvFPFastMathModeNotInfShift")]
         NotInfShift = 0x1,
         [NativeName("Name", "SpvFPFastMathModeNSZShift")]
-        Nszshift = 0x2,
+        NszShift = 0x2,
         [NativeName("Name", "SpvFPFastMathModeAllowRecipShift")]
         AllowRecipShift = 0x3,
         [NativeName("Name", "SpvFPFastMathModeFastShift")]
         FastShift = 0x4,
         [NativeName("Name", "SpvFPFastMathModeAllowContractFastINTELShift")]
-        AllowContractFastIntelshift = 0x10,
+        AllowContractFastIntelShift = 0x10,
         [NativeName("Name", "SpvFPFastMathModeAllowReassocINTELShift")]
-        AllowReassocIntelshift = 0x11,
+        AllowReassocIntelShift = 0x11,
         [NativeName("Name", "SpvFPFastMathModeMax")]
         Max = 0x7FFFFFFF,
     }

@@ -13,27 +13,27 @@ namespace Silk.NET.SPIRV
     public enum RayFlagsShift : int
     {
         [NativeName("Name", "SpvRayFlagsOpaqueKHRShift")]
-        OpaqueKhrshift = 0x0,
+        OpaqueKhrShift = 0x0,
         [NativeName("Name", "SpvRayFlagsNoOpaqueKHRShift")]
-        NoOpaqueKhrshift = 0x1,
+        NoOpaqueKhrShift = 0x1,
         [NativeName("Name", "SpvRayFlagsTerminateOnFirstHitKHRShift")]
-        TerminateOnFirstHitKhrshift = 0x2,
+        TerminateOnFirstHitKhrShift = 0x2,
         [NativeName("Name", "SpvRayFlagsSkipClosestHitShaderKHRShift")]
-        SkipClosestHitShaderKhrshift = 0x3,
+        SkipClosestHitShaderKhrShift = 0x3,
         [NativeName("Name", "SpvRayFlagsCullBackFacingTrianglesKHRShift")]
-        CullBackFacingTrianglesKhrshift = 0x4,
+        CullBackFacingTrianglesKhrShift = 0x4,
         [NativeName("Name", "SpvRayFlagsCullFrontFacingTrianglesKHRShift")]
-        CullFrontFacingTrianglesKhrshift = 0x5,
+        CullFrontFacingTrianglesKhrShift = 0x5,
         [NativeName("Name", "SpvRayFlagsCullOpaqueKHRShift")]
-        CullOpaqueKhrshift = 0x6,
+        CullOpaqueKhrShift = 0x6,
         [NativeName("Name", "SpvRayFlagsCullNoOpaqueKHRShift")]
-        CullNoOpaqueKhrshift = 0x7,
+        CullNoOpaqueKhrShift = 0x7,
         [NativeName("Name", "SpvRayFlagsSkipTrianglesKHRShift")]
-        SkipTrianglesKhrshift = 0x8,
+        SkipTrianglesKhrShift = 0x8,
         [NativeName("Name", "SpvRayFlagsSkipAABBsKHRShift")]
-        SkipAabbsKhrshift = 0x9,
+        SkipAabBsKhrShift = 0x9,
         [NativeName("Name", "SpvRayFlagsForceOpacityMicromap2StateEXTShift")]
-        ForceOpacityMicromap2StateExtshift = 0xA,
+        ForceOpacityMicromap2StateExtShift = 0xA,
         [NativeName("Name", "SpvRayFlagsMax")]
         Max = 0x7FFFFFFF,
     }

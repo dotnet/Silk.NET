@@ -13,46 +13,46 @@ namespace Silk.NET.SPIRV
     public enum ImageChannelOrder : int
     {
         [NativeName("Name", "SpvImageChannelOrderR")]
-        R = 0x0,
+        OrderR = 0x0,
         [NativeName("Name", "SpvImageChannelOrderA")]
-        A = 0x1,
+        OrderA = 0x1,
         [NativeName("Name", "SpvImageChannelOrderRG")]
-        RG = 0x2,
+        OrderRG = 0x2,
         [NativeName("Name", "SpvImageChannelOrderRA")]
-        RA = 0x3,
+        OrderRA = 0x3,
         [NativeName("Name", "SpvImageChannelOrderRGB")]
-        Rgb = 0x4,
+        OrderRgb = 0x4,
         [NativeName("Name", "SpvImageChannelOrderRGBA")]
-        Rgba = 0x5,
+        OrderRgba = 0x5,
         [NativeName("Name", "SpvImageChannelOrderBGRA")]
-        Bgra = 0x6,
+        OrderBgra = 0x6,
         [NativeName("Name", "SpvImageChannelOrderARGB")]
-        Argb = 0x7,
+        OrderArgb = 0x7,
         [NativeName("Name", "SpvImageChannelOrderIntensity")]
-        Intensity = 0x8,
+        OrderIntensity = 0x8,
         [NativeName("Name", "SpvImageChannelOrderLuminance")]
-        Luminance = 0x9,
+        OrderLuminance = 0x9,
         [NativeName("Name", "SpvImageChannelOrderRx")]
-        Rx = 0xA,
+        OrderRx = 0xA,
         [NativeName("Name", "SpvImageChannelOrderRGx")]
-        RGx = 0xB,
+        OrderRGx = 0xB,
         [NativeName("Name", "SpvImageChannelOrderRGBx")]
-        Rgbx = 0xC,
+        OrderRGBx = 0xC,
         [NativeName("Name", "SpvImageChannelOrderDepth")]
-        Depth = 0xD,
+        OrderDepth = 0xD,
         [NativeName("Name", "SpvImageChannelOrderDepthStencil")]
-        DepthStencil = 0xE,
+        OrderDepthStencil = 0xE,
         [NativeName("Name", "SpvImageChannelOrdersRGB")]
-        SRgb = 0xF,
+        OrdersRgb = 0xF,
         [NativeName("Name", "SpvImageChannelOrdersRGBx")]
-        SRgbx = 0x10,
+        OrdersRGBx = 0x10,
         [NativeName("Name", "SpvImageChannelOrdersRGBA")]
-        SRgba = 0x11,
+        OrdersRgba = 0x11,
         [NativeName("Name", "SpvImageChannelOrdersBGRA")]
-        SBgra = 0x12,
+        OrdersBgra = 0x12,
         [NativeName("Name", "SpvImageChannelOrderABGR")]
-        Abgr = 0x13,
+        OrderAbgr = 0x13,
         [NativeName("Name", "SpvImageChannelOrderMax")]
-        Max = 0x7FFFFFFF,
+        OrderMax = 0x7FFFFFFF,
     }
 }

@@ -23,7 +23,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvExecutionModelFragment")]
         Fragment = 0x4,
         [NativeName("Name", "SpvExecutionModelGLCompute")]
-        Glcompute = 0x5,
+        GLCompute = 0x5,
         [NativeName("Name", "SpvExecutionModelKernel")]
         Kernel = 0x6,
         [NativeName("Name", "SpvExecutionModelTaskNV")]

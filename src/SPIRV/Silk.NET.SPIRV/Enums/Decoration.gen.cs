@@ -29,11 +29,11 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationMatrixStride")]
         MatrixStride = 0x7,
         [NativeName("Name", "SpvDecorationGLSLShared")]
-        Glslshared = 0x8,
+        GlslShared = 0x8,
         [NativeName("Name", "SpvDecorationGLSLPacked")]
-        Glslpacked = 0x9,
+        GlslPacked = 0x9,
         [NativeName("Name", "SpvDecorationCPacked")]
-        CPacked = 0xA,
+        Packed = 0xA,
         [NativeName("Name", "SpvDecorationBuiltIn")]
         BuiltIn = 0xB,
         [NativeName("Name", "SpvDecorationNoPerspective")]
@@ -89,9 +89,9 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationFuncParamAttr")]
         FuncParamAttr = 0x26,
         [NativeName("Name", "SpvDecorationFPRoundingMode")]
-        FproundingMode = 0x27,
+        FPRoundingMode = 0x27,
         [NativeName("Name", "SpvDecorationFPFastMathMode")]
-        FpfastMathMode = 0x28,
+        FPFastMathMode = 0x28,
         [NativeName("Name", "SpvDecorationLinkageAttributes")]
         LinkageAttributes = 0x29,
         [NativeName("Name", "SpvDecorationNoContraction")]
@@ -159,7 +159,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationBoundImageNV")]
         BoundImageNV = 0x1519,
         [NativeName("Name", "SpvDecorationSIMTCallINTEL")]
-        SimtcallIntel = 0x15DF,
+        SimtCallIntel = 0x15DF,
         [NativeName("Name", "SpvDecorationReferencedIndirectlyINTEL")]
         ReferencedIndirectlyIntel = 0x15E2,
         [NativeName("Name", "SpvDecorationClobberINTEL")]
@@ -169,7 +169,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationVectorComputeVariableINTEL")]
         VectorComputeVariableIntel = 0x15F8,
         [NativeName("Name", "SpvDecorationFuncParamIOKindINTEL")]
-        FuncParamIokindIntel = 0x15F9,
+        FuncParamIOKindIntel = 0x15F9,
         [NativeName("Name", "SpvDecorationVectorComputeFunctionINTEL")]
         VectorComputeFunctionIntel = 0x15FA,
         [NativeName("Name", "SpvDecorationStackCallINTEL")]
@@ -227,7 +227,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationFuseLoopsInFunctionINTEL")]
         FuseLoopsInFunctionIntel = 0x1713,
         [NativeName("Name", "SpvDecorationMathOpDSPModeINTEL")]
-        MathOpDspmodeIntel = 0x1715,
+        MathOpDspModeIntel = 0x1715,
         [NativeName("Name", "SpvDecorationAliasScopeINTEL")]
         AliasScopeIntel = 0x171A,
         [NativeName("Name", "SpvDecorationNoAliasINTEL")]
@@ -241,7 +241,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationBufferLocationINTEL")]
         BufferLocationIntel = 0x1721,
         [NativeName("Name", "SpvDecorationIOPipeStorageINTEL")]
-        IopipeStorageIntel = 0x1738,
+        IOPipeStorageIntel = 0x1738,
         [NativeName("Name", "SpvDecorationFunctionFloatingPointModeINTEL")]
         FunctionFloatingPointModeIntel = 0x17C0,
         [NativeName("Name", "SpvDecorationSingleElementVectorINTEL")]
@@ -259,17 +259,17 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationRegisterMapKernelArgumentINTEL")]
         RegisterMapKernelArgumentIntel = 0x1820,
         [NativeName("Name", "SpvDecorationMMHostInterfaceAddressWidthINTEL")]
-        MmhostInterfaceAddressWidthIntel = 0x1821,
+        MMHostInterfaceAddressWidthIntel = 0x1821,
         [NativeName("Name", "SpvDecorationMMHostInterfaceDataWidthINTEL")]
-        MmhostInterfaceDataWidthIntel = 0x1822,
+        MMHostInterfaceDataWidthIntel = 0x1822,
         [NativeName("Name", "SpvDecorationMMHostInterfaceLatencyINTEL")]
-        MmhostInterfaceLatencyIntel = 0x1823,
+        MMHostInterfaceLatencyIntel = 0x1823,
         [NativeName("Name", "SpvDecorationMMHostInterfaceReadWriteModeINTEL")]
-        MmhostInterfaceReadWriteModeIntel = 0x1824,
+        MMHostInterfaceReadWriteModeIntel = 0x1824,
         [NativeName("Name", "SpvDecorationMMHostInterfaceMaxBurstINTEL")]
-        MmhostInterfaceMaxBurstIntel = 0x1825,
+        MMHostInterfaceMaxBurstIntel = 0x1825,
         [NativeName("Name", "SpvDecorationMMHostInterfaceWaitRequestINTEL")]
-        MmhostInterfaceWaitRequestIntel = 0x1826,
+        MMHostInterfaceWaitRequestIntel = 0x1826,
         [NativeName("Name", "SpvDecorationStableKernelArgumentINTEL")]
         StableKernelArgumentIntel = 0x1827,
         [NativeName("Name", "SpvDecorationMax")]

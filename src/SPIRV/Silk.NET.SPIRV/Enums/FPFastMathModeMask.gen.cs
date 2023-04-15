@@ -20,14 +20,14 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvFPFastMathModeNotInfMask")]
         NotInfMask = 0x2,
         [NativeName("Name", "SpvFPFastMathModeNSZMask")]
-        Nszmask = 0x4,
+        NszMask = 0x4,
         [NativeName("Name", "SpvFPFastMathModeAllowRecipMask")]
         AllowRecipMask = 0x8,
         [NativeName("Name", "SpvFPFastMathModeFastMask")]
         FastMask = 0x10,
         [NativeName("Name", "SpvFPFastMathModeAllowContractFastINTELMask")]
-        AllowContractFastIntelmask = 0x10000,
+        AllowContractFastIntelMask = 0x10000,
         [NativeName("Name", "SpvFPFastMathModeAllowReassocINTELMask")]
-        AllowReassocIntelmask = 0x20000,
+        AllowReassocIntelMask = 0x20000,
     }
 }

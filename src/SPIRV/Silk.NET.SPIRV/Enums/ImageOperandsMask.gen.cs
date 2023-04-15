@@ -34,19 +34,19 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvImageOperandsMakeTexelAvailableMask")]
         MakeTexelAvailableMask = 0x100,
         [NativeName("Name", "SpvImageOperandsMakeTexelAvailableKHRMask")]
-        MakeTexelAvailableKhrmask = 0x100,
+        MakeTexelAvailableKhrMask = 0x100,
         [NativeName("Name", "SpvImageOperandsMakeTexelVisibleMask")]
         MakeTexelVisibleMask = 0x200,
         [NativeName("Name", "SpvImageOperandsMakeTexelVisibleKHRMask")]
-        MakeTexelVisibleKhrmask = 0x200,
+        MakeTexelVisibleKhrMask = 0x200,
         [NativeName("Name", "SpvImageOperandsNonPrivateTexelMask")]
         NonPrivateTexelMask = 0x400,
         [NativeName("Name", "SpvImageOperandsNonPrivateTexelKHRMask")]
-        NonPrivateTexelKhrmask = 0x400,
+        NonPrivateTexelKhrMask = 0x400,
         [NativeName("Name", "SpvImageOperandsVolatileTexelMask")]
         VolatileTexelMask = 0x800,
         [NativeName("Name", "SpvImageOperandsVolatileTexelKHRMask")]
-        VolatileTexelKhrmask = 0x800,
+        VolatileTexelKhrMask = 0x800,
         [NativeName("Name", "SpvImageOperandsSignExtendMask")]
         SignExtendMask = 0x1000,
         [NativeName("Name", "SpvImageOperandsZeroExtendMask")]

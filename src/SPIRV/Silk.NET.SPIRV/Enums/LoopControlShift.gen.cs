@@ -31,25 +31,25 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvLoopControlPartialCountShift")]
         PartialCountShift = 0x8,
         [NativeName("Name", "SpvLoopControlInitiationIntervalINTELShift")]
-        InitiationIntervalIntelshift = 0x10,
+        InitiationIntervalIntelShift = 0x10,
         [NativeName("Name", "SpvLoopControlMaxConcurrencyINTELShift")]
-        MaxConcurrencyIntelshift = 0x11,
+        MaxConcurrencyIntelShift = 0x11,
         [NativeName("Name", "SpvLoopControlDependencyArrayINTELShift")]
-        DependencyArrayIntelshift = 0x12,
+        DependencyArrayIntelShift = 0x12,
         [NativeName("Name", "SpvLoopControlPipelineEnableINTELShift")]
-        PipelineEnableIntelshift = 0x13,
+        PipelineEnableIntelShift = 0x13,
         [NativeName("Name", "SpvLoopControlLoopCoalesceINTELShift")]
-        LoopCoalesceIntelshift = 0x14,
+        LoopCoalesceIntelShift = 0x14,
         [NativeName("Name", "SpvLoopControlMaxInterleavingINTELShift")]
-        MaxInterleavingIntelshift = 0x15,
+        MaxInterleavingIntelShift = 0x15,
         [NativeName("Name", "SpvLoopControlSpeculatedIterationsINTELShift")]
-        SpeculatedIterationsIntelshift = 0x16,
+        SpeculatedIterationsIntelShift = 0x16,
         [NativeName("Name", "SpvLoopControlNoFusionINTELShift")]
-        NoFusionIntelshift = 0x17,
+        NoFusionIntelShift = 0x17,
         [NativeName("Name", "SpvLoopControlLoopCountINTELShift")]
-        LoopCountIntelshift = 0x18,
+        LoopCountIntelShift = 0x18,
         [NativeName("Name", "SpvLoopControlMaxReinvocationDelayINTELShift")]
-        MaxReinvocationDelayIntelshift = 0x19,
+        MaxReinvocationDelayIntelShift = 0x19,
         [NativeName("Name", "SpvLoopControlMax")]
         Max = 0x7FFFFFFF,
     }

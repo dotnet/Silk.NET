@@ -169,7 +169,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvExecutionModeNoGlobalOffsetINTEL")]
         NoGlobalOffsetIntel = 0x1707,
         [NativeName("Name", "SpvExecutionModeNumSIMDWorkitemsINTEL")]
-        NumSimdworkitemsIntel = 0x1708,
+        NumSimdWorkitemsIntel = 0x1708,
         [NativeName("Name", "SpvExecutionModeSchedulerTargetFmaxMhzINTEL")]
         SchedulerTargetFmaxMhzIntel = 0x170F,
         [NativeName("Name", "SpvExecutionModeStreamingInterfaceINTEL")]

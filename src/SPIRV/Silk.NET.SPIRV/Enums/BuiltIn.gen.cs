@@ -267,7 +267,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvBuiltInWarpsPerSMNV")]
         WarpsPerSmnv = 0x14FE,
         [NativeName("Name", "SpvBuiltInSMCountNV")]
-        SmcountNV = 0x14FF,
+        SMCountNV = 0x14FF,
         [NativeName("Name", "SpvBuiltInWarpIDNV")]
         WarpIdnv = 0x1500,
         [NativeName("Name", "SpvBuiltInSMIDNV")]
