@@ -13,90 +13,90 @@ namespace Silk.NET.SPIRV
     public enum ImageFormat : int
     {
         [NativeName("Name", "SpvImageFormatUnknown")]
-        FormatUnknown = 0x0,
+        Unknown = 0x0,
         [NativeName("Name", "SpvImageFormatRgba32f")]
-        FormatRgba32f = 0x1,
+        Rgba32f = 0x1,
         [NativeName("Name", "SpvImageFormatRgba16f")]
-        FormatRgba16f = 0x2,
+        Rgba16f = 0x2,
         [NativeName("Name", "SpvImageFormatR32f")]
-        FormatR32f = 0x3,
+        R32f = 0x3,
         [NativeName("Name", "SpvImageFormatRgba8")]
-        FormatRgba8 = 0x4,
+        Rgba8 = 0x4,
         [NativeName("Name", "SpvImageFormatRgba8Snorm")]
-        FormatRgba8Snorm = 0x5,
+        Rgba8Snorm = 0x5,
         [NativeName("Name", "SpvImageFormatRg32f")]
-        FormatRg32f = 0x6,
+        Rg32f = 0x6,
         [NativeName("Name", "SpvImageFormatRg16f")]
-        FormatRg16f = 0x7,
+        Rg16f = 0x7,
         [NativeName("Name", "SpvImageFormatR11fG11fB10f")]
-        FormatR11fG11fB10f = 0x8,
+        R11fG11fB10f = 0x8,
         [NativeName("Name", "SpvImageFormatR16f")]
-        FormatR16f = 0x9,
+        R16f = 0x9,
         [NativeName("Name", "SpvImageFormatRgba16")]
-        FormatRgba16 = 0xA,
+        Rgba16 = 0xA,
         [NativeName("Name", "SpvImageFormatRgb10A2")]
-        FormatRgb10A2 = 0xB,
+        Rgb10A2 = 0xB,
         [NativeName("Name", "SpvImageFormatRg16")]
-        FormatRg16 = 0xC,
+        Rg16 = 0xC,
         [NativeName("Name", "SpvImageFormatRg8")]
-        FormatRg8 = 0xD,
+        Rg8 = 0xD,
         [NativeName("Name", "SpvImageFormatR16")]
-        FormatR16 = 0xE,
+        R16 = 0xE,
         [NativeName("Name", "SpvImageFormatR8")]
-        FormatR8 = 0xF,
+        R8 = 0xF,
         [NativeName("Name", "SpvImageFormatRgba16Snorm")]
-        FormatRgba16Snorm = 0x10,
+        Rgba16Snorm = 0x10,
         [NativeName("Name", "SpvImageFormatRg16Snorm")]
-        FormatRg16Snorm = 0x11,
+        Rg16Snorm = 0x11,
         [NativeName("Name", "SpvImageFormatRg8Snorm")]
-        FormatRg8Snorm = 0x12,
+        Rg8Snorm = 0x12,
         [NativeName("Name", "SpvImageFormatR16Snorm")]
-        FormatR16Snorm = 0x13,
+        R16Snorm = 0x13,
         [NativeName("Name", "SpvImageFormatR8Snorm")]
-        FormatR8Snorm = 0x14,
+        R8Snorm = 0x14,
         [NativeName("Name", "SpvImageFormatRgba32i")]
-        FormatRgba32i = 0x15,
+        Rgba32i = 0x15,
         [NativeName("Name", "SpvImageFormatRgba16i")]
-        FormatRgba16i = 0x16,
+        Rgba16i = 0x16,
         [NativeName("Name", "SpvImageFormatRgba8i")]
-        FormatRgba8i = 0x17,
+        Rgba8i = 0x17,
         [NativeName("Name", "SpvImageFormatR32i")]
-        FormatR32i = 0x18,
+        R32i = 0x18,
         [NativeName("Name", "SpvImageFormatRg32i")]
-        FormatRg32i = 0x19,
+        Rg32i = 0x19,
         [NativeName("Name", "SpvImageFormatRg16i")]
-        FormatRg16i = 0x1A,
+        Rg16i = 0x1A,
         [NativeName("Name", "SpvImageFormatRg8i")]
-        FormatRg8i = 0x1B,
+        Rg8i = 0x1B,
         [NativeName("Name", "SpvImageFormatR16i")]
-        FormatR16i = 0x1C,
+        R16i = 0x1C,
         [NativeName("Name", "SpvImageFormatR8i")]
-        FormatR8i = 0x1D,
+        R8i = 0x1D,
         [NativeName("Name", "SpvImageFormatRgba32ui")]
-        FormatRgba32ui = 0x1E,
+        Rgba32ui = 0x1E,
         [NativeName("Name", "SpvImageFormatRgba16ui")]
-        FormatRgba16ui = 0x1F,
+        Rgba16ui = 0x1F,
         [NativeName("Name", "SpvImageFormatRgba8ui")]
-        FormatRgba8ui = 0x20,
+        Rgba8ui = 0x20,
         [NativeName("Name", "SpvImageFormatR32ui")]
-        FormatR32ui = 0x21,
+        R32ui = 0x21,
         [NativeName("Name", "SpvImageFormatRgb10a2ui")]
-        FormatRgb10a2ui = 0x22,
+        Rgb10a2ui = 0x22,
         [NativeName("Name", "SpvImageFormatRg32ui")]
-        FormatRg32ui = 0x23,
+        Rg32ui = 0x23,
         [NativeName("Name", "SpvImageFormatRg16ui")]
-        FormatRg16ui = 0x24,
+        Rg16ui = 0x24,
         [NativeName("Name", "SpvImageFormatRg8ui")]
-        FormatRg8ui = 0x25,
+        Rg8ui = 0x25,
         [NativeName("Name", "SpvImageFormatR16ui")]
-        FormatR16ui = 0x26,
+        R16ui = 0x26,
         [NativeName("Name", "SpvImageFormatR8ui")]
-        FormatR8ui = 0x27,
+        R8ui = 0x27,
         [NativeName("Name", "SpvImageFormatR64ui")]
-        FormatR64ui = 0x28,
+        R64ui = 0x28,
         [NativeName("Name", "SpvImageFormatR64i")]
-        FormatR64i = 0x29,
+        R64i = 0x29,
         [NativeName("Name", "SpvImageFormatMax")]
-        FormatMax = 0x7FFFFFFF,
+        Max = 0x7FFFFFFF,
     }
 }

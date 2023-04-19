@@ -219,11 +219,11 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpConvertUToF")]
         ConvertUToF = 0x70,
         [NativeName("Name", "SpvOpUConvert")]
-        Convert = 0x71,
+        UConvert = 0x71,
         [NativeName("Name", "SpvOpSConvert")]
-        Convert = 0x72,
+        SConvert = 0x72,
         [NativeName("Name", "SpvOpFConvert")]
-        Convert = 0x73,
+        FConvert = 0x73,
         [NativeName("Name", "SpvOpQuantizeToF16")]
         QuantizeToF16 = 0x74,
         [NativeName("Name", "SpvOpConvertPtrToU")]
@@ -243,37 +243,37 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpBitcast")]
         Bitcast = 0x7C,
         [NativeName("Name", "SpvOpSNegate")]
-        Negate = 0x7E,
+        SNegate = 0x7E,
         [NativeName("Name", "SpvOpFNegate")]
-        Negate = 0x7F,
+        FNegate = 0x7F,
         [NativeName("Name", "SpvOpIAdd")]
-        Add = 0x80,
+        IAdd = 0x80,
         [NativeName("Name", "SpvOpFAdd")]
-        Add = 0x81,
+        FAdd = 0x81,
         [NativeName("Name", "SpvOpISub")]
-        Sub = 0x82,
+        ISub = 0x82,
         [NativeName("Name", "SpvOpFSub")]
-        Sub = 0x83,
+        FSub = 0x83,
         [NativeName("Name", "SpvOpIMul")]
-        Mul = 0x84,
+        IMul = 0x84,
         [NativeName("Name", "SpvOpFMul")]
-        Mul = 0x85,
+        FMul = 0x85,
         [NativeName("Name", "SpvOpUDiv")]
-        Div = 0x86,
+        UDiv = 0x86,
         [NativeName("Name", "SpvOpSDiv")]
-        Div = 0x87,
+        SDiv = 0x87,
         [NativeName("Name", "SpvOpFDiv")]
-        Div = 0x88,
+        FDiv = 0x88,
         [NativeName("Name", "SpvOpUMod")]
-        Mod = 0x89,
+        UMod = 0x89,
         [NativeName("Name", "SpvOpSRem")]
-        Rem = 0x8A,
+        SRem = 0x8A,
         [NativeName("Name", "SpvOpSMod")]
-        Mod = 0x8B,
+        SMod = 0x8B,
         [NativeName("Name", "SpvOpFRem")]
-        Rem = 0x8C,
+        FRem = 0x8C,
         [NativeName("Name", "SpvOpFMod")]
-        Mod = 0x8D,
+        FMod = 0x8D,
         [NativeName("Name", "SpvOpVectorTimesScalar")]
         VectorTimesScalar = 0x8E,
         [NativeName("Name", "SpvOpMatrixTimesScalar")]
@@ -289,13 +289,13 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpDot")]
         Dot = 0x94,
         [NativeName("Name", "SpvOpIAddCarry")]
-        AddCarry = 0x95,
+        IAddCarry = 0x95,
         [NativeName("Name", "SpvOpISubBorrow")]
-        SubBorrow = 0x96,
+        ISubBorrow = 0x96,
         [NativeName("Name", "SpvOpUMulExtended")]
-        MulExtended = 0x97,
+        UMulExtended = 0x97,
         [NativeName("Name", "SpvOpSMulExtended")]
-        MulExtended = 0x98,
+        SMulExtended = 0x98,
         [NativeName("Name", "SpvOpAny")]
         Any = 0x9A,
         [NativeName("Name", "SpvOpAll")]
@@ -329,49 +329,49 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpSelect")]
         Select = 0xA9,
         [NativeName("Name", "SpvOpIEqual")]
-        Equal = 0xAA,
+        IEqual = 0xAA,
         [NativeName("Name", "SpvOpINotEqual")]
-        NotEqual = 0xAB,
+        INotEqual = 0xAB,
         [NativeName("Name", "SpvOpUGreaterThan")]
-        GreaterThan = 0xAC,
+        UGreaterThan = 0xAC,
         [NativeName("Name", "SpvOpSGreaterThan")]
-        GreaterThan = 0xAD,
+        SGreaterThan = 0xAD,
         [NativeName("Name", "SpvOpUGreaterThanEqual")]
-        GreaterThanEqual = 0xAE,
+        UGreaterThanEqual = 0xAE,
         [NativeName("Name", "SpvOpSGreaterThanEqual")]
-        GreaterThanEqual = 0xAF,
+        SGreaterThanEqual = 0xAF,
         [NativeName("Name", "SpvOpULessThan")]
-        LessThan = 0xB0,
+        ULessThan = 0xB0,
         [NativeName("Name", "SpvOpSLessThan")]
-        LessThan = 0xB1,
+        SLessThan = 0xB1,
         [NativeName("Name", "SpvOpULessThanEqual")]
-        LessThanEqual = 0xB2,
+        ULessThanEqual = 0xB2,
         [NativeName("Name", "SpvOpSLessThanEqual")]
-        LessThanEqual = 0xB3,
+        SLessThanEqual = 0xB3,
         [NativeName("Name", "SpvOpFOrdEqual")]
-        OrdEqual = 0xB4,
+        FOrdEqual = 0xB4,
         [NativeName("Name", "SpvOpFUnordEqual")]
-        UnordEqual = 0xB5,
+        FUnordEqual = 0xB5,
         [NativeName("Name", "SpvOpFOrdNotEqual")]
-        OrdNotEqual = 0xB6,
+        FOrdNotEqual = 0xB6,
         [NativeName("Name", "SpvOpFUnordNotEqual")]
-        UnordNotEqual = 0xB7,
+        FUnordNotEqual = 0xB7,
         [NativeName("Name", "SpvOpFOrdLessThan")]
-        OrdLessThan = 0xB8,
+        FOrdLessThan = 0xB8,
         [NativeName("Name", "SpvOpFUnordLessThan")]
-        UnordLessThan = 0xB9,
+        FUnordLessThan = 0xB9,
         [NativeName("Name", "SpvOpFOrdGreaterThan")]
-        OrdGreaterThan = 0xBA,
+        FOrdGreaterThan = 0xBA,
         [NativeName("Name", "SpvOpFUnordGreaterThan")]
-        UnordGreaterThan = 0xBB,
+        FUnordGreaterThan = 0xBB,
         [NativeName("Name", "SpvOpFOrdLessThanEqual")]
-        OrdLessThanEqual = 0xBC,
+        FOrdLessThanEqual = 0xBC,
         [NativeName("Name", "SpvOpFUnordLessThanEqual")]
-        UnordLessThanEqual = 0xBD,
+        FUnordLessThanEqual = 0xBD,
         [NativeName("Name", "SpvOpFOrdGreaterThanEqual")]
-        OrdGreaterThanEqual = 0xBE,
+        FOrdGreaterThanEqual = 0xBE,
         [NativeName("Name", "SpvOpFUnordGreaterThanEqual")]
-        UnordGreaterThanEqual = 0xBF,
+        FUnordGreaterThanEqual = 0xBF,
         [NativeName("Name", "SpvOpShiftRightLogical")]
         ShiftRightLogical = 0xC2,
         [NativeName("Name", "SpvOpShiftRightArithmetic")]
@@ -397,21 +397,21 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpBitCount")]
         BitCount = 0xCD,
         [NativeName("Name", "SpvOpDPdx")]
-        Pdx = 0xCF,
+        DPdx = 0xCF,
         [NativeName("Name", "SpvOpDPdy")]
-        Pdy = 0xD0,
+        DPdy = 0xD0,
         [NativeName("Name", "SpvOpFwidth")]
         Fwidth = 0xD1,
         [NativeName("Name", "SpvOpDPdxFine")]
-        PdxFine = 0xD2,
+        DPdxFine = 0xD2,
         [NativeName("Name", "SpvOpDPdyFine")]
-        PdyFine = 0xD3,
+        DPdyFine = 0xD3,
         [NativeName("Name", "SpvOpFwidthFine")]
         FwidthFine = 0xD4,
         [NativeName("Name", "SpvOpDPdxCoarse")]
-        PdxCoarse = 0xD5,
+        DPdxCoarse = 0xD5,
         [NativeName("Name", "SpvOpDPdyCoarse")]
-        PdyCoarse = 0xD6,
+        DPdyCoarse = 0xD6,
         [NativeName("Name", "SpvOpFwidthCoarse")]
         FwidthCoarse = 0xD7,
         [NativeName("Name", "SpvOpEmitVertex")]
@@ -733,25 +733,25 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpTerminateRayKHR")]
         TerminateRayKhr = 0x1161,
         [NativeName("Name", "SpvOpSDot")]
-        Dot = 0x1162,
+        SDot = 0x1162,
         [NativeName("Name", "SpvOpSDotKHR")]
-        DotKhr = 0x1162,
+        SDotKhr = 0x1162,
         [NativeName("Name", "SpvOpUDot")]
-        Dot = 0x1163,
+        UDot = 0x1163,
         [NativeName("Name", "SpvOpUDotKHR")]
-        DotKhr = 0x1163,
+        UDotKhr = 0x1163,
         [NativeName("Name", "SpvOpSUDot")]
         SUDot = 0x1164,
         [NativeName("Name", "SpvOpSUDotKHR")]
         SUDotKhr = 0x1164,
         [NativeName("Name", "SpvOpSDotAccSat")]
-        DotAccSat = 0x1165,
+        SDotAccSat = 0x1165,
         [NativeName("Name", "SpvOpSDotAccSatKHR")]
-        DotAccSatKhr = 0x1165,
+        SDotAccSatKhr = 0x1165,
         [NativeName("Name", "SpvOpUDotAccSat")]
-        DotAccSat = 0x1166,
+        UDotAccSat = 0x1166,
         [NativeName("Name", "SpvOpUDotAccSatKHR")]
-        DotAccSatKhr = 0x1166,
+        UDotAccSatKhr = 0x1166,
         [NativeName("Name", "SpvOpSUDotAccSat")]
         SUDotAccSat = 0x1167,
         [NativeName("Name", "SpvOpSUDotAccSatKHR")]
@@ -951,33 +951,33 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvOpSubgroupImageMediaBlockWriteINTEL")]
         SubgroupImageMediaBlockWriteIntel = 0x15CD,
         [NativeName("Name", "SpvOpUCountLeadingZerosINTEL")]
-        CountLeadingZerosIntel = 0x15D1,
+        UCountLeadingZerosIntel = 0x15D1,
         [NativeName("Name", "SpvOpUCountTrailingZerosINTEL")]
-        CountTrailingZerosIntel = 0x15D2,
+        UCountTrailingZerosIntel = 0x15D2,
         [NativeName("Name", "SpvOpAbsISubINTEL")]
         AbsISubIntel = 0x15D3,
         [NativeName("Name", "SpvOpAbsUSubINTEL")]
         AbsUSubIntel = 0x15D4,
         [NativeName("Name", "SpvOpIAddSatINTEL")]
-        AddSatIntel = 0x15D5,
+        IAddSatIntel = 0x15D5,
         [NativeName("Name", "SpvOpUAddSatINTEL")]
-        AddSatIntel = 0x15D6,
+        UAddSatIntel = 0x15D6,
         [NativeName("Name", "SpvOpIAverageINTEL")]
-        AverageIntel = 0x15D7,
+        IAverageIntel = 0x15D7,
         [NativeName("Name", "SpvOpUAverageINTEL")]
-        AverageIntel = 0x15D8,
+        UAverageIntel = 0x15D8,
         [NativeName("Name", "SpvOpIAverageRoundedINTEL")]
-        AverageRoundedIntel = 0x15D9,
+        IAverageRoundedIntel = 0x15D9,
         [NativeName("Name", "SpvOpUAverageRoundedINTEL")]
-        AverageRoundedIntel = 0x15DA,
+        UAverageRoundedIntel = 0x15DA,
         [NativeName("Name", "SpvOpISubSatINTEL")]
-        SubSatIntel = 0x15DB,
+        ISubSatIntel = 0x15DB,
         [NativeName("Name", "SpvOpUSubSatINTEL")]
-        SubSatIntel = 0x15DC,
+        USubSatIntel = 0x15DC,
         [NativeName("Name", "SpvOpIMul32x16INTEL")]
-        Mul32x16intel = 0x15DD,
+        IMul32x16intel = 0x15DD,
         [NativeName("Name", "SpvOpUMul32x16INTEL")]
-        Mul32x16intel = 0x15DE,
+        UMul32x16intel = 0x15DE,
         [NativeName("Name", "SpvOpConstantFunctionPointerINTEL")]
         ConstantFunctionPointerIntel = 0x15E0,
         [NativeName("Name", "SpvOpFunctionPointerCallINTEL")]

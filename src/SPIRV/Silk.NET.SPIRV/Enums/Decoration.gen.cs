@@ -33,7 +33,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvDecorationGLSLPacked")]
         GlslPacked = 0x9,
         [NativeName("Name", "SpvDecorationCPacked")]
-        Packed = 0xA,
+        CPacked = 0xA,
         [NativeName("Name", "SpvDecorationBuiltIn")]
         BuiltIn = 0xB,
         [NativeName("Name", "SpvDecorationNoPerspective")]
