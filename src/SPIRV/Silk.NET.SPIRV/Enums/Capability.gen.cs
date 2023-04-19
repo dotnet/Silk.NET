@@ -483,7 +483,7 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvCapabilityDebugInfoModuleINTEL")]
         DebugInfoModuleIntel = 0x17E2,
         [NativeName("Name", "SpvCapabilityBFloat16ConversionINTEL")]
-        Float16ConversionIntel = 0x17E3,
+        BFloat16ConversionIntel = 0x17E3,
         [NativeName("Name", "SpvCapabilitySplitBarrierINTEL")]
         SplitBarrierIntel = 0x17FD,
         [NativeName("Name", "SpvCapabilityFPGAKernelAttributesv2INTEL")]

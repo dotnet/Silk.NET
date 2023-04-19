@@ -687,20 +687,28 @@ namespace Silk.NET.BuildTools.Common
             //   [\p{Ll}])([\p{Lu}]) to ensure we don't erroneous match non-pascal case strings and to capture the
             //   second character to ensure we can do the replacement. Still pretty smart though.
             // - The final ToLower has been omitted as it was not deemed necessary 
+            // - The regex ([\p{Ll}])([\p{Lu}]) has been added to replace lowercase letters followed by an uppercase letter with the 
+            //   same sequence but with an underscore inbetween, 
+            //   this fixes cases like SpvImageFormatR32ui being Spv_Image_FormatR32ui instead of Spv_Image_Format_R32ui
             return Regex.Replace
             (
                 Regex.Replace
                 (
                     Regex.Replace
                     (
-                        input,
-                        @"([\p{Lu}]+)([\p{Lu}][\p{Ll}])",
+                        Regex.Replace
+                        (
+                            input, 
+                            @"([\p{Lu}]+)([\p{Lu}][\p{Ll}])", 
+                            "$1_$2"
+                        ),
+                        @"([\p{Ll}])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}])", 
                         "$1_$2"
                     ),
-                    @"([\p{Ll}])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}])",
+                    @"([\p{Ll}])([\p{Lu}])", 
                     "$1_$2"
                 ),
-                @"[-\s]",
+                @"[-\s]", 
                 "_"
             );
         }
