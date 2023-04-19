@@ -426,5 +426,9 @@ namespace Silk.NET.OpenCL
         JobSlotsArm = 0x41E0,
         [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
         MutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        CommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        CommandBufferSyncDevicesKhr = 0x12AC,
     }
 }

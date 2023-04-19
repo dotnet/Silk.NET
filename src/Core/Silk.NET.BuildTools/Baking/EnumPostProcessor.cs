@@ -101,7 +101,8 @@ public static class EnumPostProcessor
                     x =>
                     {
                         var newName = Naming.Translate(x.TrimmingName[prefix.Length..], task.FunctionPrefix);
-                        if (newName == x.Name)
+                        //This check is to prevent the generation of duplicate enum values, caused when the old obsolete enum name is the same as the new enum name.
+                        if (newName == x.Name && !task.Controls.Contains("no-obsolete-enum"))
                         {
                             return null;
                         }
