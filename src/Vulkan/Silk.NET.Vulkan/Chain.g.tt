@@ -357,12 +357,7 @@ public interface IChain<<#= tList #>> : <#= iBaseList #>
     /// <summary>
     /// The first structure in the structure chain.
     /// </summary>
-    TChain Head { get; set; }
-
-    /// <summary>
-    /// A reference to the first structure in the chain.
-    /// </summary>
-    ref TChain HeadRef { get; }
+    ref TChain Head { get; }
 <#
     }
     else
@@ -371,12 +366,7 @@ public interface IChain<<#= tList #>> : <#= iBaseList #>
     /// <summary>
     /// Structure no. <#= i #> in the structure chain.
     /// </summary>
-    T<#= iM1 #> Item<#= iM1 #> { get; set; }
-
-    /// <summary>
-    /// A reference to structure no. <#= i #> in the structure chain.
-    /// </summary>
-    ref T<#= iM1 #> Item<#= iM1 #>Ref { get; }
+    ref T<#= iM1 #> Item<#= iM1 #> { get; }
 <#
     }
 #>
@@ -432,23 +422,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
-    public TChain Head
-    {
-        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
-        set
-        {
-            value.StructureType();
-            var ptr = (BaseInStructure*) _headPtr;
-            var nextPtr = ptr->PNext;
-            *((TChain*)_headPtr) = value;
-            ptr->PNext = nextPtr;
-        }
-    }
-
-    /// <summary>
-    /// Gets a reference to the head of the chain.
-    /// </summary>
-    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain Head => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 <#
         for (var j = 1; j < i; j++)
         {
@@ -462,22 +436,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     /// <summary>
     /// Gets or sets item #<#= j #> in the chain.
     /// </summary>
-    public T<#= j #> Item<#= j #>
-    {
-        get => Unsafe.AsRef<T<#= j #>>(Item<#= j #>Ptr);
-        set
-        {
-            value.StructureType();
-            var ptr = Item<#= j #>Ptr;
-            var nextPtr = ptr->PNext;
-            *((T<#= j #>*)ptr) = value;
-            ptr->PNext = nextPtr;
-        }
-    }
-    /// <summary>
-    /// Gets a reference to the second item in the chain.
-    /// </summary>
-    public ref T<#= j #> Item<#= j #>Ref => ref Unsafe.AsRef<T<#= j #>>(Item<#= j #>Ptr);
+    public ref T<#= j #> Item<#= j #> => ref Unsafe.AsRef<T<#= j #>>(Item<#= j #>Ptr);
 <#
         } // for (int j = 1; j < i; j++) {
 #>
