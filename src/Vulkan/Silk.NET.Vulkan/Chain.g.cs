@@ -6908,7 +6908,7 @@ public interface IChain<TChain> : IDisposable, IReadOnlyList<IChainable>
     /// <summary>
     /// The first structure in the structure chain.
     /// </summary>
-    TChain Head { get; }
+    TChain Head { get; set; }
 
     ref TChain HeadRef { get; }
 }
@@ -7254,7 +7254,7 @@ public interface IChain<TChain, T1> : IChain<TChain>
     /// <summary>
     /// Structure no. 2 in the structure chain.
     /// </summary>
-    T1 Item1 { get; }
+    T1 Item1 { get; set; }
 
     ref T1 Item1Ref { get; }
 }
@@ -7747,7 +7747,7 @@ public interface IChain<TChain, T1, T2> : IChain<TChain, T1>
     /// <summary>
     /// Structure no. 3 in the structure chain.
     /// </summary>
-    T2 Item2 { get; }
+    T2 Item2 { get; set; }
 
     ref T2 Item2Ref { get; }
 }
@@ -8309,7 +8309,7 @@ public interface IChain<TChain, T1, T2, T3> : IChain<TChain, T1, T2>
     /// <summary>
     /// Structure no. 4 in the structure chain.
     /// </summary>
-    T3 Item3 { get; }
+    T3 Item3 { get; set; }
 
     ref T3 Item3Ref { get; }
 }
@@ -8940,7 +8940,7 @@ public interface IChain<TChain, T1, T2, T3, T4> : IChain<TChain, T1, T2, T3>
     /// <summary>
     /// Structure no. 5 in the structure chain.
     /// </summary>
-    T4 Item4 { get; }
+    T4 Item4 { get; set; }
 
     ref T4 Item4Ref { get; }
 }
@@ -9640,7 +9640,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5> : IChain<TChain, T1, T2, T3,
     /// <summary>
     /// Structure no. 6 in the structure chain.
     /// </summary>
-    T5 Item5 { get; }
+    T5 Item5 { get; set; }
 
     ref T5 Item5Ref { get; }
 }
@@ -10409,7 +10409,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6> : IChain<TChain, T1, T2,
     /// <summary>
     /// Structure no. 7 in the structure chain.
     /// </summary>
-    T6 Item6 { get; }
+    T6 Item6 { get; set; }
 
     ref T6 Item6Ref { get; }
 }
@@ -11247,7 +11247,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7> : IChain<TChain, T1,
     /// <summary>
     /// Structure no. 8 in the structure chain.
     /// </summary>
-    T7 Item7 { get; }
+    T7 Item7 { get; set; }
 
     ref T7 Item7Ref { get; }
 }
@@ -12154,7 +12154,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : IChain<TChain,
     /// <summary>
     /// Structure no. 9 in the structure chain.
     /// </summary>
-    T8 Item8 { get; }
+    T8 Item8 { get; set; }
 
     ref T8 Item8Ref { get; }
 }
@@ -13130,7 +13130,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : IChain<TCh
     /// <summary>
     /// Structure no. 10 in the structure chain.
     /// </summary>
-    T9 Item9 { get; }
+    T9 Item9 { get; set; }
 
     ref T9 Item9Ref { get; }
 }
@@ -14175,7 +14175,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : IChai
     /// <summary>
     /// Structure no. 11 in the structure chain.
     /// </summary>
-    T10 Item10 { get; }
+    T10 Item10 { get; set; }
 
     ref T10 Item10Ref { get; }
 }
@@ -15289,7 +15289,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : 
     /// <summary>
     /// Structure no. 12 in the structure chain.
     /// </summary>
-    T11 Item11 { get; }
+    T11 Item11 { get; set; }
 
     ref T11 Item11Ref { get; }
 }
@@ -16472,7 +16472,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// Structure no. 13 in the structure chain.
     /// </summary>
-    T12 Item12 { get; }
+    T12 Item12 { get; set; }
 
     ref T12 Item12Ref { get; }
 }
@@ -17724,7 +17724,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// Structure no. 14 in the structure chain.
     /// </summary>
-    T13 Item13 { get; }
+    T13 Item13 { get; set; }
 
     ref T13 Item13Ref { get; }
 }
@@ -19045,7 +19045,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// Structure no. 15 in the structure chain.
     /// </summary>
-    T14 Item14 { get; }
+    T14 Item14 { get; set; }
 
     ref T14 Item14Ref { get; }
 }
@@ -20435,7 +20435,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// Structure no. 16 in the structure chain.
     /// </summary>
-    T15 Item15 { get; }
+    T15 Item15 { get; set; }
 
     ref T15 Item15Ref { get; }
 }

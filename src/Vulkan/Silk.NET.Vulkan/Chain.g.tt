@@ -357,7 +357,7 @@ public interface IChain<<#= tList #>> : <#= iBaseList #>
     /// <summary>
     /// The first structure in the structure chain.
     /// </summary>
-    TChain Head { get; }
+    TChain Head { get; set; }
 
     ref TChain HeadRef { get; }
 <#
@@ -368,7 +368,7 @@ public interface IChain<<#= tList #>> : <#= iBaseList #>
     /// <summary>
     /// Structure no. <#= i #> in the structure chain.
     /// </summary>
-    T<#= iM1 #> Item<#= iM1 #> { get; }
+    T<#= iM1 #> Item<#= iM1 #> { get; set; }
 
     ref T<#= iM1 #> Item<#= iM1 #>Ref { get; }
 <#
