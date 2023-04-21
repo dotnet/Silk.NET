@@ -6913,7 +6913,7 @@ public interface IChain<TChain> : IDisposable, IReadOnlyList<IChainable>
     /// <summary>
     /// A reference to the first structure in the chain.
     /// </summary>
-    ref readonly TChain HeadRef { get; }
+    ref TChain HeadRef { get; }
 }
 
 /// <summary>
@@ -6965,7 +6965,7 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>, ICh
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain}"/> with 1 items from an existing memory block.
@@ -7265,7 +7265,7 @@ public interface IChain<TChain, T1> : IChain<TChain>
     /// <summary>
     /// A reference to structure no. 2 in the structure chain.
     /// </summary>
-    ref readonly T1 Item1Ref { get; }
+    ref T1 Item1Ref { get; }
 }
 
 /// <summary>
@@ -7329,7 +7329,7 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -7354,7 +7354,7 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing memory block.
@@ -7766,7 +7766,7 @@ public interface IChain<TChain, T1, T2> : IChain<TChain, T1>
     /// <summary>
     /// A reference to structure no. 3 in the structure chain.
     /// </summary>
-    ref readonly T2 Item2Ref { get; }
+    ref T2 Item2Ref { get; }
 }
 
 /// <summary>
@@ -7842,7 +7842,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -7867,7 +7867,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -7892,7 +7892,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items from an existing memory block.
@@ -8338,7 +8338,7 @@ public interface IChain<TChain, T1, T2, T3> : IChain<TChain, T1, T2>
     /// <summary>
     /// A reference to structure no. 4 in the structure chain.
     /// </summary>
-    ref readonly T3 Item3Ref { get; }
+    ref T3 Item3Ref { get; }
 }
 
 /// <summary>
@@ -8426,7 +8426,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -8451,7 +8451,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -8476,7 +8476,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -8501,7 +8501,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items from an existing memory block.
@@ -8981,7 +8981,7 @@ public interface IChain<TChain, T1, T2, T3, T4> : IChain<TChain, T1, T2, T3>
     /// <summary>
     /// A reference to structure no. 5 in the structure chain.
     /// </summary>
-    ref readonly T4 Item4Ref { get; }
+    ref T4 Item4Ref { get; }
 }
 
 /// <summary>
@@ -9081,7 +9081,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9106,7 +9106,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9131,7 +9131,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9156,7 +9156,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9181,7 +9181,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing memory block.
@@ -9695,7 +9695,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5> : IChain<TChain, T1, T2, T3,
     /// <summary>
     /// A reference to structure no. 6 in the structure chain.
     /// </summary>
-    ref readonly T5 Item5Ref { get; }
+    ref T5 Item5Ref { get; }
 }
 
 /// <summary>
@@ -9807,7 +9807,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9832,7 +9832,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9857,7 +9857,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9882,7 +9882,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9907,7 +9907,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -9932,7 +9932,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items from an existing memory block.
@@ -10480,7 +10480,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6> : IChain<TChain, T1, T2,
     /// <summary>
     /// A reference to structure no. 7 in the structure chain.
     /// </summary>
-    ref readonly T6 Item6Ref { get; }
+    ref T6 Item6Ref { get; }
 }
 
 /// <summary>
@@ -10604,7 +10604,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -10629,7 +10629,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -10654,7 +10654,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -10679,7 +10679,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -10704,7 +10704,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -10729,7 +10729,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -10754,7 +10754,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items from an existing memory block.
@@ -11336,7 +11336,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7> : IChain<TChain, T1,
     /// <summary>
     /// A reference to structure no. 8 in the structure chain.
     /// </summary>
-    ref readonly T7 Item7Ref { get; }
+    ref T7 Item7Ref { get; }
 }
 
 /// <summary>
@@ -11472,7 +11472,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11497,7 +11497,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11522,7 +11522,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11547,7 +11547,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11572,7 +11572,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11597,7 +11597,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11622,7 +11622,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -11647,7 +11647,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items from an existing memory block.
@@ -12263,7 +12263,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : IChain<TChain,
     /// <summary>
     /// A reference to structure no. 9 in the structure chain.
     /// </summary>
-    ref readonly T8 Item8Ref { get; }
+    ref T8 Item8Ref { get; }
 }
 
 /// <summary>
@@ -12411,7 +12411,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12436,7 +12436,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12461,7 +12461,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12486,7 +12486,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12511,7 +12511,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12536,7 +12536,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12561,7 +12561,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12586,7 +12586,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -12611,7 +12611,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items from an existing memory block.
@@ -13261,7 +13261,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : IChain<TCh
     /// <summary>
     /// A reference to structure no. 10 in the structure chain.
     /// </summary>
-    ref readonly T9 Item9Ref { get; }
+    ref T9 Item9Ref { get; }
 }
 
 /// <summary>
@@ -13421,7 +13421,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13446,7 +13446,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13471,7 +13471,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13496,7 +13496,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13521,7 +13521,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13546,7 +13546,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13571,7 +13571,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13596,7 +13596,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13621,7 +13621,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -13646,7 +13646,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items from an existing memory block.
@@ -14330,7 +14330,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : IChai
     /// <summary>
     /// A reference to structure no. 11 in the structure chain.
     /// </summary>
-    ref readonly T10 Item10Ref { get; }
+    ref T10 Item10Ref { get; }
 }
 
 /// <summary>
@@ -14502,7 +14502,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14527,7 +14527,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14552,7 +14552,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14577,7 +14577,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14602,7 +14602,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14627,7 +14627,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14652,7 +14652,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14677,7 +14677,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14702,7 +14702,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14727,7 +14727,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -14752,7 +14752,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
+    public ref T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items from an existing memory block.
@@ -15470,7 +15470,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : 
     /// <summary>
     /// A reference to structure no. 12 in the structure chain.
     /// </summary>
-    ref readonly T11 Item11Ref { get; }
+    ref T11 Item11Ref { get; }
 }
 
 /// <summary>
@@ -15654,7 +15654,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15679,7 +15679,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15704,7 +15704,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15729,7 +15729,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15754,7 +15754,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15779,7 +15779,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15804,7 +15804,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15829,7 +15829,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15854,7 +15854,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15879,7 +15879,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15904,7 +15904,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
+    public ref T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -15929,7 +15929,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
+    public ref T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items from an existing memory block.
@@ -16681,7 +16681,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// A reference to structure no. 13 in the structure chain.
     /// </summary>
-    ref readonly T12 Item12Ref { get; }
+    ref T12 Item12Ref { get; }
 }
 
 /// <summary>
@@ -16877,7 +16877,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -16902,7 +16902,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -16927,7 +16927,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -16952,7 +16952,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -16977,7 +16977,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17002,7 +17002,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17027,7 +17027,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17052,7 +17052,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17077,7 +17077,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17102,7 +17102,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17127,7 +17127,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
+    public ref T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17152,7 +17152,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
+    public ref T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -17177,7 +17177,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
+    public ref T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items from an existing memory block.
@@ -17963,7 +17963,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// A reference to structure no. 14 in the structure chain.
     /// </summary>
-    ref readonly T13 Item13Ref { get; }
+    ref T13 Item13Ref { get; }
 }
 
 /// <summary>
@@ -18171,7 +18171,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18196,7 +18196,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18221,7 +18221,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18246,7 +18246,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18271,7 +18271,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18296,7 +18296,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18321,7 +18321,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18346,7 +18346,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18371,7 +18371,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18396,7 +18396,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18421,7 +18421,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
+    public ref T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18446,7 +18446,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
+    public ref T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18471,7 +18471,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
+    public ref T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -18496,7 +18496,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T13 Item13Ref => ref Unsafe.AsRef<T13>(Item13Ptr);
+    public ref T13 Item13Ref => ref Unsafe.AsRef<T13>(Item13Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items from an existing memory block.
@@ -19316,7 +19316,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// A reference to structure no. 15 in the structure chain.
     /// </summary>
-    ref readonly T14 Item14Ref { get; }
+    ref T14 Item14Ref { get; }
 }
 
 /// <summary>
@@ -19536,7 +19536,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19561,7 +19561,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19586,7 +19586,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19611,7 +19611,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19636,7 +19636,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19661,7 +19661,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19686,7 +19686,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19711,7 +19711,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19736,7 +19736,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19761,7 +19761,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19786,7 +19786,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
+    public ref T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19811,7 +19811,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
+    public ref T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19836,7 +19836,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
+    public ref T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19861,7 +19861,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T13 Item13Ref => ref Unsafe.AsRef<T13>(Item13Ptr);
+    public ref T13 Item13Ref => ref Unsafe.AsRef<T13>(Item13Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -19886,7 +19886,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T14 Item14Ref => ref Unsafe.AsRef<T14>(Item14Ptr);
+    public ref T14 Item14Ref => ref Unsafe.AsRef<T14>(Item14Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items from an existing memory block.
@@ -20740,7 +20740,7 @@ public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T1
     /// <summary>
     /// A reference to structure no. 16 in the structure chain.
     /// </summary>
-    ref readonly T15 Item15Ref { get; }
+    ref T15 Item15Ref { get; }
 }
 
 /// <summary>
@@ -20972,7 +20972,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the head of the chain.
     /// </summary>
-    public ref readonly TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -20997,7 +20997,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
+    public ref T1 Item1Ref => ref Unsafe.AsRef<T1>(Item1Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21022,7 +21022,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
+    public ref T2 Item2Ref => ref Unsafe.AsRef<T2>(Item2Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21047,7 +21047,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
+    public ref T3 Item3Ref => ref Unsafe.AsRef<T3>(Item3Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21072,7 +21072,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
+    public ref T4 Item4Ref => ref Unsafe.AsRef<T4>(Item4Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21097,7 +21097,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
+    public ref T5 Item5Ref => ref Unsafe.AsRef<T5>(Item5Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21122,7 +21122,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
+    public ref T6 Item6Ref => ref Unsafe.AsRef<T6>(Item6Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21147,7 +21147,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
+    public ref T7 Item7Ref => ref Unsafe.AsRef<T7>(Item7Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21172,7 +21172,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
+    public ref T8 Item8Ref => ref Unsafe.AsRef<T8>(Item8Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21197,7 +21197,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
+    public ref T9 Item9Ref => ref Unsafe.AsRef<T9>(Item9Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21222,7 +21222,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
+    public ref T10 Item10Ref => ref Unsafe.AsRef<T10>(Item10Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21247,7 +21247,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
+    public ref T11 Item11Ref => ref Unsafe.AsRef<T11>(Item11Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21272,7 +21272,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
+    public ref T12 Item12Ref => ref Unsafe.AsRef<T12>(Item12Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21297,7 +21297,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T13 Item13Ref => ref Unsafe.AsRef<T13>(Item13Ptr);
+    public ref T13 Item13Ref => ref Unsafe.AsRef<T13>(Item13Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21322,7 +21322,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T14 Item14Ref => ref Unsafe.AsRef<T14>(Item14Ptr);
+    public ref T14 Item14Ref => ref Unsafe.AsRef<T14>(Item14Ptr);
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
@@ -21347,7 +21347,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a reference to the second item in the chain.
     /// </summary>
-    public ref readonly T15 Item15Ref => ref Unsafe.AsRef<T15>(Item15Ptr);
+    public ref T15 Item15Ref => ref Unsafe.AsRef<T15>(Item15Ptr);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items from an existing memory block.
