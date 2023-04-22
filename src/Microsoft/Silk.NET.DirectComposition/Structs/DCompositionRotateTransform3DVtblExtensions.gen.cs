@@ -89,7 +89,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[3])(@this, angle);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[4])(@this, angle);
         return ret;
     }
 
@@ -98,7 +98,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[4])(@this, axisX);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[6])(@this, axisX);
         return ret;
     }
 
@@ -107,7 +107,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[5])(@this, axisY);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[8])(@this, axisY);
         return ret;
     }
 
@@ -116,7 +116,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[6])(@this, axisZ);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[10])(@this, axisZ);
         return ret;
     }
 
@@ -125,7 +125,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[7])(@this, centerX);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[12])(@this, centerX);
         return ret;
     }
 
@@ -134,7 +134,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[8])(@this, centerY);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[14])(@this, centerY);
         return ret;
     }
 
@@ -143,7 +143,7 @@ public unsafe static class DCompositionRotateTransform3DVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[9])(@this, centerZ);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[16])(@this, centerZ);
         return ret;
     }
 

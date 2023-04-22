@@ -110,7 +110,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[4])(@this, redYIntercept);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[5])(@this, redYIntercept);
         return ret;
     }
 
@@ -119,7 +119,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[5])(@this, redSlope);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[7])(@this, redSlope);
         return ret;
     }
 
@@ -128,7 +128,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[6])(@this, redDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[8])(@this, redDisable);
         return ret;
     }
 
@@ -137,7 +137,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[7])(@this, greenYIntercept);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[10])(@this, greenYIntercept);
         return ret;
     }
 
@@ -146,7 +146,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[8])(@this, greenSlope);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[12])(@this, greenSlope);
         return ret;
     }
 
@@ -155,7 +155,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[9])(@this, greenDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[13])(@this, greenDisable);
         return ret;
     }
 
@@ -164,7 +164,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[10])(@this, blueYIntercept);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[15])(@this, blueYIntercept);
         return ret;
     }
 
@@ -173,7 +173,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[11])(@this, blueSlope);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[17])(@this, blueSlope);
         return ret;
     }
 
@@ -182,7 +182,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[12])(@this, blueDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[18])(@this, blueDisable);
         return ret;
     }
 
@@ -191,7 +191,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[13])(@this, alphaYIntercept);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[20])(@this, alphaYIntercept);
         return ret;
     }
 
@@ -200,7 +200,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[14])(@this, alphaSlope);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, float, int>)@this->LpVtbl[22])(@this, alphaSlope);
         return ret;
     }
 
@@ -209,7 +209,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[15])(@this, alphaDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[23])(@this, alphaDisable);
         return ret;
     }
 
@@ -218,7 +218,7 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[16])(@this, clampOutput);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[24])(@this, clampOutput);
         return ret;
     }
 

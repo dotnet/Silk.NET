@@ -257,7 +257,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void FlushDeviceContexts(ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)@this->LpVtbl[11])(@this, bitmap);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)@this->LpVtbl[13])(@this, bitmap);
         }
 
         /// <summary>To be documented.</summary>
@@ -266,7 +266,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)@this->LpVtbl[11])(@this, bitmapPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)@this->LpVtbl[13])(@this, bitmapPtr);
             }
         }
 
@@ -275,7 +275,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[12])(@this, dxgiDevice);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[14])(@this, dxgiDevice);
             return ret;
         }
 
@@ -286,7 +286,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.DXGI.IDXGIDevice** dxgiDevicePtr = &dxgiDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[12])(@this, dxgiDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[14])(@this, dxgiDevicePtr);
             }
             return ret;
         }
@@ -295,7 +295,7 @@ namespace Silk.NET.Direct2D
         public readonly void SetMaximumColorGlyphCacheMemory(ulong maximumInBytes)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong, void>)@this->LpVtbl[13])(@this, maximumInBytes);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong, void>)@this->LpVtbl[17])(@this, maximumInBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -303,7 +303,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong>)@this->LpVtbl[14])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong>)@this->LpVtbl[18])(@this);
             return ret;
         }
 

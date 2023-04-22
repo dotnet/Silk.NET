@@ -89,7 +89,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, int>)@this->LpVtbl[3])(@this, fontFaceReference);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReference);
         return ret;
     }
 
@@ -100,7 +100,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
         int ret = default;
         fixed (IDWriteFontFaceReference* fontFaceReferencePtr = &fontFaceReference)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, int>)@this->LpVtbl[3])(@this, fontFaceReferencePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReferencePtr);
         }
         return ret;
     }
@@ -110,7 +110,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet*, int>)@this->LpVtbl[4])(@this, fontSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSet);
         return ret;
     }
 
@@ -121,7 +121,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet* fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet*, int>)@this->LpVtbl[4])(@this, fontSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSetPtr);
         }
         return ret;
     }
@@ -131,7 +131,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet**, int>)@this->LpVtbl[5])(@this, fontSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSet);
         return ret;
     }
 
@@ -142,7 +142,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet** fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet**, int>)@this->LpVtbl[5])(@this, fontSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSetPtr);
         }
         return ret;
     }
@@ -152,7 +152,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFile*, int>)@this->LpVtbl[6])(@this, fontFile);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFile*, int>)@this->LpVtbl[7])(@this, fontFile);
         return ret;
     }
 
@@ -163,7 +163,7 @@ public unsafe static class DWriteFontSetBuilder1VtblExtensions
         int ret = default;
         fixed (IDWriteFontFile* fontFilePtr = &fontFile)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFile*, int>)@this->LpVtbl[6])(@this, fontFilePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder1*, IDWriteFontFile*, int>)@this->LpVtbl[7])(@this, fontFilePtr);
         }
         return ret;
     }

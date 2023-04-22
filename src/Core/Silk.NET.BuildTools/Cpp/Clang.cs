@@ -1792,7 +1792,7 @@ namespace Silk.NET.BuildTools.Cpp
                     Name = name ?? Naming.TranslateLite
                         (Naming.TrimName(cxxMethodDecl.Name, task), task.FunctionPrefix),
                     NativeName = cxxMethodDecl.Name,
-                    VtblIndex = vtblIndex,
+                    VtblIndex = (int) cxxMethodDecl.VtblIndex,
                     ReturnType = GetType(cxxMethodDecl.ReturnType, out _, ref _f, out _),
                     Parameters = cxxMethodDecl.Parameters.Select
                         (

@@ -118,7 +118,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionEffectGroup*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionEffectGroup*, float, int>)@this->LpVtbl[3])(@this, opacity);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionEffectGroup*, float, int>)@this->LpVtbl[4])(@this, opacity);
             return ret;
         }
 
@@ -127,7 +127,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionEffectGroup*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)@this->LpVtbl[4])(@this, transform3D);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)@this->LpVtbl[5])(@this, transform3D);
             return ret;
         }
 
@@ -138,7 +138,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (IDCompositionTransform3D* transform3DPtr = &transform3D)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)@this->LpVtbl[4])(@this, transform3DPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)@this->LpVtbl[5])(@this, transform3DPtr);
             }
             return ret;
         }

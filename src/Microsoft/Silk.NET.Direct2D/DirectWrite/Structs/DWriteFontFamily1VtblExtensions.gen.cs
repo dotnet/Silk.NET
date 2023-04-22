@@ -212,7 +212,7 @@ public unsafe static class DWriteFontFamily1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily1*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[10])(@this, listIndex, fontFaceReference);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily1*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[11])(@this, listIndex, fontFaceReference);
         return ret;
     }
 
@@ -223,7 +223,7 @@ public unsafe static class DWriteFontFamily1VtblExtensions
         int ret = default;
         fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily1*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[10])(@this, listIndex, fontFaceReferencePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily1*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[11])(@this, listIndex, fontFaceReferencePtr);
         }
         return ret;
     }

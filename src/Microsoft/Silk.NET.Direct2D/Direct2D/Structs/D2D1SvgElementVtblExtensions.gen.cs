@@ -848,7 +848,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[27])(@this, name, type, value);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[29])(@this, name, type, value);
         return ret;
     }
 
@@ -859,7 +859,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         fixed (char* valuePtr = &value)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[27])(@this, name, type, valuePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[29])(@this, name, type, valuePtr);
         }
         return ret;
     }
@@ -870,7 +870,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var valuePtr = (byte*) SilkMarshal.StringToPtr(value, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, int>)@this->LpVtbl[27])(@this, name, type, valuePtr);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, int>)@this->LpVtbl[29])(@this, name, type, valuePtr);
         SilkMarshal.Free((nint)valuePtr);
         return ret;
     }
@@ -882,7 +882,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         fixed (char* namePtr = &name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[27])(@this, namePtr, type, value);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[29])(@this, namePtr, type, value);
         }
         return ret;
     }
@@ -896,7 +896,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         {
             fixed (char* valuePtr = &value)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[27])(@this, namePtr, type, valuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, int>)@this->LpVtbl[29])(@this, namePtr, type, valuePtr);
             }
         }
         return ret;
@@ -910,7 +910,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         fixed (char* namePtr = &name)
         {
         var valuePtr = (byte*) SilkMarshal.StringToPtr(value, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, int>)@this->LpVtbl[27])(@this, namePtr, type, valuePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, int>)@this->LpVtbl[29])(@this, namePtr, type, valuePtr);
         SilkMarshal.Free((nint)valuePtr);
         }
         return ret;
@@ -922,7 +922,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, int>)@this->LpVtbl[27])(@this, namePtr, type, value);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, int>)@this->LpVtbl[29])(@this, namePtr, type, value);
         SilkMarshal.Free((nint)namePtr);
         return ret;
     }
@@ -935,7 +935,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
         fixed (char* valuePtr = &value)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, int>)@this->LpVtbl[27])(@this, namePtr, type, valuePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, int>)@this->LpVtbl[29])(@this, namePtr, type, valuePtr);
         }
         SilkMarshal.Free((nint)namePtr);
         return ret;
@@ -948,7 +948,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
         var valuePtr = (byte*) SilkMarshal.StringToPtr(value, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, byte*, int>)@this->LpVtbl[27])(@this, namePtr, type, valuePtr);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, byte*, int>)@this->LpVtbl[29])(@this, namePtr, type, valuePtr);
         SilkMarshal.Free((nint)valuePtr);
         SilkMarshal.Free((nint)namePtr);
         return ret;
@@ -959,7 +959,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[28])(@this, name, type, value, valueCount);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[32])(@this, name, type, value, valueCount);
         return ret;
     }
 
@@ -970,7 +970,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         fixed (char* valuePtr = &value)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[28])(@this, name, type, valuePtr, valueCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[32])(@this, name, type, valuePtr, valueCount);
         }
         return ret;
     }
@@ -981,7 +981,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var valuePtr = (byte*) SilkMarshal.StringToPtr(value, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, uint, int>)@this->LpVtbl[28])(@this, name, type, valuePtr, valueCount);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, uint, int>)@this->LpVtbl[32])(@this, name, type, valuePtr, valueCount);
         SilkMarshal.Free((nint)valuePtr);
         return ret;
     }
@@ -993,7 +993,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         fixed (char* namePtr = &name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[28])(@this, namePtr, type, value, valueCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[32])(@this, namePtr, type, value, valueCount);
         }
         return ret;
     }
@@ -1007,7 +1007,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         {
             fixed (char* valuePtr = &value)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[28])(@this, namePtr, type, valuePtr, valueCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[32])(@this, namePtr, type, valuePtr, valueCount);
             }
         }
         return ret;
@@ -1021,7 +1021,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         fixed (char* namePtr = &name)
         {
         var valuePtr = (byte*) SilkMarshal.StringToPtr(value, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, uint, int>)@this->LpVtbl[28])(@this, namePtr, type, valuePtr, valueCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, byte*, uint, int>)@this->LpVtbl[32])(@this, namePtr, type, valuePtr, valueCount);
         SilkMarshal.Free((nint)valuePtr);
         }
         return ret;
@@ -1033,7 +1033,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[28])(@this, namePtr, type, value, valueCount);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[32])(@this, namePtr, type, value, valueCount);
         SilkMarshal.Free((nint)namePtr);
         return ret;
     }
@@ -1046,7 +1046,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
         fixed (char* valuePtr = &value)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[28])(@this, namePtr, type, valuePtr, valueCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, char*, uint, int>)@this->LpVtbl[32])(@this, namePtr, type, valuePtr, valueCount);
         }
         SilkMarshal.Free((nint)namePtr);
         return ret;
@@ -1059,7 +1059,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
         var valuePtr = (byte*) SilkMarshal.StringToPtr(value, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, byte*, uint, int>)@this->LpVtbl[28])(@this, namePtr, type, valuePtr, valueCount);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, byte*, uint, int>)@this->LpVtbl[32])(@this, namePtr, type, valuePtr, valueCount);
         SilkMarshal.Free((nint)valuePtr);
         SilkMarshal.Free((nint)namePtr);
         return ret;
@@ -1070,7 +1070,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[29])(@this, name, type, valueLength);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[33])(@this, name, type, valueLength);
         return ret;
     }
 
@@ -1081,7 +1081,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         fixed (uint* valueLengthPtr = &valueLength)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[29])(@this, name, type, valueLengthPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[33])(@this, name, type, valueLengthPtr);
         }
         return ret;
     }
@@ -1093,7 +1093,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         int ret = default;
         fixed (char* namePtr = &name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[29])(@this, namePtr, type, valueLength);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[33])(@this, namePtr, type, valueLength);
         }
         return ret;
     }
@@ -1107,7 +1107,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         {
             fixed (uint* valueLengthPtr = &valueLength)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[29])(@this, namePtr, type, valueLengthPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[33])(@this, namePtr, type, valueLengthPtr);
             }
         }
         return ret;
@@ -1119,7 +1119,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[29])(@this, namePtr, type, valueLength);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[33])(@this, namePtr, type, valueLength);
         SilkMarshal.Free((nint)namePtr);
         return ret;
     }
@@ -1132,7 +1132,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
         fixed (uint* valueLengthPtr = &valueLength)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[29])(@this, namePtr, type, valueLengthPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, SvgAttributeStringType, uint*, int>)@this->LpVtbl[33])(@this, namePtr, type, valueLengthPtr);
         }
         SilkMarshal.Free((nint)namePtr);
         return ret;

@@ -110,7 +110,7 @@ public unsafe static class DCompositionHueRotationEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionHueRotationEffect*, float, int>)@this->LpVtbl[4])(@this, amountDegrees);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionHueRotationEffect*, float, int>)@this->LpVtbl[5])(@this, amountDegrees);
         return ret;
     }
 

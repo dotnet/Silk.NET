@@ -110,7 +110,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[4])(@this, amount);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[5])(@this, amount);
         return ret;
     }
 
@@ -119,7 +119,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, Silk.NET.Maths.Vector4D<float>*, int>)@this->LpVtbl[5])(@this, color);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, Silk.NET.Maths.Vector4D<float>*, int>)@this->LpVtbl[6])(@this, color);
         return ret;
     }
 
@@ -130,7 +130,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
         int ret = default;
         fixed (Silk.NET.Maths.Vector4D<float>* colorPtr = &color)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, Silk.NET.Maths.Vector4D<float>*, int>)@this->LpVtbl[5])(@this, colorPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, Silk.NET.Maths.Vector4D<float>*, int>)@this->LpVtbl[6])(@this, colorPtr);
         }
         return ret;
     }
@@ -140,7 +140,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[6])(@this, amount);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[8])(@this, amount);
         return ret;
     }
 
@@ -149,7 +149,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[7])(@this, amount);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[10])(@this, amount);
         return ret;
     }
 
@@ -158,7 +158,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[8])(@this, amount);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[12])(@this, amount);
         return ret;
     }
 
@@ -167,7 +167,7 @@ public unsafe static class DCompositionShadowEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[9])(@this, amount);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionShadowEffect*, float, int>)@this->LpVtbl[14])(@this, amount);
         return ret;
     }
 

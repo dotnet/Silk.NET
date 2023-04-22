@@ -21,6 +21,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Mutable = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_KHR")]
         CommandBufferMutableKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_DEVICE_SIDE_SYNC_KHR")]
+        DeviceSideSync = 0x4,
+        [NativeName("Name", "CL_COMMAND_BUFFER_DEVICE_SIDE_SYNC_KHR")]
+        CommandBufferDeviceSideSyncKhr = 0x4,
         [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
         Queues = 0x1294,
         [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
@@ -115,6 +119,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         OutOfOrder = 0x8,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
         CommandBufferCapabilityOutOfOrderKhr = 0x8,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR")]
+        MultipleQueue = 0x10,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR")]
+        CommandBufferCapabilityMultipleQueueKhr = 0x10,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_KHR")]
         Khr = 0x2,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_KHR")]
@@ -307,6 +315,18 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         MutableDispatchUpdatableFields = 0x12B1,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
         MutableDispatchUpdatableFieldsKhr = 0x12B1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]
+        UniversalSync = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]
+        CommandBufferPlatformUniversalSyncKhr = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_REMAP_QUEUES_KHR")]
+        RemapQueues = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_REMAP_QUEUES_KHR")]
+        CommandBufferPlatformRemapQueuesKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_AUTOMATIC_REMAP_KHR")]
+        AutomaticRemap = 0x4,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_AUTOMATIC_REMAP_KHR")]
+        CommandBufferPlatformAutomaticRemapKhr = 0x4,
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
         High = 0x1,
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
@@ -515,6 +535,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         MutableDispatchCapabilitiesKhr = 0x12B0,
         [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
         DeviceMutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        CommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        CommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
@@ -613,6 +641,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         PlatformSemaphoreExportHandleTypesKhr = 0x2038,
         [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
+        [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
+        PlatformCommandBufferCapabilitiesKhr = 0x908,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ILKhr = 0x1169,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
