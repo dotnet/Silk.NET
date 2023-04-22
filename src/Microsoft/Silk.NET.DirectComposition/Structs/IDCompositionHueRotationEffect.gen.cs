@@ -142,7 +142,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionHueRotationEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionHueRotationEffect*, float, int>)@this->LpVtbl[4])(@this, amountDegrees);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionHueRotationEffect*, float, int>)@this->LpVtbl[5])(@this, amountDegrees);
             return ret;
         }
 

@@ -89,7 +89,7 @@ public unsafe static class DCompositionScaleTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[3])(@this, scaleX);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[4])(@this, scaleX);
         return ret;
     }
 
@@ -98,7 +98,7 @@ public unsafe static class DCompositionScaleTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[4])(@this, scaleY);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[6])(@this, scaleY);
         return ret;
     }
 
@@ -107,7 +107,7 @@ public unsafe static class DCompositionScaleTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[5])(@this, centerX);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[8])(@this, centerX);
         return ret;
     }
 
@@ -116,7 +116,7 @@ public unsafe static class DCompositionScaleTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[6])(@this, centerY);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionScaleTransform*, float, int>)@this->LpVtbl[10])(@this, centerY);
         return ret;
     }
 

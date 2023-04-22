@@ -2078,7 +2078,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallback**, int>)@this->LpVtbl[25])(@this, fontFallback);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallback**, int>)@this->LpVtbl[26])(@this, fontFallback);
         return ret;
     }
 
@@ -2089,7 +2089,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontFallback** fontFallbackPtr = &fontFallback)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallback**, int>)@this->LpVtbl[25])(@this, fontFallbackPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallback**, int>)@this->LpVtbl[26])(@this, fontFallbackPtr);
         }
         return ret;
     }
@@ -2099,7 +2099,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[26])(@this, fontFallbackBuilder);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[27])(@this, fontFallbackBuilder);
         return ret;
     }
 
@@ -2110,7 +2110,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontFallbackBuilder** fontFallbackBuilderPtr = &fontFallbackBuilder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[26])(@this, fontFallbackBuilderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[27])(@this, fontFallbackBuilderPtr);
         }
         return ret;
     }
@@ -2120,7 +2120,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
         return ret;
     }
 
@@ -2131,7 +2131,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
         }
         return ret;
     }
@@ -2143,7 +2143,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
         }
         return ret;
     }
@@ -2157,7 +2157,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
             }
         }
         return ret;
@@ -2170,7 +2170,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (GlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
         }
         return ret;
     }
@@ -2184,7 +2184,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
             }
         }
         return ret;
@@ -2199,7 +2199,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
             }
         }
         return ret;
@@ -2216,7 +2216,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                 }
             }
         }
@@ -2230,7 +2230,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (GlyphRun* glyphRunPtr = &glyphRun)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
         }
         return ret;
     }
@@ -2244,7 +2244,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
             }
         }
         return ret;
@@ -2259,7 +2259,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
             }
         }
         return ret;
@@ -2276,7 +2276,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                 }
             }
         }
@@ -2292,7 +2292,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (GlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
             }
         }
         return ret;
@@ -2309,7 +2309,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
                 }
             }
         }
@@ -2327,7 +2327,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
                 }
             }
         }
@@ -2347,7 +2347,7 @@ public unsafe static class DWriteFactory7VtblExtensions
                 {
                     fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                     }
                 }
             }
@@ -2360,7 +2360,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
         return ret;
     }
 
@@ -2371,7 +2371,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
         }
         return ret;
     }
@@ -2383,7 +2383,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
         }
         return ret;
     }
@@ -2397,7 +2397,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
             }
         }
         return ret;
@@ -2410,7 +2410,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (char* filePathPtr = &filePath)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
         }
         return ret;
     }
@@ -2424,7 +2424,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
             }
         }
         return ret;
@@ -2439,7 +2439,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
             }
         }
         return ret;
@@ -2456,7 +2456,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
                 }
             }
         }
@@ -2469,7 +2469,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
         SilkMarshal.Free((nint)filePathPtr);
         return ret;
     }
@@ -2482,7 +2482,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
         fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
         }
         SilkMarshal.Free((nint)filePathPtr);
         return ret;
@@ -2496,7 +2496,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
         fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
         }
         SilkMarshal.Free((nint)filePathPtr);
         return ret;
@@ -2512,7 +2512,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
             }
         }
         SilkMarshal.Free((nint)filePathPtr);
@@ -2524,7 +2524,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet**, int>)@this->LpVtbl[29])(@this, fontSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet**, int>)@this->LpVtbl[35])(@this, fontSet);
         return ret;
     }
 
@@ -2535,7 +2535,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet** fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet**, int>)@this->LpVtbl[29])(@this, fontSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet**, int>)@this->LpVtbl[35])(@this, fontSetPtr);
         }
         return ret;
     }
@@ -2545,7 +2545,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[30])(@this, fontSetBuilder);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[36])(@this, fontSetBuilder);
         return ret;
     }
 
@@ -2556,7 +2556,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontSetBuilder** fontSetBuilderPtr = &fontSetBuilder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[30])(@this, fontSetBuilderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[36])(@this, fontSetBuilderPtr);
         }
         return ret;
     }
@@ -2566,7 +2566,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSet, fontCollection);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSet, fontCollection);
         return ret;
     }
 
@@ -2577,7 +2577,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontCollection1** fontCollectionPtr = &fontCollection)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSet, fontCollectionPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSet, fontCollectionPtr);
         }
         return ret;
     }
@@ -2589,7 +2589,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet* fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSetPtr, fontCollection);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSetPtr, fontCollection);
         }
         return ret;
     }
@@ -2603,7 +2603,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteFontCollection1** fontCollectionPtr = &fontCollection)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSetPtr, fontCollectionPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSetPtr, fontCollectionPtr);
             }
         }
         return ret;
@@ -2614,7 +2614,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[32])(@this, fontDownloadQueue);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[39])(@this, fontDownloadQueue);
         return ret;
     }
 
@@ -2625,7 +2625,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontDownloadQueue** fontDownloadQueuePtr = &fontDownloadQueue)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[32])(@this, fontDownloadQueuePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[39])(@this, fontDownloadQueuePtr);
         }
         return ret;
     }
@@ -2635,7 +2635,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
         return ret;
     }
 
@@ -2646,7 +2646,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
         }
         return ret;
     }
@@ -2658,7 +2658,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (Matrix* worldAndDpiTransformPtr = &worldAndDpiTransform)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
         }
         return ret;
     }
@@ -2672,7 +2672,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
             }
         }
         return ret;
@@ -2685,7 +2685,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (GlyphRun* glyphRunPtr = &glyphRun)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
         }
         return ret;
     }
@@ -2699,7 +2699,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
             }
         }
         return ret;
@@ -2714,7 +2714,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (Matrix* worldAndDpiTransformPtr = &worldAndDpiTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
             }
         }
         return ret;
@@ -2731,7 +2731,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
                 }
             }
         }
@@ -2743,7 +2743,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[34])(@this, newLoader);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[44])(@this, newLoader);
         return ret;
     }
 
@@ -2754,7 +2754,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteInMemoryFontFileLoader** newLoaderPtr = &newLoader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[34])(@this, newLoaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[44])(@this, newLoaderPtr);
         }
         return ret;
     }
@@ -2764,7 +2764,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeaders, newLoader);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeaders, newLoader);
         return ret;
     }
 
@@ -2775,7 +2775,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeaders, newLoaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeaders, newLoaderPtr);
         }
         return ret;
     }
@@ -2787,7 +2787,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (char* extraHeadersPtr = &extraHeaders)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoader);
         }
         return ret;
     }
@@ -2801,7 +2801,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
             }
         }
         return ret;
@@ -2813,7 +2813,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoader);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoader);
         SilkMarshal.Free((nint)extraHeadersPtr);
         return ret;
     }
@@ -2826,7 +2826,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
         fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
         }
         SilkMarshal.Free((nint)extraHeadersPtr);
         return ret;
@@ -2839,7 +2839,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (char* referrerUrlPtr = &referrerUrl)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoader);
         }
         return ret;
     }
@@ -2853,7 +2853,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
             }
         }
         return ret;
@@ -2868,7 +2868,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (char* extraHeadersPtr = &extraHeaders)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
             }
         }
         return ret;
@@ -2885,7 +2885,7 @@ public unsafe static class DWriteFactory7VtblExtensions
             {
                 fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
                 }
             }
         }
@@ -2900,7 +2900,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         fixed (char* referrerUrlPtr = &referrerUrl)
         {
         var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
         SilkMarshal.Free((nint)extraHeadersPtr);
         }
         return ret;
@@ -2916,7 +2916,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
             }
         SilkMarshal.Free((nint)extraHeadersPtr);
         }
@@ -2929,7 +2929,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoader);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoader);
         SilkMarshal.Free((nint)referrerUrlPtr);
         return ret;
     }
@@ -2942,7 +2942,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
         fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
         }
         SilkMarshal.Free((nint)referrerUrlPtr);
         return ret;
@@ -2956,7 +2956,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
         fixed (char* extraHeadersPtr = &extraHeaders)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
         }
         SilkMarshal.Free((nint)referrerUrlPtr);
         return ret;
@@ -2972,7 +2972,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
             }
         }
         SilkMarshal.Free((nint)referrerUrlPtr);
@@ -2986,7 +2986,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
         var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
         SilkMarshal.Free((nint)extraHeadersPtr);
         SilkMarshal.Free((nint)referrerUrlPtr);
         return ret;
@@ -3001,7 +3001,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
         fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
         }
         SilkMarshal.Free((nint)extraHeadersPtr);
         SilkMarshal.Free((nint)referrerUrlPtr);
@@ -3013,7 +3013,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         ContainerType ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, void*, uint, ContainerType>)@this->LpVtbl[36])(@this, fileData, fileDataSize);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, void*, uint, ContainerType>)@this->LpVtbl[46])(@this, fileData, fileDataSize);
         return ret;
     }
 
@@ -3024,7 +3024,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         ContainerType ret = default;
         fixed (void* fileDataPtr = &fileData)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, void*, uint, ContainerType>)@this->LpVtbl[36])(@this, fileDataPtr, fileDataSize);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, void*, uint, ContainerType>)@this->LpVtbl[46])(@this, fileDataPtr, fileDataSize);
         }
         return ret;
     }
@@ -3034,7 +3034,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileData, fileDataSize, unpackedFontStream);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileData, fileDataSize, unpackedFontStream);
         return ret;
     }
 
@@ -3045,7 +3045,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontFileStream** unpackedFontStreamPtr = &unpackedFontStream)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileData, fileDataSize, unpackedFontStreamPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileData, fileDataSize, unpackedFontStreamPtr);
         }
         return ret;
     }
@@ -3057,7 +3057,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (void* fileDataPtr = &fileData)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStream);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStream);
         }
         return ret;
     }
@@ -3071,7 +3071,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteFontFileStream** unpackedFontStreamPtr = &unpackedFontStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStreamPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStreamPtr);
             }
         }
         return ret;
@@ -3082,7 +3082,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[38])(@this, fontFile, faceIndex, fontResource);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[49])(@this, fontFile, faceIndex, fontResource);
         return ret;
     }
 
@@ -3093,7 +3093,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontResource** fontResourcePtr = &fontResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[38])(@this, fontFile, faceIndex, fontResourcePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[49])(@this, fontFile, faceIndex, fontResourcePtr);
         }
         return ret;
     }
@@ -3105,7 +3105,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         int ret = default;
         fixed (IDWriteFontFile* fontFilePtr = &fontFile)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[38])(@this, fontFilePtr, faceIndex, fontResource);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[49])(@this, fontFilePtr, faceIndex, fontResource);
         }
         return ret;
     }
@@ -3119,7 +3119,7 @@ public unsafe static class DWriteFactory7VtblExtensions
         {
             fixed (IDWriteFontResource** fontResourcePtr = &fontResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[38])(@this, fontFilePtr, faceIndex, fontResourcePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory7*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)@this->LpVtbl[49])(@this, fontFilePtr, faceIndex, fontResourcePtr);
             }
         }
         return ret;

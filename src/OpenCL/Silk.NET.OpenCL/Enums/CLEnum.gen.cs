@@ -1450,6 +1450,14 @@ namespace Silk.NET.OpenCL
         MutableDispatchCapabilitiesKhr = 0x12B0,
         [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
         DeviceMutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        CommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        CommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -2272,6 +2280,8 @@ namespace Silk.NET.OpenCL
         PlatformSemaphoreExportHandleTypesKhr = 0x2038,
         [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
+        [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
+        PlatformCommandBufferCapabilitiesKhr = 0x908,
         [NativeName("Name", "CL_PROFILING_COMMAND_SUBMIT")]
         Submit = 0x1281,
         [NativeName("Name", "CL_PROFILING_COMMAND_START")]

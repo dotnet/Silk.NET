@@ -335,7 +335,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[8])(@this, font, fontSignature);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[10])(@this, font, fontSignature);
         return ret;
     }
 
@@ -346,7 +346,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         int ret = default;
         fixed (void* fontSignaturePtr = &fontSignature)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[8])(@this, font, fontSignaturePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[10])(@this, font, fontSignaturePtr);
         }
         return ret;
     }
@@ -358,7 +358,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         int ret = default;
         fixed (IDWriteFont* fontPtr = &font)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[8])(@this, fontPtr, fontSignature);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[10])(@this, fontPtr, fontSignature);
         }
         return ret;
     }
@@ -372,7 +372,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         {
             fixed (void* fontSignaturePtr = &fontSignature)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[8])(@this, fontPtr, fontSignaturePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, IDWriteFont*, void*, int>)@this->LpVtbl[10])(@this, fontPtr, fontSignaturePtr);
             }
         }
         return ret;
@@ -383,7 +383,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFont, fontSet, filteredSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFont, fontSet, filteredSet);
         return ret;
     }
 
@@ -394,7 +394,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet** filteredSetPtr = &filteredSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFont, fontSet, filteredSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFont, fontSet, filteredSetPtr);
         }
         return ret;
     }
@@ -406,7 +406,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet* fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFont, fontSetPtr, filteredSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFont, fontSetPtr, filteredSet);
         }
         return ret;
     }
@@ -420,7 +420,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         {
             fixed (IDWriteFontSet** filteredSetPtr = &filteredSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFont, fontSetPtr, filteredSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFont, fontSetPtr, filteredSetPtr);
             }
         }
         return ret;
@@ -433,7 +433,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         int ret = default;
         fixed (void* logFontPtr = &logFont)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFontPtr, fontSet, filteredSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFontPtr, fontSet, filteredSet);
         }
         return ret;
     }
@@ -447,7 +447,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         {
             fixed (IDWriteFontSet** filteredSetPtr = &filteredSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFontPtr, fontSet, filteredSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFontPtr, fontSet, filteredSetPtr);
             }
         }
         return ret;
@@ -462,7 +462,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
         {
             fixed (IDWriteFontSet* fontSetPtr = &fontSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFontPtr, fontSetPtr, filteredSet);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFontPtr, fontSetPtr, filteredSet);
             }
         }
         return ret;
@@ -479,7 +479,7 @@ public unsafe static class DWriteGdiInterop1VtblExtensions
             {
                 fixed (IDWriteFontSet** filteredSetPtr = &filteredSet)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, logFontPtr, fontSetPtr, filteredSetPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteGdiInterop1*, void*, IDWriteFontSet*, IDWriteFontSet**, int>)@this->LpVtbl[11])(@this, logFontPtr, fontSetPtr, filteredSetPtr);
                 }
             }
         }

@@ -282,7 +282,7 @@ public unsafe static class DWriteFont2VtblExtensions
     public static unsafe void GetPanose(this ComPtr<IDWriteFont2> thisVtbl, Panose* panose)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Panose*, void>)@this->LpVtbl[14])(@this, panose);
+        ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Panose*, void>)@this->LpVtbl[15])(@this, panose);
     }
 
     /// <summary>To be documented.</summary>
@@ -291,7 +291,7 @@ public unsafe static class DWriteFont2VtblExtensions
         var @this = thisVtbl.Handle;
         fixed (Panose* panosePtr = &panose)
         {
-            ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Panose*, void>)@this->LpVtbl[14])(@this, panosePtr);
+            ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Panose*, void>)@this->LpVtbl[15])(@this, panosePtr);
         }
     }
 
@@ -300,7 +300,7 @@ public unsafe static class DWriteFont2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
         return ret;
     }
 
@@ -311,7 +311,7 @@ public unsafe static class DWriteFont2VtblExtensions
         int ret = default;
         fixed (uint* actualRangeCountPtr = &actualRangeCount)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
         }
         return ret;
     }
@@ -323,7 +323,7 @@ public unsafe static class DWriteFont2VtblExtensions
         int ret = default;
         fixed (UnicodeRange* unicodeRangesPtr = &unicodeRanges)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
         }
         return ret;
     }
@@ -337,7 +337,7 @@ public unsafe static class DWriteFont2VtblExtensions
         {
             fixed (uint* actualRangeCountPtr = &actualRangeCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
             }
         }
         return ret;
@@ -348,7 +348,7 @@ public unsafe static class DWriteFont2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Silk.NET.Core.Bool32>)@this->LpVtbl[16])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Silk.NET.Core.Bool32>)@this->LpVtbl[17])(@this);
         return ret;
     }
 
@@ -357,7 +357,7 @@ public unsafe static class DWriteFont2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Silk.NET.Core.Bool32>)@this->LpVtbl[17])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Silk.NET.Core.Bool32>)@this->LpVtbl[18])(@this);
         return ret;
     }
 

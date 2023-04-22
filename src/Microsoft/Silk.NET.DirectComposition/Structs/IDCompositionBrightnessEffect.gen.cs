@@ -184,7 +184,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionBrightnessEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[6])(@this, whitePointX);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[7])(@this, whitePointX);
             return ret;
         }
 
@@ -193,7 +193,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionBrightnessEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[7])(@this, whitePointY);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[9])(@this, whitePointY);
             return ret;
         }
 
@@ -202,7 +202,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionBrightnessEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[8])(@this, blackPointX);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[11])(@this, blackPointX);
             return ret;
         }
 
@@ -211,7 +211,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionBrightnessEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[9])(@this, blackPointY);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBrightnessEffect*, float, int>)@this->LpVtbl[13])(@this, blackPointY);
             return ret;
         }
 

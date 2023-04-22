@@ -247,7 +247,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontFamily2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[10])(@this, listIndex, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[11])(@this, listIndex, fontFaceReference);
             return ret;
         }
 
@@ -258,7 +258,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[10])(@this, listIndex, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, uint, IDWriteFontFaceReference**, int>)@this->LpVtbl[11])(@this, listIndex, fontFaceReferencePtr);
             }
             return ret;
         }
@@ -268,7 +268,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontFamily2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, IDWriteFontSet1**, int>)@this->LpVtbl[11])(@this, fontSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, IDWriteFontSet1**, int>)@this->LpVtbl[13])(@this, fontSet);
             return ret;
         }
 
@@ -279,7 +279,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontSet1** fontSetPtr = &fontSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, IDWriteFontSet1**, int>)@this->LpVtbl[11])(@this, fontSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFamily2*, IDWriteFontSet1**, int>)@this->LpVtbl[13])(@this, fontSetPtr);
             }
             return ret;
         }

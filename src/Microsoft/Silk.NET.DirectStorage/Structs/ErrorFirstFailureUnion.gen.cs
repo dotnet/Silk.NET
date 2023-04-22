@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.DirectStorage
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_dstorage_L552_C5")]
+    [NativeName("Name", "__AnonymousRecord_dstorage_L556_C5")]
     public unsafe partial struct ErrorFirstFailureUnion
     {
         public ErrorFirstFailureUnion
