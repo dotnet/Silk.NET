@@ -53,7 +53,15 @@ public static class EnumPostProcessor
             }
 
             foreach (var tok in @enum.Tokens)
-            {
+            {   
+                //If theres a prefix override for this enum,
+                if(task.PrefixOverrides.ContainsKey(@enum.NativeName)) 
+                {
+                    //Use the raw native name as the trimming name
+                    tok.TrimmingName = tok.NativeName;
+                    continue;
+                }
+
                 tok.TrimmingName = tok.NativeName.LenientUnderscore();
             }
 
@@ -63,6 +71,23 @@ public static class EnumPostProcessor
                 ? Utilities.FindCommonPrefix
                     (new List<string> { @enum.Tokens[0].TrimmingName, testName }, true, false)
                 : Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.TrimmingName).ToList(), false, false);
+
+            //Set the prefix to the prefix override for this enum, if it exists.
+            //This is to allow us to handle poorly/inconsistently named enums, 
+            //without putting special cases elsewhere in the logic
+            //ex: For the enum
+            //    enum Things {
+            //      ThingsRGB
+            //      ThingRGB
+            //    }
+            //If we specify a prefix override of "Thing", 
+            //then it will trim ThingsRGB to sRGB and ThingRGB to RGB
+            //a case like this is simple to add a special case for in the generator to handle sRGB specially, 
+            //but see ImageChannelOrder from spirv.h for a more problematic occurance.
+            if (task.PrefixOverrides.TryGetValue(@enum.NativeName, out string overriddenPrefix)) 
+            {
+                prefix = overriddenPrefix;
+            }
 
             if (@enum.Tokens.Any(x => x.TrimmingName.Length <= prefix.Length))
             {
