@@ -8,12 +8,12 @@
 
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
-        <PackageId>Silk.NET.SPIRVReflect.Native</PackageId>
+        <PackageId>Silk.NET.SPIRV.Reflect.Native</PackageId>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
-        <Description>Multi-platform native library for SPIRVReflect.</Description>
+        <Description>Multi-platform native library for SPIRV-Reflect.</Description>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/KhronosGroup/SPIRV-Reflect</RepositoryUrl>
         <IncludeBuildOutput>false</IncludeBuildOutput>

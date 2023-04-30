@@ -509,7 +509,7 @@ pub fn build(b: *std.Build) void {
             (
                 () =>
                 {
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SPIRVReflect.Native" / "runtimes";
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SPIRV.Reflect.Native" / "runtimes";
 
                     //Write out the build script to the directory
                     File.WriteAllText(SPIRVReflectPath / "build.zig", SPIRVReflectBuildScript);
