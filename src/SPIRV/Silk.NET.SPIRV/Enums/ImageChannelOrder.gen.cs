@@ -37,19 +37,19 @@ namespace Silk.NET.SPIRV
         [NativeName("Name", "SpvImageChannelOrderRGx")]
         RGx = 0xB,
         [NativeName("Name", "SpvImageChannelOrderRGBx")]
-        RGBx = 0xC,
+        Rgbx = 0xC,
         [NativeName("Name", "SpvImageChannelOrderDepth")]
         Depth = 0xD,
         [NativeName("Name", "SpvImageChannelOrderDepthStencil")]
         DepthStencil = 0xE,
         [NativeName("Name", "SpvImageChannelOrdersRGB")]
-        Rgb = 0xF,
+        SRgb = 0xF,
         [NativeName("Name", "SpvImageChannelOrdersRGBx")]
-        RGBx = 0x10,
+        SRgbx = 0x10,
         [NativeName("Name", "SpvImageChannelOrdersRGBA")]
-        Rgba = 0x11,
+        SRgba = 0x11,
         [NativeName("Name", "SpvImageChannelOrdersBGRA")]
-        Bgra = 0x12,
+        SBgra = 0x12,
         [NativeName("Name", "SpvImageChannelOrderABGR")]
         Abgr = 0x13,
         [NativeName("Name", "SpvImageChannelOrderMax")]
