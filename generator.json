@@ -2487,7 +2487,7 @@
                 "no-extra-dir"
             ],
             "converter": {},
-            "prefix": "spv",
+            "prefix": "spvReflect",
             "clang": {
                 "args": [
                     "--language=c++",
@@ -2505,14 +2505,17 @@
                     "build/submodules/SPIRV-Reflect/spirv_reflect.h"
                 ],
                 "classes": {
-                    "spirv_reflect.h": "[Core]SPIRVReflect"
+                    "spirv_reflect.h": "[Core]Reflect"
                 }
             },
             "exclude": [
                 "SPV_REVISION",
-                "SPV_VERSION"
+                "SPV_VERSION",
+                "ShaderModule"
             ],
             "rename": {
+                "SpvReflectDescriptorSet": "ReflectDescriptorSet",
+                "SpvReflectShaderModule": "ReflectShaderModule"
             },
             "bakery": {
                 "profileNames": [
@@ -2521,12 +2524,12 @@
             },
             "output": {
                 "mode": "Default",
-                "path": "src/SPIRV/Silk.NET.SPIRVReflect",
+                "path": "src/SPIRV/Silk.NET.SPIRV.Reflect",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
-            "namespace": "Silk.NET.SPIRVReflect",
-            "extensionsNamespace": "Silk.NET.SPIRVReflect.Extensions",
+            "namespace": "Silk.NET.SPIRV.Reflect",
+            "extensionsNamespace": "Silk.NET.SPIRV.Reflect.Extensions",
             "nameContainer": {
                 "linux-x64": "libspirv-reflect.so",
                 "win-x64": "spirv-reflect.dll",
