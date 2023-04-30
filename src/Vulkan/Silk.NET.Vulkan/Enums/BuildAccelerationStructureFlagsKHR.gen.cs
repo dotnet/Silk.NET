@@ -45,6 +45,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"AllowDisplacementMicromapUpdateNV\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_NV")]
         BuildAccelerationStructureAllowDisplacementMicromapUpdateNV = 512,
+        [Obsolete("Deprecated in favour of \"AllowDataAccessKhr\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_KHR")]
+        BuildAccelerationStructureAllowDataAccessKhr = 2048,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
         AllowUpdateBitKhr = 1,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
@@ -65,5 +68,7 @@ namespace Silk.NET.Vulkan
         AllowOpacityMicromapDataUpdateExt = 256,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_NV")]
         AllowDisplacementMicromapUpdateNV = 512,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_KHR")]
+        AllowDataAccessKhr = 2048,
     }
 }
