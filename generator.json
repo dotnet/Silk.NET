@@ -2427,7 +2427,7 @@
                     "build/submodules/SPIRV-Headers/include/spirv/unified1/spirv.h"
                 ],
                 "classes": {
-                    "spirv.h": "[Core]SPIRV"
+                    "spirv.h": "[Core]Spv"
                 }
             },
             "exclude": [

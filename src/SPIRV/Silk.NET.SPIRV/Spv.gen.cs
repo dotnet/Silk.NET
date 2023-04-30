@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SPIRV
 {
-    public unsafe partial class SPIRV
+    public unsafe partial class Spv
     {
         [NativeName("Type", "const unsigned int")]
         [NativeName("Name", "SpvMagicNumber")]
