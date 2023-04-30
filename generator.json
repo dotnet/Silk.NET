@@ -2515,7 +2515,9 @@
             ],
             "rename": {
                 "SpvReflectDescriptorSet": "ReflectDescriptorSet",
-                "SpvReflectShaderModule": "ReflectShaderModule"
+                "SpvReflectShaderModule": "ReflectShaderModule",
+                "__AnonymousEnum_spirv_reflect_L261_C1": "Constants",
+                "__AnonymousEnum_spirv_reflect_L266_C1": "Constants"
             },
             "bakery": {
                 "profileNames": [

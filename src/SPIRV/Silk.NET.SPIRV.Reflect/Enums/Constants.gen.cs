@@ -11,13 +11,17 @@ namespace Silk.NET.SPIRV.Reflect
 {
     [Flags]
     [NativeName("Name", "__AnonymousEnum_spirv_reflect_L261_C1")]
-    public enum AnonymousEnumSpirvReflectL261C1 : int
+    public enum Constants : int
     {
         [NativeName("Name", "")]
         None = 0,
         [NativeName("Name", "SPV_REFLECT_MAX_ARRAY_DIMS")]
-        ArrayDims = 0x20,
+        MaxArrayDims = 0x20,
         [NativeName("Name", "SPV_REFLECT_MAX_DESCRIPTOR_SETS")]
-        DescriptorSets = 0x40,
+        MaxDescriptorSets = 0x40,
+        [NativeName("Name", "SPV_REFLECT_BINDING_NUMBER_DONT_CHANGE")]
+        BindingNumberDontChange = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+        [NativeName("Name", "SPV_REFLECT_SET_NUMBER_DONT_CHANGE")]
+        SetNumberDontChange = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }
