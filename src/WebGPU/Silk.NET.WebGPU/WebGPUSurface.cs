@@ -31,7 +31,7 @@ public static class WebGPUSurface
                 Chain = new ChainedStruct
                 {
                     Next  = null,
-                    SType = SType.SurfaceDescriptorFromCanvasHtmlselector
+                    SType = SType.SurfaceDescriptorFromCanvasHtmlSelector
                 },
                 Selector = (byte*) SilkMarshal.StringToPtr("canvas")
             };
@@ -120,7 +120,7 @@ public static class WebGPUSurface
 
         var surface = wgpu.InstanceCreateSurface(instance, descriptor);
 
-        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlselector)
+        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlSelector)
         {
             var htmlDescriptor = (SurfaceDescriptorFromCanvasHTMLSelector*) descriptor.NextInChain;
             
