@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Silk.NET.SPIRV\Silk.NET.SPIRV.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />
