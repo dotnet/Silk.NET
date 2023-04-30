@@ -1512,6 +1512,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceLegacyDitheringFeaturesExt = 1000465000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES_EXT")]
         PhysicalDevicePipelineProtectedAccessFeaturesExt = 1000466000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_POSITION_FETCH_FEATURES_KHR")]
+        PhysicalDeviceRayTracingPositionFetchFeaturesKhr = 1000481000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_FEATURES_EXT")]
         PhysicalDeviceShaderObjectFeaturesExt = 1000482000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_PROPERTIES_EXT")]
