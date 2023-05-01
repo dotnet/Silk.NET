@@ -53,7 +53,9 @@ jobs:
         with:
           command: |
             apt update
-            apt install -y python3-pip curl wget build-essential git make autoconf gcc-multilib g++-multilib automake libtool pkg-config ninja-build gnome-desktop-testing libasound2-dev libpulse-dev libaudio-dev libjack-dev libsndio-dev libsamplerate0-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
+            apt install -y python3 python3-pip curl wget build-essential git make autoconf gcc-multilib g++-multilib automake libtool pkg-config ninja-build gnome-desktop-testing libasound2-dev libpulse-dev libaudio-dev libjack-dev libsndio-dev libsamplerate0-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
+
+            python3 -m ensurepip --upgrade
 
             # we install cmake through pip because apt has too old of a version for our uses
             pip3 install scikit-build
