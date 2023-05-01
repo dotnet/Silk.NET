@@ -47,16 +47,6 @@ jobs:
           echo running extras
           ${{ matrix.env.extras }}
 
-      - name: Setup .NET 6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.201
-
-      - name: Setup .NET 7.0.102
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 7.0.102
-
       - name: Build SDL2
         if: runner.os == 'Linux'
         uses: Beyley/run-as-1804@239b211a2ca687388b6251d6dab22cb90ac0391d
@@ -64,6 +54,11 @@ jobs:
           command: |
             apt update
             apt install -y curl build-essential git make autoconf automake libtool pkg-config cmake ninja-build gnome-desktop-testing libasound2-dev libpulse-dev libaudio-dev libjack-dev libsndio-dev libsamplerate0-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
+
+            wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+            chmod +x ./dotnet-install.sh
+            ./dotnet-install.sh --version 6.0.0
+            ./dotnet-install.sh --version 7.0.2
 
             ${{ matrix.env.nuke_invoke }} SDL2
         env:
