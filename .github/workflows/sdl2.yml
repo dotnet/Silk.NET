@@ -38,7 +38,7 @@ jobs:
 
       - name: Checkout submodules, configure git
         run: |
-          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive build/submodules/wgpu-native
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive build/submodules/SDL
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
 
@@ -59,7 +59,7 @@ jobs:
 
       - name: Build SDL2
         if: runner.os == 'Linux'
-        uses: Beyley/run-as-1804@21256e88fa0a2a0a2c9b955d98de3cca368ff50a
+        uses: Beyley/run-as-1804@239b211a2ca687388b6251d6dab22cb90ac0391d
         with:
           command: |
             sudo apt update
@@ -68,7 +68,7 @@ jobs:
             ${{ matrix.env.nuke_invoke }} SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
-          
+
       - name: Build SDL2
         if: runner.os != 'Linux'
         run: ${{ matrix.env.nuke_invoke }} SDL2
