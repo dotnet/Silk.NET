@@ -330,6 +330,75 @@ partial class Build
         )
         );
 
+    AbsolutePath SDL2Path => RootDirectory / "build" / "submodules" / "SDL";
+
+    Target SDL2 => CommonTarget
+        (
+        x => x.Before(Compile)
+        .After(Clean)
+        .Executes
+        (
+        () =>
+        {
+            var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SDL.Native" / "runtimes";
+
+            var x86BuildDir = SDL2Path / "buildx86";
+            var x64BuildDir = SDL2Path / "buildx64";
+            var ARM64BuildDir = SDL2Path / "buildARM64";
+            EnsureCleanDirectory(x86BuildDir);
+            EnsureCleanDirectory(x64BuildDir);
+            EnsureCleanDirectory(ARM64BuildDir);
+
+            if(OperatingSystem.IsWindows())
+            {
+                //Compile Windows libraries
+                InheritedShell("cargo build --release --target=i686-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
+                InheritedShell("cargo build --release --target=x86_64-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
+                InheritedShell("cargo build --release --target=aarch64-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
+
+                CopyFile(x86BuildDir / "i686-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-x86" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
+                CopyFile(x86BuildDir / "x86_64-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-x64" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
+                CopyFile(x86BuildDir / "aarch64-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-arm64" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
+            }
+
+            if(OperatingSystem.IsLinux())
+            {
+                if(RuntimeInformation.OSArchitecture == Architecture.Arm64) {
+                    InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
+                    InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
+
+                    CopyFile(ARM64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                } else if (RuntimeInformation.OSArchitecture == Architecture.X64) {
+                    var envVars32bit = "CFLAGS=-m32 CXXFLAGS=-m32";
+
+                    InheritedShell($"{envVars32bit} cmake .. -G Ninja", x86BuildDir).AssertZeroExitCode();
+                    InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
+
+                    InheritedShell($"cmake .. -G Ninja", x64BuildDir).AssertZeroExitCode();
+                    InheritedShell("cmake --build .", x64BuildDir).AssertZeroExitCode();
+                
+                    CopyFile(x86BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile(x64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                } else {
+                    throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
+                }
+            }
+
+            if(OperatingSystem.IsMacOS())
+            {
+                //Compile MacOS libraries
+                InheritedShell("cargo build --release --target=aarch64-apple-darwin", WgpuPath).AssertZeroExitCode();
+                InheritedShell("cargo build --release --target=x86_64-apple-darwin", WgpuPath).AssertZeroExitCode();
+
+                CopyFile(x86BuildDir / "x86_64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-x64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
+                CopyFile(x86BuildDir / "aarch64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-arm64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
+            }
+
+            PrUpdatedNativeBinary("SDL2");
+        }
+        )
+        );
+
     AbsolutePath GLFWPath => RootDirectory / "build" / "submodules" / "GLFW";
 
     Target GLFW => CommonTarget
