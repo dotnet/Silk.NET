@@ -63,6 +63,12 @@ jobs:
             export DOTNET_ROOT=$HOME/.dotnet
             export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
+            # export the pushable token to the env of the docker container
+            export PUSHABLE_GITHUB_TOKEN=${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+
+            # mark workspace as safe
+            git config --global --add safe.directory /github/workspace
+
             ${{ matrix.env.nuke_invoke }} SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
