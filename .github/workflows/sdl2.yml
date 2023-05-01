@@ -57,7 +57,7 @@ jobs:
 
             wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
             chmod +x ./dotnet-install.sh
-            ./dotnet-install.sh --version 6.0.0
+            ./dotnet-install.sh --version 6.0.408
             ./dotnet-install.sh --version 7.0.2
 
             ${{ matrix.env.nuke_invoke }} SDL2
