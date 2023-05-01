@@ -369,16 +369,18 @@ partial class Build
 
                     CopyFile(ARM64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                 } else if (RuntimeInformation.OSArchitecture == Architecture.X64) {
-                    var envVars32bit = "CFLAGS=-m32 CXXFLAGS=-m32";
+                    var envVars32bit = "CFLAGS=-m32 CXXFLAGS=-m32 LDFLAGS=-m32";
 
-                    InheritedShell($"{envVars32bit} cmake .. -G Ninja", x86BuildDir).AssertZeroExitCode();
-                    InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
+                    InheritedShell($"{envVars32bit} ./configure --prefix={x86BuildDir}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars32bit} make -j48", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
-                    InheritedShell($"cmake .. -G Ninja", x64BuildDir).AssertZeroExitCode();
-                    InheritedShell("cmake --build .", x64BuildDir).AssertZeroExitCode();
+                    InheritedShell($"./configure --prefix={x64BuildDir}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make -j48", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
                 
-                    CopyFile(x86BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                    CopyFile(x64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile(x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile(x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                 } else {
                     throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
                 }
