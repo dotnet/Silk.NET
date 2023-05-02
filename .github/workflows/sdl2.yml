@@ -18,13 +18,11 @@ jobs:
           - os: ubuntu-latest
             name: Linux
             nuke_invoke: ./build.sh
-            # extras: |
-              # sudo apt-get update
-              # sudo apt-get install -y gcc-multilib
-          # - os: windows-latest
-          #   name: Windows
-          #   nuke_invoke: ./build.cmd
-          #   extras: ""
+          - os: windows-latest
+            name: Windows
+            nuke_invoke: ./build.cmd
+            extras: |
+              pwsh build\Install-WindowsSDK.ps1
           # - os: macos-latest
           #   name: Darwin
           #   nuke_invoke: ./build.sh
@@ -46,6 +44,10 @@ jobs:
         run: |
           echo running extras
           ${{ matrix.env.extras }}
+
+      # Install CMake
+      - uses: lukka/get-cmake@latest
+        if: runner.os != 'Linux'
 
       - name: Build SDL2
         if: runner.os == 'Linux'

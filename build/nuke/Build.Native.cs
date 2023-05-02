@@ -351,14 +351,21 @@ partial class Build
 
             if(OperatingSystem.IsWindows())
             {
-                //Compile Windows libraries
-                InheritedShell("cargo build --release --target=i686-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=x86_64-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=aarch64-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
+                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
+                var build = $"cmake --build --config Release{JobsArg}";
 
-                CopyFile(x86BuildDir / "i686-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-x86" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
-                CopyFile(x86BuildDir / "x86_64-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-x64" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
-                CopyFile(x86BuildDir / "aarch64-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-arm64" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
+                InheritedShell($"{prepare} -A Win32", x86BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -A X64", x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -A arm64", ARM64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
+
+                CopyFile(x86BuildDir / "Release" / "SDL2.dll", runtimes / "win-x86" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                CopyFile(x64BuildDir / "Release" / "SDL2.dll", runtimes / "win-x64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                CopyFile(ARM64BuildDir / "Release" / "SDL2.dll", runtimes / "win-arm64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
             }
 
             if(OperatingSystem.IsLinux())
