@@ -355,7 +355,7 @@ partial class Build
                 var build = $"cmake --build . --config Release{JobsArg}";
 
                 InheritedShell($"{prepare} -A Win32", x86BuildDir).AssertZeroExitCode();
-                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x86BuildDir).AssertZeroExitCode();
 
                 InheritedShell($"{prepare} -A X64", x64BuildDir).AssertZeroExitCode();
                 InheritedShell(build, x64BuildDir).AssertZeroExitCode();
