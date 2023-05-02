@@ -120,7 +120,7 @@ fn fs_main() -> @location(0) vec4<f32> {
                 Code = (byte*) SilkMarshal.StringToPtr(SHADER),
                 Chain = new ChainedStruct
                 {
-                    SType = SType.ShaderModuleWgsldescriptor
+                    SType = SType.ShaderModuleWgslDescriptor
                 }
             };
 
