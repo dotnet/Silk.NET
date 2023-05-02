@@ -352,7 +352,7 @@ partial class Build
             if(OperatingSystem.IsWindows())
             {
                 var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
-                var build = $"cmake --build --config Release{JobsArg}";
+                var build = $"cmake --build . --config Release{JobsArg}";
 
                 InheritedShell($"{prepare} -A Win32", x86BuildDir).AssertZeroExitCode();
                 InheritedShell(build, x64BuildDir).AssertZeroExitCode();
@@ -380,11 +380,11 @@ partial class Build
                     var envVars64bit = "CFLAGS=-O2 CXXFLAGS=-O2";
 
                     InheritedShell($"{envVars32bit} ./configure --prefix={x86BuildDir}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"{envVars32bit} make -j48", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars32bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
                     InheritedShell($"{envVars64bit} ./configure --prefix={x64BuildDir}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"{envVars64bit} make -j48", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars64bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
                     //Strip the libraries
