@@ -46,6 +46,15 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_DeinterlaceTech_Mask")]
         DXVA2DeinterlaceTechMask = 0x1FF,
+        [Obsolete("Deprecated in favour of \"BobLineReplicate\"")]
+        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBLineReplicate")]
+        BoblineReplicate = 0x1,
+        [Obsolete("Deprecated in favour of \"BobVerticalStretch\"")]
+        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch")]
+        BobverticalStretch = 0x2,
+        [Obsolete("Deprecated in favour of \"BobVerticalStretch4Tap\"")]
+        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch4Tap")]
+        BobverticalStretch4Tap = 0x4,
         [NativeName("Name", "DXVA2_DeinterlaceTech_Unknown")]
         Unknown = 0x0,
         [NativeName("Name", "DXVA2_DeinterlaceTech_BOBLineReplicate")]

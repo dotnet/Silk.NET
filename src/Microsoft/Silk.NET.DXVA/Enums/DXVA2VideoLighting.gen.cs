@@ -30,6 +30,24 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Dark\"")]
         [NativeName("Name", "DXVA2_VideoLighting_dark")]
         DXVA2VideoLightingDark = 0x4,
+        [Obsolete("Deprecated in favour of \"Mask\"")]
+        [NativeName("Name", "DXVA2_VideoLightingMask")]
+        VideoLightingMask = 0xF,
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
+        [NativeName("Name", "DXVA2_VideoLighting_Unknown")]
+        VideoLightingUnknown = 0x0,
+        [Obsolete("Deprecated in favour of \"Bright\"")]
+        [NativeName("Name", "DXVA2_VideoLighting_bright")]
+        VideoLightingBright = 0x1,
+        [Obsolete("Deprecated in favour of \"Office\"")]
+        [NativeName("Name", "DXVA2_VideoLighting_office")]
+        VideoLightingOffice = 0x2,
+        [Obsolete("Deprecated in favour of \"Dim\"")]
+        [NativeName("Name", "DXVA2_VideoLighting_dim")]
+        VideoLightingDim = 0x3,
+        [Obsolete("Deprecated in favour of \"Dark\"")]
+        [NativeName("Name", "DXVA2_VideoLighting_dark")]
+        VideoLightingDark = 0x4,
         [NativeName("Name", "DXVA2_VideoLightingMask")]
         Mask = 0xF,
         [NativeName("Name", "DXVA2_VideoLighting_Unknown")]

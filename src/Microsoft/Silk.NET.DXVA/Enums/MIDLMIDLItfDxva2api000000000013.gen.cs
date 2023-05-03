@@ -21,6 +21,15 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"SoftwareRenderTarget\"")]
         [NativeName("Name", "DXVA2_VideoSoftwareRenderTarget")]
         DXVA2VideoSoftwareRenderTarget = 0x2,
+        [Obsolete("Deprecated in favour of \"DecoderRenderTarget\"")]
+        [NativeName("Name", "DXVA2_VideoDecoderRenderTarget")]
+        VideoDecoderRenderTarget = 0x0,
+        [Obsolete("Deprecated in favour of \"ProcessorRenderTarget\"")]
+        [NativeName("Name", "DXVA2_VideoProcessorRenderTarget")]
+        VideoProcessorRenderTarget = 0x1,
+        [Obsolete("Deprecated in favour of \"SoftwareRenderTarget\"")]
+        [NativeName("Name", "DXVA2_VideoSoftwareRenderTarget")]
+        VideoSoftwareRenderTarget = 0x2,
         [NativeName("Name", "DXVA2_VideoDecoderRenderTarget")]
         DecoderRenderTarget = 0x0,
         [NativeName("Name", "DXVA2_VideoProcessorRenderTarget")]

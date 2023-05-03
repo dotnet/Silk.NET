@@ -12,6 +12,18 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureDimension")]
     public enum TextureDimension : int
     {
+        [Obsolete("Deprecated in favour of \"Dimension1D\"")]
+        [NativeName("Name", "WGPUTextureDimension_1D")]
+        WgputextureDimension1D = 0x0,
+        [Obsolete("Deprecated in favour of \"Dimension2D\"")]
+        [NativeName("Name", "WGPUTextureDimension_2D")]
+        WgputextureDimension2D = 0x1,
+        [Obsolete("Deprecated in favour of \"Dimension3D\"")]
+        [NativeName("Name", "WGPUTextureDimension_3D")]
+        WgputextureDimension3D = 0x2,
+        [Obsolete("Deprecated in favour of \"DimensionForce32\"")]
+        [NativeName("Name", "WGPUTextureDimension_Force32")]
+        WgputextureDimensionForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUTextureDimension_1D")]
         Dimension1D = 0x0,
         [NativeName("Name", "WGPUTextureDimension_2D")]

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy
         [Obsolete("Deprecated in favour of \"ColorExt\"")]
         [NativeName("Name", "GL_FRAGMENT_COLOR_EXT")]
         FragmentColorExt = 0x834C,
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Depth\"")]
         [NativeName("Name", "GL_FRAGMENT_DEPTH")]
         FragmentDepth = 0x8452,
         [Obsolete("Deprecated in favour of \"DepthExt\"")]

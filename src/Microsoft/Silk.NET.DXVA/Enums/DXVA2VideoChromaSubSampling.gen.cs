@@ -43,6 +43,36 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Cosited\"")]
         [NativeName("Name", "DXVA2_VideoChromaSubsampling_Cosited")]
         DXVA2VideoChromaSubsamplingCosited = 0x7,
+        [Obsolete("Deprecated in favour of \"Mask\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsamplingMask")]
+        VideoChromaSubsamplingMask = 0xF,
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_Unknown")]
+        VideoChromaSubsamplingUnknown = 0x0,
+        [Obsolete("Deprecated in favour of \"ProgressiveChroma\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_ProgressiveChroma")]
+        VideoChromaSubsamplingProgressiveChroma = 0x8,
+        [Obsolete("Deprecated in favour of \"HorizontallyCosited\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_Horizontally_Cosited")]
+        VideoChromaSubsamplingHorizontallyCosited = 0x4,
+        [Obsolete("Deprecated in favour of \"VerticallyCosited\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_Vertically_Cosited")]
+        VideoChromaSubsamplingVerticallyCosited = 0x2,
+        [Obsolete("Deprecated in favour of \"VerticallyAlignedChromaPlanes\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_Vertically_AlignedChromaPlanes")]
+        VideoChromaSubsamplingVerticallyAlignedChromaPlanes = 0x1,
+        [Obsolete("Deprecated in favour of \"Mpeg2\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_MPEG2")]
+        VideoChromaSubsamplingMpeg2 = 0x5,
+        [Obsolete("Deprecated in favour of \"Mpeg1\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_MPEG1")]
+        VideoChromaSubsamplingMpeg1 = 0x1,
+        [Obsolete("Deprecated in favour of \"DVPal\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_DV_PAL")]
+        VideoChromaSubsamplingDVPal = 0x6,
+        [Obsolete("Deprecated in favour of \"Cosited\"")]
+        [NativeName("Name", "DXVA2_VideoChromaSubsampling_Cosited")]
+        VideoChromaSubsamplingCosited = 0x7,
         [NativeName("Name", "DXVA2_VideoChromaSubsamplingMask")]
         Mask = 0xF,
         [NativeName("Name", "DXVA2_VideoChromaSubsampling_Unknown")]

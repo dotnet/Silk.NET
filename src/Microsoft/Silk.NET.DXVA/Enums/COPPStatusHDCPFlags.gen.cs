@@ -18,6 +18,12 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"FlagsReserved\"")]
         [NativeName("Name", "COPP_HDCPFlagsReserved")]
         CoppHdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
+        [Obsolete("Deprecated in favour of \"Repeater\"")]
+        [NativeName("Name", "COPP_HDCPRepeater")]
+        Hdcprepeater = 0x1,
+        [Obsolete("Deprecated in favour of \"FlagsReserved\"")]
+        [NativeName("Name", "COPP_HDCPFlagsReserved")]
+        HdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
         [NativeName("Name", "COPP_HDCPRepeater")]
         Repeater = 0x1,
         [NativeName("Name", "COPP_HDCPFlagsReserved")]

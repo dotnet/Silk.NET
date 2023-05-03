@@ -12,6 +12,30 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureViewDimension")]
     public enum TextureViewDimension : int
     {
+        [Obsolete("Deprecated in favour of \"DimensionUndefined\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_Undefined")]
+        WgputextureViewDimensionUndefined = 0x0,
+        [Obsolete("Deprecated in favour of \"Dimension1D\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_1D")]
+        WgputextureViewDimension1D = 0x1,
+        [Obsolete("Deprecated in favour of \"Dimension2D\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_2D")]
+        WgputextureViewDimension2D = 0x2,
+        [Obsolete("Deprecated in favour of \"Dimension2DArray\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_2DArray")]
+        WgputextureViewDimension2DArray = 0x3,
+        [Obsolete("Deprecated in favour of \"DimensionCube\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_Cube")]
+        WgputextureViewDimensionCube = 0x4,
+        [Obsolete("Deprecated in favour of \"DimensionCubeArray\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_CubeArray")]
+        WgputextureViewDimensionCubeArray = 0x5,
+        [Obsolete("Deprecated in favour of \"Dimension3D\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_3D")]
+        WgputextureViewDimension3D = 0x6,
+        [Obsolete("Deprecated in favour of \"DimensionForce32\"")]
+        [NativeName("Name", "WGPUTextureViewDimension_Force32")]
+        WgputextureViewDimensionForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUTextureViewDimension_Undefined")]
         DimensionUndefined = 0x0,
         [NativeName("Name", "WGPUTextureViewDimension_1D")]

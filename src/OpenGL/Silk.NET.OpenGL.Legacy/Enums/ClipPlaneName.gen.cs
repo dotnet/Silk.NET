@@ -12,37 +12,37 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "ClipPlaneName")]
     public enum ClipPlaneName : int
     {
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Plane0\"")]
         [NativeName("Name", "GL_CLIP_PLANE0")]
         ClipPlane0 = 0x3000,
         [Obsolete("Deprecated in favour of \"Distance0\"")]
         [NativeName("Name", "GL_CLIP_DISTANCE0")]
         ClipDistance0 = 0x3000,
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Plane1\"")]
         [NativeName("Name", "GL_CLIP_PLANE1")]
         ClipPlane1 = 0x3001,
         [Obsolete("Deprecated in favour of \"Distance1\"")]
         [NativeName("Name", "GL_CLIP_DISTANCE1")]
         ClipDistance1 = 0x3001,
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Plane2\"")]
         [NativeName("Name", "GL_CLIP_PLANE2")]
         ClipPlane2 = 0x3002,
         [Obsolete("Deprecated in favour of \"Distance2\"")]
         [NativeName("Name", "GL_CLIP_DISTANCE2")]
         ClipDistance2 = 0x3002,
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Plane3\"")]
         [NativeName("Name", "GL_CLIP_PLANE3")]
         ClipPlane3 = 0x3003,
         [Obsolete("Deprecated in favour of \"Distance3\"")]
         [NativeName("Name", "GL_CLIP_DISTANCE3")]
         ClipDistance3 = 0x3003,
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Plane4\"")]
         [NativeName("Name", "GL_CLIP_PLANE4")]
         ClipPlane4 = 0x3004,
         [Obsolete("Deprecated in favour of \"Distance4\"")]
         [NativeName("Name", "GL_CLIP_DISTANCE4")]
         ClipDistance4 = 0x3004,
-        [System.Obsolete]
+        [Obsolete("Deprecated in favour of \"Plane5\"")]
         [NativeName("Name", "GL_CLIP_PLANE5")]
         ClipPlane5 = 0x3005,
         [Obsolete("Deprecated in favour of \"Distance5\"")]

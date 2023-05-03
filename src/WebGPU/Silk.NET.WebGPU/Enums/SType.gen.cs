@@ -12,6 +12,15 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUSType")]
     public enum SType : int
     {
+        [Obsolete("Deprecated in favour of \"SurfaceDescriptorFromCanvasHtmlSelector\"")]
+        [NativeName("Name", "WGPUSType_SurfaceDescriptorFromCanvasHTMLSelector")]
+        SurfaceDescriptorFromCanvasHtmlselector = 0x4,
+        [Obsolete("Deprecated in favour of \"ShaderModuleSpirvDescriptor\"")]
+        [NativeName("Name", "WGPUSType_ShaderModuleSPIRVDescriptor")]
+        ShaderModuleSpirvdescriptor = 0x5,
+        [Obsolete("Deprecated in favour of \"ShaderModuleWgslDescriptor\"")]
+        [NativeName("Name", "WGPUSType_ShaderModuleWGSLDescriptor")]
+        ShaderModuleWgsldescriptor = 0x6,
         [NativeName("Name", "WGPUSType_Invalid")]
         Invalid = 0x0,
         [NativeName("Name", "WGPUSType_SurfaceDescriptorFromMetalLayer")]

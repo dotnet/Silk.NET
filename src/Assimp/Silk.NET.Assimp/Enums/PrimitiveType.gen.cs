@@ -30,6 +30,9 @@ namespace Silk.NET.Assimp
         [Obsolete("Deprecated in favour of \"NgonEncodingFlag\"")]
         [NativeName("Name", "aiPrimitiveType_NGONEncodingFlag")]
         PrimitiveTypeNgonencodingFlag = 0x10,
+        [Obsolete("Deprecated in favour of \"NgonEncodingFlag\"")]
+        [NativeName("Name", "aiPrimitiveType_NGONEncodingFlag")]
+        NgonencodingFlag = 0x10,
         [NativeName("Name", "aiPrimitiveType_POINT")]
         Point = 0x1,
         [NativeName("Name", "aiPrimitiveType_LINE")]

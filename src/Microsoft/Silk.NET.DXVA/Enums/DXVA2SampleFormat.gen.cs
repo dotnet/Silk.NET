@@ -36,6 +36,30 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"SubStream\"")]
         [NativeName("Name", "DXVA2_SampleSubStream")]
         DXVA2SampleSubStream = 0x7,
+        [Obsolete("Deprecated in favour of \"FormatMask\"")]
+        [NativeName("Name", "DXVA2_SampleFormatMask")]
+        SampleFormatMask = 0xFF,
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
+        [NativeName("Name", "DXVA2_SampleUnknown")]
+        SampleUnknown = 0x0,
+        [Obsolete("Deprecated in favour of \"ProgressiveFrame\"")]
+        [NativeName("Name", "DXVA2_SampleProgressiveFrame")]
+        SampleProgressiveFrame = 0x2,
+        [Obsolete("Deprecated in favour of \"FieldInterleavedEvenFirst\"")]
+        [NativeName("Name", "DXVA2_SampleFieldInterleavedEvenFirst")]
+        SampleFieldInterleavedEvenFirst = 0x3,
+        [Obsolete("Deprecated in favour of \"FieldInterleavedOddFirst\"")]
+        [NativeName("Name", "DXVA2_SampleFieldInterleavedOddFirst")]
+        SampleFieldInterleavedOddFirst = 0x4,
+        [Obsolete("Deprecated in favour of \"FieldSingleEven\"")]
+        [NativeName("Name", "DXVA2_SampleFieldSingleEven")]
+        SampleFieldSingleEven = 0x5,
+        [Obsolete("Deprecated in favour of \"FieldSingleOdd\"")]
+        [NativeName("Name", "DXVA2_SampleFieldSingleOdd")]
+        SampleFieldSingleOdd = 0x6,
+        [Obsolete("Deprecated in favour of \"SubStream\"")]
+        [NativeName("Name", "DXVA2_SampleSubStream")]
+        SampleSubStream = 0x7,
         [NativeName("Name", "DXVA2_SampleFormatMask")]
         FormatMask = 0xFF,
         [NativeName("Name", "DXVA2_SampleUnknown")]

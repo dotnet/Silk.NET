@@ -67,6 +67,9 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_VideoProcess_Mask")]
         DXVA2VideoProcessMask = 0xFFFF,
+        [Obsolete("Deprecated in favour of \"Yuv2RgbExtended\"")]
+        [NativeName("Name", "DXVA2_VideoProcess_YUV2RGBExtended")]
+        Yuv2Rgbextended = 0x80,
         [NativeName("Name", "DXVA2_VideoProcess_None")]
         None = 0x0,
         [NativeName("Name", "DXVA2_VideoProcess_YUV2RGB")]

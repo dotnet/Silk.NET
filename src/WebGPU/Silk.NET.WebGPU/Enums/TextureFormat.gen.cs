@@ -12,6 +12,42 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureFormat")]
     public enum TextureFormat : int
     {
+        [Obsolete("Deprecated in favour of \"BC1RgbaUnorm\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnorm")]
+        BC1Rgbaunorm = 0x2B,
+        [Obsolete("Deprecated in favour of \"BC1RgbaUnormSrgb\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnormSrgb")]
+        BC1RgbaunormSrgb = 0x2C,
+        [Obsolete("Deprecated in favour of \"BC2RgbaUnorm\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnorm")]
+        BC2Rgbaunorm = 0x2D,
+        [Obsolete("Deprecated in favour of \"BC2RgbaUnormSrgb\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnormSrgb")]
+        BC2RgbaunormSrgb = 0x2E,
+        [Obsolete("Deprecated in favour of \"BC3RgbaUnorm\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnorm")]
+        BC3Rgbaunorm = 0x2F,
+        [Obsolete("Deprecated in favour of \"BC3RgbaUnormSrgb\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnormSrgb")]
+        BC3RgbaunormSrgb = 0x30,
+        [Obsolete("Deprecated in favour of \"BC5RGUnorm\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC5RGUnorm")]
+        BC5Rgunorm = 0x33,
+        [Obsolete("Deprecated in favour of \"BC5RGSnorm\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC5RGSnorm")]
+        BC5Rgsnorm = 0x34,
+        [Obsolete("Deprecated in favour of \"BC6HrgbUfloat\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC6HRGBUfloat")]
+        BC6Hrgbufloat = 0x35,
+        [Obsolete("Deprecated in favour of \"BC6HrgbFloat\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC6HRGBFloat")]
+        BC6Hrgbfloat = 0x36,
+        [Obsolete("Deprecated in favour of \"BC7RgbaUnorm\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnorm")]
+        BC7Rgbaunorm = 0x37,
+        [Obsolete("Deprecated in favour of \"BC7RgbaUnormSrgb\"")]
+        [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnormSrgb")]
+        BC7RgbaunormSrgb = 0x38,
         [NativeName("Name", "WGPUTextureFormat_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUTextureFormat_R8Unorm")]

@@ -2404,6 +2404,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "no-obsolete-enum",
+                "no-pre-2.18-enums",
                 "typemap-native",
                 "no-extra-dir",
                 "no-name-container"
@@ -2486,6 +2487,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "no-obsolete-enum",
+                "no-pre-2.18-enums",
                 "typemap-native",
                 "no-extra-dir"
             ],

@@ -39,6 +39,9 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_DestinationFlagMask")]
         DXVA2DestinationFlagMask = unchecked((int) 0xFFFFFFFFFFFF000F),
+        [Obsolete("Deprecated in favour of \"Mask\"")]
+        [NativeName("Name", "DXVA2_DestinationFlagMask")]
+        Ask = unchecked((int) 0xFFFFFFFFFFFF000F),
         [NativeName("Name", "DXVA2_DestinationFlag_Background_Changed")]
         BackgroundChanged = 0x1,
         [NativeName("Name", "DXVA2_DestinationFlag_TargetRect_Changed")]
