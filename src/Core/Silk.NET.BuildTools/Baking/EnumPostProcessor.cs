@@ -281,15 +281,16 @@ public static class EnumPostProcessor
                 .Where(x => x is not null)
                 .ToList();
 
+                @enum.Tokens.RemoveAll(x => newEnums.Any(y => y.Name == x.Name));
                 if (noObsoleteEnums)
                 {
-                    @enum.Tokens = newEnums;
+                    @enum.Tokens.RemoveAll
+                    (
+                        x => x.TrimmingMethod is null || (int) x.TrimmingMethod.Value <= (int) method
+                    );
                 }
-                else
-                {
-                    @enum.Tokens.RemoveAll(x => newEnums.Any(y => y.Name == x.Name));
-                    @enum.Tokens.AddRange(newEnums);
-                }
+
+                @enum.Tokens.AddRange(newEnums);
             }
         }
     }
