@@ -370,12 +370,15 @@ partial class Build
 
             if(OperatingSystem.IsLinux())
             {
-                if(RuntimeInformation.OSArchitecture == Architecture.Arm64) {
+                if(RuntimeInformation.OSArchitecture == Architecture.Arm64) 
+                {
                     InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
                     InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
 
                     CopyFile(ARM64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                } else if (RuntimeInformation.OSArchitecture == Architecture.X64) {
+                } 
+                else if (RuntimeInformation.OSArchitecture == Architecture.X64) 
+                {
                     var envVars32bit = "CFLAGS='-m32 -O2' CXXFLAGS='-m32 -O2' LDFLAGS=-m32";
                     var envVars64bit = "CFLAGS=-O2 CXXFLAGS=-O2";
 
@@ -393,19 +396,26 @@ partial class Build
 
                     CopyFile(x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                     CopyFile(x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                } else {
+                } 
+                else 
+                {
                     throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
                 }
             }
 
             if(OperatingSystem.IsMacOS())
             {
-                //Compile MacOS libraries
-                InheritedShell("cargo build --release --target=aarch64-apple-darwin", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=x86_64-apple-darwin", WgpuPath).AssertZeroExitCode();
+                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
+                var build = $"cmake --build . --config Release{JobsArg}";
 
-                CopyFile(x86BuildDir / "x86_64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-x64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
-                CopyFile(x86BuildDir / "aarch64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-arm64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
+                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", ARM64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
+
+                CopyFile(x64BuildDir / "Release" / "libSDL2-2.0.0.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
+                CopyFile(ARM64BuildDir / "Release" / "libSDL2-2.0.0.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
             }
 
             PrUpdatedNativeBinary("SDL2");
