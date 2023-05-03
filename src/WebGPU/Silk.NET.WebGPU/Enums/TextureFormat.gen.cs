@@ -12,6 +12,30 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureFormat")]
     public enum TextureFormat : int
     {
+        [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnorm")]
+        BC1RgbaUnorm = 0x2B,
+        [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnormSrgb")]
+        BC1RgbaUnormSrgb = 0x2C,
+        [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnorm")]
+        BC2RgbaUnorm = 0x2D,
+        [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnormSrgb")]
+        BC2RgbaUnormSrgb = 0x2E,
+        [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnorm")]
+        BC3RgbaUnorm = 0x2F,
+        [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnormSrgb")]
+        BC3RgbaUnormSrgb = 0x30,
+        [NativeName("Name", "WGPUTextureFormat_BC5RGUnorm")]
+        BC5RGUnorm = 0x33,
+        [NativeName("Name", "WGPUTextureFormat_BC5RGSnorm")]
+        BC5RGSnorm = 0x34,
+        [NativeName("Name", "WGPUTextureFormat_BC6HRGBUfloat")]
+        BC6HrgbUfloat = 0x35,
+        [NativeName("Name", "WGPUTextureFormat_BC6HRGBFloat")]
+        BC6HrgbFloat = 0x36,
+        [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnorm")]
+        BC7RgbaUnorm = 0x37,
+        [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnormSrgb")]
+        BC7RgbaUnormSrgb = 0x38,
         [NativeName("Name", "WGPUTextureFormat_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUTextureFormat_R8Unorm")]
