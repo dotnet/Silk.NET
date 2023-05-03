@@ -12,16 +12,16 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "LightModelParameter")]
     public enum LightModelParameter : int
     {
-        [Obsolete("Deprecated in favour of \"LocalViewer\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_LIGHT_MODEL_LOCAL_VIEWER")]
         LightModelLocalViewer = 0xB51,
-        [Obsolete("Deprecated in favour of \"TwoSide\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_LIGHT_MODEL_TWO_SIDE")]
         LightModelTwoSide = 0xB52,
-        [Obsolete("Deprecated in favour of \"Ambient\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_LIGHT_MODEL_AMBIENT")]
         LightModelAmbient = 0xB53,
-        [Obsolete("Deprecated in favour of \"ColorControl\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL")]
         LightModelColorControl = 0x81F8,
         [Obsolete("Deprecated in favour of \"ColorControlExt\"")]

@@ -27,6 +27,16 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Smpte240M\"")]
         [NativeName("Name", "DXVA2_VideoTransferMatrix_SMPTE240M")]
         DXVA2VideoTransferMatrixSmpte240M = 0x3,
+        [NativeName("Name", "DXVA2_VideoTransferMatrixMask")]
+        Mask = 0x7,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_Unknown")]
+        Unknown = 0x0,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_BT709")]
+        BT709 = 0x1,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_BT601")]
+        BT601 = 0x2,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_SMPTE240M")]
+        Smpte240M = 0x3,
         [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_VideoTransferMatrixMask")]
         VideoTransferMatrixMask = 0x7,
@@ -42,15 +52,5 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Smpte240M\"")]
         [NativeName("Name", "DXVA2_VideoTransferMatrix_SMPTE240M")]
         VideoTransferMatrixSmpte240M = 0x3,
-        [NativeName("Name", "DXVA2_VideoTransferMatrixMask")]
-        Mask = 0x7,
-        [NativeName("Name", "DXVA2_VideoTransferMatrix_Unknown")]
-        Unknown = 0x0,
-        [NativeName("Name", "DXVA2_VideoTransferMatrix_BT709")]
-        BT709 = 0x1,
-        [NativeName("Name", "DXVA2_VideoTransferMatrix_BT601")]
-        BT601 = 0x2,
-        [NativeName("Name", "DXVA2_VideoTransferMatrix_SMPTE240M")]
-        Smpte240M = 0x3,
     }
 }

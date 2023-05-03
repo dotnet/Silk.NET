@@ -42,6 +42,26 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"SmpteC\"")]
         [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE_C")]
         DXVA2VideoPrimariesSmpteC = 0x8,
+        [NativeName("Name", "DXVA2_VideoPrimariesMask")]
+        Mask = 0x1F,
+        [NativeName("Name", "DXVA2_VideoPrimaries_Unknown")]
+        Unknown = 0x0,
+        [NativeName("Name", "DXVA2_VideoPrimaries_reserved")]
+        Reserved = 0x1,
+        [NativeName("Name", "DXVA2_VideoPrimaries_BT709")]
+        BT709 = 0x2,
+        [NativeName("Name", "DXVA2_VideoPrimaries_BT470_2_SysM")]
+        BT4702SysM = 0x3,
+        [NativeName("Name", "DXVA2_VideoPrimaries_BT470_2_SysBG")]
+        BT4702SysBG = 0x4,
+        [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE170M")]
+        Smpte170M = 0x5,
+        [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE240M")]
+        Smpte240M = 0x6,
+        [NativeName("Name", "DXVA2_VideoPrimaries_EBU3213")]
+        Ebu3213 = 0x7,
+        [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE_C")]
+        SmpteC = 0x8,
         [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_VideoPrimariesMask")]
         VideoPrimariesMask = 0x1F,
@@ -72,25 +92,5 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"SmpteC\"")]
         [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE_C")]
         VideoPrimariesSmpteC = 0x8,
-        [NativeName("Name", "DXVA2_VideoPrimariesMask")]
-        Mask = 0x1F,
-        [NativeName("Name", "DXVA2_VideoPrimaries_Unknown")]
-        Unknown = 0x0,
-        [NativeName("Name", "DXVA2_VideoPrimaries_reserved")]
-        Reserved = 0x1,
-        [NativeName("Name", "DXVA2_VideoPrimaries_BT709")]
-        BT709 = 0x2,
-        [NativeName("Name", "DXVA2_VideoPrimaries_BT470_2_SysM")]
-        BT4702SysM = 0x3,
-        [NativeName("Name", "DXVA2_VideoPrimaries_BT470_2_SysBG")]
-        BT4702SysBG = 0x4,
-        [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE170M")]
-        Smpte170M = 0x5,
-        [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE240M")]
-        Smpte240M = 0x6,
-        [NativeName("Name", "DXVA2_VideoPrimaries_EBU3213")]
-        Ebu3213 = 0x7,
-        [NativeName("Name", "DXVA2_VideoPrimaries_SMPTE_C")]
-        SmpteC = 0x8,
     }
 }

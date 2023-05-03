@@ -12,13 +12,13 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "ClientAttribMask")]
     public enum ClientAttribMask : int
     {
-        [Obsolete("Deprecated in favour of \"PixelStoreBit\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_CLIENT_PIXEL_STORE_BIT")]
         ClientPixelStoreBit = 0x1,
-        [Obsolete("Deprecated in favour of \"VertexArrayBit\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_CLIENT_VERTEX_ARRAY_BIT")]
         ClientVertexArrayBit = 0x2,
-        [Obsolete("Deprecated in favour of \"AllAttribBits\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_CLIENT_ALL_ATTRIB_BITS")]
         ClientAllAttribBits = unchecked((int)0xFFFFFFFF),
         [System.Obsolete]

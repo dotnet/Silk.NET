@@ -43,9 +43,8 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"AlphaBlendExtended\"")]
         [NativeName("Name", "DXVA_VideoProcess_AlphaBlendExtended")]
         VideoProcessAlphaBlendExtended = 0x100,
-        [Obsolete("Deprecated in favour of \"Yuv2RgbExtended\"")]
         [NativeName("Name", "DXVA_VideoProcess_YUV2RGBExtended")]
-        Yuv2Rgbextended = 0x80,
+        Yuv2RgbExtended = 0x80,
         [NativeName("Name", "DXVA_VideoProcess_None")]
         None = 0x0,
         [NativeName("Name", "DXVA_VideoProcess_YUV2RGB")]
@@ -62,8 +61,9 @@ namespace Silk.NET.DXVA
         SubStreams = 0x20,
         [NativeName("Name", "DXVA_VideoProcess_SubStreamsExtended")]
         SubStreamsExtended = 0x40,
+        [Obsolete("Deprecated in favour of \"Yuv2RgbExtended\"")]
         [NativeName("Name", "DXVA_VideoProcess_YUV2RGBExtended")]
-        Yuv2RgbExtended = 0x80,
+        Yuv2Rgbextended = 0x80,
         [NativeName("Name", "DXVA_VideoProcess_AlphaBlendExtended")]
         AlphaBlendExtended = 0x100,
     }

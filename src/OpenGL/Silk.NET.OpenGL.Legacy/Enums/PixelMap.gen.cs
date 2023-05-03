@@ -12,34 +12,34 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "PixelMap")]
     public enum PixelMap : int
     {
-        [Obsolete("Deprecated in favour of \"IToI\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_I")]
         PixelMapIToI = 0xC70,
-        [Obsolete("Deprecated in favour of \"SToS\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_S_TO_S")]
         PixelMapSToS = 0xC71,
-        [Obsolete("Deprecated in favour of \"IToR\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_R")]
         PixelMapIToR = 0xC72,
-        [Obsolete("Deprecated in favour of \"IToG\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_G")]
         PixelMapIToG = 0xC73,
-        [Obsolete("Deprecated in favour of \"IToB\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_B")]
         PixelMapIToB = 0xC74,
-        [Obsolete("Deprecated in favour of \"IToA\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_A")]
         PixelMapIToA = 0xC75,
-        [Obsolete("Deprecated in favour of \"RToR\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_R_TO_R")]
         PixelMapRToR = 0xC76,
-        [Obsolete("Deprecated in favour of \"GToG\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_G_TO_G")]
         PixelMapGToG = 0xC77,
-        [Obsolete("Deprecated in favour of \"BToB\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_B_TO_B")]
         PixelMapBToB = 0xC78,
-        [Obsolete("Deprecated in favour of \"AToA\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_PIXEL_MAP_A_TO_A")]
         PixelMapAToA = 0xC79,
         [System.Obsolete]

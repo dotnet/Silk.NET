@@ -12,42 +12,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureFormat")]
     public enum TextureFormat : int
     {
-        [Obsolete("Deprecated in favour of \"BC1RgbaUnorm\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnorm")]
-        BC1Rgbaunorm = 0x2B,
-        [Obsolete("Deprecated in favour of \"BC1RgbaUnormSrgb\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnormSrgb")]
-        BC1RgbaunormSrgb = 0x2C,
-        [Obsolete("Deprecated in favour of \"BC2RgbaUnorm\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnorm")]
-        BC2Rgbaunorm = 0x2D,
-        [Obsolete("Deprecated in favour of \"BC2RgbaUnormSrgb\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnormSrgb")]
-        BC2RgbaunormSrgb = 0x2E,
-        [Obsolete("Deprecated in favour of \"BC3RgbaUnorm\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnorm")]
-        BC3Rgbaunorm = 0x2F,
-        [Obsolete("Deprecated in favour of \"BC3RgbaUnormSrgb\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnormSrgb")]
-        BC3RgbaunormSrgb = 0x30,
-        [Obsolete("Deprecated in favour of \"BC5RGUnorm\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC5RGUnorm")]
-        BC5Rgunorm = 0x33,
-        [Obsolete("Deprecated in favour of \"BC5RGSnorm\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC5RGSnorm")]
-        BC5Rgsnorm = 0x34,
-        [Obsolete("Deprecated in favour of \"BC6HrgbUfloat\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC6HRGBUfloat")]
-        BC6Hrgbufloat = 0x35,
-        [Obsolete("Deprecated in favour of \"BC6HrgbFloat\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC6HRGBFloat")]
-        BC6Hrgbfloat = 0x36,
-        [Obsolete("Deprecated in favour of \"BC7RgbaUnorm\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnorm")]
-        BC7Rgbaunorm = 0x37,
-        [Obsolete("Deprecated in favour of \"BC7RgbaUnormSrgb\"")]
-        [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnormSrgb")]
-        BC7RgbaunormSrgb = 0x38,
         [NativeName("Name", "WGPUTextureFormat_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUTextureFormat_R8Unorm")]
@@ -134,34 +98,46 @@ namespace Silk.NET.WebGPU
         Depth32float = 0x29,
         [NativeName("Name", "WGPUTextureFormat_Depth32FloatStencil8")]
         Depth32floatStencil8 = 0x2A,
+        [Obsolete("Deprecated in favour of \"BC1RgbaUnorm\"")]
         [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnorm")]
-        BC1RgbaUnorm = 0x2B,
+        BC1Rgbaunorm = 0x2B,
+        [Obsolete("Deprecated in favour of \"BC1RgbaUnormSrgb\"")]
         [NativeName("Name", "WGPUTextureFormat_BC1RGBAUnormSrgb")]
-        BC1RgbaUnormSrgb = 0x2C,
+        BC1RgbaunormSrgb = 0x2C,
+        [Obsolete("Deprecated in favour of \"BC2RgbaUnorm\"")]
         [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnorm")]
-        BC2RgbaUnorm = 0x2D,
+        BC2Rgbaunorm = 0x2D,
+        [Obsolete("Deprecated in favour of \"BC2RgbaUnormSrgb\"")]
         [NativeName("Name", "WGPUTextureFormat_BC2RGBAUnormSrgb")]
-        BC2RgbaUnormSrgb = 0x2E,
+        BC2RgbaunormSrgb = 0x2E,
+        [Obsolete("Deprecated in favour of \"BC3RgbaUnorm\"")]
         [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnorm")]
-        BC3RgbaUnorm = 0x2F,
+        BC3Rgbaunorm = 0x2F,
+        [Obsolete("Deprecated in favour of \"BC3RgbaUnormSrgb\"")]
         [NativeName("Name", "WGPUTextureFormat_BC3RGBAUnormSrgb")]
-        BC3RgbaUnormSrgb = 0x30,
+        BC3RgbaunormSrgb = 0x30,
         [NativeName("Name", "WGPUTextureFormat_BC4RUnorm")]
         BC4RUnorm = 0x31,
         [NativeName("Name", "WGPUTextureFormat_BC4RSnorm")]
         BC4RSnorm = 0x32,
+        [Obsolete("Deprecated in favour of \"BC5RGUnorm\"")]
         [NativeName("Name", "WGPUTextureFormat_BC5RGUnorm")]
-        BC5RGUnorm = 0x33,
+        BC5Rgunorm = 0x33,
+        [Obsolete("Deprecated in favour of \"BC5RGSnorm\"")]
         [NativeName("Name", "WGPUTextureFormat_BC5RGSnorm")]
-        BC5RGSnorm = 0x34,
+        BC5Rgsnorm = 0x34,
+        [Obsolete("Deprecated in favour of \"BC6HrgbUfloat\"")]
         [NativeName("Name", "WGPUTextureFormat_BC6HRGBUfloat")]
-        BC6HrgbUfloat = 0x35,
+        BC6Hrgbufloat = 0x35,
+        [Obsolete("Deprecated in favour of \"BC6HrgbFloat\"")]
         [NativeName("Name", "WGPUTextureFormat_BC6HRGBFloat")]
-        BC6HrgbFloat = 0x36,
+        BC6Hrgbfloat = 0x36,
+        [Obsolete("Deprecated in favour of \"BC7RgbaUnorm\"")]
         [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnorm")]
-        BC7RgbaUnorm = 0x37,
+        BC7Rgbaunorm = 0x37,
+        [Obsolete("Deprecated in favour of \"BC7RgbaUnormSrgb\"")]
         [NativeName("Name", "WGPUTextureFormat_BC7RGBAUnormSrgb")]
-        BC7RgbaUnormSrgb = 0x38,
+        BC7RgbaunormSrgb = 0x38,
         [NativeName("Name", "WGPUTextureFormat_ETC2RGB8Unorm")]
         Etc2Rgb8Unorm = 0x39,
         [NativeName("Name", "WGPUTextureFormat_ETC2RGB8UnormSrgb")]

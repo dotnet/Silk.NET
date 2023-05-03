@@ -34,17 +34,17 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"ForceDword\"")]
         [NativeName("Name", "COPP_BusType_ForceDWORD")]
         CoppBusTypeForceDword = 0x7FFFFFFF,
-        [Obsolete("Deprecated in favour of \"PciExpress\"")]
         [NativeName("Name", "COPP_BusType_PCIExpress")]
-        Pciexpress = 0x3,
+        PciExpress = 0x3,
         [NativeName("Name", "COPP_BusType_Unknown")]
         Unknown = 0x0,
         [NativeName("Name", "COPP_BusType_PCI")]
         Pci = 0x1,
         [NativeName("Name", "COPP_BusType_PCIX")]
         Pcix = 0x2,
+        [Obsolete("Deprecated in favour of \"PciExpress\"")]
         [NativeName("Name", "COPP_BusType_PCIExpress")]
-        PciExpress = 0x3,
+        Pciexpress = 0x3,
         [NativeName("Name", "COPP_BusType_AGP")]
         Agp = 0x4,
         [NativeName("Name", "COPP_BusType_Integrated")]

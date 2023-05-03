@@ -12,22 +12,22 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "FogParameter")]
     public enum FogParameter : int
     {
-        [Obsolete("Deprecated in favour of \"Index\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_FOG_INDEX")]
         FogIndex = 0xB61,
-        [Obsolete("Deprecated in favour of \"Density\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_FOG_DENSITY")]
         FogDensity = 0xB62,
-        [Obsolete("Deprecated in favour of \"Start\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_FOG_START")]
         FogStart = 0xB63,
-        [Obsolete("Deprecated in favour of \"End\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_FOG_END")]
         FogEnd = 0xB64,
-        [Obsolete("Deprecated in favour of \"Mode\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_FOG_MODE")]
         FogMode = 0xB65,
-        [Obsolete("Deprecated in favour of \"Color\"")]
+        [System.Obsolete]
         [NativeName("Name", "GL_FOG_COLOR")]
         FogColor = 0xB66,
         [Obsolete("Deprecated in favour of \"OffsetValueSgix\"")]

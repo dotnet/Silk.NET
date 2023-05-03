@@ -34,6 +34,20 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Range48208\"")]
         [NativeName("Name", "DXVA2_NominalRange_48_208")]
         DXVA2NominalRange48208 = 0x3,
+        [NativeName("Name", "DXVA2_NominalRangeMask")]
+        RangeMask = 0x7,
+        [NativeName("Name", "DXVA2_NominalRange_Unknown")]
+        RangeUnknown = 0x0,
+        [NativeName("Name", "DXVA2_NominalRange_Normal")]
+        RangeNormal = 0x1,
+        [NativeName("Name", "DXVA2_NominalRange_Wide")]
+        RangeWide = 0x2,
+        [NativeName("Name", "DXVA2_NominalRange_0_255")]
+        Range0255 = 0x1,
+        [NativeName("Name", "DXVA2_NominalRange_16_235")]
+        Range16235 = 0x2,
+        [NativeName("Name", "DXVA2_NominalRange_48_208")]
+        Range48208 = 0x3,
         [Obsolete("Deprecated in favour of \"RangeMask\"")]
         [NativeName("Name", "DXVA2_NominalRangeMask")]
         NominalRangeMask = 0x7,
@@ -55,19 +69,5 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Range48208\"")]
         [NativeName("Name", "DXVA2_NominalRange_48_208")]
         NominalRange48208 = 0x3,
-        [NativeName("Name", "DXVA2_NominalRangeMask")]
-        RangeMask = 0x7,
-        [NativeName("Name", "DXVA2_NominalRange_Unknown")]
-        RangeUnknown = 0x0,
-        [NativeName("Name", "DXVA2_NominalRange_Normal")]
-        RangeNormal = 0x1,
-        [NativeName("Name", "DXVA2_NominalRange_Wide")]
-        RangeWide = 0x2,
-        [NativeName("Name", "DXVA2_NominalRange_0_255")]
-        Range0255 = 0x1,
-        [NativeName("Name", "DXVA2_NominalRange_16_235")]
-        Range16235 = 0x2,
-        [NativeName("Name", "DXVA2_NominalRange_48_208")]
-        Range48208 = 0x3,
     }
 }

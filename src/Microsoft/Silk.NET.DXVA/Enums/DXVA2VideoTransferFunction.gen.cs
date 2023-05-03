@@ -42,6 +42,26 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Func28\"")]
         [NativeName("Name", "DXVA2_VideoTransFunc_28")]
         DXVA2VideoTransFunc28 = 0x8,
+        [NativeName("Name", "DXVA2_VideoTransFuncMask")]
+        FuncMask = 0x1F,
+        [NativeName("Name", "DXVA2_VideoTransFunc_Unknown")]
+        FuncUnknown = 0x0,
+        [NativeName("Name", "DXVA2_VideoTransFunc_10")]
+        Func10 = 0x1,
+        [NativeName("Name", "DXVA2_VideoTransFunc_18")]
+        Func18 = 0x2,
+        [NativeName("Name", "DXVA2_VideoTransFunc_20")]
+        Func20 = 0x3,
+        [NativeName("Name", "DXVA2_VideoTransFunc_22")]
+        Func22 = 0x4,
+        [NativeName("Name", "DXVA2_VideoTransFunc_709")]
+        Func709 = 0x5,
+        [NativeName("Name", "DXVA2_VideoTransFunc_240M")]
+        Func240M = 0x6,
+        [NativeName("Name", "DXVA2_VideoTransFunc_sRGB")]
+        FuncSRgb = 0x7,
+        [NativeName("Name", "DXVA2_VideoTransFunc_28")]
+        Func28 = 0x8,
         [Obsolete("Deprecated in favour of \"FuncMask\"")]
         [NativeName("Name", "DXVA2_VideoTransFuncMask")]
         VideoTransFuncMask = 0x1F,
@@ -72,25 +92,5 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Func28\"")]
         [NativeName("Name", "DXVA2_VideoTransFunc_28")]
         VideoTransFunc28 = 0x8,
-        [NativeName("Name", "DXVA2_VideoTransFuncMask")]
-        FuncMask = 0x1F,
-        [NativeName("Name", "DXVA2_VideoTransFunc_Unknown")]
-        FuncUnknown = 0x0,
-        [NativeName("Name", "DXVA2_VideoTransFunc_10")]
-        Func10 = 0x1,
-        [NativeName("Name", "DXVA2_VideoTransFunc_18")]
-        Func18 = 0x2,
-        [NativeName("Name", "DXVA2_VideoTransFunc_20")]
-        Func20 = 0x3,
-        [NativeName("Name", "DXVA2_VideoTransFunc_22")]
-        Func22 = 0x4,
-        [NativeName("Name", "DXVA2_VideoTransFunc_709")]
-        Func709 = 0x5,
-        [NativeName("Name", "DXVA2_VideoTransFunc_240M")]
-        Func240M = 0x6,
-        [NativeName("Name", "DXVA2_VideoTransFunc_sRGB")]
-        FuncSRgb = 0x7,
-        [NativeName("Name", "DXVA2_VideoTransFunc_28")]
-        Func28 = 0x8,
     }
 }

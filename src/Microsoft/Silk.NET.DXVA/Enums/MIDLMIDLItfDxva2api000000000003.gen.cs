@@ -46,6 +46,14 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Mask\"")]
         [NativeName("Name", "DXVA2_DeinterlaceTech_Mask")]
         DXVA2DeinterlaceTechMask = 0x1FF,
+        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBLineReplicate")]
+        BobLineReplicate = 0x1,
+        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch")]
+        BobVerticalStretch = 0x2,
+        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch4Tap")]
+        BobVerticalStretch4Tap = 0x4,
+        [NativeName("Name", "DXVA2_DeinterlaceTech_Unknown")]
+        Unknown = 0x0,
         [Obsolete("Deprecated in favour of \"BobLineReplicate\"")]
         [NativeName("Name", "DXVA2_DeinterlaceTech_BOBLineReplicate")]
         BoblineReplicate = 0x1,
@@ -55,14 +63,6 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"BobVerticalStretch4Tap\"")]
         [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch4Tap")]
         BobverticalStretch4Tap = 0x4,
-        [NativeName("Name", "DXVA2_DeinterlaceTech_Unknown")]
-        Unknown = 0x0,
-        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBLineReplicate")]
-        BobLineReplicate = 0x1,
-        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch")]
-        BobVerticalStretch = 0x2,
-        [NativeName("Name", "DXVA2_DeinterlaceTech_BOBVerticalStretch4Tap")]
-        BobVerticalStretch4Tap = 0x4,
         [NativeName("Name", "DXVA2_DeinterlaceTech_MedianFiltering")]
         MedianFiltering = 0x8,
         [NativeName("Name", "DXVA2_DeinterlaceTech_EdgeFiltering")]
