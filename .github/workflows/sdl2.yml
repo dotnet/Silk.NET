@@ -23,10 +23,10 @@ jobs:
             nuke_invoke: ./build.cmd
             extras: |
               pwsh build\Install-WindowsSDK.ps1
-          # - os: macos-latest
-          #   name: Darwin
-          #   nuke_invoke: ./build.sh
-          #   extras: ""
+          - os: macos-latest
+            name: Darwin
+            nuke_invoke: ./build.sh
+            extras: ""
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
