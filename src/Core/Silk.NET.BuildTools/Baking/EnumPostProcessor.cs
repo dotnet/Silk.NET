@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -15,12 +15,29 @@ namespace Silk.NET.BuildTools.Baking;
 
 public static class EnumPostProcessor
 {
+    /// <summary>
+    /// The trimming method. New trimming methods need to be added to the bottom so they have a higher number and thus
+    /// more preference when adding obsolete attributes.
+    /// </summary>
+    public enum NameMethod
+    {
+        Version217,
+        Version218
+    }
+
+    public static readonly string[] NameMethodObsoleteControls =
+    {
+        "no-pre-2.17-obsolete-enums",
+        "no-pre-2.18-obsolete-enums"
+    };
+
     private static readonly HashSet<string> _forbiddenTrimmings = new() { "unsigned", "per" };
 
     public static void Process(Profile profile, BindTask task)
     {
         AddFlagsAttribute(profile);
-        StripCommonPrefix(profile, task);
+        StripCommonPrefix(profile, task, NameMethod.Version218);
+        StripCommonPrefix(profile, task, NameMethod.Version217);
         AddNoneFlags(profile);
     }
 
@@ -37,14 +54,29 @@ public static class EnumPostProcessor
         }
     }
 
-    private static void StripCommonPrefix(Profile profile, BindTask task)
+    private static void StripCommonPrefix(Profile profile, BindTask task, NameMethod method)
     {
         if (profile.Name == "OpenCL")
         {
             // done at the convert/construct level
             return;
         }
+
+        if (task.Controls.Max(x => Array.IndexOf(NameMethodObsoleteControls, x)) > (int) method)
+        {
+            // This check passing means that there is a control descriptor that prevents generation of obsolete enums
+            // from older trimming methods. i.e. if no-pre-2.18-obsolete-enums is present, don't try generating enums
+            // that will be obsoleted by the newer naming method. The reason that this is > and not >= is because if
+            // we're using the 2.18 naming method and we've asked for no pre-2.18 obsolete enums, we still need to
+            // generate the 2.18 trimmings to know what to exclude/obsolete, whereas this initial check determines
+            // whether we can skip the older naming method outright.
+            return;
+        }
         
+        // VERY IMPORTANT: Only apply this logic to the LAST name trimming method, otherwise when the last one rolls
+        // around we'll have nothing left to trim.
+        var noObsoleteEnums = task.Controls.Contains(NameMethodObsoleteControls[(int) method]);
+
         foreach (var @enum in profile.Projects.Values.SelectMany(x => x.Enums))
         {
             // If the enum has no tokens, 
@@ -54,43 +86,42 @@ public static class EnumPostProcessor
                 continue;
             }
 
-            foreach (var tok in @enum.Tokens)
-            {   
-                //If theres a prefix override for this enum,
-                if(task.PrefixOverrides.ContainsKey(@enum.NativeName)) 
+            string enumTrimmingName;
+            if (method == NameMethod.Version217)
+            {
+                foreach (var tok in @enum.Tokens)
                 {
-                    //Use the raw native name as the trimming name
                     tok.TrimmingName = tok.NativeName;
-                    continue;
+                }
+                
+                enumTrimmingName = @enum.NativeName;
+                if (!enumTrimmingName.Contains('_'))
+                {
+                    enumTrimmingName = enumTrimmingName.Underscore();
+                }
+            }
+            else
+            {
+                foreach (var tok in @enum.Tokens)
+                {   
+                    //If theres a prefix override for this enum,
+                    if(task.PrefixOverrides.ContainsKey(@enum.NativeName)) 
+                    {
+                        //Use the raw native name as the trimming name
+                        tok.TrimmingName = tok.NativeName;
+                        continue;
+                    }
+
+                    tok.TrimmingName = tok.NativeName.LenientUnderscore();
                 }
 
-                tok.TrimmingName = tok.NativeName.LenientUnderscore();
+                enumTrimmingName = @enum.NativeName.LenientUnderscore();
             }
 
-            var enumTrimmingName = @enum.NativeName.LenientUnderscore();
-
-            var enumTrimmingName2_17 = @enum.NativeName;
-            if(!enumTrimmingName2_17.Contains('_')) 
-            {
-                enumTrimmingName2_17 = enumTrimmingName2_17.Underscore();
-            }
-
-            //Try to find a common prefix for the enum tokens
-            var prefix = @enum.Tokens.Count == 1
+            var prefix = @enum.Tokens.Count(y => y.TrimmingMethod is null) == 1
                 ? Utilities.FindCommonPrefix
                     (new List<string> { @enum.Tokens[0].TrimmingName, enumTrimmingName }, true, false)
                 : Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.TrimmingName).ToList(), false, false);
-
-            //Try to find a common prefix for the enum tokens, using the old pre-2.18 logic
-            var prefix2_17 = @enum.Tokens.Count == 1
-                ? Utilities.FindCommonPrefix
-                    (new List<string> { @enum.Tokens[0].NativeName, enumTrimmingName2_17 }, true, false)
-                : Utilities.FindCommonPrefix(@enum.Tokens.Select(x => x.NativeName).ToList(), false, false);
-
-            if(@enum.NativeName == "WGPUTextureDimension") {
-                Console.WriteLine($"CCCCCC: {enumTrimmingName}:{prefix}");
-                Console.WriteLine($"DDDDDD: {enumTrimmingName2_17}:{prefix2_17}");
-            }
 
             //Set the prefix to the prefix override for this enum, if it exists.
             //This is to allow us to handle poorly/inconsistently named enums, 
@@ -120,23 +151,6 @@ public static class EnumPostProcessor
                 );
             }
 
-            // pre 2.18 logic
-            // If any of the token's native name is shorter than the prefix length,
-            if (@enum.Tokens.Any(x => x.NativeName.Length <= prefix2_17.Length))
-            {
-                // Do a second pass, but put the enum name in the loop to see if it makes a difference
-                prefix2_17 = Utilities.FindCommonPrefix
-                (
-                    @enum.Tokens.Select(x => x.NativeName).Concat(Enumerable.Repeat(enumTrimmingName2_17, 1)).ToList(),
-                    false, false
-                );
-            }
-
-            if(@enum.NativeName == "WGPUTextureDimension") {
-                Console.WriteLine($"EEEEEE: {enumTrimmingName}:{prefix}");
-                Console.WriteLine($"FFFFFF: {enumTrimmingName2_17}:{prefix2_17}");
-            }
-
             // Iterate through all of the forbidden trimmings,
             foreach (var word in _forbiddenTrimmings)
             {
@@ -145,13 +159,6 @@ public static class EnumPostProcessor
                 {
                     // Clear the prefix
                     prefix = string.Empty;
-                }
-
-                // If the prefix starts with a forbidden trimming,
-                if (prefix2_17.StartsWith($"{word}_"))
-                {
-                    // Clear the prefix
-                    prefix2_17 = string.Empty;
                 }
 
                 // If the prefix contains the forbidden trimming surrounded by underscores,
@@ -166,137 +173,123 @@ public static class EnumPostProcessor
                     //    it makes prefix = THIS
                     prefix = prefix[..idx];
                 }
-
-                // If the prefix contains the forbidden trimming surrounded by underscores,
-                idx = prefix2_17.IndexOf($"_{word}_", StringComparison.OrdinalIgnoreCase);
-                if (idx != -1)
-                {
-                    //Trim the end of the prefix to the start of the forbidden trimming
-                    //ex:
-                    //    word = GL
-                    //    prefix = THIS_GL_
-                    //
-                    //    it makes prefix = THIS
-                    prefix2_17 = prefix2_17[..idx];
-                }
             }
 
             //If we have found a prefix
-            if (prefix.Length > 0 || prefix2_17.Length > 0)
+            if (prefix.Length > 0)
             {
-                //Transform the old tokens into a set of new tokens, with names using the 2.18 logic
-                var newTokens = @enum.Tokens.Select
+                // Generate the new trimmings from the untrimmed enums.
+                var newEnums = @enum.Tokens.Where(x => x.TrimmingMethod is null).Select
                 (
                     x =>
                     {
                         var newName = Naming.Translate(x.TrimmingName[prefix.Length..], task.FunctionPrefix);
 
-                        if(@enum.NativeName == "WGPUTextureDimension")
+                        // If the trimmed name is the same as the original name, don't generate a new token for it.
+                        // HOWEVER, if we're not going to include the original tokens, then we do actually need to
+                        // generate it.
+                        if (newName == x.Name && !noObsoleteEnums)
                         {
-                            Console.WriteLine($"AAAAAAAA {prefix}:{x.TrimmingName}:{newName}");
+                            return null;
                         }
 
-                        var attrs = x.Attributes.ToList();
-
-                        //Remove all existing oboslete attributes
-                        x.Attributes.RemoveAll(x => x.Name is "Obsolete" or "System.Obsolete");
-
-                        x.Attributes.Add
+                        // Clone the attribute list so adding an obsolete attribute to the original doesn't affect the
+                        // new token. We do however want to keep the non-name related obsolete attributes if any.
+                        var attrs = x.Attributes.Where
                         (
-                            new Attribute
-                            {
-                                Name = "Obsolete",
-                                Arguments = new List<string>
-                                {
-                                    $"\"Deprecated in favour of \\\"{newName}\\\"\""
-                                }
-                            }
+                            y => y is not { Name: "Obsolete" or "System.Obsolete", Origin: nameof(StripCommonPrefix) }
+                        ).ToList();
+                        
+                        // Create the return token.
+                        var ret = new Token
+                        {
+                            Attributes = attrs,
+                            Doc = x.Doc,
+                            Name = newName,
+                            NativeName = x.NativeName,
+                            Value = x.Value,
+                            TrimmingMethod = method
+                        };
+
+                        var obsoleteForNonNameReasons = x.Attributes.Any
+                        (
+                            y => y is { Name: "Obsolete" or "System.Obsolete", Origin: not nameof(StripCommonPrefix) }
                         );
 
-                        return new Token
+                        if (obsoleteForNonNameReasons)
                         {
-                            Attributes = attrs,
-                            Doc = x.Doc,
-                            Name = newName,
-                            NativeName = x.NativeName,
-                            Value = x.Value
-                        };
-                    }
-                )
-                .ToList();
-
-                //Transform the old tokens into a set of new tokens, with names using the 2.17 logic
-                var tokens2_17 = @enum.Tokens.Select
-                (
-                    x =>
-                    {
-                        var newName = Naming.Translate(x.NativeName[prefix2_17.Length..], task.FunctionPrefix);
-
-                        if(@enum.NativeName == "WGPUTextureDimension")
-                        {
-                            Console.WriteLine($"BBBBBBBB {prefix2_17}:{x.NativeName}:{newName}:{task.FunctionPrefix}");
+                            // Just return now and don't do any obsolete attribute processing - all variants of this
+                            // token will be obsolete for the same non-trimming-related reason.
+                            return ret;
                         }
 
-                        var attrs = x.Attributes.ToList();
+                        // Get the token that is "preferred" to this one i.e. it was trimmed using a better name method
+                        var preferredToken = @enum.Tokens.FirstOrDefault
+                        (
+                            y => y.NativeName == x.NativeName && y.TrimmingMethod is not null &&
+                                 (int) y.TrimmingMethod.Value > (int) method
+                        );
+                        
+                        // Get any tokens that this one defers i.e. trimmed using a worse name method.
+                        var deferredTokens = @enum.Tokens.Where
+                        (
+                            y => y.NativeName == x.NativeName && y.TrimmingMethod is not null &&
+                                 (int) y.TrimmingMethod.Value < (int) method
+                        ).Concat(x);
 
-                        //If the old token does not have any Obsolete attributes
-                        if(!x.Attributes.Any(x => x.Name is "Obsolete" or "System.Obsolete")) 
+                        // Mark this new token as deferred so it gets an obsolete attribute too.
+                        if (preferredToken is not null)
                         {
-                            x.Attributes.Add
-                            (
-                                new Attribute
-                                {
-                                    Name = "Obsolete",
-                                    Arguments = new List<string>
-                                    {
-                                        $"\"Deprecated in favour of \\\"{newName}\\\"\""
-                                    }
-                                }
-                            );
+                            deferredTokens = deferredTokens.Concat(ret);
                         }
 
-                        return new Token
+                        var obsoleteAttr = new Attribute
                         {
-                            Attributes = attrs,
-                            Doc = x.Doc,
-                            Name = newName,
-                            NativeName = x.NativeName,
-                            Value = x.Value
+                            Name = "Obsolete",
+                            Arguments = new List<string>
+                            {
+                                $"\"Deprecated in favour of \\\"{preferredToken?.Name ?? newName}\\\"\""
+                            },
+                            Origin = nameof(StripCommonPrefix)
                         };
+
+                        foreach (var deferred in deferredTokens)
+                        {
+                            var existingObsolete = deferred.Attributes
+                                .FirstOrDefault(y => y.Name is "Obsolete" or "System.Obsolete");
+                            if (existingObsolete is { Origin: nameof(StripCommonPrefix) })
+                            {
+                                // Remove the old obsolete attribute, as there's a new token it's superseded by.
+                                deferred.Attributes.Remove(existingObsolete);
+                            }
+                            else if (existingObsolete is not null)
+                            {
+                                // Skip tokens that have been obsoleted for non-trimming-related reasons.
+                                continue;
+                            }
+
+                            if (deferred.Name != (preferredToken?.Name ?? newName))
+                            {
+                                deferred.Attributes.Add(obsoleteAttr);
+                            }
+                        }
+
+                        // Finally return the token.
+                        return ret;
                     }
                 )
+                .Where(x => x is not null)
                 .ToList();
 
-                //Create a copy of the "obsolete" enum tokens
-                var obsoleteTokens = @enum.Tokens.ToList();
-                
-                //Clear the tokens list
-                @enum.Tokens.Clear();
-
-                // no-obsolete-enum disables the old obsolete enum logic, so
-                // If we do not have the `no-obsolete-enum` control descriptor,
-                if (!task.Controls.Contains("no-obsolete-enum"))
+                if (noObsoleteEnums)
                 {
-                    //Remove any tokens 
-                    obsoleteTokens.RemoveAll(x => tokens2_17.Any(y => x.Name == y.Name));
-
-                    //Add the obsolete enums to the token list
-                    @enum.Tokens.AddRange(obsoleteTokens);
+                    @enum.Tokens = newEnums;
                 }
-
-                // no-pre-2.18-enums disables the pre-2.18 enum prefix trimming logic, so
-                // If we do not have the `no-pre-2.18-enums` control descriptor
-                if (!task.Controls.Contains("no-pre-2.18-enums"))
+                else
                 {
-                    //Remove any tokens 
-                    tokens2_17.RemoveAll(x => newTokens.Any(y => x.Name == y.Name));
-
-                    //Add the obsolete enums to the token list
-                    @enum.Tokens.AddRange(tokens2_17);
+                    @enum.Tokens.RemoveAll(x => newEnums.Any(y => y.Name == x.Name));
+                    @enum.Tokens.AddRange(newEnums);
                 }
-
-                //Add the new enum tokens to the list
-                @enum.Tokens.AddRange(newTokens);
             }
         }
     }

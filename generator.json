@@ -1288,7 +1288,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-obsolete-enum"
+                "no-pre-2.17-obsolete-enums"
             ],
             "converter": {},
             "prefix": "D2D1_",
@@ -1415,7 +1415,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-obsolete-enum",
+                "no-pre-2.17-obsolete-enums",
                 "no-csproj",
                 "no-extra-dir"
             ],
@@ -2072,7 +2072,7 @@
             "cacheKey": "dcomp",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum",
+                "no-pre-2.17-obsolete-enums",
                 "typemap-native"
             ],
             "converter": {},
@@ -2301,7 +2301,7 @@
             "cacheKey": "webgpu",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum",
+                "no-pre-2.17-obsolete-enums",
                 "typemap-native"
             ],
             "converter": {},
@@ -2403,8 +2403,7 @@
             "cacheKey": "spirv",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum",
-                "no-pre-2.18-enums",
+                "no-pre-2.18-obsolete-enums",
                 "typemap-native",
                 "no-extra-dir",
                 "no-name-container"
@@ -2486,8 +2485,7 @@
             "cacheKey": "spirv-reflect",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum",
-                "no-pre-2.18-enums",
+                "no-pre-2.18-obsolete-enums",
                 "typemap-native",
                 "no-extra-dir"
             ],

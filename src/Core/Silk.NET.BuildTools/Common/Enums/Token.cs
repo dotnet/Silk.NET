@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Baking;
 
 namespace Silk.NET.BuildTools.Common.Enums
 {
@@ -27,6 +28,11 @@ namespace Silk.NET.BuildTools.Common.Enums
             get => _trimmingName ?? NativeName;
             set => _trimmingName = value;
         }
+        
+        /// <summary>
+        /// Method used to generate this trimmed token, or null if this token is a raw token that hasn't been trimmed.
+        /// </summary>
+        public EnumPostProcessor.NameMethod? TrimmingMethod { get; set; }
 
         /// <summary>
         /// Gets or sets the numeric value of this token.
