@@ -35,6 +35,12 @@ partial class Build
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
+    void CopyAs(AbsolutePath @out, string from, string to)
+    {
+        var file = @out.GlobFiles(from).First();
+        CopyFile(file, to, FileExistsPolicy.Overwrite);
+    }
+
     string AndroidHome
     {
         get
@@ -414,8 +420,8 @@ partial class Build
                 InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", ARM64BuildDir).AssertZeroExitCode();
                 InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
 
-                CopyFile(x64BuildDir / "Release" / "libSDL2*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
-                CopyFile(ARM64BuildDir / "Release" / "libSDL2*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
+                CopyAs(x64BuildDir / "bin" / "Release", "**/*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib");
+                CopyAs(ARM64BuildDir / "bin" / "Release", "**/*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib");
             }
 
             PrUpdatedNativeBinary("SDL2");
@@ -751,12 +757,6 @@ partial class Build
             (
                 () =>
                 {
-                    void CopyAs(AbsolutePath @out, string from, string to)
-                    {
-                        var file = @out.GlobFiles(from).First();
-                        CopyFile(file, to, FileExistsPolicy.Overwrite);
-                    }
-
                     var @out = AssimpPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
                     var build = $"cmake --build build --config Release{JobsArg}";
