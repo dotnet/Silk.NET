@@ -35,6 +35,12 @@ partial class Build
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
+    void CopyAs(AbsolutePath @out, string from, string to)
+    {
+        var file = @out.GlobFiles(from).First();
+        CopyFile(file, to, FileExistsPolicy.Overwrite);
+    }
+
     string AndroidHome
     {
         get
@@ -752,12 +758,6 @@ partial class Build
             (
                 () =>
                 {
-                    void CopyAs(AbsolutePath @out, string from, string to)
-                    {
-                        var file = @out.GlobFiles(from).First();
-                        CopyFile(file, to, FileExistsPolicy.Overwrite);
-                    }
-
                     var @out = AssimpPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
                     var build = $"cmake --build build --config Release{JobsArg}";
