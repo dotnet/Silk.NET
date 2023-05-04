@@ -45,7 +45,7 @@
         <PackageVersion Include="System.Collections.Immutable" Version="7.0.0"/>
         <PackageVersion Include="libclang" Version="15.0.0"/>
         <PackageVersion Include="libClangSharp" Version="15.0.0"/>
-        <PackageVersion Include="Verify.Xunit" Version="19.13.1" />
+        <PackageVersion Include="Verify.Xunit" Version="19.14.1" />
         <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(MsExtensionNugetVersion)" />
