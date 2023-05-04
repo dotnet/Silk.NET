@@ -28,7 +28,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3.5.2
       with:
-        submodules: 'true'
+        submodules: 'false'
+    - name: Checkout submodules, configure git
+      run: |
+        git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
     - name: Setup Java JDK 11
       uses: actions/setup-java@v2.3.0
       with:
