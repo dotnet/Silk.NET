@@ -414,8 +414,9 @@ partial class Build
                 InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", ARM64BuildDir).AssertZeroExitCode();
                 InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
 
-                CopyFile(x64BuildDir / "Release" / "libSDL2*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
-                CopyFile(ARM64BuildDir / "Release" / "libSDL2*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
+                // CopyAs(x64BuildDir, "bin/Release/assimp-*-mt.dll", runtimes / "win-x64" / "native" / "Assimp64.dll");
+                CopyAs(x64BuildDir / "Release", "libSDL2*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
+                CopyAs(ARM64BuildDir / "Release", "libSDL2*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib", FileExistsPolicy.Overwrite);
             }
 
             PrUpdatedNativeBinary("SDL2");
