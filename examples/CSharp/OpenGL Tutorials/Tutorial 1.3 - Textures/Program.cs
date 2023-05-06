@@ -265,8 +265,9 @@ namespace Tutorial
             // Get our texture uniform, and set it to 0.
             // We can easily do this by using glGetUniformLocation and giving it a name.
             // Setting it to 0 tells it that you want it to use the 0th texture unit.
-            // While for this example this is not strictly necessary, it is a good practice to get into as you will need
-            // to set this value when you use multiple textures.
+            // Generally, OpenGL should automatically initialize all uniform values to their default value (which is
+            // almost always 0), however you should get into the practice of initializing all uniform values to a known
+            // value, before you use them in your shader.
             int location = _gl.GetUniformLocation(_program, "uTexture");
             _gl.Uniform1(location, 0);
 
