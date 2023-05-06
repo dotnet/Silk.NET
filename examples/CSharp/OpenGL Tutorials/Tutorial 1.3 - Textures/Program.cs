@@ -270,7 +270,7 @@ namespace Tutorial
             // Finally a bit of blending!
             // If you disable blending, you'll notice a black border around the texture.
             // The texture is partially transparent, however OpenGL doesn't know how to handle this by default.
-            // By enabling blending, and giving it a blend function, you can tell OpenGL how to handle blending.
+            // By enabling blending, and giving it a blend function, you can tell OpenGL how to handle transparency.
             // In this case, it removes the black background and just leaves the texture on its own.
             // The blend function is out of scope for this tutorial, so don't worry if you don't understand it too much.
             // The program will function just fine without blending!
