@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_blend_minmax";
         [NativeApi(EntryPoint = "glBlendEquationEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(FlowDirection.In)] EXT mode);
+        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glBlendEquationEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT mode);
 
         public ExtBlendMinmax(INativeContext ctx)
             : base(ctx)

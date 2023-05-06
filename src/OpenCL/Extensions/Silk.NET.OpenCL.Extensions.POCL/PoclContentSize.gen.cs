@@ -21,7 +21,7 @@ namespace Silk.NET.OpenCL.Extensions.POCL
     {
         public const string ExtensionName = "POCL_content_size";
         [NativeApi(EntryPoint = "clSetContentSizeBufferPoCL", Convention = CallingConvention.Winapi)]
-        public partial int SetContentSizeBufferPoCL([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] nint content_size_buffer);
+        public partial int SetContentSizeBufferPoCL([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint content_size_buffer);
 
         public PoclContentSize(INativeContext ctx)
             : base(ctx)

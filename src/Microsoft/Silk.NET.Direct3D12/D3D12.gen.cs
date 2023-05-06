@@ -1268,162 +1268,162 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeRootSignature([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SerializeVersionedRootSignature([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
+        public unsafe partial int SerializeVersionedRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
@@ -1488,42 +1488,42 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(FlowDirection.In)] Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
+        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(FlowDirection.In)] Guid* pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes);
+        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(FlowDirection.In)] Guid* pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged;
+        public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(FlowDirection.In)] Guid* pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged;
+        public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(FlowDirection.In)] in Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
+        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(FlowDirection.In)] in Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes);
+        public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(FlowDirection.In)] in Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged;
+        public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22507, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.StdCall)]
-        public partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(FlowDirection.In)] in Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged;
+        public partial int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22570, Column 16 in d3d12.h")]
@@ -1567,7 +1567,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
-        public unsafe int SerializeRootSignature<TI0, TI1>([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        public unsafe int SerializeRootSignature<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
         {
             // ComPtrOverloader
             return SerializeRootSignature(pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1575,7 +1575,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
-        public unsafe int SerializeRootSignature<TI0>([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeRootSignature(pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
@@ -1583,7 +1583,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
-        public unsafe int SerializeRootSignature<TI0>([Flow(FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeRootSignature(pRootSignature, Version, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1591,7 +1591,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
-        public unsafe int SerializeRootSignature<TI0, TI1>([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        public unsafe int SerializeRootSignature<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
         {
             // ComPtrOverloader
             return SerializeRootSignature(in pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1599,7 +1599,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
-        public unsafe int SerializeRootSignature<TI0>([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeRootSignature(in pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
@@ -1607,7 +1607,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
-        public unsafe int SerializeRootSignature<TI0>([Flow(FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeRootSignature(in pRootSignature, Version, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1615,7 +1615,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
-        public unsafe int CreateRootSignatureDeserializer<TI0>([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateRootSignatureDeserializer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
             ppRootSignatureDeserializer = default;
@@ -1624,7 +1624,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
-        public unsafe int CreateRootSignatureDeserializer<T0, TI0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateRootSignatureDeserializer<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
             ppRootSignatureDeserializer = default;
@@ -1633,7 +1633,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
-        public unsafe int SerializeVersionedRootSignature<TI0, TI1>([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        public unsafe int SerializeVersionedRootSignature<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
         {
             // ComPtrOverloader
             return SerializeVersionedRootSignature(pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1641,7 +1641,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
-        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeVersionedRootSignature(pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
@@ -1649,7 +1649,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
-        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeVersionedRootSignature(pRootSignature, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1657,7 +1657,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
-        public unsafe int SerializeVersionedRootSignature<TI0, TI1>([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        public unsafe int SerializeVersionedRootSignature<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
         {
             // ComPtrOverloader
             return SerializeVersionedRootSignature(in pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1665,7 +1665,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
-        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeVersionedRootSignature(in pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
@@ -1673,7 +1673,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
-        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        public unsafe int SerializeVersionedRootSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return SerializeVersionedRootSignature(in pRootSignature, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
@@ -1681,7 +1681,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
-        public unsafe int CreateVersionedRootSignatureDeserializer<TI0>([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateVersionedRootSignatureDeserializer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
             ppRootSignatureDeserializer = default;
@@ -1690,7 +1690,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
-        public unsafe int CreateVersionedRootSignatureDeserializer<T0, TI0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateVersionedRootSignatureDeserializer<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
             ppRootSignatureDeserializer = default;
@@ -1768,7 +1768,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
-        public unsafe ComPtr<TI0> CreateRootSignatureDeserializer<TI0>([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI0> CreateRootSignatureDeserializer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
@@ -1777,7 +1777,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
-        public unsafe ComPtr<TI0> CreateRootSignatureDeserializer<T0, TI0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI0> CreateRootSignatureDeserializer<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(CreateRootSignatureDeserializer(in pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
@@ -1786,7 +1786,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
-        public unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializer<TI0>([Flow(FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
@@ -1795,7 +1795,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
-        public unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializer<T0, TI0>([Flow(FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializer<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, nuint SrcDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(CreateVersionedRootSignatureDeserializer(in pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));

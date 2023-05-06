@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtBufferDeviceAddressOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe ulong GetBufferDeviceAddress(this ExtBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
+        public static unsafe ulong GetBufferDeviceAddress(this ExtBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.GetBufferDeviceAddress(device, in pInfo.GetPinnableReference());

@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         public const string ExtensionName = "XR_EXT_debug_utils";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
+        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
@@ -42,11 +42,11 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
+        public unsafe partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT", Convention = CallingConvention.Winapi)]
-        public partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
+        public partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSessionEndDebugUtilsLabelRegionEXT", Convention = CallingConvention.Winapi)]
@@ -54,27 +54,27 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
+        public unsafe partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
-        public partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
+        public partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsObjectNameInfoEXT* nameInfo);
+        public unsafe partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsObjectNameInfoEXT* nameInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
-        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectNameInfoEXT nameInfo);
+        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugUtilsObjectNameInfoEXT nameInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCallbackDataEXT* callbackData);
+        public unsafe partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCallbackDataEXT* callbackData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
-        public partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCallbackDataEXT callbackData);
+        public partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugUtilsMessengerCallbackDataEXT callbackData);
 
         public ExtDebugUtils(INativeContext ctx)
             : base(ctx)

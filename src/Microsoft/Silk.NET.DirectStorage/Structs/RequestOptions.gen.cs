@@ -58,6 +58,10 @@ namespace Silk.NET.DirectStorage
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (byte)((CompressionFormat)(_bitfield1 & ~0xFF) | (CompressionFormat)((byte)(value) & 0xFF));
         }
+        [NativeName("Type", "UINT8[7]")]
+        [NativeName("Type.Name", "UINT8[7]")]
+        [NativeName("Name", "Reserved1")]
+        public fixed byte Reserved1[7];
 
         private ulong _bitfield2;
 

@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Silk.NET.BuildTools.Common;
@@ -105,7 +106,7 @@ namespace Silk.NET.BuildTools.Overloading
                 {
                     sb.Append("return ");
                 }
-                
+
                 sb.Append((original.InvocationPrefix ?? "thisApi.") + original.Name);
                 sb.Append("(");
                 sb.Append(string.Join(", ", invocationParameters));
@@ -115,7 +116,9 @@ namespace Silk.NET.BuildTools.Overloading
                     new FunctionSignatureBuilder(original)
                         .WithParameters(parameters)
                         .WithKind(SignatureKind.PotentiallyConflictingOverload)
-                        .Build(), sb, original
+                        .Build(),
+                    sb,
+                    original
                 );
             }
 

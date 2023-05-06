@@ -36,7 +36,7 @@ jobs:
           token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
       - name: Checkout submodules, configure git
         run: |
-          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive --depth 0
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton" 
       - name: Extra prerequisites
@@ -50,10 +50,12 @@ jobs:
             .tmp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
-      - name: Setup .NET 6.0
+      - name: Setup .NET 6.0 and .NET 7.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.201
+          dotnet-version: |
+            6.0.201
+            7.0.*
       - name: Build Vulkan Loader
         run: ${{ matrix.env.nuke_invoke }} VulkanLoader
         env:

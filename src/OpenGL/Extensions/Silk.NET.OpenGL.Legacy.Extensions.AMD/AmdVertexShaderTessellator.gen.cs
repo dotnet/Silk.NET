@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     {
         public const string ExtensionName = "AMD_vertex_shader_tessellator";
         [NativeApi(EntryPoint = "glTessellationFactorAMD", Convention = CallingConvention.Winapi)]
-        public partial void TessellationFactor([Flow(FlowDirection.In)] float factor);
+        public partial void TessellationFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] float factor);
 
         [NativeApi(EntryPoint = "glTessellationModeAMD", Convention = CallingConvention.Winapi)]
-        public partial void TessellationMode([Flow(FlowDirection.In)] AMD mode);
+        public partial void TessellationMode([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD mode);
 
         public AmdVertexShaderTessellator(INativeContext ctx)
             : base(ctx)

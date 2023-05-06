@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     public static class SgisFogFunctionOverloads
     {
-        public static unsafe void FogFunc(this SgisFogFunction thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        public static unsafe void FogFunc(this SgisFogFunction thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // SpanOverloader
             thisApi.FogFunc(n, in points.GetPinnableReference());
         }
 
-        public static unsafe void GetFogFunc(this SgisFogFunction thisApi, [Count(Count = 0), Flow(FlowDirection.Out)] Span<float> points)
+        public static unsafe void GetFogFunc(this SgisFogFunction thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> points)
         {
             // SpanOverloader
             thisApi.GetFogFunc(out points.GetPinnableReference());

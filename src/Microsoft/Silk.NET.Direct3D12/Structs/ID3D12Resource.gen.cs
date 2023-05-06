@@ -228,7 +228,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -237,7 +237,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -261,7 +261,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -276,7 +276,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -285,7 +285,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -297,7 +297,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -324,7 +324,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetName([Flow(FlowDirection.In)] char* Name)
+        public readonly unsafe int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -333,7 +333,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In)] in char Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -345,7 +345,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -404,7 +404,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Map(uint Subresource, [Flow(FlowDirection.In)] Range* pReadRange, void** ppData)
+        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Range* pReadRange, void** ppData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -413,7 +413,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Map(uint Subresource, [Flow(FlowDirection.In)] Range* pReadRange, ref void* ppData)
+        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Range* pReadRange, ref void* ppData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -425,7 +425,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Map(uint Subresource, [Flow(FlowDirection.In)] in Range pReadRange, void** ppData)
+        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Range pReadRange, void** ppData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -437,7 +437,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Map(uint Subresource, [Flow(FlowDirection.In)] in Range pReadRange, ref void* ppData)
+        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Range pReadRange, ref void* ppData)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -452,14 +452,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void Unmap(uint Subresource, [Flow(FlowDirection.In)] Range* pWrittenRange)
+        public readonly unsafe void Unmap(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Range* pWrittenRange)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12Resource*, uint, Range*, void>)@this->LpVtbl[9])(@this, Subresource, pWrittenRange);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void Unmap(uint Subresource, [Flow(FlowDirection.In)] in Range pWrittenRange)
+        public readonly void Unmap(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Range pWrittenRange)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Range* pWrittenRangePtr = &pWrittenRange)
@@ -489,7 +489,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -498,7 +498,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteToSubresource<T0>(uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly unsafe int WriteToSubresource<T0>(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -510,7 +510,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -522,7 +522,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteToSubresource<T0>(uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly int WriteToSubresource<T0>(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -537,7 +537,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -546,7 +546,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -558,7 +558,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
+        public readonly unsafe int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -570,7 +570,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
+        public readonly int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -642,7 +642,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -650,7 +650,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

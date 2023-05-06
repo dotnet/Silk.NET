@@ -21,37 +21,37 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_semaphore_win32";
         [NativeApi(EntryPoint = "glImportSemaphoreWin32HandleEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ImportSemaphoreWin32Handle([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.Out)] void* handle);
+        public unsafe partial void ImportSemaphoreWin32Handle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* handle);
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32HandleEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportSemaphoreWin32Handle<T0>([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.Out)] out T0 handle) where T0 : unmanaged;
+        public partial void ImportSemaphoreWin32Handle<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 handle) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32HandleEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ImportSemaphoreWin32Handle([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.Out)] void* handle);
+        public unsafe partial void ImportSemaphoreWin32Handle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* handle);
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32HandleEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportSemaphoreWin32Handle<T0>([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.Out)] out T0 handle) where T0 : unmanaged;
+        public partial void ImportSemaphoreWin32Handle<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 handle) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32NameEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ImportSemaphoreWin32Name([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] void* name);
+        public unsafe partial void ImportSemaphoreWin32Name([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* name);
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32NameEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportSemaphoreWin32Name<T0>([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] in T0 name) where T0 : unmanaged;
+        public partial void ImportSemaphoreWin32Name<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 name) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32NameEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ImportSemaphoreWin32Name([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] void* name);
+        public unsafe partial void ImportSemaphoreWin32Name([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* name);
 
         [NativeApi(EntryPoint = "glImportSemaphoreWin32NameEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportSemaphoreWin32Name<T0>([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] in T0 name) where T0 : unmanaged;
+        public partial void ImportSemaphoreWin32Name<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 name) where T0 : unmanaged;
 
-        public unsafe T0 ImportSemaphoreWin32Handle<T0>([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType) where T0 : unmanaged
+        public unsafe T0 ImportSemaphoreWin32Handle<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             ImportSemaphoreWin32Handle(semaphore, handleType, out T0 silkRet);
             return silkRet;
         }
 
-        public unsafe T0 ImportSemaphoreWin32Handle<T0>([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType) where T0 : unmanaged
+        public unsafe T0 ImportSemaphoreWin32Handle<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             ImportSemaphoreWin32Handle(semaphore, handleType, out T0 silkRet);

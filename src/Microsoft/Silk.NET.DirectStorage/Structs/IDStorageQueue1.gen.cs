@@ -114,14 +114,14 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void EnqueueRequest([Flow(FlowDirection.In)] Request* request)
+        public readonly unsafe void EnqueueRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] Request* request)
         {
             var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, Request*, void>)@this->LpVtbl[3])(@this, request);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void EnqueueRequest([Flow(FlowDirection.In)] in Request request)
+        public readonly void EnqueueRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Request request)
         {
             var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Request* requestPtr = &request)

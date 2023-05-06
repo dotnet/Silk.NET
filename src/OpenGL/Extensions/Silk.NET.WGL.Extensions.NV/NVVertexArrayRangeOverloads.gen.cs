@@ -16,7 +16,7 @@ namespace Silk.NET.WGL.Extensions.NV
 {
     public static class NVVertexArrayRangeOverloads
     {
-        public static unsafe void FreeMemory<T0>(this NVVertexArrayRange thisApi, [Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+        public static unsafe void FreeMemory<T0>(this NVVertexArrayRange thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.FreeMemory(out pointer.GetPinnableReference());

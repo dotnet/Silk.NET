@@ -194,7 +194,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
-            foreach (var comBase in @struct.ComBases)
+            foreach (var comBase in @struct.ComBases.RemoveDuplicates())
             {
                 var asSuffix = comBase.Split('.').Last();
                 asSuffix = asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase;
@@ -335,9 +335,12 @@ namespace Silk.NET.BuildTools.Bind
                             ? int.Parse
                             (
                                 profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
-                                    ?
-                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?.Value ??
+                                profile.Projects.SelectMany(x => x.Value.Enums)
+                                    .SelectMany(x => x.Tokens)
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?.Value ??
+                                throw new InvalidDataException
+                                    ("Couldn't find constant referenced: " + structField.Count.ConstantName)
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
@@ -407,7 +410,7 @@ namespace Silk.NET.BuildTools.Bind
                                 profile.Projects.SelectMany(x => x.Value.Enums.SelectMany(y => y.Tokens))
                                     .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
                                     ?
-                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
+                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced: " + structField.Count.ConstantName)
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount

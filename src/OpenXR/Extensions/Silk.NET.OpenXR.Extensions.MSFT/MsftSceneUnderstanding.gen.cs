@@ -22,43 +22,43 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         public const string ExtensionName = "XR_MSFT_scene_understanding";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrComputeNewSceneMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ComputeNewSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] NewSceneComputeInfoMSFT* computeInfo);
+        public unsafe partial Result ComputeNewSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NewSceneComputeInfoMSFT* computeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrComputeNewSceneMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result ComputeNewSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] in NewSceneComputeInfoMSFT computeInfo);
+        public partial Result ComputeNewSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in NewSceneComputeInfoMSFT computeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] SceneCreateInfoMSFT* createInfo, [Count(Count = 0)] SceneMSFT* scene);
+        public unsafe partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneCreateInfoMSFT* createInfo, [Count(Count = 0)] SceneMSFT* scene);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] SceneCreateInfoMSFT* createInfo, [Count(Count = 0)] ref SceneMSFT scene);
+        public unsafe partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneCreateInfoMSFT* createInfo, [Count(Count = 0)] ref SceneMSFT scene);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] in SceneCreateInfoMSFT createInfo, [Count(Count = 0)] SceneMSFT* scene);
+        public unsafe partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneCreateInfoMSFT createInfo, [Count(Count = 0)] SceneMSFT* scene);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] in SceneCreateInfoMSFT createInfo, [Count(Count = 0)] ref SceneMSFT scene);
+        public partial Result CreateSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneCreateInfoMSFT createInfo, [Count(Count = 0)] ref SceneMSFT scene);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneObserverMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SceneObserverCreateInfoMSFT* createInfo, [Count(Count = 0)] SceneObserverMSFT* sceneObserver);
+        public unsafe partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneObserverCreateInfoMSFT* createInfo, [Count(Count = 0)] SceneObserverMSFT* sceneObserver);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneObserverMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SceneObserverCreateInfoMSFT* createInfo, [Count(Count = 0)] ref SceneObserverMSFT sceneObserver);
+        public unsafe partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneObserverCreateInfoMSFT* createInfo, [Count(Count = 0)] ref SceneObserverMSFT sceneObserver);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneObserverMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SceneObserverCreateInfoMSFT createInfo, [Count(Count = 0)] SceneObserverMSFT* sceneObserver);
+        public unsafe partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneObserverCreateInfoMSFT createInfo, [Count(Count = 0)] SceneObserverMSFT* sceneObserver);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSceneObserverMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SceneObserverCreateInfoMSFT createInfo, [Count(Count = 0)] ref SceneObserverMSFT sceneObserver);
+        public partial Result CreateSceneObserverMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneObserverCreateInfoMSFT createInfo, [Count(Count = 0)] ref SceneObserverMSFT sceneObserver);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroySceneMSFT", Convention = CallingConvention.Winapi)]
@@ -86,19 +86,19 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SceneComponentsGetInfoMSFT* getInfo, [Count(Count = 0)] SceneComponentsMSFT* components);
+        public unsafe partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneComponentsGetInfoMSFT* getInfo, [Count(Count = 0)] SceneComponentsMSFT* components);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SceneComponentsGetInfoMSFT* getInfo, [Count(Count = 0)] ref SceneComponentsMSFT components);
+        public unsafe partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneComponentsGetInfoMSFT* getInfo, [Count(Count = 0)] ref SceneComponentsMSFT components);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SceneComponentsGetInfoMSFT getInfo, [Count(Count = 0)] SceneComponentsMSFT* components);
+        public unsafe partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneComponentsGetInfoMSFT getInfo, [Count(Count = 0)] SceneComponentsMSFT* components);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SceneComponentsGetInfoMSFT getInfo, [Count(Count = 0)] ref SceneComponentsMSFT components);
+        public partial Result GetSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneComponentsGetInfoMSFT getInfo, [Count(Count = 0)] ref SceneComponentsMSFT components);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneComputeStateMSFT", Convention = CallingConvention.Winapi)]
@@ -110,35 +110,35 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMeshBuffersMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SceneMeshBuffersGetInfoMSFT* getInfo, [Count(Count = 0)] SceneMeshBuffersMSFT* buffers);
+        public unsafe partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneMeshBuffersGetInfoMSFT* getInfo, [Count(Count = 0)] SceneMeshBuffersMSFT* buffers);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMeshBuffersMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SceneMeshBuffersGetInfoMSFT* getInfo, [Count(Count = 0)] ref SceneMeshBuffersMSFT buffers);
+        public unsafe partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneMeshBuffersGetInfoMSFT* getInfo, [Count(Count = 0)] ref SceneMeshBuffersMSFT buffers);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMeshBuffersMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SceneMeshBuffersGetInfoMSFT getInfo, [Count(Count = 0)] SceneMeshBuffersMSFT* buffers);
+        public unsafe partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneMeshBuffersGetInfoMSFT getInfo, [Count(Count = 0)] SceneMeshBuffersMSFT* buffers);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMeshBuffersMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SceneMeshBuffersGetInfoMSFT getInfo, [Count(Count = 0)] ref SceneMeshBuffersMSFT buffers);
+        public partial Result GetSceneMeshBuffersMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneMeshBuffersGetInfoMSFT getInfo, [Count(Count = 0)] ref SceneMeshBuffersMSFT buffers);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SceneComponentsLocateInfoMSFT* locateInfo, [Count(Count = 0)] SceneComponentLocationsMSFT* locations);
+        public unsafe partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneComponentsLocateInfoMSFT* locateInfo, [Count(Count = 0)] SceneComponentLocationsMSFT* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SceneComponentsLocateInfoMSFT* locateInfo, [Count(Count = 0)] ref SceneComponentLocationsMSFT locations);
+        public unsafe partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneComponentsLocateInfoMSFT* locateInfo, [Count(Count = 0)] ref SceneComponentLocationsMSFT locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SceneComponentsLocateInfoMSFT locateInfo, [Count(Count = 0)] SceneComponentLocationsMSFT* locations);
+        public unsafe partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneComponentsLocateInfoMSFT locateInfo, [Count(Count = 0)] SceneComponentLocationsMSFT* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSceneComponentsMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SceneComponentsLocateInfoMSFT locateInfo, [Count(Count = 0)] ref SceneComponentLocationsMSFT locations);
+        public partial Result LocateSceneComponentsMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneComponentsLocateInfoMSFT locateInfo, [Count(Count = 0)] ref SceneComponentLocationsMSFT locations);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumerateSceneComputeFeaturesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint* featureCountOutput, [Count(Parameter = "featureCapacityInput")] Span<SceneComputeFeatureMSFT> features)

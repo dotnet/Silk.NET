@@ -172,7 +172,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionArithmeticCompositeEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[6])(@this, Coeffcient1);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[7])(@this, Coeffcient1);
             return ret;
         }
 
@@ -181,7 +181,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionArithmeticCompositeEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[7])(@this, Coefficient2);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[9])(@this, Coefficient2);
             return ret;
         }
 
@@ -190,7 +190,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionArithmeticCompositeEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[8])(@this, Coefficient3);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[11])(@this, Coefficient3);
             return ret;
         }
 
@@ -199,7 +199,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionArithmeticCompositeEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[9])(@this, Coefficient4);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, float, int>)@this->LpVtbl[13])(@this, Coefficient4);
             return ret;
         }
 

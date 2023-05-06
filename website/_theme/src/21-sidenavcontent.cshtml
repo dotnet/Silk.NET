@@ -86,6 +86,14 @@
 
             <!-- Content -->
             @content
+            @if ((tocModel?.Root.Metadata?.ContainsKey("theme.silk.giscus.repo") ?? false) &&
+                (tocModel?.Root.Metadata?.ContainsKey("theme.silk.giscus.repo.id") ?? false) &&
+                (tocModel?.Root.Metadata?.ContainsKey("theme.silk.giscus.category") ?? false) &&
+                (tocModel?.Root.Metadata?.ContainsKey("theme.silk.giscus.category.id") ?? false))
+            {
+                <hr class="silk-last-hr" />
+                <div class="giscus" />
+            }
         </main>
     </div>
 </div>

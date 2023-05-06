@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrVideoDecodeQueueOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdDecodeVideo(this KhrVideoDecodeQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInfoKHR> pDecodeInfo)
+        public static unsafe void CmdDecodeVideo(this KhrVideoDecodeQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoDecodeInfoKHR> pDecodeInfo)
         {
             // SpanOverloader
             thisApi.CmdDecodeVideo(commandBuffer, in pDecodeInfo.GetPinnableReference());

@@ -258,7 +258,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in dcomp.h")]
-        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] CompositionTargetId* targetId, Span<CompositionTargetStats> targetStats)
+        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CompositionTargetId* targetId, Span<CompositionTargetStats> targetStats)
         {
             // SpanOverloader
             return thisApi.GetTargetStatistics(frameId, targetId, ref targetStats.GetPinnableReference());
@@ -266,7 +266,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in dcomp.h")]
-        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, CompositionTargetStats* targetStats)
+        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, CompositionTargetStats* targetStats)
         {
             // SpanOverloader
             return thisApi.GetTargetStatistics(frameId, in targetId.GetPinnableReference(), targetStats);
@@ -274,7 +274,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in dcomp.h")]
-        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, Span<CompositionTargetStats> targetStats)
+        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, Span<CompositionTargetStats> targetStats)
         {
             // SpanOverloader
             return thisApi.GetTargetStatistics(frameId, in targetId.GetPinnableReference(), ref targetStats.GetPinnableReference());

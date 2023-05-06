@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_clip_space_w_scaling";
         [NativeApi(EntryPoint = "glViewportPositionWScaleNV", Convention = CallingConvention.Winapi)]
-        public partial void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
+        public partial void ViewportPositionWScale([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float xcoeff, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float ycoeff);
 
         public NVClipSpaceWScaling(INativeContext ctx)
             : base(ctx)

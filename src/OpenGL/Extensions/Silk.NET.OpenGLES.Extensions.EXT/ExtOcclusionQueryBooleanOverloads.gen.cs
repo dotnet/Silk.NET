@@ -16,61 +16,61 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     public static class ExtOcclusionQueryBooleanOverloads
     {
-        public static unsafe void DeleteQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        public static unsafe void DeleteQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> ids)
         {
             // SpanOverloader
             thisApi.DeleteQueries(n, in ids.GetPinnableReference());
         }
 
-        public static unsafe void DeleteQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Query> ids)
+        public static unsafe void DeleteQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Query> ids)
         {
             // SpanOverloader
             thisApi.DeleteQueries(n, in ids.GetPinnableReference());
         }
 
-        public static unsafe void GenQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        public static unsafe void GenQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> ids)
         {
             // SpanOverloader
             thisApi.GenQueries(n, out ids.GetPinnableReference());
         }
 
-        public static unsafe void GenQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        public static unsafe void GenQueries(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.GenQueries(n, out ids.GetPinnableReference());
         }
 
-        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetQuery(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetQuery(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetQuery(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetQuery(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetQuery(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetQueryObject(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<uint> @params)
+        public static unsafe void GetQueryObject(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> @params)
         {
             // SpanOverloader
             thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetQueryObject(this ExtOcclusionQueryBoolean thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<uint> @params)
+        public static unsafe void GetQueryObject(this ExtOcclusionQueryBoolean thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> @params)
         {
             // SpanOverloader
             thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());

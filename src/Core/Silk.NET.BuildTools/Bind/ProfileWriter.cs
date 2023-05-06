@@ -93,11 +93,21 @@ namespace Silk.NET.BuildTools.Bind
                     Directory.CreateDirectory(tmpFolder);
                 }
                 
-                proj.Value.Write(tmpFolder, profile, task);
+                proj.Value.WriteProjectFile(folder, profile, task);
+
+                folder = originalTask.OutputOpts.Subfolder is null
+                    ? folder
+                    : Path.Combine(folder, originalTask.OutputOpts.Subfolder);
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+
+                proj.Value.WriteGeneratedCode(tmpFolder, folder, profile, task);
                 if (doCheck)
                 {
                     var filesBefore = Directory.GetFiles(folder, "*", SearchOption.AllDirectories)
-                        .Where(x => x.EndsWith(".csproj") || x.EndsWith(".cs"))
+                        .Where(x => x.EndsWith(".cs"))
                         .Where
                         (
                             x => config.Tasks.All
@@ -109,7 +119,7 @@ namespace Silk.NET.BuildTools.Bind
                         .ToDictionary(x => Path.GetRelativePath(folder, x), x => x);
                     
                     var filesAfter = Directory.GetFiles(tmpFolder, "*", SearchOption.AllDirectories)
-                        .Where(x => x.EndsWith(".csproj") || x.EndsWith(".cs"))
+                        .Where(x => x.EndsWith(".cs"))
                         .Where
                         (
                             x => config.Tasks.All

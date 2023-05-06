@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_cl_event";
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] nint* context, [Flow(FlowDirection.Out)] nint* @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial nint CreateSyncFromCLevent([Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] nint* context, [Flow(FlowDirection.Out)] out nint @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial nint CreateSyncFromCLevent([Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] out nint context, [Flow(FlowDirection.Out)] nint* @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial nint CreateSyncFromCLevent([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB", Convention = CallingConvention.Winapi)]
-        public partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] out nint context, [Flow(FlowDirection.Out)] out nint @event, [Flow(FlowDirection.In)] uint flags);
+        public partial nint CreateSyncFromCLevent([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
 
         public ArbClEvent(INativeContext ctx)
             : base(ctx)

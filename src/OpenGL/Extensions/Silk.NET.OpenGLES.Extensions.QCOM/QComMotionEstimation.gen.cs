@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_motion_estimation";
         [NativeApi(EntryPoint = "glTexEstimateMotionQCOM", Convention = CallingConvention.Winapi)]
-        public partial void TexEstimateMotion([Flow(FlowDirection.In)] uint @ref, [Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint output);
+        public partial void TexEstimateMotion([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint @ref, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint output);
 
         [NativeApi(EntryPoint = "glTexEstimateMotionRegionsQCOM", Convention = CallingConvention.Winapi)]
-        public partial void TexEstimateMotionRegion([Flow(FlowDirection.In)] uint @ref, [Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint output, [Flow(FlowDirection.In)] uint mask);
+        public partial void TexEstimateMotionRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint @ref, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint output, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask);
 
         public QComMotionEstimation(INativeContext ctx)
             : base(ctx)

@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
     {
         public const string ExtensionName = "PGI_misc_hints";
         [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
-        public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
+        public partial void Hint([Flow(Silk.NET.Core.Native.FlowDirection.In)] PGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int mode);
 
         [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
-        public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] VertexHintsMaskPGI mode);
+        public partial void Hint([Flow(Silk.NET.Core.Native.FlowDirection.In)] PGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexHintsMaskPGI mode);
 
         [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
-        public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
+        public partial void Hint([Flow(Silk.NET.Core.Native.FlowDirection.In)] HintTargetPGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int mode);
 
         [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
-        public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] VertexHintsMaskPGI mode);
+        public partial void Hint([Flow(Silk.NET.Core.Native.FlowDirection.In)] HintTargetPGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexHintsMaskPGI mode);
 
         public PgiMiscHints(INativeContext ctx)
             : base(ctx)

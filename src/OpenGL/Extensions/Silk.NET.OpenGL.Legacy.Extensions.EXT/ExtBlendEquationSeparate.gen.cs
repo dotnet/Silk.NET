@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_blend_equation_separate";
         [NativeApi(EntryPoint = "glBlendEquationSeparateEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] EXT modeRGB, [Flow(FlowDirection.In)] EXT modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] EXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] EXT modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
         public ExtBlendEquationSeparate(INativeContext ctx)
             : base(ctx)

@@ -786,7 +786,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Execute([Flow(FlowDirection.In)] DXVA2DecodeExecuteParams* pExecuteParams)
+        public readonly unsafe int Execute([Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2DecodeExecuteParams* pExecuteParams)
         {
             var @this = (IDirectXVideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -795,7 +795,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Execute([Flow(FlowDirection.In)] in DXVA2DecodeExecuteParams pExecuteParams)
+        public readonly int Execute([Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2DecodeExecuteParams pExecuteParams)
         {
             var @this = (IDirectXVideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -21,13 +21,13 @@ namespace Silk.NET.WGL.Extensions.NV
     {
         public const string ExtensionName = "NV_vertex_array_range";
         [NativeApi(EntryPoint = "wglAllocateMemoryNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* AllocateMemory([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] float readfreq, [Flow(FlowDirection.In)] float writefreq, [Flow(FlowDirection.In)] float priority);
+        public unsafe partial void* AllocateMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float readfreq, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float writefreq, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float priority);
 
         [NativeApi(EntryPoint = "wglFreeMemoryNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FreeMemory([Flow(FlowDirection.Out)] void* pointer);
+        public unsafe partial void FreeMemory([Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* pointer);
 
         [NativeApi(EntryPoint = "wglFreeMemoryNV", Convention = CallingConvention.Winapi)]
-        public partial void FreeMemory<T0>([Flow(FlowDirection.Out)] out T0 pointer) where T0 : unmanaged;
+        public partial void FreeMemory<T0>([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 pointer) where T0 : unmanaged;
 
         public unsafe T0 FreeMemory<T0>() where T0 : unmanaged
         {

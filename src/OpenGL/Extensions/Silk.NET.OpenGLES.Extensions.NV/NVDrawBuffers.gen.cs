@@ -21,12 +21,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_draw_buffers";
         [NativeApi(EntryPoint = "glDrawBuffersNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] NV* bufs);
+        public unsafe partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] NV* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersNV", Convention = CallingConvention.Winapi)]
-        public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in NV bufs);
+        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in NV bufs);
 
-        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<NV> bufs)
+        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NV> bufs)
         {
             // ImplicitCountSpanOverloader
             DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());

@@ -111,14 +111,14 @@ namespace Silk.NET.Windowing.Sdl
             string? title,
             IGLContext? sharedContext)
         {
-            var flags = WindowFlags.WindowAllowHighdpi |
-                        WindowFlags.WindowShown;
+            var flags = WindowFlags.AllowHighdpi |
+                        WindowFlags.Shown;
             if (additionalFlags is null)
             {
                 flags |= _platform.IsViewOnly switch
                 {
-                    true => WindowFlags.WindowBorderless | WindowFlags.WindowFullscreen,
-                    false => WindowFlags.WindowResizable
+                    true => WindowFlags.Borderless | WindowFlags.Fullscreen | WindowFlags.Resizable,
+                    false => WindowFlags.Resizable
                 };
             }
             else
@@ -135,13 +135,13 @@ namespace Silk.NET.Windowing.Sdl
                 }
                 case ContextAPI.Vulkan:
                 {
-                    flags |= WindowFlags.WindowVulkan;
+                    flags |= WindowFlags.Vulkan;
                     break;
                 }
                 case ContextAPI.OpenGLES:
                 case ContextAPI.OpenGL:
                 {
-                    flags |= WindowFlags.WindowOpengl;
+                    flags |= WindowFlags.Opengl;
                     break;
                 }
             }
@@ -149,32 +149,32 @@ namespace Silk.NET.Windowing.Sdl
             IsClosingVal = false;
 
             // Set window GL attributes
-            Sdl.GLSetAttribute(GLattr.GLDepthSize,
+            Sdl.GLSetAttribute(GLattr.DepthSize,
                     opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1
                         ? 24 : opts.PreferredDepthBufferBits.Value);
 
-            Sdl.GLSetAttribute(GLattr.GLStencilSize,
+            Sdl.GLSetAttribute(GLattr.StencilSize,
                     opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1
                         ? 8 : opts.PreferredStencilBufferBits.Value);
 
-            Sdl.GLSetAttribute(GLattr.GLRedSize,
+            Sdl.GLSetAttribute(GLattr.RedSize,
                     opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1
                         ? 8 : opts.PreferredBitDepth.Value.X);
 
-            Sdl.GLSetAttribute(GLattr.GLGreenSize,
+            Sdl.GLSetAttribute(GLattr.GreenSize,
                     opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1
                         ? 8 : opts.PreferredBitDepth.Value.Y);
 
-            Sdl.GLSetAttribute(GLattr.GLBlueSize,
+            Sdl.GLSetAttribute(GLattr.BlueSize,
                     opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1
                         ? 8 : opts.PreferredBitDepth.Value.Z);
 
-            Sdl.GLSetAttribute(GLattr.GLAlphaSize,
+            Sdl.GLSetAttribute(GLattr.AlphaSize,
                     opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1
                         ? 8 : opts.PreferredBitDepth.Value.W);
 
-            Sdl.GLSetAttribute(GLattr.GLMultisamplebuffers, (opts.Samples == null || opts.Samples == -1) ? 0 : 1);
-            Sdl.GLSetAttribute(GLattr.GLMultisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value);
+            Sdl.GLSetAttribute(GLattr.Multisamplebuffers, (opts.Samples == null || opts.Samples == -1) ? 0 : 1);
+            Sdl.GLSetAttribute(GLattr.Multisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value);
 
             // Create window
             SdlWindow = Sdl.CreateWindow
@@ -194,21 +194,21 @@ namespace Silk.NET.Windowing.Sdl
             sharedContext?.MakeCurrent();
             (CoreGLContext as SdlContext)?.Create
             (
-                (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
-                (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
+                (GLattr.ContextMajorVersion, opts.API.Version.MajorVersion),
+                (GLattr.ContextMinorVersion, opts.API.Version.MinorVersion),
                 (
-                    GLattr.GLContextProfileMask,
+                    GLattr.ContextProfileMask,
                     (int) (opts.API.API == ContextAPI.OpenGLES
-                        ? GLprofile.GLContextProfileES
+                        ? GLprofile.ES
                         : opts.API.Profile switch
                         {
-                            ContextProfile.Core => GLprofile.GLContextProfileCore,
-                            ContextProfile.Compatability => GLprofile.GLContextProfileCompatibility,
+                            ContextProfile.Core => GLprofile.Core,
+                            ContextProfile.Compatability => GLprofile.Compatibility,
                             _ => throw new System.ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
                         })
                 ),
-                (GLattr.GLContextFlags, (int) opts.API.Flags),
-                (GLattr.GLShareWithCurrentContext, sharedContext is null ? 0 : 1)
+                (GLattr.ContextFlags, (int) opts.API.Flags),
+                (GLattr.ShareWithCurrentContext, sharedContext is null ? 0 : 1)
             );
             if (SdlWindow == null)
             {
@@ -356,23 +356,23 @@ namespace Silk.NET.Windowing.Sdl
                     {
                         switch ((WindowEventID) @event.Window.Event)
                         {
-                            case WindowEventID.WindoweventResized:
+                            case WindowEventID.Resized:
                             {
                                 Resize?.Invoke(new Vector2D<int>(@event.Window.Data1, @event.Window.Data2));
                                 FramebufferResize?.Invoke(FramebufferSize);
                                 break;
                             }
-                            case WindowEventID.WindoweventFocusGained:
+                            case WindowEventID.FocusGained:
                             {
                                 FocusChanged?.Invoke(true);
                                 break;
                             }
-                            case WindowEventID.WindoweventFocusLost:
+                            case WindowEventID.FocusLost:
                             {
                                 FocusChanged?.Invoke(false);
                                 break;
                             }
-                            case WindowEventID.WindoweventClose:
+                            case WindowEventID.Close:
                             {
                                 Close();
                                 break;

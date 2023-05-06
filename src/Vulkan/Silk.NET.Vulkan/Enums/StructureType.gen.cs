@@ -1380,6 +1380,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceMultiDrawPropertiesExt = 1000392001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_2D_VIEW_OF_3D_FEATURES_EXT")]
         PhysicalDeviceImage2DViewOf3DFeaturesExt = 1000393000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TILE_IMAGE_FEATURES_EXT")]
+        PhysicalDeviceShaderTileImageFeaturesExt = 1000395000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TILE_IMAGE_PROPERTIES_EXT")]
+        PhysicalDeviceShaderTileImagePropertiesExt = 1000395001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MICROMAP_BUILD_INFO_EXT")]
         MicromapBuildInfoExt = 1000396000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MICROMAP_VERSION_INFO_EXT")]
@@ -1400,6 +1404,12 @@ namespace Silk.NET.Vulkan
         MicromapBuildSizesInfoExt = 1000396008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_OPACITY_MICROMAP_EXT")]
         AccelerationStructureTrianglesOpacityMicromapExt = 1000396009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_FEATURES_NV")]
+        PhysicalDeviceDisplacementMicromapFeaturesNV = 1000397000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_PROPERTIES_NV")]
+        PhysicalDeviceDisplacementMicromapPropertiesNV = 1000397001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_DISPLACEMENT_MICROMAP_NV")]
+        AccelerationStructureTrianglesDisplacementMicromapNV = 1000397002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_FEATURES_HUAWEI")]
         PhysicalDeviceClusterCullingShaderFeaturesHuawei = 1000404000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_PROPERTIES_HUAWEI")]
@@ -1502,6 +1512,14 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceLegacyDitheringFeaturesExt = 1000465000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES_EXT")]
         PhysicalDevicePipelineProtectedAccessFeaturesExt = 1000466000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_FEATURES_EXT")]
+        PhysicalDeviceShaderObjectFeaturesExt = 1000482000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_PROPERTIES_EXT")]
+        PhysicalDeviceShaderObjectPropertiesExt = 1000482001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SHADER_CREATE_INFO_EXT")]
+        ShaderCreateInfoExt = 1000482002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SHADER_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
+        ShaderRequiredSubgroupSizeCreateInfoExt = 1000225001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_PROPERTIES_FEATURES_QCOM")]
         PhysicalDeviceTilePropertiesFeaturesQCom = 1000484000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_TILE_PROPERTIES_QCOM")]

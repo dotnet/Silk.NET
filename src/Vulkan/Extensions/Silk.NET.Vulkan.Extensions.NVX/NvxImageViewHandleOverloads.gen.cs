@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.NVX
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ImageViewAddressPropertiesNvx);")]
-        public static unsafe Result GetImageViewAddress(this NvxImageViewHandle thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageViewAddressPropertiesNVX> pProperties)
+        public static unsafe Result GetImageViewAddress(this NvxImageViewHandle thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ImageViewAddressPropertiesNVX> pProperties)
         {
             // SpanOverloader
             return thisApi.GetImageViewAddress(device, imageView, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe uint GetImageViewHandle(this NvxImageViewHandle thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageViewHandleInfoNVX> pInfo)
+        public static unsafe uint GetImageViewHandle(this NvxImageViewHandle thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageViewHandleInfoNVX> pInfo)
         {
             // SpanOverloader
             return thisApi.GetImageViewHandle(device, in pInfo.GetPinnableReference());

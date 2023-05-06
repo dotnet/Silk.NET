@@ -21,355 +21,355 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     {
         public const string ExtensionName = "SGIX_fragment_lighting";
         [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX mode);
+        public partial void FragmentColorMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX mode);
 
         [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter mode);
+        public partial void FragmentColorMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter mode);
 
         [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX mode);
+        public partial void FragmentColorMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX mode);
 
         [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter mode);
+        public partial void FragmentColorMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter mode);
 
         [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentLightModelfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModeliSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentLightModeliSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentLightModel([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void FragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
-        public partial void LightEnv([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void LightEnv([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
-        public partial void LightEnv([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] LightEnvModeSGIX param);
+        public partial void LightEnv([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LightEnvModeSGIX param);
 
         [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
-        public partial void LightEnv([Flow(FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void LightEnv([Flow(Silk.NET.Core.Native.FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
-        public partial void LightEnv([Flow(FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(FlowDirection.In)] LightEnvModeSGIX param);
+        public partial void LightEnv([Flow(Silk.NET.Core.Native.FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LightEnvModeSGIX param);
 
-        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname)
+        public unsafe float GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentLight(light, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname)
+        public unsafe float GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentLight(light, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname)
+        public unsafe float GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentLight(light, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname)
+        public unsafe float GetFragmentLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightNameSGIX light, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentLightParameterSGIX pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentLight(light, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname)
+        public unsafe float GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentMaterial(face, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname)
+        public unsafe float GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentMaterial(face, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname)
+        public unsafe float GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentMaterial(face, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname)
+        public unsafe float GetFragmentMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter pname)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentMaterial(face, pname, out float silkRet);

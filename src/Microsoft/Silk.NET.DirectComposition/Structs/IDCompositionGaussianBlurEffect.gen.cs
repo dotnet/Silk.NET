@@ -142,7 +142,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionGaussianBlurEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, float, int>)@this->LpVtbl[4])(@this, amount);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, float, int>)@this->LpVtbl[5])(@this, amount);
             return ret;
         }
 
@@ -151,7 +151,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionGaussianBlurEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[5])(@this, mode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[6])(@this, mode);
             return ret;
         }
 

@@ -14,7 +14,7 @@ namespace Silk.NET.Vulkan
         public override string[] Linux => new[] { "libvulkan.so.1" };
 
         /// <inheritdoc />
-        public override string[] MacOS => new[] { "libvulkan.dylib" };
+        public override string[] MacOS => new[] { "libvulkan.dylib", "libMoltenVK.dylib" };
 
         /// <inheritdoc />
         public override string[] Android => new[] { "libvulkan.so" };

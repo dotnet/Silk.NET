@@ -21,91 +21,91 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_fragment_shading_rate";
         [NativeApi(EntryPoint = "glFramebufferShadingRateEXT", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferShadingRate([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int baseLayer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint texelWidth, [Flow(FlowDirection.In)] uint texelHeight);
+        public partial void FramebufferShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelHeight);
 
         [NativeApi(EntryPoint = "glFramebufferShadingRateEXT", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferShadingRate([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int baseLayer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint texelWidth, [Flow(FlowDirection.In)] uint texelHeight);
+        public partial void FramebufferShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachment attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelHeight);
 
         [NativeApi(EntryPoint = "glFramebufferShadingRateEXT", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferShadingRate([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int baseLayer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint texelWidth, [Flow(FlowDirection.In)] uint texelHeight);
+        public partial void FramebufferShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelHeight);
 
         [NativeApi(EntryPoint = "glFramebufferShadingRateEXT", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferShadingRate([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int baseLayer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint texelWidth, [Flow(FlowDirection.In)] uint texelHeight);
+        public partial void FramebufferShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachment attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texelHeight);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] EXT* shadingRates);
+        public unsafe partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] out EXT shadingRates);
+        public unsafe partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out EXT shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] EXT* shadingRates);
+        public unsafe partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] out EXT shadingRates);
+        public partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out EXT shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] ShadingRate* shadingRates);
+        public unsafe partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShadingRate* shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] out ShadingRate shadingRates);
+        public unsafe partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShadingRate shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] ShadingRate* shadingRates);
+        public unsafe partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShadingRate* shadingRates);
 
         [NativeApi(EntryPoint = "glGetFragmentShadingRatesEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] out ShadingRate shadingRates);
+        public partial void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShadingRate shadingRates);
 
         [NativeApi(EntryPoint = "glShadingRateEXT", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRate([Flow(FlowDirection.In)] EXT rate);
+        public partial void ShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT rate);
 
         [NativeApi(EntryPoint = "glShadingRateEXT", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRate([Flow(FlowDirection.In)] ShadingRate rate);
+        public partial void ShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRate rate);
 
         [NativeApi(EntryPoint = "glShadingRateCombinerOpsEXT", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRateCombinerOp([Flow(FlowDirection.In)] EXT combinerOp0, [Flow(FlowDirection.In)] EXT combinerOp1);
+        public partial void ShadingRateCombinerOp([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT combinerOp0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT combinerOp1);
 
         [NativeApi(EntryPoint = "glShadingRateCombinerOpsEXT", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRateCombinerOp([Flow(FlowDirection.In)] EXT combinerOp0, [Flow(FlowDirection.In)] ShadingRateCombinerOp combinerOp1);
+        public partial void ShadingRateCombinerOp([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT combinerOp0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateCombinerOp combinerOp1);
 
         [NativeApi(EntryPoint = "glShadingRateCombinerOpsEXT", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRateCombinerOp([Flow(FlowDirection.In)] ShadingRateCombinerOp combinerOp0, [Flow(FlowDirection.In)] EXT combinerOp1);
+        public partial void ShadingRateCombinerOp([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateCombinerOp combinerOp0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT combinerOp1);
 
         [NativeApi(EntryPoint = "glShadingRateCombinerOpsEXT", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRateCombinerOp([Flow(FlowDirection.In)] ShadingRateCombinerOp combinerOp0, [Flow(FlowDirection.In)] ShadingRateCombinerOp combinerOp1);
+        public partial void ShadingRateCombinerOp([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateCombinerOp combinerOp0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateCombinerOp combinerOp1);
 
-        public unsafe void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<EXT> shadingRates)
+        public unsafe void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> shadingRates)
         {
             // ImplicitCountSpanOverloader
             GetFragmentShadingRates(samples, (uint) shadingRates.Length, count, out shadingRates.GetPinnableReference());
         }
 
-        public unsafe void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<EXT> shadingRates)
+        public unsafe void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> shadingRates)
         {
             // ImplicitCountSpanOverloader
             GetFragmentShadingRates(samples, (uint) shadingRates.Length, out count, out shadingRates.GetPinnableReference());
         }
 
-        public unsafe void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<ShadingRate> shadingRates)
+        public unsafe void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShadingRate> shadingRates)
         {
             // ImplicitCountSpanOverloader
             GetFragmentShadingRates(samples, (uint) shadingRates.Length, count, out shadingRates.GetPinnableReference());
         }
 
-        public unsafe void GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<ShadingRate> shadingRates)
+        public unsafe void GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShadingRate> shadingRates)
         {
             // ImplicitCountSpanOverloader
             GetFragmentShadingRates(samples, (uint) shadingRates.Length, out count, out shadingRates.GetPinnableReference());
         }
 
-        public unsafe EXT GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count)
+        public unsafe EXT GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentShadingRates(samples, maxCount, count, out EXT silkRet);
             return silkRet;
         }
 
-        public unsafe EXT GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count)
+        public unsafe EXT GetFragmentShadingRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count)
         {
             // NonKhrReturnTypeOverloader
             GetFragmentShadingRates(samples, maxCount, out count, out EXT silkRet);

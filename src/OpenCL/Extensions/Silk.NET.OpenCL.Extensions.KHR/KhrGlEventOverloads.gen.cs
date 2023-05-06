@@ -16,7 +16,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrGlEventOverloads
     {
-        public static unsafe nint CreateEventFromGLsync(this KhrGlEvent thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateEventFromGLsync(this KhrGlEvent thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sync, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateEventFromGLsync(context, sync, out errcode_ret.GetPinnableReference());

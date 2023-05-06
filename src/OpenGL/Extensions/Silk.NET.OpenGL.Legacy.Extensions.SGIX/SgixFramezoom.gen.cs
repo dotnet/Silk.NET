@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     {
         public const string ExtensionName = "SGIX_framezoom";
         [NativeApi(EntryPoint = "glFrameZoomSGIX", Convention = CallingConvention.Winapi)]
-        public partial void FrameZoom([Flow(FlowDirection.In)] int factor);
+        public partial void FrameZoom([Flow(Silk.NET.Core.Native.FlowDirection.In)] int factor);
 
         public SgixFramezoom(INativeContext ctx)
             : base(ctx)

@@ -16,7 +16,7 @@ namespace Silk.NET.WGL.Extensions.EXT
 {
     public static class ExtDisplayColorTableOverloads
     {
-        public static unsafe bool LoadDisplayColorTable(this ExtDisplayColorTable thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<ushort> table, [Flow(FlowDirection.In)] uint length)
+        public static unsafe bool LoadDisplayColorTable(this ExtDisplayColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ushort> table, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
             return thisApi.LoadDisplayColorTable(in table.GetPinnableReference(), length);

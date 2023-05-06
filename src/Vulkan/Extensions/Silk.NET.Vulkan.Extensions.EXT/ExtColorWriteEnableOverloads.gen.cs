@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtColorWriteEnableOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetColorWriteEnable(this ExtColorWriteEnable thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] ReadOnlySpan<Bool32> pColorWriteEnables)
+        public static unsafe void CmdSetColorWriteEnable(this ExtColorWriteEnable thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Bool32> pColorWriteEnables)
         {
             // SpanOverloader
             thisApi.CmdSetColorWriteEnable(commandBuffer, attachmentCount, in pColorWriteEnables.GetPinnableReference());

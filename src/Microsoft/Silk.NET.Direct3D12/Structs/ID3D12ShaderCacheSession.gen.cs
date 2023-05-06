@@ -225,7 +225,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -246,7 +246,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -258,7 +258,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -273,7 +273,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -282,7 +282,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -306,7 +306,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetName([Flow(FlowDirection.In)] char* Name)
+        public readonly unsafe int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In)] in char Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -342,7 +342,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -401,7 +401,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue([Flow(FlowDirection.In)] void* pKey, uint KeySize, void* pValue, uint* pValueSize)
+        public readonly unsafe int FindValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, void* pValue, uint* pValueSize)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -410,7 +410,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue([Flow(FlowDirection.In)] void* pKey, uint KeySize, void* pValue, ref uint pValueSize)
+        public readonly unsafe int FindValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, void* pValue, ref uint pValueSize)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -422,7 +422,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, uint* pValueSize) where T0 : unmanaged
+        public readonly unsafe int FindValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, uint* pValueSize) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -434,7 +434,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, ref uint pValueSize) where T0 : unmanaged
+        public readonly unsafe int FindValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, ref uint pValueSize) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -449,7 +449,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
+        public readonly unsafe int FindValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -461,7 +461,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
+        public readonly unsafe int FindValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -476,7 +476,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0, T1>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int FindValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -491,7 +491,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindValue<T0, T1>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly int FindValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -509,7 +509,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StoreValue([Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize)
+        public readonly unsafe int StoreValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pValue, uint ValueSize)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -518,7 +518,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StoreValue<T0>([Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] in T0 pValue, uint ValueSize) where T0 : unmanaged
+        public readonly unsafe int StoreValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pValue, uint ValueSize) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -530,7 +530,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StoreValue<T0>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
+        public readonly unsafe int StoreValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -542,7 +542,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StoreValue<T0, T1>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(FlowDirection.In)] in T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly int StoreValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -584,7 +584,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -592,7 +592,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

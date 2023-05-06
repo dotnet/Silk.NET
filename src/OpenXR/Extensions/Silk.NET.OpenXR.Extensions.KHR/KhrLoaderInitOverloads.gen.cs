@@ -17,7 +17,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     public static class KhrLoaderInitOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result InitializeLoader(this KhrLoaderInit thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<LoaderInitInfoBaseHeaderKHR> loaderInitInfo)
+        public static unsafe Result InitializeLoader(this KhrLoaderInit thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<LoaderInitInfoBaseHeaderKHR> loaderInitInfo)
         {
             // SpanOverloader
             return thisApi.InitializeLoader(in loaderInitInfo.GetPinnableReference());

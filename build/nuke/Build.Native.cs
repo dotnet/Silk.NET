@@ -403,6 +403,81 @@ partial class Build
             )
     );
 
+    AbsolutePath Vkd3dPath => RootDirectory / "build" / "submodules" / "vkd3d";
+    AbsolutePath SPIRVToolsPath => RootDirectory / "build" / "submodules" / "SPIRV-Tools";
+
+    Target Vkd3d => CommonTarget
+        (
+            x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    if(!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                    {
+                        throw new PlatformNotSupportedException("This task only runs on Linux!");
+                    }
+
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
+
+                    var vkd3dBuild = SPIRVToolsPath / "build";
+                    EnsureCleanDirectory(vkd3dBuild);
+
+                    { //SPIRV-Tools
+                        //Clone the SPIRV-Headers external repo
+                        InheritedShell($"git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers", SPIRVToolsPath).AssertZeroExitCode();
+
+                        //Make the build scripts, with shared libs enabled
+                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1", vkd3dBuild).AssertZeroExitCode();
+
+                        //Compile SPIRV-Tools
+                        InheritedShell($"cmake --build . --config Release", vkd3dBuild).AssertZeroExitCode();
+
+                        //Run `strip -g` on the shared library file to remove debug info and shrink it from ~30mb down to only ~5.5mb
+                        InheritedShell($"strip -g libSPIRV-Tools-shared.so", vkd3dBuild / "source").AssertZeroExitCode();
+
+                        //Copy the resulting SPIRV-Tools shared library to the runtimes folder
+                        CopyFile(vkd3dBuild / "source" / "libSPIRV-Tools-shared.so", runtimes / "linux-x64" / "native" / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //Vkd3d
+                        var dest = Vkd3dPath / "dest";
+                        var @out = Vkd3dPath / "build";
+
+                        EnsureCleanDirectory(@out);
+                        EnsureCleanDirectory(dest);
+
+                        //Run autogen
+                        InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
+                        //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
+                        InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES -fPIC\" --prefix=/usr --with-spirv-tools", Vkd3dPath).AssertZeroExitCode();
+                        //Build vkd3d
+                        InheritedShell($"make -j4", Vkd3dPath).AssertZeroExitCode();
+                        //Install vkd3d to the dest folder
+                        InheritedShell($"make DESTDIR=\"{Vkd3dPath.ToString().TrimEnd('/')}/dest\" install", Vkd3dPath).AssertZeroExitCode();
+
+                        var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
+
+                        //Copy libvkd3d-shader.a
+                        CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.a", vkd3dShaderCompiler / "libvkd3d-shader.a");
+                        //Copy libvkd3d-shader.la
+                        CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.la", vkd3dShaderCompiler / "libvkd3d-shader.la");
+                        //Copy libSPIRV-Tools-shared.so
+                        CopyFile(vkd3dBuild / "source" / "libSPIRV-Tools-shared.so", vkd3dShaderCompiler / "libSPIRV-Tools-shared.so");
+
+                        //Build the shader compiler
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
+
+                        //Copy the resulting shader compiler to the native output
+                        CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
+                    }
+
+                    PrUpdatedNativeBinary("Vkd3d");
+                }
+            )
+        );
+
     AbsolutePath VulkanLoaderPath => RootDirectory / "build" / "submodules" / "Vulkan-Loader";
 
     Target VulkanLoader => CommonTarget
@@ -440,6 +515,135 @@ partial class Build
                        }
 
                        PrUpdatedNativeBinary("Vulkan Loader");
+                   }
+               )
+    );
+    
+    AbsolutePath DxvkPath => RootDirectory / "build" / "submodules" / "dxvk";
+
+    Target Dxvk => CommonTarget
+    (
+        x => x.Before(Compile)
+              .After(Clean)
+              .Executes
+               (
+                   () =>
+                   {
+                       if (!OperatingSystem.IsLinux())
+                       {
+                           throw new Exception("This task can only run under Linux!");
+                       }
+                       
+                       var @out    = DxvkPath / "output";
+                       var glfwOut = DxvkPath / "glfw-output";
+                       EnsureCleanDirectory(@out);
+                       EnsureCleanDirectory(glfwOut);
+                       
+                       InheritedShell
+                           (
+                               $"./package-release.sh master output --no-package",
+                               DxvkPath
+                           )
+                          .AssertZeroExitCode();
+                       
+                       var win32GlfwLibs = @out.GlobFiles("dxvk-master/x32/*");
+                       
+                       foreach (var lib in win32GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "dxvk-" + fileName);
+                       }
+                       
+                       var win64GlfwLibs = @out.GlobFiles("dxvk-master/x64/*");
+                       
+                       foreach (var lib in win64GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "dxvk-" + fileName);
+                       }
+
+                       InheritedShell
+                           (
+                               $"./package-native.sh master output --no-package",
+                               DxvkPath
+                           )
+                          .AssertZeroExitCode();
+
+                       var mesonOptionsPath = Path.Combine(DxvkPath, "meson_options.txt");
+                       
+                       //Replace `sdl2` with `glfw` in the meson options file, to build with GLFW WSI instead of SDL2 WSI
+                       File.WriteAllText(mesonOptionsPath, File.ReadAllText(mesonOptionsPath).Replace("sdl2", "glfw"));
+                       InheritedShell
+                           (
+                               $"./package-native.sh master glfw-output --no-package",
+                               DxvkPath
+                           )
+                          .AssertZeroExitCode();
+                       
+                       var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.DXVK.Native" / "runtimes";
+                       
+                       //Copy the windows binaries
+                       CopyAll(@out.GlobFiles("dxvk-master/x64/*"), runtimes / "win-x64" / "native");
+                       CopyAll(@out.GlobFiles("dxvk-master/x32/*"), runtimes / "win-x86" / "native");
+
+                       var linux64SdlLibs = @out.GlobFiles("dxvk-native-master/usr/lib/*");
+                       
+                       foreach (var lib in linux64SdlLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "sdl2-" + fileName);
+                       }
+                       
+                       var linux64GlfwLibs = glfwOut.GlobFiles("dxvk-native-master/usr/lib/*");
+                       
+                       foreach (var lib in linux64GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "glfw-" + fileName);
+                       }
+                       
+                       var linux32SdlLibs = @out.GlobFiles("dxvk-native-master/usr/lib32/*");
+                       
+                       foreach (var lib in linux32SdlLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "sdl2-" + fileName);
+                       }
+                       
+                       var linux32GlfwLibs = glfwOut.GlobFiles("dxvk-native-master/usr/lib32/*");
+                       
+                       foreach (var lib in linux32GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "glfw-" + fileName);
+                       }
+
+                       //Copy the linux SDL binaries
+                       CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes   / "linux-x64" / "native");
+                       CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
+
+                       //Copy the linux GLFW binaries
+                       CopyAll(glfwOut.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes   / "linux-x64" / "native");
+                       CopyAll(glfwOut.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
+
+                       var winx64 = runtimes / "win-x64" / "native";
+                       var winx86 = runtimes / "win-x86" / "native";
+                       
+                       var linuxx64 = runtimes / "linux-x64" / "native";
+                       var linuxx86 = runtimes / "linux-x86" / "native";
+
+                       var glob = string.Empty;
+                       var files = winx64.GlobFiles("*.dll")
+                                         .Concat(winx86.GlobFiles("*.dll"))
+                                         .Concat(linuxx64.GlobFiles("*.so"))
+                                         .Concat(linuxx86.GlobFiles("*.so"));
+
+                       glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
+
+                       PrUpdatedNativeBinary
+                       (
+                           "DXVK", glob
+                       );
                    }
                )
     );
@@ -514,7 +718,7 @@ partial class Build
             )
     );
 
-    void PrUpdatedNativeBinary(string name)
+    void PrUpdatedNativeBinary(string name, [CanBeNull] string glob = null)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
@@ -527,23 +731,22 @@ partial class Build
             !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
-            var suffix = string.Empty;
             if (OperatingSystem.IsWindows())
             {
-                suffix = "/**/*.dll";
+                glob ??= "src/Native/**/*.dll";
             }
             else if (OperatingSystem.IsMacOS())
             {
-                suffix = "/**/*.dylib";
+                glob ??= "src/Native/**/*.dylib";
             }
             else if (OperatingSystem.IsLinux())
             {
-                suffix = "/**/*.so*";
+                glob ??= "src/Native/**/*.so*";
             }
-            
+
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git($"add src/Native{suffix}", RootDirectory);
+            Git($"add -f {glob}", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell

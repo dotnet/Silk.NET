@@ -154,7 +154,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -163,7 +163,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -187,7 +187,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -229,7 +229,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -244,7 +244,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -271,7 +271,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -283,7 +283,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -295,7 +295,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -322,7 +322,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -337,7 +337,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -370,7 +370,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -382,7 +382,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -397,7 +397,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -430,7 +430,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -445,7 +445,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -463,7 +463,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -481,7 +481,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -502,7 +502,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -511,7 +511,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -523,7 +523,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -535,7 +535,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -550,7 +550,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -562,7 +562,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -577,7 +577,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -592,7 +592,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -610,7 +610,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -622,7 +622,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -637,7 +637,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -652,7 +652,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -670,7 +670,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -685,7 +685,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -703,7 +703,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -721,7 +721,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -742,7 +742,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -751,7 +751,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -763,7 +763,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -775,7 +775,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -790,7 +790,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -802,7 +802,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -817,7 +817,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -832,7 +832,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
+    public static int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -850,7 +850,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -859,7 +859,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -871,7 +871,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -883,7 +883,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -898,7 +898,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -910,7 +910,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -925,7 +925,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -940,7 +940,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
+    public static int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -958,7 +958,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -967,7 +967,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -979,7 +979,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -991,7 +991,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1006,7 +1006,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1018,7 +1018,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1033,7 +1033,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1048,7 +1048,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
+    public static int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1066,7 +1066,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1075,7 +1075,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1087,7 +1087,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1099,7 +1099,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1114,7 +1114,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1126,7 +1126,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1141,7 +1141,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1156,7 +1156,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1207,7 +1207,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1215,7 +1215,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1223,7 +1223,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1231,7 +1231,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1239,7 +1239,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, Guid** pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1247,7 +1247,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, ref Guid* pGuids)
+    public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, ref Guid* pGuids)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1255,7 +1255,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1263,7 +1263,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1271,7 +1271,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1279,7 +1279,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1287,7 +1287,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1295,7 +1295,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1303,7 +1303,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1311,7 +1311,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1319,7 +1319,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1327,7 +1327,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1335,7 +1335,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1343,7 +1343,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1351,7 +1351,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1359,7 +1359,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorRenderTargets(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1367,7 +1367,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1375,7 +1375,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1383,7 +1383,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1391,7 +1391,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1399,7 +1399,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1407,7 +1407,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1415,7 +1415,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1423,7 +1423,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1431,7 +1431,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1439,7 +1439,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1447,7 +1447,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1455,7 +1455,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1463,7 +1463,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1471,7 +1471,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+    public static unsafe int GetVideoProcessorSubStreamFormats(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1479,7 +1479,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1487,7 +1487,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1495,7 +1495,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1503,7 +1503,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1511,7 +1511,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1519,7 +1519,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+    public static unsafe int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1527,7 +1527,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
+    public static int GetVideoProcessorCaps(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, Span<DXVA2VideoProcessorCaps> pCaps)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1535,7 +1535,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1543,7 +1543,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1551,7 +1551,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1559,7 +1559,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1567,7 +1567,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1575,7 +1575,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+    public static unsafe int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1583,7 +1583,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
+    public static int GetProcAmpRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1591,7 +1591,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1599,7 +1599,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1607,7 +1607,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1615,7 +1615,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1623,7 +1623,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1631,7 +1631,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+    public static unsafe int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1639,7 +1639,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
+    public static int GetFilterPropertyRange(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, Span<DXVA2ValueRange> pRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1647,7 +1647,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1655,7 +1655,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1663,7 +1663,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1671,7 +1671,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1679,7 +1679,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1687,7 +1687,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1695,7 +1695,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1703,7 +1703,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1711,7 +1711,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
+    public static int CreateVideoProcessor<TI0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1719,7 +1719,7 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<Guid> VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

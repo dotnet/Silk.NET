@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_draw_transform_feedback";
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id);
+        public partial void DrawTransformFeedback([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
+        public partial void DrawTransformFeedback([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        public partial void DrawTransformFeedbackInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        public partial void DrawTransformFeedbackInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
 
         public ExtDrawTransformFeedback(INativeContext ctx)
             : base(ctx)

@@ -30,19 +30,19 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] nint* dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] nint* dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayKHR* pDisplay);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] nint* dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] nint* dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DisplayKHR pDisplay);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref nint dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref nint dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayKHR* pDisplay);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref nint dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
+        public partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref nint dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DisplayKHR pDisplay);
 
         public ExtAcquireXlibDisplay(INativeContext ctx)
             : base(ctx)

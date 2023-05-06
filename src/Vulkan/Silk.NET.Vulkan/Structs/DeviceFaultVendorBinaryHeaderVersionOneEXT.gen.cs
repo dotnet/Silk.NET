@@ -28,7 +28,9 @@ namespace Silk.NET.Vulkan
             uint? driverVersion = null,
             uint? applicationNameOffset = null,
             uint? applicationVersion = null,
-            uint? engineNameOffset = null
+            uint? engineNameOffset = null,
+            uint? engineVersion = null,
+            uint? apiVersion = null
         ) : this()
         {
             if (headerSize is not null)
@@ -69,6 +71,16 @@ namespace Silk.NET.Vulkan
             if (engineNameOffset is not null)
             {
                 EngineNameOffset = engineNameOffset.Value;
+            }
+
+            if (engineVersion is not null)
+            {
+                EngineVersion = engineVersion.Value;
+            }
+
+            if (apiVersion is not null)
+            {
+                ApiVersion = apiVersion.Value;
             }
         }
 
@@ -117,5 +129,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "engineNameOffset")]
         public uint EngineNameOffset;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "engineVersion")]
+        public uint EngineVersion;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "apiVersion")]
+        public uint ApiVersion;
     }
 }

@@ -17,21 +17,21 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
     public static class FuchsiaExternalMemoryOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryZirconHandleFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> pZirconHandle)
+        public static unsafe Result GetMemoryZirconHandleFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> pZirconHandle)
         {
             // SpanOverloader
             return thisApi.GetMemoryZirconHandleFuchsia(device, pGetZirconHandleInfo, out pZirconHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryZirconHandleFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pZirconHandle)
+        public static unsafe Result GetMemoryZirconHandleFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pZirconHandle)
         {
             // SpanOverloader
             return thisApi.GetMemoryZirconHandleFuchsia(device, in pGetZirconHandleInfo.GetPinnableReference(), pZirconHandle);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryZirconHandleFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> pZirconHandle)
+        public static unsafe Result GetMemoryZirconHandleFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryGetZirconHandleInfoFUCHSIA> pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> pZirconHandle)
         {
             // SpanOverloader
             return thisApi.GetMemoryZirconHandleFuchsia(device, in pGetZirconHandleInfo.GetPinnableReference(), out pZirconHandle.GetPinnableReference());
@@ -39,7 +39,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryZirconHandleProperties = new(StructureType.MemoryZirconHandlePropertiesFuchsia);")]
-        public static unsafe Result GetMemoryZirconHandlePropertiesFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryZirconHandlePropertiesFUCHSIA> pMemoryZirconHandleProperties)
+        public static unsafe Result GetMemoryZirconHandlePropertiesFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<MemoryZirconHandlePropertiesFUCHSIA> pMemoryZirconHandleProperties)
         {
             // SpanOverloader
             return thisApi.GetMemoryZirconHandlePropertiesFuchsia(device, handleType, zirconHandle, out pMemoryZirconHandleProperties.GetPinnableReference());

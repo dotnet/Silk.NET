@@ -21,13 +21,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_imaging";
         [NativeApi(EntryPoint = "glBlendColor", Convention = CallingConvention.Winapi)]
-        public partial void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
+        public partial void BlendColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] float red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float blue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float alpha);
 
         [NativeApi(EntryPoint = "glBlendEquation", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(FlowDirection.In)] ARB mode);
+        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode);
 
         [NativeApi(EntryPoint = "glBlendEquation", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT mode);
 
         public ArbImaging(INativeContext ctx)
             : base(ctx)

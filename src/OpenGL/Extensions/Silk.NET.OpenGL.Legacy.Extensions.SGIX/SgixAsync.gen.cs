@@ -21,28 +21,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     {
         public const string ExtensionName = "SGIX_async";
         [NativeApi(EntryPoint = "glAsyncMarkerSGIX", Convention = CallingConvention.Winapi)]
-        public partial void AsyncMarker([Flow(FlowDirection.In)] uint marker);
+        public partial void AsyncMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint marker);
 
         [NativeApi(EntryPoint = "glDeleteAsyncMarkersSGIX", Convention = CallingConvention.Winapi)]
-        public partial void DeleteAsyncMarkers([Flow(FlowDirection.In)] uint marker, [Flow(FlowDirection.In)] uint range);
+        public partial void DeleteAsyncMarkers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint marker, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint range);
 
         [NativeApi(EntryPoint = "glFinishAsyncSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
+        public unsafe partial int FinishAsync([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* markerp);
 
         [NativeApi(EntryPoint = "glFinishAsyncSGIX", Convention = CallingConvention.Winapi)]
-        public partial int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] out uint markerp);
+        public partial int FinishAsync([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint markerp);
 
         [NativeApi(EntryPoint = "glGenAsyncMarkersSGIX", Convention = CallingConvention.Winapi)]
-        public partial uint GenAsyncMarkers([Flow(FlowDirection.In)] uint range);
+        public partial uint GenAsyncMarkers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint range);
 
         [NativeApi(EntryPoint = "glIsAsyncMarkerSGIX", Convention = CallingConvention.Winapi)]
-        public partial bool IsAsyncMarker([Flow(FlowDirection.In)] uint marker);
+        public partial bool IsAsyncMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint marker);
 
         [NativeApi(EntryPoint = "glPollAsyncSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
+        public unsafe partial int PollAsync([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* markerp);
 
         [NativeApi(EntryPoint = "glPollAsyncSGIX", Convention = CallingConvention.Winapi)]
-        public partial int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] out uint markerp);
+        public partial int PollAsync([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint markerp);
 
         public SgixAsync(INativeContext ctx)
             : base(ctx)

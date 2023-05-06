@@ -16,13 +16,13 @@ namespace Silk.NET.WGL.Extensions.I3D
 {
     public static class I3DDigitalVideoControlOverloads
     {
-        public static unsafe Silk.NET.Core.Bool32 GetDigitalVideoParametersI3D(this I3DDigitalVideoControl thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] Span<int> piValue)
+        public static unsafe Silk.NET.Core.Bool32 GetDigitalVideoParametersI3D(this I3DDigitalVideoControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> piValue)
         {
             // SpanOverloader
             return thisApi.GetDigitalVideoParametersI3D(hDC, iAttribute, out piValue.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D(this I3DDigitalVideoControl thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.In)] ReadOnlySpan<int> piValue)
+        public static unsafe Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D(this I3DDigitalVideoControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> piValue)
         {
             // SpanOverloader
             return thisApi.SetDigitalVideoParametersI3D(hDC, iAttribute, in piValue.GetPinnableReference());

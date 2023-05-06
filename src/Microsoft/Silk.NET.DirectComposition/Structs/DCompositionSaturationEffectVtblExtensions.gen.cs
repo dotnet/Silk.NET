@@ -110,7 +110,7 @@ public unsafe static class DCompositionSaturationEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionSaturationEffect*, float, int>)@this->LpVtbl[4])(@this, ratio);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionSaturationEffect*, float, int>)@this->LpVtbl[5])(@this, ratio);
         return ret;
     }
 

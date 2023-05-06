@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVQueryResourceOverloads
     {
-        public static unsafe int QueryResource(this NVQueryResource thisApi, [Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)
+        public static unsafe int QueryResource(this NVQueryResource thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV queryType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> buffer)
         {
             // SpanOverloader
             return thisApi.QueryResource(queryType, tagId, count, out buffer.GetPinnableReference());

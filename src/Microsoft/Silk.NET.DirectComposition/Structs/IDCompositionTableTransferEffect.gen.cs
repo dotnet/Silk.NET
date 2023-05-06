@@ -138,7 +138,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetRedTable([Flow(FlowDirection.In)] float* tableValues, uint count)
+        public readonly unsafe int SetRedTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] float* tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetRedTable([Flow(FlowDirection.In)] in float tableValues, uint count)
+        public readonly int SetRedTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] in float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetGreenTable([Flow(FlowDirection.In)] float* tableValues, uint count)
+        public readonly unsafe int SetGreenTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] float* tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -168,7 +168,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetGreenTable([Flow(FlowDirection.In)] in float tableValues, uint count)
+        public readonly int SetGreenTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] in float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetBlueTable([Flow(FlowDirection.In)] float* tableValues, uint count)
+        public readonly unsafe int SetBlueTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] float* tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -189,7 +189,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBlueTable([Flow(FlowDirection.In)] in float tableValues, uint count)
+        public readonly int SetBlueTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] in float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetAlphaTable([Flow(FlowDirection.In)] float* tableValues, uint count)
+        public readonly unsafe int SetAlphaTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] float* tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAlphaTable([Flow(FlowDirection.In)] in float tableValues, uint count)
+        public readonly int SetAlphaTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] in float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -271,7 +271,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[13])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[14])(@this, index, value);
             return ret;
         }
 
@@ -280,7 +280,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[14])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[16])(@this, index, value);
             return ret;
         }
 
@@ -289,7 +289,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[15])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[18])(@this, index, value);
             return ret;
         }
 
@@ -298,7 +298,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[16])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[20])(@this, index, value);
             return ret;
         }
 

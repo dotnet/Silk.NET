@@ -21,94 +21,94 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_bindless_texture";
         [NativeApi(EntryPoint = "glGetImageHandleARB", Convention = CallingConvention.Winapi)]
-        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB format);
+        public partial ulong GetImageHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool layered, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int layer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format);
 
         [NativeApi(EntryPoint = "glGetImageHandleARB", Convention = CallingConvention.Winapi)]
-        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+        public partial ulong GetImageHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool layered, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int layer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format);
 
         [NativeApi(EntryPoint = "glGetTextureHandleARB", Convention = CallingConvention.Winapi)]
-        public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
+        public partial ulong GetTextureHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture);
 
         [NativeApi(EntryPoint = "glGetTextureSamplerHandleARB", Convention = CallingConvention.Winapi)]
-        public partial ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
+        public partial ulong GetTextureSamplerHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint sampler);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] ulong* @params);
+        public unsafe partial void GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB", Convention = CallingConvention.Winapi)]
-        public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] out ulong @params);
+        public partial void GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] ulong* @params);
+        public unsafe partial void GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnum pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB", Convention = CallingConvention.Winapi)]
-        public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] out ulong @params);
+        public partial void GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnum pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
 
         [NativeApi(EntryPoint = "glIsImageHandleResidentARB", Convention = CallingConvention.Winapi)]
-        public partial bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial bool IsImageHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glIsTextureHandleResidentARB", Convention = CallingConvention.Winapi)]
-        public partial bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial bool IsTextureHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeImageHandleNonResidentARB", Convention = CallingConvention.Winapi)]
-        public partial void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeImageHandleNonResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeImageHandleResidentARB", Convention = CallingConvention.Winapi)]
-        public partial void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] ARB access);
+        public partial void MakeImageHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB access);
 
         [NativeApi(EntryPoint = "glMakeTextureHandleNonResidentARB", Convention = CallingConvention.Winapi)]
-        public partial void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeTextureHandleNonResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeTextureHandleResidentARB", Convention = CallingConvention.Winapi)]
-        public partial void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeTextureHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64ARB", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        public partial void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
+        public unsafe partial void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* values);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vARB", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong values);
+        public partial void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong values);
 
         [NativeApi(EntryPoint = "glUniformHandleui64ARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        public partial void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glUniformHandleui64vARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+        public unsafe partial void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* value);
 
         [NativeApi(EntryPoint = "glUniformHandleui64vARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
+        public partial void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong value);
 
         [NativeApi(EntryPoint = "glVertexAttribL1ui64ARB", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong x);
+        public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong x);
 
         [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong* v);
+        public unsafe partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in ulong v);
+        public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong v);
 
-        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        public unsafe void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> values)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
         }
 
-        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        public unsafe void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> value)
         {
             // ImplicitCountSpanOverloader
             UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
         }
 
-        public unsafe ulong GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        public unsafe ulong GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname)
         {
             // NonKhrReturnTypeOverloader
             GetVertexAttribL(index, pname, out ulong silkRet);
             return silkRet;
         }
 
-        public unsafe ulong GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname)
+        public unsafe ulong GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnum pname)
         {
             // NonKhrReturnTypeOverloader
             GetVertexAttribL(index, pname, out ulong silkRet);

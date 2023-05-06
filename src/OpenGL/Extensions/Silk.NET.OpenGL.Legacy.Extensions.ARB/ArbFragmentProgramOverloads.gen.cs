@@ -16,193 +16,193 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbFragmentProgramOverloads
     {
-        public static unsafe void DeleteProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
+        public static unsafe void DeleteProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> programs)
         {
             // SpanOverloader
             thisApi.DeleteProgram(n, in programs.GetPinnableReference());
         }
 
-        public static unsafe void DeleteProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
+        public static unsafe void DeleteProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Program> programs)
         {
             // SpanOverloader
             thisApi.DeleteProgram(n, in programs.GetPinnableReference());
         }
 
-        public static unsafe void GenProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> programs)
+        public static unsafe void GenProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> programs)
         {
             // SpanOverloader
             thisApi.GenProgram(n, out programs.GetPinnableReference());
         }
 
-        public static unsafe void GenProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Program> programs)
+        public static unsafe void GenProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Program> programs)
         {
             // SpanOverloader
             thisApi.GenProgram(n, out programs.GetPinnableReference());
         }
 
-        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetProgram(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramPropertyARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetProgram(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetProgram(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetProgram(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramPropertyARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetProgram(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<double> @params)
         {
             // SpanOverloader
             thisApi.GetProgramEnvParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<double> @params)
         {
             // SpanOverloader
             thisApi.GetProgramEnvParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetProgramEnvParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetProgramEnvParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetProgramEnvParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<double> @params)
         {
             // SpanOverloader
             thisApi.GetProgramLocalParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<double> @params)
         {
             // SpanOverloader
             thisApi.GetProgramLocalParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetProgramLocalParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetProgramLocalParameter(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetProgramLocalParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> @params)
+        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> @params)
+        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ProgramEnvParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> @params)
+        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> @params)
+        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ProgramLocalParameter4(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
         }
 
-        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramFormat format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
         }
 
-        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
         }
 
-        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramFormat format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());

@@ -21,51 +21,51 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_fence";
         [NativeApi(EntryPoint = "glDeleteFencesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
+        public unsafe partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* fences);
 
         [NativeApi(EntryPoint = "glDeleteFencesNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
+        public partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint fences);
 
         [NativeApi(EntryPoint = "glFinishFenceNV", Convention = CallingConvention.Winapi)]
-        public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
+        public partial void FinishFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
         [NativeApi(EntryPoint = "glGenFencesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
+        public unsafe partial void GenFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* fences);
 
         [NativeApi(EntryPoint = "glGenFencesNV", Convention = CallingConvention.Winapi)]
-        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
+        public partial void GenFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint fences);
 
         [NativeApi(EntryPoint = "glGetFenceivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFenceivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetFenceivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFenceivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glIsFenceNV", Convention = CallingConvention.Winapi)]
-        public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
+        public partial bool IsFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
         [NativeApi(EntryPoint = "glSetFenceNV", Convention = CallingConvention.Winapi)]
-        public partial void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV condition);
+        public partial void SetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV condition);
 
         [NativeApi(EntryPoint = "glSetFenceNV", Convention = CallingConvention.Winapi)]
-        public partial void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceConditionNV condition);
+        public partial void SetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceConditionNV condition);
 
         [NativeApi(EntryPoint = "glTestFenceNV", Convention = CallingConvention.Winapi)]
-        public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
+        public partial bool TestFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
-        public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
+        public unsafe void DeleteFence([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fences)
         {
             // ArrayParameterOverloader
             DeleteFences(1, &fences);
         }
 
-        public unsafe void DeleteFences([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
+        public unsafe void DeleteFences([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> fences)
         {
             // ImplicitCountSpanOverloader
             DeleteFences((uint) fences.Length, in fences.GetPinnableReference());
@@ -80,27 +80,27 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             return ret;
         }
 
-        public unsafe void GenFences([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+        public unsafe void GenFences([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> fences)
         {
             // ImplicitCountSpanOverloader
             GenFences((uint) fences.Length, out fences.GetPinnableReference());
         }
 
-        public unsafe uint GenFences([Flow(FlowDirection.In)] uint n)
+        public unsafe uint GenFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
             GenFences(n, out uint silkRet);
             return silkRet;
         }
 
-        public unsafe int GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname)
+        public unsafe int GetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
         {
             // NonKhrReturnTypeOverloader
             GetFence(fence, pname, out int silkRet);
             return silkRet;
         }
 
-        public unsafe int GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname)
+        public unsafe int GetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceParameterNameNV pname)
         {
             // NonKhrReturnTypeOverloader
             GetFence(fence, pname, out int silkRet);

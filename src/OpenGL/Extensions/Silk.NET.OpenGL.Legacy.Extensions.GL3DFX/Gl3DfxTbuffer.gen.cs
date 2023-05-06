@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GL3DFX
     {
         public const string ExtensionName = "3DFX_tbuffer";
         [NativeApi(EntryPoint = "glTbufferMask3DFX", Convention = CallingConvention.Winapi)]
-        public partial void TbufferMask3Dfx([Flow(FlowDirection.In)] uint mask);
+        public partial void TbufferMask3Dfx([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask);
 
         public Gl3DfxTbuffer(INativeContext ctx)
             : base(ctx)

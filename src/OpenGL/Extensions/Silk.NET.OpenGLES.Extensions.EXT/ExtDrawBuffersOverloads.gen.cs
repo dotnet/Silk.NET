@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     public static class ExtDrawBuffersOverloads
     {
-        public static unsafe void DrawBuffers(this ExtDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> bufs)
+        public static unsafe void DrawBuffers(this ExtDrawBuffers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EXT> bufs)
         {
             // SpanOverloader
             thisApi.DrawBuffers(n, in bufs.GetPinnableReference());

@@ -16,133 +16,133 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     public static class QComExtendedGet2Overloads
     {
-        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] uint* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numPrograms)
+        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numPrograms)
         {
             // SpanOverloader
             thisApi.ExtGetProgram(programs, maxPrograms, out numPrograms.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms)
+        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numPrograms)
         {
             // SpanOverloader
             thisApi.ExtGetProgram(out programs.GetPinnableReference(), maxPrograms, numPrograms);
         }
 
-        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numPrograms)
+        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numPrograms)
         {
             // SpanOverloader
             thisApi.ExtGetProgram(out programs.GetPinnableReference(), maxPrograms, out numPrograms.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Program* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numPrograms)
+        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Program* programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numPrograms)
         {
             // SpanOverloader
             thisApi.ExtGetProgram(programs, maxPrograms, out numPrograms.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<Program> programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms)
+        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Program> programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numPrograms)
         {
             // SpanOverloader
             thisApi.ExtGetProgram(out programs.GetPinnableReference(), maxPrograms, numPrograms);
         }
 
-        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<Program> programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numPrograms)
+        public static unsafe void ExtGetProgram(this QComExtendedGet2 thisApi, [Count(Parameter = "maxPrograms"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Program> programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numPrograms)
         {
             // SpanOverloader
             thisApi.ExtGetProgram(out programs.GetPinnableReference(), maxPrograms, out numPrograms.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, source, out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] int* length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] int* length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, source, out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] int* length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] int* length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numShaders)
+        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numShaders)
         {
             // SpanOverloader
             thisApi.ExtGetShaders(shaders, maxShaders, out numShaders.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders)
+        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numShaders)
         {
             // SpanOverloader
             thisApi.ExtGetShaders(out shaders.GetPinnableReference(), maxShaders, numShaders);
         }
 
-        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numShaders)
+        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numShaders)
         {
             // SpanOverloader
             thisApi.ExtGetShaders(out shaders.GetPinnableReference(), maxShaders, out numShaders.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Shader* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numShaders)
+        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numShaders)
         {
             // SpanOverloader
             thisApi.ExtGetShaders(shaders, maxShaders, out numShaders.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<Shader> shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders)
+        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numShaders)
         {
             // SpanOverloader
             thisApi.ExtGetShaders(out shaders.GetPinnableReference(), maxShaders, numShaders);
         }
 
-        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<Shader> shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numShaders)
+        public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> numShaders)
         {
             // SpanOverloader
             thisApi.ExtGetShaders(out shaders.GetPinnableReference(), maxShaders, out numShaders.GetPinnableReference());

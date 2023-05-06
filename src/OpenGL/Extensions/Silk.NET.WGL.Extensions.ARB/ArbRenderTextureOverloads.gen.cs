@@ -16,7 +16,7 @@ namespace Silk.NET.WGL.Extensions.ARB
 {
     public static class ArbRenderTextureOverloads
     {
-        public static unsafe Silk.NET.Core.Bool32 SetPbufferAttrib(this ArbRenderTexture thisApi, [Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> piAttribList)
+        public static unsafe Silk.NET.Core.Bool32 SetPbufferAttrib(this ArbRenderTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> piAttribList)
         {
             // SpanOverloader
             return thisApi.SetPbufferAttrib(hPbuffer, in piAttribList.GetPinnableReference());

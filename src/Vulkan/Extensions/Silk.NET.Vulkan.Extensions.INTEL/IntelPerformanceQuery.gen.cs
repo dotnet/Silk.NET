@@ -22,59 +22,59 @@ namespace Silk.NET.Vulkan.Extensions.INTEL
         public const string ExtensionName = "VK_INTEL_performance_query";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
+        public partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceMarkerINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceMarkerInfoINTEL* pMarkerInfo);
+        public unsafe partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PerformanceMarkerInfoINTEL* pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceMarkerINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceMarkerInfoINTEL pMarkerInfo);
+        public partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PerformanceMarkerInfoINTEL pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceOverrideINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceOverrideInfoINTEL* pOverrideInfo);
+        public unsafe partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PerformanceOverrideInfoINTEL* pOverrideInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceOverrideINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceOverrideInfoINTEL pOverrideInfo);
+        public partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PerformanceOverrideInfoINTEL pOverrideInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceStreamMarkerInfoINTEL* pMarkerInfo);
+        public unsafe partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PerformanceStreamMarkerInfoINTEL* pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceStreamMarkerInfoINTEL pMarkerInfo);
+        public partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PerformanceStreamMarkerInfoINTEL pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPerformanceParameterINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(FlowDirection.Out)] PerformanceValueINTEL* pValue);
+        public unsafe partial Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerformanceValueINTEL* pValue);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPerformanceParameterINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(FlowDirection.Out)] out PerformanceValueINTEL pValue);
+        public partial Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerformanceValueINTEL pValue);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkInitializePerformanceApiINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] InitializePerformanceApiInfoINTEL* pInitializeInfo);
+        public unsafe partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InitializePerformanceApiInfoINTEL* pInitializeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkInitializePerformanceApiINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in InitializePerformanceApiInfoINTEL pInitializeInfo);
+        public partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in InitializePerformanceApiInfoINTEL pInitializeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueSetPerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]

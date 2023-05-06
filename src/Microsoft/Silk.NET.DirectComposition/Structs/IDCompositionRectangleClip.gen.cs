@@ -118,7 +118,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[3])(@this, left);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[4])(@this, left);
             return ret;
         }
 
@@ -127,7 +127,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[4])(@this, top);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[6])(@this, top);
             return ret;
         }
 
@@ -136,7 +136,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[5])(@this, right);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[8])(@this, right);
             return ret;
         }
 
@@ -145,7 +145,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[6])(@this, bottom);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[10])(@this, bottom);
             return ret;
         }
 
@@ -154,7 +154,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[7])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[12])(@this, radius);
             return ret;
         }
 
@@ -163,7 +163,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[8])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[14])(@this, radius);
             return ret;
         }
 
@@ -172,7 +172,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[9])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[16])(@this, radius);
             return ret;
         }
 
@@ -181,7 +181,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[10])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[18])(@this, radius);
             return ret;
         }
 
@@ -190,7 +190,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[11])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[20])(@this, radius);
             return ret;
         }
 
@@ -199,7 +199,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[12])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[22])(@this, radius);
             return ret;
         }
 
@@ -208,7 +208,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[13])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[24])(@this, radius);
             return ret;
         }
 
@@ -217,7 +217,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[14])(@this, radius);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[26])(@this, radius);
             return ret;
         }
 

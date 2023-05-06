@@ -21,42 +21,42 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_driver_control";
         [NativeApi(EntryPoint = "glDisableDriverControlQCOM", Convention = CallingConvention.Winapi)]
-        public partial void DisableDriverControl([Flow(FlowDirection.In)] uint driverControl);
+        public partial void DisableDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl);
 
         [NativeApi(EntryPoint = "glEnableDriverControlQCOM", Convention = CallingConvention.Winapi)]
-        public partial void EnableDriverControl([Flow(FlowDirection.In)] uint driverControl);
+        public partial void EnableDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl);
 
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls);
+        public unsafe partial void GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* driverControls);
 
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out uint driverControls);
+        public unsafe partial void GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint driverControls);
 
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControl([Flow(FlowDirection.Out)] out int num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls);
+        public unsafe partial void GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* driverControls);
 
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM", Convention = CallingConvention.Winapi)]
-        public partial void GetDriverControl([Flow(FlowDirection.Out)] out int num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out uint driverControls);
+        public partial void GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint driverControls);
 
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* driverControlString);
 
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte driverControlString);
 
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string driverControlString);
 
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* driverControlString);
 
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
-        public partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte driverControlString);
+        public partial void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte driverControlString);
 
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
-        public partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string driverControlString);
+        public partial void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string driverControlString);
 
-        public unsafe uint GetDriverControl([Flow(FlowDirection.Out)] int* num)
+        public unsafe uint GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* num)
         {
             const uint size = 1;
             // ReturnTypeOverloader
@@ -65,64 +65,64 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             return ret;
         }
 
-        public unsafe void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls)
+        public unsafe void GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* num, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> driverControls)
         {
             // ImplicitCountSpanOverloader
             GetDriverControl(num, (uint) driverControls.Length, out driverControls.GetPinnableReference());
         }
 
-        public unsafe void GetDriverControl([Flow(FlowDirection.Out)] out int num, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls)
+        public unsafe void GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int num, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> driverControls)
         {
             // ImplicitCountSpanOverloader
             GetDriverControl(out num, (uint) driverControls.Length, out driverControls.GetPinnableReference());
         }
 
-        public unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> driverControlString)
+        public unsafe void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> driverControlString)
         {
             // ImplicitCountSpanOverloader
             GetDriverControlString(driverControl, (uint) driverControlString.Length, length, out driverControlString.GetPinnableReference());
         }
 
-        public unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> driverControlString)
+        public unsafe void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> driverControlString)
         {
             // ImplicitCountSpanOverloader
             GetDriverControlString(driverControl, (uint) driverControlString.Length, length, out driverControlString.GetPinnableReference());
         }
 
-        public unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> driverControlString)
+        public unsafe void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> driverControlString)
         {
             // ImplicitCountSpanOverloader
             GetDriverControlString(driverControl, (uint) driverControlString.Length, out length, out driverControlString.GetPinnableReference());
         }
 
-        public unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> driverControlString)
+        public unsafe void GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> driverControlString)
         {
             // ImplicitCountSpanOverloader
             GetDriverControlString(driverControl, (uint) driverControlString.Length, out length, out driverControlString.GetPinnableReference());
         }
 
-        public unsafe uint GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size)
+        public unsafe uint GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size)
         {
             // NonKhrReturnTypeOverloader
             GetDriverControl(num, size, out uint silkRet);
             return silkRet;
         }
 
-        public unsafe uint GetDriverControl([Flow(FlowDirection.Out)] out int num, [Flow(FlowDirection.In)] uint size)
+        public unsafe uint GetDriverControl([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size)
         {
             // NonKhrReturnTypeOverloader
             GetDriverControl(out num, size, out uint silkRet);
             return silkRet;
         }
 
-        public unsafe byte GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length)
+        public unsafe byte GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length)
         {
             // NonKhrReturnTypeOverloader
             GetDriverControlString(driverControl, bufSize, length, out byte silkRet);
             return silkRet;
         }
 
-        public unsafe byte GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length)
+        public unsafe byte GetDriverControlString([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length)
         {
             // NonKhrReturnTypeOverloader
             GetDriverControlString(driverControl, bufSize, out length, out byte silkRet);

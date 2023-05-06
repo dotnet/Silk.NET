@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtAcquireDrmDisplayOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDrmDisplay(this ExtAcquireDrmDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayKHR> display)
+        public static unsafe Result GetDrmDisplay(this ExtAcquireDrmDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayKHR> display)
         {
             // SpanOverloader
             return thisApi.GetDrmDisplay(physicalDevice, drmFd, connectorId, out display.GetPinnableReference());

@@ -21,223 +21,223 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     {
         public const string ExtensionName = "ATI_vertex_array_object";
         [NativeApi(EntryPoint = "glArrayObjectATI", Convention = CallingConvention.Winapi)]
-        public partial void ArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        public partial void ArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);
 
         [NativeApi(EntryPoint = "glArrayObjectATI", Convention = CallingConvention.Winapi)]
-        public partial void ArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        public partial void ArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);
 
         [NativeApi(EntryPoint = "glArrayObjectATI", Convention = CallingConvention.Winapi)]
-        public partial void ArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        public partial void ArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);
 
         [NativeApi(EntryPoint = "glArrayObjectATI", Convention = CallingConvention.Winapi)]
-        public partial void ArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        public partial void ArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);
 
         [NativeApi(EntryPoint = "glFreeObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void FreeObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+        public partial void FreeObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetObjectBufferivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glIsObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial bool IsObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+        public partial bool IsObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI usage);
+        public unsafe partial uint NewObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage);
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged;
+        public partial uint NewObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage);
+        public unsafe partial uint NewObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage);
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged;
+        public partial uint NewObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI preserve);
+        public unsafe partial void UpdateObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve);
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged;
+        public partial void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve);
+        public unsafe partial void UpdateObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve);
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged;
+        public partial void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVariantArrayObjectATI", Convention = CallingConvention.Winapi)]
-        public partial void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        public partial void VariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);
 
         [NativeApi(EntryPoint = "glVariantArrayObjectATI", Convention = CallingConvention.Winapi)]
-        public partial void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        public partial void VariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);
 
-        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged
+        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return NewObjectBuffer((uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
+            return NewObjectBuffer((uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
         }
 
-        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
+        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return NewObjectBuffer((uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
+            return NewObjectBuffer((uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
         }
 
-        public unsafe void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged
+        public unsafe void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
+            UpdateObjectBuffer(buffer, offset, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
         }
 
-        public unsafe void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
+        public unsafe void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
+            UpdateObjectBuffer(buffer, offset, (uint) ((pointer.Length) * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
         }
 
-        public unsafe float GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname)
+        public unsafe float GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetArrayObject(array, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        public unsafe float GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetArrayObject(array, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ATI pname)
+        public unsafe float GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetArrayObject(array, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        public unsafe float GetArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap array, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetArrayObject(array, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname)
+        public unsafe float GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetObjectBuffer(buffer, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        public unsafe float GetObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetObjectBuffer(buffer, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname)
+        public unsafe float GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetVariantArrayObject(id, pname, out float silkRet);
             return silkRet;
         }
 
-        public unsafe float GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        public unsafe float GetVariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectPNameATI pname)
         {
             // NonKhrReturnTypeOverloader
             GetVariantArrayObject(id, pname, out float silkRet);

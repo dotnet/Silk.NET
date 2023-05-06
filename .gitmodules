@@ -28,3 +28,12 @@
 [submodule "build/submodules/dawn"]
 	path = build/submodules/dawn
 	url = https://github.com/Beyley/dawn
+[submodule "build/submodules/dxvk"]
+	path = build/submodules/dxvk
+	url = https://github.com/doitsujin/dxvk/
+[submodule "build/submodules/vkd3d"]
+	path = build/submodules/vkd3d
+	url = https://github.com/Beyley/vkd3d
+[submodule "build/submodules/SPIRV-Tools"]
+	path = build/submodules/SPIRV-Tools
+	url = https://github.com/KhronosGroup/SPIRV-Tools

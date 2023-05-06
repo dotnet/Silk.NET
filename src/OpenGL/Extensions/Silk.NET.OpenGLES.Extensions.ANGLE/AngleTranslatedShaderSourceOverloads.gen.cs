@@ -16,31 +16,31 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
 {
     public static class AngleTranslatedShaderSourceOverloads
     {
-        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)
+        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> source)
         {
             // SpanOverloader
             thisApi.GetTranslatedShaderSource(shader, bufSize, length, out source.GetPinnableReference());
         }
 
-        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> source)
+        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> source)
         {
             // SpanOverloader
             thisApi.GetTranslatedShaderSource(shader, bufSize, length, out source.GetPinnableReference());
         }
 
-        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source)
+        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* source)
         {
             // SpanOverloader
             thisApi.GetTranslatedShaderSource(shader, bufSize, out length.GetPinnableReference(), source);
         }
 
-        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)
+        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> source)
         {
             // SpanOverloader
             thisApi.GetTranslatedShaderSource(shader, bufSize, out length.GetPinnableReference(), out source.GetPinnableReference());
         }
 
-        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> source)
+        public static unsafe void GetTranslatedShaderSource(this AngleTranslatedShaderSource thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> source)
         {
             // SpanOverloader
             thisApi.GetTranslatedShaderSource(shader, bufSize, out length.GetPinnableReference(), out source.GetPinnableReference());

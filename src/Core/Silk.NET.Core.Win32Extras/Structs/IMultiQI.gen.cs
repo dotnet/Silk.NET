@@ -111,22 +111,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryMultipleInterfaces(uint cMQIs, TagMULTIQI* pMQIs)
+        public readonly unsafe int QueryMultipleInterfaces(uint cMQIs, MultiQi* pMQIs)
         {
             var @this = (IMultiQI*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, TagMULTIQI*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIs);
+            ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, MultiQi*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIs);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int QueryMultipleInterfaces(uint cMQIs, ref TagMULTIQI pMQIs)
+        public readonly int QueryMultipleInterfaces(uint cMQIs, ref MultiQi pMQIs)
         {
             var @this = (IMultiQI*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagMULTIQI* pMQIsPtr = &pMQIs)
+            fixed (MultiQi* pMQIsPtr = &pMQIs)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, TagMULTIQI*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, MultiQi*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIsPtr);
             }
             return ret;
         }

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
     {
         public const string ExtensionName = "IBM_static_data";
         [NativeApi(EntryPoint = "glFlushStaticDataIBM", Convention = CallingConvention.Winapi)]
-        public partial void FlushStaticData([Flow(FlowDirection.In)] IBM target);
+        public partial void FlushStaticData([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM target);
 
         public IbmStaticData(INativeContext ctx)
             : base(ctx)

@@ -22,19 +22,19 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_deferred_host_operations";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDeferredOperationKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeferredOperationKHR* pDeferredOperation);
+        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeferredOperationKHR* pDeferredOperation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDeferredOperationKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DeferredOperationKHR pDeferredOperation);
+        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeferredOperationKHR pDeferredOperation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDeferredOperationKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeferredOperationKHR* pDeferredOperation);
+        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeferredOperationKHR* pDeferredOperation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDeferredOperationKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DeferredOperationKHR pDeferredOperation);
+        public partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeferredOperationKHR pDeferredOperation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDeferredOperationJoinKHR", Convention = CallingConvention.Winapi)]
@@ -42,11 +42,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDeferredOperationKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDeferredOperationKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
+        public partial void DestroyDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeferredOperationMaxConcurrencyKHR", Convention = CallingConvention.Winapi)]

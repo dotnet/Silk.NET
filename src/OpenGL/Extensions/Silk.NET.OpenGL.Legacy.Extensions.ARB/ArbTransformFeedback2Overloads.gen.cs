@@ -16,25 +16,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbTransformFeedback2Overloads
     {
-        public static unsafe void DeleteTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        public static unsafe void DeleteTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> ids)
         {
             // SpanOverloader
             thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
         }
 
-        public static unsafe void DeleteTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedback> ids)
+        public static unsafe void DeleteTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TransformFeedback> ids)
         {
             // SpanOverloader
             thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
         }
 
-        public static unsafe void GenTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        public static unsafe void GenTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> ids)
         {
             // SpanOverloader
             thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());
         }
 
-        public static unsafe void GenTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
+        public static unsafe void GenTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<TransformFeedback> ids)
         {
             // SpanOverloader
             thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());

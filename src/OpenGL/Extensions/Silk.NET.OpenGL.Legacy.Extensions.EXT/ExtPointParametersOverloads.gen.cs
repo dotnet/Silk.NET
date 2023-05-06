@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtPointParametersOverloads
     {
-        public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.PointParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.PointParameter(pname, in @params.GetPinnableReference());

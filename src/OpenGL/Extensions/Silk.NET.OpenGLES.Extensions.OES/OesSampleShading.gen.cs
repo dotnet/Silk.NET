@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     {
         public const string ExtensionName = "OES_sample_shading";
         [NativeApi(EntryPoint = "glMinSampleShadingOES", Convention = CallingConvention.Winapi)]
-        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
+        public partial void MinSampleShading([Flow(Silk.NET.Core.Native.FlowDirection.In)] float value);
 
         public OesSampleShading(INativeContext ctx)
             : base(ctx)

@@ -21,22 +21,22 @@ namespace Silk.NET.WGL.Extensions.NV
     {
         public const string ExtensionName = "NV_present_video";
         [NativeApi(EntryPoint = "wglBindVideoDeviceNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] uint uVideoSlot, [Flow(FlowDirection.In)] nint hVideoDevice, [Flow(FlowDirection.In)] int* piAttribList);
+        public unsafe partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
         [NativeApi(EntryPoint = "wglBindVideoDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] uint uVideoSlot, [Flow(FlowDirection.In)] nint hVideoDevice, [Flow(FlowDirection.In)] in int piAttribList);
+        public partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribList);
 
         [NativeApi(EntryPoint = "wglEnumerateVideoDevicesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial int EnumerateVideoDevices([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.Out)] nint* phDeviceList);
+        public unsafe partial int EnumerateVideoDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* phDeviceList);
 
         [NativeApi(EntryPoint = "wglEnumerateVideoDevicesNV", Convention = CallingConvention.Winapi)]
-        public partial int EnumerateVideoDevices([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.Out)] out nint phDeviceList);
+        public partial int EnumerateVideoDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint phDeviceList);
 
         [NativeApi(EntryPoint = "wglQueryCurrentContextNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryCurrentContext([Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] int* piValue);
+        public unsafe partial Silk.NET.Core.Bool32 QueryCurrentContext([Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValue);
 
         [NativeApi(EntryPoint = "wglQueryCurrentContextNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryCurrentContext([Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] out int piValue);
+        public partial Silk.NET.Core.Bool32 QueryCurrentContext([Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValue);
 
         public NVPresentVideo(INativeContext ctx)
             : base(ctx)

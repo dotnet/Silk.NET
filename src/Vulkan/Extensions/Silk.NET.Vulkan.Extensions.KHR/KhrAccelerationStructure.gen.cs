@@ -22,429 +22,429 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_acceleration_structure";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
+        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
+        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
+        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
+        public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
+        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
+        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
+        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
+        public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
+        public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureInfoKHR* pInfo);
+        public unsafe partial void CmdCopyAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureInfoKHR pInfo);
+        public partial void CmdCopyAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyAccelerationStructureToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureToMemoryInfoKHR* pInfo);
+        public unsafe partial void CmdCopyAccelerationStructureToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyAccelerationStructureToMemoryInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyAccelerationStructureToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureToMemoryInfoKHR pInfo);
+        public partial void CmdCopyAccelerationStructureToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyAccelerationStructureToMemoryInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyMemoryToAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyMemoryToAccelerationStructureInfoKHR* pInfo);
+        public unsafe partial void CmdCopyMemoryToAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyMemoryToAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyMemoryToAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyMemoryToAccelerationStructureInfoKHR pInfo);
+        public partial void CmdCopyMemoryToAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyMemoryToAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
+        public unsafe partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
+        public partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CopyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureInfoKHR* pInfo);
+        public unsafe partial Result CopyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CopyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureInfoKHR pInfo);
+        public partial Result CopyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CopyAccelerationStructureToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureToMemoryInfoKHR* pInfo);
+        public unsafe partial Result CopyAccelerationStructureToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyAccelerationStructureToMemoryInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CopyAccelerationStructureToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureToMemoryInfoKHR pInfo);
+        public partial Result CopyAccelerationStructureToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyAccelerationStructureToMemoryInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CopyMemoryToAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] CopyMemoryToAccelerationStructureInfoKHR* pInfo);
+        public unsafe partial Result CopyMemoryToAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyMemoryToAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CopyMemoryToAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] in CopyMemoryToAccelerationStructureInfoKHR pInfo);
+        public partial Result CopyMemoryToAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyMemoryToAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
+        public partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
+        public partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
-        public partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
+        public partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial ulong GetAccelerationStructureDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureDeviceAddressInfoKHR* pInfo);
+        public unsafe partial ulong GetAccelerationStructureDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureDeviceAddressInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR", Convention = CallingConvention.Winapi)]
-        public partial ulong GetAccelerationStructureDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureDeviceAddressInfoKHR pInfo);
+        public partial ulong GetAccelerationStructureDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureDeviceAddressInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
+        public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
+        public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
+        public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
-        public partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
+        public partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
+        public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
+        public unsafe partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
+        public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
+        public partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        public unsafe Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
+        public unsafe Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
         {
             // ImplicitCountSpanOverloader
             return BuildAccelerationStructures(device, deferredOperation, (uint) pInfos.Length, in pInfos.GetPinnableReference(), ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
+        public unsafe Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
         {
             // ImplicitCountSpanOverloader
             return BuildAccelerationStructures(device, deferredOperation, (uint) pInfos.Length, in pInfos.GetPinnableReference(), in ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
+        public unsafe void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructures(commandBuffer, (uint) pInfos.Length, in pInfos.GetPinnableReference(), ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
+        public unsafe void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructures(commandBuffer, (uint) pInfos.Length, in pInfos.GetPinnableReference(), in ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, pInfos, pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, pInfos, pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectDeviceAddresses.Length, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectDeviceAddresses.Length, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pInfos.Length, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pInfos.Length, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, pIndirectStrides, in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectDeviceAddresses.Length, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectDeviceAddresses.Length, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public unsafe void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // ImplicitCountSpanOverloader
             CmdBuildAccelerationStructuresIndirect(commandBuffer, (uint) pIndirectStrides.Length, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
+        public unsafe void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
         {
             // ImplicitCountSpanOverloader
             CmdWriteAccelerationStructuresProperties(commandBuffer, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, queryPool, firstQuery);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, (nuint) (pData.Length * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
+            return WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
+        public unsafe Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
         {
             // ImplicitCountSpanOverloader
             return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, pData, stride);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
-            return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, (nuint) (pData.Length * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
+            return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts)
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pMaxPrimitiveCounts)
         {
             // NonKhrReturnTypeOverloader
             GetAccelerationStructureBuildSizes(device, buildType, pBuildInfo, pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
@@ -453,7 +453,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts)
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pMaxPrimitiveCounts)
         {
             // NonKhrReturnTypeOverloader
             GetAccelerationStructureBuildSizes(device, buildType, pBuildInfo, in pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
@@ -462,7 +462,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts)
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pMaxPrimitiveCounts)
         {
             // NonKhrReturnTypeOverloader
             GetAccelerationStructureBuildSizes(device, buildType, in pBuildInfo, pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
@@ -471,7 +471,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts)
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pMaxPrimitiveCounts)
         {
             // NonKhrReturnTypeOverloader
             GetAccelerationStructureBuildSizes(device, buildType, in pBuildInfo, in pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
@@ -479,7 +479,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe AccelerationStructureCompatibilityKHR GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo)
+        public unsafe AccelerationStructureCompatibilityKHR GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo)
         {
             // NonKhrReturnTypeOverloader
             GetDeviceAccelerationStructureCompatibility(device, pVersionInfo, out AccelerationStructureCompatibilityKHR silkRet);
@@ -487,7 +487,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe AccelerationStructureCompatibilityKHR GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo)
+        public unsafe AccelerationStructureCompatibilityKHR GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo)
         {
             // NonKhrReturnTypeOverloader
             GetDeviceAccelerationStructureCompatibility(device, in pVersionInfo, out AccelerationStructureCompatibilityKHR silkRet);

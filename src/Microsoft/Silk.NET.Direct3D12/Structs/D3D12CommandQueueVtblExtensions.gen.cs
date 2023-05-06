@@ -193,7 +193,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(FlowDirection.In)] char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(FlowDirection.In)] in char Name)
+    public static int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -369,14 +369,14 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, ID3D12Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D12Heap*, uint, TileRangeFlags*, uint*, uint*, TileMappingFlags, void>)@this->LpVtbl[8])(@this, pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -386,7 +386,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pHeapRangeStartOffsetsPtr = &pHeapRangeStartOffsets)
@@ -396,7 +396,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pHeapRangeStartOffsetsPtr = &pHeapRangeStartOffsets)
@@ -409,7 +409,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRangeFlags* pRangeFlagsPtr = &pRangeFlags)
@@ -419,7 +419,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRangeFlags* pRangeFlagsPtr = &pRangeFlags)
@@ -432,7 +432,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRangeFlags* pRangeFlagsPtr = &pRangeFlags)
@@ -445,7 +445,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRangeFlags* pRangeFlagsPtr = &pRangeFlags)
@@ -461,7 +461,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -471,7 +471,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -484,7 +484,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -497,7 +497,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -513,7 +513,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -526,7 +526,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -542,7 +542,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -558,7 +558,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Heap* pHeapPtr = &pHeap)
@@ -577,7 +577,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -587,7 +587,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -600,7 +600,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -613,7 +613,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -629,7 +629,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -642,7 +642,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -658,7 +658,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -674,7 +674,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -693,7 +693,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -706,7 +706,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -722,7 +722,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -738,7 +738,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -757,7 +757,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -773,7 +773,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -792,7 +792,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -811,7 +811,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pResourceRegionSizesPtr = &pResourceRegionSizes)
@@ -833,7 +833,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -843,7 +843,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -856,7 +856,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -869,7 +869,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -885,7 +885,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -898,7 +898,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -914,7 +914,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -930,7 +930,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -949,7 +949,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -962,7 +962,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -978,7 +978,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -994,7 +994,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1013,7 +1013,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1029,7 +1029,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1048,7 +1048,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1067,7 +1067,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1089,7 +1089,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1102,7 +1102,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1118,7 +1118,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1134,7 +1134,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1153,7 +1153,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1169,7 +1169,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1188,7 +1188,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1207,7 +1207,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1229,7 +1229,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1245,7 +1245,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1264,7 +1264,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1283,7 +1283,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1305,7 +1305,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1324,7 +1324,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1346,7 +1346,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1368,7 +1368,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pResourceRegionStartCoordinatesPtr = &pResourceRegionStartCoordinates)
@@ -1393,7 +1393,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1403,7 +1403,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1416,7 +1416,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1429,7 +1429,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1445,7 +1445,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1458,7 +1458,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1474,7 +1474,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1490,7 +1490,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1509,7 +1509,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1522,7 +1522,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1538,7 +1538,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1554,7 +1554,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1573,7 +1573,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1589,7 +1589,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1608,7 +1608,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1627,7 +1627,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1649,7 +1649,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1662,7 +1662,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1678,7 +1678,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1694,7 +1694,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1713,7 +1713,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1729,7 +1729,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1748,7 +1748,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1767,7 +1767,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1789,7 +1789,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1805,7 +1805,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1824,7 +1824,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1843,7 +1843,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1865,7 +1865,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1884,7 +1884,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1906,7 +1906,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1928,7 +1928,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1953,7 +1953,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1966,7 +1966,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1982,7 +1982,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1998,7 +1998,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2017,7 +2017,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2033,7 +2033,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2052,7 +2052,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2071,7 +2071,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2093,7 +2093,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2109,7 +2109,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2128,7 +2128,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2147,7 +2147,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2169,7 +2169,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2188,7 +2188,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2210,7 +2210,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2232,7 +2232,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2257,7 +2257,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2273,7 +2273,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2292,7 +2292,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2311,7 +2311,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2333,7 +2333,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2352,7 +2352,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2374,7 +2374,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2396,7 +2396,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2421,7 +2421,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2440,7 +2440,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2462,7 +2462,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2484,7 +2484,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2509,7 +2509,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2531,7 +2531,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2556,7 +2556,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2581,7 +2581,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
+    public static void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -2609,14 +2609,14 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, ID3D12Resource*, TiledResourceCoordinate*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, TileMappingFlags, void>)@this->LpVtbl[9])(@this, pDstResource, pDstRegionStartCoordinate, pSrcResource, pSrcRegionStartCoordinate, pRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pRegionSizePtr = &pRegionSize)
@@ -2626,7 +2626,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pSrcRegionStartCoordinatePtr = &pSrcRegionStartCoordinate)
@@ -2636,7 +2636,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pSrcRegionStartCoordinatePtr = &pSrcRegionStartCoordinate)
@@ -2649,7 +2649,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
@@ -2659,7 +2659,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
@@ -2672,7 +2672,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
@@ -2685,7 +2685,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
@@ -2701,7 +2701,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2711,7 +2711,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2724,7 +2724,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2737,7 +2737,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2753,7 +2753,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2766,7 +2766,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2782,7 +2782,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2798,7 +2798,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDstRegionStartCoordinatePtr = &pDstRegionStartCoordinate)
@@ -2817,7 +2817,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2827,7 +2827,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2840,7 +2840,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2853,7 +2853,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2869,7 +2869,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2882,7 +2882,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2898,7 +2898,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2914,7 +2914,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2933,7 +2933,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2946,7 +2946,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2962,7 +2962,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2978,7 +2978,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -2997,7 +2997,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -3013,7 +3013,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -3032,7 +3032,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -3051,7 +3051,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
+    public static void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
@@ -3073,14 +3073,14 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ExecuteCommandLists(this ComPtr<ID3D12CommandQueue> thisVtbl, uint NumCommandLists, [Flow(FlowDirection.In)] ID3D12CommandList** ppCommandLists)
+    public static unsafe void ExecuteCommandLists(this ComPtr<ID3D12CommandQueue> thisVtbl, uint NumCommandLists, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12CommandList** ppCommandLists)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, uint, ID3D12CommandList**, void>)@this->LpVtbl[10])(@this, NumCommandLists, ppCommandLists);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ExecuteCommandLists(this ComPtr<ID3D12CommandQueue> thisVtbl, uint NumCommandLists, [Flow(FlowDirection.In)] in ID3D12CommandList* ppCommandLists)
+    public static unsafe void ExecuteCommandLists(this ComPtr<ID3D12CommandQueue> thisVtbl, uint NumCommandLists, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12CommandList* ppCommandLists)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12CommandList** ppCommandListsPtr = &ppCommandLists)
@@ -3090,14 +3090,14 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
+    public static unsafe void SetMarker(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, uint, void*, uint, void>)@this->LpVtbl[11])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -3107,14 +3107,14 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEvent(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
+    public static unsafe void BeginEvent(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, uint, void*, uint, void>)@this->LpVtbl[12])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -3334,7 +3334,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3342,7 +3342,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3350,7 +3350,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3358,7 +3358,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3366,7 +3366,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3374,7 +3374,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3382,7 +3382,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3390,7 +3390,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3398,7 +3398,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
+    public static int SetName(this ComPtr<ID3D12CommandQueue> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3431,7 +3431,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3439,7 +3439,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3447,7 +3447,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3455,7 +3455,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3463,7 +3463,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3471,7 +3471,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3479,7 +3479,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3487,7 +3487,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3495,7 +3495,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3503,7 +3503,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3511,7 +3511,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3519,7 +3519,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3527,7 +3527,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3535,7 +3535,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3543,7 +3543,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3551,7 +3551,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3559,7 +3559,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3567,7 +3567,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3575,7 +3575,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3583,7 +3583,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3591,7 +3591,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3599,7 +3599,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3607,7 +3607,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3615,7 +3615,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3623,7 +3623,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3631,7 +3631,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3639,7 +3639,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3647,7 +3647,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3655,7 +3655,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3663,7 +3663,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3671,7 +3671,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3679,7 +3679,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3687,7 +3687,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3695,7 +3695,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3703,7 +3703,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3711,7 +3711,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3719,7 +3719,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3727,7 +3727,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3735,7 +3735,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3743,7 +3743,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3751,7 +3751,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3759,7 +3759,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3767,7 +3767,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3775,7 +3775,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3783,7 +3783,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3791,7 +3791,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3799,7 +3799,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3807,7 +3807,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3815,7 +3815,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3823,7 +3823,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3831,7 +3831,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3839,7 +3839,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3847,7 +3847,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3855,7 +3855,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3863,7 +3863,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3871,7 +3871,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3879,7 +3879,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3887,7 +3887,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3895,7 +3895,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3903,7 +3903,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3911,7 +3911,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3919,7 +3919,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3927,7 +3927,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3935,7 +3935,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3943,7 +3943,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3951,7 +3951,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3959,7 +3959,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3967,7 +3967,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3975,7 +3975,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3983,7 +3983,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3991,7 +3991,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3999,7 +3999,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4007,7 +4007,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4015,7 +4015,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4023,7 +4023,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4031,7 +4031,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4039,7 +4039,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4047,7 +4047,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4055,7 +4055,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4063,7 +4063,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4071,7 +4071,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4079,7 +4079,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4087,7 +4087,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4095,7 +4095,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4103,7 +4103,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4111,7 +4111,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4119,7 +4119,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4127,7 +4127,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4135,7 +4135,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4143,7 +4143,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4151,7 +4151,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4159,7 +4159,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4167,7 +4167,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4175,7 +4175,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4183,7 +4183,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4191,7 +4191,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4199,7 +4199,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4207,7 +4207,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4215,7 +4215,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4223,7 +4223,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4231,7 +4231,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4239,7 +4239,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4247,7 +4247,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4255,7 +4255,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4263,7 +4263,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4271,7 +4271,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4279,7 +4279,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4287,7 +4287,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4295,7 +4295,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static unsafe void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4303,7 +4303,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4311,7 +4311,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+    public static void UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4319,7 +4319,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4327,7 +4327,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4335,7 +4335,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4343,7 +4343,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4351,7 +4351,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4359,7 +4359,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4367,7 +4367,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4375,7 +4375,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4383,7 +4383,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4391,7 +4391,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4399,7 +4399,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4407,7 +4407,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4415,7 +4415,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4423,7 +4423,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4431,7 +4431,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4439,7 +4439,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4447,7 +4447,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4455,7 +4455,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4463,7 +4463,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4471,7 +4471,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4479,7 +4479,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4487,7 +4487,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4495,7 +4495,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4503,7 +4503,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4511,7 +4511,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4519,7 +4519,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4527,7 +4527,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4535,7 +4535,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4543,7 +4543,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4551,7 +4551,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4559,7 +4559,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4567,7 +4567,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4575,7 +4575,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4583,7 +4583,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4591,7 +4591,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4599,7 +4599,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4607,7 +4607,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4615,7 +4615,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4623,7 +4623,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4631,7 +4631,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4639,7 +4639,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4647,7 +4647,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4655,7 +4655,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4663,7 +4663,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4671,7 +4671,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4679,7 +4679,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4687,7 +4687,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4695,7 +4695,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4703,7 +4703,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4711,7 +4711,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4719,7 +4719,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4727,7 +4727,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4735,7 +4735,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4743,7 +4743,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4751,7 +4751,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4759,7 +4759,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4767,7 +4767,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4775,7 +4775,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4783,7 +4783,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4791,7 +4791,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4799,7 +4799,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4807,7 +4807,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4815,7 +4815,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4823,7 +4823,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4831,7 +4831,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4839,7 +4839,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4847,7 +4847,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4855,7 +4855,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4863,7 +4863,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4871,7 +4871,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4879,7 +4879,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4887,7 +4887,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4895,7 +4895,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4903,7 +4903,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4911,7 +4911,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4919,7 +4919,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4927,7 +4927,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4935,7 +4935,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4943,7 +4943,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4951,7 +4951,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4959,7 +4959,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4967,7 +4967,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4975,7 +4975,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4983,7 +4983,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4991,7 +4991,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4999,7 +4999,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5007,7 +5007,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5015,7 +5015,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5023,7 +5023,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5031,7 +5031,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5039,7 +5039,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5047,7 +5047,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5055,7 +5055,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5063,7 +5063,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5071,7 +5071,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5079,7 +5079,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5087,7 +5087,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5095,7 +5095,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5103,7 +5103,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5111,7 +5111,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5119,7 +5119,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5127,7 +5127,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5135,7 +5135,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5143,7 +5143,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static void UpdateTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRangeFlags pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5151,7 +5151,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5159,7 +5159,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5167,7 +5167,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5175,7 +5175,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRangeFlags* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5183,7 +5183,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5191,7 +5191,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5199,7 +5199,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
+    public static unsafe void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5207,7 +5207,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
+    public static void UpdateTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint NumResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pResourceRegionSizes, Span<ID3D12Heap> pHeap, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRangeFlags> pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pHeapRangeStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pRangeTileCounts, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5215,7 +5215,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5223,7 +5223,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5231,7 +5231,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5239,7 +5239,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5247,7 +5247,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5255,7 +5255,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5263,7 +5263,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5271,7 +5271,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5279,7 +5279,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5287,7 +5287,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5295,7 +5295,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5303,7 +5303,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5311,7 +5311,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5319,7 +5319,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5327,7 +5327,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5335,7 +5335,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5343,7 +5343,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5351,7 +5351,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5359,7 +5359,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5367,7 +5367,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5375,7 +5375,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5383,7 +5383,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5391,7 +5391,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void CopyTileMappings<TI0, TI1>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5399,7 +5399,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5407,7 +5407,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5415,7 +5415,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5423,7 +5423,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5431,7 +5431,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5439,7 +5439,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5447,7 +5447,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, ID3D12Resource* pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5455,7 +5455,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ComPtr<TI0> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5463,7 +5463,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5471,7 +5471,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5479,7 +5479,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5487,7 +5487,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5495,7 +5495,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5503,7 +5503,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5511,7 +5511,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5519,7 +5519,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5527,7 +5527,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5535,7 +5535,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5543,7 +5543,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5551,7 +5551,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5559,7 +5559,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5567,7 +5567,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5575,7 +5575,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5583,7 +5583,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5591,7 +5591,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5599,7 +5599,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5607,7 +5607,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5615,7 +5615,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CopyTileMappings<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, ref ID3D12Resource pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5623,7 +5623,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5631,7 +5631,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5639,7 +5639,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
+    public static unsafe void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5647,7 +5647,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
+    public static void CopyTileMappings(this ComPtr<ID3D12CommandQueue> thisVtbl, Span<ID3D12Resource> pDstResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDstRegionStartCoordinate, Span<ID3D12Resource> pSrcResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pSrcRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TileRegionSize> pRegionSize, TileMappingFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5655,7 +5655,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandLists<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint NumCommandLists, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppCommandLists) where TI0 : unmanaged, IComVtbl<ID3D12CommandList>, IComVtbl<TI0>
+    public static void ExecuteCommandLists<TI0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint NumCommandLists, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppCommandLists) where TI0 : unmanaged, IComVtbl<ID3D12CommandList>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5663,7 +5663,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5671,7 +5671,7 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12CommandQueue> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

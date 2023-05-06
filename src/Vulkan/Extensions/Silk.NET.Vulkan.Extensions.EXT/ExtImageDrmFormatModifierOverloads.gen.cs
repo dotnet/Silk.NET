@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ImageDrmFormatModifierPropertiesExt);")]
-        public static unsafe Result GetImageDrmFormatModifierProperties(this ExtImageDrmFormatModifier thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageDrmFormatModifierPropertiesEXT> pProperties)
+        public static unsafe Result GetImageDrmFormatModifierProperties(this ExtImageDrmFormatModifier thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ImageDrmFormatModifierPropertiesEXT> pProperties)
         {
             // SpanOverloader
             return thisApi.GetImageDrmFormatModifierProperties(device, image, out pProperties.GetPinnableReference());

@@ -16,7 +16,7 @@ namespace Silk.NET.WGL.Extensions.ARB
 {
     public static class ArbCreateContextOverloads
     {
-        public static unsafe nint CreateContextAttrib(this ArbCreateContext thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint hShareContext, [Flow(FlowDirection.In)] ReadOnlySpan<int> attribList)
+        public static unsafe nint CreateContextAttrib(this ArbCreateContext thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> attribList)
         {
             // SpanOverloader
             return thisApi.CreateContextAttrib(hDC, hShareContext, in attribList.GetPinnableReference());

@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_win32_keyed_mutex";
         [NativeApi(EntryPoint = "glAcquireKeyedMutexWin32EXT", Convention = CallingConvention.Winapi)]
-        public partial bool AcquireKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key, [Flow(FlowDirection.In)] uint timeout);
+        public partial bool AcquireKeyedMutexWin32([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint timeout);
 
         [NativeApi(EntryPoint = "glReleaseKeyedMutexWin32EXT", Convention = CallingConvention.Winapi)]
-        public partial bool ReleaseKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key);
+        public partial bool ReleaseKeyedMutexWin32([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong key);
 
         public ExtWin32KeyedMutex(INativeContext ctx)
             : base(ctx)
