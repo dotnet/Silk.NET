@@ -70,52 +70,31 @@ namespace Tutorial
                 Vertex vertex = new Vertex();
                 vertex.BoneIds = new int[Vertex.MAX_BONE_INFLUENCE];
                 vertex.Weights = new float[Vertex.MAX_BONE_INFLUENCE];
-                Vector3 vector = new Vector3(); // we declare a placeholder vector since assimp uses its own vector class that doesn't directly convert to glm's vec3 class so we transfer the data to this placeholder glm::vec3 first.
-                                                // positions
-                vector.X = mesh->MVertices[i].X;
-                vector.Y = mesh->MVertices[i].Y;
-                vector.Z = mesh->MVertices[i].Z;
-                vertex.Position = vector;
+
+                vertex.Position = mesh->MVertices[i];
+
                 // normals
-                
                 if (mesh->MNormals != null)
-                {
-                    vector.X = mesh->MNormals[i].X;
-                    vector.Y = mesh->MNormals[i].Y;
-                    vector.Z = mesh->MNormals[i].Z;
-                    vertex.Normal = vector;
-                }
+                    vertex.Normal = mesh->MNormals[i];
+                // tangent
+                if (mesh->MTangents != null)
+                    vertex.Tangent = mesh->MTangents[i];
+                // bitangent
+                if (mesh->MBitangents != null)
+                    vertex.Bitangent = mesh->MBitangents[i];
+
                 // texture coordinates
                 if (mesh->MTextureCoords[0] != null) // does the mesh contain texture coordinates?
                 {
-                    Vector2 vec = new Vector2();
                     // a vertex can contain up to 8 different texture coordinates. We thus make the assumption that we won't 
                     // use models where a vertex can have multiple texture coordinates so we always take the first set (0).
-                    vec.X = mesh->MTextureCoords[0][i].X;
-                    vec.Y = mesh->MTextureCoords[0][i].Y;
-                    vertex.TexCoords = vec;
-                    // tangent
-                    if (mesh->MTangents != null)
-                    {
-                        vector.X = mesh->MTangents[i].X;
-                        vector.Y = mesh->MTangents[i].Y;
-                        vector.Z = mesh->MTangents[i].Z;
-                        vertex.Tangent = vector;
-                    }
-                    // bitangent
-                    if (mesh->MBitangents != null)
-                    {
-                        vector.X = mesh->MBitangents[i].X;
-                        vector.Y = mesh->MBitangents[i].Y;
-                        vector.Z = mesh->MBitangents[i].Z;
-                        vertex.Bitangent = vector;
-                    }
+                    Vector3 texcoord3 = mesh->MTextureCoords[0][i];
+                    vertex.TexCoords = new Vector2(texcoord3.X, texcoord3.y);
                 }
-                else
-                    vertex.TexCoords = new Vector2(0.0f, 0.0f);
 
                 vertices.Add(vertex);
             }
+
             // now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
             for (uint i = 0; i < mesh->MNumFaces; i++)
             {
@@ -124,6 +103,7 @@ namespace Tutorial
                 for (uint j = 0; j < face.MNumIndices; j++)
                     indices.Add(face.MIndices[j]);
             }
+
             // process materials
             Material* material = scene->MMaterials[mesh->MMaterialIndex];
             // we assume a convention for sampler names in the shaders. Each diffuse texture should be named
