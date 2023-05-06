@@ -251,7 +251,10 @@ namespace Tutorial
             // out of scope for this tutorial).
             // What is a mipmap?
             // A mipmap is essentially a smaller version of the existing texture. When generating mipmaps, the texture
-            // size is continuously halved until it reaches 1x1, at which point mipmap generation stops.
+            // size is continuously halved, generally stopping once it reaches a size of 1x1 pixels. (Note: there are
+            // exceptions to this, for example if the GPU reaches its maximum level of mipmaps, which is both a hardware
+            // limitation, and a user defined value. You don't need to worry about this for now, so just assume that
+            // the mips will be generated all the way down to 1x1 pixels).
             // Mipmaps are used when the texture is reduced in size, to produce a much nicer result, and to reduce moire
             // effect patterns.
             _gl.GenerateMipmap(TextureTarget.Texture2D);
