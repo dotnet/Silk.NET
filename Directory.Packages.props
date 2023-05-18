@@ -14,7 +14,7 @@
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="15.0.2"/>
         <PackageVersion Include="Microsoft.Build.Locator" Version="1.5.5"/>
         <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="$(MsExtensionNugetVersion)"/>
-        <PackageVersion Include="Microsoft.Build.Framework" Version="17.5.0"/>
+        <PackageVersion Include="Microsoft.Build.Framework" Version="17.6.3"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
