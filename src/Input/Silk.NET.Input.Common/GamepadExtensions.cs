@@ -81,12 +81,34 @@ namespace Silk.NET.Input
         /// <summary>
         /// Gets the <see cref="ButtonName.LeftStick" /> button.
         /// </summary>
+        [Obsolete($"This method is obsolete! Use {nameof(LeftThumbstickButton)}")]
         public static Button LeftStick(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.LeftStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.RightStick" /> button.
         /// </summary>
+        [Obsolete($"This method is obsolete! Use {nameof(RightThumbstickButton)}")]
         public static Button RightStick(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.RightStick);
+        
+        /// <summary>
+        /// Gets the left <see cref="Thumbstick"/>.
+        /// </summary>
+        public static Thumbstick LeftThumbstick(this IGamepad gamepad) => FirstThumbstick(gamepad, 0);
+        
+        /// <summary>
+        /// Gets the right <see cref="Thumbstick"/>.
+        /// </summary>
+        public static Thumbstick RightThumbstick(this IGamepad gamepad) => FirstThumbstick(gamepad, 1);
+        
+        /// <summary>
+        /// Gets the <see cref="ButtonName.LeftStick" /> button.
+        /// </summary>
+        public static Button LeftThumbstickButton(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.LeftStick);
+
+        /// <summary>
+        /// Gets the <see cref="ButtonName.RightStick" /> button.
+        /// </summary>
+        public static Button RightThumbstickButton(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.RightStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.DPadUp" /> button.
