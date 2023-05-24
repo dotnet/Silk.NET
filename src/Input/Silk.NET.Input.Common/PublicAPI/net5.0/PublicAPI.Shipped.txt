@@ -330,6 +330,10 @@ static Silk.NET.Input.GamepadExtensions.LeftBumper(this Silk.NET.Input.IGamepad!
 static Silk.NET.Input.GamepadExtensions.LeftStick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
 static Silk.NET.Input.GamepadExtensions.RightBumper(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
 static Silk.NET.Input.GamepadExtensions.RightStick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
+static Silk.NET.Input.GamepadExtensions.LeftThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
+static Silk.NET.Input.GamepadExtensions.LeftThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
+static Silk.NET.Input.GamepadExtensions.RightThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
+static Silk.NET.Input.GamepadExtensions.RightThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
 static Silk.NET.Input.GamepadExtensions.Start(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
 static Silk.NET.Input.GamepadExtensions.X(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
 static Silk.NET.Input.GamepadExtensions.Y(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
