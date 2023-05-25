@@ -16,8 +16,8 @@
 [submodule "build/submodules/GLFW"]
 	path = build/submodules/GLFW
 	url = https://github.com/glfw/glfw.git
-[submodule "build/submodules/Metal"]
-	path = build/submodules/Metal
+[submodule "build/submodules/metal-cpp"]
+	path = build/submodules/metal-cpp
 	url = https://github.com/bkaradzic/metal-cpp.git
 [submodule "build/submodules/Assimp"]
 	path = build/submodules/Assimp
