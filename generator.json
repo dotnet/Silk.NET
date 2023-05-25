@@ -925,6 +925,51 @@
             ]
         },
         {
+            "profileName": "Metal",
+            "sources": [
+                "build/submodules/metal-cpp/SingleHeader/Metal.hpp"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "metal",
+            "controlDescriptors": [],
+            "prefix": "MTL",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/metal-cpp/SingleHeader/"
+                ],
+                "traverse": [
+                ],
+                "classes": {
+                }
+            },
+            "exclude": [],
+            "rename": {},
+            "bakery": {
+                "profileNames": [
+                    "metal"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Metal",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Metal",
+            "extensionsNamespace": "Silk.NET.Metal",
+            "typeMaps": []
+        },
+        {
             "profileName": "Core",
             "sources": [
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h"
