@@ -10,7 +10,7 @@ namespace Silk.NET.Input
     /// </summary>
     public static class GamepadExtensions
     {
-        private static Button FirstButton(IGamepad gamepad, ButtonName name) // now without the LINQ
+        private static Button First(IGamepad gamepad, ButtonName name) // now without the LINQ
         {
             foreach (var button in gamepad.Buttons)
             {
@@ -26,59 +26,59 @@ namespace Silk.NET.Input
         /// <summary>
         /// Gets the <see cref="ButtonName.A" /> button.
         /// </summary>
-        public static Button A(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.A);
+        public static Button A(this IGamepad gamepad) => First(gamepad, ButtonName.A);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.B" /> button.
         /// </summary>
-        public static Button B(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.B);
+        public static Button B(this IGamepad gamepad) => First(gamepad, ButtonName.B);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.X" /> button.
         /// </summary>
-        public static Button X(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.X);
+        public static Button X(this IGamepad gamepad) => First(gamepad, ButtonName.X);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.Y" /> button.
         /// </summary>
-        public static Button Y(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.Y);
+        public static Button Y(this IGamepad gamepad) => First(gamepad, ButtonName.Y);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.LeftBumper" /> button.
         /// </summary>
-        public static Button LeftBumper(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.LeftBumper);
+        public static Button LeftBumper(this IGamepad gamepad) => First(gamepad, ButtonName.LeftBumper);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.RightBumper" /> button.
         /// </summary>
-        public static Button RightBumper(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.RightBumper);
+        public static Button RightBumper(this IGamepad gamepad) => First(gamepad, ButtonName.RightBumper);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.Back" /> button.
         /// </summary>
-        public static Button Back(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.Back);
+        public static Button Back(this IGamepad gamepad) => First(gamepad, ButtonName.Back);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.Start" /> button.
         /// </summary>
-        public static Button Start(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.Start);
+        public static Button Start(this IGamepad gamepad) => First(gamepad, ButtonName.Start);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.Home" /> button.
         /// </summary>
-        public static Button Home(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.Home);
+        public static Button Home(this IGamepad gamepad) => First(gamepad, ButtonName.Home);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.LeftStick" /> button.
         /// </summary>
         [Obsolete($"This method is obsolete! Use {nameof(LeftThumbstickButton)}")]
-        public static Button LeftStick(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.LeftStick);
+        public static Button LeftStick(this IGamepad gamepad) => First(gamepad, ButtonName.LeftStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.RightStick" /> button.
         /// </summary>
         [Obsolete($"This method is obsolete! Use {nameof(RightThumbstickButton)}")]
-        public static Button RightStick(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.RightStick);
+        public static Button RightStick(this IGamepad gamepad) => First(gamepad, ButtonName.RightStick);
         
         /// <summary>
         /// Gets the left <see cref="Thumbstick"/>.
@@ -99,31 +99,31 @@ namespace Silk.NET.Input
         /// <summary>
         /// Gets the <see cref="ButtonName.LeftStick" /> button.
         /// </summary>
-        public static Button LeftThumbstickButton(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.LeftStick);
+        public static Button LeftThumbstickButton(this IGamepad gamepad) => First(gamepad, ButtonName.LeftStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.RightStick" /> button.
         /// </summary>
-        public static Button RightThumbstickButton(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.RightStick);
+        public static Button RightThumbstickButton(this IGamepad gamepad) => First(gamepad, ButtonName.RightStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.DPadUp" /> button.
         /// </summary>
-        public static Button DPadUp(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.DPadUp);
+        public static Button DPadUp(this IGamepad gamepad) => First(gamepad, ButtonName.DPadUp);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.DPadRight" /> button.
         /// </summary>
-        public static Button DPadRight(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.DPadRight);
+        public static Button DPadRight(this IGamepad gamepad) => First(gamepad, ButtonName.DPadRight);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.DPadDown" /> button.
         /// </summary>
-        public static Button DPadDown(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.DPadDown);
+        public static Button DPadDown(this IGamepad gamepad) => First(gamepad, ButtonName.DPadDown);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.DPadLeft" /> button.
         /// </summary>
-        public static Button DPadLeft(this IGamepad gamepad) => FirstButton(gamepad, ButtonName.DPadLeft);
+        public static Button DPadLeft(this IGamepad gamepad) => First(gamepad, ButtonName.DPadLeft);
     }
 }
