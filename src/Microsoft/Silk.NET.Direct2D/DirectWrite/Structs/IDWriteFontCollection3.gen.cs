@@ -387,7 +387,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyName, fontAxisValues, fontAxisValueCount, fontList);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyName, fontAxisValues, fontAxisValueCount, fontList);
             return ret;
         }
 
@@ -398,7 +398,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontList2** fontListPtr = &fontList)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyName, fontAxisValues, fontAxisValueCount, fontListPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyName, fontAxisValues, fontAxisValueCount, fontListPtr);
             }
             return ret;
         }
@@ -410,7 +410,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyName, fontAxisValuesPtr, fontAxisValueCount, fontList);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyName, fontAxisValuesPtr, fontAxisValueCount, fontList);
             }
             return ret;
         }
@@ -424,7 +424,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontList2** fontListPtr = &fontList)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyName, fontAxisValuesPtr, fontAxisValueCount, fontListPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyName, fontAxisValuesPtr, fontAxisValueCount, fontListPtr);
                 }
             }
             return ret;
@@ -437,7 +437,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (char* familyNamePtr = &familyName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontList);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontList);
             }
             return ret;
         }
@@ -451,7 +451,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontList2** fontListPtr = &fontList)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontListPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontListPtr);
                 }
             }
             return ret;
@@ -466,7 +466,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontList);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontList);
                 }
             }
             return ret;
@@ -483,7 +483,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (IDWriteFontList2** fontListPtr = &fontList)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontListPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, char*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontListPtr);
                     }
                 }
             }
@@ -496,7 +496,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var familyNamePtr = (byte*) SilkMarshal.StringToPtr(familyName, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontList);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontList);
             SilkMarshal.Free((nint)familyNamePtr);
             return ret;
         }
@@ -509,7 +509,7 @@ namespace Silk.NET.DirectWrite
             var familyNamePtr = (byte*) SilkMarshal.StringToPtr(familyName, NativeStringEncoding.UTF8);
             fixed (IDWriteFontList2** fontListPtr = &fontList)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontListPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValues, fontAxisValueCount, fontListPtr);
             }
             SilkMarshal.Free((nint)familyNamePtr);
             return ret;
@@ -523,7 +523,7 @@ namespace Silk.NET.DirectWrite
             var familyNamePtr = (byte*) SilkMarshal.StringToPtr(familyName, NativeStringEncoding.UTF8);
             fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontList);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontList);
             }
             SilkMarshal.Free((nint)familyNamePtr);
             return ret;
@@ -539,7 +539,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontList2** fontListPtr = &fontList)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[8])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontListPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, byte*, FontAxisValue*, uint, IDWriteFontList2**, int>)@this->LpVtbl[10])(@this, familyNamePtr, fontAxisValuesPtr, fontAxisValueCount, fontListPtr);
                 }
             }
             SilkMarshal.Free((nint)familyNamePtr);
@@ -551,7 +551,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             FontFamilyModel ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, FontFamilyModel>)@this->LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, FontFamilyModel>)@this->LpVtbl[11])(@this);
             return ret;
         }
 
@@ -560,7 +560,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, void*>)@this->LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontCollection3*, void*>)@this->LpVtbl[13])(@this);
             return ret;
         }
 

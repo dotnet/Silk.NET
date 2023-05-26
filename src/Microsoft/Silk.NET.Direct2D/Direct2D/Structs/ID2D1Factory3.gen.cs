@@ -1010,7 +1010,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[18])(@this, metafileStream, metafile);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[21])(@this, metafileStream, metafile);
             return ret;
         }
 
@@ -1021,7 +1021,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1GdiMetafile** metafilePtr = &metafile)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[18])(@this, metafileStream, metafilePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[21])(@this, metafileStream, metafilePtr);
             }
             return ret;
         }
@@ -1033,7 +1033,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* metafileStreamPtr = &metafileStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[18])(@this, metafileStreamPtr, metafile);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[21])(@this, metafileStreamPtr, metafile);
             }
             return ret;
         }
@@ -1047,7 +1047,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1GdiMetafile** metafilePtr = &metafile)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[18])(@this, metafileStreamPtr, metafilePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)@this->LpVtbl[21])(@this, metafileStreamPtr, metafilePtr);
                 }
             }
             return ret;
@@ -1058,7 +1058,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[19])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[22])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
             return ret;
         }
 
@@ -1069,7 +1069,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* propertyXmlPtr = &propertyXml)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[19])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[22])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
             }
             return ret;
         }
@@ -1081,7 +1081,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[19])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[22])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
             }
             return ret;
         }
@@ -1095,7 +1095,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Core.Win32Extras.IStream* propertyXmlPtr = &propertyXml)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[22])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
                 }
             }
             return ret;
@@ -1106,7 +1106,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[20])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[23])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
             return ret;
         }
 
@@ -1117,7 +1117,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (char* propertyXmlPtr = &propertyXml)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[20])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[23])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
             }
             return ret;
         }
@@ -1128,7 +1128,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var propertyXmlPtr = (byte*) SilkMarshal.StringToPtr(propertyXml, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, byte*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[20])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, byte*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[23])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
             SilkMarshal.Free((nint)propertyXmlPtr);
             return ret;
         }
@@ -1140,7 +1140,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[20])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[23])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
             }
             return ret;
         }
@@ -1154,7 +1154,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (char* propertyXmlPtr = &propertyXml)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[20])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, char*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[23])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
                 }
             }
             return ret;
@@ -1168,7 +1168,7 @@ namespace Silk.NET.Direct2D
             fixed (Guid* classIdPtr = &classId)
             {
             var propertyXmlPtr = (byte*) SilkMarshal.StringToPtr(propertyXml, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, byte*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[20])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, byte*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)@this->LpVtbl[23])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
             SilkMarshal.Free((nint)propertyXmlPtr);
             }
             return ret;
@@ -1179,7 +1179,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, int>)@this->LpVtbl[21])(@this, classId);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, int>)@this->LpVtbl[24])(@this, classId);
             return ret;
         }
 
@@ -1190,7 +1190,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, int>)@this->LpVtbl[21])(@this, classIdPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, int>)@this->LpVtbl[24])(@this, classIdPtr);
             }
             return ret;
         }
@@ -1200,7 +1200,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effects, effectsCount, effectsReturned, effectsRegistered);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effects, effectsCount, effectsReturned, effectsRegistered);
             return ret;
         }
 
@@ -1211,7 +1211,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* effectsRegisteredPtr = &effectsRegistered)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effects, effectsCount, effectsReturned, effectsRegisteredPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effects, effectsCount, effectsReturned, effectsRegisteredPtr);
             }
             return ret;
         }
@@ -1223,7 +1223,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* effectsReturnedPtr = &effectsReturned)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effects, effectsCount, effectsReturnedPtr, effectsRegistered);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effects, effectsCount, effectsReturnedPtr, effectsRegistered);
             }
             return ret;
         }
@@ -1237,7 +1237,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* effectsRegisteredPtr = &effectsRegistered)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effects, effectsCount, effectsReturnedPtr, effectsRegisteredPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effects, effectsCount, effectsReturnedPtr, effectsRegisteredPtr);
                 }
             }
             return ret;
@@ -1250,7 +1250,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* effectsPtr = &effects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effectsPtr, effectsCount, effectsReturned, effectsRegistered);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effectsPtr, effectsCount, effectsReturned, effectsRegistered);
             }
             return ret;
         }
@@ -1264,7 +1264,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* effectsRegisteredPtr = &effectsRegistered)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effectsPtr, effectsCount, effectsReturned, effectsRegisteredPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effectsPtr, effectsCount, effectsReturned, effectsRegisteredPtr);
                 }
             }
             return ret;
@@ -1279,7 +1279,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* effectsReturnedPtr = &effectsReturned)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effectsPtr, effectsCount, effectsReturnedPtr, effectsRegistered);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effectsPtr, effectsCount, effectsReturnedPtr, effectsRegistered);
                 }
             }
             return ret;
@@ -1296,7 +1296,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (uint* effectsRegisteredPtr = &effectsRegistered)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[22])(@this, effectsPtr, effectsCount, effectsReturnedPtr, effectsRegisteredPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, uint, uint*, uint*, int>)@this->LpVtbl[25])(@this, effectsPtr, effectsCount, effectsReturnedPtr, effectsRegisteredPtr);
                     }
                 }
             }
@@ -1308,7 +1308,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Factory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[23])(@this, effectId, properties);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[26])(@this, effectId, properties);
             return ret;
         }
 
@@ -1319,7 +1319,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1Properties** propertiesPtr = &properties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[23])(@this, effectId, propertiesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[26])(@this, effectId, propertiesPtr);
             }
             return ret;
         }
@@ -1331,7 +1331,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* effectIdPtr = &effectId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[23])(@this, effectIdPtr, properties);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[26])(@this, effectIdPtr, properties);
             }
             return ret;
         }
@@ -1345,7 +1345,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1Properties** propertiesPtr = &properties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[23])(@this, effectIdPtr, propertiesPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory3*, Guid*, ID2D1Properties**, int>)@this->LpVtbl[26])(@this, effectIdPtr, propertiesPtr);
                 }
             }
             return ret;

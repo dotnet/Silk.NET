@@ -1553,7 +1553,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
         return ret;
     }
 
@@ -1564,7 +1564,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
         int ret = default;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatch, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatch, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
         }
         return ret;
     }
@@ -1576,7 +1576,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
         int ret = default;
         fixed (ID2D1SpriteBatch* spriteBatchPtr = &spriteBatch)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatchPtr, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatchPtr, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
         }
         return ret;
     }
@@ -1590,7 +1590,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
         {
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatchPtr, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatchPtr, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
             }
         }
         return ret;
@@ -1601,7 +1601,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, PrimitiveBlend, int>)@this->LpVtbl[32])(@this, primitiveBlend);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, PrimitiveBlend, int>)@this->LpVtbl[33])(@this, primitiveBlend);
         return ret;
     }
 

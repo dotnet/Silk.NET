@@ -213,7 +213,7 @@ public unsafe static class D2D1Device3VtblExtensions
     public static unsafe void FlushDeviceContexts(this ComPtr<ID2D1Device3> thisVtbl, ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1Device3*, ID2D1Bitmap*, void>)@this->LpVtbl[11])(@this, bitmap);
+        ((delegate* unmanaged[Stdcall]<ID2D1Device3*, ID2D1Bitmap*, void>)@this->LpVtbl[13])(@this, bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -222,7 +222,7 @@ public unsafe static class D2D1Device3VtblExtensions
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
         {
-            ((delegate* unmanaged[Stdcall]<ID2D1Device3*, ID2D1Bitmap*, void>)@this->LpVtbl[11])(@this, bitmapPtr);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device3*, ID2D1Bitmap*, void>)@this->LpVtbl[13])(@this, bitmapPtr);
         }
     }
 
@@ -231,7 +231,7 @@ public unsafe static class D2D1Device3VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device3*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[12])(@this, dxgiDevice);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device3*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[14])(@this, dxgiDevice);
         return ret;
     }
 
@@ -242,7 +242,7 @@ public unsafe static class D2D1Device3VtblExtensions
         int ret = default;
         fixed (Silk.NET.DXGI.IDXGIDevice** dxgiDevicePtr = &dxgiDevice)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device3*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[12])(@this, dxgiDevicePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device3*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[14])(@this, dxgiDevicePtr);
         }
         return ret;
     }

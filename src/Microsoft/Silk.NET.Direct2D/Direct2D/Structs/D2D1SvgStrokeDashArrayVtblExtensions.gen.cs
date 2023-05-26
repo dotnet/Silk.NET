@@ -153,33 +153,12 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)@this->LpVtbl[7])(@this, dashes, dashesCount, startIndex);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, uint startIndex)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (float* dashesPtr = &dashes)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)@this->LpVtbl[7])(@this, dashesPtr, dashesCount, startIndex);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, float* dashes, uint dashesCount, uint startIndex)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)@this->LpVtbl[8])(@this, dashes, dashesCount, startIndex);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, ref float dashes, uint dashesCount, uint startIndex)
+    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,11 +170,32 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, float* dashes, uint dashesCount, uint startIndex)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)@this->LpVtbl[10])(@this, dashes, dashesCount, startIndex);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, ref float dashes, uint dashesCount, uint startIndex)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (float* dashesPtr = &dashes)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)@this->LpVtbl[10])(@this, dashesPtr, dashesCount, startIndex);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static uint GetDashesCount(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, uint>)@this->LpVtbl[9])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgStrokeDashArray*, uint>)@this->LpVtbl[11])(@this);
         return ret;
     }
 

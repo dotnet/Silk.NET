@@ -19,5 +19,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         SimultaneousUse = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_KHR")]
         Mutable = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_DEVICE_SIDE_SYNC_KHR")]
+        DeviceSideSync = 0x4,
     }
 }

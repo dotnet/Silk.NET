@@ -115,7 +115,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontSetBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)@this->LpVtbl[3])(@this, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReference);
             return ret;
         }
 
@@ -126,7 +126,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFaceReference* fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)@this->LpVtbl[3])(@this, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReferencePtr);
             }
             return ret;
         }
@@ -136,7 +136,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontSetBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)@this->LpVtbl[4])(@this, fontSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSet);
             return ret;
         }
 
@@ -147,7 +147,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontSet* fontSetPtr = &fontSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)@this->LpVtbl[4])(@this, fontSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSetPtr);
             }
             return ret;
         }
@@ -157,7 +157,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontSetBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)@this->LpVtbl[5])(@this, fontSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSet);
             return ret;
         }
 
@@ -168,7 +168,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontSet** fontSetPtr = &fontSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)@this->LpVtbl[5])(@this, fontSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSetPtr);
             }
             return ret;
         }

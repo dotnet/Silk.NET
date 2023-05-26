@@ -335,7 +335,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[7])(@this, listIndex, propertyId, exists, values);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[9])(@this, listIndex, propertyId, exists, values);
         return ret;
     }
 
@@ -346,7 +346,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         int ret = default;
         fixed (IDWriteLocalizedStrings** valuesPtr = &values)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[7])(@this, listIndex, propertyId, exists, valuesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[9])(@this, listIndex, propertyId, exists, valuesPtr);
         }
         return ret;
     }
@@ -358,7 +358,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         int ret = default;
         fixed (int* existsPtr = &exists)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[7])(@this, listIndex, propertyId, existsPtr, values);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[9])(@this, listIndex, propertyId, existsPtr, values);
         }
         return ret;
     }
@@ -372,7 +372,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         {
             fixed (IDWriteLocalizedStrings** valuesPtr = &values)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[7])(@this, listIndex, propertyId, existsPtr, valuesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, uint, FontPropertyID, int*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[9])(@this, listIndex, propertyId, existsPtr, valuesPtr);
             }
         }
         return ret;
@@ -383,7 +383,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[8])(@this, property, propertyOccurrenceCount);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[10])(@this, property, propertyOccurrenceCount);
         return ret;
     }
 
@@ -394,7 +394,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         int ret = default;
         fixed (uint* propertyOccurrenceCountPtr = &propertyOccurrenceCount)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[8])(@this, property, propertyOccurrenceCountPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[10])(@this, property, propertyOccurrenceCountPtr);
         }
         return ret;
     }
@@ -406,7 +406,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         int ret = default;
         fixed (FontProperty* propertyPtr = &property)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[8])(@this, propertyPtr, propertyOccurrenceCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[10])(@this, propertyPtr, propertyOccurrenceCount);
         }
         return ret;
     }
@@ -420,7 +420,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         {
             fixed (uint* propertyOccurrenceCountPtr = &propertyOccurrenceCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[8])(@this, propertyPtr, propertyOccurrenceCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint*, int>)@this->LpVtbl[10])(@this, propertyPtr, propertyOccurrenceCountPtr);
             }
         }
         return ret;
@@ -431,7 +431,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, properties, propertyCount, filteredSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[12])(@this, properties, propertyCount, filteredSet);
         return ret;
     }
 
@@ -442,7 +442,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         int ret = default;
         fixed (IDWriteFontSet** filteredSetPtr = &filteredSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, properties, propertyCount, filteredSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[12])(@this, properties, propertyCount, filteredSetPtr);
         }
         return ret;
     }
@@ -454,7 +454,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         int ret = default;
         fixed (FontProperty* propertiesPtr = &properties)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, propertiesPtr, propertyCount, filteredSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[12])(@this, propertiesPtr, propertyCount, filteredSet);
         }
         return ret;
     }
@@ -468,7 +468,7 @@ public unsafe static class DWriteFontSetVtblExtensions
         {
             fixed (IDWriteFontSet** filteredSetPtr = &filteredSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[9])(@this, propertiesPtr, propertyCount, filteredSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSet*, FontProperty*, uint, IDWriteFontSet**, int>)@this->LpVtbl[12])(@this, propertiesPtr, propertyCount, filteredSetPtr);
             }
         }
         return ret;

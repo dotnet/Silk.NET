@@ -239,7 +239,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[13])(@this, index, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[14])(@this, index, value);
         return ret;
     }
 
@@ -248,7 +248,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[14])(@this, index, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[16])(@this, index, value);
         return ret;
     }
 
@@ -257,7 +257,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[15])(@this, index, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[18])(@this, index, value);
         return ret;
     }
 
@@ -266,7 +266,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[16])(@this, index, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[20])(@this, index, value);
         return ret;
     }
 

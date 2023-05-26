@@ -680,42 +680,12 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[36])(@this, fontAxisValues, fontAxisValueCount);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetFontAxisValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FontAxisValue fontAxisValues, uint fontAxisValueCount)
-        {
-            var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[36])(@this, fontAxisValuesPtr, fontAxisValueCount);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly uint GetFontAxisValueCount()
-        {
-            var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, uint>)@this->LpVtbl[37])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFontAxisValues(FontAxisValue* fontAxisValues, uint fontAxisValueCount)
-        {
-            var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[38])(@this, fontAxisValues, fontAxisValueCount);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetFontAxisValues(ref FontAxisValue fontAxisValues, uint fontAxisValueCount)
+        public readonly int SetFontAxisValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FontAxisValue fontAxisValues, uint fontAxisValueCount)
         {
             var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -727,11 +697,41 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
+        public readonly uint GetFontAxisValueCount()
+        {
+            var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, uint>)@this->LpVtbl[39])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFontAxisValues(FontAxisValue* fontAxisValues, uint fontAxisValueCount)
+        {
+            var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[40])(@this, fontAxisValues, fontAxisValueCount);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFontAxisValues(ref FontAxisValue fontAxisValues, uint fontAxisValueCount)
+        {
+            var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[40])(@this, fontAxisValuesPtr, fontAxisValueCount);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly AutomaticFontAxes GetAutomaticFontAxes()
         {
             var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             AutomaticFontAxes ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes>)@this->LpVtbl[39])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes>)@this->LpVtbl[41])(@this);
             return ret;
         }
 
@@ -740,7 +740,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextFormat3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes, int>)@this->LpVtbl[40])(@this, automaticFontAxes);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes, int>)@this->LpVtbl[42])(@this, automaticFontAxes);
             return ret;
         }
 

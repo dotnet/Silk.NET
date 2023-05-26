@@ -311,7 +311,7 @@ namespace Silk.NET.DirectWrite
         public readonly unsafe void GetPanose(Panose* panose)
         {
             var @this = (IDWriteFont1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Panose*, void>)@this->LpVtbl[14])(@this, panose);
+            ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Panose*, void>)@this->LpVtbl[15])(@this, panose);
         }
 
         /// <summary>To be documented.</summary>
@@ -320,7 +320,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFont1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Panose* panosePtr = &panose)
             {
-                ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Panose*, void>)@this->LpVtbl[14])(@this, panosePtr);
+                ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Panose*, void>)@this->LpVtbl[15])(@this, panosePtr);
             }
         }
 
@@ -329,7 +329,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFont1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
             return ret;
         }
 
@@ -340,7 +340,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (uint* actualRangeCountPtr = &actualRangeCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
             }
             return ret;
         }
@@ -352,7 +352,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (UnicodeRange* unicodeRangesPtr = &unicodeRanges)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
             }
             return ret;
         }
@@ -366,7 +366,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (uint* actualRangeCountPtr = &actualRangeCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[15])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
                 }
             }
             return ret;
@@ -377,7 +377,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFont1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Core.Bool32 ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Silk.NET.Core.Bool32>)@this->LpVtbl[16])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Silk.NET.Core.Bool32>)@this->LpVtbl[17])(@this);
             return ret;
         }
 

@@ -271,7 +271,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[13])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[14])(@this, index, value);
             return ret;
         }
 
@@ -280,7 +280,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[14])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[16])(@this, index, value);
             return ret;
         }
 
@@ -289,7 +289,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[15])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[18])(@this, index, value);
             return ret;
         }
 
@@ -298,7 +298,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[16])(@this, index, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTableTransferEffect*, uint, float, int>)@this->LpVtbl[20])(@this, index, value);
             return ret;
         }
 

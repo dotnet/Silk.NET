@@ -1588,7 +1588,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1CommandSink3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
             return ret;
         }
 
@@ -1599,7 +1599,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatch, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatch, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
             }
             return ret;
         }
@@ -1611,7 +1611,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SpriteBatch* spriteBatchPtr = &spriteBatch)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatchPtr, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatchPtr, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
             }
             return ret;
         }
@@ -1625,7 +1625,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatchPtr, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatchPtr, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
                 }
             }
             return ret;
