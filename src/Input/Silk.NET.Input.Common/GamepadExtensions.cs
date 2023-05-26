@@ -22,17 +22,7 @@ namespace Silk.NET.Input
 
             throw new PlatformNotSupportedException("This button is not supported by the input backend.");
         }
-        
-        private static Thumbstick FirstThumbstick(IGamepad gamepad, int index)
-        {
-            if (gamepad.Thumbsticks.Count >= index)
-            {
-                throw new PlatformNotSupportedException("This thumbstick is not supported by the input backend.");
-            }
-            
-            return gamepad.Thumbsticks[index];
-        }
-        
+
         /// <summary>
         /// Gets the <see cref="ButtonName.A" /> button.
         /// </summary>
@@ -93,12 +83,18 @@ namespace Silk.NET.Input
         /// <summary>
         /// Gets the left <see cref="Thumbstick"/>.
         /// </summary>
-        public static Thumbstick LeftThumbstick(this IGamepad gamepad) => FirstThumbstick(gamepad, 0);
+        /// <remarks>
+        /// If the input backend does not support this thumbstick, a <see cref="IndexOutOfRangeException"/> will be thrown.
+        /// </remarks>
+        public static Thumbstick LeftThumbstick(this IGamepad gamepad) => gamepad.Thumbsticks[0];
         
         /// <summary>
         /// Gets the right <see cref="Thumbstick"/>.
         /// </summary>
-        public static Thumbstick RightThumbstick(this IGamepad gamepad) => FirstThumbstick(gamepad, 1);
+        /// <remarks>
+        /// If the input backend does not support this thumbstick, a <see cref="IndexOutOfRangeException"/> will be thrown.
+        /// </remarks>
+        public static Thumbstick RightThumbstick(this IGamepad gamepad) => gamepad.Thumbsticks[1];
         
         /// <summary>
         /// Gets the <see cref="ButtonName.LeftStick" /> button.
