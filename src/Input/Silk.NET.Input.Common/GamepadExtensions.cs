@@ -71,12 +71,40 @@ namespace Silk.NET.Input
         /// <summary>
         /// Gets the <see cref="ButtonName.LeftStick" /> button.
         /// </summary>
+        [Obsolete($"This method is obsolete! Use {nameof(LeftThumbstickButton)}")]
         public static Button LeftStick(this IGamepad gamepad) => First(gamepad, ButtonName.LeftStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.RightStick" /> button.
         /// </summary>
+        [Obsolete($"This method is obsolete! Use {nameof(RightThumbstickButton)}")]
         public static Button RightStick(this IGamepad gamepad) => First(gamepad, ButtonName.RightStick);
+        
+        /// <summary>
+        /// Gets the left <see cref="Thumbstick"/>.
+        /// </summary>
+        /// <remarks>
+        /// If the input backend does not support this thumbstick, a <see cref="IndexOutOfRangeException"/> will be thrown.
+        /// </remarks>
+        public static Thumbstick LeftThumbstick(this IGamepad gamepad) => gamepad.Thumbsticks[0];
+        
+        /// <summary>
+        /// Gets the right <see cref="Thumbstick"/>.
+        /// </summary>
+        /// <remarks>
+        /// If the input backend does not support this thumbstick, a <see cref="IndexOutOfRangeException"/> will be thrown.
+        /// </remarks>
+        public static Thumbstick RightThumbstick(this IGamepad gamepad) => gamepad.Thumbsticks[1];
+        
+        /// <summary>
+        /// Gets the <see cref="ButtonName.LeftStick" /> button.
+        /// </summary>
+        public static Button LeftThumbstickButton(this IGamepad gamepad) => First(gamepad, ButtonName.LeftStick);
+
+        /// <summary>
+        /// Gets the <see cref="ButtonName.RightStick" /> button.
+        /// </summary>
+        public static Button RightThumbstickButton(this IGamepad gamepad) => First(gamepad, ButtonName.RightStick);
 
         /// <summary>
         /// Gets the <see cref="ButtonName.DPadUp" /> button.
