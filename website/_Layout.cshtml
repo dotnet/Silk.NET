@@ -100,10 +100,11 @@
   <script src="@InputUrl("theme/clipboard.min.js")"></script>
   <script src="@InputUrl("theme/headroom.min.js")"></script>
   <script src="@InputUrl("theme/silk.js")"></script>
-  @if ((toc?.Root.Metadata?.TryGetValue("theme.silk.giscus.repo", out giscusRepo) ?? false) &&
-       (toc?.Root.Metadata?.TryGetValue("theme.silk.giscus.repo.id", out giscusRepoId) ?? false) &&
-       (toc?.Root.Metadata?.TryGetValue("theme.silk.giscus.category", out giscusCategory) ?? false) &&
-       (toc?.Root.Metadata?.TryGetValue("theme.silk.giscus.category.id", out giscusCategoryId) ?? false))
+  @if ((toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.repo", out giscusRepo) ?? false) &&
+       (toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.repo.id", out giscusRepoId) ?? false) &&
+       (toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.category", out giscusCategory) ?? false) &&
+       (toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.category.id", out giscusCategoryId) ?? false) &&
+       (!toc?.Node?.Metadata?.ContainsKey("theme.silk.giscus.exempt") ?? true))
   {
       <script src="https://giscus.app/client.js"
               data-repo="@giscusRepo"
