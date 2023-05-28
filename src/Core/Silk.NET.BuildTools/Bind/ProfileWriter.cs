@@ -92,7 +92,12 @@ namespace Silk.NET.BuildTools.Bind
                     tmpFolder = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
                     Directory.CreateDirectory(tmpFolder);
                 }
-                
+
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+
                 proj.Value.WriteProjectFile(folder, profile, task);
 
                 folder = originalTask.OutputOpts.Subfolder is null

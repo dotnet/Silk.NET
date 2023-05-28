@@ -12,15 +12,15 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "FogCoordSrc")]
     public enum FogCoordSrc : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_COORDINATE")]
         FogCoordinate = 0x8451,
         [NativeName("Name", "GL_FOG_COORDINATE_EXT")]
         FogCoordinateExt = 0x8451,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_COORD")]
         FogCoord = 0x8451,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FRAGMENT_DEPTH")]
         FragmentDepth = 0x8452,
         [NativeName("Name", "GL_FRAGMENT_DEPTH_EXT")]

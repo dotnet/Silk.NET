@@ -12,37 +12,37 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "GetPName")]
     public enum GetPName : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_COLOR")]
         CurrentColor = 0xB00,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_INDEX")]
         CurrentIndex = 0xB01,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_NORMAL")]
         CurrentNormal = 0xB02,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_TEXTURE_COORDS")]
         CurrentTextureCoords = 0xB03,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_RASTER_COLOR")]
         CurrentRasterColor = 0xB04,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_RASTER_INDEX")]
         CurrentRasterIndex = 0xB05,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_RASTER_TEXTURE_COORDS")]
         CurrentRasterTextureCoords = 0xB06,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_RASTER_POSITION")]
         CurrentRasterPosition = 0xB07,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_RASTER_POSITION_VALID")]
         CurrentRasterPositionValid = 0xB08,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CURRENT_RASTER_DISTANCE")]
         CurrentRasterDistance = 0xB09,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SMOOTH")]
         PointSmooth = 0xB10,
         [NativeName("Name", "GL_POINT_SIZE")]
@@ -67,35 +67,35 @@ namespace Silk.NET.OpenGLES
         LineWidthGranularity = 0xB23,
         [NativeName("Name", "GL_SMOOTH_LINE_WIDTH_GRANULARITY")]
         SmoothLineWidthGranularity = 0xB23,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LINE_STIPPLE")]
         LineStipple = 0xB24,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LINE_STIPPLE_PATTERN")]
         LineStipplePattern = 0xB25,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LINE_STIPPLE_REPEAT")]
         LineStippleRepeat = 0xB26,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIST_MODE")]
         ListMode = 0xB30,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_LIST_NESTING")]
         MaxListNesting = 0xB31,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIST_BASE")]
         ListBase = 0xB32,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIST_INDEX")]
         ListIndex = 0xB33,
         [NativeName("Name", "GL_POLYGON_MODE")]
         PolygonMode = 0xB40,
         [NativeName("Name", "GL_POLYGON_SMOOTH")]
         PolygonSmooth = 0xB41,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POLYGON_STIPPLE")]
         PolygonStipple = 0xB42,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EDGE_FLAG")]
         EdgeFlag = 0xB43,
         [NativeName("Name", "GL_CULL_FACE")]
@@ -104,49 +104,49 @@ namespace Silk.NET.OpenGLES
         CullFaceMode = 0xB45,
         [NativeName("Name", "GL_FRONT_FACE")]
         FrontFace = 0xB46,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHTING")]
         Lighting = 0xB50,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT_MODEL_LOCAL_VIEWER")]
         LightModelLocalViewer = 0xB51,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT_MODEL_TWO_SIDE")]
         LightModelTwoSide = 0xB52,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT_MODEL_AMBIENT")]
         LightModelAmbient = 0xB53,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SHADE_MODEL")]
         ShadeModel = 0xB54,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_MATERIAL_FACE")]
         ColorMaterialFace = 0xB55,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_MATERIAL_PARAMETER")]
         ColorMaterialParameter = 0xB56,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_MATERIAL")]
         ColorMaterial = 0xB57,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG")]
         Fog = 0xB60,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_INDEX")]
         FogIndex = 0xB61,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_DENSITY")]
         FogDensity = 0xB62,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_START")]
         FogStart = 0xB63,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_END")]
         FogEnd = 0xB64,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_MODE")]
         FogMode = 0xB65,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_COLOR")]
         FogColor = 0xB66,
         [NativeName("Name", "GL_DEPTH_RANGE")]
@@ -159,7 +159,7 @@ namespace Silk.NET.OpenGLES
         DepthClearValue = 0xB73,
         [NativeName("Name", "GL_DEPTH_FUNC")]
         DepthFunc = 0xB74,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM_CLEAR_VALUE")]
         AccumClearValue = 0xB80,
         [NativeName("Name", "GL_STENCIL_TEST")]
@@ -180,53 +180,53 @@ namespace Silk.NET.OpenGLES
         StencilRef = 0xB97,
         [NativeName("Name", "GL_STENCIL_WRITEMASK")]
         StencilWritemask = 0xB98,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MATRIX_MODE")]
         MatrixMode = 0xBA0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_NORMALIZE")]
         Normalize = 0xBA1,
         [NativeName("Name", "GL_VIEWPORT")]
         Viewport = 0xBA2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MODELVIEW_STACK_DEPTH")]
         ModelviewStackDepth = 0xBA3,
         [NativeName("Name", "GL_MODELVIEW0_STACK_DEPTH_EXT")]
         Modelview0StackDepthExt = 0xBA3,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PROJECTION_STACK_DEPTH")]
         ProjectionStackDepth = 0xBA4,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_STACK_DEPTH")]
         TextureStackDepth = 0xBA5,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MODELVIEW_MATRIX")]
         ModelviewMatrix = 0xBA6,
         [NativeName("Name", "GL_MODELVIEW0_MATRIX_EXT")]
         Modelview0MatrixExt = 0xBA6,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PROJECTION_MATRIX")]
         ProjectionMatrix = 0xBA7,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_MATRIX")]
         TextureMatrix = 0xBA8,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ATTRIB_STACK_DEPTH")]
         AttribStackDepth = 0xBB0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_ATTRIB_STACK_DEPTH")]
         ClientAttribStackDepth = 0xBB1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_TEST")]
         AlphaTest = 0xBC0,
         [NativeName("Name", "GL_ALPHA_TEST_QCOM")]
         AlphaTestQCom = 0xBC0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_TEST_FUNC")]
         AlphaTestFunc = 0xBC1,
         [NativeName("Name", "GL_ALPHA_TEST_FUNC_QCOM")]
         AlphaTestFuncQCom = 0xBC1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_TEST_REF")]
         AlphaTestRef = 0xBC2,
         [NativeName("Name", "GL_ALPHA_TEST_REF_QCOM")]
@@ -241,15 +241,15 @@ namespace Silk.NET.OpenGLES
         Blend = 0xBE2,
         [NativeName("Name", "GL_LOGIC_OP_MODE")]
         LogicOpMode = 0xBF0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_LOGIC_OP")]
         IndexLogicOp = 0xBF1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LOGIC_OP")]
         LogicOp = 0xBF1,
         [NativeName("Name", "GL_COLOR_LOGIC_OP")]
         ColorLogicOp = 0xBF2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AUX_BUFFERS")]
         AuxBuffers = 0xC00,
         [NativeName("Name", "GL_DRAW_BUFFER")]
@@ -266,82 +266,82 @@ namespace Silk.NET.OpenGLES
         ScissorBox = 0xC10,
         [NativeName("Name", "GL_SCISSOR_TEST")]
         ScissorTest = 0xC11,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_CLEAR_VALUE")]
         IndexClearValue = 0xC20,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_WRITEMASK")]
         IndexWritemask = 0xC21,
         [NativeName("Name", "GL_COLOR_CLEAR_VALUE")]
         ColorClearValue = 0xC22,
         [NativeName("Name", "GL_COLOR_WRITEMASK")]
         ColorWritemask = 0xC23,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_MODE")]
         IndexMode = 0xC30,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RGBA_MODE")]
         RgbaMode = 0xC31,
         [NativeName("Name", "GL_DOUBLEBUFFER")]
         Doublebuffer = 0xC32,
         [NativeName("Name", "GL_STEREO")]
         Stereo = 0xC33,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RENDER_MODE")]
         RenderMode = 0xC40,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PERSPECTIVE_CORRECTION_HINT")]
         PerspectiveCorrectionHint = 0xC50,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SMOOTH_HINT")]
         PointSmoothHint = 0xC51,
         [NativeName("Name", "GL_LINE_SMOOTH_HINT")]
         LineSmoothHint = 0xC52,
         [NativeName("Name", "GL_POLYGON_SMOOTH_HINT")]
         PolygonSmoothHint = 0xC53,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_HINT")]
         FogHint = 0xC54,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_GEN_S")]
         TextureGenS = 0xC60,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_GEN_T")]
         TextureGenT = 0xC61,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_GEN_R")]
         TextureGenR = 0xC62,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_GEN_Q")]
         TextureGenQ = 0xC63,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_I_SIZE")]
         PixelMapIToISize = 0xCB0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_S_TO_S_SIZE")]
         PixelMapSToSSize = 0xCB1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_R_SIZE")]
         PixelMapIToRSize = 0xCB2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_G_SIZE")]
         PixelMapIToGSize = 0xCB3,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_B_SIZE")]
         PixelMapIToBSize = 0xCB4,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_A_SIZE")]
         PixelMapIToASize = 0xCB5,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_R_TO_R_SIZE")]
         PixelMapRToRSize = 0xCB6,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_G_TO_G_SIZE")]
         PixelMapGToGSize = 0xCB7,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_B_TO_B_SIZE")]
         PixelMapBToBSize = 0xCB8,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PIXEL_MAP_A_TO_A_SIZE")]
         PixelMapAToASize = 0xCB9,
         [NativeName("Name", "GL_UNPACK_SWAP_BYTES")]
@@ -374,208 +374,208 @@ namespace Silk.NET.OpenGLES
         PackSkipPixelsNV = 0xD04,
         [NativeName("Name", "GL_PACK_ALIGNMENT")]
         PackAlignment = 0xD05,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP_COLOR")]
         MapColor = 0xD10,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP_STENCIL")]
         MapStencil = 0xD11,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_SHIFT")]
         IndexShift = 0xD12,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_OFFSET")]
         IndexOffset = 0xD13,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RED_SCALE")]
         RedScale = 0xD14,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RED_BIAS")]
         RedBias = 0xD15,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ZOOM_X")]
         ZoomX = 0xD16,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ZOOM_Y")]
         ZoomY = 0xD17,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GREEN_SCALE")]
         GreenScale = 0xD18,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GREEN_BIAS")]
         GreenBias = 0xD19,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BLUE_SCALE")]
         BlueScale = 0xD1A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BLUE_BIAS")]
         BlueBias = 0xD1B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_SCALE")]
         AlphaScale = 0xD1C,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_BIAS")]
         AlphaBias = 0xD1D,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DEPTH_SCALE")]
         DepthScale = 0xD1E,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DEPTH_BIAS")]
         DepthBias = 0xD1F,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_EVAL_ORDER")]
         MaxEvalOrder = 0xD30,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_LIGHTS")]
         MaxLights = 0xD31,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_CLIP_PLANES")]
         MaxClipPlanes = 0xD32,
         [NativeName("Name", "GL_MAX_CLIP_DISTANCES")]
         MaxClipDistances = 0xD32,
         [NativeName("Name", "GL_MAX_TEXTURE_SIZE")]
         MaxTextureSize = 0xD33,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_PIXEL_MAP_TABLE")]
         MaxPixelMapTable = 0xD34,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_ATTRIB_STACK_DEPTH")]
         MaxAttribStackDepth = 0xD35,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_MODELVIEW_STACK_DEPTH")]
         MaxModelviewStackDepth = 0xD36,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_NAME_STACK_DEPTH")]
         MaxNameStackDepth = 0xD37,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_PROJECTION_STACK_DEPTH")]
         MaxProjectionStackDepth = 0xD38,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_TEXTURE_STACK_DEPTH")]
         MaxTextureStackDepth = 0xD39,
         [NativeName("Name", "GL_MAX_VIEWPORT_DIMS")]
         MaxViewportDims = 0xD3A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAX_CLIENT_ATTRIB_STACK_DEPTH")]
         MaxClientAttribStackDepth = 0xD3B,
         [NativeName("Name", "GL_SUBPIXEL_BITS")]
         SubpixelBits = 0xD50,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_BITS")]
         IndexBits = 0xD51,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RED_BITS")]
         RedBits = 0xD52,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GREEN_BITS")]
         GreenBits = 0xD53,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BLUE_BITS")]
         BlueBits = 0xD54,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_BITS")]
         AlphaBits = 0xD55,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DEPTH_BITS")]
         DepthBits = 0xD56,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_STENCIL_BITS")]
         StencilBits = 0xD57,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM_RED_BITS")]
         AccumRedBits = 0xD58,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM_GREEN_BITS")]
         AccumGreenBits = 0xD59,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM_BLUE_BITS")]
         AccumBlueBits = 0xD5A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM_ALPHA_BITS")]
         AccumAlphaBits = 0xD5B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_NAME_STACK_DEPTH")]
         NameStackDepth = 0xD70,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AUTO_NORMAL")]
         AutoNormal = 0xD80,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_COLOR_4")]
         Map1Color4 = 0xD90,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_INDEX")]
         Map1Index = 0xD91,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_NORMAL")]
         Map1Normal = 0xD92,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_TEXTURE_COORD_1")]
         Map1TextureCoord1 = 0xD93,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_TEXTURE_COORD_2")]
         Map1TextureCoord2 = 0xD94,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_TEXTURE_COORD_3")]
         Map1TextureCoord3 = 0xD95,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_TEXTURE_COORD_4")]
         Map1TextureCoord4 = 0xD96,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_VERTEX_3")]
         Map1Vertex3 = 0xD97,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_VERTEX_4")]
         Map1Vertex4 = 0xD98,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_COLOR_4")]
         Map2Color4 = 0xDB0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_INDEX")]
         Map2Index = 0xDB1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_NORMAL")]
         Map2Normal = 0xDB2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_TEXTURE_COORD_1")]
         Map2TextureCoord1 = 0xDB3,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_TEXTURE_COORD_2")]
         Map2TextureCoord2 = 0xDB4,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_TEXTURE_COORD_3")]
         Map2TextureCoord3 = 0xDB5,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_TEXTURE_COORD_4")]
         Map2TextureCoord4 = 0xDB6,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_VERTEX_3")]
         Map2Vertex3 = 0xDB7,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_VERTEX_4")]
         Map2Vertex4 = 0xDB8,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_GRID_DOMAIN")]
         Map1GridDomain = 0xDD0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP1_GRID_SEGMENTS")]
         Map1GridSegments = 0xDD1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_GRID_DOMAIN")]
         Map2GridDomain = 0xDD2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP2_GRID_SEGMENTS")]
         Map2GridSegments = 0xDD3,
         [NativeName("Name", "GL_TEXTURE_1D")]
         Texture1D = 0xDE0,
         [NativeName("Name", "GL_TEXTURE_2D")]
         Texture2D = 0xDE1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FEEDBACK_BUFFER_SIZE")]
         FeedbackBufferSize = 0xDF1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FEEDBACK_BUFFER_TYPE")]
         FeedbackBufferType = 0xDF2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SELECTION_BUFFER_SIZE")]
         SelectionBufferSize = 0xDF4,
         [NativeName("Name", "GL_POLYGON_OFFSET_UNITS")]
@@ -584,46 +584,46 @@ namespace Silk.NET.OpenGLES
         PolygonOffsetPoint = 0x2A01,
         [NativeName("Name", "GL_POLYGON_OFFSET_LINE")]
         PolygonOffsetLine = 0x2A02,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIP_PLANE0")]
         ClipPlane0 = 0x3000,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIP_PLANE1")]
         ClipPlane1 = 0x3001,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIP_PLANE2")]
         ClipPlane2 = 0x3002,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIP_PLANE3")]
         ClipPlane3 = 0x3003,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIP_PLANE4")]
         ClipPlane4 = 0x3004,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIP_PLANE5")]
         ClipPlane5 = 0x3005,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT0")]
         Light0 = 0x4000,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT1")]
         Light1 = 0x4001,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT2")]
         Light2 = 0x4002,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT3")]
         Light3 = 0x4003,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT4")]
         Light4 = 0x4004,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT5")]
         Light5 = 0x4005,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT6")]
         Light6 = 0x4006,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT7")]
         Light7 = 0x4007,
         [NativeName("Name", "GL_BLEND_COLOR")]
@@ -708,71 +708,71 @@ namespace Silk.NET.OpenGLES
         Max3DTextureSizeExt = 0x8073,
         [NativeName("Name", "GL_VERTEX_ARRAY")]
         VertexArray = 0x8074,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_NORMAL_ARRAY")]
         NormalArray = 0x8075,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_ARRAY")]
         ColorArray = 0x8076,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_ARRAY")]
         IndexArray = 0x8077,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_COORD_ARRAY")]
         TextureCoordArray = 0x8078,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EDGE_FLAG_ARRAY")]
         EdgeFlagArray = 0x8079,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_VERTEX_ARRAY_SIZE")]
         VertexArraySize = 0x807A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_VERTEX_ARRAY_TYPE")]
         VertexArrayType = 0x807B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_VERTEX_ARRAY_STRIDE")]
         VertexArrayStride = 0x807C,
         [NativeName("Name", "GL_VERTEX_ARRAY_COUNT_EXT")]
         VertexArrayCountExt = 0x807D,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_NORMAL_ARRAY_TYPE")]
         NormalArrayType = 0x807E,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_NORMAL_ARRAY_STRIDE")]
         NormalArrayStride = 0x807F,
         [NativeName("Name", "GL_NORMAL_ARRAY_COUNT_EXT")]
         NormalArrayCountExt = 0x8080,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_ARRAY_SIZE")]
         ColorArraySize = 0x8081,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_ARRAY_TYPE")]
         ColorArrayType = 0x8082,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_ARRAY_STRIDE")]
         ColorArrayStride = 0x8083,
         [NativeName("Name", "GL_COLOR_ARRAY_COUNT_EXT")]
         ColorArrayCountExt = 0x8084,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_ARRAY_TYPE")]
         IndexArrayType = 0x8085,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_ARRAY_STRIDE")]
         IndexArrayStride = 0x8086,
         [NativeName("Name", "GL_INDEX_ARRAY_COUNT_EXT")]
         IndexArrayCountExt = 0x8087,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_COORD_ARRAY_SIZE")]
         TextureCoordArraySize = 0x8088,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_COORD_ARRAY_TYPE")]
         TextureCoordArrayType = 0x8089,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_COORD_ARRAY_STRIDE")]
         TextureCoordArrayStride = 0x808A,
         [NativeName("Name", "GL_TEXTURE_COORD_ARRAY_COUNT_EXT")]
         TextureCoordArrayCountExt = 0x808B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EDGE_FLAG_ARRAY_STRIDE")]
         EdgeFlagArrayStride = 0x808C,
         [NativeName("Name", "GL_EDGE_FLAG_ARRAY_COUNT_EXT")]
@@ -849,7 +849,7 @@ namespace Silk.NET.OpenGLES
         MaxElementsVertices = 0x80E8,
         [NativeName("Name", "GL_MAX_ELEMENTS_INDICES")]
         MaxElementsIndices = 0x80E9,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SIZE_MIN")]
         PointSizeMin = 0x8126,
         [NativeName("Name", "GL_POINT_SIZE_MIN_ARB")]
@@ -858,7 +858,7 @@ namespace Silk.NET.OpenGLES
         PointSizeMinExt = 0x8126,
         [NativeName("Name", "GL_POINT_SIZE_MIN_SGIS")]
         PointSizeMinSgis = 0x8126,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SIZE_MAX")]
         PointSizeMax = 0x8127,
         [NativeName("Name", "GL_POINT_SIZE_MAX_ARB")]
@@ -879,7 +879,7 @@ namespace Silk.NET.OpenGLES
         DistanceAttenuationExt = 0x8129,
         [NativeName("Name", "GL_DISTANCE_ATTENUATION_SGIS")]
         DistanceAttenuationSgis = 0x8129,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_DISTANCE_ATTENUATION")]
         PointDistanceAttenuation = 0x8129,
         [NativeName("Name", "GL_POINT_DISTANCE_ATTENUATION_ARB")]
@@ -960,7 +960,7 @@ namespace Silk.NET.OpenGLES
         FogOffsetSgix = 0x8198,
         [NativeName("Name", "GL_FOG_OFFSET_VALUE_SGIX")]
         FogOffsetValueSgix = 0x8199,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL")]
         LightModelColorControl = 0x81F8,
         [NativeName("Name", "GL_SHARED_TEXTURE_PALETTE_EXT")]
@@ -1067,7 +1067,7 @@ namespace Silk.NET.OpenGLES
         PackResampleSgix = 0x842E,
         [NativeName("Name", "GL_UNPACK_RESAMPLE_SGIX")]
         UnpackResampleSgix = 0x842F,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALIASED_POINT_SIZE_RANGE")]
         AliasedPointSizeRange = 0x846D,
         [NativeName("Name", "GL_ALIASED_LINE_WIDTH_RANGE")]

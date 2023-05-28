@@ -26,13 +26,13 @@ namespace Silk.NET.OpenGL.Legacy
         UnsignedInt = 0x1405,
         [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_2_BYTES")]
         Gl2Bytes = 0x1407,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_3_BYTES")]
         Gl3Bytes = 0x1408,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_4_BYTES")]
         Gl4Bytes = 0x1409,
     }

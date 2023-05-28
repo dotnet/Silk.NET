@@ -12,46 +12,46 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "PixelTransferParameter")]
     public enum PixelTransferParameter : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP_COLOR")]
         MapColor = 0xD10,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MAP_STENCIL")]
         MapStencil = 0xD11,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_SHIFT")]
         IndexShift = 0xD12,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INDEX_OFFSET")]
         IndexOffset = 0xD13,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RED_SCALE")]
         RedScale = 0xD14,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RED_BIAS")]
         RedBias = 0xD15,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GREEN_SCALE")]
         GreenScale = 0xD18,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GREEN_BIAS")]
         GreenBias = 0xD19,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BLUE_SCALE")]
         BlueScale = 0xD1A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BLUE_BIAS")]
         BlueBias = 0xD1B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_SCALE")]
         AlphaScale = 0xD1C,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA_BIAS")]
         AlphaBias = 0xD1D,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DEPTH_SCALE")]
         DepthScale = 0xD1E,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DEPTH_BIAS")]
         DepthBias = 0xD1F,
         [NativeName("Name", "GL_POST_CONVOLUTION_RED_SCALE")]

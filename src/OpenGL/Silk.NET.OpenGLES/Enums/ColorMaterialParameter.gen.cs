@@ -12,19 +12,19 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "ColorMaterialParameter")]
     public enum ColorMaterialParameter : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AMBIENT")]
         Ambient = 0x1200,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DIFFUSE")]
         Diffuse = 0x1201,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SPECULAR")]
         Specular = 0x1202,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EMISSION")]
         Emission = 0x1600,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AMBIENT_AND_DIFFUSE")]
         AmbientAndDiffuse = 0x1602,
     }

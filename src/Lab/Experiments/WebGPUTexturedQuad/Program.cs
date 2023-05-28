@@ -138,7 +138,7 @@ public static unsafe class WebGPUTexturedQuad
                 Code = (byte*) SilkMarshal.StringToPtr(File.ReadAllText("shader.wgsl")),
                 Chain = new ChainedStruct
                 {
-                    SType = SType.ShaderModuleWgsldescriptor
+                    SType = SType.ShaderModuleWgslDescriptor
                 }
             };
 
@@ -190,7 +190,7 @@ public static unsafe class WebGPUTexturedQuad
                 Usage           = TextureUsage.CopyDst | TextureUsage.TextureBinding,
                 MipLevelCount   = 1,
                 SampleCount     = 1,
-                Dimension       = TextureDimension.TextureDimension2D,
+                Dimension       = TextureDimension.Dimension2D,
                 ViewFormats     = &viewFormat,
                 ViewFormatCount = 1
             };
@@ -200,7 +200,7 @@ public static unsafe class WebGPUTexturedQuad
             var viewDescriptor = new TextureViewDescriptor
             {
                 Format          = TextureFormat.Rgba8Unorm,
-                Dimension       = TextureViewDimension.TextureViewDimension2D,
+                Dimension       = TextureViewDimension.Dimension2D,
                 Aspect          = TextureAspect.All,
                 MipLevelCount   = 1,
                 ArrayLayerCount = 1,
@@ -278,7 +278,7 @@ public static unsafe class WebGPUTexturedQuad
                 {
                     Multisampled  = false,
                     SampleType    = TextureSampleType.Float,
-                    ViewDimension = TextureViewDimension.TextureViewDimension2D
+                    ViewDimension = TextureViewDimension.Dimension2D
                 },
                 Visibility = ShaderStage.Fragment
             };

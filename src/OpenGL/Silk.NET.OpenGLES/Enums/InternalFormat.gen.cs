@@ -28,103 +28,103 @@ namespace Silk.NET.OpenGLES
         Rgba = 0x1908,
         [NativeName("Name", "GL_R3_G3_B2")]
         R3G3B2 = 0x2A10,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA4")]
         Alpha4 = 0x803B,
         [NativeName("Name", "GL_ALPHA4_EXT")]
         Alpha4Ext = 0x803B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA8")]
         Alpha8 = 0x803C,
         [NativeName("Name", "GL_ALPHA8_EXT")]
         Alpha8Ext = 0x803C,
         [NativeName("Name", "GL_ALPHA8_OES")]
         Alpha8Oes = 0x803C,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA12")]
         Alpha12 = 0x803D,
         [NativeName("Name", "GL_ALPHA12_EXT")]
         Alpha12Ext = 0x803D,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ALPHA16")]
         Alpha16 = 0x803E,
         [NativeName("Name", "GL_ALPHA16_EXT")]
         Alpha16Ext = 0x803E,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE4")]
         Luminance4 = 0x803F,
         [NativeName("Name", "GL_LUMINANCE4_EXT")]
         Luminance4Ext = 0x803F,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE8")]
         Luminance8 = 0x8040,
         [NativeName("Name", "GL_LUMINANCE8_EXT")]
         Luminance8Ext = 0x8040,
         [NativeName("Name", "GL_LUMINANCE8_OES")]
         Luminance8Oes = 0x8040,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE12")]
         Luminance12 = 0x8041,
         [NativeName("Name", "GL_LUMINANCE12_EXT")]
         Luminance12Ext = 0x8041,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE16")]
         Luminance16 = 0x8042,
         [NativeName("Name", "GL_LUMINANCE16_EXT")]
         Luminance16Ext = 0x8042,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE4_ALPHA4")]
         Luminance4Alpha4 = 0x8043,
         [NativeName("Name", "GL_LUMINANCE4_ALPHA4_EXT")]
         Luminance4Alpha4Ext = 0x8043,
         [NativeName("Name", "GL_LUMINANCE4_ALPHA4_OES")]
         Luminance4Alpha4Oes = 0x8043,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE6_ALPHA2")]
         Luminance6Alpha2 = 0x8044,
         [NativeName("Name", "GL_LUMINANCE6_ALPHA2_EXT")]
         Luminance6Alpha2Ext = 0x8044,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE8_ALPHA8")]
         Luminance8Alpha8 = 0x8045,
         [NativeName("Name", "GL_LUMINANCE8_ALPHA8_EXT")]
         Luminance8Alpha8Ext = 0x8045,
         [NativeName("Name", "GL_LUMINANCE8_ALPHA8_OES")]
         Luminance8Alpha8Oes = 0x8045,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE12_ALPHA4")]
         Luminance12Alpha4 = 0x8046,
         [NativeName("Name", "GL_LUMINANCE12_ALPHA4_EXT")]
         Luminance12Alpha4Ext = 0x8046,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE12_ALPHA12")]
         Luminance12Alpha12 = 0x8047,
         [NativeName("Name", "GL_LUMINANCE12_ALPHA12_EXT")]
         Luminance12Alpha12Ext = 0x8047,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE16_ALPHA16")]
         Luminance16Alpha16 = 0x8048,
         [NativeName("Name", "GL_LUMINANCE16_ALPHA16_EXT")]
         Luminance16Alpha16Ext = 0x8048,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INTENSITY")]
         Intensity = 0x8049,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INTENSITY4")]
         Intensity4 = 0x804A,
         [NativeName("Name", "GL_INTENSITY4_EXT")]
         Intensity4Ext = 0x804A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INTENSITY8")]
         Intensity8 = 0x804B,
         [NativeName("Name", "GL_INTENSITY8_EXT")]
         Intensity8Ext = 0x804B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INTENSITY12")]
         Intensity12 = 0x804C,
         [NativeName("Name", "GL_INTENSITY12_EXT")]
         Intensity12Ext = 0x804C,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INTENSITY16")]
         Intensity16 = 0x804D,
         [NativeName("Name", "GL_INTENSITY16_EXT")]

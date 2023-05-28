@@ -12,17 +12,17 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "HintTarget")]
     public enum HintTarget : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PERSPECTIVE_CORRECTION_HINT")]
         PerspectiveCorrectionHint = 0xC50,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SMOOTH_HINT")]
         PointSmoothHint = 0xC51,
         [NativeName("Name", "GL_LINE_SMOOTH_HINT")]
         LineSmoothHint = 0xC52,
         [NativeName("Name", "GL_POLYGON_SMOOTH_HINT")]
         PolygonSmoothHint = 0xC53,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FOG_HINT")]
         FogHint = 0xC54,
         [NativeName("Name", "GL_PACK_CMYK_HINT_EXT")]
@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGLES
         ClipVolumeClippingHintExt = 0x80F0,
         [NativeName("Name", "GL_TEXTURE_MULTI_BUFFER_HINT_SGIX")]
         TextureMultiBufferHintSgix = 0x812E,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GENERATE_MIPMAP_HINT")]
         GenerateMipmapHint = 0x8192,
         [NativeName("Name", "GL_GENERATE_MIPMAP_HINT_SGIS")]

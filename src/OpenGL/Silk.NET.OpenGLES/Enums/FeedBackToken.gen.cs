@@ -12,28 +12,28 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "FeedBackToken")]
     public enum FeedBackToken : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PASS_THROUGH_TOKEN")]
         PassThroughToken = 0x700,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_TOKEN")]
         PointToken = 0x701,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LINE_TOKEN")]
         LineToken = 0x702,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POLYGON_TOKEN")]
         PolygonToken = 0x703,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BITMAP_TOKEN")]
         BitmapToken = 0x704,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DRAW_PIXEL_TOKEN")]
         DrawPixelToken = 0x705,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COPY_PIXEL_TOKEN")]
         CopyPixelToken = 0x706,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LINE_RESET_TOKEN")]
         LineResetToken = 0x707,
     }
