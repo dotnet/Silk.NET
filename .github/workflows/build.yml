@@ -26,9 +26,9 @@ jobs:
     # treated as candidates. We will never have a windows-latest self-hosted runner even if it is the latest. 
     runs-on: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') && 'windows-quick' || github.repository == 'dotnet/Silk.NET' && 'windows-2022' || 'windows-latest' }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.5.2
       with:
-        submodules: 'true'
+        submodules: 'false'
     - name: Setup Java JDK 11
       uses: actions/setup-java@v2.3.0
       with:

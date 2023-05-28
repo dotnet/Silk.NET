@@ -35,6 +35,12 @@ partial class Build
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
+    void CopyAs(AbsolutePath @out, string from, string to)
+    {
+        var file = @out.GlobFiles(from).First();
+        CopyFile(file, to, FileExistsPolicy.Overwrite);
+    }
+
     string AndroidHome
     {
         get
@@ -326,6 +332,99 @@ partial class Build
             }
 
             PrUpdatedNativeBinary("Wgpu");
+        }
+        )
+        );
+
+    AbsolutePath SDL2Path => RootDirectory / "build" / "submodules" / "SDL";
+
+    Target SDL2 => CommonTarget
+        (
+        x => x.Before(Compile)
+        .After(Clean)
+        .Executes
+        (
+        () =>
+        {
+            var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SDL.Native" / "runtimes";
+
+            var x86BuildDir = SDL2Path / "buildx86";
+            var x64BuildDir = SDL2Path / "buildx64";
+            var ARM64BuildDir = SDL2Path / "buildARM64";
+            EnsureCleanDirectory(x86BuildDir);
+            EnsureCleanDirectory(x64BuildDir);
+            EnsureCleanDirectory(ARM64BuildDir);
+
+            if(OperatingSystem.IsWindows())
+            {
+                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
+                var build = $"cmake --build . --config Release{JobsArg}";
+
+                InheritedShell($"{prepare} -A Win32", x86BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x86BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -A X64", x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -A arm64", ARM64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
+
+                CopyFile(x86BuildDir / "Release" / "SDL2.dll", runtimes / "win-x86" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                CopyFile(x64BuildDir / "Release" / "SDL2.dll", runtimes / "win-x64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                CopyFile(ARM64BuildDir / "Release" / "SDL2.dll", runtimes / "win-arm64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+            }
+
+            if(OperatingSystem.IsLinux())
+            {
+                if(RuntimeInformation.OSArchitecture == Architecture.Arm64) 
+                {
+                    InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
+                    InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
+
+                    CopyFile(ARM64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                } 
+                else if (RuntimeInformation.OSArchitecture == Architecture.X64) 
+                {
+                    var envVars32bit = "CFLAGS='-m32 -O2' CXXFLAGS='-m32 -O2' LDFLAGS=-m32";
+                    var envVars64bit = "CFLAGS=-O2 CXXFLAGS=-O2";
+
+                    InheritedShell($"{envVars32bit} ./configure --prefix={x86BuildDir}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars32bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
+
+                    InheritedShell($"{envVars64bit} ./configure --prefix={x64BuildDir}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars64bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
+
+                    //Strip the libraries
+                    InheritedShell($"strip {x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5"}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"strip {x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5"}", SDL2Path).AssertZeroExitCode();
+
+                    CopyFile(x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile(x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                } 
+                else 
+                {
+                    throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
+                }
+            }
+
+            if(OperatingSystem.IsMacOS())
+            {
+                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
+                var build = $"cmake --build . --config Release{JobsArg}";
+
+                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", ARM64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
+
+                CopyAs(x64BuildDir, "**/*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib");
+                CopyAs(ARM64BuildDir, "**/*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib");
+            }
+
+            PrUpdatedNativeBinary("SDL2");
         }
         )
         );
@@ -658,12 +757,6 @@ partial class Build
             (
                 () =>
                 {
-                    void CopyAs(AbsolutePath @out, string from, string to)
-                    {
-                        var file = @out.GlobFiles(from).First();
-                        CopyFile(file, to, FileExistsPolicy.Overwrite);
-                    }
-
                     var @out = AssimpPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
                     var build = $"cmake --build build --config Release{JobsArg}";
@@ -754,7 +847,7 @@ partial class Build
                     $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
                 )
                 .AssertWaitForExit();
-            if (!commitCmd.Output.Any(x => x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
+            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
             {
                 commitCmd.AssertZeroExitCode();
             }
