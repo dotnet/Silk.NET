@@ -12,19 +12,19 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "FeedbackType")]
     public enum FeedbackType : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_2D")]
         Gl2D = 0x600,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_3D")]
         Gl3D = 0x601,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_3D_COLOR")]
         Gl3DColor = 0x602,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_3D_COLOR_TEXTURE")]
         Gl3DColorTexture = 0x603,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_4D_COLOR_TEXTURE")]
         Gl4DColorTexture = 0x604,
     }

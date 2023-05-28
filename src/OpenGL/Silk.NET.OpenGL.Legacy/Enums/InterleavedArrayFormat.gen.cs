@@ -12,46 +12,46 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "InterleavedArrayFormat")]
     public enum InterleavedArrayFormat : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_V2F")]
         V2f = 0x2A20,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_V3F")]
         V3f = 0x2A21,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_C4UB_V2F")]
         C4UBV2f = 0x2A22,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_C4UB_V3F")]
         C4UBV3f = 0x2A23,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_C3F_V3F")]
         C3fV3f = 0x2A24,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_N3F_V3F")]
         N3fV3f = 0x2A25,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_C4F_N3F_V3F")]
         C4fN3fV3f = 0x2A26,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T2F_V3F")]
         T2fV3f = 0x2A27,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T4F_V4F")]
         T4fV4f = 0x2A28,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T2F_C4UB_V3F")]
         T2fC4UBV3f = 0x2A29,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T2F_C3F_V3F")]
         T2fC3fV3f = 0x2A2A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T2F_N3F_V3F")]
         T2fN3fV3f = 0x2A2B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T2F_C4F_N3F_V3F")]
         T2fC4fN3fV3f = 0x2A2C,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_T4F_C4F_N3F_V4F")]
         T4fC4fN3fV4f = 0x2A2D,
     }

@@ -34,16 +34,16 @@ namespace Silk.NET.OpenGL.Legacy
         Right = 0x407,
         [NativeName("Name", "GL_FRONT_AND_BACK")]
         FrontAndBack = 0x408,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AUX0")]
         Aux0 = 0x409,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AUX1")]
         Aux1 = 0x40A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AUX2")]
         Aux2 = 0x40B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AUX3")]
         Aux3 = 0x40C,
         [NativeName("Name", "GL_COLOR_ATTACHMENT0")]

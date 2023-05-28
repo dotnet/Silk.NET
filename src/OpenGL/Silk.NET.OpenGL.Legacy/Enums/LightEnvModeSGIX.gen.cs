@@ -12,12 +12,12 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "LightEnvModeSGIX")]
     public enum LightEnvModeSGIX : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ADD")]
         Add = 0x104,
         [NativeName("Name", "GL_REPLACE")]
         Replace = 0x1E01,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MODULATE")]
         Modulate = 0x2100,
     }

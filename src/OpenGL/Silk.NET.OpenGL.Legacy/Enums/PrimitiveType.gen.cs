@@ -30,10 +30,10 @@ namespace Silk.NET.OpenGL.Legacy
         Quads = 0x7,
         [NativeName("Name", "GL_QUADS_EXT")]
         QuadsExt = 0x7,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_QUAD_STRIP")]
         QuadStrip = 0x8,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POLYGON")]
         Polygon = 0x9,
         [NativeName("Name", "GL_LINES_ADJACENCY")]

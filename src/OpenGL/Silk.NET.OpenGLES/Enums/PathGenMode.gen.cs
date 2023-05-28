@@ -14,13 +14,13 @@ namespace Silk.NET.OpenGLES
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EYE_LINEAR")]
         EyeLinear = 0x2400,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_OBJECT_LINEAR")]
         ObjectLinear = 0x2401,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CONSTANT")]
         Constant = 0x8576,
         [NativeName("Name", "GL_PATH_OBJECT_BOUNDING_BOX_NV")]

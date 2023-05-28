@@ -2054,10 +2054,10 @@
                 }
             ],
             "copy": {
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/ARM/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm/native",
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/ARM64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm64/native",
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/x64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x64/native",
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/x86/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x86/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/ARM/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/ARM64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm64/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/x64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x64/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/x86/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x86/native",
                 "$nuget/Microsoft.Direct3D.DirectStorage/*/LICENSE.txt": "src/Native/Silk.NET.DirectStorage.Native/LICENSE.txt",
                 "$nuget/Microsoft.Direct3D.DirectStorage/*/$version": "src/Native/Silk.NET.DirectStorage.Native/version.txt"
             }
