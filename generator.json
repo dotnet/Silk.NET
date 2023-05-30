@@ -2568,6 +2568,95 @@
             ]
         },
         {
+            "profileName": "SPIRVCross",
+            "sources": [
+                "build/submodules/SPIRV-Cross/spirv_cross_c.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "spirv-cross",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-pre-2.18-obsolete-enums",
+                "typemap-native",
+                "no-extra-dir"
+            ],
+            "converter": {},
+            "prefix": "spvc_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/SPIRV-Cross"
+                ],
+                "traverse": [
+                    "build/submodules/SPIRV-Cross/spirv_cross_c.h"
+                ],
+                "classes": {
+                    "spirv_cross_c.h": "[Core]Cross"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+                "spvc_compiler_options_s": "CompilerOptions",
+                "spvc_compiler_s": "Compiler",
+                "spvc_constant_s": "Constant",
+                "spvc_context_s": "Context",
+                "spvc_parsed_ir_s": "ParsedIr",
+                "spvc_resources_s": "Resources",
+                "spvc_set_s": "Set",
+                "spvc_type_s": "CrossType"
+            },
+            "bakery": {
+                "profileNames": [
+                    "spirv_cross_c"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.SPIRV.Cross",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.SPIRV.Cross",
+            "extensionsNamespace": "Silk.NET.SPIRV.Cross.Extensions",
+            "nameContainer": {
+                "linux-x64": "libspirv-cross.so",
+                "win-x64": "spirv-cross.dll",
+                "win-x86": "spirv-cross.dll",
+                "osx-x64": "libspirv-cross.dylib",
+                "android": "libspirv-cross.so",
+                "className": "SPIRVCrossLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "SpvSourceLanguage_": "Silk.NET.SPIRV.SourceLanguage",
+                    "SpvDim_": "Silk.NET.SPIRV.Dim",
+                    "SpvExecutionMode_": "Silk.NET.SPIRV.ExecutionMode",
+                    "SpvExecutionModel_": "Silk.NET.SPIRV.ExecutionModel",
+                    "SpvImageFormat_": "Silk.NET.SPIRV.ImageFormat",
+                    "SpvOp_": "Silk.NET.SPIRV.Op",
+                    "SpvBuiltIn_": "Silk.NET.SPIRV.BuiltIn",
+                    "SpvStorageClass_": "Silk.NET.SPIRV.StorageClass",
+                    "SpvCapability_": "Silk.NET.SPIRV.Capability",
+                    "SpvDecoration_": "Silk.NET.SPIRV.Decoration",
+                    "SpvAccessQualifier_": "Silk.NET.SPIRV.AccessQualifier"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "WGL",
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
