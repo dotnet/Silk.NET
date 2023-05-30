@@ -690,6 +690,20 @@ pub fn build(b: *std.Build) void {
 
     var flags = &.{ ""-std=c++11"", ""-fPIC"" };
 
+    //Enable the GLSL, HLSL, MSL, CPP, and Reflect C APIs
+    lib.defineCMacro(""SPIRV_CROSS_C_API_GLSL"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_HLSL"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_MSL"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_CPP"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_REFLECT"", ""1"");
+
+    //Export the C API symbols
+    lib.defineCMacro(""SPVC_EXPORT_SYMBOLS"", ""1"");
+
+    //If we arent in debug, defined NDEBUG
+    if (mode != .Debug)
+        lib.defineCMacro(""NDEBUG"", ""1"");
+
     lib.addCSourceFiles(&.{
         root_path ++ ""spirv_cross.cpp"",
         root_path ++ ""spirv_cfg.cpp"",
@@ -703,6 +717,7 @@ pub fn build(b: *std.Build) void {
         root_path ++ ""spirv_parser.cpp"",
         root_path ++ ""spirv_reflect.cpp"",
     }, flags);
+
     b.installArtifact(lib);
 }
 
