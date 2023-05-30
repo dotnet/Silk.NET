@@ -668,6 +668,119 @@ pub fn build(b: *std.Build) void {
             )
         );
 
+    AbsolutePath SPIRVCrossPath => RootDirectory / "build" / "submodules" / "SPIRV-Cross";
+
+    //This is the build script for the SPIRV-Reflect shared library
+    const string SPIRVCrossBuildScript = @"const std = @import(""std"");
+const fs = std.fs;
+
+pub fn build(b: *std.Build) void {
+    const target = b.standardTargetOptions(.{});
+    const mode = b.standardOptimizeOption(.{});
+
+    const shared_lib_options: std.build.SharedLibraryOptions = .{
+        .name = ""spirv-cross"",
+        .target = target,
+        .optimize = mode,
+    };
+
+    const lib: *std.build.LibExeObjStep = b.addSharedLibrary(shared_lib_options);
+    lib.linkLibC();
+    lib.linkLibCpp();
+
+    var flags = &.{ ""-std=c++11"", ""-fPIC"" };
+
+    lib.addCSourceFiles(&.{
+        root_path ++ ""spirv_cross.cpp"",
+        root_path ++ ""spirv_cfg.cpp"",
+        root_path ++ ""spirv_cpp.cpp"",
+        root_path ++ ""spirv_cross_c.cpp"",
+        root_path ++ ""spirv_cross_parsed_ir.cpp"",
+        root_path ++ ""spirv_cross_util.cpp"",
+        root_path ++ ""spirv_glsl.cpp"",
+        root_path ++ ""spirv_hlsl.cpp"",
+        root_path ++ ""spirv_msl.cpp"",
+        root_path ++ ""spirv_parser.cpp"",
+        root_path ++ ""spirv_reflect.cpp"",
+    }, flags);
+    b.installArtifact(lib);
+}
+
+fn root_dir() []const u8 {
+    return std.fs.path.dirname(@src().file) orelse ""."";
+}
+
+const root_path = root_dir() ++ ""/"";
+";
+
+    Target SPIRVCross => CommonTarget
+        (
+            x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SPIRV.Cross.Native" / "runtimes";
+
+                    //Write out the build script to the directory
+                    File.WriteAllText(SPIRVCrossPath / "build.zig", SPIRVCrossBuildScript);
+
+                    { //Linux
+                        //Build for Linux x86_64 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+
+                        //Build for Linux x86 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x86" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+
+                        //Build for Linux arm64 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-arm64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //Windows
+                        //Build for Windows x86_64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+
+                        //Build for Windows x86
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x86" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+
+                        //Build for Windows arm64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-arm64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //MacOS
+                        //Build for MacOS x86_64
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-x64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
+
+                        //Build for MacOS arm64
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-arm64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
+                    }
+
+                    var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
+                        .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
+                        .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
+                        .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
+                        .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
+                        .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
+
+                    var glob = string.Empty;
+                    glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
+
+                    PrUpdatedNativeBinary("SPIRV-Cross", glob);
+                }
+            )
+        );
+
     AbsolutePath VulkanLoaderPath => RootDirectory / "build" / "submodules" / "Vulkan-Loader";
 
     Target VulkanLoader => CommonTarget
