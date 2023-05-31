@@ -20,5 +20,5 @@ pub fn build(b: *std.Build) void {
 
     vkd3d_compiler.addCSourceFiles(&.{"lib.c"}, &.{ "-std=c99", "-fPIC" });
     vkd3d_compiler.addSystemIncludePath("../../../build/submodules/vkd3d/include/");
-    vkd3d_compiler.install();
+    b.installArtifact(vkd3d_compiler);
 }

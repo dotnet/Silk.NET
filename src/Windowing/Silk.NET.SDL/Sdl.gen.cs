@@ -951,7 +951,7 @@ namespace Silk.NET.SDL
         public const int MinorVersion = unchecked((int) 0x1A);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_PATCHLEVEL")]
-        public const int Patchlevel = unchecked((int) 0x2);
+        public const int Patchlevel = unchecked((int) 0x5);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "SDL_INIT_TIMER")]
         public const uint InitTimer = unchecked((uint) 0x1);
@@ -8660,127 +8660,127 @@ namespace Silk.NET.SDL
         public partial void Debugbreak();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 226, Column 30 in SDL_assert.h")]
+        [NativeName("Src", "Line 220, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
         public unsafe partial void SetAssertionHandler(PfnAssertionHandler handler, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 226, Column 30 in SDL_assert.h")]
+        [NativeName("Src", "Line 220, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
         public partial void SetAssertionHandler<T0>(PfnAssertionHandler handler, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 245, Column 46 in SDL_assert.h")]
+        [NativeName("Src", "Line 239, Column 46 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetDefaultAssertionHandler")]
         public partial PfnAssertionHandler GetDefaultAssertionHandler();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 268, Column 46 in SDL_assert.h")]
+        [NativeName("Src", "Line 262, Column 46 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
         public unsafe partial PfnAssertionHandler GetAssertionHandler(void** puserdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 268, Column 46 in SDL_assert.h")]
+        [NativeName("Src", "Line 262, Column 46 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
         public unsafe partial PfnAssertionHandler GetAssertionHandler(ref void* puserdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 296, Column 48 in SDL_assert.h")]
+        [NativeName("Src", "Line 290, Column 48 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionReport")]
         public unsafe partial AssertData* GetAssertionReport();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 310, Column 30 in SDL_assert.h")]
+        [NativeName("Src", "Line 304, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ResetAssertionReport")]
         public partial void ResetAssertionReport();
 

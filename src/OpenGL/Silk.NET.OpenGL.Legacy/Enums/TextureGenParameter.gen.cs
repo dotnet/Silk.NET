@@ -12,15 +12,15 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "TextureGenParameter")]
     public enum TextureGenParameter : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_GEN_MODE")]
         TextureGenMode = 0x2500,
         [NativeName("Name", "GL_TEXTURE_GEN_MODE_OES")]
         TextureGenModeOes = 0x2500,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_OBJECT_PLANE")]
         ObjectPlane = 0x2501,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EYE_PLANE")]
         EyePlane = 0x2502,
         [NativeName("Name", "GL_EYE_POINT_SGIS")]

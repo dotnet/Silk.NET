@@ -12,13 +12,13 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "GetMapQuery")]
     public enum GetMapQuery : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COEFF")]
         Coeff = 0xA00,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ORDER")]
         Order = 0xA01,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DOMAIN")]
         Domain = 0xA02,
     }

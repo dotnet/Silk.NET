@@ -154,6 +154,8 @@ namespace Silk.NET.Vulkan
         RepresentativeFragmentTestEnableNV = 1000455031,
         [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_REDUCTION_MODE_NV")]
         CoverageReductionModeNV = 1000455032,
+        [NativeName("Name", "VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT")]
+        AttachmentFeedbackLoopEnableExt = 1000524000,
         [NativeName("Name", "VK_DYNAMIC_STATE_CULL_MODE")]
         CullMode = 1000267000,
         [NativeName("Name", "VK_DYNAMIC_STATE_FRONT_FACE")]

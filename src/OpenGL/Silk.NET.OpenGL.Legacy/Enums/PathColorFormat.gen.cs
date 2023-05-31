@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Legacy
         Rgb = 0x1907,
         [NativeName("Name", "GL_RGBA")]
         Rgba = 0x1908,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE")]
         Luminance = 0x1909,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE_ALPHA")]
         LuminanceAlpha = 0x190A,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_INTENSITY")]
         Intensity = 0x8049,
     }

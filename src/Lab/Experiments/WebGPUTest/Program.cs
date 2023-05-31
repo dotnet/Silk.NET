@@ -35,7 +35,7 @@ public static unsafe class Program
 
         // ReSharper disable once InconsistentNaming
         var shaderModuleWGSLDescriptor = new ShaderModuleWGSLDescriptor();
-        shaderModuleWGSLDescriptor.Chain.SType = SType.ShaderModuleWgsldescriptor;
+        shaderModuleWGSLDescriptor.Chain.SType = SType.ShaderModuleWgslDescriptor;
         shaderModuleWGSLDescriptor.Chain.Next = null;
         shaderModuleWGSLDescriptor.Code = (byte*) SilkMarshal.StringToPtr
         (

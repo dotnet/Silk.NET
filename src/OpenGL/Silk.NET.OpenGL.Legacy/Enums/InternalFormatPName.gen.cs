@@ -14,7 +14,7 @@ namespace Silk.NET.OpenGL.Legacy
     {
         [NativeName("Name", "GL_SAMPLES")]
         Samples = 0x80A9,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_GENERATE_MIPMAP")]
         GenerateMipmap = 0x8191,
         [NativeName("Name", "GL_INTERNALFORMAT_SUPPORTED")]

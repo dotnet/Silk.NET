@@ -12,13 +12,13 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "TextureEnvTarget")]
     public enum TextureEnvTarget : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_ENV")]
         TextureEnv = 0x2300,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_TEXTURE_FILTER_CONTROL")]
         TextureFilterControl = 0x8500,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SPRITE")]
         PointSprite = 0x8861,
     }

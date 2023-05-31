@@ -1,0 +1,84 @@
+name: SDL2
+on:
+  push:
+    branches-ignore:
+      - "ci/*"
+      - "develop/*"
+      - "main"
+    paths:
+      - "build/submodules/SDL"
+      - "build/nuke/Build.Native.cs"
+      - ".github/workflows/sdl2.yml"
+jobs:
+  Build:
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - os: ubuntu-latest
+            name: Linux
+            nuke_invoke: ./build.sh
+          - os: windows-latest
+            name: Windows
+            nuke_invoke: ./build.cmd
+            extras: |
+              pwsh build\Install-WindowsSDK.ps1
+          - os: macos-latest
+            name: Darwin
+            nuke_invoke: ./build.sh
+            extras: ""
+    name: ${{ matrix.env.name }} Build
+    runs-on: ${{ matrix.env.os }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+
+      - name: Checkout submodules, configure git
+        run: |
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive build/submodules/SDL
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+
+      - name: Extra prerequisites
+        run: |
+          echo running extras
+          ${{ matrix.env.extras }}
+
+      # Install CMake
+      - uses: lukka/get-cmake@latest
+        if: runner.os != 'Linux'
+
+      - name: Build SDL2
+        if: runner.os == 'Linux'
+        uses: Beyley/run-as-1804@239b211a2ca687388b6251d6dab22cb90ac0391d
+        with:
+          command: |
+            apt update
+            apt install -y python3 curl wget build-essential git make autoconf gcc-multilib g++-multilib automake libtool pkg-config ninja-build gnome-desktop-testing libasound2-dev libpulse-dev libaudio-dev libjack-dev libsndio-dev libsamplerate0-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
+
+            wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+            chmod +x ./dotnet-install.sh
+            ./dotnet-install.sh --version 7.0.203
+            ./dotnet-install.sh --version 6.0.408
+
+            export DOTNET_ROOT=$HOME/.dotnet
+            export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+
+            # export the pushable token to the env of the docker container
+            export PUSHABLE_GITHUB_TOKEN=${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+
+            # mark workspace as safe
+            git config --global --add safe.directory /github/workspace
+
+            ${{ matrix.env.nuke_invoke }} SDL2
+        env:
+          PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+
+      - name: Build SDL2
+        if: runner.os != 'Linux'
+        run: ${{ matrix.env.nuke_invoke }} SDL2
+        env:
+          PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+      
+

@@ -12,7 +12,7 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "PointParameterNameARB")]
     public enum PointParameterNameARB : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SIZE_MIN")]
         PointSizeMin = 0x8126,
         [NativeName("Name", "GL_POINT_SIZE_MIN_ARB")]
@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES
         PointSizeMinExt = 0x8126,
         [NativeName("Name", "GL_POINT_SIZE_MIN_SGIS")]
         PointSizeMinSgis = 0x8126,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_SIZE_MAX")]
         PointSizeMax = 0x8127,
         [NativeName("Name", "GL_POINT_SIZE_MAX_ARB")]
@@ -42,7 +42,7 @@ namespace Silk.NET.OpenGLES
         DistanceAttenuationExt = 0x8129,
         [NativeName("Name", "GL_DISTANCE_ATTENUATION_SGIS")]
         DistanceAttenuationSgis = 0x8129,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POINT_DISTANCE_ATTENUATION")]
         PointDistanceAttenuation = 0x8129,
         [NativeName("Name", "GL_POINT_DISTANCE_ATTENUATION_ARB")]

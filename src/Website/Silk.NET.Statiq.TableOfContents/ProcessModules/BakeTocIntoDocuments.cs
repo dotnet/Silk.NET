@@ -45,8 +45,10 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             }
 
             // find a toc in which the document has a matching entry in its map.
-            var matchingToc = _tocs?.SelectMany(x => x.Object.TocMap)
-                .FirstOrDefault(x => _pathMatcher(x.Key, input.Source.GetRelativeInputPath()));
+            var matchingToc = input.Source.IsNull
+                ? null
+                : _tocs?.SelectMany(x => x.Object.TocMap)
+                    .FirstOrDefault(x => _pathMatcher(x.Key, input.Source.GetRelativeInputPath()));
             if (matchingToc?.Value.Value is null) // would be matchingToc is null but FirstOrDefault is strange...
             {
                 if (_anyIfNotFound)

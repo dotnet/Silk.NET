@@ -12,12 +12,12 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "MatrixMode")]
     public enum MatrixMode : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MODELVIEW")]
         Modelview = 0x1700,
         [NativeName("Name", "GL_MODELVIEW0_EXT")]
         Modelview0Ext = 0x1700,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PROJECTION")]
         Projection = 0x1701,
         [NativeName("Name", "GL_TEXTURE")]

@@ -12,10 +12,10 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "ShadingModel")]
     public enum ShadingModel : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FLAT")]
         Flat = 0x1D00,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SMOOTH")]
         Smooth = 0x1D01,
     }

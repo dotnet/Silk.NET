@@ -35,6 +35,12 @@ partial class Build
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
+    void CopyAs(AbsolutePath @out, string from, string to)
+    {
+        var file = @out.GlobFiles(from).First();
+        CopyFile(file, to, FileExistsPolicy.Overwrite);
+    }
+
     string AndroidHome
     {
         get
@@ -330,6 +336,99 @@ partial class Build
         )
         );
 
+    AbsolutePath SDL2Path => RootDirectory / "build" / "submodules" / "SDL";
+
+    Target SDL2 => CommonTarget
+        (
+        x => x.Before(Compile)
+        .After(Clean)
+        .Executes
+        (
+        () =>
+        {
+            var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SDL.Native" / "runtimes";
+
+            var x86BuildDir = SDL2Path / "buildx86";
+            var x64BuildDir = SDL2Path / "buildx64";
+            var ARM64BuildDir = SDL2Path / "buildARM64";
+            EnsureCleanDirectory(x86BuildDir);
+            EnsureCleanDirectory(x64BuildDir);
+            EnsureCleanDirectory(ARM64BuildDir);
+
+            if(OperatingSystem.IsWindows())
+            {
+                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
+                var build = $"cmake --build . --config Release{JobsArg}";
+
+                InheritedShell($"{prepare} -A Win32", x86BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x86BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -A X64", x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -A arm64", ARM64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
+
+                CopyFile(x86BuildDir / "Release" / "SDL2.dll", runtimes / "win-x86" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                CopyFile(x64BuildDir / "Release" / "SDL2.dll", runtimes / "win-x64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                CopyFile(ARM64BuildDir / "Release" / "SDL2.dll", runtimes / "win-arm64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+            }
+
+            if(OperatingSystem.IsLinux())
+            {
+                if(RuntimeInformation.OSArchitecture == Architecture.Arm64) 
+                {
+                    InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
+                    InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
+
+                    CopyFile(ARM64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                } 
+                else if (RuntimeInformation.OSArchitecture == Architecture.X64) 
+                {
+                    var envVars32bit = "CFLAGS='-m32 -O2' CXXFLAGS='-m32 -O2' LDFLAGS=-m32";
+                    var envVars64bit = "CFLAGS=-O2 CXXFLAGS=-O2";
+
+                    InheritedShell($"{envVars32bit} ./configure --prefix={x86BuildDir}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars32bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
+
+                    InheritedShell($"{envVars64bit} ./configure --prefix={x64BuildDir}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{envVars64bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
+
+                    //Strip the libraries
+                    InheritedShell($"strip {x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5"}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"strip {x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5"}", SDL2Path).AssertZeroExitCode();
+
+                    CopyFile(x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile(x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                } 
+                else 
+                {
+                    throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
+                }
+            }
+
+            if(OperatingSystem.IsMacOS())
+            {
+                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
+                var build = $"cmake --build . --config Release{JobsArg}";
+
+                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", x64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+
+                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", ARM64BuildDir).AssertZeroExitCode();
+                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
+
+                CopyAs(x64BuildDir, "**/*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib");
+                CopyAs(ARM64BuildDir, "**/*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib");
+            }
+
+            PrUpdatedNativeBinary("SDL2");
+        }
+        )
+        );
+
     AbsolutePath GLFWPath => RootDirectory / "build" / "submodules" / "GLFW";
 
     Target GLFW => CommonTarget
@@ -474,6 +573,225 @@ partial class Build
                     }
 
                     PrUpdatedNativeBinary("Vkd3d");
+                }
+            )
+        );
+
+    AbsolutePath SPIRVReflectPath => RootDirectory / "build" / "submodules" / "SPIRV-Reflect";
+
+    //This is the build script for the SPIRV-Reflect shared library
+    const string SPIRVReflectBuildScript = @"const std = @import(""std"");
+const fs = std.fs;
+
+pub fn build(b: *std.Build) void {
+    const target = b.standardTargetOptions(.{});
+    const mode = b.standardOptimizeOption(.{});
+
+    const shared_lib_options: std.build.SharedLibraryOptions = .{
+        .name = ""spirv-reflect"",
+        .target = target,
+        .optimize = mode,
+    };
+
+    const lib: *std.build.LibExeObjStep = b.addSharedLibrary(shared_lib_options);
+    lib.linkLibC();
+
+    lib.addCSourceFiles(&.{""spirv_reflect.c""}, &.{ ""-std=c99"", ""-fPIC"" });
+    b.installArtifact(lib);
+}";
+
+    Target SPIRVReflect => CommonTarget
+        (
+            x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SPIRV.Reflect.Native" / "runtimes";
+
+                    //Write out the build script to the directory
+                    File.WriteAllText(SPIRVReflectPath / "build.zig", SPIRVReflectBuildScript);
+
+                    { //Linux
+                        //Build for Linux x86_64 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-linux-gnu.2.26 --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-x64" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
+
+                        //Build for Linux x86 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-linux-gnu.2.26 --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-x86" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
+
+                        //Build for Linux arm64 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-linux-gnu.2.26 --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-arm64" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //Windows
+                        //Build for Windows x86_64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-windows --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "spirv-reflect.dll", runtimes / "win-x64" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
+
+                        //Build for Windows x86
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-windows --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "spirv-reflect.dll", runtimes / "win-x86" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
+
+                        //Build for Windows arm64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "spirv-reflect.dll", runtimes / "win-arm64" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //MacOS
+                        //Build for MacOS x86_64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-macos --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.dylib", runtimes / "osx-x64" / "native" / "libspirv-reflect.dylib", FileExistsPolicy.Overwrite);
+
+                        //Build for MacOS arm64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-macos --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.dylib", runtimes / "osx-arm64" / "native" / "libspirv-reflect.dylib", FileExistsPolicy.Overwrite);
+                    }
+
+                    var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
+                        .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
+                        .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
+                        .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
+                        .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
+                        .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
+
+                    var glob = string.Empty;
+                    glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
+
+                    PrUpdatedNativeBinary("SPIRV-Reflect", glob);
+                }
+            )
+        );
+
+    AbsolutePath SPIRVCrossPath => RootDirectory / "build" / "submodules" / "SPIRV-Cross";
+
+    //This is the build script for the SPIRV-Reflect shared library
+    const string SPIRVCrossBuildScript = @"const std = @import(""std"");
+const fs = std.fs;
+
+pub fn build(b: *std.Build) void {
+    const target = b.standardTargetOptions(.{});
+    const mode = b.standardOptimizeOption(.{});
+
+    const shared_lib_options: std.build.SharedLibraryOptions = .{
+        .name = ""spirv-cross"",
+        .target = target,
+        .optimize = mode,
+    };
+
+    const lib: *std.build.LibExeObjStep = b.addSharedLibrary(shared_lib_options);
+    lib.linkLibC();
+    lib.linkLibCpp();
+
+    var flags = &.{ ""-std=c++11"", ""-fPIC"" };
+
+    //Enable the GLSL, HLSL, MSL, CPP, and Reflect C APIs
+    lib.defineCMacro(""SPIRV_CROSS_C_API_GLSL"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_HLSL"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_MSL"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_CPP"", ""1"");
+    lib.defineCMacro(""SPIRV_CROSS_C_API_REFLECT"", ""1"");
+
+    //Export the C API symbols
+    lib.defineCMacro(""SPVC_EXPORT_SYMBOLS"", ""1"");
+
+    //If we arent in debug, defined NDEBUG
+    if (mode != .Debug)
+        lib.defineCMacro(""NDEBUG"", ""1"");
+
+    lib.addCSourceFiles(&.{
+        root_path ++ ""spirv_cross.cpp"",
+        root_path ++ ""spirv_cfg.cpp"",
+        root_path ++ ""spirv_cpp.cpp"",
+        root_path ++ ""spirv_cross_c.cpp"",
+        root_path ++ ""spirv_cross_parsed_ir.cpp"",
+        root_path ++ ""spirv_cross_util.cpp"",
+        root_path ++ ""spirv_glsl.cpp"",
+        root_path ++ ""spirv_hlsl.cpp"",
+        root_path ++ ""spirv_msl.cpp"",
+        root_path ++ ""spirv_parser.cpp"",
+        root_path ++ ""spirv_reflect.cpp"",
+    }, flags);
+
+    b.installArtifact(lib);
+}
+
+fn root_dir() []const u8 {
+    return std.fs.path.dirname(@src().file) orelse ""."";
+}
+
+const root_path = root_dir() ++ ""/"";
+";
+
+    Target SPIRVCross => CommonTarget
+        (
+            x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SPIRV.Cross.Native" / "runtimes";
+
+                    //Write out the build script to the directory
+                    File.WriteAllText(SPIRVCrossPath / "build.zig", SPIRVCrossBuildScript);
+
+                    { //Linux
+                        //Build for Linux x86_64 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+
+                        //Build for Linux x86 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x86" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+
+                        //Build for Linux arm64 with glibc 2.26 (old version specified for compatibility)
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-arm64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //Windows
+                        //Build for Windows x86_64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+
+                        //Build for Windows x86
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x86" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+
+                        //Build for Windows arm64
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-arm64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //MacOS
+                        //Build for MacOS x86_64
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-x64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
+
+                        //Build for MacOS arm64
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-arm64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
+                    }
+
+                    var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
+                        .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
+                        .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
+                        .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
+                        .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
+                        .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
+
+                    var glob = string.Empty;
+                    glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
+
+                    PrUpdatedNativeBinary("SPIRV-Cross", glob);
                 }
             )
         );
@@ -658,12 +976,6 @@ partial class Build
             (
                 () =>
                 {
-                    void CopyAs(AbsolutePath @out, string from, string to)
-                    {
-                        var file = @out.GlobFiles(from).First();
-                        CopyFile(file, to, FileExistsPolicy.Overwrite);
-                    }
-
                     var @out = AssimpPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
                     var build = $"cmake --build build --config Release{JobsArg}";
@@ -754,7 +1066,7 @@ partial class Build
                     $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
                 )
                 .AssertWaitForExit();
-            if (!commitCmd.Output.Any(x => x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
+            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
             {
                 commitCmd.AssertZeroExitCode();
             }

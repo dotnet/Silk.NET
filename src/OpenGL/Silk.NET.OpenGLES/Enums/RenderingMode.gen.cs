@@ -12,13 +12,13 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "RenderingMode")]
     public enum RenderingMode : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RENDER")]
         Render = 0x1C00,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_FEEDBACK")]
         Feedback = 0x1C01,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SELECT")]
         Select = 0x1C02,
     }

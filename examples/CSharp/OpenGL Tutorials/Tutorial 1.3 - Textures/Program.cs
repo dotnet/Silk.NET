@@ -170,12 +170,15 @@ namespace Tutorial
             _gl.DetachShader(_program, fragmentShader);
             _gl.DeleteShader(vertexShader);
             _gl.DeleteShader(fragmentShader);
+            
+            // Set up our vertex attributes! These tell the vertex array (VAO) how to process the vertex data we defined
+            // earlier. Each vertex array contains attributes. 
 
             // Our stride constant. The stride must be in bytes, so we take the first attribute (a vec3), multiply it
             // by the size in bytes of a float, and then take our second attribute (a vec2), and do the same.
             const uint stride = (3 * sizeof(float)) + (2 * sizeof(float));
 
-            // Enable the "aPosition" attribute in our vertex shader, providing its size and stride too.
+            // Enable the "aPosition" attribute in our vertex array, providing its size and stride too.
             const uint positionLoc = 0;
             _gl.EnableVertexAttribArray(positionLoc);
             _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, stride, (void*) 0);
