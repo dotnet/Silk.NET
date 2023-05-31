@@ -1,7 +1,7 @@
-using Silk.NET.OpenGL;
 using System;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
+using System.IO;
+using Silk.NET.OpenGL;
+using StbImageSharp;
 
 namespace Tutorial
 {
@@ -12,33 +12,24 @@ namespace Tutorial
 
         public unsafe Texture(GL gl, string path)
         {
+            //Saving the gl instance.
             _gl = gl;
 
+            //Generating the opengl handle;
             _handle = _gl.GenTexture();
             Bind();
-
-            //Loading an image using imagesharp.
-            using (var img = Image.Load<Rgba32>(path))
+            
+            // Load the image from memory.
+            ImageResult result = ImageResult.FromMemory(File.ReadAllBytes(path), ColorComponents.RedGreenBlueAlpha);
+            
+            fixed (byte* ptr = result.Data)
             {
-                //Reserve enough memory from the gpu for the whole image
-                gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba8, (uint) img.Width, (uint) img.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, null);
-
-                img.ProcessPixelRows(accessor =>
-                {
-                    //ImageSharp 2 does not store images in contiguous memory by default, so we must send the image row by row
-                    for (int y = 0; y < accessor.Height; y++)
-                    {
-                        fixed (void* data = accessor.GetRowSpan(y))
-                        {
-                            //Loading the actual image.
-                            gl.TexSubImage2D(TextureTarget.Texture2D, 0, 0, y, (uint) accessor.Width, 1, PixelFormat.Rgba, PixelType.UnsignedByte, data);
-                        }
-                    }
-                });
+                // Create our texture and upload the image data.
+                _gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba, (uint) result.Width, 
+                    (uint) result.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, ptr);
             }
 
             SetParameters();
-
         }
 
         public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
@@ -68,6 +59,7 @@ namespace Tutorial
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) GLEnum.Linear);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureBaseLevel, 0);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMaxLevel, 8);
+            
             //Generating mipmaps.
             _gl.GenerateMipmap(TextureTarget.Texture2D);
         }

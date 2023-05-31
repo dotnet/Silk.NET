@@ -12,14 +12,16 @@
         <ProjectReference Include="..\..\..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
         <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
-
+    
     <ItemGroup>
-      <None Update="Shader.frag">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="Shader.vert">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <PackageReference Include="StbImageSharp" Version="2.27.13" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Update="silk.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 
 </Project>
+    
