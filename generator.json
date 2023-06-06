@@ -2657,6 +2657,79 @@
             ]
         },
         {
+            "profileName": "shaderc",
+            "sources": [
+                "build/submodules/shaderc/libshaderc/include/shaderc/shaderc.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "shaderc",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-pre-2.18-obsolete-enums",
+                "typemap-native",
+                "no-extra-dir"
+            ],
+            "converter": {},
+            "prefix": "shaderc_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/shaderc/libshaderc/include"
+                ],
+                "traverse": [
+                    "build/submodules/shaderc/libshaderc/include/shaderc/shaderc.h",
+                    "build/submodules/shaderc/libshaderc/include/shaderc/env.h",
+                    "build/submodules/shaderc/libshaderc/include/shaderc/status.h"
+                ],
+                "classes": {
+                    "shaderc.h": "[Core]Shaderc",
+                    "env.h": "[Core]Shaderc"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "shaderc"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.Shaderc",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Shaderc",
+            "extensionsNamespace": "Silk.NET.Shaderc.Extensions",
+            "nameContainer": {
+                "linux-x64": "libshaderc_shared.so",
+                "win-x64": "shaderc_shared.dll",
+                "win-x86": "shaderc_shared.dll",
+                "osx-x64": "libshaderc_shared.dylib",
+                "android": "libshaderc_shared.so",
+                "className": "ShadercLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "WGL",
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
