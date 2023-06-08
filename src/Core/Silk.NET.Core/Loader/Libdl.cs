@@ -8,7 +8,7 @@ namespace Silk.NET.Core.Loader
 {
     internal static class Libdl
     {
-        private const string LibName = "libdl";
+        private const string LibName = "libdl.so.2";
 
         public const int RtldNow = 0x002;
 
