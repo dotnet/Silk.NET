@@ -24,10 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalImageFormatPropertiesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceExternalImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV externalHandleType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ExternalImageFormatPropertiesNV* pExternalImageFormatProperties);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalImageFormatPropertiesNV", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceExternalImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV externalHandleType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ExternalImageFormatPropertiesNV pExternalImageFormatProperties);
-
         public NVExternalMemoryCapabilities(INativeContext ctx)
             : base(ctx)
         {

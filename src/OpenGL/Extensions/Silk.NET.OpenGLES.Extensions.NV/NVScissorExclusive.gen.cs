@@ -26,9 +26,6 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ScissorExclusiveArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV", Convention = CallingConvention.Winapi)]
-        public partial void ScissorExclusiveArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int v);
-
         public NVScissorExclusive(INativeContext ctx)
             : base(ctx)
         {

@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glProvokingVertexEXT", Convention = CallingConvention.Winapi)]
         public partial void ProvokingVertex([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
-        [NativeApi(EntryPoint = "glProvokingVertexEXT", Convention = CallingConvention.Winapi)]
-        public partial void ProvokingVertex([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexProvokingMode mode);
-
         public ExtProvokingVertex(INativeContext ctx)
             : base(ctx)
         {

@@ -26,9 +26,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glSamplePatternSGIS", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pattern);
 
-        [NativeApi(EntryPoint = "glSamplePatternSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplePatternSGIS pattern);
-
         public SgisMultisample(INativeContext ctx)
             : base(ctx)
         {

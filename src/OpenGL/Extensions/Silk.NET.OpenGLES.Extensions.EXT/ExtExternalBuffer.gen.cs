@@ -23,14 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
         public partial void BufferStorageExternal([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint clientBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
-        public partial void BufferStorageExternal([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint clientBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags);
-
         [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferStorageExternal([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint clientBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
-
-        [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
-        public partial void NamedBufferStorageExternal([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint clientBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags);
 
         public ExtExternalBuffer(INativeContext ctx)
             : base(ctx)

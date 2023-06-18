@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(Silk.NET.Core.Native.FlowDirection.In)] ANGLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ANGLE internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisample([Flow(Silk.NET.Core.Native.FlowDirection.In)] ANGLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisample([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderbufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ANGLE internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisample([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderbufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
         public AngleFramebufferMultisample(INativeContext ctx)
             : base(ctx)
         {

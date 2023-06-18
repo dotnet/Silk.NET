@@ -254,12 +254,15 @@ namespace Silk.NET.Input.Sdl
             if (_image.Width * _image.Height * BytesPerCursorPixel != _image.Pixels.Length)
                 return null;
 
-            surface = _ctx.Sdl.CreateRGBSurfaceFrom
-            (
-                _image.Pixels.Span, _image.Width, _image.Height, 32, _image.Width * 4, 0xff000000, 0x00ff0000,
-                0x0000ff00,
-                0x000000ff
-            );
+            fixed (void* pixels = _image.Pixels.Span)
+            {
+                surface = _ctx.Sdl.CreateRGBSurfaceFrom
+                (
+                    pixels, _image.Width, _image.Height, 32, _image.Width * 4, 0xff000000, 0x00ff0000,
+                    0x0000ff00,
+                    0x000000ff
+                );
+            }
 
             return _ctx.Sdl.CreateColorCursor(surface, 0, 0);
         }

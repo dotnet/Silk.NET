@@ -60,45 +60,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1BorderTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BorderTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID2D1BorderTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BorderTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1BorderTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1BorderTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID2D1BorderTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -171,24 +132,6 @@ namespace Silk.NET.Direct2D
             ExtendMode ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID2D1BorderTransform*, ExtendMode>)@this->LpVtbl[9])(@this);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1BorderTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1BorderTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

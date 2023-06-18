@@ -23,38 +23,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
-
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
-
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
-
         [NativeApi(EntryPoint = "glGetIntegerui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value, [Count(Computed = "value"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* result);
-
-        [NativeApi(EntryPoint = "glGetIntegerui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value, [Count(Computed = "value"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong result);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetNamedBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
-
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetNamedBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
-
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetNamedBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
-
         [NativeApi(EntryPoint = "glGetUniformui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* @params);
-
-        [NativeApi(EntryPoint = "glGetUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong @params);
 
         [NativeApi(EntryPoint = "glIsBufferResidentNV", Convention = CallingConvention.Winapi)]
         public partial bool IsBufferResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target);
@@ -80,72 +56,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glProgramUniformui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* value);
 
-        [NativeApi(EntryPoint = "glProgramUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong value);
-
         [NativeApi(EntryPoint = "glUniformui64NV", Convention = CallingConvention.Winapi)]
         public partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* value);
-
-        [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong value);
-
-        public unsafe ulong GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value)
-        {
-            // ReturnTypeOverloader
-            ulong ret = default;
-            GetInteger(value, &ret);
-            return ret;
-        }
-
-        public unsafe void ProgramUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniform(program, location, (uint) value.Length, in value.GetPinnableReference());
-        }
-
-        public unsafe void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> value)
-        {
-            // ImplicitCountSpanOverloader
-            Uniform(location, (uint) value.Length/1, in value.GetPinnableReference());
-        }
-
-        public unsafe ulong GetBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetBufferParameter(target, pname, out ulong silkRet);
-            return silkRet;
-        }
-
-        public unsafe ulong GetBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetBufferParameter(target, pname, out ulong silkRet);
-            return silkRet;
-        }
-
-        public unsafe ulong GetNamedBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetNamedBufferParameter(buffer, pname, out ulong silkRet);
-            return silkRet;
-        }
-
-        public unsafe ulong GetNamedBufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPNameARB pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetNamedBufferParameter(buffer, pname, out ulong silkRet);
-            return silkRet;
-        }
-
-        public unsafe ulong GetUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location)
-        {
-            // NonKhrReturnTypeOverloader
-            GetUniform(program, location, out ulong silkRet);
-            return silkRet;
-        }
 
         public NVShaderBufferLoad(INativeContext ctx)
             : base(ctx)

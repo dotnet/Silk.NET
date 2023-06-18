@@ -27,24 +27,4 @@ public unsafe static class D3D11FunctionParameterReflectionVtblExtensions
         return ret;
     }
 
-    /// <summary>To be documented.</summary>
-    public static int GetDesc(this ComPtr<ID3D11FunctionParameterReflection> thisVtbl, ref ParameterDesc pDesc)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ParameterDesc* pDescPtr = &pDesc)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)@this->LpVtbl[0])(@this, pDescPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetDesc(this ComPtr<ID3D11FunctionParameterReflection> thisVtbl, Span<ParameterDesc> pDesc)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDesc(ref pDesc.GetPinnableReference());
-    }
-
 }

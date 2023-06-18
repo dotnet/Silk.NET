@@ -23,23 +23,11 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearPixelLocalStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* values);
 
-        [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT", Convention = CallingConvention.Winapi)]
-        public partial void ClearPixelLocalStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint values);
-
         [NativeApi(EntryPoint = "glFramebufferPixelLocalStorageSizeEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferPixelLocalStorageSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size);
 
         [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT", Convention = CallingConvention.Winapi)]
         public partial uint GetFramebufferPixelLocalStorageSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint target);
-
-        [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT", Convention = CallingConvention.Winapi)]
-        public partial uint GetFramebufferPixelLocalStorageSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target);
-
-        public unsafe void ClearPixelLocalStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> values)
-        {
-            // ImplicitCountSpanOverloader
-            ClearPixelLocalStorage(offset, (uint) values.Length, in values.GetPinnableReference());
-        }
 
         public ExtShaderPixelLocalStorage2(INativeContext ctx)
             : base(ctx)

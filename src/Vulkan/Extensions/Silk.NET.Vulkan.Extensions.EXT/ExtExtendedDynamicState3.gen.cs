@@ -33,32 +33,16 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public unsafe partial void CmdSetColorBlendAdvance([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorBlendAdvancedEXT* pColorBlendAdvanced);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorBlendAdvancedEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorBlendAdvance([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ColorBlendAdvancedEXT pColorBlendAdvanced);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendEnableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetColorBlendEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Bool32* pColorBlendEnables);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorBlendEnableEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorBlendEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Bool32 pColorBlendEnables);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendEquationEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetColorBlendEquation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorBlendEquationEXT* pColorBlendEquations);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorBlendEquationEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorBlendEquation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ColorBlendEquationEXT pColorBlendEquations);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorWriteMaskEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetColorWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorComponentFlags* pColorWriteMasks);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorWriteMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ColorComponentFlags pColorWriteMasks);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetConservativeRasterizationModeEXT", Convention = CallingConvention.Winapi)]
@@ -71,10 +55,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetCoverageModulationTable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint coverageModulationTableCount, [Count(Parameter = "coverageModulationTableCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pCoverageModulationTable);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetCoverageModulationTable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint coverageModulationTableCount, [Count(Parameter = "coverageModulationTableCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pCoverageModulationTable);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoverageModulationTableEnableNV", Convention = CallingConvention.Winapi)]
@@ -149,10 +129,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public unsafe partial void CmdSetSampleMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\\lceil{\\mathit{samples} \\over 32}\\rceil]"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSampleMask);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetSampleMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetSampleMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\\lceil{\\mathit{samples} \\over 32}\\rceil]"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSampleMask);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetShadingRateImageEnableNV", Convention = CallingConvention.Winapi)]
         public partial void CmdSetShadingRateImageEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 shadingRateImageEnable);
 
@@ -165,54 +141,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public unsafe partial void CmdSetViewportSwizzle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewportSwizzleNV* pViewportSwizzles);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewportSwizzleNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetViewportSwizzle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ViewportSwizzleNV pViewportSwizzles);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingEnableNV", Convention = CallingConvention.Winapi)]
         public partial void CmdSetViewportWScalingEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 viewportWScalingEnable);
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetColorBlendAdvance([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ColorBlendAdvancedEXT> pColorBlendAdvanced)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetColorBlendAdvance(commandBuffer, firstAttachment, (uint) pColorBlendAdvanced.Length, in pColorBlendAdvanced.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetColorBlendEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Bool32> pColorBlendEnables)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetColorBlendEnable(commandBuffer, firstAttachment, (uint) pColorBlendEnables.Length, in pColorBlendEnables.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetColorBlendEquation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ColorBlendEquationEXT> pColorBlendEquations)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetColorBlendEquation(commandBuffer, firstAttachment, (uint) pColorBlendEquations.Length, in pColorBlendEquations.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetColorWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ColorComponentFlags> pColorWriteMasks)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetColorWriteMask(commandBuffer, firstAttachment, (uint) pColorWriteMasks.Length, in pColorWriteMasks.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetCoverageModulationTable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "coverageModulationTableCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> pCoverageModulationTable)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetCoverageModulationTable(commandBuffer, (uint) pCoverageModulationTable.Length, in pCoverageModulationTable.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetViewportSwizzle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewportSwizzleNV> pViewportSwizzles)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetViewportSwizzle(commandBuffer, firstViewport, (uint) pViewportSwizzles.Length, in pViewportSwizzles.GetPinnableReference());
-        }
 
         public ExtExtendedDynamicState3(INativeContext ctx)
             : base(ctx)

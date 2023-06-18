@@ -164,21 +164,6 @@ namespace Silk.NET.DXGI
         public unsafe partial int GetDebugInterface(Guid* riid, void** ppDebug);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
-        [NativeApi(EntryPoint = "DXGIGetDebugInterface", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetDebugInterface(Guid* riid, ref void* ppDebug);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
-        [NativeApi(EntryPoint = "DXGIGetDebugInterface", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetDebugInterface(ref Guid riid, void** ppDebug);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
-        [NativeApi(EntryPoint = "DXGIGetDebugInterface", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetDebugInterface(ref Guid riid, ref void* ppDebug);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 16 in dxgi1_6.h")]
         [NativeApi(EntryPoint = "DXGIDeclareAdapterRemovalSupport", Convention = CallingConvention.StdCall)]
         public partial int DeclareAdapterRemovalSupport();
@@ -194,39 +179,9 @@ namespace Silk.NET.DXGI
         public unsafe partial int CreateDXGIFactory2(uint Flags, Guid* riid, void** ppFactory);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory2", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory2(uint Flags, Guid* riid, ref void* ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory2", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory2(uint Flags, ref Guid riid, void** ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory2", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory2(uint Flags, ref Guid riid, ref void* ppFactory);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
         [NativeApi(EntryPoint = "DXGIGetDebugInterface1", Convention = CallingConvention.StdCall)]
         public unsafe partial int GetDebugInterface1(uint Flags, Guid* riid, void** pDebug);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
-        [NativeApi(EntryPoint = "DXGIGetDebugInterface1", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetDebugInterface1(uint Flags, Guid* riid, ref void* pDebug);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
-        [NativeApi(EntryPoint = "DXGIGetDebugInterface1", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetDebugInterface1(uint Flags, ref Guid riid, void** pDebug);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
-        [NativeApi(EntryPoint = "DXGIGetDebugInterface1", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetDebugInterface1(uint Flags, ref Guid riid, ref void* pDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
@@ -234,129 +189,9 @@ namespace Silk.NET.DXGI
         public unsafe partial int CreateDXGIFactory(Guid* riid, void** ppFactory);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory(Guid* riid, ref void* ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory(ref Guid riid, void** ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory(ref Guid riid, ref void* ppFactory);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
         [NativeApi(EntryPoint = "CreateDXGIFactory1", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDXGIFactory1(Guid* riid, void** ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory1", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory1(Guid* riid, ref void* ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory1", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory1(ref Guid riid, void** ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
-        [NativeApi(EntryPoint = "CreateDXGIFactory1", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDXGIFactory1(ref Guid riid, ref void* ppFactory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
-        public unsafe int GetDebugInterface<TI0>(out ComPtr<TI0> ppDebug) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            ppDebug = default;
-            return GetDebugInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDebug.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
-        public unsafe int CreateDXGIFactory2<TI0>(uint Flags, out ComPtr<TI0> ppFactory) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            ppFactory = default;
-            return CreateDXGIFactory2(Flags, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppFactory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
-        public unsafe int GetDebugInterface1<TI0>(uint Flags, out ComPtr<TI0> pDebug) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            pDebug = default;
-            return GetDebugInterface1(Flags, SilkMarshal.GuidPtrOf<TI0>(), (void**) pDebug.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
-        public unsafe int CreateDXGIFactory<TI0>(out ComPtr<TI0> ppFactory) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            ppFactory = default;
-            return CreateDXGIFactory(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppFactory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
-        public unsafe int CreateDXGIFactory1<TI0>(out ComPtr<TI0> ppFactory) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            ppFactory = default;
-            return CreateDXGIFactory1(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppFactory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
-        public unsafe ComPtr<TI0> GetDebugInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(GetDebugInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
-        public unsafe ComPtr<TI0> CreateDXGIFactory2<TI0>(uint Flags) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(CreateDXGIFactory2(Flags, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
-        public unsafe ComPtr<TI0> GetDebugInterface1<TI0>(uint Flags) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(GetDebugInterface1(Flags, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
-        public unsafe ComPtr<TI0> CreateDXGIFactory<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(CreateDXGIFactory(out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
-        public unsafe ComPtr<TI0> CreateDXGIFactory1<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(CreateDXGIFactory1(out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
 
 
         public DXGI(INativeContext ctx)

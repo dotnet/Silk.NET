@@ -89,7 +89,7 @@ fn fs_main() -> @location(0) vec4<f32> {
             wgpu.InstanceRequestAdapter
             (
                 _Instance,
-                requestAdapterOptions,
+                &requestAdapterOptions,
                 new PfnRequestAdapterCallback((_, adapter1, _, _) => _Adapter = adapter1),
                 null
             );
@@ -129,7 +129,7 @@ fn fs_main() -> @location(0) vec4<f32> {
                 NextInChain = (ChainedStruct*) (&wgslDescriptor),
             };
 
-            _Shader = wgpu.DeviceCreateShaderModule(_Device, shaderModuleDescriptor);
+            _Shader = wgpu.DeviceCreateShaderModule(_Device, &shaderModuleDescriptor);
 
             Console.WriteLine($"Created shader {(nuint) _Shader:X}");
         } //Load shader
@@ -193,7 +193,7 @@ fn fs_main() -> @location(0) vec4<f32> {
                 DepthStencil = null
             };
 
-            _Pipeline = wgpu.DeviceCreateRenderPipeline(_Device, renderPipelineDescriptor);
+            _Pipeline = wgpu.DeviceCreateRenderPipeline(_Device, &renderPipelineDescriptor);
 
             Console.WriteLine($"Created pipeline {(nuint) _Pipeline:X}");
         } //Create pipeline
@@ -223,7 +223,7 @@ fn fs_main() -> @location(0) vec4<f32> {
             PresentMode = PresentMode.Fifo
         };
 
-        _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, swapChainDescriptor);
+        _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, &swapChainDescriptor);
     }
 
     private static void WindowOnUpdate(double delta) {}
@@ -254,7 +254,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         var commandEncoderDescriptor = new CommandEncoderDescriptor();
 
-        var encoder = wgpu.DeviceCreateCommandEncoder(_Device, commandEncoderDescriptor);
+        var encoder = wgpu.DeviceCreateCommandEncoder(_Device, &commandEncoderDescriptor);
 
         var colorAttachment = new RenderPassColorAttachment
         {
@@ -278,7 +278,7 @@ fn fs_main() -> @location(0) vec4<f32> {
             DepthStencilAttachment = null
         };
 
-        var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, renderPassDescriptor);
+        var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, &renderPassDescriptor);
 
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
@@ -287,7 +287,8 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
-        var commandBuffer = wgpu.CommandEncoderFinish(encoder, new CommandBufferDescriptor());
+        var desc = new CommandBufferDescriptor();
+        var commandBuffer = wgpu.CommandEncoderFinish(encoder, &desc);
 
         wgpu.QueueSubmit(queue, 1, &commandBuffer);
         wgpu.SwapChainPresent(_SwapChain);

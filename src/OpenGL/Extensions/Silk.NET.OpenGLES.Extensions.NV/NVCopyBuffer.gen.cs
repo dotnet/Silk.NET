@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV readTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV writeTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint readOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint writeOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
-        public partial void CopyBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV readTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint readOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint writeOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
-
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
-        public partial void CopyBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV writeTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint readOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint writeOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
-
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
-        public partial void CopyBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint readOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint writeOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
-
         public NVCopyBuffer(INativeContext ctx)
             : base(ctx)
         {

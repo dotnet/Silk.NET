@@ -26,9 +26,6 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glBlendEquation", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode);
 
-        [NativeApi(EntryPoint = "glBlendEquation", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT mode);
-
         public ArbImaging(INativeContext ctx)
             : base(ctx)
         {

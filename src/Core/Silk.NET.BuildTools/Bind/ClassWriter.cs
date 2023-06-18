@@ -7,7 +7,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Bind
 {
@@ -176,60 +175,6 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"], task.Task.OverloaderExclusions, true))
-                    {
-                        var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
-                            ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)
-                            : sw;
-                        if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
-                        {
-                            sw2u.WriteLine($"#if {overload.Base.PreprocessorConditions}");
-                        }
-
-                        if (sw2u == swOverloads)
-                        {
-                            overload.Signature.Parameters.Insert
-                            (
-                                0,
-                                new Parameter
-                                {
-                                    Name = "thisApi",
-                                    Type = new Common.Functions.Type {Name = @class.ClassName, IsThis = true}
-                                }
-                            );
-                        }
-
-                        using (var sr = new StringReader(overload.Signature.Doc))
-                        {
-                            string line;
-                            while ((line = sr.ReadLine()) != null)
-                            {
-                                sw2u.WriteLine($"        {line}");
-                            }
-                        }
-
-                        foreach (var attr in overload.Signature.GetAttributes())
-                        {
-                            sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
-                        }
-
-                        sw2u.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe, @static: sw2u == swOverloads).TrimEnd(';')}");
-                        sw2u.WriteLine("        {");
-                        foreach (var line in overload.Body)
-                        {
-                            sw2u.WriteLine($"            {line}");
-                        }
-
-                        sw2u.WriteLine("        }");
-                        
-                        if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
-                        {
-                            sw2u.WriteLine($"#endif");
-                        }
-                        
-                        sw2u.WriteLine();
-                    }
-
                     if (allFunctions.Any())
                     {
                         sw.WriteLine();
@@ -387,68 +332,6 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw.WriteLine();
-                        }
-
-                        var overloads = Overloader.GetOverloads(i.Functions, profile.Projects["Core"], task.Task.OverloaderExclusions);
-                        foreach (var overload in overloads)
-                        {
-                            var coreProject = profile.Projects["Core"];
-
-                            if (!task.Task.Controls.Contains("allow-redefinitions") && coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == overload.Signature.NativeName))))
-                            {
-                                continue;
-                            }
-
-                            var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
-                                ? swOverloads ??= CreateOverloadsFile(folder, name, true)
-                                : sw;
-                            if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
-                            {
-                                sw2u.WriteLine($"#if {overload.Base.PreprocessorConditions}");
-                            }
-
-                            if (sw2u == swOverloads)
-                            {
-                                overload.Signature.Parameters.Insert
-                                (
-                                    0,
-                                    new Parameter
-                                    {
-                                        Name = "thisApi",
-                                        Type = new Common.Functions.Type {Name = name, IsThis = true}
-                                    }
-                                );
-                            }
-
-                            using (var sr = new StringReader(overload.Signature.Doc))
-                            {
-                                string line;
-                                while ((line = sr.ReadLine()) != null)
-                                {
-                                    sw2u.WriteLine($"        {line}");
-                                }
-                            }
-
-                            foreach (var attr in overload.Signature.GetAttributes())
-                            {
-                                sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
-                            }
-
-                            sw2u.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe, @static: sw2u == swOverloads).TrimEnd(';')}");
-                            sw2u.WriteLine("        {");
-                            foreach (var line in overload.Body)
-                            {
-                                sw2u.WriteLine($"            {line}");
-                            }
-
-                            sw2u.WriteLine("        }");
-                            
-                            if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
-                            {
-                                sw2u.WriteLine($"#endif");
-                            }
-
-                            sw2u.WriteLine();
                         }
 
                         if (i.Functions.Any())

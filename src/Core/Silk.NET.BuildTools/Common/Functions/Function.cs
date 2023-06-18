@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 using Newtonsoft.Json;
-using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Common.Functions
 {

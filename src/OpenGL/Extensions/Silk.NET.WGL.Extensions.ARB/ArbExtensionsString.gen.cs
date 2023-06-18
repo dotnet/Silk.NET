@@ -23,10 +23,6 @@ namespace Silk.NET.WGL.Extensions.ARB
         [NativeApi(EntryPoint = "wglGetExtensionsStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial byte* GetExtensionsString([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc);
 
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "wglGetExtensionsStringARB", Convention = CallingConvention.Winapi)]
-        public partial string GetExtensionsStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc);
-
         public ArbExtensionsString(INativeContext ctx)
             : base(ctx)
         {

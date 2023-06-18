@@ -24,10 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkExportMetalObjectsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExportMetalObjects([Count(Count = 0)] Device device, [Count(Count = 0)] ExportMetalObjectsInfoEXT* pMetalObjectsInfo);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkExportMetalObjectsEXT", Convention = CallingConvention.Winapi)]
-        public partial void ExportMetalObjects([Count(Count = 0)] Device device, [Count(Count = 0)] ref ExportMetalObjectsInfoEXT pMetalObjectsInfo);
-
         public ExtMetalObjects(INativeContext ctx)
             : base(ctx)
         {

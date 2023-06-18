@@ -23,38 +23,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
         public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureStorageMaskAMD flags);
-
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
-
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureStorageMaskAMD flags);
-
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
-
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureStorageMaskAMD flags);
-
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
-
-        [NativeApi(EntryPoint = "glTexStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TexStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureStorageMaskAMD flags);
-
         [NativeApi(EntryPoint = "glTextureStorageSparseAMD", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
-
-        [NativeApi(EntryPoint = "glTextureStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureStorageMaskAMD flags);
-
-        [NativeApi(EntryPoint = "glTextureStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
-
-        [NativeApi(EntryPoint = "glTextureStorageSparseAMD", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorageSparse([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureStorageMaskAMD flags);
 
         public AmdSparseTexture(INativeContext ctx)
             : base(ctx)

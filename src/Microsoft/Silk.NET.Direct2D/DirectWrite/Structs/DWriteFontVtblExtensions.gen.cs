@@ -28,45 +28,6 @@ public unsafe static class DWriteFontVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFont> thisVtbl, Guid* riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFont> thisVtbl, ref Guid riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFont> thisVtbl, ref Guid riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static uint AddRef(this ComPtr<IDWriteFont> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -90,18 +51,6 @@ public unsafe static class DWriteFontVtblExtensions
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, IDWriteFontFamily**, int>)@this->LpVtbl[3])(@this, fontFamily);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetFontFamily(this ComPtr<IDWriteFont> thisVtbl, ref IDWriteFontFamily* fontFamily)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteFontFamily** fontFamilyPtr = &fontFamily)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, IDWriteFontFamily**, int>)@this->LpVtbl[3])(@this, fontFamilyPtr);
-        }
         return ret;
     }
 
@@ -151,62 +100,11 @@ public unsafe static class DWriteFontVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFaceNames(this ComPtr<IDWriteFont> thisVtbl, ref IDWriteLocalizedStrings* names)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteLocalizedStrings** namesPtr = &names)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[8])(@this, namesPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetInformationalStrings(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, IDWriteLocalizedStrings** informationalStrings, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStrings, exists);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetInformationalStrings(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, IDWriteLocalizedStrings** informationalStrings, ref int exists)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (int* existsPtr = &exists)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStrings, existsPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetInformationalStrings(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, ref IDWriteLocalizedStrings* informationalStrings, int* exists)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteLocalizedStrings** informationalStringsPtr = &informationalStrings)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStringsPtr, exists);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetInformationalStrings(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, ref IDWriteLocalizedStrings* informationalStrings, ref int exists)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteLocalizedStrings** informationalStringsPtr = &informationalStrings)
-        {
-            fixed (int* existsPtr = &exists)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStringsPtr, existsPtr);
-            }
-        }
         return ret;
     }
 
@@ -227,33 +125,11 @@ public unsafe static class DWriteFontVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void GetMetrics(this ComPtr<IDWriteFont> thisVtbl, ref FontMetrics fontMetrics)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (FontMetrics* fontMetricsPtr = &fontMetrics)
-        {
-            ((delegate* unmanaged[Stdcall]<IDWriteFont*, FontMetrics*, void>)@this->LpVtbl[11])(@this, fontMetricsPtr);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int HasCharacter(this ComPtr<IDWriteFont> thisVtbl, uint unicodeValue, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, uint, int*, int>)@this->LpVtbl[12])(@this, unicodeValue, exists);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int HasCharacter(this ComPtr<IDWriteFont> thisVtbl, uint unicodeValue, ref int exists)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (int* existsPtr = &exists)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, uint, int*, int>)@this->LpVtbl[12])(@this, unicodeValue, existsPtr);
-        }
         return ret;
     }
 
@@ -264,124 +140,6 @@ public unsafe static class DWriteFontVtblExtensions
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, IDWriteFontFace**, int>)@this->LpVtbl[13])(@this, fontFace);
         return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFace(this ComPtr<IDWriteFont> thisVtbl, ref IDWriteFontFace* fontFace)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteFontFace** fontFacePtr = &fontFace)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFont*, IDWriteFontFace**, int>)@this->LpVtbl[13])(@this, fontFacePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0>(this ComPtr<IDWriteFont> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppvObject = default;
-        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFont> thisVtbl, Span<Guid> riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFont> thisVtbl, Span<Guid> riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetFontFamily<TI0>(this ComPtr<IDWriteFont> thisVtbl, ref ComPtr<TI0> fontFamily) where TI0 : unmanaged, IComVtbl<IDWriteFontFamily>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetFontFamily((IDWriteFontFamily**) fontFamily.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetFaceNames<TI0>(this ComPtr<IDWriteFont> thisVtbl, ref ComPtr<TI0> names) where TI0 : unmanaged, IComVtbl<IDWriteLocalizedStrings>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetFaceNames((IDWriteLocalizedStrings**) names.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetInformationalStrings<TI0>(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, ref ComPtr<TI0> informationalStrings, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteLocalizedStrings>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetInformationalStrings(informationalStringID, (IDWriteLocalizedStrings**) informationalStrings.GetAddressOf(), exists);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetInformationalStrings(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, IDWriteLocalizedStrings** informationalStrings, Span<int> exists)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetInformationalStrings(informationalStringID, informationalStrings, ref exists.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetInformationalStrings<TI0>(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, ref ComPtr<TI0> informationalStrings, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteLocalizedStrings>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetInformationalStrings(informationalStringID, (IDWriteLocalizedStrings**) informationalStrings.GetAddressOf(), ref exists);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetInformationalStrings(this ComPtr<IDWriteFont> thisVtbl, InformationalStringID informationalStringID, ref IDWriteLocalizedStrings* informationalStrings, Span<int> exists)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetInformationalStrings(informationalStringID, ref informationalStrings, ref exists.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void GetMetrics(this ComPtr<IDWriteFont> thisVtbl, Span<FontMetrics> fontMetrics)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->GetMetrics(ref fontMetrics.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int HasCharacter(this ComPtr<IDWriteFont> thisVtbl, uint unicodeValue, Span<int> exists)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->HasCharacter(unicodeValue, ref exists.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateFontFace<TI0>(this ComPtr<IDWriteFont> thisVtbl, ref ComPtr<TI0> fontFace) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateFontFace((IDWriteFontFace**) fontFace.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDWriteFont> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-        return silkRet;
     }
 
 }

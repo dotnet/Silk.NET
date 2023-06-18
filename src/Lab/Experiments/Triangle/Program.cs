@@ -3,7 +3,9 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Text;
 using SampleBase;
+using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
@@ -83,7 +85,7 @@ namespace Triangle
             Console.WriteLine("=== BEGIN OPENGL INFORMATION");
             foreach (StringName val in Enum.GetValues(typeof(StringName)))
             {
-                Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
+                Console.WriteLine($"{val} = {SilkMarshal.PtrToString((nint) _gl.GetString((GLEnum) val))}");
             }
             Console.WriteLine("=== END OPENGL INFORMATION");
 
@@ -95,7 +97,11 @@ namespace Triangle
             }
 
             _gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-            _vertexBufferObject = _gl.GenBuffer();
+            fixed (uint* vbo = &_vertexBufferObject)
+            {
+                _gl.GenBuffers(1, vbo);
+            }
+
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
             fixed (float* vertices = _vertices)
             {
@@ -109,12 +115,16 @@ namespace Triangle
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
 #endif
             _shader.Use();
-            _vertexArrayObject = _gl.GenVertexArray();
+            fixed (uint* vao = &_vertexArrayObject)
+            {
+                _gl.GenVertexArrays(1, vao);
+            }
+
             _gl.BindVertexArray(_vertexArrayObject);
             _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), null);
             _gl.EnableVertexAttribArray(0);
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
-            _gl.Viewport(_window.FramebufferSize);
+            _gl.Viewport(0, 0, (uint) _window.FramebufferSize.X, (uint) _window.FramebufferSize.Y);
             _window.Update += WindowOnUpdate;
         }
 
@@ -150,17 +160,25 @@ namespace Triangle
 
         private static void Resize(Vector2D<int> size)
         {
-            _gl.Viewport(size);
+            _gl.Viewport(0, 0, (uint) size.X, (uint) size.Y);
         }
 
-        private static void End()
+        private static unsafe void End()
         {
             Console.WriteLine("Ending...");
             _gl.BindBuffer(GLEnum.ArrayBuffer, 0);
             _gl.BindVertexArray(0);
             _gl.UseProgram(0);
-            _gl.DeleteBuffer(_vertexBufferObject);
-            _gl.DeleteVertexArray(_vertexArrayObject);
+            fixed (uint* vbo = &_vertexBufferObject)
+            {
+                _gl.DeleteBuffers(1, vbo);
+            }
+
+            fixed (uint* vao = &_vertexArrayObject)
+            {
+                _gl.DeleteVertexArrays(1, vao);
+            }
+
             _gl.DeleteProgram(_shader.Handle);
         }
     }

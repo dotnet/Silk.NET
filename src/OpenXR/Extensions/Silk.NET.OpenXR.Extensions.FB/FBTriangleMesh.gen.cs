@@ -25,18 +25,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleMeshCreateInfoFB* createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleMeshCreateInfoFB* createInfo, [Count(Count = 0)] ref TriangleMeshFB outTriangleMesh);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] ref TriangleMeshFB outTriangleMesh);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyTriangleMeshFB", Convention = CallingConvention.Winapi)]
         public partial Result DestroyTriangleMeshFB([Count(Count = 0)] TriangleMeshFB mesh);
 
@@ -47,10 +35,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrTriangleMeshBeginVertexBufferUpdateFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshBeginVertexBufferUpdateFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] uint* outVertexCount);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshBeginVertexBufferUpdateFB", Convention = CallingConvention.Winapi)]
-        public partial Result TriangleMeshBeginVertexBufferUpdateFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] ref uint outVertexCount);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrTriangleMeshEndUpdateFB", Convention = CallingConvention.Winapi)]
@@ -65,16 +49,8 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result TriangleMeshGetIndexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] uint** outIndexBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshGetIndexBufferFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result TriangleMeshGetIndexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] ref uint* outIndexBuffer);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrTriangleMeshGetVertexBufferFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshGetVertexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] Vector3f** outVertexBuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshGetVertexBufferFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result TriangleMeshGetVertexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] ref Vector3f* outVertexBuffer);
 
         public FBTriangleMesh(INativeContext ctx)
             : base(ctx)

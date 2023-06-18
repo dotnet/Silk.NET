@@ -222,36 +222,56 @@ namespace Silk.NET.Vulkan
         VideoEncodeH264SessionParametersCreateInfoExt = 1000038001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_ADD_INFO_EXT")]
         VideoEncodeH264SessionParametersAddInfoExt = 1000038002,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_VCL_FRAME_INFO_EXT")]
-        VideoEncodeH264VclFrameInfoExt = 1000038003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PICTURE_INFO_EXT")]
+        VideoEncodeH264PictureInfoExt = 1000038003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_DPB_SLOT_INFO_EXT")]
         VideoEncodeH264DpbSlotInfoExt = 1000038004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_INFO_EXT")]
         VideoEncodeH264NaluSliceInfoExt = 1000038005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_GOP_REMAINING_FRAME_INFO_EXT")]
+        VideoEncodeH264GopRemainingFrameInfoExt = 1000038006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_INFO_EXT")]
         VideoEncodeH264ProfileInfoExt = 1000038007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_EXT")]
         VideoEncodeH264RateControlInfoExt = 1000038008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_EXT")]
         VideoEncodeH264RateControlLayerInfoExt = 1000038009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_CREATE_INFO_EXT")]
+        VideoEncodeH264SessionCreateInfoExt = 1000038010,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_QUALITY_LEVEL_PROPERTIES_EXT")]
+        VideoEncodeH264QualityLevelPropertiesExt = 1000038011,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_GET_INFO_EXT")]
+        VideoEncodeH264SessionParametersGetInfoExt = 1000038012,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_FEEDBACK_INFO_EXT")]
+        VideoEncodeH264SessionParametersFeedbackInfoExt = 1000038013,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_CAPABILITIES_EXT")]
         VideoEncodeH265CapabilitiesExt = 1000039000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_CREATE_INFO_EXT")]
         VideoEncodeH265SessionParametersCreateInfoExt = 1000039001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_ADD_INFO_EXT")]
         VideoEncodeH265SessionParametersAddInfoExt = 1000039002,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_VCL_FRAME_INFO_EXT")]
-        VideoEncodeH265VclFrameInfoExt = 1000039003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PICTURE_INFO_EXT")]
+        VideoEncodeH265PictureInfoExt = 1000039003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_DPB_SLOT_INFO_EXT")]
         VideoEncodeH265DpbSlotInfoExt = 1000039004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_INFO_EXT")]
         VideoEncodeH265NaluSliceSegmentInfoExt = 1000039005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_GOP_REMAINING_FRAME_INFO_EXT")]
+        VideoEncodeH265GopRemainingFrameInfoExt = 1000039006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_INFO_EXT")]
         VideoEncodeH265ProfileInfoExt = 1000039007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_EXT")]
         VideoEncodeH265RateControlInfoExt = 1000039009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_EXT")]
         VideoEncodeH265RateControlLayerInfoExt = 1000039010,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_CREATE_INFO_EXT")]
+        VideoEncodeH265SessionCreateInfoExt = 1000039011,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_QUALITY_LEVEL_PROPERTIES_EXT")]
+        VideoEncodeH265QualityLevelPropertiesExt = 1000039012,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_GET_INFO_EXT")]
+        VideoEncodeH265SessionParametersGetInfoExt = 1000039013,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_FEEDBACK_INFO_EXT")]
+        VideoEncodeH265SessionParametersFeedbackInfoExt = 1000039014,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_CAPABILITIES_KHR")]
         VideoDecodeH264CapabilitiesKhr = 1000040000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PICTURE_INFO_KHR")]
@@ -1060,6 +1080,12 @@ namespace Silk.NET.Vulkan
         CommandBufferInheritanceRenderPassTransformInfoQCom = 1000282000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_TRANSFORM_BEGIN_INFO_QCOM")]
         RenderPassTransformBeginInfoQCom = 1000282001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_BIAS_CONTROL_FEATURES_EXT")]
+        PhysicalDeviceDepthBiasControlFeaturesExt = 1000283000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEPTH_BIAS_INFO_EXT")]
+        DepthBiasInfoExt = 1000283001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEPTH_BIAS_REPRESENTATION_INFO_EXT")]
+        DepthBiasRepresentationInfoExt = 1000283002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_MEMORY_REPORT_FEATURES_EXT")]
         PhysicalDeviceDeviceMemoryReportFeaturesExt = 1000284000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DEVICE_MEMORY_REPORT_CREATE_INFO_EXT")]
@@ -1108,6 +1134,16 @@ namespace Silk.NET.Vulkan
         VideoEncodeUsageInfoKhr = 1000299004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_FEEDBACK_CREATE_INFO_KHR")]
         QueryPoolVideoEncodeFeedbackCreateInfoKhr = 1000299005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_QUALITY_LEVEL_INFO_KHR")]
+        PhysicalDeviceVideoEncodeQualityLevelInfoKhr = 1000299006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUALITY_LEVEL_PROPERTIES_KHR")]
+        VideoEncodeQualityLevelPropertiesKhr = 1000299007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUALITY_LEVEL_INFO_KHR")]
+        VideoEncodeQualityLevelInfoKhr = 1000299008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_PARAMETERS_GET_INFO_KHR")]
+        VideoEncodeSessionParametersGetInfoKhr = 1000299009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_PARAMETERS_FEEDBACK_INFO_KHR")]
+        VideoEncodeSessionParametersFeedbackInfoKhr = 1000299010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV")]
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV")]
@@ -1468,6 +1504,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceImageProcessingPropertiesQCom = 1000440001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_SAMPLE_WEIGHT_CREATE_INFO_QCOM")]
         ImageViewSampleWeightCreateInfoQCom = 1000440002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_ACQUIRE_UNMODIFIED_EXT")]
+        ExternalMemoryAcquireUnmodifiedExt = 1000453000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_FEATURES_EXT")]
         PhysicalDeviceExtendedDynamicState3FeaturesExt = 1000455000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_PROPERTIES_EXT")]
@@ -1554,6 +1592,16 @@ namespace Silk.NET.Vulkan
         MultiviewPerViewRenderAreasRenderPassBeginInfoQCom = 1000510001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_DYNAMIC_STATE_FEATURES_EXT")]
         PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesExt = 1000524000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_BUFFER_PROPERTIES_QNX")]
+        ScreenBufferPropertiesQnx = 1000529000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_BUFFER_FORMAT_PROPERTIES_QNX")]
+        ScreenBufferFormatPropertiesQnx = 1000529001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_SCREEN_BUFFER_INFO_QNX")]
+        ImportScreenBufferInfoQnx = 1000529002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_QNX")]
+        ExternalFormatQnx = 1000529003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_SCREEN_BUFFER_FEATURES_QNX")]
+        PhysicalDeviceExternalMemoryScreenBufferFeaturesQnx = 1000529004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

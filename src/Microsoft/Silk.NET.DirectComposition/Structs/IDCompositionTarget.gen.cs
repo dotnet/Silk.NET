@@ -54,45 +54,6 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionTarget*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionTarget*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionTarget*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -117,44 +78,6 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDCompositionTarget*, IDCompositionVisual*, int>)@this->LpVtbl[3])(@this, visual);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetRoot(ref IDCompositionVisual visual)
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDCompositionVisual* visualPtr = &visual)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionTarget*, IDCompositionVisual*, int>)@this->LpVtbl[3])(@this, visualPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetRoot<TI0>(ComPtr<TI0> visual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->SetRoot((IDCompositionVisual*) visual.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDCompositionTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

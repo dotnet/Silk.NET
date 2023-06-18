@@ -28,18 +28,6 @@ public unsafe static class D3D12ShaderReflectionVariableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc(this ComPtr<ID3D12ShaderReflectionVariable> thisVtbl, ref ShaderVariableDesc pDesc)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ShaderVariableDesc* pDescPtr = &pDesc)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionVariable*, ShaderVariableDesc*, int>)@this->LpVtbl[0])(@this, pDescPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe ID3D12ShaderReflectionType* GetType(this ComPtr<ID3D12ShaderReflectionVariable> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -64,14 +52,6 @@ public unsafe static class D3D12ShaderReflectionVariableVtblExtensions
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionVariable*, uint, uint>)@this->LpVtbl[3])(@this, uArrayIndex);
         return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetDesc(this ComPtr<ID3D12ShaderReflectionVariable> thisVtbl, Span<ShaderVariableDesc> pDesc)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDesc(ref pDesc.GetPinnableReference());
     }
 
 }

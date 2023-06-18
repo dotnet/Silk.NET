@@ -2,8 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Text;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -111,7 +113,12 @@ namespace Silk.NET.SDL
         {
             AssertCreated();
             _sdl.ClearError();
-            var ret = (nint) _sdl.GLGetProcAddress(proc);
+            nint ret;
+            fixed (byte* procPtr = Encoding.UTF8.GetBytes(proc))
+            {
+                ret = (nint) _sdl.GLGetProcAddress(procPtr);
+            }
+
             _sdl.ThrowError();
             if (ret == 0)
             {
@@ -132,8 +139,13 @@ namespace Silk.NET.SDL
                 return false;
             }
             
-            var ret = (nint) _sdl.GLGetProcAddress(proc);
-            if (!string.IsNullOrWhiteSpace(_sdl.GetErrorS()))
+            nint ret;
+            fixed (byte* procPtr = Encoding.UTF8.GetBytes(proc))
+            {
+                ret = (nint) _sdl.GLGetProcAddress(procPtr);
+            }
+
+            if (!string.IsNullOrWhiteSpace(SilkMarshal.PtrToString((nint) _sdl.GetError())))
             {
                 _sdl.ClearError();
                 return false;

@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenCL;
 
 namespace CLMultiplication
@@ -66,7 +67,8 @@ namespace CLMultiplication
 
             queue = cl.CreateCommandQueue(ctx, device, CommandQueueProperties.None, &err);
             AssertZero(err);
-            program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
+            var codeMem = SilkMarshal.StringArrayToMemory(kernelCode);
+            program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, (byte**) codeMem.Handle, null, &err);
             AssertZero(err);
             err = cl.BuildProgram(program, 0, null, (byte*) null, null, null);
             try
@@ -83,7 +85,11 @@ namespace CLMultiplication
                 throw new Exception(Marshal.PtrToStringAnsi(log), ex);
             }
 
-            kMultiplyby = cl.CreateKernel(program, "multiply_by", &err);
+            fixed (byte* multiplyBy = "multiply_by"u8)
+            {
+                kMultiplyby = cl.CreateKernel(program, multiplyBy, &err);
+            }
+
             AssertZero(err);
 
             // initialize buffer with data

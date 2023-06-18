@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glPolygonModeNV", Convention = CallingConvention.Winapi)]
         public partial void PolygonMode([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode);
 
-        [NativeApi(EntryPoint = "glPolygonModeNV", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PolygonMode mode);
-
-        [NativeApi(EntryPoint = "glPolygonModeNV", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode);
-
-        [NativeApi(EntryPoint = "glPolygonModeNV", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PolygonMode mode);
-
         public NVPolygonMode(INativeContext ctx)
             : base(ctx)
         {

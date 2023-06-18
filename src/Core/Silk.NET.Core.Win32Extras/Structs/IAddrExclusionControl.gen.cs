@@ -54,45 +54,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -120,107 +81,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCurrentAddrExclusionList(Guid* riid, ref void* ppEnumerator)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppEnumeratorPtr = &ppEnumerator)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riid, ppEnumeratorPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCurrentAddrExclusionList(ref Guid riid, void** ppEnumerator)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riidPtr, ppEnumerator);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCurrentAddrExclusionList(ref Guid riid, ref void* ppEnumerator)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppEnumeratorPtr = &ppEnumerator)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riidPtr, ppEnumeratorPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int UpdateAddrExclusionList(Silk.NET.Core.Native.IUnknown* pEnumerator)
         {
             var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, pEnumerator);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int UpdateAddrExclusionList(ref Silk.NET.Core.Native.IUnknown pEnumerator)
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown* pEnumeratorPtr = &pEnumerator)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAddrExclusionControl*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, pEnumeratorPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetCurrentAddrExclusionList<TI0>(out ComPtr<TI0> ppEnumerator) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppEnumerator = default;
-            return @this->GetCurrentAddrExclusionList(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppEnumerator.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int UpdateAddrExclusionList<TI0>(ComPtr<TI0> pEnumerator) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->UpdateAddrExclusionList((Silk.NET.Core.Native.IUnknown*) pEnumerator.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> GetCurrentAddrExclusionList<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAddrExclusionControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->GetCurrentAddrExclusionList(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

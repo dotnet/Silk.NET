@@ -23,64 +23,11 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffersIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* indices);
 
-        [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DrawBuffersIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int indices);
-
-        [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DrawBuffersIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in EXT location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* indices);
-
-        [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawBuffersIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in EXT location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int indices);
-
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* data);
 
-        [NativeApi(EntryPoint = "glGetIntegeri_vEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int data);
-
-        [NativeApi(EntryPoint = "glGetIntegeri_vEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetPName target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* data);
-
-        [NativeApi(EntryPoint = "glGetIntegeri_vEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetPName target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int data);
-
         [NativeApi(EntryPoint = "glReadBufferIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void ReadBufferIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int index);
-
-        [NativeApi(EntryPoint = "glReadBufferIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ReadBufferIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadBufferMode src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int index);
-
-        public unsafe void DrawBuffersIndexed([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> indices)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffersIndexed((int) indices.Length, location, in indices.GetPinnableReference());
-        }
-
-        public unsafe void DrawBuffersIndexed([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EXT> location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* indices)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffersIndexed((int) location.Length, in location.GetPinnableReference(), indices);
-        }
-
-        public unsafe void DrawBuffersIndexed([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EXT> location, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> indices)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffersIndexed((int) indices.Length, in location.GetPinnableReference(), in indices.GetPinnableReference());
-        }
-
-        public unsafe int GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger(target, index, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetPName target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger(target, index, out int silkRet);
-            return silkRet;
-        }
 
         public ExtMultiviewDrawBuffers(INativeContext ctx)
             : base(ctx)

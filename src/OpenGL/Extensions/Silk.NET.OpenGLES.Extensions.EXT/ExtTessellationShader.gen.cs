@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glPatchParameteriEXT", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glPatchParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
-
         public ExtTessellationShader(INativeContext ctx)
             : base(ctx)
         {

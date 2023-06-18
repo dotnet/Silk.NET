@@ -23,27 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV", Convention = CallingConvention.Winapi)]
         public unsafe partial nint VdpauregisterVideoSurfaceWithPictureStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* textureNames, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool isFrameStructure);
 
-        [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint VdpauregisterVideoSurfaceWithPictureStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint textureNames, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool isFrameStructure);
-
-        [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint VdpauregisterVideoSurfaceWithPictureStructure<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* textureNames, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool isFrameStructure) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV", Convention = CallingConvention.Winapi)]
-        public partial nint VdpauregisterVideoSurfaceWithPictureStructure<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint textureNames, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool isFrameStructure) where T0 : unmanaged;
-
-        public unsafe nint VdpauregisterVideoSurfaceWithPictureStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> textureNames, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool isFrameStructure)
-        {
-            // ImplicitCountSpanOverloader
-            return VdpauregisterVideoSurfaceWithPictureStructure(vdpSurface, target, (uint) textureNames.Length, in textureNames.GetPinnableReference(), isFrameStructure);
-        }
-
-        public unsafe nint VdpauregisterVideoSurfaceWithPictureStructure<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> textureNames, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool isFrameStructure) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            return VdpauregisterVideoSurfaceWithPictureStructure(in vdpSurface, target, (uint) textureNames.Length, in textureNames.GetPinnableReference(), isFrameStructure);
-        }
-
         public NVVdpauInterop2(INativeContext ctx)
             : base(ctx)
         {

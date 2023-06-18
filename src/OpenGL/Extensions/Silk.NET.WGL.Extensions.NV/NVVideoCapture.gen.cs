@@ -26,17 +26,11 @@ namespace Silk.NET.WGL.Extensions.NV
         [NativeApi(EntryPoint = "wglEnumerateVideoCaptureDevicesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial uint EnumerateVideoCaptureDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* phDeviceList);
 
-        [NativeApi(EntryPoint = "wglEnumerateVideoCaptureDevicesNV", Convention = CallingConvention.Winapi)]
-        public partial uint EnumerateVideoCaptureDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint phDeviceList);
-
         [NativeApi(EntryPoint = "wglLockVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 LockVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice);
 
         [NativeApi(EntryPoint = "wglQueryVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 QueryVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValue);
-
-        [NativeApi(EntryPoint = "wglQueryVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValue);
 
         [NativeApi(EntryPoint = "wglReleaseVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 ReleaseVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice);

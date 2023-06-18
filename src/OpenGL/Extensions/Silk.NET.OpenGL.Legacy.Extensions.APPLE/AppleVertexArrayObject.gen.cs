@@ -26,75 +26,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* arrays);
 
-        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void DeleteVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint arrays);
-
-        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DeleteVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexArray* arrays);
-
-        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void DeleteVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexArray arrays);
-
         [NativeApi(EntryPoint = "glGenVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* arrays);
 
-        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void GenVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint arrays);
-
-        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GenVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VertexArray* arrays);
-
-        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void GenVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VertexArray arrays);
-
         [NativeApi(EntryPoint = "glIsVertexArrayAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool IsVertexArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint array);
-
-        public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arrays)
-        {
-            // ArrayParameterOverloader
-            DeleteVertexArrays(1, &arrays);
-        }
-
-        public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> arrays)
-        {
-            // ImplicitCountSpanOverloader
-            DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
-        }
-
-        public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
-        {
-            // ImplicitCountSpanOverloader
-            DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
-        }
-
-        public unsafe uint GenVertexArray()
-        {
-            const uint n = 1;
-            // ReturnTypeOverloader
-            uint ret = default;
-            GenVertexArrays(n, &ret);
-            return ret;
-        }
-
-        public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> arrays)
-        {
-            // ImplicitCountSpanOverloader
-            GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
-        }
-
-        public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VertexArray> arrays)
-        {
-            // ImplicitCountSpanOverloader
-            GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
-        }
-
-        public unsafe uint GenVertexArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n)
-        {
-            // NonKhrReturnTypeOverloader
-            GenVertexArrays(n, out uint silkRet);
-            return silkRet;
-        }
 
         public AppleVertexArrayObject(INativeContext ctx)
             : base(ctx)

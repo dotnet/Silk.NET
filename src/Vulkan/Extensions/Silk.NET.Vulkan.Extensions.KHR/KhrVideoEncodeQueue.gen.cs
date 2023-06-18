@@ -25,8 +25,12 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoEncodeInfoKHR* pEncodeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoEncodeInfoKHR pEncodeInfo);
+        [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceVideoEncodeQualityLevelProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceVideoEncodeQualityLevelInfoKHR* pQualityLevelInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties);
 
         public KhrVideoEncodeQueue(INativeContext ctx)
             : base(ctx)

@@ -21,9 +21,14 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"BytesWrittenBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BYTES_WRITTEN_BIT_KHR")]
         VideoEncodeFeedbackBitstreamBytesWrittenBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"HasOverridesBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_HAS_OVERRIDES_BIT_KHR")]
+        VideoEncodeFeedbackBitstreamHasOverridesBitKhr = 4,
         [NativeName("Name", "VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BUFFER_OFFSET_BIT_KHR")]
         BufferOffsetBitKhr = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BYTES_WRITTEN_BIT_KHR")]
         BytesWrittenBitKhr = 2,
+        [NativeName("Name", "VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_HAS_OVERRIDES_BIT_KHR")]
+        HasOverridesBitKhr = 4,
     }
 }

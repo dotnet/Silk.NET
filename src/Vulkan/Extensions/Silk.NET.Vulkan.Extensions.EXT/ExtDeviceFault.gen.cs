@@ -24,20 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkGetDeviceFaultInfoEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDeviceFaultInfo([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceFaultCountsEXT* pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceFaultInfoEXT* pFaultInfo);
 
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pFaultInfo = new(StructureType.DeviceFaultInfoExt);")]
-        [NativeApi(EntryPoint = "vkGetDeviceFaultInfoEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceFaultInfo([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceFaultCountsEXT* pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeviceFaultInfoEXT pFaultInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceFaultInfoEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceFaultInfo([Count(Count = 0)] Device device, [Count(Count = 0)] ref DeviceFaultCountsEXT pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceFaultInfoEXT* pFaultInfo);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pFaultInfo = new(StructureType.DeviceFaultInfoExt);")]
-        [NativeApi(EntryPoint = "vkGetDeviceFaultInfoEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetDeviceFaultInfo([Count(Count = 0)] Device device, [Count(Count = 0)] ref DeviceFaultCountsEXT pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeviceFaultInfoEXT pFaultInfo);
-
         public ExtDeviceFault(INativeContext ctx)
             : base(ctx)
         {

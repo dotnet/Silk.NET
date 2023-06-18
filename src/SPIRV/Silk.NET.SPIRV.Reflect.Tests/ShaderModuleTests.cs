@@ -20,7 +20,7 @@ public class ShaderModuleTests
         {
             var module = new ReflectShaderModule();
 
-            var result = reflect.CreateShaderModule((nuint)moduleBytes.Length, ptr, ref module);
+            var result = reflect.CreateShaderModule((nuint)moduleBytes.Length, ptr, &module);
 
             if(result != Result.Success) 
             {
@@ -35,8 +35,8 @@ public class ShaderModuleTests
                 throw new Exception($"Failed to get count of input variables res:{result}");
             }
 
-            var variables = new InterfaceVariable*[varCount];
-            result = reflect.EnumerateInputVariables(&module, &varCount, ref variables[0]);
+            var variables = stackalloc InterfaceVariable*[(int) varCount]; // don't do this in real code!
+            result = reflect.EnumerateInputVariables(&module, &varCount, &variables[0]);
             
             if(result != Result.Success) 
             {

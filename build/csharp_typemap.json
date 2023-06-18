@@ -157,5 +157,6 @@
     "_screen_context": "void",
     "cl_properties": "ulong",
 	"IStream": "Silk.NET.Core.Win32Extras.IStream",
-	"FILETIME": "Silk.NET.Core.Win32Extras.Filetime"
+	"FILETIME": "Silk.NET.Core.Win32Extras.Filetime",
+    "_screen_buffer": "void"
 }

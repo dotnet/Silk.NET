@@ -25,24 +25,12 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pValue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValueKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pValue);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSignalSemaphoreKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSignalSemaphoreKHR", Convention = CallingConvention.Winapi)]
-        public partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SemaphoreSignalInfo pSignalInfo);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphoresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitSemaphoresKHR", Convention = CallingConvention.Winapi)]
-        public partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
 
         public KhrTimelineSemaphore(INativeContext ctx)
             : base(ctx)

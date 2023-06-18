@@ -24,10 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         [NativeApi(EntryPoint = "xrPassthroughLayerSetKeyboardHandsIntensityFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PassthroughLayerSetKeyboardHandsIntensityFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughKeyboardHandsIntensityFB* intensity);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPassthroughLayerSetKeyboardHandsIntensityFB", Convention = CallingConvention.Winapi)]
-        public partial Result PassthroughLayerSetKeyboardHandsIntensityFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughKeyboardHandsIntensityFB intensity);
-
         public FBPassthroughKeyboardHands(INativeContext ctx)
             : base(ctx)
         {

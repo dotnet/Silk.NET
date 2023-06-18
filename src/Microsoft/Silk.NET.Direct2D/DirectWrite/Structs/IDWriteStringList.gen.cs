@@ -54,45 +54,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -129,46 +90,11 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetLocaleNameLength(uint listIndex, ref uint length)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* lengthPtr = &length)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, uint*, int>)@this->LpVtbl[4])(@this, listIndex, lengthPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetLocaleName(uint listIndex, char* localeName, uint size)
         {
             var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, char*, uint, int>)@this->LpVtbl[5])(@this, listIndex, localeName, size);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetLocaleName(uint listIndex, ref char localeName, uint size)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (char* localeNamePtr = &localeName)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, char*, uint, int>)@this->LpVtbl[5])(@this, listIndex, localeNamePtr, size);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetLocaleName(uint listIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, uint size)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, byte*, uint, int>)@this->LpVtbl[5])(@this, listIndex, localeNamePtr, size);
-            SilkMarshal.Free((nint)localeNamePtr);
             return ret;
         }
 
@@ -182,65 +108,12 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetStringLength(uint listIndex, ref uint length)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* lengthPtr = &length)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, uint*, int>)@this->LpVtbl[6])(@this, listIndex, lengthPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetString(uint listIndex, char* stringBuffer, uint stringBufferSize)
         {
             var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, char*, uint, int>)@this->LpVtbl[7])(@this, listIndex, stringBuffer, stringBufferSize);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetString(uint listIndex, ref char stringBuffer, uint stringBufferSize)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (char* stringBufferPtr = &stringBuffer)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, char*, uint, int>)@this->LpVtbl[7])(@this, listIndex, stringBufferPtr, stringBufferSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetString(uint listIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string stringBuffer, uint stringBufferSize)
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var stringBufferPtr = (byte*) SilkMarshal.StringToPtr(stringBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteStringList*, uint, byte*, uint, int>)@this->LpVtbl[7])(@this, listIndex, stringBufferPtr, stringBufferSize);
-            SilkMarshal.Free((nint)stringBufferPtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteStringList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

@@ -63,45 +63,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -124,16 +85,6 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void GetFactory(ref ID2D1Factory* factory)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID2D1Factory** factoryPtr = &factory)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -177,143 +128,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetDpi(float* dpiX, ref float dpiY)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (float* dpiYPtr = &dpiY)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, float*, float*, void>)@this->LpVtbl[7])(@this, dpiX, dpiYPtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void GetDpi(ref float dpiX, float* dpiY)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (float* dpiXPtr = &dpiX)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, float*, float*, void>)@this->LpVtbl[7])(@this, dpiXPtr, dpiY);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetDpi(ref float dpiX, ref float dpiY)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (float* dpiXPtr = &dpiX)
-            {
-                fixed (float* dpiYPtr = &dpiY)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, float*, float*, void>)@this->LpVtbl[7])(@this, dpiXPtr, dpiYPtr);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPoint, bitmap, srcRect);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPoint, bitmap, srcRectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPoint, bitmapPtr, srcRect);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
-            {
-                fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPoint, bitmapPtr, srcRectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPointPtr, bitmap, srcRect);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPointPtr, bitmap, srcRectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPointPtr, bitmapPtr, srcRect);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CopyFromBitmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
-                {
-                    fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[8])(@this, destPointPtr, bitmapPtr, srcRectPtr);
-                    }
-                }
-            }
             return ret;
         }
 
@@ -327,105 +146,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPoint, renderTarget, srcRectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1RenderTarget* renderTargetPtr = &renderTarget)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPoint, renderTargetPtr, srcRect);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1RenderTarget* renderTargetPtr = &renderTarget)
-            {
-                fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPoint, renderTargetPtr, srcRectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPointPtr, renderTarget, srcRect);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPointPtr, renderTarget, srcRectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                fixed (ID2D1RenderTarget* renderTargetPtr = &renderTarget)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPointPtr, renderTargetPtr, srcRect);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CopyFromRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Vector2D<uint>* destPointPtr = &destPoint)
-            {
-                fixed (ID2D1RenderTarget* renderTargetPtr = &renderTarget)
-                {
-                    fixed (Silk.NET.Maths.Box2D<uint>* srcRectPtr = &srcRect)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Vector2D<uint>*, ID2D1RenderTarget*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[9])(@this, destPointPtr, renderTargetPtr, srcRectPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CopyFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch)
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -435,59 +155,10 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromMemory<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch) where T0 : unmanaged
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* srcDataPtr = &srcData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRect, srcDataPtr, pitch);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Box2D<uint>* dstRectPtr = &dstRect)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRectPtr, srcData, pitch);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CopyFromMemory<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch) where T0 : unmanaged
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Box2D<uint>* dstRectPtr = &dstRect)
-            {
-                fixed (void* srcDataPtr = &srcData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRectPtr, srcDataPtr, pitch);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void GetColorContext(ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, ID2D1ColorContext**, void>)@this->LpVtbl[11])(@this, colorContext);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void GetColorContext(ref ID2D1ColorContext* colorContext)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID2D1ColorContext** colorContextPtr = &colorContext)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, ID2D1ColorContext**, void>)@this->LpVtbl[11])(@this, colorContextPtr);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -509,35 +180,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSurface(ref Silk.NET.DXGI.IDXGISurface* dxgiSurface)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.DXGI.IDXGISurface** dxgiSurfacePtr = &dxgiSurface)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[13])(@this, dxgiSurfacePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int Map(MapOptions options, MappedRect* mappedRect)
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, MapOptions, MappedRect*, int>)@this->LpVtbl[14])(@this, options, mappedRect);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Map(MapOptions options, ref MappedRect mappedRect)
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (MappedRect* mappedRectPtr = &mappedRect)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, MapOptions, MappedRect*, int>)@this->LpVtbl[14])(@this, options, mappedRectPtr);
-            }
             return ret;
         }
 
@@ -548,104 +195,6 @@ namespace Silk.NET.Direct2D
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, int>)@this->LpVtbl[15])(@this);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromBitmap(destPoint, (ID2D1Bitmap*) bitmap.Handle, srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromBitmap(destPoint, (ID2D1Bitmap*) bitmap.Handle, in srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromBitmap<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromBitmap(in destPoint, (ID2D1Bitmap*) bitmap.Handle, srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CopyFromBitmap<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromBitmap(in destPoint, (ID2D1Bitmap*) bitmap.Handle, in srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromRenderTarget(destPoint, (ID2D1RenderTarget*) renderTarget.Handle, srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromRenderTarget(destPoint, (ID2D1RenderTarget*) renderTarget.Handle, in srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromRenderTarget(in destPoint, (ID2D1RenderTarget*) renderTarget.Handle, srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CopyFromRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CopyFromRenderTarget(in destPoint, (ID2D1RenderTarget*) renderTarget.Handle, in srcRect);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetColorContext<TI0>(ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->GetColorContext((ID2D1ColorContext**) colorContext.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

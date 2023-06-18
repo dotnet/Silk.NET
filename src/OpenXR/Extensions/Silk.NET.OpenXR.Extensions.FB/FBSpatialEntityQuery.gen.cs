@@ -25,24 +25,8 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result QuerySpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceQueryInfoBaseHeaderFB* info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrQuerySpacesFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result QuerySpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceQueryInfoBaseHeaderFB* info, [Count(Count = 0)] ref ulong requestId);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrQuerySpacesFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result QuerySpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceQueryInfoBaseHeaderFB info, [Count(Count = 0)] ulong* requestId);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrQuerySpacesFB", Convention = CallingConvention.Winapi)]
-        public partial Result QuerySpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceQueryInfoBaseHeaderFB info, [Count(Count = 0)] ref ulong requestId);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRetrieveSpaceQueryResultsFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result RetrieveSpaceQueryResultsFB([Count(Count = 0)] Session session, [Count(Count = 0)] ulong requestId, [Count(Count = 0)] SpaceQueryResultsFB* results);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrRetrieveSpaceQueryResultsFB", Convention = CallingConvention.Winapi)]
-        public partial Result RetrieveSpaceQueryResultsFB([Count(Count = 0)] Session session, [Count(Count = 0)] ulong requestId, [Count(Count = 0)] ref SpaceQueryResultsFB results);
 
         public FBSpatialEntityQuery(INativeContext ctx)
             : base(ctx)

@@ -28,45 +28,6 @@ public unsafe static class DWriteFontSetBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFontSetBuilder> thisVtbl, Guid* riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ref Guid riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ref Guid riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static uint AddRef(this ComPtr<IDWriteFontSetBuilder> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -94,35 +55,11 @@ public unsafe static class DWriteFontSetBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddFontFaceReference(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ref IDWriteFontFaceReference fontFaceReference)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteFontFaceReference* fontFaceReferencePtr = &fontFaceReference)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReferencePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int AddFontSet(this ComPtr<IDWriteFontSetBuilder> thisVtbl, IDWriteFontSet* fontSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSet);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int AddFontSet(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ref IDWriteFontSet fontSet)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteFontSet* fontSetPtr = &fontSet)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSetPtr);
-        }
         return ret;
     }
 
@@ -133,92 +70,6 @@ public unsafe static class DWriteFontSetBuilderVtblExtensions
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSet);
         return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontSet(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ref IDWriteFontSet* fontSet)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteFontSet** fontSetPtr = &fontSet)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSetPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0>(this ComPtr<IDWriteFontSetBuilder> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppvObject = default;
-        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFontSetBuilder> thisVtbl, Span<Guid> riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteFontSetBuilder> thisVtbl, Span<Guid> riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int AddFontFaceReference<TI0>(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->AddFontFaceReference((IDWriteFontFaceReference*) fontFaceReference.Handle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int AddFontFaceReference(this ComPtr<IDWriteFontSetBuilder> thisVtbl, Span<IDWriteFontFaceReference> fontFaceReference)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->AddFontFaceReference(ref fontFaceReference.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int AddFontSet<TI0>(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ComPtr<TI0> fontSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->AddFontSet((IDWriteFontSet*) fontSet.Handle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int AddFontSet(this ComPtr<IDWriteFontSetBuilder> thisVtbl, Span<IDWriteFontSet> fontSet)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->AddFontSet(ref fontSet.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateFontSet<TI0>(this ComPtr<IDWriteFontSetBuilder> thisVtbl, ref ComPtr<TI0> fontSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateFontSet((IDWriteFontSet**) fontSet.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDWriteFontSetBuilder> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-        return silkRet;
     }
 
 }

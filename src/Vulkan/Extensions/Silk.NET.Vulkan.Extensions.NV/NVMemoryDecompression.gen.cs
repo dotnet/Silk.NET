@@ -25,19 +25,8 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public unsafe partial void CmdDecompressMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint decompressRegionCount, [Count(Parameter = "decompressRegionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DecompressMemoryRegionNV* pDecompressMemoryRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDecompressMemoryNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdDecompressMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint decompressRegionCount, [Count(Parameter = "decompressRegionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DecompressMemoryRegionNV pDecompressMemoryRegions);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDecompressMemoryIndirectCountNV", Convention = CallingConvention.Winapi)]
         public partial void CmdDecompressMemoryIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong indirectCommandsAddress, [Count(Count = 0)] ulong indirectCommandsCountAddress, [Count(Count = 0)] uint stride);
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdDecompressMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "decompressRegionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DecompressMemoryRegionNV> pDecompressMemoryRegions)
-        {
-            // ImplicitCountSpanOverloader
-            CmdDecompressMemory(commandBuffer, (uint) pDecompressMemoryRegions.Length, in pDecompressMemoryRegions.GetPinnableReference());
-        }
 
         public NVMemoryDecompression(INativeContext ctx)
             : base(ctx)

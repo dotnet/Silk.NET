@@ -26,17 +26,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glWindowPos2dvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2dvARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in double v);
-
         [NativeApi(EntryPoint = "glWindowPos2fARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y);
 
         [NativeApi(EntryPoint = "glWindowPos2fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
-
-        [NativeApi(EntryPoint = "glWindowPos2fvARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glWindowPos2iARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y);
@@ -44,17 +38,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glWindowPos2ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2ivARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int v);
-
         [NativeApi(EntryPoint = "glWindowPos2sARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(Silk.NET.Core.Native.FlowDirection.In)] short x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short y);
 
         [NativeApi(EntryPoint = "glWindowPos2svARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* v);
-
-        [NativeApi(EntryPoint = "glWindowPos2svARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos2([Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glWindowPos3dARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z);
@@ -62,17 +50,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glWindowPos3dvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3dvARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] in double v);
-
         [NativeApi(EntryPoint = "glWindowPos3fARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z);
 
         [NativeApi(EntryPoint = "glWindowPos3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
-
-        [NativeApi(EntryPoint = "glWindowPos3fvARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glWindowPos3iARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int z);
@@ -80,17 +62,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glWindowPos3ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3ivARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int v);
-
         [NativeApi(EntryPoint = "glWindowPos3sARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(Silk.NET.Core.Native.FlowDirection.In)] short x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short z);
 
         [NativeApi(EntryPoint = "glWindowPos3svARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* v);
-
-        [NativeApi(EntryPoint = "glWindowPos3svARB", Convention = CallingConvention.Winapi)]
-        public partial void WindowPos3([Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] in short v);
 
         public ArbWindowPos(INativeContext ctx)
             : base(ctx)

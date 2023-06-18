@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN", Convention = CallingConvention.Winapi)]
         public partial void DrawMeshArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] SUN mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width);
 
-        [NativeApi(EntryPoint = "glDrawMeshArraysSUN", Convention = CallingConvention.Winapi)]
-        public partial void DrawMeshArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width);
-
         public SunMeshArray(INativeContext ctx)
             : base(ctx)
         {

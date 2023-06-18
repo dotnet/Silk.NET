@@ -25,24 +25,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int pFd);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* pFd);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int pFd);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportFenceFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImportFenceFdInfoKHR* pImportFenceFdInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportFenceFdKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImportFenceFdInfoKHR pImportFenceFdInfo);
 
         public KhrExternalFenceFd(INativeContext ctx)
             : base(ctx)

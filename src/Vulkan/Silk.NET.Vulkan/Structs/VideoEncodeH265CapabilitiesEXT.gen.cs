@@ -24,23 +24,21 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoEncodeH265CapabilitiesExt,
             void* pNext = null,
             VideoEncodeH265CapabilityFlagsEXT? flags = null,
+            Video.StdVideoH265LevelIdc? maxLevelIdc = null,
+            uint? maxSliceSegmentCount = null,
+            Extent2D? maxTiles = null,
             VideoEncodeH265CtbSizeFlagsEXT? ctbSizes = null,
             VideoEncodeH265TransformBlockSizeFlagsEXT? transformBlockSizes = null,
             uint? maxPPictureL0ReferenceCount = null,
             uint? maxBPictureL0ReferenceCount = null,
             uint? maxL1ReferenceCount = null,
-            uint? maxSubLayersCount = null,
-            uint? minLog2MinLumaCodingBlockSizeMinus3 = null,
-            uint? maxLog2MinLumaCodingBlockSizeMinus3 = null,
-            uint? minLog2MinLumaTransformBlockSizeMinus2 = null,
-            uint? maxLog2MinLumaTransformBlockSizeMinus2 = null,
-            uint? minMaxTransformHierarchyDepthInter = null,
-            uint? maxMaxTransformHierarchyDepthInter = null,
-            uint? minMaxTransformHierarchyDepthIntra = null,
-            uint? maxMaxTransformHierarchyDepthIntra = null,
-            uint? maxDiffCuQpDeltaDepth = null,
-            uint? minMaxNumMergeCand = null,
-            uint? maxMaxNumMergeCand = null
+            uint? maxSubLayerCount = null,
+            Bool32? expectDyadicTemporalSubLayerPattern = null,
+            int? minQp = null,
+            int? maxQp = null,
+            Bool32? prefersGopRemainingFrames = null,
+            Bool32? requiresGopRemainingFrames = null,
+            VideoEncodeH265StdFlagsEXT? stdSyntaxFlags = null
         ) : this()
         {
             if (sType is not null)
@@ -56,6 +54,21 @@ namespace Silk.NET.Vulkan
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (maxLevelIdc is not null)
+            {
+                MaxLevelIdc = maxLevelIdc.Value;
+            }
+
+            if (maxSliceSegmentCount is not null)
+            {
+                MaxSliceSegmentCount = maxSliceSegmentCount.Value;
+            }
+
+            if (maxTiles is not null)
+            {
+                MaxTiles = maxTiles.Value;
             }
 
             if (ctbSizes is not null)
@@ -83,64 +96,39 @@ namespace Silk.NET.Vulkan
                 MaxL1ReferenceCount = maxL1ReferenceCount.Value;
             }
 
-            if (maxSubLayersCount is not null)
+            if (maxSubLayerCount is not null)
             {
-                MaxSubLayersCount = maxSubLayersCount.Value;
+                MaxSubLayerCount = maxSubLayerCount.Value;
             }
 
-            if (minLog2MinLumaCodingBlockSizeMinus3 is not null)
+            if (expectDyadicTemporalSubLayerPattern is not null)
             {
-                MinLog2MinLumaCodingBlockSizeMinus3 = minLog2MinLumaCodingBlockSizeMinus3.Value;
+                ExpectDyadicTemporalSubLayerPattern = expectDyadicTemporalSubLayerPattern.Value;
             }
 
-            if (maxLog2MinLumaCodingBlockSizeMinus3 is not null)
+            if (minQp is not null)
             {
-                MaxLog2MinLumaCodingBlockSizeMinus3 = maxLog2MinLumaCodingBlockSizeMinus3.Value;
+                MinQp = minQp.Value;
             }
 
-            if (minLog2MinLumaTransformBlockSizeMinus2 is not null)
+            if (maxQp is not null)
             {
-                MinLog2MinLumaTransformBlockSizeMinus2 = minLog2MinLumaTransformBlockSizeMinus2.Value;
+                MaxQp = maxQp.Value;
             }
 
-            if (maxLog2MinLumaTransformBlockSizeMinus2 is not null)
+            if (prefersGopRemainingFrames is not null)
             {
-                MaxLog2MinLumaTransformBlockSizeMinus2 = maxLog2MinLumaTransformBlockSizeMinus2.Value;
+                PrefersGopRemainingFrames = prefersGopRemainingFrames.Value;
             }
 
-            if (minMaxTransformHierarchyDepthInter is not null)
+            if (requiresGopRemainingFrames is not null)
             {
-                MinMaxTransformHierarchyDepthInter = minMaxTransformHierarchyDepthInter.Value;
+                RequiresGopRemainingFrames = requiresGopRemainingFrames.Value;
             }
 
-            if (maxMaxTransformHierarchyDepthInter is not null)
+            if (stdSyntaxFlags is not null)
             {
-                MaxMaxTransformHierarchyDepthInter = maxMaxTransformHierarchyDepthInter.Value;
-            }
-
-            if (minMaxTransformHierarchyDepthIntra is not null)
-            {
-                MinMaxTransformHierarchyDepthIntra = minMaxTransformHierarchyDepthIntra.Value;
-            }
-
-            if (maxMaxTransformHierarchyDepthIntra is not null)
-            {
-                MaxMaxTransformHierarchyDepthIntra = maxMaxTransformHierarchyDepthIntra.Value;
-            }
-
-            if (maxDiffCuQpDeltaDepth is not null)
-            {
-                MaxDiffCuQpDeltaDepth = maxDiffCuQpDeltaDepth.Value;
-            }
-
-            if (minMaxNumMergeCand is not null)
-            {
-                MinMaxNumMergeCand = minMaxNumMergeCand.Value;
-            }
-
-            if (maxMaxNumMergeCand is not null)
-            {
-                MaxMaxNumMergeCand = maxMaxNumMergeCand.Value;
+                StdSyntaxFlags = stdSyntaxFlags.Value;
             }
         }
 
@@ -159,6 +147,21 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeH265CapabilityFlagsEXT")]
         [NativeName("Name", "flags")]
         public VideoEncodeH265CapabilityFlagsEXT Flags;
+/// <summary></summary>
+        [NativeName("Type", "StdVideoH265LevelIdc")]
+        [NativeName("Type.Name", "StdVideoH265LevelIdc")]
+        [NativeName("Name", "maxLevelIdc")]
+        public Video.StdVideoH265LevelIdc MaxLevelIdc;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxSliceSegmentCount")]
+        public uint MaxSliceSegmentCount;
+/// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "maxTiles")]
+        public Extent2D MaxTiles;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeH265CtbSizeFlagsEXT")]
         [NativeName("Type.Name", "VkVideoEncodeH265CtbSizeFlagsEXT")]
@@ -187,63 +190,38 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxSubLayersCount")]
-        public uint MaxSubLayersCount;
+        [NativeName("Name", "maxSubLayerCount")]
+        public uint MaxSubLayerCount;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "minLog2MinLumaCodingBlockSizeMinus3")]
-        public uint MinLog2MinLumaCodingBlockSizeMinus3;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "expectDyadicTemporalSubLayerPattern")]
+        public Bool32 ExpectDyadicTemporalSubLayerPattern;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxLog2MinLumaCodingBlockSizeMinus3")]
-        public uint MaxLog2MinLumaCodingBlockSizeMinus3;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "minQp")]
+        public int MinQp;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "minLog2MinLumaTransformBlockSizeMinus2")]
-        public uint MinLog2MinLumaTransformBlockSizeMinus2;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "maxQp")]
+        public int MaxQp;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxLog2MinLumaTransformBlockSizeMinus2")]
-        public uint MaxLog2MinLumaTransformBlockSizeMinus2;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "prefersGopRemainingFrames")]
+        public Bool32 PrefersGopRemainingFrames;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "minMaxTransformHierarchyDepthInter")]
-        public uint MinMaxTransformHierarchyDepthInter;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "requiresGopRemainingFrames")]
+        public Bool32 RequiresGopRemainingFrames;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxMaxTransformHierarchyDepthInter")]
-        public uint MaxMaxTransformHierarchyDepthInter;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "minMaxTransformHierarchyDepthIntra")]
-        public uint MinMaxTransformHierarchyDepthIntra;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxMaxTransformHierarchyDepthIntra")]
-        public uint MaxMaxTransformHierarchyDepthIntra;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxDiffCuQpDeltaDepth")]
-        public uint MaxDiffCuQpDeltaDepth;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "minMaxNumMergeCand")]
-        public uint MinMaxNumMergeCand;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxMaxNumMergeCand")]
-        public uint MaxMaxNumMergeCand;
+        [NativeName("Type", "VkVideoEncodeH265StdFlagsEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH265StdFlagsEXT")]
+        [NativeName("Name", "stdSyntaxFlags")]
+        public VideoEncodeH265StdFlagsEXT StdSyntaxFlags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -25,24 +25,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] ref long time);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Timespec timespecTime, [Count(Count = 0)] long* time);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Timespec timespecTime, [Count(Count = 0)] ref long time);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] Timespec* timespecTime);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref Timespec timespecTime);
 
         public KhrConvertTimespecTime(INativeContext ctx)
             : base(ctx)

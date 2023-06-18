@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glImportSemaphoreFdEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportSemaphoreF([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int fd);
 
-        [NativeApi(EntryPoint = "glImportSemaphoreFdEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportSemaphoreF([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int fd);
-
         public ExtSemaphoreFd(INativeContext ctx)
             : base(ctx)
         {

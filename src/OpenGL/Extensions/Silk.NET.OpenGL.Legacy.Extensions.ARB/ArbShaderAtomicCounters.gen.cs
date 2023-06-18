@@ -23,29 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveAtomicCounterBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufferIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv", Convention = CallingConvention.Winapi)]
-        public partial void GetActiveAtomicCounterBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufferIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetActiveAtomicCounterBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufferIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv", Convention = CallingConvention.Winapi)]
-        public partial void GetActiveAtomicCounterBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufferIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        public unsafe int GetActiveAtomicCounterBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufferIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetActiveAtomicCounterBuffer(program, bufferIndex, pname, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetActiveAtomicCounterBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufferIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AtomicCounterBufferPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetActiveAtomicCounterBuffer(program, bufferIndex, pname, out int silkRet);
-            return silkRet;
-        }
-
         public ArbShaderAtomicCounters(INativeContext ctx)
             : base(ctx)
         {

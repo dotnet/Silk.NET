@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Silk.NET.Core.Native;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.Sdl
@@ -52,7 +53,9 @@ namespace Silk.NET.Input.Sdl
         }
 
         public unsafe string Name =>
-            IsConnected ? _ctx.Sdl.GameControllerNameS(_controller) : "Silk.NET Gamepad (via SDL)";
+            IsConnected
+                ? SilkMarshal.PtrToString((nint) _ctx.Sdl.GameControllerName(_controller))!
+                : "Silk.NET Gamepad (via SDL)";
 
         public int Index => ActualIndex;
         public bool IsConnected => _ctx.Sdl.IsGameController(Index) == SdlBool.True;

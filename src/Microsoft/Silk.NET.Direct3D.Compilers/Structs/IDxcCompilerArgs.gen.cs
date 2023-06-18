@@ -54,45 +54,6 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -138,35 +99,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* pArguments, uint argCount)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (char** pArgumentsPtr = &pArguments)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, char**, uint, int>)@this->LpVtbl[5])(@this, pArgumentsPtr, argCount);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, byte**, uint, int>)@this->LpVtbl[6])(@this, pArguments, argCount);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* pArguments, uint argCount)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte** pArgumentsPtr = &pArguments)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, byte**, uint, int>)@this->LpVtbl[6])(@this, pArgumentsPtr, argCount);
-            }
             return ret;
         }
 
@@ -177,60 +114,6 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, Define*, uint, int>)@this->LpVtbl[7])(@this, pDefines, defineCount);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddDefines([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Define pDefines, uint defineCount)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Define* pDefinesPtr = &pDefines)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompilerArgs*, Define*, uint, int>)@this->LpVtbl[7])(@this, pDefinesPtr, defineCount);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // StringArrayOverloader
-            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
-            var ret = @this->AddArguments(pArguments, argCount);
-            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
-            SilkMarshal.Free((nint) pArguments);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount)
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // StringArrayOverloader
-            var pArguments = (byte**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
-            var ret = @this->AddArgumentsUTF8(pArguments, argCount);
-            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
-            SilkMarshal.Free((nint) pArguments);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

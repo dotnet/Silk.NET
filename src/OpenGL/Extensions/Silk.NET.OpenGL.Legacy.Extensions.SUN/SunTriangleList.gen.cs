@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         [NativeApi(EntryPoint = "glReplacementCodeuiSUN", Convention = CallingConvention.Winapi)]
         public partial void ReplacementCode([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint code);
 
-        [NativeApi(EntryPoint = "glReplacementCodeuiSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleListSUN code);
-
         [NativeApi(EntryPoint = "glReplacementCodeusSUN", Convention = CallingConvention.Winapi)]
         public partial void ReplacementCode([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort code);
 
@@ -35,41 +32,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* code);
 
-        [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint code);
-
-        [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleListSUN* code);
-
-        [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in TriangleListSUN code);
-
         [NativeApi(EntryPoint = "glReplacementCodeusvSUN", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* code);
-
-        [NativeApi(EntryPoint = "glReplacementCodeusvSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort code);
 
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* code);
 
-        [NativeApi(EntryPoint = "glReplacementCodeubvSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte code);
-
-        [NativeApi(EntryPoint = "glReplacementCodeubvSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string code);
-
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReplacementCodePointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] SUN type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer);
-
-        [NativeApi(EntryPoint = "glReplacementCodePointerSUN", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ReplacementCodePointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] SUN type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* pointer);
-
-        [NativeApi(EntryPoint = "glReplacementCodePointerSUN", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ReplacementCodePointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer);
-
-        [NativeApi(EntryPoint = "glReplacementCodePointerSUN", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ReplacementCodePointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* pointer);
 
         public SunTriangleList(INativeContext ctx)
             : base(ctx)

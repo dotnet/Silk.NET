@@ -57,45 +57,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -123,89 +84,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBuffer(RPCOLEMessage* pMessage, ref Guid riid)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBuffer(ref RPCOLEMessage pMessage, Guid* riid)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetBuffer(ref RPCOLEMessage pMessage, ref Guid riid)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SendReceive(RPCOLEMessage* pMessage, uint* pStatus)
         {
             var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SendReceive(RPCOLEMessage* pMessage, ref uint pStatus)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pStatusPtr = &pStatus)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SendReceive(ref RPCOLEMessage pMessage, uint* pStatus)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SendReceive(ref RPCOLEMessage pMessage, ref uint pStatus)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
-            {
-                fixed (uint* pStatusPtr = &pStatus)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
-                }
-            }
             return ret;
         }
 
@@ -219,62 +102,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FreeBuffer(ref RPCOLEMessage pMessage)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (RPCOLEMessage* pMessagePtr = &pMessage)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDestCtx(uint* pdwDestContext, void** ppvDestContext)
         {
             var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContext, ppvDestContext);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtx(uint* pdwDestContext, ref void* ppvDestContext)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvDestContextPtr = &ppvDestContext)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContext, ppvDestContextPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtx(ref uint pdwDestContext, void** ppvDestContext)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pdwDestContextPtr = &pdwDestContext)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContextPtr, ppvDestContext);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDestCtx(ref uint pdwDestContext, ref void* ppvDestContext)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pdwDestContextPtr = &pdwDestContext)
-            {
-                fixed (void** ppvDestContextPtr = &ppvDestContext)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContextPtr, ppvDestContextPtr);
-                }
-            }
             return ret;
         }
 
@@ -294,36 +126,6 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, uint*, int>)@this->LpVtbl[8])(@this, pdwVersion);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetProtocolVersion(ref uint pdwVersion)
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pdwVersionPtr = &pdwVersion)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcChannelBuffer2*, uint*, int>)@this->LpVtbl[8])(@this, pdwVersionPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IRpcChannelBuffer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

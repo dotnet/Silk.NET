@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glTexBufferEXT", Convention = CallingConvention.Winapi)]
         public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glTexBufferEXT", Convention = CallingConvention.Winapi)]
-        public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferEXT", Convention = CallingConvention.Winapi)]
-        public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferEXT", Convention = CallingConvention.Winapi)]
-        public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
-
         public ExtTextureBufferObject(INativeContext ctx)
             : base(ctx)
         {

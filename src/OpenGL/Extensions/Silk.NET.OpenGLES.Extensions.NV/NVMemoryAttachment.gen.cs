@@ -23,14 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glBufferAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void BufferAttachMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glBufferAttachMemoryNV", Convention = CallingConvention.Winapi)]
-        public partial void BufferAttachMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);
-
         [NativeApi(EntryPoint = "glGetMemoryObjectDetachedResourcesuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMemoryObjectDetachedResources([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* @params);
-
-        [NativeApi(EntryPoint = "glGetMemoryObjectDetachedResourcesuivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetMemoryObjectDetachedResources([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glNamedBufferAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferAttachMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);
@@ -41,18 +35,8 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glTexAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void TexAttachMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexAttachMemoryNV", Convention = CallingConvention.Winapi)]
-        public partial void TexAttachMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);
-
         [NativeApi(EntryPoint = "glTextureAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void TextureAttachMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);
-
-        public unsafe uint GetMemoryObjectDetachedResources([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
-        {
-            // NonKhrReturnTypeOverloader
-            GetMemoryObjectDetachedResources(memory, pname, first, count, out uint silkRet);
-            return silkRet;
-        }
 
         public NVMemoryAttachment(INativeContext ctx)
             : base(ctx)

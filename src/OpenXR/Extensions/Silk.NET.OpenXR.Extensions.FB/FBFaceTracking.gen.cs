@@ -25,36 +25,12 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result CreateFaceTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FaceTrackerCreateInfoFB* createInfo, [Count(Count = 0)] FaceTrackerFB* faceTracker);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateFaceTrackerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFaceTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FaceTrackerCreateInfoFB* createInfo, [Count(Count = 0)] ref FaceTrackerFB faceTracker);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateFaceTrackerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFaceTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FaceTrackerCreateInfoFB createInfo, [Count(Count = 0)] FaceTrackerFB* faceTracker);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateFaceTrackerFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateFaceTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FaceTrackerCreateInfoFB createInfo, [Count(Count = 0)] ref FaceTrackerFB faceTracker);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyFaceTrackerFB", Convention = CallingConvention.Winapi)]
         public partial Result DestroyFaceTrackerFB([Count(Count = 0)] FaceTrackerFB faceTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetFaceExpressionWeightsFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetFaceExpressionWeightsFB([Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FaceExpressionInfoFB* expressionInfo, [Count(Count = 0)] FaceExpressionWeightsFB* expressionWeights);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetFaceExpressionWeightsFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetFaceExpressionWeightsFB([Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FaceExpressionInfoFB* expressionInfo, [Count(Count = 0)] ref FaceExpressionWeightsFB expressionWeights);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetFaceExpressionWeightsFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetFaceExpressionWeightsFB([Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FaceExpressionInfoFB expressionInfo, [Count(Count = 0)] FaceExpressionWeightsFB* expressionWeights);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetFaceExpressionWeightsFB", Convention = CallingConvention.Winapi)]
-        public partial Result GetFaceExpressionWeightsFB([Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FaceExpressionInfoFB expressionInfo, [Count(Count = 0)] ref FaceExpressionWeightsFB expressionWeights);
 
         public FBFaceTracking(INativeContext ctx)
             : base(ctx)

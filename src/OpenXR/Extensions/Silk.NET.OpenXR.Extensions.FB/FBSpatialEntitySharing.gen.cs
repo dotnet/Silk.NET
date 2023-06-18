@@ -24,18 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         [NativeApi(EntryPoint = "xrShareSpacesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ShareSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceShareInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrShareSpacesFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ShareSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceShareInfoFB* info, [Count(Count = 0)] ref ulong requestId);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrShareSpacesFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ShareSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceShareInfoFB info, [Count(Count = 0)] ulong* requestId);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrShareSpacesFB", Convention = CallingConvention.Winapi)]
-        public partial Result ShareSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceShareInfoFB info, [Count(Count = 0)] ref ulong requestId);
-
         public FBSpatialEntitySharing(INativeContext ctx)
             : base(ctx)
         {

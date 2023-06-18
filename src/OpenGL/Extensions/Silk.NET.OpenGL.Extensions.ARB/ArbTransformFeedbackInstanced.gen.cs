@@ -23,14 +23,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedbackInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
-
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackStreamInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
-
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedbackStreamInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
 
         public ArbTransformFeedbackInstanced(INativeContext ctx)
             : base(ctx)

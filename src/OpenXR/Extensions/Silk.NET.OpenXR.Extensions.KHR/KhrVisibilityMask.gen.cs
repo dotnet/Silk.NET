@@ -24,10 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrGetVisibilityMaskKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetVisibilityMask([Count(Count = 0)] Session session, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewIndex, [Count(Count = 0)] VisibilityMaskTypeKHR visibilityMaskType, [Count(Count = 0)] VisibilityMaskKHR* visibilityMask);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVisibilityMaskKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVisibilityMask([Count(Count = 0)] Session session, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewIndex, [Count(Count = 0)] VisibilityMaskTypeKHR visibilityMaskType, [Count(Count = 0)] ref VisibilityMaskKHR visibilityMask);
-
         public KhrVisibilityMask(INativeContext ctx)
             : base(ctx)
         {

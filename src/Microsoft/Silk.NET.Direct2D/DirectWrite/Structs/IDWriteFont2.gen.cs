@@ -60,45 +60,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -122,18 +83,6 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, IDWriteFontFamily**, int>)@this->LpVtbl[3])(@this, fontFamily);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFontFamily(ref IDWriteFontFamily* fontFamily)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteFontFamily** fontFamilyPtr = &fontFamily)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, IDWriteFontFamily**, int>)@this->LpVtbl[3])(@this, fontFamilyPtr);
-            }
             return ret;
         }
 
@@ -183,62 +132,11 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFaceNames(ref IDWriteLocalizedStrings* names)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteLocalizedStrings** namesPtr = &names)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, IDWriteLocalizedStrings**, int>)@this->LpVtbl[8])(@this, namesPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetInformationalStrings(InformationalStringID informationalStringID, IDWriteLocalizedStrings** informationalStrings, int* exists)
         {
             var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStrings, exists);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInformationalStrings(InformationalStringID informationalStringID, IDWriteLocalizedStrings** informationalStrings, ref int exists)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (int* existsPtr = &exists)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStrings, existsPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInformationalStrings(InformationalStringID informationalStringID, ref IDWriteLocalizedStrings* informationalStrings, int* exists)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteLocalizedStrings** informationalStringsPtr = &informationalStrings)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStringsPtr, exists);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInformationalStrings(InformationalStringID informationalStringID, ref IDWriteLocalizedStrings* informationalStrings, ref int exists)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteLocalizedStrings** informationalStringsPtr = &informationalStrings)
-            {
-                fixed (int* existsPtr = &exists)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, InformationalStringID, IDWriteLocalizedStrings**, int*, int>)@this->LpVtbl[9])(@this, informationalStringID, informationalStringsPtr, existsPtr);
-                }
-            }
             return ret;
         }
 
@@ -259,33 +157,11 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetMetrics(ref FontMetrics fontMetrics)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (FontMetrics* fontMetricsPtr = &fontMetrics)
-            {
-                ((delegate* unmanaged[Stdcall]<IDWriteFont2*, FontMetrics*, void>)@this->LpVtbl[11])(@this, fontMetricsPtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int HasCharacter(uint unicodeValue, int* exists)
         {
             var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, int*, int>)@this->LpVtbl[12])(@this, unicodeValue, exists);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int HasCharacter(uint unicodeValue, ref int exists)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (int* existsPtr = &exists)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, int*, int>)@this->LpVtbl[12])(@this, unicodeValue, existsPtr);
-            }
             return ret;
         }
 
@@ -299,32 +175,10 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateFontFace(ref IDWriteFontFace* fontFace)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteFontFace** fontFacePtr = &fontFace)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, IDWriteFontFace**, int>)@this->LpVtbl[13])(@this, fontFacePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void GetPanose(Panose* panose)
         {
             var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Panose*, void>)@this->LpVtbl[15])(@this, panose);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetPanose(ref Panose panose)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Panose* panosePtr = &panose)
-            {
-                ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Panose*, void>)@this->LpVtbl[15])(@this, panosePtr);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -333,45 +187,6 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnicodeRanges(uint maxRangeCount, UnicodeRange* unicodeRanges, ref uint actualRangeCount)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* actualRangeCountPtr = &actualRangeCount)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnicodeRanges(uint maxRangeCount, ref UnicodeRange unicodeRanges, uint* actualRangeCount)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (UnicodeRange* unicodeRangesPtr = &unicodeRanges)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetUnicodeRanges(uint maxRangeCount, ref UnicodeRange unicodeRanges, ref uint actualRangeCount)
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (UnicodeRange* unicodeRangesPtr = &unicodeRanges)
-            {
-                fixed (uint* actualRangeCountPtr = &actualRangeCount)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[16])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
-                }
-            }
             return ret;
         }
 
@@ -391,64 +206,6 @@ namespace Silk.NET.DirectWrite
             Silk.NET.Core.Bool32 ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteFont2*, Silk.NET.Core.Bool32>)@this->LpVtbl[18])(@this);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFontFamily<TI0>(ref ComPtr<TI0> fontFamily) where TI0 : unmanaged, IComVtbl<IDWriteFontFamily>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetFontFamily((IDWriteFontFamily**) fontFamily.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFaceNames<TI0>(ref ComPtr<TI0> names) where TI0 : unmanaged, IComVtbl<IDWriteLocalizedStrings>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetFaceNames((IDWriteLocalizedStrings**) names.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInformationalStrings<TI0>(InformationalStringID informationalStringID, ref ComPtr<TI0> informationalStrings, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteLocalizedStrings>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetInformationalStrings(informationalStringID, (IDWriteLocalizedStrings**) informationalStrings.GetAddressOf(), exists);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetInformationalStrings<TI0>(InformationalStringID informationalStringID, ref ComPtr<TI0> informationalStrings, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteLocalizedStrings>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetInformationalStrings(informationalStringID, (IDWriteLocalizedStrings**) informationalStrings.GetAddressOf(), ref exists);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateFontFace<TI0>(ref ComPtr<TI0> fontFace) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateFontFace((IDWriteFontFace**) fontFace.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFont2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

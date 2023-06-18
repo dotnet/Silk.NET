@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glProvokingVertex", Convention = CallingConvention.Winapi)]
         public partial void ProvokingVertex([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode);
 
-        [NativeApi(EntryPoint = "glProvokingVertex", Convention = CallingConvention.Winapi)]
-        public partial void ProvokingVertex([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexProvokingMode mode);
-
         public ArbProvokingVertex(INativeContext ctx)
             : base(ctx)
         {

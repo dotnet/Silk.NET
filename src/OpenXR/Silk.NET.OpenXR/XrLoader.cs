@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Text;
 using Silk.NET.Core;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -41,7 +42,7 @@ namespace Silk.NET.OpenXR
         protected override void CoreFreeNativeLibrary(nint handle) => BaseLoader.FreeNativeLibrary(handle);
         
         /// <inheritdoc />
-        protected override nint CoreLoadFunctionPointer(nint library, string symbolName)
+        protected override unsafe nint CoreLoadFunctionPointer(nint library, string symbolName)
         {
             nint sym = default;
             try
@@ -57,22 +58,26 @@ namespace Silk.NET.OpenXR
                 // do nothing, just move on.
             }
 
-            OpenXR.GetInstanceProcAddr(default, symbolName, ref Unsafe.As<nint, PfnVoidFunction>(ref sym));
-            if (sym != default)
+            fixed (byte* symbolBytes = Encoding.UTF8.GetBytes(symbolName))
             {
-                return sym;
-            }
+                OpenXR.GetInstanceProcAddr(default, symbolBytes, (PfnVoidFunction*) &sym);
 
-            if (OpenXR.CurrentInstance.HasValue)
-            {
-                OpenXR.GetInstanceProcAddr
-                    (OpenXR.CurrentInstance.Value, symbolName, ref Unsafe.As<nint, PfnVoidFunction>(ref sym));
                 if (sym != default)
                 {
                     return sym;
                 }
+
+                if (OpenXR.CurrentInstance.HasValue)
+                {
+                    OpenXR.GetInstanceProcAddr
+                        (OpenXR.CurrentInstance.Value, symbolBytes, (PfnVoidFunction*) &sym);
+                    if (sym != default)
+                    {
+                        return sym;
+                    }
+                }
             }
-            
+
             throw new EntryPointNotFoundException
             (
                 $"Entry point \"{symbolName}\" not found. Note that instance extensions must be enabled in order to "+

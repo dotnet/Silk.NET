@@ -28,45 +28,6 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ComputeInfo> thisVtbl, Guid* riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ComputeInfo> thisVtbl, ref Guid riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ComputeInfo> thisVtbl, ref Guid riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static uint AddRef(this ComPtr<ID2D1ComputeInfo> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -126,46 +87,11 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte buffer, uint bufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (byte* bufferPtr = &buffer)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, byte*, uint, int>)@this->LpVtbl[7])(@this, bufferPtr, bufferCount);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var bufferPtr = (byte*) SilkMarshal.StringToPtr(buffer, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, byte*, uint, int>)@this->LpVtbl[7])(@this, bufferPtr, bufferCount);
-        SilkMarshal.Free((nint)bufferPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int SetComputeShader(this ComPtr<ID2D1ComputeInfo> thisVtbl, Guid* shaderId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Guid*, int>)@this->LpVtbl[8])(@this, shaderId);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetComputeShader(this ComPtr<ID2D1ComputeInfo> thisVtbl, ref Guid shaderId)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* shaderIdPtr = &shaderId)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Guid*, int>)@this->LpVtbl[8])(@this, shaderIdPtr);
-        }
         return ret;
     }
 
@@ -176,84 +102,6 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, uint, ID2D1ResourceTexture*, int>)@this->LpVtbl[9])(@this, textureIndex, resourceTexture);
         return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetResourceTexture(this ComPtr<ID2D1ComputeInfo> thisVtbl, uint textureIndex, ref ID2D1ResourceTexture resourceTexture)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ID2D1ResourceTexture* resourceTexturePtr = &resourceTexture)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, uint, ID2D1ResourceTexture*, int>)@this->LpVtbl[9])(@this, textureIndex, resourceTexturePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0>(this ComPtr<ID2D1ComputeInfo> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppvObject = default;
-        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ComputeInfo> thisVtbl, Span<Guid> riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ComputeInfo> thisVtbl, Span<Guid> riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetComputeShaderConstantBuffer(in buffer.GetPinnableReference(), bufferCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetComputeShader(this ComPtr<ID2D1ComputeInfo> thisVtbl, Span<Guid> shaderId)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetComputeShader(ref shaderId.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetResourceTexture<TI0>(this ComPtr<ID2D1ComputeInfo> thisVtbl, uint textureIndex, ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->SetResourceTexture(textureIndex, (ID2D1ResourceTexture*) resourceTexture.Handle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetResourceTexture(this ComPtr<ID2D1ComputeInfo> thisVtbl, uint textureIndex, Span<ID2D1ResourceTexture> resourceTexture)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetResourceTexture(textureIndex, ref resourceTexture.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID2D1ComputeInfo> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-        return silkRet;
     }
 
 }

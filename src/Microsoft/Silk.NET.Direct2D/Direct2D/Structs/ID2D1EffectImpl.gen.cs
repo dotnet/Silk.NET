@@ -54,45 +54,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -120,45 +81,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(ID2D1EffectContext* effectContext, ref ID2D1TransformGraph transformGraph)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1TransformGraph* transformGraphPtr = &transformGraph)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int>)@this->LpVtbl[3])(@this, effectContext, transformGraphPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(ref ID2D1EffectContext effectContext, ID2D1TransformGraph* transformGraph)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1EffectContext* effectContextPtr = &effectContext)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int>)@this->LpVtbl[3])(@this, effectContextPtr, transformGraph);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Initialize(ref ID2D1EffectContext effectContext, ref ID2D1TransformGraph transformGraph)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1EffectContext* effectContextPtr = &effectContext)
-            {
-                fixed (ID2D1TransformGraph* transformGraphPtr = &transformGraph)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int>)@this->LpVtbl[3])(@this, effectContextPtr, transformGraphPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly int PrepareForRender(ChangeType changeType)
         {
             var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -174,68 +96,6 @@ namespace Silk.NET.Direct2D
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, ID2D1TransformGraph*, int>)@this->LpVtbl[5])(@this, transformGraph);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetGraph(ref ID2D1TransformGraph transformGraph)
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1TransformGraph* transformGraphPtr = &transformGraph)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectImpl*, ID2D1TransformGraph*, int>)@this->LpVtbl[5])(@this, transformGraphPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0, TI1>(ComPtr<TI0> effectContext, ComPtr<TI1> transformGraph) where TI0 : unmanaged, IComVtbl<ID2D1EffectContext>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformGraph>, IComVtbl<TI1>
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Initialize((ID2D1EffectContext*) effectContext.Handle, (ID2D1TransformGraph*) transformGraph.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0>(ComPtr<TI0> effectContext, ref ID2D1TransformGraph transformGraph) where TI0 : unmanaged, IComVtbl<ID2D1EffectContext>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Initialize((ID2D1EffectContext*) effectContext.Handle, ref transformGraph);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0>(ref ID2D1EffectContext effectContext, ComPtr<TI0> transformGraph) where TI0 : unmanaged, IComVtbl<ID2D1TransformGraph>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Initialize(ref effectContext, (ID2D1TransformGraph*) transformGraph.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetGraph<TI0>(ComPtr<TI0> transformGraph) where TI0 : unmanaged, IComVtbl<ID2D1TransformGraph>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->SetGraph((ID2D1TransformGraph*) transformGraph.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1EffectImpl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

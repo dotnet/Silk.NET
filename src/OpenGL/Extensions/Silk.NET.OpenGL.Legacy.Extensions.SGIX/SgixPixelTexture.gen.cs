@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glPixelTexGenSGIX", Convention = CallingConvention.Winapi)]
         public partial void PixelTexGen([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX mode);
 
-        [NativeApi(EntryPoint = "glPixelTexGenSGIX", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGen([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenModeSGIX mode);
-
         public SgixPixelTexture(INativeContext ctx)
             : base(ctx)
         {

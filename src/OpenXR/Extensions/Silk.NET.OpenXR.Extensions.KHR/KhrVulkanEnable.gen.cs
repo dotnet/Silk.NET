@@ -25,92 +25,16 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle vkInstance, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vkPhysicalDevice);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle vkInstance, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vkPhysicalDevice);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirementsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetVulkanGraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsVulkanKHR* graphicsRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirementsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanGraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsVulkanKHR graphicsRequirements);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
-        {
-            // ImplicitCountSpanOverloader
-            return GetVulkanDeviceExtension(instance, systemId, (uint) buffer.Length, bufferCountOutput, ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
-        {
-            // ImplicitCountSpanOverloader
-            return GetVulkanDeviceExtension(instance, systemId, (uint) buffer.Length, ref bufferCountOutput, ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
-        {
-            // ImplicitCountSpanOverloader
-            return GetVulkanInstanceExtension(instance, systemId, (uint) buffer.Length, bufferCountOutput, ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
-        {
-            // ImplicitCountSpanOverloader
-            return GetVulkanInstanceExtension(instance, systemId, (uint) buffer.Length, ref bufferCountOutput, ref buffer.GetPinnableReference());
-        }
 
         public KhrVulkanEnable(INativeContext ctx)
             : base(ctx)

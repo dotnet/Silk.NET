@@ -29,14 +29,8 @@ namespace Silk.NET.WGL.Extensions.I3D
         [NativeApi(EntryPoint = "wglIsEnabledFrameLockI3D", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 IsEnabledFrameLockI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] Silk.NET.Core.Bool32* pFlag);
 
-        [NativeApi(EntryPoint = "wglIsEnabledFrameLockI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 IsEnabledFrameLockI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Silk.NET.Core.Bool32 pFlag);
-
         [NativeApi(EntryPoint = "wglQueryFrameLockMasterI3D", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 QueryFrameLockMasterI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] Silk.NET.Core.Bool32* pFlag);
-
-        [NativeApi(EntryPoint = "wglQueryFrameLockMasterI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryFrameLockMasterI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Silk.NET.Core.Bool32 pFlag);
 
         public I3DSwapFrameLock(INativeContext ctx)
             : base(ctx)

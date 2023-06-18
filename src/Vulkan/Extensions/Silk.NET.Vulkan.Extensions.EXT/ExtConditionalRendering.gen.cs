@@ -25,10 +25,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public unsafe partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndConditionalRenderingEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdEndConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer);
 

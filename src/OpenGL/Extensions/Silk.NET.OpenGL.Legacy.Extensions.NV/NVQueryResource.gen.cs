@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glQueryResourceNV", Convention = CallingConvention.Winapi)]
         public unsafe partial int QueryResource([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV queryType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* buffer);
 
-        [NativeApi(EntryPoint = "glQueryResourceNV", Convention = CallingConvention.Winapi)]
-        public partial int QueryResource([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV queryType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int buffer);
-
-        public unsafe int QueryResource([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV queryType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> buffer)
-        {
-            // ImplicitCountSpanOverloader
-            return QueryResource(queryType, tagId, (uint) buffer.Length, out buffer.GetPinnableReference());
-        }
-
         public NVQueryResource(INativeContext ctx)
             : base(ctx)
         {

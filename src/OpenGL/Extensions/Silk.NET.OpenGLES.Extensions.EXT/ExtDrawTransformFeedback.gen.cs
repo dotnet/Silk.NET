@@ -23,14 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedback([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
-
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
-
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT", Convention = CallingConvention.Winapi)]
-        public partial void DrawTransformFeedbackInstanced([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount);
 
         public ExtDrawTransformFeedback(INativeContext ctx)
             : base(ctx)

@@ -24,20 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties);
 
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PhysicalDeviceToolProperties pToolProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PhysicalDeviceToolProperties pToolProperties);
-
         public ExtToolingInfo(INativeContext ctx)
             : base(ctx)
         {

@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.OVR
         [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultisampleMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultisampleMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachment attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
-
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultisampleMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
-
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultisampleMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachment attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
-
         public OvrMultiviewMultisampledRenderToTexture(INativeContext ctx)
             : base(ctx)
         {

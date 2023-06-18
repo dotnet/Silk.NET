@@ -23,10 +23,6 @@ namespace Silk.NET.WGL.Extensions.EXT
         [NativeApi(EntryPoint = "wglGetExtensionsStringEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial byte* GetExtensionsString();
 
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "wglGetExtensionsStringEXT", Convention = CallingConvention.Winapi)]
-        public partial string GetExtensionsStringS();
-
         public ExtExtensionsString(INativeContext ctx)
             : base(ctx)
         {

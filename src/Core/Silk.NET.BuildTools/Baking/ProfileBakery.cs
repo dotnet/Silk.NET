@@ -11,7 +11,6 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
 namespace Silk.NET.BuildTools.Baking
@@ -57,8 +56,6 @@ namespace Silk.NET.BuildTools.Baking
 
             Console.WriteLine("Profile Bakery: Stirring them until they form a nice paste...");
             MergeAll(profile, in task); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
-            Console.WriteLine("Profile Bakery: Adding a bit of flavouring...");
-            Vary(profile, task.OverloaderExclusions);
             Console.WriteLine("Profile Bakery: Putting it in the oven until it turns a nice golden colour...");
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
@@ -87,22 +84,6 @@ namespace Silk.NET.BuildTools.Baking
             }
 
             return ret;
-        }
-
-        private static void Vary(Profile profile, Dictionary<string,string[]>? overloaderExclusions)
-        {
-            foreach (var project in profile.Projects.Values)
-            {
-                foreach (var @class in project.Classes)
-                {
-                    foreach (var @interface in @class.NativeApis.Values)
-                    {
-                        @interface.Functions = Overloader.GetWithVariants
-                                (@interface.Functions, profile, overloaderExclusions)
-                            .ToList();
-                    }
-                }
-            }
         }
 
         private static void MergeAll(Profile profile, in BindTask task) // this method could also be called Stir ;)

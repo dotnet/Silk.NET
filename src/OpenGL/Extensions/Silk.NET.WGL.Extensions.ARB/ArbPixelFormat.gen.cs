@@ -23,74 +23,11 @@ namespace Silk.NET.WGL.Extensions.ARB
         [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
 
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nNumFormats);
-
-        [NativeApi(EntryPoint = "wglChoosePixelFormatARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 ChoosePixelFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribIList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pfAttribFList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nMaxFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piFormats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nNumFormats);
-
         [NativeApi(EntryPoint = "wglGetPixelFormatAttribivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValues);
 
-        [NativeApi(EntryPoint = "wglGetPixelFormatAttribivARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValues);
-
-        [NativeApi(EntryPoint = "wglGetPixelFormatAttribivARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValues);
-
-        [NativeApi(EntryPoint = "wglGetPixelFormatAttribivARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValues);
-
         [NativeApi(EntryPoint = "wglGetPixelFormatAttribfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pfValues);
-
-        [NativeApi(EntryPoint = "wglGetPixelFormatAttribfvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pfValues);
-
-        [NativeApi(EntryPoint = "wglGetPixelFormatAttribfvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pfValues);
-
-        [NativeApi(EntryPoint = "wglGetPixelFormatAttribfvARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetPixelFormatAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttributes, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pfValues);
 
         public ArbPixelFormat(INativeContext ctx)
             : base(ctx)

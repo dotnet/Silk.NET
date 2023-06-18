@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV", Convention = CallingConvention.Winapi)]
         public partial void BeginConditionalRender([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode);
 
-        [NativeApi(EntryPoint = "glBeginConditionalRenderNV", Convention = CallingConvention.Winapi)]
-        public partial void BeginConditionalRender([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ConditionalRenderMode mode);
-
         [NativeApi(EntryPoint = "glEndConditionalRenderNV", Convention = CallingConvention.Winapi)]
         public partial void EndConditionalRender();
 

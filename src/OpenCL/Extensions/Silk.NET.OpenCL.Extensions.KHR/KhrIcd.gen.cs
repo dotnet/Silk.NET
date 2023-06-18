@@ -23,15 +23,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int IcdGetPlatformIDs([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* platforms, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_platforms);
 
-        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int IcdGetPlatformIDs([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* platforms, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_platforms);
-
-        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int IcdGetPlatformIDs([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint platforms, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_platforms);
-
-        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR", Convention = CallingConvention.Winapi)]
-        public partial int IcdGetPlatformIDs([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint platforms, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_platforms);
-
         public KhrIcd(INativeContext ctx)
             : base(ctx)
         {

@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
@@ -177,15 +178,20 @@ namespace Silk.NET.Windowing.Sdl
             Sdl.GLSetAttribute(GLattr.Multisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value);
 
             // Create window
-            SdlWindow = Sdl.CreateWindow
-            (
-                title ?? Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window",
-                x ?? 50,
-                y ?? 50,
-                w ?? 1280,
-                h ?? 720,
-                (uint) flags
-            );
+            fixed (byte* tit = Encoding.UTF8.GetBytes
+                       (title ?? Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window"))
+            {
+                SdlWindow = Sdl.CreateWindow
+                (
+                    tit,
+                    x ?? 50,
+                    y ?? 50,
+                    w ?? 1280,
+                    h ?? 720,
+                    (uint) flags
+                );
+            }
+
             if (SdlWindow == null)
             {
                 Sdl.ThrowError();

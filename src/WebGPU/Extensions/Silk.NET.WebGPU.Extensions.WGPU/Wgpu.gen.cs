@@ -26,19 +26,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public unsafe partial void GenerateReport(Instance* instance, GlobalReport* report);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 186, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuGenerateReport")]
-        public unsafe partial void GenerateReport(Instance* instance, ref GlobalReport report);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 188, Column 21 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmitForIndex")]
         public unsafe partial ulong QueueSubmitForIndex(Queue* queue, uint commandCount, CommandBuffer** commands);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 188, Column 21 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQueueSubmitForIndex")]
-        public unsafe partial ulong QueueSubmitForIndex(Queue* queue, uint commandCount, ref CommandBuffer* commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 191, Column 6 in wgpu.h")]
@@ -46,19 +36,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 191, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 193, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuSetLogCallback")]
         public unsafe partial void SetLogCallback(PfnLogCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 193, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSetLogCallback")]
-        public partial void SetLogCallback<T0>(PfnLogCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 195, Column 6 in wgpu.h")]
@@ -76,19 +56,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public unsafe partial void SurfaceGetCapabilities(Surface* surface, Adapter* adapter, SurfaceCapabilities* capabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSurfaceGetCapabilities")]
-        public unsafe partial void SurfaceGetCapabilities(Surface* surface, Adapter* adapter, ref SurfaceCapabilities capabilities);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 201, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
         public unsafe partial void RenderPassEncoderSetPushConstants(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 201, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public unsafe partial void RenderPassEncoderSetPushConstants<T0>(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 6 in wgpu.h")]

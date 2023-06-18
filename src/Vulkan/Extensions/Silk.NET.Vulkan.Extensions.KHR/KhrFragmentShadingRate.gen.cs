@@ -25,34 +25,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Extent2D pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Extent2D pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pFragmentShadingRates = new(StructureType.PhysicalDeviceFragmentShadingRateKhr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pFragmentShadingRates = new(StructureType.PhysicalDeviceFragmentShadingRateKhr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
 
         public KhrFragmentShadingRate(INativeContext ctx)
             : base(ctx)

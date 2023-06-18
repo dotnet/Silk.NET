@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using System.Text;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -16,7 +17,13 @@ namespace Silk.NET.Assimp
              return new Assimp(CreateDefaultContext(new AssimpLibraryNameContainer().GetLibraryNames()));
         }
 
-        public override bool IsExtensionPresent(string extension) => IsExtensionSupported(extension) == 1;
+        public override unsafe bool IsExtensionPresent(string extension)
+        {
+            fixed (byte* extPtr = Encoding.UTF8.GetBytes(extension))
+            {
+                return IsExtensionSupported(extPtr) == 1;
+            }
+        }
     }
 }
 

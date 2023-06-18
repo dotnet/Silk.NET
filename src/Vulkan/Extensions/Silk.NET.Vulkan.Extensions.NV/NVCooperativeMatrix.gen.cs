@@ -24,20 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceCooperativeMatrixProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CooperativeMatrixPropertiesNV* pProperties);
 
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.CooperativeMatrixPropertiesNV);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceCooperativeMatrixProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CooperativeMatrixPropertiesNV pProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceCooperativeMatrixProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CooperativeMatrixPropertiesNV* pProperties);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.CooperativeMatrixPropertiesNV);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceCooperativeMatrixProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CooperativeMatrixPropertiesNV pProperties);
-
         public NVCooperativeMatrix(INativeContext ctx)
             : base(ctx)
         {

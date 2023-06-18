@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
         public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
-        public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
-        public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
-        public partial void TexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
-
         public ArbTextureBufferObject(INativeContext ctx)
             : base(ctx)
         {

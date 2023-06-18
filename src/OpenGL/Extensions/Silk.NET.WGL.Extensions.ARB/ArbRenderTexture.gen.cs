@@ -29,9 +29,6 @@ namespace Silk.NET.WGL.Extensions.ARB
         [NativeApi(EntryPoint = "wglSetPbufferAttribARB", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 SetPbufferAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
-        [NativeApi(EntryPoint = "wglSetPbufferAttribARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetPbufferAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribList);
-
         public ArbRenderTexture(INativeContext ctx)
             : base(ctx)
         {

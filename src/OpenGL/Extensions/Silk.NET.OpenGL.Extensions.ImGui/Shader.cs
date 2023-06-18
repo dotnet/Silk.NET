@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Text;
+using Silk.NET.Core.Native;
 #if GLES
 using Silk.NET.OpenGLES;
 #elif GL
@@ -62,21 +64,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             }
         }
 
-        public UniformFieldInfo[] GetUniforms()
+        public unsafe UniformFieldInfo[] GetUniforms()
         {
-            _gl.GetProgram(Program, GLEnum.ActiveUniforms, out var uniformCount);
+            int uniformCount;
+            _gl.GetProgram(Program, GLEnum.ActiveUniforms, &uniformCount);
 
             UniformFieldInfo[] uniforms = new UniformFieldInfo[uniformCount];
 
             for (int i = 0; i < uniformCount; i++)
             {
-                string name = _gl.GetActiveUniform(Program, (uint) i, out int size, out UniformType type);
+                uint length;
+                _gl.GetProgram(Program, GLEnum.ActiveUniformMaxLength, (int*) &length);
+                int size;
+                GLEnum type;
+                string name;
+                fixed (byte* namePtr = new byte[length])
+                {
+                    _gl.GetActiveUniform(Program, (uint) i, length == 0 ? 1 : length, &length, &size, &type, namePtr);
+                    name = SilkMarshal.PtrToString((nint) namePtr);
+                }
 
                 UniformFieldInfo fieldInfo;
                 fieldInfo.Location = GetUniformLocation(name);
                 fieldInfo.Name = name;
                 fieldInfo.Size = size;
-                fieldInfo.Type = type;
+                fieldInfo.Type = (UniformType) type;
 
                 uniforms[i] = fieldInfo;
             }
@@ -85,11 +97,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public int GetUniformLocation(string uniform)
+        public unsafe int GetUniformLocation(string uniform)
         {
             if (_uniformToLocation.TryGetValue(uniform, out int location) == false)
             {
-                location = _gl.GetUniformLocation(Program, uniform);
+                fixed (byte* uniformPtr = Encoding.UTF8.GetBytes(uniform))
+                {
+                    location = _gl.GetUniformLocation(Program, uniformPtr);
+                }
+
                 _uniformToLocation.Add(uniform, location);
 
                 if (location == -1)
@@ -102,11 +118,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public int GetAttribLocation(string attrib)
+        public unsafe int GetAttribLocation(string attrib)
         {
             if (_attribLocation.TryGetValue(attrib, out int location) == false)
             {
-                location = _gl.GetAttribLocation(Program, attrib);
+                fixed (byte* attribPtr = Encoding.UTF8.GetBytes(attrib))
+                {
+                    location = _gl.GetAttribLocation(Program, attribPtr);
+                }
+
                 _attribLocation.Add(attrib, location);
 
                 if (location == -1)
@@ -118,7 +138,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             return location;
         }
 
-        private uint CreateProgram(params (ShaderType Type, string source)[] shaderPaths)
+        private unsafe uint CreateProgram(params (ShaderType Type, string source)[] shaderPaths)
         {
             var program = _gl.CreateProgram();
 
@@ -133,10 +153,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _gl.LinkProgram(program);
 
-            _gl.GetProgram(program, GLEnum.LinkStatus, out var success);
+            int success;
+            _gl.GetProgram(program, GLEnum.LinkStatus, &success);
             if (success == 0)
             {
-                string info = _gl.GetProgramInfoLog(program);
+                uint length;
+                _gl.GetProgram(program, GLEnum.InfoLogLength, (int*) &length);
+                string info;
+                fixed (byte* infoPtr = new byte[length == 0 ? 1 : length * 2])
+                {
+                    _gl.GetProgramInfoLog(program, length == 0 ? 1 : length * 2, &length, infoPtr);
+                    info = SilkMarshal.PtrToString((nint) infoPtr);
+                }
+
                 Debug.WriteLine($"GL.LinkProgram had info log:\n{info}");
             }
 
@@ -151,16 +180,29 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             return program;
         }
 
-        private uint CompileShader(ShaderType type, string source)
+        private unsafe uint CompileShader(ShaderType type, string source)
         {
-            var shader = _gl.CreateShader(type);
-            _gl.ShaderSource(shader, source);
+            var shader = _gl.CreateShader((GLEnum) type);
+            fixed (byte* src = Encoding.UTF8.GetBytes(source))
+            {
+                var len = source.Length;
+                _gl.ShaderSource(shader, 1, &src, &len);
+            }
+
             _gl.CompileShader(shader);
 
-            _gl.GetShader(shader, ShaderParameterName.CompileStatus, out var success);
+            int success;
+            _gl.GetShader(shader, GLEnum.CompileStatus, &success);
             if (success == 0)
             {
-                string info = _gl.GetShaderInfoLog(shader);
+                uint length;
+                _gl.GetShader(shader, GLEnum.InfoLogLength, (int*) &length);
+                string info;
+                fixed (byte* infoPtr = new byte[length == 0 ? 1 : length * 2])
+                {
+                    _gl.GetShaderInfoLog(shader, length == 0 ? 1 : length * 2, &length, infoPtr);
+                    info = SilkMarshal.PtrToString((nint) infoPtr);
+                }
                 Debug.WriteLine($"GL.CompileShader for shader [{type}] had info log:\n{info}");
             }
 

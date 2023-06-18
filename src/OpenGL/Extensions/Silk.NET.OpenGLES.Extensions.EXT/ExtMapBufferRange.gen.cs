@@ -23,20 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public partial void FlushMappedBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length);
 
-        [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT", Convention = CallingConvention.Winapi)]
-        public partial void FlushMappedBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length);
-
         [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access);
-
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapBufferAccessMask access);
-
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access);
-
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapBufferAccessMask access);
 
         public ExtMapBufferRange(INativeContext ctx)
             : base(ctx)

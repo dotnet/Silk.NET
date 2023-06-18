@@ -23,20 +23,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void NamedRenderbufferStorageMultisampleAdvance([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint renderbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
-        public partial void NamedRenderbufferStorageMultisampleAdvance([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint renderbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisampleAdvance([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisampleAdvance([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisampleAdvance([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderbufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisampleAdvance([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderbufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         public AmdFramebufferMultisampleAdvanced(INativeContext ctx)
             : base(ctx)

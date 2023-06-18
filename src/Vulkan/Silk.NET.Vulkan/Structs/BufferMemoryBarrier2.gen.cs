@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryBarrier2")]
     [NativeName("Aliases", "VkBufferMemoryBarrier2KHR")]
-    public unsafe partial struct BufferMemoryBarrier2 : IChainable
+    public unsafe partial struct BufferMemoryBarrier2 : IChainStart
     {
         public BufferMemoryBarrier2
         (
@@ -158,6 +158,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BufferMemoryBarrier2 Chain(
+            out BufferMemoryBarrier2 capture)
+        {
+            capture = new BufferMemoryBarrier2(StructureType.BufferMemoryBarrier2);
+            return ref capture;
         }
     }
 }

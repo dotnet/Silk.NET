@@ -25,18 +25,6 @@ namespace Silk.NET.OpenXR.Extensions.HTC
         public unsafe partial Result CreatePassthroughHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughCreateInfoHTC* createInfo, [Count(Count = 0)] PassthroughHTC* passthrough);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePassthroughHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughCreateInfoHTC* createInfo, [Count(Count = 0)] ref PassthroughHTC passthrough);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePassthroughHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughCreateInfoHTC createInfo, [Count(Count = 0)] PassthroughHTC* passthrough);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughHTC", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePassthroughHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughCreateInfoHTC createInfo, [Count(Count = 0)] ref PassthroughHTC passthrough);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyPassthroughHTC", Convention = CallingConvention.Winapi)]
         public partial Result DestroyPassthroughHtc([Count(Count = 0)] PassthroughHTC passthrough);
 

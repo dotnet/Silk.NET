@@ -23,27 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB* bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
-        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ARB bufs);
-
-        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawBufferMode* bufs);
-
-        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
-        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawBufferMode bufs);
-
-        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ARB> bufs)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
-        }
-
-        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
-        }
-
         public ArbDrawBuffers(INativeContext ctx)
             : base(ctx)
         {

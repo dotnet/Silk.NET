@@ -85,7 +85,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             Label = (byte*) SilkMarshal.StringToPtr("Test Compute Shader") //TODO: free this
         };
 
-        var shader = wgpu.DeviceCreateShaderModule(device, shaderModuleDescriptor);
+        var shader = wgpu.DeviceCreateShaderModule(device, &shaderModuleDescriptor);
 
         var stagingBufferDescription = new BufferDescriptor
         {
@@ -94,7 +94,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             Size             = numbersSize,
             MappedAtCreation = false
         };
-        var stagingBuffer = wgpu.DeviceCreateBuffer(device, stagingBufferDescription);
+        var stagingBuffer = wgpu.DeviceCreateBuffer(device, &stagingBufferDescription);
 
         var storageBufferDescription = new BufferDescriptor
         {
@@ -103,7 +103,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             Size             = numbersSize,
             MappedAtCreation = false
         };
-        var storageBuffer = wgpu.DeviceCreateBuffer(device, storageBufferDescription);
+        var storageBuffer = wgpu.DeviceCreateBuffer(device, &storageBufferDescription);
 
         var computePipelineDescriptor = new ComputePipelineDescriptor
         {
@@ -115,7 +115,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
                 EntryPoint = (byte*) SilkMarshal.StringToPtr("main") //TODO: free this
             }
         };
-        var computePipeline = wgpu.DeviceCreateComputePipeline(device, computePipelineDescriptor);
+        var computePipeline = wgpu.DeviceCreateComputePipeline(device, &computePipelineDescriptor);
 
         var bindGroupLayout = wgpu.ComputePipelineGetBindGroupLayout(computePipeline, 0);
 
@@ -134,19 +134,19 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         bindGroupDescriptor.Entries = entries;
         bindGroupDescriptor.EntryCount = 1;
 
-        var bindGroup = wgpu.DeviceCreateBindGroup(device, bindGroupDescriptor);
+        var bindGroup = wgpu.DeviceCreateBindGroup(device, &bindGroupDescriptor);
 
         var commandEncoderDescriptor = new CommandEncoderDescriptor
         {
             Label = (byte*) SilkMarshal.StringToPtr("Command Encoder") //TODO: free this 
         };
-        var encoder = wgpu.DeviceCreateCommandEncoder(device, commandEncoderDescriptor);
+        var encoder = wgpu.DeviceCreateCommandEncoder(device, &commandEncoderDescriptor);
 
         var computePassDescriptor = new ComputePassDescriptor
         {
             Label = (byte*) SilkMarshal.StringToPtr("Compute Pass") //TODO: free this  
         };
-        var computePass = wgpu.CommandEncoderBeginComputePass(encoder, computePassDescriptor);
+        var computePass = wgpu.CommandEncoderBeginComputePass(encoder, &computePassDescriptor);
 
         wgpu.ComputePassEncoderSetPipeline(computePass, computePipeline);
         wgpu.ComputePassEncoderSetBindGroup(computePass, 0, bindGroup, 0, null);
@@ -163,7 +163,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         {
             Label = (byte*) SilkMarshal.StringToPtr("Command Buffer") //TODO: free this  
         };
-        var cmdBuffer = wgpu.CommandEncoderFinish(encoder, commandBufferDescriptor);
+        var cmdBuffer = wgpu.CommandEncoderFinish(encoder, &commandBufferDescriptor);
 
         fixed (uint* numberPtr = numbers)
             wgpu.QueueWriteBuffer(queue, storageBuffer, 0, numberPtr, numbersSize);

@@ -24,10 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV", Convention = CallingConvention.Winapi)]
-        public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
-
         public NVExternalMemoryWin32(INativeContext ctx)
             : base(ctx)
         {

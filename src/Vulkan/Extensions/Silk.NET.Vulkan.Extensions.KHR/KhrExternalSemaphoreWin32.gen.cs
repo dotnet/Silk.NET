@@ -25,24 +25,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetSemaphoreWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSemaphoreWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSemaphoreWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SemaphoreGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetSemaphoreWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SemaphoreGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreWin32HandleKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ImportSemaphoreWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportSemaphoreWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ImportSemaphoreWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImportSemaphoreWin32HandleInfoKHR pImportSemaphoreWin32HandleInfo);
 
         public KhrExternalSemaphoreWin32(INativeContext ctx)
             : base(ctx)

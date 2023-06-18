@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Text;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
@@ -99,7 +101,7 @@ namespace Silk.NET.Windowing.Sdl
         public string Title
         {
             get => IsInitialized
-                ? _extendedOptionsCache.Title = Sdl.GetWindowTitleS(SdlWindow)
+                ? _extendedOptionsCache.Title = SilkMarshal.PtrToString((nint) Sdl.GetWindowTitle(SdlWindow))!
                 : _extendedOptionsCache.Title;
             set
             {
@@ -109,7 +111,10 @@ namespace Silk.NET.Windowing.Sdl
                     return;
                 }
 
-                Sdl.SetWindowTitle(SdlWindow, value);
+                fixed (byte* title = Encoding.UTF8.GetBytes(value))
+                {
+                    Sdl.SetWindowTitle(SdlWindow, title);
+                }
             }
         }
 
@@ -204,7 +209,7 @@ namespace Silk.NET.Windowing.Sdl
             get
             {
                 int l = 0, t = 0, r = 0, b = 0;
-                Sdl.GetWindowBordersSize(SdlWindow, ref t, ref l, ref b, ref r);
+                Sdl.GetWindowBordersSize(SdlWindow, &t, &l, &b, &r);
                 return new Rectangle<int>(new(l, t), new(r - l, b - t));
             }
         }
@@ -295,11 +300,16 @@ namespace Silk.NET.Windowing.Sdl
         public void SetWindowIcon(ReadOnlySpan<RawImage> icons)
         {
             var icon = icons[0];
-            var surface = Sdl.CreateRGBSurfaceFrom
-            (
-                icon.Pixels.Span, icon.Width, icon.Height, 32, icon.Width * 4, 0xff000000, 0x00ff0000, 0x0000ff00,
-                0x000000ff
-            );
+            Surface* surface;
+            fixed (void* imgPtr = icon.Pixels.Span)
+            {
+                surface = Sdl.CreateRGBSurfaceFrom
+                (
+                    imgPtr, icon.Width, icon.Height, 32, icon.Width * 4, 0xff000000, 0x00ff0000, 0x0000ff00,
+                    0x000000ff
+                );
+            }
+
             Sdl.SetWindowIcon(SdlWindow, surface);
             Sdl.FreeSurface(surface);
         }
@@ -428,7 +438,13 @@ namespace Silk.NET.Windowing.Sdl
 
         protected override void CoreInitialize(ViewOptions opts)
         {
-            Sdl.Setenv("SDL_VIDEO_X11_WMCLASS", WindowClass, 1);
+            fixed (byte* env = "SDL_VIDEO_X11_WMCLASS"u8)
+            {
+                fixed (byte* klass = Encoding.UTF8.GetBytes(WindowClass))
+                {
+                    Sdl.Setenv(env, klass, 1);
+                }
+            }
 
             WindowFlags flags = 0;
             flags |= IsVisible ? WindowFlags.WindowShown : WindowFlags.WindowHidden;

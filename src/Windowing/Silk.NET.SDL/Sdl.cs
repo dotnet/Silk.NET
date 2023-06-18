@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -616,9 +617,9 @@ namespace Silk.NET.SDL
             }
         }
 
-        public SdlException? GetErrorAsException()
+        public unsafe SdlException? GetErrorAsException()
         {
-            var str = GetErrorS();
+            var str = SilkMarshal.PtrToString((nint) GetError());
             if (string.IsNullOrWhiteSpace(str))
             {
                 return null;
@@ -629,6 +630,12 @@ namespace Silk.NET.SDL
         }
 
         public static Sdl GetApi() => new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryNames()));
-        public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;
+        public override unsafe bool IsExtensionPresent(string extension)
+        {
+            fixed (byte* extPtr = Encoding.UTF8.GetBytes(extension))
+            {
+                return GLExtensionSupported(extPtr) == SdlBool.True;
+            }
+        }
     }
 }

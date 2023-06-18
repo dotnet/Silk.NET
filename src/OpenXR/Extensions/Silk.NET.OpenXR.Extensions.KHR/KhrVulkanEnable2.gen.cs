@@ -25,88 +25,16 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanDeviceCreateInfoKHR* createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanDevice, [Count(Count = 0)] uint* vulkanResult);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanDeviceCreateInfoKHR* createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanDevice, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanDeviceCreateInfoKHR* createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanDevice, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanDeviceCreateInfoKHR* createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanDevice, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanDeviceCreateInfoKHR createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanDevice, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanDeviceCreateInfoKHR createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanDevice, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanDeviceCreateInfoKHR createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanDevice, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanDeviceKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateVulkanDevice([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanDeviceCreateInfoKHR createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanDevice, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanInstanceCreateInfoKHR* createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanInstance, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanInstanceCreateInfoKHR* createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanInstance, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanInstanceCreateInfoKHR* createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanInstance, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanInstanceCreateInfoKHR* createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanInstance, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanInstanceCreateInfoKHR createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanInstance, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanInstanceCreateInfoKHR createInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanInstance, [Count(Count = 0)] ref uint vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanInstanceCreateInfoKHR createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanInstance, [Count(Count = 0)] uint* vulkanResult);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateVulkanInstanceKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateVulkanInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanInstanceCreateInfoKHR createInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanInstance, [Count(Count = 0)] ref uint vulkanResult);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDevice2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetVulkanGraphicsDevice2([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanGraphicsDeviceGetInfoKHR* getInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanPhysicalDevice);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanGraphicsDevice2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanGraphicsDevice2([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VulkanGraphicsDeviceGetInfoKHR* getInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanPhysicalDevice);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanGraphicsDevice2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVulkanGraphicsDevice2([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanGraphicsDeviceGetInfoKHR getInfo, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vulkanPhysicalDevice);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanGraphicsDevice2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanGraphicsDevice2([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in VulkanGraphicsDeviceGetInfoKHR getInfo, [Count(Count = 0)] ref Silk.NET.Core.Native.VkHandle vulkanPhysicalDevice);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirements2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetVulkanGraphicsRequirements2([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsVulkanKHR* graphicsRequirements);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirements2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVulkanGraphicsRequirements2([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsVulkanKHR graphicsRequirements);
 
         public KhrVulkanEnable2(INativeContext ctx)
             : base(ctx)

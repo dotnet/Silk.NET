@@ -10,7 +10,6 @@ using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Overloading;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
@@ -28,74 +27,13 @@ namespace Silk.NET.BuildTools.Cpp
         )
         {
             var sb = new StringBuilder();
-            var all = GetWithVariants(@struct.Vtbl, profile, task.Task).ToList();
-            foreach (var vtblFunction in all)
+            foreach (var vtblFunction in @struct.Vtbl)
             {
                 sb.Clear();
-                Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex, false, thisInScope);
-                vtblFunction.New.IsReadOnly = true;
-                vtblFunction.New.InvocationPrefix = "@this->";
-                yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
-            }
-
-            foreach (var complex in Overloader.GetOverloads(all.Select(x => x.New), profile.Projects["Core"], task.Task.OverloaderExclusions))
-            {
-                if (!thisInScope)
-                {
-                    complex.Body = Enumerable.Repeat
-                    (
-                        $"var @this = ({@struct.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));",
-                        1
-                    )
-                    .Concat(complex.Body)
-                    .ToArray();
-                }
-            
-                yield return complex;
-            }
-        }
-
-        public static IEnumerable<(Function Original, Function New)> GetWithVariants
-        (
-            IEnumerable<Function> functions,
-            Profile profile,
-            BindTask task
-        )
-        {
-            var enumerable = GetOriginals(functions);
-            foreach (var overloaders in Overloader.ParameterOverloaders)
-            {
-                enumerable = Get(enumerable, overloaders);
-            }
-
-            foreach (var overload in enumerable)
-            {
-                foreach (var final in SimpleReturnOverloader.GetWithOverloads
-                    (overload.New, profile, Overloader.ReturnOverloaders.Filter(overload.New, task.OverloaderExclusions)))
-                {
-                    yield return (overload.Original, final);
-                }
-            }
-
-            IEnumerable<(Function Original, Function New)> GetOriginals(IEnumerable<Function> original)
-            {
-                foreach (var function in original)
-                {
-                    yield return (function, function);
-                }
-            }
-
-            IEnumerable<(Function, Function)> Get
-                (IEnumerable<(Function, Function)> functions, ISimpleParameterOverloader[] overloaders)
-            {
-                foreach (var function in functions)
-                {
-                    foreach (var overload in SimpleParameterOverloader.GetWithOverloads
-                        (function.Item2, profile, overloaders.Filter(function.Item2, task.OverloaderExclusions)))
-                    {
-                        yield return (function.Item1, overload);
-                    }
-                }
+                Implement(sb, vtblFunction, @struct, vtblFunction.VtblIndex, false, thisInScope);
+                vtblFunction.IsReadOnly = true;
+                vtblFunction.InvocationPrefix = "@this->";
+                yield return new ImplementedFunction(vtblFunction, sb, vtblFunction);
             }
         }
 

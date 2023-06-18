@@ -23,20 +23,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glPointParameterfSGIS", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glPointParameterfSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
-
         [NativeApi(EntryPoint = "glPointParameterfvSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glPointParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
-
-        [NativeApi(EntryPoint = "glPointParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glPointParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         public SgisPointParameters(INativeContext ctx)
             : base(ctx)

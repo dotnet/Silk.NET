@@ -28,45 +28,6 @@ public unsafe static class D2D1ColorContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ColorContext> thisVtbl, Guid* riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ColorContext> thisVtbl, ref Guid riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ColorContext> thisVtbl, ref Guid riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static uint AddRef(this ComPtr<ID2D1ColorContext> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -89,16 +50,6 @@ public unsafe static class D2D1ColorContextVtblExtensions
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetFactory(this ComPtr<ID2D1ColorContext> thisVtbl, ref ID2D1Factory* factory)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (ID2D1Factory** factoryPtr = &factory)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
-        }
     }
 
     /// <summary>To be documented.</summary>
@@ -126,79 +77,6 @@ public unsafe static class D2D1ColorContextVtblExtensions
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, byte*, uint, int>)@this->LpVtbl[6])(@this, profile, profileSize);
         return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetProfile(this ComPtr<ID2D1ColorContext> thisVtbl, ref byte profile, uint profileSize)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (byte* profilePtr = &profile)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, byte*, uint, int>)@this->LpVtbl[6])(@this, profilePtr, profileSize);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetProfile(this ComPtr<ID2D1ColorContext> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var profilePtr = (byte*) SilkMarshal.StringToPtr(profile, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext*, byte*, uint, int>)@this->LpVtbl[6])(@this, profilePtr, profileSize);
-        SilkMarshal.Free((nint)profilePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0>(this ComPtr<ID2D1ColorContext> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppvObject = default;
-        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ColorContext> thisVtbl, Span<Guid> riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<ID2D1ColorContext> thisVtbl, Span<Guid> riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void GetFactory<TI0>(this ComPtr<ID2D1ColorContext> thisVtbl, ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetProfile(this ComPtr<ID2D1ColorContext> thisVtbl, Span<byte> profile, uint profileSize)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetProfile(ref profile.GetPinnableReference(), profileSize);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID2D1ColorContext> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-        return silkRet;
     }
 
 }

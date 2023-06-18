@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.SDL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl;
@@ -68,13 +69,14 @@ namespace Silk.NET.Windowing.Sdl
 
         string Name => nameof(SdlPlatform);
 
-        public bool IsViewOnly => IsApplicable && SdlProvider.UninitializedSDL.Value.GetPlatformS() switch
-        {
-            "Windows" => false,
-            "Mac OS X" => false,
-            "Linux" => false,
-            _ => true
-        };
+        public unsafe bool IsViewOnly => IsApplicable && SilkMarshal.PtrToString
+                ((nint) SdlProvider.UninitializedSDL.Value.GetPlatform()) switch
+            {
+                "Windows" => false,
+                "Mac OS X" => false,
+                "Linux" => false,
+                _ => true
+            };
 
         public bool IsApplicable => _isApplicable.Value;
         public event Action<List<Event>>? EventReceived;

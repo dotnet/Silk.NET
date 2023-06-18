@@ -60,45 +60,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -124,16 +85,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetFactory(ref ID2D1Factory* factory)
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID2D1Factory** factoryPtr = &factory)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void GetSource(ID2D1ImageSource** imageSource)
         {
             var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -141,64 +92,10 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetSource(ref ID2D1ImageSource* imageSource)
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID2D1ImageSource** imageSourcePtr = &imageSource)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)@this->LpVtbl[4])(@this, imageSourcePtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void GetProperties(TransformedImageSourceProperties* properties)
         {
             var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, TransformedImageSourceProperties*, void>)@this->LpVtbl[5])(@this, properties);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetProperties(ref TransformedImageSourceProperties properties)
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (TransformedImageSourceProperties* propertiesPtr = &properties)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1TransformedImageSource*, TransformedImageSourceProperties*, void>)@this->LpVtbl[5])(@this, propertiesPtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetSource<TI0>(ref ComPtr<TI0> imageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->GetSource((ID2D1ImageSource**) imageSource.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1TransformedImageSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

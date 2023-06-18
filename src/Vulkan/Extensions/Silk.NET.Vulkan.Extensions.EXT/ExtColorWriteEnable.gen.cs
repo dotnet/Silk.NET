@@ -24,17 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Bool32* pColorWriteEnables);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Bool32 pColorWriteEnables);
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Bool32> pColorWriteEnables)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetColorWriteEnable(commandBuffer, (uint) pColorWriteEnables.Length, in pColorWriteEnables.GetPinnableReference());
-        }
-
         public ExtColorWriteEnable(INativeContext ctx)
             : base(ctx)
         {

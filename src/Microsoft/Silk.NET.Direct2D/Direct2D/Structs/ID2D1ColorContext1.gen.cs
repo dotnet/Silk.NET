@@ -60,45 +60,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -121,16 +82,6 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void GetFactory(ref ID2D1Factory* factory)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID2D1Factory** factoryPtr = &factory)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -161,29 +112,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetProfile(ref byte profile, uint profileSize)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte* profilePtr = &profile)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)@this->LpVtbl[6])(@this, profilePtr, profileSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetProfile([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var profilePtr = (byte*) SilkMarshal.StringToPtr(profile, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)@this->LpVtbl[6])(@this, profilePtr, profileSize);
-            SilkMarshal.Free((nint)profilePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly ColorContextType GetColorContextType()
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -208,44 +136,6 @@ namespace Silk.NET.Direct2D
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, SimpleColorProfile*, int>)@this->LpVtbl[9])(@this, simpleProfile);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetSimpleColorProfile(ref SimpleColorProfile simpleProfile)
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (SimpleColorProfile* simpleProfilePtr = &simpleProfile)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, SimpleColorProfile*, int>)@this->LpVtbl[9])(@this, simpleProfilePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

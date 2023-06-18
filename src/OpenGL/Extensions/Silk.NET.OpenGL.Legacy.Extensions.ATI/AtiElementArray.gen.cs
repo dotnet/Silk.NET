@@ -23,20 +23,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glDrawElementArrayATI", Convention = CallingConvention.Winapi)]
         public partial void DrawElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawElementArrayATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
-
         [NativeApi(EntryPoint = "glDrawRangeElementArrayATI", Convention = CallingConvention.Winapi)]
         public partial void DrawRangeElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawRangeElementArrayATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawRangeElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
-
         [NativeApi(EntryPoint = "glElementPointerATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void ElementPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glElementPointerATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ElementPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         public AtiElementArray(INativeContext ctx)
             : base(ctx)

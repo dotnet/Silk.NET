@@ -26,21 +26,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* @string);
 
-        [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte @string);
-
-        [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);
-
-        [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* @string);
-
-        [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte @string);
-
-        [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);
-
         [NativeApi(EntryPoint = "glUseShaderProgramEXT", Convention = CallingConvention.Winapi)]
         public partial void UseShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program);
 

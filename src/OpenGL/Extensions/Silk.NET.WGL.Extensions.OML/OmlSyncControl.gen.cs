@@ -23,38 +23,8 @@ namespace Silk.NET.WGL.Extensions.OML
         [NativeApi(EntryPoint = "wglGetMscRateOML", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetMscRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numerator, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* denominator);
 
-        [NativeApi(EntryPoint = "wglGetMscRateOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetMscRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numerator, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int denominator);
-
-        [NativeApi(EntryPoint = "wglGetMscRateOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetMscRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int numerator, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* denominator);
-
-        [NativeApi(EntryPoint = "wglGetMscRateOML", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetMscRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int numerator, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int denominator);
-
         [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglGetSyncValuesOML", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetSyncValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
 
         [NativeApi(EntryPoint = "wglSwapBuffersMscOML", Convention = CallingConvention.Winapi)]
         public partial long SwapBuffersMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder);
@@ -65,50 +35,8 @@ namespace Silk.NET.WGL.Extensions.OML
         [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
 
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForMscOML", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 WaitForMsc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_msc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long divisor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long remainder, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
         [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] long* sbc);
-
-        [NativeApi(EntryPoint = "wglWaitForSbcOML", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 WaitForSbc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long target_sbc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long ust, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long msc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out long sbc);
 
         public OmlSyncControl(INativeContext ctx)
             : base(ctx)

@@ -23,14 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glEndTilingQCOM", Convention = CallingConvention.Winapi)]
         public partial void EndTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint preserveMask);
 
-        [NativeApi(EntryPoint = "glEndTilingQCOM", Convention = CallingConvention.Winapi)]
-        public partial void EndTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferBitQCOM preserveMask);
-
         [NativeApi(EntryPoint = "glStartTilingQCOM", Convention = CallingConvention.Winapi)]
         public partial void StartTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint preserveMask);
-
-        [NativeApi(EntryPoint = "glStartTilingQCOM", Convention = CallingConvention.Winapi)]
-        public partial void StartTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferBitQCOM preserveMask);
 
         public QComTiledRendering(INativeContext ctx)
             : base(ctx)

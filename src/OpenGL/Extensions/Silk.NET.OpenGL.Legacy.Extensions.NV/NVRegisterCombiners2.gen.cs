@@ -23,78 +23,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
-
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
-
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
-
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
-
         [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
-
-        public unsafe float GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetCombinerStageParameter(stage, pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe float GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetCombinerStageParameter(stage, pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe float GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetCombinerStageParameter(stage, pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe float GetCombinerStageParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetCombinerStageParameter(stage, pname, out float silkRet);
-            return silkRet;
-        }
 
         public NVRegisterCombiners2(INativeContext ctx)
             : base(ctx)

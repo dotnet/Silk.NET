@@ -26,20 +26,8 @@ namespace Silk.NET.WGL.Extensions.NV
         [NativeApi(EntryPoint = "wglGetVideoDeviceNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int numDevices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* hVideoDevice);
 
-        [NativeApi(EntryPoint = "wglGetVideoDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int numDevices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint hVideoDevice);
-
         [NativeApi(EntryPoint = "wglGetVideoInfoNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetVideoInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hpVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pulCounterOutputPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pulCounterOutputVideo);
-
-        [NativeApi(EntryPoint = "wglGetVideoInfoNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetVideoInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hpVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pulCounterOutputPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pulCounterOutputVideo);
-
-        [NativeApi(EntryPoint = "wglGetVideoInfoNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetVideoInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hpVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pulCounterOutputPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pulCounterOutputVideo);
-
-        [NativeApi(EntryPoint = "wglGetVideoInfoNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetVideoInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hpVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pulCounterOutputPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pulCounterOutputVideo);
 
         [NativeApi(EntryPoint = "wglReleaseVideoDeviceNV", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 ReleaseVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice);
@@ -49,9 +37,6 @@ namespace Silk.NET.WGL.Extensions.NV
 
         [NativeApi(EntryPoint = "wglSendPbufferToVideoNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 SendPbufferToVideo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iBufferType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pulCounterPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Bool32 bBlock);
-
-        [NativeApi(EntryPoint = "wglSendPbufferToVideoNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SendPbufferToVideo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iBufferType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pulCounterPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Bool32 bBlock);
 
         public NVVideoOutput(INativeContext ctx)
             : base(ctx)

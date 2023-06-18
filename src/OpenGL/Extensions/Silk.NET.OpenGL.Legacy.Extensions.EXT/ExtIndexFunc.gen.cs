@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glIndexFuncEXT", Convention = CallingConvention.Winapi)]
         public partial void IndexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT func, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float @ref);
 
-        [NativeApi(EntryPoint = "glIndexFuncEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexFunctionEXT func, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float @ref);
-
         public ExtIndexFunc(INativeContext ctx)
             : base(ctx)
         {

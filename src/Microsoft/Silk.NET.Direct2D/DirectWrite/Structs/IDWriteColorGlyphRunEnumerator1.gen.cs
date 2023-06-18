@@ -57,45 +57,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteColorGlyphRunEnumerator1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteColorGlyphRunEnumerator1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteColorGlyphRunEnumerator1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -123,54 +84,12 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveNext(ref int hasRun)
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (int* hasRunPtr = &hasRun)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteColorGlyphRunEnumerator1*, int*, int>)@this->LpVtbl[3])(@this, hasRunPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCurrentRun([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorGlyphRun** colorGlyphRun)
         {
             var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteColorGlyphRunEnumerator1*, ColorGlyphRun**, int>)@this->LpVtbl[4])(@this, colorGlyphRun);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCurrentRun([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ColorGlyphRun* colorGlyphRun)
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ColorGlyphRun** colorGlyphRunPtr = &colorGlyphRun)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteColorGlyphRunEnumerator1*, ColorGlyphRun**, int>)@this->LpVtbl[4])(@this, colorGlyphRunPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteColorGlyphRunEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

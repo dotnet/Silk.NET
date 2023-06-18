@@ -34,47 +34,6 @@ namespace Silk.NET.DirectWrite
         [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int DWriteCreateFactory(FactoryType factoryType, Guid* iid, Silk.NET.Core.Native.IUnknown** factory);
 
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
-        [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int DWriteCreateFactory(FactoryType factoryType, Guid* iid, ref Silk.NET.Core.Native.IUnknown* factory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
-        [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int DWriteCreateFactory(FactoryType factoryType, ref Guid iid, Silk.NET.Core.Native.IUnknown** factory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
-        [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int DWriteCreateFactory(FactoryType factoryType, ref Guid iid, ref Silk.NET.Core.Native.IUnknown* factory);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
-        public unsafe int DWriteCreateFactory<TI0>(FactoryType factoryType, out ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            factory = default;
-            return DWriteCreateFactory(factoryType, SilkMarshal.GuidPtrOf<TI0>(), (Silk.NET.Core.Native.IUnknown**) factory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
-        public unsafe int DWriteCreateFactory<TI0>(FactoryType factoryType, ref Guid iid, ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            // ComPtrOverloader
-            return DWriteCreateFactory(factoryType, ref iid, (Silk.NET.Core.Native.IUnknown**) factory.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
-        public unsafe ComPtr<TI0> DWriteCreateFactory<TI0>(FactoryType factoryType) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(DWriteCreateFactory(factoryType, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
 
         public DWrite(INativeContext ctx)
             : base(ctx)

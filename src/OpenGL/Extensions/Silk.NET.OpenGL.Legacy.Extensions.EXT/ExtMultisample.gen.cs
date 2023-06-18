@@ -26,9 +26,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pattern);
 
-        [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
-        public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplePatternEXT pattern);
-
         public ExtMultisample(INativeContext ctx)
             : base(ctx)
         {

@@ -54,45 +54,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -174,45 +135,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] Trimming* trimmingOptions, ref IDWriteInlineObject trimmingSign)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteInlineObject* trimmingSignPtr = &trimmingSign)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Trimming*, IDWriteInlineObject*, int>)@this->LpVtbl[9])(@this, trimmingOptions, trimmingSignPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Trimming* trimmingOptionsPtr = &trimmingOptions)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Trimming*, IDWriteInlineObject*, int>)@this->LpVtbl[9])(@this, trimmingOptionsPtr, trimmingSign);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Trimming* trimmingOptionsPtr = &trimmingOptions)
-            {
-                fixed (IDWriteInlineObject* trimmingSignPtr = &trimmingSign)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Trimming*, IDWriteInlineObject*, int>)@this->LpVtbl[9])(@this, trimmingOptionsPtr, trimmingSignPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly int SetLineSpacing(LineSpacingMethod lineSpacingMethod, float lineSpacing, float baseline)
         {
             var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -285,45 +207,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTrimming(Trimming* trimmingOptions, ref IDWriteInlineObject* trimmingSign)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteInlineObject** trimmingSignPtr = &trimmingSign)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Trimming*, IDWriteInlineObject**, int>)@this->LpVtbl[17])(@this, trimmingOptions, trimmingSignPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTrimming(ref Trimming trimmingOptions, IDWriteInlineObject** trimmingSign)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Trimming* trimmingOptionsPtr = &trimmingOptions)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Trimming*, IDWriteInlineObject**, int>)@this->LpVtbl[17])(@this, trimmingOptionsPtr, trimmingSign);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTrimming(ref Trimming trimmingOptions, ref IDWriteInlineObject* trimmingSign)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Trimming* trimmingOptionsPtr = &trimmingOptions)
-            {
-                fixed (IDWriteInlineObject** trimmingSignPtr = &trimmingSign)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, Trimming*, IDWriteInlineObject**, int>)@this->LpVtbl[17])(@this, trimmingOptionsPtr, trimmingSignPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetLineSpacing(LineSpacingMethod* lineSpacingMethod, float* lineSpacing, float* baseline)
         {
             var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -333,122 +216,11 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLineSpacing(LineSpacingMethod* lineSpacingMethod, float* lineSpacing, ref float baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (float* baselinePtr = &baseline)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethod, lineSpacing, baselinePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLineSpacing(LineSpacingMethod* lineSpacingMethod, ref float lineSpacing, float* baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (float* lineSpacingPtr = &lineSpacing)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethod, lineSpacingPtr, baseline);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLineSpacing(LineSpacingMethod* lineSpacingMethod, ref float lineSpacing, ref float baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (float* lineSpacingPtr = &lineSpacing)
-            {
-                fixed (float* baselinePtr = &baseline)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethod, lineSpacingPtr, baselinePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLineSpacing(ref LineSpacingMethod lineSpacingMethod, float* lineSpacing, float* baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (LineSpacingMethod* lineSpacingMethodPtr = &lineSpacingMethod)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethodPtr, lineSpacing, baseline);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLineSpacing(ref LineSpacingMethod lineSpacingMethod, float* lineSpacing, ref float baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (LineSpacingMethod* lineSpacingMethodPtr = &lineSpacingMethod)
-            {
-                fixed (float* baselinePtr = &baseline)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethodPtr, lineSpacing, baselinePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLineSpacing(ref LineSpacingMethod lineSpacingMethod, ref float lineSpacing, float* baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (LineSpacingMethod* lineSpacingMethodPtr = &lineSpacingMethod)
-            {
-                fixed (float* lineSpacingPtr = &lineSpacing)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethodPtr, lineSpacingPtr, baseline);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetLineSpacing(ref LineSpacingMethod lineSpacingMethod, ref float lineSpacing, ref float baseline)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (LineSpacingMethod* lineSpacingMethodPtr = &lineSpacingMethod)
-            {
-                fixed (float* lineSpacingPtr = &lineSpacing)
-                {
-                    fixed (float* baselinePtr = &baseline)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, LineSpacingMethod*, float*, float*, int>)@this->LpVtbl[18])(@this, lineSpacingMethodPtr, lineSpacingPtr, baselinePtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFontCollection(IDWriteFontCollection** fontCollection)
         {
             var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, IDWriteFontCollection**, int>)@this->LpVtbl[19])(@this, fontCollection);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFontCollection(ref IDWriteFontCollection* fontCollection)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteFontCollection** fontCollectionPtr = &fontCollection)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, IDWriteFontCollection**, int>)@this->LpVtbl[19])(@this, fontCollectionPtr);
-            }
             return ret;
         }
 
@@ -467,29 +239,6 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, char*, uint, int>)@this->LpVtbl[21])(@this, fontFamilyName, nameSize);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFontFamilyName(ref char fontFamilyName, uint nameSize)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (char* fontFamilyNamePtr = &fontFamilyName)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, char*, uint, int>)@this->LpVtbl[21])(@this, fontFamilyNamePtr, nameSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFontFamilyName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, uint nameSize)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var fontFamilyNamePtr = (byte*) SilkMarshal.StringToPtr(fontFamilyName, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, byte*, uint, int>)@this->LpVtbl[21])(@this, fontFamilyNamePtr, nameSize);
-            SilkMarshal.Free((nint)fontFamilyNamePtr);
             return ret;
         }
 
@@ -545,87 +294,6 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, char*, uint, int>)@this->LpVtbl[27])(@this, localeName, nameSize);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetLocaleName(ref char localeName, uint nameSize)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (char* localeNamePtr = &localeName)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, char*, uint, int>)@this->LpVtbl[27])(@this, localeNamePtr, nameSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetLocaleName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, uint nameSize)
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat*, byte*, uint, int>)@this->LpVtbl[27])(@this, localeNamePtr, nameSize);
-            SilkMarshal.Free((nint)localeNamePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTrimming<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Trimming* trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->SetTrimming(trimmingOptions, (IDWriteInlineObject*) trimmingSign.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetTrimming<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->SetTrimming(in trimmingOptions, (IDWriteInlineObject*) trimmingSign.Handle);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTrimming<TI0>(Trimming* trimmingOptions, ref ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetTrimming(trimmingOptions, (IDWriteInlineObject**) trimmingSign.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetTrimming<TI0>(ref Trimming trimmingOptions, ref ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetTrimming(ref trimmingOptions, (IDWriteInlineObject**) trimmingSign.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFontCollection<TI0>(ref ComPtr<TI0> fontCollection) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetFontCollection((IDWriteFontCollection**) fontCollection.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteTextFormat*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

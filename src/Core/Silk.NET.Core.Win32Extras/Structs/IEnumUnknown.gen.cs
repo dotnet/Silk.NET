@@ -54,45 +54,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -116,45 +77,6 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetched);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, Silk.NET.Core.Native.IUnknown** rgelt, ref uint pceltFetched)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pceltFetchedPtr = &pceltFetched)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown** rgeltPtr = &rgelt)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, ref uint pceltFetched)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown** rgeltPtr = &rgelt)
-            {
-                fixed (uint* pceltFetchedPtr = &pceltFetched)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
-                }
-            }
             return ret;
         }
 
@@ -183,60 +105,6 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, IEnumUnknown**, int>)@this->LpVtbl[6])(@this, ppenum);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Clone(ref IEnumUnknown* ppenum)
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IEnumUnknown** ppenumPtr = &ppenum)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, IEnumUnknown**, int>)@this->LpVtbl[6])(@this, ppenumPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<TI0>(uint celt, ref ComPtr<TI0> rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Next(celt, (Silk.NET.Core.Native.IUnknown**) rgelt.GetAddressOf(), pceltFetched);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Next<TI0>(uint celt, ref ComPtr<TI0> rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Next(celt, (Silk.NET.Core.Native.IUnknown**) rgelt.GetAddressOf(), ref pceltFetched);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Clone<TI0>(ref ComPtr<TI0> ppenum) where TI0 : unmanaged, IComVtbl<IEnumUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Clone((IEnumUnknown**) ppenum.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

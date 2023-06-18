@@ -9,7 +9,7 @@
     <!-- Core properties -->
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <LangVersion>10</LangVersion>
+        <LangVersion>11</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
             Fix a minor regression with some OpenGL Span overloads. Read more about the 2.17 update here: https://dotnet.github.io/Silk.NET/blog/apr-2023/silk2170.html

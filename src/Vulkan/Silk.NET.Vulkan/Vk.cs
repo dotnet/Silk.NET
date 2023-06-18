@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
@@ -53,7 +54,7 @@ namespace Silk.NET.Vulkan
             (uint major, uint minor, uint patch = 0) => new Version32(major, minor, patch);
         
 
-        public static Vk GetApi()
+        public static unsafe Vk GetApi()
         {
             var ctx = new MultiNativeContext
                 (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryNames()), null);
@@ -67,15 +68,18 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    nint ptr = default;
-                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
-                    if (ptr != default)
+                    fixed (byte* xPtr = Encoding.UTF8.GetBytes(x))
                     {
+                        nint ptr = default;
+                        ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), xPtr);
+                        if (ptr != default)
+                        {
+                            return ptr;
+                        }
+
+                        ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), xPtr);
                         return ptr;
                     }
-
-                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
-                    return ptr;
                 }
             );
             return ret;
@@ -86,14 +90,31 @@ namespace Silk.NET.Vulkan
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
             var ret = GetApi();
-            ret.CreateInstance(in info, null, out instance);
+            fixed (InstanceCreateInfo* ici = &info)
+            {
+                fixed (Instance* i = &instance)
+                {
+                    ret.CreateInstance(ici, null, i);
+                }
+            }
+
             return ret;
         }
 
-        public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
+        public static unsafe Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
             var ret = GetApi();
-            ret.CreateInstance(in info, in callbacks, out instance);
+            fixed (InstanceCreateInfo* ici = &info)
+            {
+                fixed (Instance* i = &instance)
+                {
+                    fixed (AllocationCallbacks* ac = &callbacks)
+                    {
+                        ret.CreateInstance(ici, ac, i);
+                    }
+                }
+            }
+
             return ret;
         }
 
@@ -113,10 +134,21 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
+        public unsafe bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance
-                (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
+                (
+                    typeof(T), new LamdaNativeContext
+                    (
+                        x =>
+                        {
+                            fixed (byte* xp = Encoding.UTF8.GetBytes(x))
+                            {
+                                return GetInstanceProcAddr(instance, xp);
+                            }
+                        }
+                    )
+                )
                 : null) is null);
 
         /// <summary>
@@ -131,11 +163,22 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetDeviceExtension<T>
+        public unsafe bool TryGetDeviceExtension<T>
             (Instance instance, Device device, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance
-                    (typeof(T), new LamdaNativeContext(x => GetDeviceProcAddr(device, x)))
+                (
+                    typeof(T), new LamdaNativeContext
+                    (
+                        x =>
+                        {
+                            fixed (byte* xp = Encoding.UTF8.GetBytes(x))
+                            {
+                                return GetDeviceProcAddr(device, xp);
+                            }
+                        }
+                    )
+                )
                 : null) is null);
 
         /// <inheritdoc />

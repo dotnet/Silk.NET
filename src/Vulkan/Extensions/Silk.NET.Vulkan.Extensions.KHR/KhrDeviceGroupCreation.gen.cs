@@ -24,18 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
-
         public KhrDeviceGroupCreation(INativeContext ctx)
             : base(ctx)
         {

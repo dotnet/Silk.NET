@@ -25,28 +25,12 @@ namespace Silk.NET.OpenXR.Extensions.HTC
         public unsafe partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FacialTrackerCreateInfoHTC* createInfo, [Count(Count = 0)] FacialTrackerHTC* facialTracker);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateFacialTrackerHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FacialTrackerCreateInfoHTC* createInfo, [Count(Count = 0)] ref FacialTrackerHTC facialTracker);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateFacialTrackerHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FacialTrackerCreateInfoHTC createInfo, [Count(Count = 0)] FacialTrackerHTC* facialTracker);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateFacialTrackerHTC", Convention = CallingConvention.Winapi)]
-        public partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FacialTrackerCreateInfoHTC createInfo, [Count(Count = 0)] ref FacialTrackerHTC facialTracker);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyFacialTrackerHTC", Convention = CallingConvention.Winapi)]
         public partial Result DestroyFacialTrackerHtc([Count(Count = 0)] FacialTrackerHTC facialTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetFacialExpressionsHTC", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetFacialExpressionsHtc([Count(Count = 0)] FacialTrackerHTC facialTracker, [Count(Count = 0)] FacialExpressionsHTC* facialExpressions);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetFacialExpressionsHTC", Convention = CallingConvention.Winapi)]
-        public partial Result GetFacialExpressionsHtc([Count(Count = 0)] FacialTrackerHTC facialTracker, [Count(Count = 0)] ref FacialExpressionsHTC facialExpressions);
 
         public HtcFacialTracking(INativeContext ctx)
             : base(ctx)

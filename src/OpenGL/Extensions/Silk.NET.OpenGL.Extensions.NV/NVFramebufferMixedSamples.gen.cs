@@ -26,39 +26,11 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float v);
-
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* v);
 
-        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float v);
-
         [NativeApi(EntryPoint = "glRasterSamplesEXT", Convention = CallingConvention.Winapi)]
         public partial void RasterSamples([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool fixedsamplelocations);
-
-        public unsafe void CoverageModulationTable([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
-        {
-            // ImplicitCountSpanOverloader
-            CoverageModulationTable((uint) v.Length, in v.GetPinnableReference());
-        }
-
-        public unsafe float GetCoverageModulationTable()
-        {
-            const uint bufSize = 1;
-            // ReturnTypeOverloader
-            float ret = default;
-            GetCoverageModulationTable(bufSize, &ret);
-            return ret;
-        }
-
-        public unsafe float GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize)
-        {
-            // NonKhrReturnTypeOverloader
-            GetCoverageModulationTable(bufSize, out float silkRet);
-            return silkRet;
-        }
 
         public NVFramebufferMixedSamples(INativeContext ctx)
             : base(ctx)

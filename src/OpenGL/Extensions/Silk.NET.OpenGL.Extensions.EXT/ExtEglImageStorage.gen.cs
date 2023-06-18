@@ -23,14 +23,8 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EglimageTargetTexStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attrib_list);
 
-        [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT", Convention = CallingConvention.Winapi)]
-        public partial void EglimageTargetTexStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int attrib_list);
-
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EglimageTargetTextureStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attrib_list);
-
-        [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT", Convention = CallingConvention.Winapi)]
-        public partial void EglimageTargetTextureStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int attrib_list);
 
         public ExtEglImageStorage(INativeContext ctx)
             : base(ctx)

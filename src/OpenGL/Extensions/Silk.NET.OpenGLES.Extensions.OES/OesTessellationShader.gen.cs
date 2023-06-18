@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glPatchParameteriOES", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glPatchParameteriOES", Convention = CallingConvention.Winapi)]
-        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
-
         public OesTessellationShader(INativeContext ctx)
             : base(ctx)
         {

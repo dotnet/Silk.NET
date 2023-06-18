@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisampleCoverage([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint coverageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint coverageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderbufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint coverageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV", Convention = CallingConvention.Winapi)]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderbufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint coverageSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorSamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
-
         public NVFramebufferMultisampleCoverage(INativeContext ctx)
             : base(ctx)
         {

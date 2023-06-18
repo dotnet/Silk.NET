@@ -57,45 +57,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -123,89 +84,11 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStreamFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteFontFileStream** fontFileStreamPtr = &fontFileStream)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[3])(@this, fontFileReferenceKey, fontFileReferenceKeySize, fontFileStreamPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStreamFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[3])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, fontFileStream);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStreamFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                fixed (IDWriteFontFileStream** fontFileStreamPtr = &fontFileStream)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[3])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, fontFileStreamPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFilePathLengthFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, uint* filePathLength)
         {
             var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, fontFileReferenceKey, fontFileReferenceKeySize, filePathLength);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilePathLengthFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, ref uint filePathLength)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* filePathLengthPtr = &filePathLength)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, fontFileReferenceKey, fontFileReferenceKeySize, filePathLengthPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilePathLengthFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, uint* filePathLength) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, filePathLength);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFilePathLengthFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref uint filePathLength) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                fixed (uint* filePathLengthPtr = &filePathLength)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, filePathLengthPtr);
-                }
-            }
             return ret;
         }
 
@@ -219,149 +102,12 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilePathFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, ref char filePath, uint filePathSize)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (char* filePathPtr = &filePath)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, char*, uint, int>)@this->LpVtbl[5])(@this, fontFileReferenceKey, fontFileReferenceKeySize, filePathPtr, filePathSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilePathFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, uint filePathSize)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, byte*, uint, int>)@this->LpVtbl[5])(@this, fontFileReferenceKey, fontFileReferenceKeySize, filePathPtr, filePathSize);
-            SilkMarshal.Free((nint)filePathPtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilePathFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, char* filePath, uint filePathSize) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, char*, uint, int>)@this->LpVtbl[5])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, filePath, filePathSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFilePathFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref char filePath, uint filePathSize) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                fixed (char* filePathPtr = &filePath)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, char*, uint, int>)@this->LpVtbl[5])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, filePathPtr, filePathSize);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetFilePathFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, uint filePathSize) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-            var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, byte*, uint, int>)@this->LpVtbl[5])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, filePathPtr, filePathSize);
-            SilkMarshal.Free((nint)filePathPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetLastWriteTimeFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, Silk.NET.Core.Win32Extras.Filetime* lastWriteTime)
         {
             var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, Silk.NET.Core.Win32Extras.Filetime*, int>)@this->LpVtbl[6])(@this, fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTime);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLastWriteTimeFromKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, ref Silk.NET.Core.Win32Extras.Filetime lastWriteTime)
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, Silk.NET.Core.Win32Extras.Filetime*, int>)@this->LpVtbl[6])(@this, fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTimePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLastWriteTimeFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, Silk.NET.Core.Win32Extras.Filetime* lastWriteTime) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, Silk.NET.Core.Win32Extras.Filetime*, int>)@this->LpVtbl[6])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, lastWriteTime);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetLastWriteTimeFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref Silk.NET.Core.Win32Extras.Filetime lastWriteTime) where T0 : unmanaged
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* fontFileReferenceKeyPtr = &fontFileReferenceKey)
-            {
-                fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteLocalFontFileLoader*, void*, uint, Silk.NET.Core.Win32Extras.Filetime*, int>)@this->LpVtbl[6])(@this, fontFileReferenceKeyPtr, fontFileReferenceKeySize, lastWriteTimePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStreamFromKey<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateStreamFromKey(fontFileReferenceKey, fontFileReferenceKeySize, (IDWriteFontFileStream**) fontFileStream.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateStreamFromKey<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateStreamFromKey(in fontFileReferenceKey, fontFileReferenceKeySize, (IDWriteFontFileStream**) fontFileStream.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteLocalFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

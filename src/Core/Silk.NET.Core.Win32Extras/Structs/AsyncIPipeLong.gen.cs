@@ -54,45 +54,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -129,62 +90,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FinishPull(int* buf, ref uint pcReturned)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pcReturnedPtr = &pcReturned)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, int*, uint*, int>)@this->LpVtbl[4])(@this, buf, pcReturnedPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int FinishPull(ref int buf, uint* pcReturned)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (int* bufPtr = &buf)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, int*, uint*, int>)@this->LpVtbl[4])(@this, bufPtr, pcReturned);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int FinishPull(ref int buf, ref uint pcReturned)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (int* bufPtr = &buf)
-            {
-                fixed (uint* pcReturnedPtr = &pcReturned)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, int*, uint*, int>)@this->LpVtbl[4])(@this, bufPtr, pcReturnedPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int BeginPush(int* buf, uint cSent)
         {
             var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, int*, uint, int>)@this->LpVtbl[5])(@this, buf, cSent);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int BeginPush(ref int buf, uint cSent)
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (int* bufPtr = &buf)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, int*, uint, int>)@this->LpVtbl[5])(@this, bufPtr, cSent);
-            }
             return ret;
         }
 
@@ -195,24 +105,6 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeLong*, int>)@this->LpVtbl[6])(@this);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (AsyncIPipeLong*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

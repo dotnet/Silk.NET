@@ -23,80 +23,14 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glBlendEquationiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES mode);
 
-        [NativeApi(EntryPoint = "glBlendEquationiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT mode);
-
         [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES modeAlpha);
-
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeAlpha);
-
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES modeAlpha);
-
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dst);
 
-        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dst);
-
-        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dst);
-
-        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dst);
-
         [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES dstAlpha);
-
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool r, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool g, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool b, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool a);
@@ -104,20 +38,11 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glDisableiOES", Convention = CallingConvention.Winapi)]
         public partial void Disable([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glDisableiOES", Convention = CallingConvention.Winapi)]
-        public partial void Disable([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
-
         [NativeApi(EntryPoint = "glEnableiOES", Convention = CallingConvention.Winapi)]
         public partial void Enable([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glEnableiOES", Convention = CallingConvention.Winapi)]
-        public partial void Enable([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
-
         [NativeApi(EntryPoint = "glIsEnablediOES", Convention = CallingConvention.Winapi)]
         public partial bool IsEnabled([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
-
-        [NativeApi(EntryPoint = "glIsEnablediOES", Convention = CallingConvention.Winapi)]
-        public partial bool IsEnabled([Flow(Silk.NET.Core.Native.FlowDirection.In)] EnableCap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
 
         public OesDrawBuffersIndexed(INativeContext ctx)
             : base(ctx)

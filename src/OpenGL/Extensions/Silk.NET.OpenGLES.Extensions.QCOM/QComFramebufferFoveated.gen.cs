@@ -23,18 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glFramebufferFoveationConfigQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferFoveationConfig([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint focalPointsPerLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* providedFeatures);
 
-        [NativeApi(EntryPoint = "glFramebufferFoveationConfigQCOM", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferFoveationConfig([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint focalPointsPerLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint providedFeatures);
-
         [NativeApi(EntryPoint = "glFramebufferFoveationParametersQCOM", Convention = CallingConvention.Winapi)]
         public partial void FramebufferFoveationParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint layer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint focalPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float focalX, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float focalY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float gainX, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float gainY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float foveaArea);
-
-        public unsafe uint FramebufferFoveationConfig([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint focalPointsPerLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint requestedFeatures)
-        {
-            // NonKhrReturnTypeOverloader
-            FramebufferFoveationConfig(framebuffer, numLayers, focalPointsPerLayer, requestedFeatures, out uint silkRet);
-            return silkRet;
-        }
 
         public QComFramebufferFoveated(INativeContext ctx)
             : base(ctx)

@@ -54,45 +54,6 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -115,81 +76,6 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, Silk.NET.Core.Native.IUnknown*, int, void>)@this->LpVtbl[3])(@this, downloadQueue, context, downloadResult);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, ref Silk.NET.Core.Native.IUnknown context, int downloadResult)
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Core.Native.IUnknown* contextPtr = &context)
-            {
-                ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, Silk.NET.Core.Native.IUnknown*, int, void>)@this->LpVtbl[3])(@this, downloadQueue, contextPtr, downloadResult);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DownloadCompleted(ref IDWriteFontDownloadQueue downloadQueue, Silk.NET.Core.Native.IUnknown* context, int downloadResult)
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (IDWriteFontDownloadQueue* downloadQueuePtr = &downloadQueue)
-            {
-                ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, Silk.NET.Core.Native.IUnknown*, int, void>)@this->LpVtbl[3])(@this, downloadQueuePtr, context, downloadResult);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void DownloadCompleted(ref IDWriteFontDownloadQueue downloadQueue, ref Silk.NET.Core.Native.IUnknown context, int downloadResult)
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (IDWriteFontDownloadQueue* downloadQueuePtr = &downloadQueue)
-            {
-                fixed (Silk.NET.Core.Native.IUnknown* contextPtr = &context)
-                {
-                    ((delegate* unmanaged[Stdcall]<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, Silk.NET.Core.Native.IUnknown*, int, void>)@this->LpVtbl[3])(@this, downloadQueuePtr, contextPtr, downloadResult);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void DownloadCompleted<TI0, TI1>(ComPtr<TI0> downloadQueue, ComPtr<TI1> context, int downloadResult) where TI0 : unmanaged, IComVtbl<IDWriteFontDownloadQueue>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1>
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->DownloadCompleted((IDWriteFontDownloadQueue*) downloadQueue.Handle, (Silk.NET.Core.Native.IUnknown*) context.Handle, downloadResult);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void DownloadCompleted<TI0>(ComPtr<TI0> downloadQueue, ref Silk.NET.Core.Native.IUnknown context, int downloadResult) where TI0 : unmanaged, IComVtbl<IDWriteFontDownloadQueue>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->DownloadCompleted((IDWriteFontDownloadQueue*) downloadQueue.Handle, ref context, downloadResult);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void DownloadCompleted<TI0>(ref IDWriteFontDownloadQueue downloadQueue, ComPtr<TI0> context, int downloadResult) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->DownloadCompleted(ref downloadQueue, (Silk.NET.Core.Native.IUnknown*) context.Handle, downloadResult);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IDWriteFontDownloadListener*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

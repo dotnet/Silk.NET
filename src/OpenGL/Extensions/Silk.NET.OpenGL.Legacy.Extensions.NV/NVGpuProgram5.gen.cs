@@ -23,27 +23,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramSubroutineParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* param);
 
-        [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetProgramSubroutineParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint param);
-
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* @params);
-
-        [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint @params);
-
-        public unsafe void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> @params)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramSubroutineParameters(target, (uint) @params.Length, in @params.GetPinnableReference());
-        }
-
-        public unsafe uint GetProgramSubroutineParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index)
-        {
-            // NonKhrReturnTypeOverloader
-            GetProgramSubroutineParameter(target, index, out uint silkRet);
-            return silkRet;
-        }
 
         public NVGpuProgram5(INativeContext ctx)
             : base(ctx)

@@ -141,7 +141,7 @@ namespace VulkanTriangle
         private unsafe void DrawFrame(double obj)
         {
             var fence = _inFlightFences[_currentFrame];
-            _vk.WaitForFences(_device, 1, in fence, Vk.True, ulong.MaxValue);
+            _vk.WaitForFences(_device, 1, &fence, Vk.True, ulong.MaxValue);
 
             uint imageIndex;
             Result result =_vkSwapchain.AcquireNextImage
@@ -159,7 +159,10 @@ namespace VulkanTriangle
 
             if (_imagesInFlight[imageIndex].Handle != 0)
             {
-                _vk.WaitForFences(_device, 1, in _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
+                fixed (Fence* inFlight = &_imagesInFlight[imageIndex])
+                {
+                    _vk.WaitForFences(_device, 1, inFlight, Vk.True, ulong.MaxValue);
+                }
             }
 
             _imagesInFlight[imageIndex] = _inFlightFences[_currentFrame];
@@ -461,7 +464,8 @@ namespace VulkanTriangle
         private unsafe SwapChainSupportDetails QuerySwapChainSupport(PhysicalDevice device)
         {
             var details = new SwapChainSupportDetails();
-            _vkSurface.GetPhysicalDeviceSurfaceCapabilities(device, _surface, out var surfaceCapabilities);
+            SurfaceCapabilitiesKHR surfaceCapabilities;
+            _vkSurface.GetPhysicalDeviceSurfaceCapabilities(device, _surface, &surfaceCapabilities);
             details.Capabilities = surfaceCapabilities;
 
             var formatCount = 0u;
@@ -530,7 +534,8 @@ namespace VulkanTriangle
                     indices.GraphicsFamily = i;
                 }
 
-                _vkSurface.GetPhysicalDeviceSurfaceSupport(device, i, _surface, out var presentSupport);
+                Bool32 presentSupport;
+                _vkSurface.GetPhysicalDeviceSurfaceSupport(device, i, _surface, &presentSupport);
 
                 if (presentSupport == Vk.True)
                 {

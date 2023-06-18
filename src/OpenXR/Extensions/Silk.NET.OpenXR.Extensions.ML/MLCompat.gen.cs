@@ -24,10 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.ML
         [NativeApi(EntryPoint = "xrCreateSpaceFromCoordinateFrameUIDML", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSpaceFromCoordinateFrameUidml([Count(Count = 0)] Session session, [Count(Count = 0)] CoordinateSpaceCreateInfoML createInfo, [Count(Count = 0)] Space* space);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSpaceFromCoordinateFrameUIDML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpaceFromCoordinateFrameUidml([Count(Count = 0)] Session session, [Count(Count = 0)] CoordinateSpaceCreateInfoML createInfo, [Count(Count = 0)] ref Space space);
-
         public MLCompat(INativeContext ctx)
             : base(ctx)
         {

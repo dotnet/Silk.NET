@@ -23,76 +23,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glGetListParameterfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetListParameterfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
-
-        [NativeApi(EntryPoint = "glGetListParameterfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetListParameterfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
-
         [NativeApi(EntryPoint = "glGetListParameterivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetListParameterivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glGetListParameterivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetListParameterivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glListParameterfSGIX", Convention = CallingConvention.Winapi)]
         public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glListParameterfSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
-
         [NativeApi(EntryPoint = "glListParameterfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glListParameterfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
-
-        [NativeApi(EntryPoint = "glListParameterfvSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glListParameterfvSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glListParameteriSGIX", Convention = CallingConvention.Winapi)]
         public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glListParameteriSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
-
         [NativeApi(EntryPoint = "glListParameterivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
-
-        [NativeApi(EntryPoint = "glListParameterivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
-
-        [NativeApi(EntryPoint = "glListParameterivSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
-
-        [NativeApi(EntryPoint = "glListParameterivSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
-
-        public unsafe float GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetListParameter(list, pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe float GetListParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetListParameter(list, pname, out float silkRet);
-            return silkRet;
-        }
 
         public SgixListPriority(INativeContext ctx)
             : base(ctx)

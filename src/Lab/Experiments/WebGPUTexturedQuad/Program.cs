@@ -89,7 +89,7 @@ public static unsafe class WebGPUTexturedQuad
         _WebGpuDisposal = new WebGPUDisposal(wgpu);
 
         InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
-        _Instance = wgpu.CreateInstance(instanceDescriptor);
+        _Instance = wgpu.CreateInstance(&instanceDescriptor);
 
         _Surface = _Window.CreateWebGPUSurface(wgpu, _Instance);
 
@@ -102,7 +102,7 @@ public static unsafe class WebGPUTexturedQuad
             wgpu.InstanceRequestAdapter
             (
                 _Instance,
-                requestAdapterOptions,
+                &requestAdapterOptions,
                 new PfnRequestAdapterCallback((_, adapter1, _, _) => _Adapter = adapter1),
                 null
             );
@@ -147,7 +147,7 @@ public static unsafe class WebGPUTexturedQuad
                 NextInChain = (ChainedStruct*) (&wgslDescriptor)
             };
 
-            _Shader = wgpu.DeviceCreateShaderModule(_Device, shaderModuleDescriptor);
+            _Shader = wgpu.DeviceCreateShaderModule(_Device, &shaderModuleDescriptor);
 
             Console.WriteLine($"Created shader {(nuint) _Shader:X}");
         } //Load shader
@@ -195,7 +195,7 @@ public static unsafe class WebGPUTexturedQuad
                 ViewFormatCount = 1
             };
 
-            _Texture = wgpu.DeviceCreateTexture(_Device, descriptor);
+            _Texture = wgpu.DeviceCreateTexture(_Device, &descriptor);
 
             var viewDescriptor = new TextureViewDescriptor
             {
@@ -208,13 +208,13 @@ public static unsafe class WebGPUTexturedQuad
                 BaseMipLevel    = 0
             };
 
-            _TextureView = wgpu.TextureCreateView(_Texture, viewDescriptor);
+            _TextureView = wgpu.TextureCreateView(_Texture, &viewDescriptor);
 
             var queue = wgpu.DeviceGetQueue(_Device);
 
             var commandEncoderDescriptor = new CommandEncoderDescriptor();
 
-            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, commandEncoderDescriptor);
+            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, &commandEncoderDescriptor);
 
             image.ProcessPixelRows
             (
@@ -247,12 +247,13 @@ public static unsafe class WebGPUTexturedQuad
                         };
 
                         fixed (void* dataPtr = imageRow)
-                            wgpu.QueueWriteTexture(queue, imageCopyTexture, dataPtr, (nuint) (sizeof(Rgba32) * imageRow.Length), layout, extent);
+                            wgpu.QueueWriteTexture(queue, &imageCopyTexture, dataPtr, (nuint) (sizeof(Rgba32) * imageRow.Length), &layout, &extent);
                     }
                 }
             );
 
-            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, new CommandBufferDescriptor());
+            var desc = new CommandBufferDescriptor();
+            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, &desc);
 
             wgpu.QueueSubmit(queue, 1, &commandBuffer);
         } //Create texture and texture view
@@ -266,7 +267,7 @@ public static unsafe class WebGPUTexturedQuad
                 MinFilter    = FilterMode.Linear
             };
 
-            _Sampler = wgpu.DeviceCreateSampler(_Device, descriptor);
+            _Sampler = wgpu.DeviceCreateSampler(_Device, &descriptor);
         } //Create sampler
 
         { //Create bind group for sampler and textureview
@@ -298,7 +299,7 @@ public static unsafe class WebGPUTexturedQuad
                 EntryCount = 2
             };
 
-            _TextureSamplerBindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, layoutDescriptor);
+            _TextureSamplerBindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, &layoutDescriptor);
 
             var bindGroupEntries = stackalloc BindGroupEntry[2];
             bindGroupEntries[0] = new BindGroupEntry
@@ -319,7 +320,7 @@ public static unsafe class WebGPUTexturedQuad
                 Layout     = _TextureSamplerBindGroupLayout
             };
 
-            _TextureBindGroup = wgpu.DeviceCreateBindGroup(_Device, descriptor);
+            _TextureBindGroup = wgpu.DeviceCreateBindGroup(_Device, &descriptor);
         } //Create bind group for sampler and texture view
 
         { //Create buffer to store projection matrix
@@ -330,7 +331,7 @@ public static unsafe class WebGPUTexturedQuad
                 MappedAtCreation = false
             };
 
-            _ProjectionMatrixBuffer = wgpu.DeviceCreateBuffer(_Device, descriptor);
+            _ProjectionMatrixBuffer = wgpu.DeviceCreateBuffer(_Device, &descriptor);
 
             UpdateProjectionMatrix();
         } //Create buffer to store projection matrix
@@ -347,13 +348,14 @@ public static unsafe class WebGPUTexturedQuad
                 Visibility = ShaderStage.Vertex,
             };
 
+            var desc = new BindGroupLayoutDescriptor
+            {
+                Entries = &entry,
+                EntryCount = 1
+            };
             _ProjectionMatrixBindGroupLayout = wgpu.DeviceCreateBindGroupLayout
             (
-                _Device, new BindGroupLayoutDescriptor
-                {
-                    Entries    = &entry,
-                    EntryCount = 1
-                }
+                _Device, &desc
             );
 
             var bindGroupEntry = new BindGroupEntry
@@ -363,14 +365,15 @@ public static unsafe class WebGPUTexturedQuad
                 Size = (ulong) sizeof(Matrix4x4)
             };
 
+            var grpDesc = new BindGroupDescriptor
+            {
+                Entries = &bindGroupEntry,
+                EntryCount = 1,
+                Layout = _ProjectionMatrixBindGroupLayout
+            };
             _ProjectionMatrixBindGroup = wgpu.DeviceCreateBindGroup
             (
-                _Device, new BindGroupDescriptor
-                {
-                    Entries    = &bindGroupEntry,
-                    EntryCount = 1,
-                    Layout     = _ProjectionMatrixBindGroupLayout
-                }
+                _Device, &grpDesc
             );
         } //Create bind group for projection matrix
 
@@ -416,7 +419,7 @@ public static unsafe class WebGPUTexturedQuad
                 BindGroupLayouts     = bindGroupLayouts
             };
 
-            var pipelineLayout = wgpu.DeviceCreatePipelineLayout(_Device, pipelineLayoutDescriptor);
+            var pipelineLayout = wgpu.DeviceCreatePipelineLayout(_Device, &pipelineLayoutDescriptor);
 
             var renderPipelineDescriptor = new RenderPipelineDescriptor
             {
@@ -445,7 +448,7 @@ public static unsafe class WebGPUTexturedQuad
                 Layout       = pipelineLayout
             };
 
-            _Pipeline = wgpu.DeviceCreateRenderPipeline(_Device, renderPipelineDescriptor);
+            _Pipeline = wgpu.DeviceCreateRenderPipeline(_Device, &renderPipelineDescriptor);
 
             Console.WriteLine($"Created pipeline {(nuint) _Pipeline:X}");
         } //Create pipeline
@@ -457,7 +460,7 @@ public static unsafe class WebGPUTexturedQuad
                 Usage = BufferUsage.Vertex | BufferUsage.CopyDst
             };
 
-            _VertexBuffer = wgpu.DeviceCreateBuffer(_Device, descriptor);
+            _VertexBuffer = wgpu.DeviceCreateBuffer(_Device, &descriptor);
 
             //Get a queue
             var queue = wgpu.DeviceGetQueue(_Device);
@@ -481,10 +484,12 @@ public static unsafe class WebGPUTexturedQuad
             wgpu.QueueWriteBuffer(queue, _VertexBuffer, 0, data, (nuint) _VertexBufferSize);
 
             //Create a new command encoder
-            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, new CommandEncoderDescriptor());
+            var ceDesc = new CommandEncoderDescriptor();
+            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, &ceDesc);
 
             //Finish the command encoder
-            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, new CommandBufferDescriptor());
+            var cbDesc = new CommandBufferDescriptor();
+            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, &cbDesc);
 
             wgpu.QueueSubmit(queue, 1, &commandBuffer);
         } //Create vertex buffer
@@ -496,13 +501,15 @@ public static unsafe class WebGPUTexturedQuad
     {
         var queue = wgpu.DeviceGetQueue(_Device);
 
-        var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, new CommandEncoderDescriptor());
+        var ceDesc = new CommandEncoderDescriptor();
+        var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, &ceDesc);
 
         var projectionMatrix = Matrix4x4.CreateOrthographicOffCenter(0, _Window.Size.X, _Window.Size.Y, 0, 0, 1);
 
         wgpu.QueueWriteBuffer(queue, _ProjectionMatrixBuffer, 0, &projectionMatrix, (nuint) sizeof(Matrix4x4));
 
-        var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, new CommandBufferDescriptor());
+        var cbDesc = new CommandBufferDescriptor();
+        var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, &cbDesc);
 
         wgpu.QueueSubmit(queue, 1, &commandBuffer);
     }
@@ -531,7 +538,8 @@ public static unsafe class WebGPUTexturedQuad
             return;
         }
 
-        var encoder = wgpu.DeviceCreateCommandEncoder(_Device, new CommandEncoderDescriptor());
+        var ceDesc = new CommandEncoderDescriptor();
+        var encoder = wgpu.DeviceCreateCommandEncoder(_Device, &ceDesc);
 
         var colorAttachment = new RenderPassColorAttachment
         {
@@ -555,7 +563,7 @@ public static unsafe class WebGPUTexturedQuad
             DepthStencilAttachment = null
         };
 
-        var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, renderPassDescriptor);
+        var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, &renderPassDescriptor);
 
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderSetBindGroup(renderPass, 0, _TextureBindGroup, 0, null);
@@ -568,7 +576,8 @@ public static unsafe class WebGPUTexturedQuad
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
-        var commandBuffer = wgpu.CommandEncoderFinish(encoder, new CommandBufferDescriptor());
+        var desc = new CommandBufferDescriptor();
+        var commandBuffer = wgpu.CommandEncoderFinish(encoder, &desc);
 
         wgpu.QueueSubmit(queue, 1, &commandBuffer);
         wgpu.SwapChainPresent(_SwapChain);
@@ -603,7 +612,7 @@ public static unsafe class WebGPUTexturedQuad
             PresentMode = PresentMode.Fifo
         };
 
-        _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, swapChainDescriptor);
+        _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, &swapChainDescriptor);
     }
 
     private static void PrintAdapterFeatures()

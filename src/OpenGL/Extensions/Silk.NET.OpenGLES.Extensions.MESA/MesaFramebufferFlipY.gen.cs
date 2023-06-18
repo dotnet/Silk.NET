@@ -23,66 +23,8 @@ namespace Silk.NET.OpenGLES.Extensions.MESA
         [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
         public partial void FramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
-
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
-
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
-
         [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
-        public partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
-
-        public unsafe int GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFramebufferParameter(target, pname, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachmentParameterName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFramebufferParameter(target, pname, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MESA pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFramebufferParameter(target, pname, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachmentParameterName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFramebufferParameter(target, pname, out int silkRet);
-            return silkRet;
-        }
 
         public MesaFramebufferFlipY(INativeContext ctx)
             : base(ctx)

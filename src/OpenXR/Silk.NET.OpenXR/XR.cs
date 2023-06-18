@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
@@ -44,17 +45,20 @@ namespace Silk.NET.OpenXR
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(string? layer, Instance instance, out T ext) where T : NativeExtension<XR> =>
+        public unsafe bool TryGetInstanceExtension<T>(string? layer, Instance instance, out T ext) where T : NativeExtension<XR> =>
             !((ext = IsInstanceExtensionPresent(layer, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance
                     (typeof(T), new LamdaNativeContext(
                     x =>
                     {
                         PfnVoidFunction ptr = default;
-                        var result = GetInstanceProcAddr(instance, x, ref ptr);
-                        if (result != Result.Success)
+                        fixed (byte* xPtr = Encoding.UTF8.GetBytes(x))
                         {
-                            throw new InvalidOperationException($"Symbol loading failed with XrResult {result}");
+                            var result = GetInstanceProcAddr(instance, xPtr, &ptr);
+                            if (result != Result.Success)
+                            {
+                                throw new InvalidOperationException($"Symbol loading failed with XrResult {result}");
+                            }
                         }
 
                         return ptr;

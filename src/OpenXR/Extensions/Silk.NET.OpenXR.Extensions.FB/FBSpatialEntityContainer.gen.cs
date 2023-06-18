@@ -24,10 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         [NativeApi(EntryPoint = "xrGetSpaceContainerFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSpaceContainerFB([Count(Count = 0)] Session session, [Count(Count = 0)] Space space, [Count(Count = 0)] SpaceContainerFB* spaceContainerOutput);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSpaceContainerFB", Convention = CallingConvention.Winapi)]
-        public partial Result GetSpaceContainerFB([Count(Count = 0)] Session session, [Count(Count = 0)] Space space, [Count(Count = 0)] ref SpaceContainerFB spaceContainerOutput);
-
         public FBSpatialEntityContainer(INativeContext ctx)
             : base(ctx)
         {

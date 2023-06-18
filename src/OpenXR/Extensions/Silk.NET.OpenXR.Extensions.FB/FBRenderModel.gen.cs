@@ -25,54 +25,12 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] uint* pathCountOutput, [Count(Parameter = "pathCapacityInput")] RenderModelPathInfoFB* paths);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateRenderModelPathsFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] uint* pathCountOutput, [Count(Parameter = "pathCapacityInput")] ref RenderModelPathInfoFB paths);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateRenderModelPathsFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] ref uint pathCountOutput, [Count(Parameter = "pathCapacityInput")] RenderModelPathInfoFB* paths);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateRenderModelPathsFB", Convention = CallingConvention.Winapi)]
-        public partial Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] ref uint pathCountOutput, [Count(Parameter = "pathCapacityInput")] ref RenderModelPathInfoFB paths);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetRenderModelPropertiesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetRenderModelPropertiesFB([Count(Count = 0)] Session session, [Count(Count = 0)] ulong path, [Count(Count = 0)] RenderModelPropertiesFB* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetRenderModelPropertiesFB", Convention = CallingConvention.Winapi)]
-        public partial Result GetRenderModelPropertiesFB([Count(Count = 0)] Session session, [Count(Count = 0)] ulong path, [Count(Count = 0)] ref RenderModelPropertiesFB properties);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLoadRenderModelFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderModelLoadInfoFB* info, [Count(Count = 0)] RenderModelBufferFB* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLoadRenderModelFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderModelLoadInfoFB* info, [Count(Count = 0)] ref RenderModelBufferFB buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLoadRenderModelFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderModelLoadInfoFB info, [Count(Count = 0)] RenderModelBufferFB* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLoadRenderModelFB", Convention = CallingConvention.Winapi)]
-        public partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderModelLoadInfoFB info, [Count(Count = 0)] ref RenderModelBufferFB buffer);
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint* pathCountOutput, [Count(Parameter = "pathCapacityInput")] Span<RenderModelPathInfoFB> paths)
-        {
-            // ImplicitCountSpanOverloader
-            return EnumerateRenderModelPathsFB(session, (uint) paths.Length, pathCountOutput, ref paths.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] ref uint pathCountOutput, [Count(Parameter = "pathCapacityInput")] Span<RenderModelPathInfoFB> paths)
-        {
-            // ImplicitCountSpanOverloader
-            return EnumerateRenderModelPathsFB(session, (uint) paths.Length, ref pathCountOutput, ref paths.GetPinnableReference());
-        }
 
         public FBRenderModel(INativeContext ctx)
             : base(ctx)

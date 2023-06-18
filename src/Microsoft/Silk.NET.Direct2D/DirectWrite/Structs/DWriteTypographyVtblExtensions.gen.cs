@@ -28,45 +28,6 @@ public unsafe static class DWriteTypographyVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteTypography> thisVtbl, Guid* riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTypography*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteTypography> thisVtbl, ref Guid riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTypography*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteTypography> thisVtbl, ref Guid riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTypography*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static uint AddRef(this ComPtr<IDWriteTypography> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -109,60 +70,6 @@ public unsafe static class DWriteTypographyVtblExtensions
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteTypography*, uint, FontFeature*, int>)@this->LpVtbl[5])(@this, fontFeatureIndex, fontFeature);
         return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetFontFeature(this ComPtr<IDWriteTypography> thisVtbl, uint fontFeatureIndex, ref FontFeature fontFeature)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (FontFeature* fontFeaturePtr = &fontFeature)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTypography*, uint, FontFeature*, int>)@this->LpVtbl[5])(@this, fontFeatureIndex, fontFeaturePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0>(this ComPtr<IDWriteTypography> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppvObject = default;
-        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteTypography> thisVtbl, Span<Guid> riid, void** ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface(this ComPtr<IDWriteTypography> thisVtbl, Span<Guid> riid, ref void* ppvObject)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetFontFeature(this ComPtr<IDWriteTypography> thisVtbl, uint fontFeatureIndex, Span<FontFeature> fontFeature)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetFontFeature(fontFeatureIndex, ref fontFeature.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDWriteTypography> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-        return silkRet;
     }
 
 }

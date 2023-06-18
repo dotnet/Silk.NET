@@ -54,45 +54,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectPtr = &ppvObject)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -117,81 +78,6 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riid, ppvObjectReference);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Resolve(Guid* riid, ref void* ppvObjectReference)
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void** ppvObjectReferencePtr = &ppvObjectReference)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riid, ppvObjectReferencePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Resolve(ref Guid riid, void** ppvObjectReference)
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riidPtr, ppvObjectReference);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Resolve(ref Guid riid, ref void* ppvObjectReference)
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectReferencePtr = &ppvObjectReference)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IAgileReference*, Guid*, void**, int>)@this->LpVtbl[3])(@this, riidPtr, ppvObjectReferencePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObject = default;
-            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Resolve<TI0>(out ComPtr<TI0> ppvObjectReference) where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObjectReference = default;
-            return @this->Resolve(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObjectReference.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> Resolve<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (IAgileReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->Resolve(out ComPtr<TI0> silkRet));
-            return silkRet;
         }
 
     }

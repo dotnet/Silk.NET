@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Silk.NET.Core.Native;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.Sdl
@@ -24,7 +25,7 @@ namespace Silk.NET.Input.Sdl
             _hats = new Hat[0];
         }
 
-        public unsafe string Name => _ctx.Sdl.JoystickNameS(_joystick);
+        public unsafe string Name => SilkMarshal.PtrToString((nint) _ctx.Sdl.JoystickName(_joystick))!;
         public int Index => ActualIndex;
         public int ActualIndex { get; set; }
         public int InstanceId { get; }

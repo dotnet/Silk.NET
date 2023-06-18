@@ -24,18 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         [NativeApi(EntryPoint = "xrRequestSceneCaptureFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result RequestSceneCaptureFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneCaptureRequestInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrRequestSceneCaptureFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestSceneCaptureFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SceneCaptureRequestInfoFB* info, [Count(Count = 0)] ref ulong requestId);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrRequestSceneCaptureFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestSceneCaptureFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneCaptureRequestInfoFB info, [Count(Count = 0)] ulong* requestId);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrRequestSceneCaptureFB", Convention = CallingConvention.Winapi)]
-        public partial Result RequestSceneCaptureFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SceneCaptureRequestInfoFB info, [Count(Count = 0)] ref ulong requestId);
-
         public FBSceneCapture(INativeContext ctx)
             : base(ctx)
         {

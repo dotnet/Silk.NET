@@ -23,26 +23,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glApplyTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void ApplyTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
-        [NativeApi(EntryPoint = "glApplyTextureEXT", Convention = CallingConvention.Winapi)]
-        public partial void ApplyTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] LightTextureModeEXT mode);
-
         [NativeApi(EntryPoint = "glTextureLightEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname);
 
-        [NativeApi(EntryPoint = "glTextureLightEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureLight([Flow(Silk.NET.Core.Native.FlowDirection.In)] LightTexturePNameEXT pname);
-
         [NativeApi(EntryPoint = "glTextureMaterialEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
-
-        [NativeApi(EntryPoint = "glTextureMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter mode);
-
-        [NativeApi(EntryPoint = "glTextureMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
-
-        [NativeApi(EntryPoint = "glTextureMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialParameter mode);
 
         public ExtLightTexture(INativeContext ctx)
             : base(ctx)

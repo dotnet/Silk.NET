@@ -25,36 +25,12 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result CreateEyeTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EyeTrackerCreateInfoFB* createInfo, [Count(Count = 0)] EyeTrackerFB* eyeTracker);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateEyeTrackerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEyeTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EyeTrackerCreateInfoFB* createInfo, [Count(Count = 0)] ref EyeTrackerFB eyeTracker);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateEyeTrackerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEyeTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in EyeTrackerCreateInfoFB createInfo, [Count(Count = 0)] EyeTrackerFB* eyeTracker);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateEyeTrackerFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateEyeTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in EyeTrackerCreateInfoFB createInfo, [Count(Count = 0)] ref EyeTrackerFB eyeTracker);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyEyeTrackerFB", Convention = CallingConvention.Winapi)]
         public partial Result DestroyEyeTrackerFB([Count(Count = 0)] EyeTrackerFB eyeTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetEyeGazesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetEyeGazesFB([Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EyeGazesInfoFB* gazeInfo, [Count(Count = 0)] EyeGazesFB* eyeGazes);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetEyeGazesFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEyeGazesFB([Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EyeGazesInfoFB* gazeInfo, [Count(Count = 0)] ref EyeGazesFB eyeGazes);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetEyeGazesFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEyeGazesFB([Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in EyeGazesInfoFB gazeInfo, [Count(Count = 0)] EyeGazesFB* eyeGazes);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetEyeGazesFB", Convention = CallingConvention.Winapi)]
-        public partial Result GetEyeGazesFB([Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in EyeGazesInfoFB gazeInfo, [Count(Count = 0)] ref EyeGazesFB eyeGazes);
 
         public FBEyeTrackingSocial(INativeContext ctx)
             : base(ctx)

@@ -24,10 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
-
         public NVFragmentShadingRateEnums(INativeContext ctx)
             : base(ctx)
         {

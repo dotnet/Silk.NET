@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glBlendEquationEXT", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
-        [NativeApi(EntryPoint = "glBlendEquationEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT mode);
-
         public ExtBlendMinmax(INativeContext ctx)
             : base(ctx)
         {

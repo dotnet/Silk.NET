@@ -24,11 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkGetImageDrmFormatModifierPropertiesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ImageDrmFormatModifierPropertiesEXT* pProperties);
 
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ImageDrmFormatModifierPropertiesExt);")]
-        [NativeApi(EntryPoint = "vkGetImageDrmFormatModifierPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ImageDrmFormatModifierPropertiesEXT pProperties);
-
         public ExtImageDrmFormatModifier(INativeContext ctx)
             : base(ctx)
         {

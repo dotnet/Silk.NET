@@ -24,17 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ViewportWScalingNV pViewportWScalings);
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewportWScalingNV> pViewportWScalings)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetViewportWScaling(commandBuffer, firstViewport, (uint) pViewportWScalings.Length, in pViewportWScalings.GetPinnableReference());
-        }
-
         public NVClipSpaceWScaling(INativeContext ctx)
             : base(ctx)
         {

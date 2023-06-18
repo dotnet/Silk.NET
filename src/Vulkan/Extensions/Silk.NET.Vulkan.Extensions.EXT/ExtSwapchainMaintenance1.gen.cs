@@ -24,10 +24,6 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkReleaseSwapchainImagesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReleaseSwapchainImagesInfoEXT* pReleaseInfo);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkReleaseSwapchainImagesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReleaseSwapchainImagesInfoEXT pReleaseInfo);
-
         public ExtSwapchainMaintenance1(INativeContext ctx)
             : base(ctx)
         {

@@ -24,10 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.MNDX
         [NativeApi(EntryPoint = "xrApplyForceFeedbackCurlMNDX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ApplyForceFeedbackCurlMndx([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ForceFeedbackCurlApplyLocationsMNDX* locations);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrApplyForceFeedbackCurlMNDX", Convention = CallingConvention.Winapi)]
-        public partial Result ApplyForceFeedbackCurlMndx([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ForceFeedbackCurlApplyLocationsMNDX locations);
-
         public MndxForceFeedbackCurl(INativeContext ctx)
             : base(ctx)
         {

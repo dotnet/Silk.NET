@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -20,7 +21,7 @@ namespace Silk.NET.Windowing.Sdl
 
         public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, null, this, _platform);
 
-        public string Name => SdlProvider.SDL.Value.GetDisplayNameS(Index);
+        public unsafe string Name => SilkMarshal.PtrToString((nint) SdlProvider.SDL.Value.GetDisplayName(Index))!;
         public int Index { get; }
 
         public unsafe Rectangle<int> Bounds

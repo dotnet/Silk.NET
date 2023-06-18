@@ -23,20 +23,11 @@ namespace Silk.NET.WGL.Extensions.NV
         [NativeApi(EntryPoint = "wglBindVideoDeviceNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
-        [NativeApi(EntryPoint = "wglBindVideoDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribList);
-
         [NativeApi(EntryPoint = "wglEnumerateVideoDevicesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnumerateVideoDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* phDeviceList);
 
-        [NativeApi(EntryPoint = "wglEnumerateVideoDevicesNV", Convention = CallingConvention.Winapi)]
-        public partial int EnumerateVideoDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint phDeviceList);
-
         [NativeApi(EntryPoint = "wglQueryCurrentContextNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 QueryCurrentContext([Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValue);
-
-        [NativeApi(EntryPoint = "wglQueryCurrentContextNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryCurrentContext([Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValue);
 
         public NVPresentVideo(INativeContext ctx)
             : base(ctx)

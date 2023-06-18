@@ -43,13 +43,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         public unsafe Texture(GL gl, int width, int height, IntPtr data, bool generateMipmaps = false, bool srgb = false)
         {
             _gl = gl;
-            MaxAniso ??= gl.GetFloat(MaxTextureMaxAnisotropy);
+            if (MaxAniso is null)
+            {
+                float aniso;
+                gl.GetFloat(MaxTextureMaxAnisotropy, &aniso);
+                MaxAniso = aniso;
+            }
+
             Width = (uint) width;
             Height = (uint) height;
             InternalFormat = srgb ? Srgb8Alpha8 : SizedInternalFormat.Rgba8;
             MipmapLevels = (uint) (generateMipmaps == false ? 1 : (int) Math.Floor(Math.Log(Math.Max(Width, Height), 2)));
 
-            GlTexture = _gl.GenTexture();
+            fixed (uint* tex = &GlTexture)
+            {
+                _gl.GenTextures(1, tex);
+            }
+
             Bind();
 
 #if GLES || LEGACY
@@ -58,8 +68,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             PixelFormat pxFormat = PixelFormat.Bgra;
 #endif
 
-            _gl.TexStorage2D(GLEnum.Texture2D, MipmapLevels, InternalFormat, Width, Height);
-            _gl.TexSubImage2D(GLEnum.Texture2D, 0, 0, 0, Width, Height, pxFormat, PixelType.UnsignedByte, (void*) data);
+            _gl.TexStorage2D(GLEnum.Texture2D, MipmapLevels, (GLEnum) InternalFormat, Width, Height);
+            _gl.TexSubImage2D(GLEnum.Texture2D, 0, 0, 0, Width, Height, (GLEnum) pxFormat, (GLEnum) PixelType.UnsignedByte, (void*) data);
 
             if (generateMipmaps)
 #if GLES
@@ -70,7 +80,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             SetWrap(TextureCoordinate.S, TextureWrapMode.Repeat);
             SetWrap(TextureCoordinate.T, TextureWrapMode.Repeat);
 
-            _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMaxLevel, MipmapLevels - 1);
+            var maxLevel = MipmapLevels - 1;
+            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMaxLevel, &maxLevel);
         }
 
         public void Bind()
@@ -78,14 +89,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.BindTexture(GLEnum.Texture2D, GlTexture);
         }
 
-        public void SetMinFilter(TextureMinFilter filter)
+        public unsafe void SetMinFilter(TextureMinFilter filter)
         {
-            _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMinFilter, (int) filter);
+            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int*) &filter);
         }
 
-        public void SetMagFilter(TextureMagFilter filter)
+        public unsafe void SetMagFilter(TextureMagFilter filter)
         {
-            _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMagFilter, (int) filter);
+            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int*) &filter);
         }
 
         public void SetAnisotropy(float level)
@@ -94,21 +105,26 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.TexParameter(GLEnum.Texture2D, (GLEnum) textureMaxAnisotropy, Util.Clamp(level, 1, MaxAniso.GetValueOrDefault()));
         }
 
-        public void SetLod(int @base, int min, int max)
+        public unsafe void SetLod(int @base, int min, int max)
         {
-            _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureLodBias, @base);
-            _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMinLod, min);
-            _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMaxLod, max);
+#if !GLES
+            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureLodBias, &@base);
+            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMinLod, &min);
+            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMaxLod, &max);
+#endif
         }
 
-        public void SetWrap(TextureCoordinate coord, TextureWrapMode mode)
+        public unsafe void SetWrap(TextureCoordinate coord, TextureWrapMode mode)
         {
-            _gl.TexParameterI(GLEnum.Texture2D, (TextureParameterName) coord, (int) mode);
+            _gl.TexParameterI(GLEnum.Texture2D, (GLEnum) coord, (int*) &mode);
         }
 
-        public void Dispose()
+        public unsafe void Dispose()
         {
-            _gl.DeleteTexture(GlTexture);
+            fixed (uint* tex = &GlTexture)
+            {
+                _gl.DeleteTextures(1, tex);
+            }
         }
     }
 }

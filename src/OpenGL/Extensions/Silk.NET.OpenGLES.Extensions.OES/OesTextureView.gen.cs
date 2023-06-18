@@ -23,15 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint origtexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlevel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
-        public partial void TextureView([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint origtexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlevel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlayers);
-
-        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
-        public partial void TextureView([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint origtexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlevel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlayers);
-
-        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
-        public partial void TextureView([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint origtexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlevel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint minlayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numlayers);
-
         public OesTextureView(INativeContext ctx)
             : base(ctx)
         {

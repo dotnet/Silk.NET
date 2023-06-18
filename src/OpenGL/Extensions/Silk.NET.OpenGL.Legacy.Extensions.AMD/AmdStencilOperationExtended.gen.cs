@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glStencilOpValueAMD", Convention = CallingConvention.Winapi)]
         public partial void StencilOpValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint value);
 
-        [NativeApi(EntryPoint = "glStencilOpValueAMD", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint value);
-
         public AmdStencilOperationExtended(INativeContext ctx)
             : base(ctx)
         {

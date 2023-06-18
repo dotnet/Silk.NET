@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using ImGuiNET;
 using Silk.NET.Input;
 using Silk.NET.Input.Extensions;
@@ -313,7 +314,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _shader.UseShader();
             _gl.Uniform1(_attribLocationTex, 0);
-            _gl.UniformMatrix4(_attribLocationProjMtx, 1, false, orthoProjection);
+            _gl.UniformMatrix4(_attribLocationProjMtx, 1, false, (float*) Unsafe.AsPointer(ref orthoProjection[0]));
             _gl.CheckGlError("Projection");
 
             _gl.BindSampler(0, 0);
@@ -321,7 +322,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             // Setup desired GL state
             // Recreate the VAO every time (this is to easily allow multiple GL contexts to be rendered to. VAO are not shared among GL contexts)
             // The renderer would actually work without any VAO bound, but then our VertexAttrib calls would overwrite the default one currently bound.
-            _vertexArrayObject = _gl.GenVertexArray();
+            fixed (uint* vao = &_vertexArrayObject)
+            {
+                _gl.GenVertexArrays(1, vao);
+            }
+
             _gl.BindVertexArray(_vertexArrayObject);
             _gl.CheckGlError("VAO");
 
@@ -344,33 +349,46 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
                 return;
 
             // Backup GL state
-            _gl.GetInteger(GLEnum.ActiveTexture, out int lastActiveTexture);
+            int lastActiveTexture,
+                lastProgram,
+                lastTexture,
+                lastSampler,
+                lastArrayBuffer,
+                lastVertexArrayObject,
+                lastBlendSrcRgb,
+                lastBlendDstRgb,
+                lastBlendSrcAlpha,
+                lastBlendDstAlpha,
+                lastBlendEquationRgb,
+                lastBlendEquationAlpha;
+
+            _gl.GetInteger(GLEnum.ActiveTexture, &lastActiveTexture);
             _gl.ActiveTexture(GLEnum.Texture0);
 
-            _gl.GetInteger(GLEnum.CurrentProgram, out int lastProgram);
-            _gl.GetInteger(GLEnum.TextureBinding2D, out int lastTexture);
+            _gl.GetInteger(GLEnum.CurrentProgram, &lastProgram);
+            _gl.GetInteger(GLEnum.TextureBinding2D, &lastTexture);
 
-            _gl.GetInteger(GLEnum.SamplerBinding, out int lastSampler);
+            _gl.GetInteger(GLEnum.SamplerBinding, &lastSampler);
 
-            _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
-            _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArrayObject);
+            _gl.GetInteger(GLEnum.ArrayBufferBinding, &lastArrayBuffer);
+            _gl.GetInteger(GLEnum.VertexArrayBinding, &lastVertexArrayObject);
 
 #if !GLES
             Span<int> lastPolygonMode = stackalloc int[2];
-            _gl.GetInteger(GLEnum.PolygonMode, lastPolygonMode);
+            _gl.GetInteger(GLEnum.PolygonMode, (int*) Unsafe.AsPointer(ref lastPolygonMode[0]));
 #endif
 
             Span<int> lastScissorBox = stackalloc int[4];
-            _gl.GetInteger(GLEnum.ScissorBox, lastScissorBox);
+            _gl.GetInteger(GLEnum.ScissorBox, (int*) Unsafe.AsPointer(ref lastScissorBox[0]));
 
-            _gl.GetInteger(GLEnum.BlendSrcRgb, out int lastBlendSrcRgb);
-            _gl.GetInteger(GLEnum.BlendDstRgb, out int lastBlendDstRgb);
+            _gl.GetInteger(GLEnum.BlendSrcRgb, &lastBlendSrcRgb);
+            _gl.GetInteger(GLEnum.BlendDstRgb, &lastBlendDstRgb);
 
-            _gl.GetInteger(GLEnum.BlendSrcAlpha, out int lastBlendSrcAlpha);
-            _gl.GetInteger(GLEnum.BlendDstAlpha, out int lastBlendDstAlpha);
+            _gl.GetInteger(GLEnum.BlendSrcAlpha, &lastBlendSrcAlpha);
+            _gl.GetInteger(GLEnum.BlendDstAlpha, &lastBlendDstAlpha);
 
-            _gl.GetInteger(GLEnum.BlendEquationRgb, out int lastBlendEquationRgb);
-            _gl.GetInteger(GLEnum.BlendEquationAlpha, out int lastBlendEquationAlpha);
+            _gl.GetInteger(GLEnum.BlendEquationRgb, &lastBlendEquationRgb);
+            _gl.GetInteger(GLEnum.BlendEquationAlpha, &lastBlendEquationAlpha);
 
             bool lastEnableBlend = _gl.IsEnabled(GLEnum.Blend);
             bool lastEnableCullFace = _gl.IsEnabled(GLEnum.CullFace);
@@ -434,7 +452,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             }
 
             // Destroy the temporary VAO
-            _gl.DeleteVertexArray(_vertexArrayObject);
+            fixed (uint* vao = &_vertexArrayObject)
+            {
+                _gl.DeleteVertexArrays(1, vao);
+            }
+
             _vertexArrayObject = 0;
 
             // Restore modified GL state
@@ -511,13 +533,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
 
-        private void CreateDeviceResources()
+        private unsafe void CreateDeviceResources()
         {
             // Backup GL state
 
-            _gl.GetInteger(GLEnum.TextureBinding2D, out int lastTexture);
-            _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
-            _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArray);
+            int lastTexture, lastArrayBuffer, lastVertexArray;
+            _gl.GetInteger(GLEnum.TextureBinding2D, &lastTexture);
+            _gl.GetInteger(GLEnum.ArrayBufferBinding, &lastArrayBuffer);
+            _gl.GetInteger(GLEnum.VertexArrayBinding, &lastVertexArray);
 
             string vertexSource =
 #if GLES
@@ -614,8 +637,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _attribLocationVtxUV = _shader.GetAttribLocation("UV");
             _attribLocationVtxColor = _shader.GetAttribLocation("Color");
 
-            _vboHandle = _gl.GenBuffer();
-            _elementsHandle = _gl.GenBuffer();
+            fixed (uint* vbo = &_vboHandle)
+            {
+                fixed (uint* ebo = &_elementsHandle)
+                {
+                    _gl.GenBuffers(1, vbo);
+                    _gl.GenBuffers(1, ebo);
+                }
+            }
 
             RecreateFontDeviceTexture();
 
@@ -638,7 +667,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.Fonts.GetTexDataAsRGBA32(out IntPtr pixels, out int width, out int height, out int bytesPerPixel);   // Load as RGBA 32-bit (75% of the memory is wasted, but default font is so small) because it is more likely to be compatible with user's existing shaders. If your ImTextureId represent a higher-level concept than just a GL texture id, consider calling GetTexDataAsAlpha8() instead to save on GPU memory.
 
             // Upload texture to graphics system
-            _gl.GetInteger(GLEnum.TextureBinding2D, out int lastTexture);
+            int lastTexture;
+            _gl.GetInteger(GLEnum.TextureBinding2D, &lastTexture);
 
             _fontTexture = new Texture(_gl, width, height, pixels);
             _fontTexture.Bind();
@@ -655,14 +685,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         /// <summary>
         /// Frees all graphics resources used by the renderer.
         /// </summary>
-        public void Dispose()
+        public unsafe void Dispose()
         {
             _view.Resize -= WindowResized;
             _keyboard.KeyChar -= OnKeyChar;
 
-            _gl.DeleteBuffer(_vboHandle);
-            _gl.DeleteBuffer(_elementsHandle);
-            _gl.DeleteVertexArray(_vertexArrayObject);
+            fixed (uint* vbo = &_vboHandle)
+            {
+                fixed (uint* ebo = &_elementsHandle)
+                {
+                    fixed (uint* vao = &_vertexArrayObject)
+                    {
+                        _gl.DeleteBuffers(1, vbo);
+                        _gl.DeleteBuffers(1, ebo);
+                        _gl.DeleteVertexArrays(1, vao);
+                    }
+                }
+            }
 
             _fontTexture.Dispose();
             _shader.Dispose();

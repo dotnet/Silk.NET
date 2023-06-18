@@ -50,17 +50,5 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be documented.</summary>
-        public readonly int GetDesc(ref ParameterDesc pDesc)
-        {
-            var @this = (ID3D11FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ParameterDesc* pDescPtr = &pDesc)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)@this->LpVtbl[0])(@this, pDescPtr);
-            }
-            return ret;
-        }
-
     }
 }

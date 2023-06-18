@@ -25,16 +25,8 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] SwapchainStateBaseHeaderFB* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSwapchainStateFB", Convention = CallingConvention.Winapi)]
-        public partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] ref SwapchainStateBaseHeaderFB state);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateSwapchainFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainStateBaseHeaderFB* state);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrUpdateSwapchainFB", Convention = CallingConvention.Winapi)]
-        public partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapchainStateBaseHeaderFB state);
 
         public FBSwapchainUpdateState(INativeContext ctx)
             : base(ctx)

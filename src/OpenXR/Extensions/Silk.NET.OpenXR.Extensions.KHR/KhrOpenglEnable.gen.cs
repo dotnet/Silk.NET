@@ -24,10 +24,6 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsOpenGLKHR* graphicsRequirements);
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsOpenGLKHR graphicsRequirements);
-
         public KhrOpenglEnable(INativeContext ctx)
             : base(ctx)
         {

@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glShadingRateQCOM", Convention = CallingConvention.Winapi)]
         public partial void ShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM rate);
 
-        [NativeApi(EntryPoint = "glShadingRateQCOM", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateQCOM rate);
-
         public QComShadingRate(INativeContext ctx)
             : base(ctx)
         {

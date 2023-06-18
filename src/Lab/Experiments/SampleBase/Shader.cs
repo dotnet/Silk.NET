@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Text;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenGL;
 
 namespace SampleBase
@@ -13,20 +15,29 @@ namespace SampleBase
         private readonly Dictionary<string, int> _uniformLocations;
         private readonly GL _gl;
 
-        public Shader(string vertPath, string fragPath, GL gl, Type type)
+        public unsafe Shader(string vertPath, string fragPath, GL gl, Type type)
         {
             _gl = gl;
             var shaderSource = LoadEmbeddedResource(vertPath, type);
 
             var vertexShader = _gl.CreateShader(GLEnum.VertexShader);
 
-            _gl.ShaderSource(vertexShader, shaderSource);
+            fixed (byte* src = Encoding.UTF8.GetBytes(shaderSource))
+            {
+                var len = shaderSource.Length;
+                _gl.ShaderSource(vertexShader, 1, &src, &len);
+            }
 
             CompileShader(vertexShader);
 
             shaderSource = LoadEmbeddedResource(fragPath, type);
             var fragmentShader = _gl.CreateShader(GLEnum.FragmentShader);
-            _gl.ShaderSource(fragmentShader, shaderSource);
+
+            fixed (byte* src = Encoding.UTF8.GetBytes(shaderSource))
+            {
+                var len = shaderSource.Length;
+                _gl.ShaderSource(fragmentShader, 1, &src, &len);
+            }
             CompileShader(fragmentShader);
 
             Handle = _gl.CreateProgram();
@@ -41,15 +52,29 @@ namespace SampleBase
             _gl.DeleteShader(fragmentShader);
             _gl.DeleteShader(vertexShader);
 
-            _gl.GetProgram(Handle, GLEnum.ActiveUniforms, out var numberOfUniforms);
+            int numberOfUniforms;
+            _gl.GetProgram(Handle, GLEnum.ActiveUniforms, &numberOfUniforms);
 
             _uniformLocations = new Dictionary<string, int>();
-
+            
             for (var i = 0u; i < numberOfUniforms; i++)
             {
-                var key = _gl.GetActiveUniform(Handle, i, out _, out _);
+                string key;
+                uint length;
+                _gl.GetProgram(Handle, GLEnum.ActiveUniformMaxLength, (int*) &length);
 
-                var location = _gl.GetUniformLocation(Handle, key);
+                int location;
+                fixed (byte* kPtr = new byte[length == 0 ? 1 : length])
+                {
+                    int size;
+                    GLEnum uType;
+                    _gl.GetActiveUniform
+                    (
+                        Handle, i, length == 0 ? 1 : length, &length, &size, &uType, kPtr
+                    );
+                    key = SilkMarshal.PtrToString((IntPtr) kPtr);
+                    location = _gl.GetUniformLocation(Handle, kPtr);
+                }
 
                 _uniformLocations.Add(key, location);
             }
@@ -66,26 +91,44 @@ namespace SampleBase
             }
         }
 
-        private void CompileShader(uint shader)
+        private unsafe void CompileShader(uint shader)
         {
             _gl.CompileShader(shader);
 
-            _gl.GetShader(shader, GLEnum.CompileStatus, out var code);
+            int code;
+            _gl.GetShader(shader, GLEnum.CompileStatus, &code);
             if (code != (int) GLEnum.True)
             {
+                uint length;
+                _gl.GetShader(shader, GLEnum.InfoLogLength, (int*) &length);
+                string info;
+                fixed (byte* infoPtr = new byte[length == 0 ? 1 : length * 2])
+                {
+                    _gl.GetShaderInfoLog(shader, length == 0 ? 1 : length * 2, &length, infoPtr);
+                    info = SilkMarshal.PtrToString((IntPtr) infoPtr);
+                }
                 throw new Exception
-                    ($"Error occurred whilst compiling Shader({shader}): \n" + _gl.GetShaderInfoLog(shader));
+                    ($"Error occurred whilst compiling Shader({shader}): \n" + info);
             }
         }
 
-        private void LinkProgram(uint program)
+        private unsafe void LinkProgram(uint program)
         {
             _gl.LinkProgram(program);
-
-            _gl.GetProgram(program, GLEnum.LinkStatus, out var code);
+            
+            int code;
+            _gl.GetProgram(program, GLEnum.LinkStatus, &code);
             if (code != (int) GLEnum.True)
             {
-                throw new Exception($"Error occurred whilst linking Program({program}): " + _gl.GetProgramInfoLog(program));
+                uint length;
+                _gl.GetProgram(program, GLEnum.InfoLogLength, (int*) &length);
+                string info;
+                fixed (byte* infoPtr = new byte[length == 0 ? 1 : length * 2])
+                {
+                    _gl.GetProgramInfoLog(program, length == 0 ? 1 : length * 2, &length, infoPtr);
+                    info = SilkMarshal.PtrToString((IntPtr) infoPtr);
+                }
+                throw new Exception($"Error occurred whilst linking Program({program}): " + info);
             }
         }
 
@@ -94,9 +137,12 @@ namespace SampleBase
             _gl.UseProgram(Handle);
         }
 
-        public int GetAttribLocation(string attribName)
+        public unsafe int GetAttribLocation(string attribName)
         {
-            return _gl.GetAttribLocation(Handle, attribName);
+            fixed (byte* an = Encoding.UTF8.GetBytes(attribName))
+            {
+                return _gl.GetAttribLocation(Handle, an);
+            }
         }
 
         public void SetInt(string name, int data)
@@ -117,10 +163,10 @@ namespace SampleBase
             _gl.UniformMatrix4(_uniformLocations[name], Handle, true, (float*) &data);
         }
 
-        public void SetVector3(string name, Vector3 data)
+        public unsafe void SetVector3(string name, Vector3 data)
         {
             _gl.UseProgram(Handle);
-            _gl.Uniform3(_uniformLocations[name], data);
+            _gl.Uniform3(_uniformLocations[name], 1, &data.X);
         }
     }
 }

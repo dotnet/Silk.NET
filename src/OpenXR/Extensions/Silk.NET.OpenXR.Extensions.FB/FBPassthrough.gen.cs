@@ -25,48 +25,12 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result CreateGeometryInstanceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] GeometryInstanceCreateInfoFB* createInfo, [Count(Count = 0)] GeometryInstanceFB* outGeometryInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateGeometryInstanceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGeometryInstanceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] GeometryInstanceCreateInfoFB* createInfo, [Count(Count = 0)] ref GeometryInstanceFB outGeometryInstance);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateGeometryInstanceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGeometryInstanceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in GeometryInstanceCreateInfoFB createInfo, [Count(Count = 0)] GeometryInstanceFB* outGeometryInstance);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateGeometryInstanceFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateGeometryInstanceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in GeometryInstanceCreateInfoFB createInfo, [Count(Count = 0)] ref GeometryInstanceFB outGeometryInstance);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreatePassthroughFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePassthroughFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughCreateInfoFB* createInfo, [Count(Count = 0)] PassthroughFB* outPassthrough);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePassthroughFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughCreateInfoFB* createInfo, [Count(Count = 0)] ref PassthroughFB outPassthrough);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePassthroughFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughCreateInfoFB createInfo, [Count(Count = 0)] PassthroughFB* outPassthrough);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePassthroughFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughCreateInfoFB createInfo, [Count(Count = 0)] ref PassthroughFB outPassthrough);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreatePassthroughLayerFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePassthroughLayerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughLayerCreateInfoFB* createInfo, [Count(Count = 0)] PassthroughLayerFB* outLayer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughLayerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePassthroughLayerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughLayerCreateInfoFB* createInfo, [Count(Count = 0)] ref PassthroughLayerFB outLayer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughLayerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePassthroughLayerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughLayerCreateInfoFB createInfo, [Count(Count = 0)] PassthroughLayerFB* outLayer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreatePassthroughLayerFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePassthroughLayerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughLayerCreateInfoFB createInfo, [Count(Count = 0)] ref PassthroughLayerFB outLayer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyGeometryInstanceFB", Convention = CallingConvention.Winapi)]
@@ -85,10 +49,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public unsafe partial Result GeometryInstanceSetTransformFB([Count(Count = 0)] GeometryInstanceFB instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] GeometryInstanceTransformFB* transformation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGeometryInstanceSetTransformFB", Convention = CallingConvention.Winapi)]
-        public partial Result GeometryInstanceSetTransformFB([Count(Count = 0)] GeometryInstanceFB instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in GeometryInstanceTransformFB transformation);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPassthroughLayerPauseFB", Convention = CallingConvention.Winapi)]
         public partial Result PassthroughLayerPauseFB([Count(Count = 0)] PassthroughLayerFB layer);
 
@@ -99,10 +59,6 @@ namespace Silk.NET.OpenXR.Extensions.FB
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPassthroughLayerSetStyleFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PassthroughLayerSetStyleFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughStyleFB* style);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPassthroughLayerSetStyleFB", Convention = CallingConvention.Winapi)]
-        public partial Result PassthroughLayerSetStyleFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughStyleFB style);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPassthroughPauseFB", Convention = CallingConvention.Winapi)]

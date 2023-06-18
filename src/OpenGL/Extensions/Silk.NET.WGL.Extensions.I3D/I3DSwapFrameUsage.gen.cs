@@ -29,32 +29,8 @@ namespace Silk.NET.WGL.Extensions.I3D
         [NativeApi(EntryPoint = "wglGetFrameUsageI3D", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 GetFrameUsageI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pUsage);
 
-        [NativeApi(EntryPoint = "wglGetFrameUsageI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetFrameUsageI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pUsage);
-
         [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* pLastMissedUsage);
-
-        [NativeApi(EntryPoint = "wglQueryFrameTrackingI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryFrameTrackingI3D([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pFrameCount, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pMissedFrames, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float pLastMissedUsage);
 
         public I3DSwapFrameUsage(INativeContext ctx)
             : base(ctx)
