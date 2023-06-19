@@ -7,6 +7,7 @@ on:
       - "main"
     paths:
       - build/submodules/vkd3d
+      - build/submodules/SPIRV-Tools
       - build/submodules/vkd3d-no-ms-abi.patch
       - build/nuke/Native/Core.cs
       - build/nuke/Native/Vkd3d.cs

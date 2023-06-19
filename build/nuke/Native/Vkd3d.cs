@@ -48,14 +48,14 @@ partial class Build {
                     EnsureCleanDirectory(vkd3dBuild);
 
                     { //SPIRV-Tools
-                        //Clone the SPIRV-Headers external repo
-                        InheritedShell($"git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers", SPIRVToolsPath).AssertZeroExitCode();
+                        //Sync the external deps
+                        InheritedShell($"./git-sync-deps", SPIRVToolsPath / "utils").AssertZeroExitCode();
 
-                        //Make the build scripts, with shared libs enabled
-                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1", vkd3dBuild).AssertZeroExitCode();
+                        //Make the build scripts, with shared libs enabled, and tests disabled
+                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1 -DSPIRV_SKIP_TESTS=ON", vkd3dBuild).AssertZeroExitCode();
 
                         //Compile SPIRV-Tools
-                        InheritedShell($"cmake --build . --config Release", vkd3dBuild).AssertZeroExitCode();
+                        InheritedShell($"cmake --build . --config Release {JobsArg}", vkd3dBuild).AssertZeroExitCode();
 
                         //Run `strip -g` on the shared library file to remove debug info and shrink it from ~30mb down to only ~5.5mb
                         InheritedShell($"strip -g libSPIRV-Tools-shared.so", vkd3dBuild / "source").AssertZeroExitCode();
@@ -74,9 +74,9 @@ partial class Build {
                         //Run autogen
                         InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
                         //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
-                        InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES -fPIC\" --prefix=/usr --with-spirv-tools", Vkd3dPath).AssertZeroExitCode();
+                        InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES -fPIC\" --prefix=/usr --with-spirv-tools --disable-doxygen-pdf", Vkd3dPath).AssertZeroExitCode();
                         //Build vkd3d
-                        InheritedShell($"make -j4", Vkd3dPath).AssertZeroExitCode();
+                        InheritedShell($"make {JobsArg}", Vkd3dPath).AssertZeroExitCode();
                         //Install vkd3d to the dest folder
                         InheritedShell($"make DESTDIR=\"{Vkd3dPath.ToString().TrimEnd('/')}/dest\" install", Vkd3dPath).AssertZeroExitCode();
 
