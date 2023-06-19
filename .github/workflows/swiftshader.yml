@@ -3,7 +3,9 @@ on:
   push:
     paths:
       - build/submodules/SwiftShader
-      - build/nuke/Build.Native.cs
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/SwiftShader.cs
+      - .github/workflows/swiftshader.yml
     branches-ignore:
       - "ci/*"
       - "develop/*"

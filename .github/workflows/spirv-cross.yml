@@ -6,9 +6,10 @@ on:
       - "develop/*"
       - "main"
     paths:
-      - "build/submodules/SPIRV-Cross"
-      - "build/nuke/Build.Native.cs"
-      - ".github/workflows/spirv-cross.yml"
+      - build/submodules/SPIRV-Cross
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/SPIRVCross.cs
+      - .github/workflows/spirv-cross.yml
 jobs:
   Build:
     strategy:

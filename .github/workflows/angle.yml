@@ -3,7 +3,9 @@ on:
   push:
     paths:
       - build/submodules/ANGLE
-      - build/nuke/Build.Native.cs
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/Angle.cs
+      - .github/workflows/angle.yml
     branches-ignore:
         - "ci/*"
         - "develop/*"

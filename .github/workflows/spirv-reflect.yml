@@ -6,9 +6,10 @@ on:
       - "develop/*"
       - "main"
     paths:
-      - "build/submodules/SPIRV-Reflect"
-      - "build/nuke/Build.Native.cs"
-      - ".github/workflows/spirv-reflect.yml"
+      - build/submodules/SPIRV-Reflect
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/SPIRVReflect.cs
+      - .github/workflows/spirv-reflect.yml
 jobs:
   Build:
     strategy:

@@ -6,9 +6,10 @@ on:
       - "develop/*"
       - "main"
     paths:
-      - "build/submodules/wgpu-native"
-      - "build/nuke/Build.Native.cs"
-      - ".github/workflows/wgpu.yml"
+      - build/submodules/wgpu-native
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/Wgpu.cs
+      - .github/workflows/wgpu.yml
 jobs:
   Build:
     strategy:
