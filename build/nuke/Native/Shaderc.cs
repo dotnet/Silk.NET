@@ -572,14 +572,17 @@ const root_path = root_dir() ++ ""/"";
 
             //Build shaderc for Linux x86
             InheritedShell($"zig build -Dtarget=x86-linux-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            InheritedShell($"strip {ShadercPath / "zig-out" / "lib" / $"lib{libname}.so"}", ShadercPath);
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x86" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Linux x86_64
             InheritedShell($"zig build -Dtarget=x86_64-linux-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            InheritedShell($"strip {ShadercPath / "zig-out" / "lib" / $"lib{libname}.so"}", ShadercPath);
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Linux ARM64
             InheritedShell($"zig build -Dtarget=aarch64-linux-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            InheritedShell($"strip {ShadercPath / "zig-out" / "lib" / $"lib{libname}.so"}", ShadercPath);
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Windows x86
