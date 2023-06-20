@@ -40,7 +40,7 @@ jobs:
           token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
       - name: Checkout submodules, configure git
         run: |
-          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive --depth 0
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive --depth 0 build/submodules/ANGLE
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton" 
       - name: Extra prerequisites
