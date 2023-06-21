@@ -617,7 +617,7 @@ const root_path = root_dir() ++ ""/"";
             var glob = string.Empty;
             glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
 
-            PrUpdatedNativeBinary("Shaderc");
+            PrUpdatedNativeBinary("Shaderc", glob);
         }
         )
     );
