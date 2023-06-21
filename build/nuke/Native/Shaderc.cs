@@ -582,7 +582,7 @@ const root_path = root_dir() ++ ""/"";
 
             //Build shaderc for Linux ARM64
             InheritedShell($"zig build -Dtarget=aarch64-linux-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            InheritedShell($"strip {ShadercPath / "zig-out" / "lib" / $"lib{libname}.so"}", ShadercPath).AssertZeroExitCode();;
+            InheritedShell($"aarch64-linux-gnu-strip {ShadercPath / "zig-out" / "lib" / $"lib{libname}.so"}", ShadercPath).AssertZeroExitCode();;
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Windows x86
