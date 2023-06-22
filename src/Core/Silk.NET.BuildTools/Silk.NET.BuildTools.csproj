@@ -21,7 +21,7 @@
       <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.6.2115" />
       <PackageReference Include="morelinq" Version="3.4.2" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <PackageReference Include="ClangSharp" Version="15.0.2" />
+      <PackageReference Include="ClangSharp" Version="16.0.0" />
     </ItemGroup>
 
     <ItemGroup>
