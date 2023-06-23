@@ -71,7 +71,7 @@ partial class Build {
                     InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
                     InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
 
-                    CopyFile(ARM64BuildDir / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile(ARM64BuildDir.GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                 } 
                 else if (RuntimeInformation.OSArchitecture == Architecture.X64) 
                 {
