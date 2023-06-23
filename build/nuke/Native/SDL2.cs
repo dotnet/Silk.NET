@@ -87,11 +87,11 @@ partial class Build {
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
                     //Strip the libraries
-                    InheritedShell($"strip {x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5"}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"strip {x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5"}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"strip {x86BuildDir / "lib" / "libSDL2-2.0.so*"}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"strip {x64BuildDir / "lib" / "libSDL2-2.0.so*"}", SDL2Path).AssertZeroExitCode();
 
-                    CopyFile(x86BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                    CopyFile(x64BuildDir / "lib" / "libSDL2-2.0.so.0.2600.5", runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile((x86BuildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
+                    CopyFile((x64BuildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                 } 
                 else 
                 {
