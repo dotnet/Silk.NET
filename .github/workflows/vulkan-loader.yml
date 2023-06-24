@@ -1,13 +1,15 @@
 name: Vulkan Loader
 on:
   push:
+    branches-ignore:
+      - "ci/*"
+      - "develop/*"
+      - "main"
     paths:
       - build/submodules/Vulkan-Loader
-      - build/nuke/Build.Native.cs
-    branches-ignore:
-        - "ci/*"
-        - "develop/*"
-        - "main"
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/VulkanLoader.cs
+      - .github/workflows/vulkan-loader.yml
 jobs:
   Build:
     strategy: 
