@@ -24,9 +24,9 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             ShaderModule* module = null,
             byte* entryPoint = null,
-            uint? constantCount = null,
+            nuint? constantCount = null,
             ConstantEntry* constants = null,
-            uint? bufferCount = null,
+            nuint? bufferCount = null,
             VertexBufferLayout* buffers = null
         ) : this()
         {
@@ -82,20 +82,20 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "entryPoint")]
         public byte* EntryPoint;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "constantCount")]
-        public uint ConstantCount;
+        public nuint ConstantCount;
 
         [NativeName("Type", "const WGPUConstantEntry *")]
         [NativeName("Type.Name", "const WGPUConstantEntry *")]
         [NativeName("Name", "constants")]
         public ConstantEntry* Constants;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "bufferCount")]
-        public uint BufferCount;
+        public nuint BufferCount;
 
         [NativeName("Type", "const WGPUVertexBufferLayout *")]
         [NativeName("Type.Name", "const WGPUVertexBufferLayout *")]

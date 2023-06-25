@@ -29,7 +29,7 @@ namespace Silk.NET.WebGPU
             TextureFormat? format = null,
             uint? mipLevelCount = null,
             uint? sampleCount = null,
-            uint? viewFormatCount = null,
+            nuint? viewFormatCount = null,
             TextureFormat* viewFormats = null
         ) : this()
         {
@@ -125,10 +125,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "sampleCount")]
         public uint SampleCount;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "viewFormatCount")]
-        public uint ViewFormatCount;
+        public nuint ViewFormatCount;
 
         [NativeName("Type", "const WGPUTextureFormat *")]
         [NativeName("Type.Name", "const WGPUTextureFormat *")]

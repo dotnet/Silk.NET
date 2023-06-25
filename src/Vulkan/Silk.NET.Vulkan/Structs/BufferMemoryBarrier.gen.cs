@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryBarrier")]
-    public unsafe partial struct BufferMemoryBarrier : IChainable
+    public unsafe partial struct BufferMemoryBarrier : IChainStart
     {
         public BufferMemoryBarrier
         (
@@ -135,6 +135,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BufferMemoryBarrier Chain(
+            out BufferMemoryBarrier capture)
+        {
+            capture = new BufferMemoryBarrier(StructureType.BufferMemoryBarrier);
+            return ref capture;
         }
     }
 }

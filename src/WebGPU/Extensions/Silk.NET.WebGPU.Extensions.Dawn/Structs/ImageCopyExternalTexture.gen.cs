@@ -23,7 +23,8 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         (
             ChainedStruct* nextInChain = null,
             ExternalTextureImpl* externalTexture = null,
-            Origin3D? origin = null
+            Origin3D? origin = null,
+            Extent2D? naturalSize = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -39,6 +40,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             if (origin is not null)
             {
                 Origin = origin.Value;
+            }
+
+            if (naturalSize is not null)
+            {
+                NaturalSize = naturalSize.Value;
             }
         }
 
@@ -57,5 +63,10 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type.Name", "WGPUOrigin3D")]
         [NativeName("Name", "origin")]
         public Origin3D Origin;
+
+        [NativeName("Type", "WGPUExtent2D")]
+        [NativeName("Type.Name", "WGPUExtent2D")]
+        [NativeName("Name", "naturalSize")]
+        public Extent2D NaturalSize;
     }
 }
