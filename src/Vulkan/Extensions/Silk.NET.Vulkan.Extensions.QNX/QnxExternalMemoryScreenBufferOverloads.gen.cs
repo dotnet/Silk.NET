@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.QNX
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ScreenBufferPropertiesQnx);")]
-        public static unsafe Result GetScreenBufferPropertiesQnx(this QnxExternalMemoryScreenBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] _screen_buffer* buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ScreenBufferPropertiesQNX> pProperties)
+        public static unsafe Result GetScreenBufferPropertiesQnx(this QnxExternalMemoryScreenBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ScreenBufferPropertiesQNX> pProperties)
         {
             // SpanOverloader
             return thisApi.GetScreenBufferPropertiesQnx(device, buffer, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetScreenBufferPropertiesQnx(this QnxExternalMemoryScreenBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<_screen_buffer> buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ScreenBufferPropertiesQNX* pProperties)
+        public static unsafe Result GetScreenBufferPropertiesQnx<T0>(this QnxExternalMemoryScreenBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ScreenBufferPropertiesQNX* pProperties) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetScreenBufferPropertiesQnx(device, in buffer.GetPinnableReference(), pProperties);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.QNX
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ScreenBufferPropertiesQnx);")]
-        public static unsafe Result GetScreenBufferPropertiesQnx(this QnxExternalMemoryScreenBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<_screen_buffer> buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ScreenBufferPropertiesQNX> pProperties)
+        public static unsafe Result GetScreenBufferPropertiesQnx<T0>(this QnxExternalMemoryScreenBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ScreenBufferPropertiesQNX> pProperties) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetScreenBufferPropertiesQnx(device, in buffer.GetPinnableReference(), out pProperties.GetPinnableReference());

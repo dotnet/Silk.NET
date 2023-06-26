@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.ImportScreenBufferInfoQnx,
             void* pNext = null,
-            _screen_buffer* buffer = null
+            void* buffer = null
         ) : this()
         {
             if (sType is not null)
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "_screen_buffer*")]
         [NativeName("Type.Name", "_screen_buffer")]
         [NativeName("Name", "buffer")]
-        public _screen_buffer* Buffer;
+        public void* Buffer;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
