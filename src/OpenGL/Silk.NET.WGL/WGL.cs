@@ -17,7 +17,7 @@ namespace Silk.NET.WGL
     {
         public static WGL GetApi()
         {
-             throw new NotImplementedException();
+            return new(CreateDefaultContext(new string[] {"Opengl32.dll"}));
         }
 
         public bool TryGetExtension<T>(out T ext)
