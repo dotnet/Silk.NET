@@ -30,7 +30,7 @@
         <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MsExtensionNugetVersion)"/>
-        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.2"/>
+        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.3"/>
         <PackageVersion Include="xunit" Version="2.4.2"/>
         <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5"/>
         <PackageVersion Include="Statiq.Core" Version="$(StatiqVersion)"/>
