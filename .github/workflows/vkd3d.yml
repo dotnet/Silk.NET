@@ -6,11 +6,13 @@ on:
       - "develop/*"
       - "main"
     paths:
-      - "build/submodules/vkd3d"
-      - "build/submodules/vkd3d-no-ms-abi.patch"
-      - "build/nuke/Build.Native.cs"
-      - ".github/workflows/vkd3d.yml"
-      - "src/Microsoft/Vkd3dCompiler/*"
+      - build/submodules/vkd3d
+      - build/submodules/SPIRV-Tools
+      - build/submodules/vkd3d-no-ms-abi.patch
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/Vkd3d.cs
+      - .github/workflows/vkd3d.yml
+      - src/Microsoft/Vkd3dCompiler/*
 jobs:
   Build:
     strategy:

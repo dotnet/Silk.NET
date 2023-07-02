@@ -3,7 +3,8 @@ on:
   push:
     paths:
       - build/submodules/dxvk
-      - build/nuke/Build.Native.cs
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/Dxvk.cs
       - .github/workflows/dxvk.yml
     branches-ignore:
         - "ci/*"

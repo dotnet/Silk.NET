@@ -6,9 +6,10 @@ on:
       - "develop/*"
       - "main"
     paths:
-      - "build/submodules/SDL"
-      - "build/nuke/Build.Native.cs"
-      - ".github/workflows/sdl2.yml"
+      - build/submodules/SDL
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/SDL2.cs
+      - .github/workflows/sdl2.yml
 jobs:
   Build:
     strategy:

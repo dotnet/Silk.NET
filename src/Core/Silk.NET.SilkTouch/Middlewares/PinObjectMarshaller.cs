@@ -1,8 +1,10 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Linq;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -18,10 +20,34 @@ namespace Silk.NET.SilkTouch
 
                 var gcSlot = ctx.AllocateGcSlot();
                 PinMode pinMode;
-                if (data.ConstructorArguments.Length < 1)
+                string[] discriminantExprs;
+                if (data is null || data.ConstructorArguments.Length < 1)
+                {
                     pinMode = PinMode.Persist;
+                }
                 else
+                {
                     pinMode = (PinMode) (data.ConstructorArguments[0].Value ?? PinMode.Persist);
+                }
+
+                if (data is null ||
+                    data.ConstructorArguments.Length < 2 ||
+                    data.ConstructorArguments[1].Values.Length == 0)
+                {
+                    discriminantExprs = Array.Empty<string>();
+                }
+                else
+                {
+                    discriminantExprs = data.ConstructorArguments[1]
+                        .Values
+                        .Select(x => x.Value as string)
+                        .Where(x => x is not null)
+                        .ToArray()!;
+                }
+
+                var slotSyntax = discriminantExprs.Length == 0
+                    ? LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot))
+                    : MixDiscriminants(gcSlot, discriminantExprs);
 
                 var name = pinMode switch
                 {
@@ -46,8 +72,7 @@ namespace Silk.NET.SilkTouch
                                     new[]
                                     {
                                         Argument(parameterVariable.Value),
-                                        Argument
-                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot)))
+                                        Argument(slotSyntax)
                                     }
                                 )
                             )
@@ -64,10 +89,32 @@ namespace Silk.NET.SilkTouch
                 var gcSlot = ctx.AllocateGcSlot();
 
                 PinMode pinMode;
+                string[] discriminantExprs;
                 if (resultData.ConstructorArguments.Length < 1)
+                {
                     pinMode = PinMode.Persist;
+                }
                 else
+                {
                     pinMode = (PinMode) (resultData.ConstructorArguments[0].Value ?? PinMode.Persist);
+                }
+                
+                if (resultData.ConstructorArguments.Length < 2 || resultData.ConstructorArguments[1].Values.Length == 0)
+                {
+                    discriminantExprs = Array.Empty<string>();
+                }
+                else
+                {
+                    discriminantExprs = resultData.ConstructorArguments[1]
+                        .Values
+                        .Select(x => x.Value as string)
+                        .Where(x => x is not null)
+                        .ToArray()!;
+                }
+
+                var slotSyntax = discriminantExprs.Length == 0
+                    ? LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot))
+                    : MixDiscriminants(gcSlot, discriminantExprs);
 
                 var name = pinMode switch
                 {
@@ -92,8 +139,7 @@ namespace Silk.NET.SilkTouch
                                     new[]
                                     {
                                         Argument(resultVariable.Value),
-                                        Argument
-                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot)))
+                                        Argument(slotSyntax)
                                     }
                                 )
                             )
@@ -101,6 +147,39 @@ namespace Silk.NET.SilkTouch
                     )
                 );
             }
+
+            static ExpressionSyntax MixDiscriminants(int slot, string[] discriminants) => InvocationExpression
+            (
+                MemberAccessExpression
+                (
+                    SyntaxKind.SimpleMemberAccessExpression,
+                    MemberAccessExpression
+                    (
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        AliasQualifiedName
+                        (
+                            IdentifierName
+                            (
+                                Token(SyntaxKind.GlobalKeyword)
+                            ),
+                            IdentifierName("System")
+                        ),
+                        IdentifierName("HashCode")
+                    ),
+                    IdentifierName("Combine")
+                ),
+                ArgumentList
+                (
+                    SeparatedList
+                    (
+                        Enumerable.Repeat
+                        (
+                            Argument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot))),
+                            1
+                        ).Concat(discriminants.Select(x => Argument(ParseExpression(x))))
+                    )
+                )
+            );
         }
     }
 

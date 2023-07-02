@@ -46,3 +46,6 @@
 [submodule "build/submodules/SPIRV-Cross"]
 	path = build/submodules/SPIRV-Cross
 	url = https://github.com/KhronosGroup/SPIRV-Cross
+[submodule "build/submodules/shaderc"]
+	path = build/submodules/shaderc
+	url = https://github.com/google/shaderc

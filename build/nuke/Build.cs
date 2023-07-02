@@ -10,10 +10,10 @@ partial class Build : NukeBuild
     // --------
     // Building
     // --------
-    // - Build.Core.cs        - core .NET build, uses the dotnet CLI to build the solution.
+    // - Build.Core.cs       - core .NET build, uses the dotnet CLI to build the solution.
     // - Build.Generation.cs - a target for running our bespoke code generator BuildTools to generate all the .gen.cs
     //                         files.
-    // - Build.Native.cs     - builds the native (C/C++) components used by Silk.NET.
+    // - Native/*.cs         - builds the native (C/C++) components used by Silk.NET.
     // ---------
     // Packaging
     // ---------

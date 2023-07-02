@@ -6,8 +6,10 @@ on:
       - "develop/*"
       - "main"
     paths:
-      - "build/submodules/Assimp"
-      - "build/nuke/Build.Native.cs"
+      - build/submodules/Assimp
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/Assimp.cs
+      - .github/workflows/assimp.yml
 jobs:
   Build:
     strategy: 
