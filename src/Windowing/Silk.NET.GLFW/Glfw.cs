@@ -2631,7 +2631,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.CharCallback SetCharCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CharCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.CharCallback callback
         );
 
         /// <summary>
@@ -2667,7 +2667,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.CharModsCallback SetCharModsCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CharModsCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.CharModsCallback callback
         );
 
         /// <summary>
@@ -2692,7 +2692,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CursorEnterCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.CursorEnterCallback callback
         );
 
         /// <summary>
@@ -2721,7 +2721,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.CursorPosCallback SetCursorPosCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CursorPosCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.CursorPosCallback callback
         );
 
         /// <summary>
@@ -2751,7 +2751,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.DropCallback SetDropCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.DropCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.DropCallback callback
         );
 
         /// <summary>
@@ -2947,7 +2947,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.KeyCallback SetKeyCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.KeyCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.KeyCallback callback
         );
 
         /// <summary>
@@ -2975,7 +2975,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.ScrollCallback SetScrollCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.ScrollCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.ScrollCallback callback
         );
 
         /// <summary>
@@ -3028,7 +3028,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.MouseButtonCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.MouseButtonCallback callback
         );
 
         /// <summary>
@@ -3064,7 +3064,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowCloseCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowCloseCallback callback
         );
 
         /// <summary>
@@ -3094,7 +3094,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowFocusCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowFocusCallback callback
         );
 
         /// <summary>
@@ -3152,7 +3152,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowIconifyCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowIconifyCallback callback
         );
 
         /// <summary>
@@ -3177,7 +3177,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowMaximizeCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowMaximizeCallback callback
         );
 
         /// <summary>
@@ -3277,7 +3277,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowSizeCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowSizeCallback callback
         );
 
         /// <summary>
@@ -3301,7 +3301,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.FramebufferSizeCallback SetFramebufferSizeCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.FramebufferSizeCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.FramebufferSizeCallback callback
         );
 
         /// <summary>
@@ -3433,7 +3433,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowPosCallback SetWindowPosCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowPosCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowPosCallback callback
         );
 
         /// <summary>
@@ -3467,7 +3467,7 @@ namespace Silk.NET.GLFW
         public unsafe partial GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback
         (
             WindowHandle* window,
-            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowRefreshCallback callback
+            [PinObject(PinMode.UntilNextCall, new []{"(nint)window"})] GlfwCallbacks.WindowRefreshCallback callback
         );
 
         /// <summary>
