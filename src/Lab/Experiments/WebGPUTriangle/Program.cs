@@ -14,9 +14,8 @@ namespace WebGPUTriangle;
 public static unsafe class Program
 {
     // ReSharper disable once InconsistentNaming
-    private static WebGPU         wgpu            = null!;
-    private static WebGPUDisposal _WebGpuDisposal = null!;
-    private static IWindow?       _Window;
+    private static WebGPU   wgpu = null!;
+    private static IWindow? _Window;
 
     private static Instance*       _Instance;
     private static Surface*        _Surface;
@@ -73,8 +72,6 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         wgpu = WebGPU.GetApi();
 
-        _WebGpuDisposal = new WebGPUDisposal(wgpu);
-
         InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
         _Instance = wgpu.CreateInstance(&instanceDescriptor);
 
@@ -100,10 +97,15 @@ fn fs_main() -> @location(0) vec4<f32> {
         PrintAdapterFeatures();
 
         { //Get device
+            var deviceDescriptor = new DeviceDescriptor
+            {
+                DeviceLostCallback = new PfnDeviceLostCallback(DeviceLost),
+            };
+
             wgpu.AdapterRequestDevice
             (
                 _Adapter,
-                null,
+                in deviceDescriptor,
                 new PfnRequestDeviceCallback((_, device1, _, _) => _Device = device1),
                 null
             );
@@ -112,7 +114,6 @@ fn fs_main() -> @location(0) vec4<f32> {
         } //Get device
 
         wgpu.DeviceSetUncapturedErrorCallback(_Device, new PfnErrorCallback(UncapturedError), null);
-        wgpu.DeviceSetDeviceLostCallback(_Device, new PfnDeviceLostCallback(DeviceLost), null);
 
         { //Load shader
             var wgslDescriptor = new ShaderModuleWGSLDescriptor
@@ -137,7 +138,6 @@ fn fs_main() -> @location(0) vec4<f32> {
         _SwapChainFormat = wgpu.SurfaceGetPreferredFormat(_Surface, _Adapter);
 
         { //Create pipeline
-
             var blendState = new BlendState
             {
                 Color = new BlendComponent
@@ -203,11 +203,12 @@ fn fs_main() -> @location(0) vec4<f32> {
 
     private static void WindowClosing()
     {
-        _WebGpuDisposal.Dispose(_Shader);
-        _WebGpuDisposal.Dispose(_Pipeline);
-        _WebGpuDisposal.Dispose(_Device);
-        _WebGpuDisposal.Dispose(_Adapter);
-        _WebGpuDisposal.Dispose(_Surface);
+        wgpu.ShaderModuleRelease(_Shader);
+        wgpu.RenderPipelineRelease(_Pipeline);
+        wgpu.DeviceRelease(_Device);
+        wgpu.AdapterRelease(_Adapter);
+        wgpu.SurfaceRelease(_Surface);
+        wgpu.InstanceRelease(_Instance);
 
         wgpu.Dispose();
     }
@@ -283,7 +284,7 @@ fn fs_main() -> @location(0) vec4<f32> {
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
         wgpu.RenderPassEncoderEnd(renderPass);
-        _WebGpuDisposal.Dispose(nextTexture);
+        wgpu.TextureViewRelease(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
