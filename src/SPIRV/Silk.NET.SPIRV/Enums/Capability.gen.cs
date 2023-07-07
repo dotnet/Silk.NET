@@ -324,6 +324,8 @@ namespace Silk.NET.SPIRV
         StorageTexelBufferArrayNonUniformIndexing = 0x14C0,
         [NativeName("Name", "SpvCapabilityStorageTexelBufferArrayNonUniformIndexingEXT")]
         StorageTexelBufferArrayNonUniformIndexingExt = 0x14C0,
+        [NativeName("Name", "SpvCapabilityRayTracingPositionFetchKHR")]
+        RayTracingPositionFetchKhr = 0x14D8,
         [NativeName("Name", "SpvCapabilityRayTracingNV")]
         RayTracingNV = 0x14DC,
         [NativeName("Name", "SpvCapabilityRayTracingMotionBlurNV")]
@@ -364,6 +366,8 @@ namespace Silk.NET.SPIRV
         ShaderInvocationReorderNV = 0x1507,
         [NativeName("Name", "SpvCapabilityBindlessTextureNV")]
         BindlessTextureNV = 0x150E,
+        [NativeName("Name", "SpvCapabilityRayQueryPositionFetchKHR")]
+        RayQueryPositionFetchKhr = 0x150F,
         [NativeName("Name", "SpvCapabilitySubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C0,
         [NativeName("Name", "SpvCapabilitySubgroupBufferBlockIOINTEL")]
@@ -466,6 +470,8 @@ namespace Silk.NET.SPIRV
         DotProductKhr = 0x1783,
         [NativeName("Name", "SpvCapabilityRayCullMaskKHR")]
         RayCullMaskKhr = 0x1784,
+        [NativeName("Name", "SpvCapabilityCooperativeMatrixKHR")]
+        CooperativeMatrixKhr = 0x1786,
         [NativeName("Name", "SpvCapabilityBitInstructions")]
         BitInstructions = 0x1789,
         [NativeName("Name", "SpvCapabilityGroupNonUniformRotateKHR")]

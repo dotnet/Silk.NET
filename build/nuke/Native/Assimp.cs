@@ -37,7 +37,7 @@ partial class Build {
                 () =>
                 {
                     var @out = AssimpPath / "build";
-                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
+                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON -DASSIMP_WARNINGS_AS_ERRORS=OFF";
                     var build = $"cmake --build build --config Release{JobsArg}";
                     EnsureCleanDirectory(@out);
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Assimp.Native" / "runtimes";

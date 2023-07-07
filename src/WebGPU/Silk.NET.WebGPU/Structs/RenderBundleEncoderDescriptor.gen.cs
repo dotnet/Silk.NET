@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? colorFormatsCount = null,
+            nuint? colorFormatsCount = null,
             TextureFormat* colorFormats = null,
             TextureFormat? depthStencilFormat = null,
             uint? sampleCount = null,
@@ -83,10 +83,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "colorFormatsCount")]
-        public uint ColorFormatsCount;
+        public nuint ColorFormatsCount;
 
         [NativeName("Type", "const WGPUTextureFormat *")]
         [NativeName("Type.Name", "const WGPUTextureFormat *")]

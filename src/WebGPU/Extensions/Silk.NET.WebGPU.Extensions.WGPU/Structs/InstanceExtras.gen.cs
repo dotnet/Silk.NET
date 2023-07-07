@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public InstanceExtras
         (
             ChainedStruct? chain = null,
-            uint? backends = null,
+            Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend? backends = null,
             Dx12Compiler? dx12ShaderCompiler = null,
             byte* dxilPath = null,
             byte* dxcPath = null
@@ -63,7 +63,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Type", "WGPUInstanceBackendFlags")]
         [NativeName("Type.Name", "WGPUInstanceBackendFlags")]
         [NativeName("Name", "backends")]
-        public uint Backends;
+        public Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend Backends;
 
         [NativeName("Type", "WGPUDx12Compiler")]
         [NativeName("Type.Name", "WGPUDx12Compiler")]

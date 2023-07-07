@@ -17,7 +17,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
     public static class DawnOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1655, Column 24 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1755, Column 24 in dawn-webgpu.h")]
         public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1700, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1801, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1702, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1809, Column 18 in dawn-webgpu.h")]
         public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> data, ulong size)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1743, Column 24 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1841, Column 24 in dawn-webgpu.h")]
         public static unsafe Buffer* DeviceCreateErrorBuffer(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferDescriptor> descriptor)
         {
             // SpanOverloader
@@ -105,7 +105,39 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1745, Column 25 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1843, Column 30 in dawn-webgpu.h")]
+        public static unsafe ShaderModule* DeviceCreateErrorShaderModule(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleDescriptor* descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> errorMessage)
+        {
+            // SpanOverloader
+            return thisApi.DeviceCreateErrorShaderModule(device, descriptor, in errorMessage.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1843, Column 30 in dawn-webgpu.h")]
+        public static unsafe ShaderModule* DeviceCreateErrorShaderModule(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleDescriptor> descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* errorMessage)
+        {
+            // SpanOverloader
+            return thisApi.DeviceCreateErrorShaderModule(device, in descriptor.GetPinnableReference(), errorMessage);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1843, Column 30 in dawn-webgpu.h")]
+        public static unsafe ShaderModule* DeviceCreateErrorShaderModule(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleDescriptor> descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> errorMessage)
+        {
+            // SpanOverloader
+            return thisApi.DeviceCreateErrorShaderModule(device, in descriptor.GetPinnableReference(), in errorMessage.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1843, Column 30 in dawn-webgpu.h")]
+        public static unsafe ShaderModule* DeviceCreateErrorShaderModule(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleDescriptor> descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errorMessage)
+        {
+            // SpanOverloader
+            return thisApi.DeviceCreateErrorShaderModule(device, in descriptor.GetPinnableReference(), errorMessage);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1844, Column 25 in dawn-webgpu.h")]
         public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
             // SpanOverloader
@@ -113,7 +145,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1746, Column 33 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1845, Column 33 in dawn-webgpu.h")]
         public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ExternalTextureDescriptor> externalTextureDescriptor)
         {
             // SpanOverloader
@@ -121,7 +153,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1758, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1857, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceForceLoss(this Dawn thisApi, Device* device, DeviceLostReason type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
@@ -129,7 +161,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1763, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1863, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceInjectError(this Dawn thisApi, Device* device, ErrorType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
@@ -137,7 +169,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1768, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1866, Column 18 in dawn-webgpu.h")]
+        public static unsafe void DeviceSetDeviceLostCallback<T0>(this Dawn thisApi, Device* device, PfnDeviceLostCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DeviceSetDeviceLostCallback(device, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1868, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceSetLoggingCallback<T0>(this Dawn thisApi, Device* device, PfnLoggingCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -145,7 +185,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1771, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1871, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceValidateTextureDescriptor(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
             // SpanOverloader
@@ -153,7 +193,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1779, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1879, Column 18 in dawn-webgpu.h")]
         public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, ExternalTextureImpl* externalTexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -161,7 +201,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -169,7 +209,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -177,7 +217,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -185,7 +225,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -193,7 +233,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -201,7 +241,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -209,7 +249,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -217,7 +257,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -225,7 +265,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -233,7 +273,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -241,7 +281,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -249,7 +289,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -257,7 +297,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -265,7 +305,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -273,7 +313,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1803, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1904, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -281,7 +321,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -289,7 +329,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -297,7 +337,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -305,7 +345,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -313,7 +353,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -321,7 +361,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -329,7 +369,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -337,7 +377,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -345,7 +385,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -353,7 +393,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -361,7 +401,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -369,7 +409,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -377,7 +417,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
@@ -385,7 +425,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
@@ -393,7 +433,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1804, Column 18 in dawn-webgpu.h")]
+        [NativeName("Src", "Line 1905, Column 18 in dawn-webgpu.h")]
         public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader

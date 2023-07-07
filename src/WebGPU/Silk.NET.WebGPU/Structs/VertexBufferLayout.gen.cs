@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ulong? arrayStride = null,
             VertexStepMode? stepMode = null,
-            uint? attributeCount = null,
+            nuint? attributeCount = null,
             VertexAttribute* attributes = null
         ) : this()
         {
@@ -59,10 +59,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "stepMode")]
         public VertexStepMode StepMode;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "attributeCount")]
-        public uint AttributeCount;
+        public nuint AttributeCount;
 
         [NativeName("Type", "const WGPUVertexAttribute *")]
         [NativeName("Type.Name", "const WGPUVertexAttribute *")]

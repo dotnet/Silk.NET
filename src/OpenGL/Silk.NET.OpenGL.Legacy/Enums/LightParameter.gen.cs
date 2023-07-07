@@ -13,6 +13,15 @@ namespace Silk.NET.OpenGL.Legacy
     public enum LightParameter : int
     {
         [System.Obsolete("Deprecated in version 3.2")]
+        [NativeName("Name", "GL_AMBIENT")]
+        Ambient = 0x1200,
+        [System.Obsolete("Deprecated in version 3.2")]
+        [NativeName("Name", "GL_DIFFUSE")]
+        Diffuse = 0x1201,
+        [System.Obsolete("Deprecated in version 3.2")]
+        [NativeName("Name", "GL_SPECULAR")]
+        Specular = 0x1202,
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_POSITION")]
         Position = 0x1203,
         [System.Obsolete("Deprecated in version 3.2")]

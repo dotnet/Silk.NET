@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeRateControlLayerInfoKHR")]
-    public unsafe partial struct VideoEncodeRateControlLayerInfoKHR : IChainStart, IExtendsChain<VideoCodingControlInfoKHR>
+    public unsafe partial struct VideoEncodeRateControlLayerInfoKHR : IChainStart
     {
         public VideoEncodeRateControlLayerInfoKHR
         (
@@ -26,9 +26,7 @@ namespace Silk.NET.Vulkan
             ulong? averageBitrate = null,
             ulong? maxBitrate = null,
             uint? frameRateNumerator = null,
-            uint? frameRateDenominator = null,
-            uint? virtualBufferSizeInMs = null,
-            uint? initialVirtualBufferSizeInMs = null
+            uint? frameRateDenominator = null
         ) : this()
         {
             if (sType is not null)
@@ -59,16 +57,6 @@ namespace Silk.NET.Vulkan
             if (frameRateDenominator is not null)
             {
                 FrameRateDenominator = frameRateDenominator.Value;
-            }
-
-            if (virtualBufferSizeInMs is not null)
-            {
-                VirtualBufferSizeInMs = virtualBufferSizeInMs.Value;
-            }
-
-            if (initialVirtualBufferSizeInMs is not null)
-            {
-                InitialVirtualBufferSizeInMs = initialVirtualBufferSizeInMs.Value;
             }
         }
 
@@ -102,16 +90,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "frameRateDenominator")]
         public uint FrameRateDenominator;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "virtualBufferSizeInMs")]
-        public uint VirtualBufferSizeInMs;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "initialVirtualBufferSizeInMs")]
-        public uint InitialVirtualBufferSizeInMs;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

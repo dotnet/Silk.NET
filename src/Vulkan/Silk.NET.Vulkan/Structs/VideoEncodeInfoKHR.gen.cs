@@ -24,7 +24,6 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoEncodeInfoKhr,
             void* pNext = null,
             uint? flags = null,
-            uint? qualityLevel = null,
             Buffer? dstBuffer = null,
             ulong? dstBufferOffset = null,
             ulong? dstBufferRange = null,
@@ -48,11 +47,6 @@ namespace Silk.NET.Vulkan
             if (flags is not null)
             {
                 Flags = flags.Value;
-            }
-
-            if (qualityLevel is not null)
-            {
-                QualityLevel = qualityLevel.Value;
             }
 
             if (dstBuffer is not null)
@@ -111,11 +105,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeFlagsKHR")]
         [NativeName("Name", "flags")]
         public uint Flags;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "qualityLevel")]
-        public uint QualityLevel;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]

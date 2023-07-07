@@ -434,7 +434,8 @@
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
-                    "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>"
+                    "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>",
+                    "_screen_buffer": "void"
                 },
                 {
                     "StdVideoDecodeH264PictureInfo": "Video.StdVideoDecodeH264PictureInfo",
@@ -2385,7 +2386,8 @@
                     "WGPUBufferUsageFlags": "Silk.NET.WebGPU.BufferUsage",
                     "WGPUMapModeFlags": "Silk.NET.WebGPU.MapMode",
                     "WGPUShaderStageFlags": "Silk.NET.WebGPU.ShaderStage",
-                    "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage"
+                    "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage",
+                    "WGPUInstanceBackendFlags": "Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",

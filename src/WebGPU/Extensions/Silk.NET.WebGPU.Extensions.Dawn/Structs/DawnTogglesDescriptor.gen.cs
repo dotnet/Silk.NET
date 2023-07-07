@@ -22,9 +22,9 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public DawnTogglesDescriptor
         (
             ChainedStruct? chain = null,
-            uint? enabledTogglesCount = null,
+            nuint? enabledTogglesCount = null,
             byte** enabledToggles = null,
-            uint? disabledTogglesCount = null,
+            nuint? disabledTogglesCount = null,
             byte** disabledToggles = null
         ) : this()
         {
@@ -60,20 +60,20 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "enabledTogglesCount")]
-        public uint EnabledTogglesCount;
+        public nuint EnabledTogglesCount;
 
         [NativeName("Type", "const char *const *")]
         [NativeName("Type.Name", "const char *const *")]
         [NativeName("Name", "enabledToggles")]
         public byte** EnabledToggles;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "disabledTogglesCount")]
-        public uint DisabledTogglesCount;
+        public nuint DisabledTogglesCount;
 
         [NativeName("Type", "const char *const *")]
         [NativeName("Type.Name", "const char *const *")]

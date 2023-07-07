@@ -23,8 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264NaluSliceInfoExt,
             void* pNext = null,
-            uint? mbCount = null,
-            Video.StdVideoEncodeH264ReferenceListsInfo* pStdReferenceFinalLists = null,
+            int? constantQp = null,
             Video.StdVideoEncodeH264SliceHeader* pStdSliceHeader = null
         ) : this()
         {
@@ -38,14 +37,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (mbCount is not null)
+            if (constantQp is not null)
             {
-                MbCount = mbCount.Value;
-            }
-
-            if (pStdReferenceFinalLists is not null)
-            {
-                PStdReferenceFinalLists = pStdReferenceFinalLists;
+                ConstantQp = constantQp.Value;
             }
 
             if (pStdSliceHeader is not null)
@@ -65,15 +59,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "mbCount")]
-        public uint MbCount;
-/// <summary></summary>
-        [NativeName("Type", "StdVideoEncodeH264ReferenceListsInfo*")]
-        [NativeName("Type.Name", "StdVideoEncodeH264ReferenceListsInfo")]
-        [NativeName("Name", "pStdReferenceFinalLists")]
-        public Video.StdVideoEncodeH264ReferenceListsInfo* PStdReferenceFinalLists;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "constantQp")]
+        public int ConstantQp;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH264SliceHeader*")]
         [NativeName("Type.Name", "StdVideoEncodeH264SliceHeader")]

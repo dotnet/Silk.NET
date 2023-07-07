@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceObjectReservationCreateInfo")]
-    public unsafe partial struct DeviceObjectReservationCreateInfo : IChainStart, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct DeviceObjectReservationCreateInfo : IExtendsChain<DeviceCreateInfo>
     {
         public DeviceObjectReservationCreateInfo
         (
@@ -509,18 +509,6 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
-        }
-
-        /// <summary>
-        /// Convenience method to start a chain.
-        /// </summary>
-        /// <param name="capture">The newly created chain root</param>
-        /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref DeviceObjectReservationCreateInfo Chain(
-            out DeviceObjectReservationCreateInfo capture)
-        {
-            capture = new DeviceObjectReservationCreateInfo(StructureType.DeviceObjectReservationCreateInfo);
-            return ref capture;
         }
     }
 }

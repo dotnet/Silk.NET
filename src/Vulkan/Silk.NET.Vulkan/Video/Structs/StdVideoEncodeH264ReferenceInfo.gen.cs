@@ -22,11 +22,12 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH264ReferenceInfo
         (
             StdVideoEncodeH264ReferenceInfoFlags? flags = null,
-            StdVideoH264PictureType? pictureType = null,
+            StdVideoH264PictureType? primaryPicType = null,
             uint? frameNum = null,
             int? picOrderCnt = null,
             ushort? longTermPicNum = null,
-            ushort? longTermFrameIdx = null
+            ushort? longTermFrameIdx = null,
+            byte? temporalId = null
         ) : this()
         {
             if (flags is not null)
@@ -34,9 +35,9 @@ namespace Silk.NET.Vulkan.Video
                 Flags = flags.Value;
             }
 
-            if (pictureType is not null)
+            if (primaryPicType is not null)
             {
-                PictureType = pictureType.Value;
+                PrimaryPicType = primaryPicType.Value;
             }
 
             if (frameNum is not null)
@@ -58,6 +59,11 @@ namespace Silk.NET.Vulkan.Video
             {
                 LongTermFrameIdx = longTermFrameIdx.Value;
             }
+
+            if (temporalId is not null)
+            {
+                TemporalId = temporalId.Value;
+            }
         }
 
 
@@ -68,8 +74,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "StdVideoH264PictureType")]
         [NativeName("Type.Name", "StdVideoH264PictureType")]
-        [NativeName("Name", "pictureType")]
-        public StdVideoH264PictureType PictureType;
+        [NativeName("Name", "primary_pic_type")]
+        public StdVideoH264PictureType PrimaryPicType;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -90,5 +96,10 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "long_term_frame_idx")]
         public ushort LongTermFrameIdx;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "temporal_id")]
+        public byte TemporalId;
     }
 }

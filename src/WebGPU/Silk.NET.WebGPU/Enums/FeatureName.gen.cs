@@ -36,6 +36,8 @@ namespace Silk.NET.WebGPU
         RG11B10UfloatRenderable = 0xA,
         [NativeName("Name", "WGPUFeatureName_BGRA8UnormStorage")]
         Bgra8UnormStorage = 0xB,
+        [NativeName("Name", "WGPUFeatureName_Float32Filterable")]
+        Float32filterable = 0xC,
         [NativeName("Name", "WGPUFeatureName_Force32")]
         Force32 = 0x7FFFFFFF,
     }

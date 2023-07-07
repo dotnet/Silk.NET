@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_hints_L2394_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_hints_L2429_C9")]
     [NativeName("Name", "SDL_HintPriority")]
     public enum HintPriority : int
     {

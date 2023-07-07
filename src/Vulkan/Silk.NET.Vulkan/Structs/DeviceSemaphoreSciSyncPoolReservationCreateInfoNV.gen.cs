@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceSemaphoreSciSyncPoolReservationCreateInfoNV")]
-    public unsafe partial struct DeviceSemaphoreSciSyncPoolReservationCreateInfoNV : IExtendsChain<DeviceObjectReservationCreateInfo>
+    public unsafe partial struct DeviceSemaphoreSciSyncPoolReservationCreateInfoNV : IExtendsChain<DeviceCreateInfo>
     {
         public DeviceSemaphoreSciSyncPoolReservationCreateInfoNV
         (

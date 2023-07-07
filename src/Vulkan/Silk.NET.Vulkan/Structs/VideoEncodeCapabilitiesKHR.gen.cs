@@ -26,8 +26,9 @@ namespace Silk.NET.Vulkan
             VideoEncodeCapabilityFlagsKHR? flags = null,
             VideoEncodeRateControlModeFlagsKHR? rateControlModes = null,
             uint? maxRateControlLayers = null,
+            ulong? maxBitrate = null,
             uint? maxQualityLevels = null,
-            Extent2D? inputImageDataFillAlignment = null,
+            Extent2D? encodeInputPictureGranularity = null,
             VideoEncodeFeedbackFlagsKHR? supportedEncodeFeedbackFlags = null
         ) : this()
         {
@@ -56,14 +57,19 @@ namespace Silk.NET.Vulkan
                 MaxRateControlLayers = maxRateControlLayers.Value;
             }
 
+            if (maxBitrate is not null)
+            {
+                MaxBitrate = maxBitrate.Value;
+            }
+
             if (maxQualityLevels is not null)
             {
                 MaxQualityLevels = maxQualityLevels.Value;
             }
 
-            if (inputImageDataFillAlignment is not null)
+            if (encodeInputPictureGranularity is not null)
             {
-                InputImageDataFillAlignment = inputImageDataFillAlignment.Value;
+                EncodeInputPictureGranularity = encodeInputPictureGranularity.Value;
             }
 
             if (supportedEncodeFeedbackFlags is not null)
@@ -98,6 +104,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "maxRateControlLayers")]
         public uint MaxRateControlLayers;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "maxBitrate")]
+        public ulong MaxBitrate;
+/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxQualityLevels")]
@@ -105,8 +116,8 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkExtent2D")]
         [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "inputImageDataFillAlignment")]
-        public Extent2D InputImageDataFillAlignment;
+        [NativeName("Name", "encodeInputPictureGranularity")]
+        public Extent2D EncodeInputPictureGranularity;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeFeedbackFlagsKHR")]
         [NativeName("Type.Name", "VkVideoEncodeFeedbackFlagsKHR")]

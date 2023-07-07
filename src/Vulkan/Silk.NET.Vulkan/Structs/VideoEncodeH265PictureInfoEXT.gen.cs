@@ -16,14 +16,13 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoEncodeH265VclFrameInfoEXT")]
-    public unsafe partial struct VideoEncodeH265VclFrameInfoEXT : IExtendsChain<VideoEncodeInfoKHR>
+    [NativeName("Name", "VkVideoEncodeH265PictureInfoEXT")]
+    public unsafe partial struct VideoEncodeH265PictureInfoEXT : IExtendsChain<VideoEncodeInfoKHR>
     {
-        public VideoEncodeH265VclFrameInfoEXT
+        public VideoEncodeH265PictureInfoEXT
         (
-            StructureType? sType = StructureType.VideoEncodeH265VclFrameInfoExt,
+            StructureType? sType = StructureType.VideoEncodeH265PictureInfoExt,
             void* pNext = null,
-            Video.StdVideoEncodeH265ReferenceListsInfo* pStdReferenceFinalLists = null,
             uint? naluSliceSegmentEntryCount = null,
             VideoEncodeH265NaluSliceSegmentInfoEXT* pNaluSliceSegmentEntries = null,
             Video.StdVideoEncodeH265PictureInfo* pStdPictureInfo = null
@@ -37,11 +36,6 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
-            }
-
-            if (pStdReferenceFinalLists is not null)
-            {
-                PStdReferenceFinalLists = pStdReferenceFinalLists;
             }
 
             if (naluSliceSegmentEntryCount is not null)
@@ -71,11 +65,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoEncodeH265ReferenceListsInfo*")]
-        [NativeName("Type.Name", "StdVideoEncodeH265ReferenceListsInfo")]
-        [NativeName("Name", "pStdReferenceFinalLists")]
-        public Video.StdVideoEncodeH265ReferenceListsInfo* PStdReferenceFinalLists;
-/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "naluSliceSegmentEntryCount")]
@@ -94,7 +83,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoEncodeH265VclFrameInfoExt;
+            return SType = StructureType.VideoEncodeH265PictureInfoExt;
         }
 
         /// <inheritdoc />

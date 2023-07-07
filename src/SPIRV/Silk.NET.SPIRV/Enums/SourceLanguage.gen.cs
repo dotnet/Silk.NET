@@ -28,6 +28,10 @@ namespace Silk.NET.SPIRV
         CppForOpenCL = 0x6,
         [NativeName("Name", "SpvSourceLanguageSYCL")]
         Sycl = 0x7,
+        [NativeName("Name", "SpvSourceLanguageHERO_C")]
+        HeroC = 0x8,
+        [NativeName("Name", "SpvSourceLanguageNZSL")]
+        Nzsl = 0x9,
         [NativeName("Name", "SpvSourceLanguageMax")]
         Max = 0x7FFFFFFF,
     }
