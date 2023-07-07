@@ -64,15 +64,15 @@ pub fn build(b: *std.Build) void {
 
                     { //Linux
                         //Build for Linux x86_64 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-linux-gnu.2.26 --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-linux-gnu.2.16 --verbose", SPIRVReflectPath).AssertZeroExitCode();
                         CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-x64" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
 
                         //Build for Linux x86 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-linux-gnu.2.26 --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-linux-gnu.2.16 --verbose", SPIRVReflectPath).AssertZeroExitCode();
                         CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-x86" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
 
                         //Build for Linux arm64 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-linux-gnu.2.26 --verbose", SPIRVReflectPath).AssertZeroExitCode();
+                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-linux-gnu.2.16 --verbose", SPIRVReflectPath).AssertZeroExitCode();
                         CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-arm64" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
                     }
 
