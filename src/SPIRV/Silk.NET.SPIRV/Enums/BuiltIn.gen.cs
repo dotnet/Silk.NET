@@ -258,6 +258,8 @@ namespace Silk.NET.SPIRV
         HitKindNV = 0x14D5,
         [NativeName("Name", "SpvBuiltInCurrentRayTimeNV")]
         CurrentRayTimeNV = 0x14D6,
+        [NativeName("Name", "SpvBuiltInHitTriangleVertexPositionsKHR")]
+        HitTriangleVertexPositionsKhr = 0x14D7,
         [NativeName("Name", "SpvBuiltInIncomingRayFlagsKHR")]
         IncomingRayFlagsKhr = 0x14E7,
         [NativeName("Name", "SpvBuiltInIncomingRayFlagsNV")]

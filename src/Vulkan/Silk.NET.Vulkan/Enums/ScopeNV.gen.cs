@@ -12,25 +12,25 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkScopeNV")]
     public enum ScopeNV : int
     {
-        [Obsolete("Deprecated in favour of \"DeviceNV\"")]
-        [NativeName("Name", "VK_SCOPE_DEVICE_NV")]
-        ScopeDeviceNV = 1,
-        [Obsolete("Deprecated in favour of \"WorkgroupNV\"")]
-        [NativeName("Name", "VK_SCOPE_WORKGROUP_NV")]
-        ScopeWorkgroupNV = 2,
-        [Obsolete("Deprecated in favour of \"SubgroupNV\"")]
-        [NativeName("Name", "VK_SCOPE_SUBGROUP_NV")]
-        ScopeSubgroupNV = 3,
-        [Obsolete("Deprecated in favour of \"QueueFamilyNV\"")]
-        [NativeName("Name", "VK_SCOPE_QUEUE_FAMILY_NV")]
-        ScopeQueueFamilyNV = 5,
-        [NativeName("Name", "VK_SCOPE_DEVICE_NV")]
-        DeviceNV = 1,
-        [NativeName("Name", "VK_SCOPE_WORKGROUP_NV")]
-        WorkgroupNV = 2,
-        [NativeName("Name", "VK_SCOPE_SUBGROUP_NV")]
-        SubgroupNV = 3,
-        [NativeName("Name", "VK_SCOPE_QUEUE_FAMILY_NV")]
-        QueueFamilyNV = 5,
+        [Obsolete("Deprecated in favour of \"DeviceKhr\"")]
+        [NativeName("Name", "VK_SCOPE_DEVICE_KHR")]
+        ScopeDeviceKhr = 1,
+        [Obsolete("Deprecated in favour of \"WorkgroupKhr\"")]
+        [NativeName("Name", "VK_SCOPE_WORKGROUP_KHR")]
+        ScopeWorkgroupKhr = 2,
+        [Obsolete("Deprecated in favour of \"SubgroupKhr\"")]
+        [NativeName("Name", "VK_SCOPE_SUBGROUP_KHR")]
+        ScopeSubgroupKhr = 3,
+        [Obsolete("Deprecated in favour of \"QueueFamilyKhr\"")]
+        [NativeName("Name", "VK_SCOPE_QUEUE_FAMILY_KHR")]
+        ScopeQueueFamilyKhr = 5,
+        [NativeName("Name", "VK_SCOPE_DEVICE_KHR")]
+        DeviceKhr = 1,
+        [NativeName("Name", "VK_SCOPE_WORKGROUP_KHR")]
+        WorkgroupKhr = 2,
+        [NativeName("Name", "VK_SCOPE_SUBGROUP_KHR")]
+        SubgroupKhr = 3,
+        [NativeName("Name", "VK_SCOPE_QUEUE_FAMILY_KHR")]
+        QueueFamilyKhr = 5,
     }
 }

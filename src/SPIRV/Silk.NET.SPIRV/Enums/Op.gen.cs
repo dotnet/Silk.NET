@@ -756,6 +756,16 @@ namespace Silk.NET.SPIRV
         SUDotAccSat = 0x1167,
         [NativeName("Name", "SpvOpSUDotAccSatKHR")]
         SUDotAccSatKhr = 0x1167,
+        [NativeName("Name", "SpvOpTypeCooperativeMatrixKHR")]
+        TypeCooperativeMatrixKhr = 0x1168,
+        [NativeName("Name", "SpvOpCooperativeMatrixLoadKHR")]
+        CooperativeMatrixLoadKhr = 0x1169,
+        [NativeName("Name", "SpvOpCooperativeMatrixStoreKHR")]
+        CooperativeMatrixStoreKhr = 0x116A,
+        [NativeName("Name", "SpvOpCooperativeMatrixMulAddKHR")]
+        CooperativeMatrixMulAddKhr = 0x116B,
+        [NativeName("Name", "SpvOpCooperativeMatrixLengthKHR")]
+        CooperativeMatrixLengthKhr = 0x116C,
         [NativeName("Name", "SpvOpTypeRayQueryKHR")]
         TypeRayQueryKhr = 0x1178,
         [NativeName("Name", "SpvOpRayQueryInitializeKHR")]
@@ -890,6 +900,8 @@ namespace Silk.NET.SPIRV
         TraceMotionNV = 0x14DA,
         [NativeName("Name", "SpvOpTraceRayMotionNV")]
         TraceRayMotionNV = 0x14DB,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionTriangleVertexPositionsKHR")]
+        RayQueryGetIntersectionTriangleVertexPositionsKhr = 0x14DC,
         [NativeName("Name", "SpvOpTypeAccelerationStructureKHR")]
         TypeAccelerationStructureKhr = 0x14DD,
         [NativeName("Name", "SpvOpTypeAccelerationStructureNV")]
