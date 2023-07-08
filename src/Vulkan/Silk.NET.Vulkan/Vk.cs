@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
@@ -167,31 +168,34 @@ namespace Silk.NET.Vulkan
             {
                 var layerPtr = layer == null ? 0 : SilkMarshal.StringToPtr(layer);
 
-                // Get count of properties
-                var instanceExtPropertiesCount = 0u;
-                EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, null);
+                try {
+                    // Get count of properties
+                    var instanceExtPropertiesCount = 0u;
+                    EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, null);
 
-                // Initialise return structure
-                using var mem = GlobalMemory.Allocate((int) instanceExtPropertiesCount * sizeof(ExtensionProperties));
-                var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+                    // Initialise return structure
+                    var props = stackalloc ExtensionProperties[(int)instanceExtPropertiesCount];
 
-                // Get properties
-                EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, props);
+                    // Get properties
+                    EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, props);
 
-                if(layerPtr != 0)
-                {
-                    SilkMarshal.Free(layerPtr);
+                    cachedInstanceExtensions = new HashSet<string>();
+                    for (var p = 0; p < instanceExtPropertiesCount; p++)
+                    {
+                        cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
+                    }
+
+                    // Thread-safe, only one initialisation will actually succeed.
+                    cachedInstanceExtensions = Interlocked.CompareExchange(ref _cachedInstanceExtensions, cachedInstanceExtensions, null) ??
+                        cachedInstanceExtensions;
                 }
-
-                cachedInstanceExtensions = new HashSet<string>();
-                for (var p = 0; p < instanceExtPropertiesCount; p++)
+                finally
                 {
-                    cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
+                    if(layerPtr != 0)
+                    {
+                        SilkMarshal.Free(layerPtr);
+                    }
                 }
-
-                // Thread-safe, only one initialisation will actually succeed.
-                cachedInstanceExtensions = Interlocked.CompareExchange(ref _cachedInstanceExtensions, cachedInstanceExtensions, null) ??
-                                           cachedInstanceExtensions;
             }
 
             return cachedInstanceExtensions.Contains(extension);
@@ -258,8 +262,7 @@ namespace Silk.NET.Vulkan
                     EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, null);
 
                     // Initialise return structure
-                    mem = GlobalMemory.Allocate((int) deviceExtPropertiesCount * sizeof(ExtensionProperties));
-                    var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+                    var props = stackalloc ExtensionProperties[(int)deviceExtPropertiesCount];
 
                     // Get properties
                     EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
