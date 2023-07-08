@@ -101,15 +101,15 @@ const root_path = root_dir() ++ ""/"";
 
                     { //Linux
                         //Build for Linux x86_64 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu.2.16 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
 
                         //Build for Linux x86 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86-linux-gnu.2.16 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x86" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
 
                         //Build for Linux arm64 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-linux-gnu.2.26 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-linux-gnu.2.16 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-arm64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
                     }
 
