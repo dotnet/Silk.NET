@@ -107,14 +107,15 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="instance">The instance to load the extension from.</param>
         /// <param name="ext">The loaded instance extension, or null if load failed.</param>
+        /// <param name="layer">The instance layer name.</param>
         /// <typeparam name="T">The instance extension to load.</typeparam>
         /// <remarks>
         /// This function doesn't check that the extension is enabled - you will get an error later on if you attempt
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
-            !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+        public bool TryGetInstanceExtension<T>(Instance instance, out T ext, string layer = null) where T : NativeExtension<Vk> =>
+            !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name, layer)
                 ? (T) Activator.CreateInstance
                 (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
                 : null) is null);
@@ -125,6 +126,7 @@ namespace Silk.NET.Vulkan
         /// <param name="instance">The instance to load the extension from.</param>
         /// <param name="device">The device to load the extension from.</param>
         /// <param name="ext">The loaded device extension, or null if load failed.</param>
+        /// <param name="layer">The instance layer name.</param>
         /// <typeparam name="T">The device extension to load.</typeparam>
         /// <remarks>
         /// This function doesn't check that the extension is enabled - you will get an error later on if you attempt
@@ -132,8 +134,8 @@ namespace Silk.NET.Vulkan
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
         public bool TryGetDeviceExtension<T>
-            (Instance instance, Device device, out T ext) where T : NativeExtension<Vk> =>
-            !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+            (Instance instance, Device device, out T ext, string layer = null) where T : NativeExtension<Vk> =>
+            !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name, layer)
                 ? (T) Activator.CreateInstance
                     (typeof(T), new LamdaNativeContext(x => GetDeviceProcAddr(device, x)))
                 : null) is null);
@@ -154,24 +156,32 @@ namespace Silk.NET.Vulkan
         /// Checks whether the given instance extension is available.
         /// </summary>
         /// <param name="extension">The instance extension name.</param>
+        /// <param name="layer">The instance layer name.</param>
         /// <returns>Whether the instance extension is available.</returns>
-        public unsafe bool IsInstanceExtensionPresent(string extension)
+        public unsafe bool IsInstanceExtensionPresent(string extension, string layer = null)
         {
             // Note we use optimistic code to avoid locks, if this is called on multiple threads
             // then multiple initialisations can happen, only one thread will succeed in initialising the cache though.
             var cachedInstanceExtensions = _cachedInstanceExtensions;
             if (cachedInstanceExtensions is null)
             {
+                var layerPtr = layer == null ? 0 : SilkMarshal.StringToPtr(layer);
+
                 // Get count of properties
                 var instanceExtPropertiesCount = 0u;
-                EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, null);
+                EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, null);
 
                 // Initialise return structure
                 using var mem = GlobalMemory.Allocate((int) instanceExtPropertiesCount * sizeof(ExtensionProperties));
                 var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
 
                 // Get properties
-                EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
+                EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, props);
+
+                if(layerPtr != 0)
+                {
+                    SilkMarshal.Free(layerPtr);
+                }
 
                 cachedInstanceExtensions = new HashSet<string>();
                 for (var p = 0; p < instanceExtPropertiesCount; p++)
@@ -192,21 +202,23 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="instance">The Vulkan instance.</param>
         /// <param name="extension">The extension to check for.</param>
+        /// <param name="layer">The layer to check for the extension in.</param>
         /// <returns>Whether the device extension is available.</returns>
-        public bool IsDeviceExtensionPresent(Instance instance, string extension)
-            => IsDeviceExtensionPresent(instance, extension, out _);
+        public bool IsDeviceExtensionPresent(Instance instance, string extension, string layer = null)
+            => IsDeviceExtensionPresent(instance, extension, out _, layer);
 
         /// <summary>
         /// Checks whether the given device extension is available on the given physical device.
         /// </summary>
         /// <param name="device">The physical device.</param>
         /// <param name="extension">The extension to check for.</param>
+        /// <param name="layer">The layer to check for the extension in.</param>
         /// <returns>Whether the device extension is available.</returns>
-        public unsafe bool IsDeviceExtensionPresent(PhysicalDevice device, string extension)
+        public unsafe bool IsDeviceExtensionPresent(PhysicalDevice device, string extension, string layer = null)
         {
             var prefix = device.Handle.ToString();
-            var prefix_sep = prefix + '|';
-            var fullKey = prefix_sep + extension;
+            var prefixSep = prefix + '|';
+            var fullKey = prefixSep + extension;
             var result = false;
 
             // We place a devices handle into the hashset to indicate it has been previously loaded.
@@ -232,23 +244,29 @@ namespace Silk.NET.Vulkan
                 // The lack of the device handle indicates we've not been previously initialised.  We now need a write lock.
                 _cachedDeviceExtensionsLock.EnterWriteLock();
                 GlobalMemory mem = null;
+                nint layerPtr = 0;
                 try
                 {
+                    if(layer != null)
+                    {
+                        layerPtr = SilkMarshal.StringToPtr(layer);
+                    }
+
                     var deviceExtPropertiesCount = 0u;
 
                     // Get number of properties
-                    EnumerateDeviceExtensionProperties(device, (byte*) 0, &deviceExtPropertiesCount, null);
+                    EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, null);
 
                     // Initialise return structure
                     mem = GlobalMemory.Allocate((int) deviceExtPropertiesCount * sizeof(ExtensionProperties));
                     var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
 
                     // Get properties
-                    EnumerateDeviceExtensionProperties(device, (byte*) 0, &deviceExtPropertiesCount, props);
+                    EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
                     for (int j = 0; j < deviceExtPropertiesCount; j++)
                     {
                         // Prefix the extension name
-                        var newKey = prefix_sep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
+                        var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
                         _cachedDeviceExtensions.Add(newKey);
                         if (!result && string.Equals(newKey, fullKey))
                         {
@@ -260,6 +278,11 @@ namespace Silk.NET.Vulkan
                 }
                 finally
                 {
+                    if(layerPtr != 0)
+                    {
+                        SilkMarshal.Free(layerPtr);
+                    }
+
                     _cachedDeviceExtensionsLock.ExitWriteLock();
                     mem?.Dispose();
                 }
@@ -276,10 +299,11 @@ namespace Silk.NET.Vulkan
         /// <param name="instance">The Vulkan instance to use.</param>
         /// <param name="extension">The extension to check for.</param>
         /// <param name="device">The first physical device that provides the extension.</param>
+        /// <param name="layer">The layer to check for the extension in.</param>
         /// <returns>Whether the device extension is available.</returns>
-        public unsafe bool IsDeviceExtensionPresent(Instance instance, string extension, out PhysicalDevice device)
+        public unsafe bool IsDeviceExtensionPresent(Instance instance, string extension, out PhysicalDevice device, string layer = null)
         {
-            device = GetPhysicalDevices(instance).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension));
+            device = GetPhysicalDevices(instance).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension, layer));
             return device.Handle != 0;
         }
 
