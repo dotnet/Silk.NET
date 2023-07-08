@@ -222,7 +222,7 @@ namespace Silk.NET.Vulkan
         {
             var prefix = device.Handle.ToString();
             var prefixSep = prefix + '|';
-            var fullKey = prefixSep + extension;
+            var fullKey = prefixSep + extension + '|' + layer;
             var result = false;
 
             // We place a devices handle into the hashset to indicate it has been previously loaded.
