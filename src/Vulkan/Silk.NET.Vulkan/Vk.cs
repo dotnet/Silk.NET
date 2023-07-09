@@ -174,20 +174,22 @@ namespace Silk.NET.Vulkan
                     EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, null);
 
                     // Initialise return structure
-                    var props = stackalloc ExtensionProperties[(int)instanceExtPropertiesCount];
+                    var propsArr = new ExtensionProperties[(int)instanceExtPropertiesCount];
 
-                    // Get properties
-                    EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, props);
+                    fixed(ExtensionProperties* props = propsArr) {
+                        // Get properties
+                        EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, props);
 
-                    cachedInstanceExtensions = new HashSet<string>();
-                    for (var p = 0; p < instanceExtPropertiesCount; p++)
-                    {
-                        cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
+                        cachedInstanceExtensions = new HashSet<string>();
+                        for (var p = 0; p < instanceExtPropertiesCount; p++)
+                        {
+                            cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
+                        }
+
+                        // Thread-safe, only one initialisation will actually succeed.
+                        cachedInstanceExtensions = Interlocked.CompareExchange(ref _cachedInstanceExtensions, cachedInstanceExtensions, null) ??
+                            cachedInstanceExtensions;
                     }
-
-                    // Thread-safe, only one initialisation will actually succeed.
-                    cachedInstanceExtensions = Interlocked.CompareExchange(ref _cachedInstanceExtensions, cachedInstanceExtensions, null) ??
-                        cachedInstanceExtensions;
                 }
                 finally
                 {
@@ -262,20 +264,22 @@ namespace Silk.NET.Vulkan
                     EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, null);
 
                     // Initialise return structure
-                    var props = stackalloc ExtensionProperties[(int)deviceExtPropertiesCount];
+                    var propsArr = new ExtensionProperties[(int)deviceExtPropertiesCount];
 
-                    // Get properties
-                    EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
-                    for (int j = 0; j < deviceExtPropertiesCount; j++)
-                    {
-                        // Prefix the extension name
-                        var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
-                        _cachedDeviceExtensions.Add(newKey);
-                        if (!result && string.Equals(newKey, fullKey))
+                    fixed(ExtensionProperties* props = propsArr) {
+                        // Get properties
+                        EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
+                        for (int j = 0; j < deviceExtPropertiesCount; j++)
                         {
-                            // We found the extension (no need to do another lookup as we're scanning anyway)
-                            // As such this has taken 2 lookups + initialisation scan.
-                            result = true;
+                            // Prefix the extension name
+                            var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
+                            _cachedDeviceExtensions.Add(newKey);
+                            if (!result && string.Equals(newKey, fullKey))
+                            {
+                                // We found the extension (no need to do another lookup as we're scanning anyway)
+                                // As such this has taken 2 lookups + initialisation scan.
+                                result = true;
+                            }
                         }
                     }
                 }
