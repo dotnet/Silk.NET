@@ -166,19 +166,17 @@ namespace Silk.NET.Vulkan
             var cachedInstanceExtensions = _cachedInstanceExtensions;
             if (cachedInstanceExtensions is null)
             {
-                var layerPtr = layer == null ? 0 : SilkMarshal.StringToPtr(layer);
-
-                try {
+                fixed (byte* layerPtr = layer is null ? Array.Empty<byte>() : Encoding.UTF8.GetBytes(layer)) {
                     // Get count of properties
                     var instanceExtPropertiesCount = 0u;
-                    EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, null);
+                    EnumerateInstanceExtensionProperties(layerPtr, &instanceExtPropertiesCount, null);
 
                     // Initialise return structure
                     var propsArr = new ExtensionProperties[(int)instanceExtPropertiesCount];
 
                     fixed(ExtensionProperties* props = propsArr) {
                         // Get properties
-                        EnumerateInstanceExtensionProperties((byte*) layerPtr, &instanceExtPropertiesCount, props);
+                        EnumerateInstanceExtensionProperties(layerPtr, &instanceExtPropertiesCount, props);
 
                         cachedInstanceExtensions = new HashSet<string>();
                         for (var p = 0; p < instanceExtPropertiesCount; p++)
@@ -189,13 +187,6 @@ namespace Silk.NET.Vulkan
                         // Thread-safe, only one initialisation will actually succeed.
                         cachedInstanceExtensions = Interlocked.CompareExchange(ref _cachedInstanceExtensions, cachedInstanceExtensions, null) ??
                             cachedInstanceExtensions;
-                    }
-                }
-                finally
-                {
-                    if(layerPtr != 0)
-                    {
-                        SilkMarshal.Free(layerPtr);
                     }
                 }
             }
@@ -250,46 +241,37 @@ namespace Silk.NET.Vulkan
                 // The lack of the device handle indicates we've not been previously initialised.  We now need a write lock.
                 _cachedDeviceExtensionsLock.EnterWriteLock();
                 GlobalMemory mem = null;
-                nint layerPtr = 0;
                 try
                 {
-                    if(layer != null)
-                    {
-                        layerPtr = SilkMarshal.StringToPtr(layer);
-                    }
-
                     var deviceExtPropertiesCount = 0u;
 
-                    // Get number of properties
-                    EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, null);
+                    fixed (byte* layerPtr = layer is null ? Array.Empty<byte>() : Encoding.UTF8.GetBytes(layer)) {
+                        // Get number of properties
+                        EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, null);
 
-                    // Initialise return structure
-                    var propsArr = new ExtensionProperties[(int)deviceExtPropertiesCount];
+                        // Initialise return structure
+                        var propsArr = new ExtensionProperties[(int)deviceExtPropertiesCount];
 
-                    fixed(ExtensionProperties* props = propsArr) {
-                        // Get properties
-                        EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
-                        for (int j = 0; j < deviceExtPropertiesCount; j++)
-                        {
-                            // Prefix the extension name
-                            var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
-                            _cachedDeviceExtensions.Add(newKey);
-                            if (!result && string.Equals(newKey, fullKey))
+                        fixed(ExtensionProperties* props = propsArr) {
+                            // Get properties
+                            EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
+                            for (int j = 0; j < deviceExtPropertiesCount; j++)
                             {
-                                // We found the extension (no need to do another lookup as we're scanning anyway)
-                                // As such this has taken 2 lookups + initialisation scan.
-                                result = true;
+                                // Prefix the extension name
+                                var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
+                                _cachedDeviceExtensions.Add(newKey);
+                                if (!result && string.Equals(newKey, fullKey))
+                                {
+                                    // We found the extension (no need to do another lookup as we're scanning anyway)
+                                    // As such this has taken 2 lookups + initialisation scan.
+                                    result = true;
+                                }
                             }
                         }
                     }
                 }
                 finally
                 {
-                    if(layerPtr != 0)
-                    {
-                        SilkMarshal.Free(layerPtr);
-                    }
-
                     _cachedDeviceExtensionsLock.ExitWriteLock();
                     mem?.Dispose();
                 }
