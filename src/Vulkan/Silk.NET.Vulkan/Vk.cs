@@ -148,7 +148,7 @@ namespace Silk.NET.Vulkan
         private HashSet<string> _cachedInstanceExtensions;
 
         // Contains strings in form of '<IntPtr>|<Extension name>' for each extension and '<IntPtr>' to indicate an extension has been loaded.
-        private HashSet<string> _cachedDeviceExtensions = new HashSet<string>();
+        private Dictionary<PhysicalDevice, HashSet<string>> _cachedDeviceExtensions = new Dictionary<PhysicalDevice, HashSet<string>>();
         private ReaderWriterLockSlim _cachedDeviceExtensionsLock = new ReaderWriterLockSlim();
 
         private ConcurrentDictionary<Instance, PhysicalDevice[]> _cachedPhyscialDevices = new ConcurrentDictionary<Instance, PhysicalDevice[]>();
@@ -230,13 +230,20 @@ namespace Silk.NET.Vulkan
             // no real additional cost.
             _cachedDeviceExtensionsLock.EnterUpgradeableReadLock();
 
+            //If we do not have a cache for this specific device,
+            if(!_cachedDeviceExtensions.ContainsKey(device))
+            {
+                //Create one
+                _cachedDeviceExtensions[device] = new HashSet<string>();
+            }
+
             // We check for the extension first to avoid 2 lookups
-            if (_cachedDeviceExtensions.Contains(fullKey))
+            if (_cachedDeviceExtensions[device].Contains(fullKey))
             {
                 // We found the extension
                 result = true;
             }
-            else if (!_cachedDeviceExtensions.Contains(prefix))
+            else if (!_cachedDeviceExtensions[device].Contains(prefix))
             {
                 // The lack of the device handle indicates we've not been previously initialised.  We now need a write lock.
                 _cachedDeviceExtensionsLock.EnterWriteLock();
@@ -259,7 +266,7 @@ namespace Silk.NET.Vulkan
                             {
                                 // Prefix the extension name
                                 var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
-                                _cachedDeviceExtensions.Add(newKey);
+                                _cachedDeviceExtensions[device].Add(newKey);
                                 if (!result && string.Equals(newKey, fullKey))
                                 {
                                     // We found the extension (no need to do another lookup as we're scanning anyway)
