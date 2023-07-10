@@ -145,7 +145,7 @@ namespace Silk.NET.Vulkan
         [Obsolete("Use IsInstanceExtensionPresent instead.", true)]
         public override bool IsExtensionPresent(string extension) => IsInstanceExtensionPresent(extension);
 
-        private HashSet<string> _cachedInstanceExtensions;
+        private HashSet<(string extension, string layer)> _cachedInstanceExtensions;
 
         // Contains strings in form of '<IntPtr>|<Extension name>' for each extension and '<IntPtr>' to indicate an extension has been loaded.
         private Dictionary<PhysicalDevice, HashSet<string>> _cachedDeviceExtensions = new Dictionary<PhysicalDevice, HashSet<string>>();
@@ -178,10 +178,10 @@ namespace Silk.NET.Vulkan
                         // Get properties
                         EnumerateInstanceExtensionProperties(layerPtr, &instanceExtPropertiesCount, props);
 
-                        cachedInstanceExtensions = new HashSet<string>();
+                        cachedInstanceExtensions = new HashSet<(string, string)>();
                         for (var p = 0; p < instanceExtPropertiesCount; p++)
                         {
-                            cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
+                            cachedInstanceExtensions.Add((Marshal.PtrToStringAnsi((nint) props[p].ExtensionName), layer));
                         }
 
                         // Thread-safe, only one initialisation will actually succeed.
@@ -191,7 +191,7 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-            return cachedInstanceExtensions.Contains(extension);
+            return cachedInstanceExtensions.Contains((extension, layer));
         }
 
         /// <summary>
