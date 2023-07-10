@@ -58,6 +58,12 @@ pub fn build(b: *std.Build) void {
     //Export the C API symbols
     lib.defineCMacro(""SPVC_EXPORT_SYMBOLS"", ""1"");
 
+    //On windows, we need to specify `__declspec(dllexport)` ourselves
+    //else SPIRV-Cross knows this is a GNU toolchain and uses the wrong attribute in this case
+    if (target.isWindows()) {
+        lib.defineCMacro(""SPVC_PUBLIC_API"", ""__declspec(dllexport)"");
+    }
+
     //If we arent in debug, defined NDEBUG
     if (mode != .Debug)
         lib.defineCMacro(""NDEBUG"", ""1"");
