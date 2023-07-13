@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60A10DB9-C4D6-48CD-8982-7F02345D7ADF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		build.cmd = build.cmd
+		build.sh = build.sh
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		LICENSE.md = LICENSE.md
+		pack.cmd = pack.cmd
+		pack.sh = pack.sh
+		restore.cmd = restore.cmd
+		restore.sh = restore.sh
+		test.cmd = test.cmd
+		test.sh = test.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9DB0EA3E-7216-4F9C-98F5-8A7483E9F083}"
+	ProjectSection(SolutionItems) = preProject
+		docs\CODE_OF_CONDUCT.md = docs\CODE_OF_CONDUCT.md
+		docs\CODEOWNERS = docs\CODEOWNERS
+		docs\CONTRIBUTING.md = docs\CONTRIBUTING.md
+		docs\ISSUE_TEMPLATE.md = docs\ISSUE_TEMPLATE.md
+		docs\PULL_REQUEST_TEMPLATE.md = docs\PULL_REQUEST_TEMPLATE.md
+		docs\README.md = docs\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{CFFDBEEC-B112-4844-B65B-56A1029CC130}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\azure-pipelines.yml = scripts\azure-pipelines.yml
+		scripts\build.ps1 = scripts\build.ps1
+		scripts\build.sh = scripts\build.sh
+		scripts\cibuild.cmd = scripts\cibuild.cmd
+		scripts\cibuild.sh = scripts\cibuild.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{DD29EA8F-B1A6-45AA-8D2E-B38DA56D9EF6}"
+	ProjectSection(SolutionItems) = preProject
+		sources\Directory.Build.props = sources\Directory.Build.props
+		sources\Directory.Build.targets = sources\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A5578D12-9E77-4647-8C22-0DBD17760BFF}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+		tests\Directory.Build.targets = tests\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$NewProject", "sources\$NewProject\$NewProject.csproj", "{76F747A6-D971-4162-BF35-A226177FCA08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "$NewProject.UnitTests", "tests\$NewProject\$NewProject.UnitTests.csproj", "{600D712C-4ABF-44C4-96C3-B1DEE1F38298}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76F747A6-D971-4162-BF35-A226177FCA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F747A6-D971-4162-BF35-A226177FCA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F747A6-D971-4162-BF35-A226177FCA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F747A6-D971-4162-BF35-A226177FCA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600D712C-4ABF-44C4-96C3-B1DEE1F38298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600D712C-4ABF-44C4-96C3-B1DEE1F38298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600D712C-4ABF-44C4-96C3-B1DEE1F38298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600D712C-4ABF-44C4-96C3-B1DEE1F38298}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76F747A6-D971-4162-BF35-A226177FCA08} = {DD29EA8F-B1A6-45AA-8D2E-B38DA56D9EF6}
+		{600D712C-4ABF-44C4-96C3-B1DEE1F38298} = {A5578D12-9E77-4647-8C22-0DBD17760BFF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78D2CF6A-60A1-43E3-837B-00B73C9DA384}
+	EndGlobalSection
+EndGlobal
