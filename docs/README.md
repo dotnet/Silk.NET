@@ -1,42 +1,25 @@
-TODO: Fix any TODO comments found in the codebase and search and replace the following
-* $Description
-* $Email
-* $Name
-* $NewRepo
-* $NewProject
-* $PublicKey
-* $RepoUrl
-* $Username
+# SilkX
 
-# Contributing to $NewRepo
+An experimental rewrite of Silk.NET and by extension SilkTouch - this is by no means 3.0 and if that is no longer the case this repo shall be merged with the main Silk.NET repo.
 
-$Description
-
-TODO: Link build status badges here
-
-TODO: Link social media channels here
+See the main project: https://github.com/dotnet/Silk.NET
 
 ## Table of Contents
 
 * [Code of Conduct](#code-of-conduct)
 * [License](#license)
 * [Contributing](#contributing)
-* [Goals](#goals)
-* [Languages and Frameworks](#languages-and-frameworks)
 
 ### Code of Conduct
 
-$NewRepo and everyone contributing (this includes issues, pull requests, the
-wiki, etc) must abide by the [CODE_OF_CONDUCT](docs/CODE_OF_CONDUCT.md).
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at $Email.
+This project has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/) 
+to clarify expected behavior in our community. For more information, see the [.NET Foundation Code of Conduct](http://www.dotnetfoundation.org/code-of-conduct).
 
 ### License
 
-Copyright © $Name and Contributors. Licensed under the MIT License
-(MIT). See [LICENSE](LICENSE.md) in the repository root for more information.
+This project is licensed with the [MIT license](LICENSE.md).
+SilkX, being associated with the Silk.NET project, is a .NET Foundation project.
 
 ### Contributing
 
-If you are looking to contribute you should read our
-[Contributing](CONTRIBUTING.md) documentation.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for information on contributing to this project.

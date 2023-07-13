@@ -13,10 +13,8 @@ before submitting.
 
 ### Code of Conduct
 
-$NewRepo and everyone contributing (this includes issues, pull requests, the
-wiki, etc) must abide by the [CODE_OF_CONDUCT](docs/CODE_OF_CONDUCT.md).
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at $Email.
+This project has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/) 
+to clarify expected behavior in our community. For more information, see the [.NET Foundation Code of Conduct](http://www.dotnetfoundation.org/code-of-conduct).
 
 ## Test or Documentation Addition
 

@@ -1,6 +1,6 @@
-# Contributing to $NewRepo
+# Contributing to SilkX
 
-The following is a set of guidelines for contributing to $NewRepo.
+The following is a set of guidelines for contributing to SilkX.
 
 TODO: Link social media channels here
 
@@ -15,14 +15,12 @@ TODO: Link social media channels here
 
 ### Code of Conduct
 
-$NewRepo and everyone contributing (this includes issues, pull requests, the
-wiki, etc) must abide by the [CODE_OF_CONDUCT](docs/CODE_OF_CONDUCT.md).
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at $Email.
+This project has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/) 
+to clarify expected behavior in our community. For more information, see the [.NET Foundation Code of Conduct](http://www.dotnetfoundation.org/code-of-conduct).
 
 ### License
 
-Copyright © $Name and Contributors. Licensed under the MIT License
+Copyright © .NET Foundation and Contributors. Licensed under the MIT License
 (MIT). See [LICENSE](LICENSE.md) in the repository root for more information.
 
 ### What should I know?

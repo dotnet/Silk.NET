@@ -184,7 +184,7 @@ fi
 RepoRoot="$ScriptRoot/.."
 
 if [[ -z "$solution" ]]; then
-  solution="$RepoRoot/$NewRepo.sln"
+  solution="$RepoRoot/SilkX.sln"
 fi
 
 ArtifactsDir="$RepoRoot/artifacts"

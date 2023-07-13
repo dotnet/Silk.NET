@@ -14,7 +14,7 @@
   <PropertyGroup>
     <BaseArtifactsPath>$(MSBuildThisFileDirectory)artifacts/</BaseArtifactsPath>
     <BaseArtifactsPathSuffix>$(ProjectCategory)/$(MSBuildProjectName)</BaseArtifactsPathSuffix>
-    <RepositoryUrl>$RepoUrl</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Perksey/SilkX</RepositoryUrl>
   </PropertyGroup>
 
   <!-- Default settings that explicitly differ from the Sdk.props defaults  -->
@@ -36,21 +36,19 @@
 
   <!-- Default settings that explicitly differ from the Sdk.targets defaults-->
   <PropertyGroup>
-    <Authors>$Name and Contributors</Authors>
+    <Authors>.NET Foundation and Contributors</Authors>
     <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
-    <Company>$Name</Company>
+    <Company>.NET Foundation</Company>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(BaseArtifactsPathSuffix)/$(Configuration)/</PackageOutputPath>
-    <Product>$NewRepo</Product>
+    <Product>SilkX</Product>
     <VersionPrefix>0.1.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
 
   <!-- Default settings that are otherwise undefined -->
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)$NewRepo.snk</AssemblyOriginatorKeyFile>
-    <AssemblyOriginatorPublicKey>$PublicKey</AssemblyOriginatorPublicKey>
-    <Copyright>Copyright © $Name and Contributors</Copyright>
-    <Description>$Description</Description>
+    <Copyright>Copyright © .NET Foundation and Contributors</Copyright>
+    <Description>An experimental rewrite of Silk.NET and by extension SilkTouch - this is by no means 3.0 and if that is no longer the case this repo shall be merged with the main Silk.NET repo.</Description>
     <Features>strict</Features>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <HighEntropyVA>true</HighEntropyVA>
@@ -60,7 +58,6 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-    <PublicSign>true</PublicSign>
     <RepositoryType>git</RepositoryType>
     <RestoreSources>
       https://api.nuget.org/v3/index.json;
