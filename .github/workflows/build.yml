@@ -12,6 +12,7 @@ on:
     # all branches
     paths-ignore:
       - 'documentation/**'
+  workflow_dispatch:
 jobs:
   Build:
     # This will:
