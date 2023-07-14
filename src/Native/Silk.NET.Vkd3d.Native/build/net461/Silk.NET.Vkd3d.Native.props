@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Silk_NativePackages_Vkd3d_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Silk_NativePackages_Vkd3d_IsWindows>
+    <_Silk_NativePackages_Vkd3d_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Silk_NativePackages_Vkd3d_IsMacOS>
+    <_Silk_NativePackages_Vkd3d_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Silk_NativePackages_Vkd3d_IsLinux>
+
+    <_Silk_NativePackages_Vkd3d_NativeRuntime Condition=" '$(_Silk_NativePackages_Vkd3d_NativeRuntime)' == '' And '$(_Silk_NativePackages_Vkd3d_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Silk_NativePackages_Vkd3d_NativeRuntime>
+    <_Silk_NativePackages_Vkd3d_NativeRuntime Condition=" '$(_Silk_NativePackages_Vkd3d_NativeRuntime)' == '' And '$(_Silk_NativePackages_Vkd3d_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">linux-x86</_Silk_NativePackages_Vkd3d_NativeRuntime>
+
+      <_Silk_NativePackages_Vkd3d_NativeLibName Condition="'$(_Silk_NativePackages_Vkd3d_NativeRuntime)' == 'linux-x64'">libd3dcompile_vkd3d.so</_Silk_NativePackages_Vkd3d_NativeLibName>
+      <_Silk_NativePackages_Vkd3d_NativeLibName Condition="'$(_Silk_NativePackages_Vkd3d_NativeRuntime)' == 'linux-x64'">libSPIRV-Tools-shared.so</_Silk_NativePackages_Vkd3d_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Silk_NativePackages_Vkd3d_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NativePackages_Vkd3d_NativeRuntime)\native\$(_Silk_NativePackages_Vkd3d_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>

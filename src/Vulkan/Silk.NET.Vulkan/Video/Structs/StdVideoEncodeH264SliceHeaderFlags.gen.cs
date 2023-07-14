@@ -23,9 +23,7 @@ namespace Silk.NET.Vulkan.Video
         (
             uint? directSpatialMvPredFlag = null,
             uint? numRefIdxActiveOverrideFlag = null,
-            uint? noOutputOfPriorPicsFlag = null,
-            uint? adaptiveRefPicMarkingModeFlag = null,
-            uint? noPriorReferencesAvailableFlag = null
+            uint? reserved = null
         ) : this()
         {
             if (directSpatialMvPredFlag is not null)
@@ -38,19 +36,9 @@ namespace Silk.NET.Vulkan.Video
                 NumRefIdxActiveOverrideFlag = numRefIdxActiveOverrideFlag.Value;
             }
 
-            if (noOutputOfPriorPicsFlag is not null)
+            if (reserved is not null)
             {
-                NoOutputOfPriorPicsFlag = noOutputOfPriorPicsFlag.Value;
-            }
-
-            if (adaptiveRefPicMarkingModeFlag is not null)
-            {
-                AdaptiveRefPicMarkingModeFlag = adaptiveRefPicMarkingModeFlag.Value;
-            }
-
-            if (noPriorReferencesAvailableFlag is not null)
-            {
-                NoPriorReferencesAvailableFlag = noPriorReferencesAvailableFlag.Value;
+                Reserved = reserved.Value;
             }
         }
 
@@ -73,28 +61,12 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        public uint NoOutputOfPriorPicsFlag
+        public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            get => (uint)((_bitfield1 >> 2) & 0x3FFFFFFFu);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
-        }
-
-        public uint AdaptiveRefPicMarkingModeFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-        }
-
-        public uint NoPriorReferencesAvailableFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 4) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3FFFFFFFu << 2)) | (uint)(((uint)(value) & 0x3FFFFFFFu) << 2));
         }
     }
 }

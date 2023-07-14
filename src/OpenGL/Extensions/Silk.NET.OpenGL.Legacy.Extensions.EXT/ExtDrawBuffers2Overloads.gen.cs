@@ -16,37 +16,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtDrawBuffers2Overloads
     {
-        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<bool> data)
+        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<bool> data)
         {
             // SpanOverloader
             thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<Boolean> data)
+        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<bool> data)
         {
             // SpanOverloader
             thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<bool> data)
-        {
-            // SpanOverloader
-            thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
-        }
-
-        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<Boolean> data)
-        {
-            // SpanOverloader
-            thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
-        }
-
-        public static unsafe void GetIntegerIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
+        public static unsafe void GetIntegerIndexed(this ExtDrawBuffers2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> data)
         {
             // SpanOverloader
             thisApi.GetIntegerIndexed(target, index, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetIntegerIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
+        public static unsafe void GetIntegerIndexed(this ExtDrawBuffers2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GetPName target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> data)
         {
             // SpanOverloader
             thisApi.GetIntegerIndexed(target, index, out data.GetPinnableReference());

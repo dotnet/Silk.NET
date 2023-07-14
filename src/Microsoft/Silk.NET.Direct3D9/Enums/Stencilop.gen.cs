@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DSTENCILOP")]
     public enum Stencilop : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Keep\"")]
         [NativeName("Name", "D3DSTENCILOP_KEEP")]
         StencilopKeep = 0x1,

@@ -17,15 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH265RateControlLayerInfoEXT")]
-    public unsafe partial struct VideoEncodeH265RateControlLayerInfoEXT : IExtendsChain<VideoCodingControlInfoKHR>, IExtendsChain<VideoEncodeRateControlLayerInfoKHR>
+    public unsafe partial struct VideoEncodeH265RateControlLayerInfoEXT : IExtendsChain<VideoEncodeRateControlLayerInfoKHR>
     {
         public VideoEncodeH265RateControlLayerInfoEXT
         (
             StructureType? sType = StructureType.VideoEncodeH265RateControlLayerInfoExt,
             void* pNext = null,
-            byte? temporalId = null,
-            Bool32? useInitialRcQp = null,
-            VideoEncodeH265QpEXT? initialRcQp = null,
             Bool32? useMinQp = null,
             VideoEncodeH265QpEXT? minQp = null,
             Bool32? useMaxQp = null,
@@ -42,21 +39,6 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
-            }
-
-            if (temporalId is not null)
-            {
-                TemporalId = temporalId.Value;
-            }
-
-            if (useInitialRcQp is not null)
-            {
-                UseInitialRcQp = useInitialRcQp.Value;
-            }
-
-            if (initialRcQp is not null)
-            {
-                InitialRcQp = initialRcQp.Value;
             }
 
             if (useMinQp is not null)
@@ -100,21 +82,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pNext")]
         public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "temporalId")]
-        public byte TemporalId;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "useInitialRcQp")]
-        public Bool32 UseInitialRcQp;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH265QpEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH265QpEXT")]
-        [NativeName("Name", "initialRcQp")]
-        public VideoEncodeH265QpEXT InitialRcQp;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]

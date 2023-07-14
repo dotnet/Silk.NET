@@ -27,9 +27,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"EmbeddedImmutableSamplersBitExt\"")]
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_EMBEDDED_IMMUTABLE_SAMPLERS_BIT_EXT")]
         DescriptorSetLayoutCreateEmbeddedImmutableSamplersBitExt = 32,
-        [Obsolete("Deprecated in favour of \"Reserved3BitAmd\"")]
-        [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_RESERVED_3_BIT_AMD")]
-        DescriptorSetLayoutCreateReserved3BitAmd = 8,
         [Obsolete("Deprecated in favour of \"HostOnlyPoolBitValve\"")]
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_VALVE")]
         DescriptorSetLayoutCreateHostOnlyPoolBitValve = 4,
@@ -47,8 +44,6 @@ namespace Silk.NET.Vulkan
         DescriptorBufferBitExt = 16,
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_EMBEDDED_IMMUTABLE_SAMPLERS_BIT_EXT")]
         EmbeddedImmutableSamplersBitExt = 32,
-        [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_RESERVED_3_BIT_AMD")]
-        Reserved3BitAmd = 8,
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_VALVE")]
         HostOnlyPoolBitValve = 4,
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_EXT")]

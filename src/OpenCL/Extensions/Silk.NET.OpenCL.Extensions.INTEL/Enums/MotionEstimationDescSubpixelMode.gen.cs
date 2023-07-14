@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_motion_estimation_desc_intel.subpixel_mode")]
     public enum MotionEstimationDescSubpixelMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_ME_SUBPIXEL_MODE_INTEGER_INTEL")]
         Integer = 0x0,
         [NativeName("Name", "CL_ME_SUBPIXEL_MODE_HPEL_INTEL")]

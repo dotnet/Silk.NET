@@ -21,31 +21,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
     {
         public const string ExtensionName = "INTEL_map_texture";
         [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
+        public unsafe partial void* MapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] INTEL* layout);
 
         [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
+        public unsafe partial void* MapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out INTEL layout);
 
         [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
+        public unsafe partial void* MapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] INTEL* layout);
 
         [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
+        public unsafe partial void* MapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out INTEL layout);
 
         [NativeApi(EntryPoint = "glSyncTextureINTEL", Convention = CallingConvention.Winapi)]
-        public partial void SyncTexture([Flow(FlowDirection.In)] uint texture);
+        public partial void SyncTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture);
 
         [NativeApi(EntryPoint = "glUnmapTexture2DINTEL", Convention = CallingConvention.Winapi)]
-        public partial void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        public partial void UnmapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level);
 
-        public unsafe INTEL MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride)
+        public unsafe INTEL MapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* stride)
         {
             // NonKhrReturnTypeOverloader
             MapTexture2D(texture, level, access, stride, out INTEL silkRet);
             return silkRet;
         }
 
-        public unsafe INTEL MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride)
+        public unsafe INTEL MapTexture2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint access, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int stride)
         {
             // NonKhrReturnTypeOverloader
             MapTexture2D(texture, level, access, out stride, out INTEL silkRet);

@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_BusType")]
     public enum COPPBusType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "COPP_BusType_Unknown")]
         CoppBusTypeUnknown = 0x0,
@@ -24,7 +22,7 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"Pcix\"")]
         [NativeName("Name", "COPP_BusType_PCIX")]
         CoppBusTypePcix = 0x2,
-        [Obsolete("Deprecated in favour of \"Pciexpress\"")]
+        [Obsolete("Deprecated in favour of \"PciExpress\"")]
         [NativeName("Name", "COPP_BusType_PCIExpress")]
         CoppBusTypePciexpress = 0x3,
         [Obsolete("Deprecated in favour of \"Agp\"")]
@@ -36,12 +34,15 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"ForceDword\"")]
         [NativeName("Name", "COPP_BusType_ForceDWORD")]
         CoppBusTypeForceDword = 0x7FFFFFFF,
+        [NativeName("Name", "COPP_BusType_PCIExpress")]
+        PciExpress = 0x3,
         [NativeName("Name", "COPP_BusType_Unknown")]
         Unknown = 0x0,
         [NativeName("Name", "COPP_BusType_PCI")]
         Pci = 0x1,
         [NativeName("Name", "COPP_BusType_PCIX")]
         Pcix = 0x2,
+        [Obsolete("Deprecated in favour of \"PciExpress\"")]
         [NativeName("Name", "COPP_BusType_PCIExpress")]
         Pciexpress = 0x3,
         [NativeName("Name", "COPP_BusType_AGP")]

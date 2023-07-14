@@ -466,7 +466,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     valueReferenceExpression = new string(expression);
 
                     hasValueReference = true;
-                    return new Count(valueReferenceName);
+                    return new Count(valueReferenceName) { Expression = valueReferenceExpression };
                 }
             }
             
@@ -495,68 +495,33 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     out _
                 );
 
-                switch (parameter.Name)
+                if (parameter.Type.Name.Contains("CL_CALLBACK"))
                 {
-                    case "pfn_free_func":
-                    {
-                        resultParameters.Add
-                        (
-                            new Parameter
+                    resultParameters.Add
+                    (
+                        new Parameter
+                        {
+                            Name = parameter.Name,
+                            Attributes = new List<Attribute>
                             {
-                                Name = "pfn_free_func",
-                                Attributes = new List<Attribute>
+                                new()
                                 {
-                                    new Attribute
-                                    {
-                                        Name = "PinObjectAttribute",
-                                        Arguments = new List<string>
-                                            {"PinMode.UntilNextCall"}
-                                    }
-                                },
-                                Count = null,
-                                Flow = FlowDirection.In,
-                                Type = new Type {Name = "FreeCallback", OriginalName = "CL_CALLBACK"}
-                            }
-                        );
-                        continue;
-                    }
-                    case "pfn_notify":
-                    {
-                        resultParameters.Add
-                        (
-                            new Parameter
+                                    Name = "PinObjectAttribute",
+                                    Arguments = new List<string> { "PinMode.UntilNextCall" }
+                                }
+                            },
+                            Count = null,
+                            Flow = FlowDirection.In,
+                            Type = new Type
                             {
-                                Name = "pfn_notify",
-                                Attributes = new List<Attribute>
-                                {
-                                    new Attribute
-                                    {
-                                        Name = "PinObjectAttribute",
-                                        Arguments = new List<string>
-                                            {"PinMode.UntilNextCall"}
-                                    }
-                                },
-                                Count = null,
-                                Flow = FlowDirection.In,
-                                Type = new Type {Name = "NotifyCallback", OriginalName = "CL_CALLBACK"}
+                                Name = $"CL_CALLBACK_{functionElement.Attribute("name")?.Value}_{parameter.Name}",
+                                OriginalName = parameterElement.Value,
+                                OriginalGroup = parameterElement.Value,
+                                IndirectionLevels = 1
                             }
-                        );
-                        continue;
-                    }
-                    case "user_func":
-                    {
-                        resultParameters.Add
-                        (
-                            new Parameter
-                            {
-                                Name = "user_func",
-                                Count = null,
-                                Flow = FlowDirection.In,
-                                Type = new Type {Name = "PfnVoidFunction", OriginalName = "CL_CALLBACK"}
-                            }
-                        );
-                        continue;
-                    }
+                        }
+                    );
+                    continue;
                 }
 
                 if (hasComputedCount)

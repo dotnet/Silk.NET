@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_tiled_rendering";
         [NativeApi(EntryPoint = "glEndTilingQCOM", Convention = CallingConvention.Winapi)]
-        public partial void EndTiling([Flow(FlowDirection.In)] uint preserveMask);
+        public partial void EndTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint preserveMask);
 
         [NativeApi(EntryPoint = "glEndTilingQCOM", Convention = CallingConvention.Winapi)]
-        public partial void EndTiling([Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
+        public partial void EndTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferBitQCOM preserveMask);
 
         [NativeApi(EntryPoint = "glStartTilingQCOM", Convention = CallingConvention.Winapi)]
-        public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint preserveMask);
+        public partial void StartTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint preserveMask);
 
         [NativeApi(EntryPoint = "glStartTilingQCOM", Convention = CallingConvention.Winapi)]
-        public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
+        public partial void StartTiling([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferBitQCOM preserveMask);
 
         public QComTiledRendering(INativeContext ctx)
             : base(ctx)

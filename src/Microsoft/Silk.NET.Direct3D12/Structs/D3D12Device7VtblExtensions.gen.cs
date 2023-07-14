@@ -193,7 +193,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in char Name)
+    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -330,7 +330,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, Guid* riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, Guid* riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -339,7 +339,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, Guid* riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, Guid* riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -351,7 +351,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, ref Guid riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, ref Guid riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, ref Guid riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, ref Guid riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandQueueDesc pDesc, Guid* riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandQueueDesc pDesc, Guid* riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandQueueDesc pDesc, Guid* riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandQueueDesc pDesc, Guid* riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -405,7 +405,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandQueueDesc pDesc, ref Guid riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandQueueDesc pDesc, ref Guid riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -420,7 +420,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandQueueDesc pDesc, ref Guid riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandQueueDesc pDesc, ref Guid riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -486,7 +486,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,7 +495,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -507,7 +507,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -519,7 +519,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -534,7 +534,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -546,7 +546,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -561,7 +561,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -576,7 +576,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -594,7 +594,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -603,7 +603,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -615,7 +615,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -627,7 +627,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -642,7 +642,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -654,7 +654,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -669,7 +669,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -684,7 +684,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -963,7 +963,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -972,7 +972,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -984,7 +984,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -996,7 +996,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1011,7 +1011,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1023,7 +1023,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1038,7 +1038,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1053,7 +1053,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1080,7 +1080,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature)
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1089,7 +1089,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature)
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1101,7 +1101,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature)
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1113,7 +1113,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature)
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1128,7 +1128,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1140,7 +1140,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1155,7 +1155,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1170,7 +1170,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1188,14 +1188,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateConstantBufferView(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ConstantBufferViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateConstantBufferView(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ConstantBufferViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ConstantBufferViewDesc*, CpuDescriptorHandle, void>)@this->LpVtbl[17])(@this, pDesc, DestDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateConstantBufferView(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ConstantBufferViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateConstantBufferView(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ConstantBufferViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ConstantBufferViewDesc* pDescPtr = &pDesc)
@@ -1205,14 +1205,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Resource*, ShaderResourceViewDesc*, CpuDescriptorHandle, void>)@this->LpVtbl[18])(@this, pResource, pDesc, DestDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in ShaderResourceViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShaderResourceViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ShaderResourceViewDesc* pDescPtr = &pDesc)
@@ -1222,7 +1222,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1232,7 +1232,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in ShaderResourceViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShaderResourceViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1245,14 +1245,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Resource*, ID3D12Resource*, UnorderedAccessViewDesc*, CpuDescriptorHandle, void>)@this->LpVtbl[19])(@this, pResource, pCounterResource, pDesc, DestDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (UnorderedAccessViewDesc* pDescPtr = &pDesc)
@@ -1262,7 +1262,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ref ID3D12Resource pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ref ID3D12Resource pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pCounterResourcePtr = &pCounterResource)
@@ -1272,7 +1272,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ref ID3D12Resource pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ref ID3D12Resource pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pCounterResourcePtr = &pCounterResource)
@@ -1285,7 +1285,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1295,7 +1295,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1308,7 +1308,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ref ID3D12Resource pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ref ID3D12Resource pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1321,7 +1321,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ref ID3D12Resource pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ref ID3D12Resource pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1337,14 +1337,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Resource*, RenderTargetViewDesc*, CpuDescriptorHandle, void>)@this->LpVtbl[20])(@this, pResource, pDesc, DestDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in RenderTargetViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (RenderTargetViewDesc* pDescPtr = &pDesc)
@@ -1354,7 +1354,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1364,7 +1364,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in RenderTargetViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1377,14 +1377,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Resource*, DepthStencilViewDesc*, CpuDescriptorHandle, void>)@this->LpVtbl[21])(@this, pResource, pDesc, DestDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DepthStencilViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DepthStencilViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (DepthStencilViewDesc* pDescPtr = &pDesc)
@@ -1394,7 +1394,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1404,7 +1404,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DepthStencilViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DepthStencilViewDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1417,14 +1417,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateSampler(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] SamplerDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateSampler(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, SamplerDesc*, CpuDescriptorHandle, void>)@this->LpVtbl[22])(@this, pDesc, DestDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateSampler(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in SamplerDesc pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateSampler(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SamplerDesc pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (SamplerDesc* pDescPtr = &pDesc)
@@ -1434,14 +1434,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, uint, CpuDescriptorHandle*, uint*, uint, CpuDescriptorHandle*, uint*, DescriptorHeapType, void>)@this->LpVtbl[23])(@this, NumDestDescriptorRanges, pDestDescriptorRangeStarts, pDestDescriptorRangeSizes, NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, pSrcDescriptorRangeSizes, DescriptorHeapsType);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pSrcDescriptorRangeSizesPtr = &pSrcDescriptorRangeSizes)
@@ -1451,7 +1451,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pSrcDescriptorRangeStartsPtr = &pSrcDescriptorRangeStarts)
@@ -1461,7 +1461,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pSrcDescriptorRangeStartsPtr = &pSrcDescriptorRangeStarts)
@@ -1474,7 +1474,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pDestDescriptorRangeSizesPtr = &pDestDescriptorRangeSizes)
@@ -1484,7 +1484,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pDestDescriptorRangeSizesPtr = &pDestDescriptorRangeSizes)
@@ -1497,7 +1497,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pDestDescriptorRangeSizesPtr = &pDestDescriptorRangeSizes)
@@ -1510,7 +1510,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pDestDescriptorRangeSizesPtr = &pDestDescriptorRangeSizes)
@@ -1526,7 +1526,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1536,7 +1536,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1549,7 +1549,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1562,7 +1562,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1578,7 +1578,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1591,7 +1591,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1607,7 +1607,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1623,7 +1623,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDestDescriptorRangeStartsPtr = &pDestDescriptorRangeStarts)
@@ -1649,7 +1649,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ResourceDesc* pResourceDescs)
+    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDescs)
     {
         var @this = thisVtbl.Handle;
         ResourceAllocationInfo silkDotNetReturnFixupResult;
@@ -1660,7 +1660,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ResourceAllocationInfo GetResourceAllocationInfo(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] in ResourceDesc pResourceDescs)
+    public static ResourceAllocationInfo GetResourceAllocationInfo(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDescs)
     {
         var @this = thisVtbl.Handle;
         ResourceAllocationInfo silkDotNetReturnFixupResult;
@@ -1685,7 +1685,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1694,7 +1694,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1706,7 +1706,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1718,7 +1718,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1733,7 +1733,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1745,7 +1745,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1760,7 +1760,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1775,7 +1775,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1793,7 +1793,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1805,7 +1805,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1820,7 +1820,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1835,7 +1835,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1853,7 +1853,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1868,7 +1868,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1886,7 +1886,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1904,7 +1904,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1925,7 +1925,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1937,7 +1937,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1952,7 +1952,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1967,7 +1967,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1985,7 +1985,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2000,7 +2000,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2018,7 +2018,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2036,7 +2036,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2057,7 +2057,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2072,7 +2072,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2090,7 +2090,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2108,7 +2108,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2129,7 +2129,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2147,7 +2147,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2168,7 +2168,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2189,7 +2189,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2213,7 +2213,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2222,7 +2222,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2234,7 +2234,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2246,7 +2246,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2261,7 +2261,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2273,7 +2273,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2288,7 +2288,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2303,7 +2303,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2321,7 +2321,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2330,7 +2330,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2342,7 +2342,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2354,7 +2354,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2369,7 +2369,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2381,7 +2381,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2396,7 +2396,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2411,7 +2411,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2429,7 +2429,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2441,7 +2441,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2456,7 +2456,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2471,7 +2471,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2489,7 +2489,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2504,7 +2504,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2522,7 +2522,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2540,7 +2540,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2561,7 +2561,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2573,7 +2573,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2588,7 +2588,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2603,7 +2603,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2621,7 +2621,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2636,7 +2636,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2654,7 +2654,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2672,7 +2672,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2693,7 +2693,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2708,7 +2708,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2726,7 +2726,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2744,7 +2744,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2765,7 +2765,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2783,7 +2783,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2804,7 +2804,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2825,7 +2825,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2849,7 +2849,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2858,7 +2858,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2870,7 +2870,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2882,7 +2882,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2897,7 +2897,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2909,7 +2909,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2924,7 +2924,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2939,7 +2939,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2957,7 +2957,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2969,7 +2969,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2984,7 +2984,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2999,7 +2999,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3017,7 +3017,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3032,7 +3032,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3050,7 +3050,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3068,7 +3068,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3089,7 +3089,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3098,7 +3098,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3110,7 +3110,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3122,7 +3122,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3137,7 +3137,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3148,7 +3148,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3162,7 +3162,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3174,7 +3174,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3189,7 +3189,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3204,7 +3204,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3222,7 +3222,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3236,7 +3236,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3253,7 +3253,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3265,7 +3265,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3280,7 +3280,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3295,7 +3295,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3313,7 +3313,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3327,7 +3327,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3344,7 +3344,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3359,7 +3359,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3377,7 +3377,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3395,7 +3395,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3416,7 +3416,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3433,7 +3433,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3561,7 +3561,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] char* Name, uint Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3570,7 +3570,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] char* Name, uint Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3582,7 +3582,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in char Name, uint Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3594,7 +3594,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in char Name, uint Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3609,7 +3609,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3620,7 +3620,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3634,7 +3634,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MakeResident(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects)
+    public static unsafe int MakeResident(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3643,7 +3643,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MakeResident(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects)
+    public static unsafe int MakeResident(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3655,7 +3655,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Evict(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects)
+    public static unsafe int Evict(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3664,7 +3664,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Evict(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects)
+    public static unsafe int Evict(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3733,14 +3733,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ResourceDesc*, uint, uint, ulong, PlacedSubresourceFootprint*, uint*, ulong*, ulong*, void>)@this->LpVtbl[38])(@this, pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ulong* pTotalBytesPtr = &pTotalBytes)
@@ -3750,7 +3750,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ulong* pRowSizeInBytesPtr = &pRowSizeInBytes)
@@ -3760,7 +3760,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ulong* pRowSizeInBytesPtr = &pRowSizeInBytes)
@@ -3773,7 +3773,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRowsPtr = &pNumRows)
@@ -3783,7 +3783,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRowsPtr = &pNumRows)
@@ -3796,7 +3796,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRowsPtr = &pNumRows)
@@ -3809,7 +3809,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRowsPtr = &pNumRows)
@@ -3825,7 +3825,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3835,7 +3835,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3848,7 +3848,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3861,7 +3861,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3877,7 +3877,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3890,7 +3890,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3906,7 +3906,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3922,7 +3922,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (PlacedSubresourceFootprint* pLayoutsPtr = &pLayouts)
@@ -3941,7 +3941,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -3951,7 +3951,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -3964,7 +3964,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -3977,7 +3977,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -3993,7 +3993,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4006,7 +4006,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4022,7 +4022,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4038,7 +4038,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4057,7 +4057,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4070,7 +4070,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4086,7 +4086,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4102,7 +4102,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, uint* pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4121,7 +4121,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4137,7 +4137,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ulong* pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4156,7 +4156,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4175,7 +4175,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
+    public static void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, ref PlacedSubresourceFootprint pLayouts, ref uint pNumRows, ref ulong pRowSizeInBytes, ref ulong pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceDesc* pResourceDescPtr = &pResourceDesc)
@@ -4197,7 +4197,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4206,7 +4206,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4218,7 +4218,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4230,7 +4230,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4245,7 +4245,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in QueryHeapDesc pDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueryHeapDesc pDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4257,7 +4257,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in QueryHeapDesc pDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueryHeapDesc pDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4272,7 +4272,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in QueryHeapDesc pDesc, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueryHeapDesc pDesc, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4287,7 +4287,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in QueryHeapDesc pDesc, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueryHeapDesc pDesc, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4314,7 +4314,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4323,7 +4323,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4335,7 +4335,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4347,7 +4347,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4362,7 +4362,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4374,7 +4374,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4389,7 +4389,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4404,7 +4404,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4422,7 +4422,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4434,7 +4434,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4449,7 +4449,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4464,7 +4464,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4482,7 +4482,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4497,7 +4497,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4515,7 +4515,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4533,7 +4533,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5589,7 +5589,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary)
+    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5598,7 +5598,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary)
+    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5610,7 +5610,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary)
+    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5622,7 +5622,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary)
+    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5637,7 +5637,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5649,7 +5649,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5664,7 +5664,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5679,7 +5679,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5697,7 +5697,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5706,7 +5706,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5718,7 +5718,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5730,7 +5730,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5745,7 +5745,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5757,7 +5757,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5772,7 +5772,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5787,7 +5787,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5805,7 +5805,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects, [Flow(FlowDirection.In)] ResidencyPriority* pPriorities)
+    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResidencyPriority* pPriorities)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5814,7 +5814,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects, [Flow(FlowDirection.In)] in ResidencyPriority pPriorities)
+    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResidencyPriority pPriorities)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5826,7 +5826,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, [Flow(FlowDirection.In)] ResidencyPriority* pPriorities)
+    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResidencyPriority* pPriorities)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5838,7 +5838,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, [Flow(FlowDirection.In)] in ResidencyPriority pPriorities)
+    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResidencyPriority pPriorities)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5853,7 +5853,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5862,7 +5862,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5874,7 +5874,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5886,7 +5886,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5901,7 +5901,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5913,7 +5913,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5928,7 +5928,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5943,7 +5943,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5961,7 +5961,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, Guid* riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5970,7 +5970,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, Guid* riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5982,7 +5982,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, ref Guid riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5994,7 +5994,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6009,7 +6009,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pAddress, Guid* riid, void** ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pAddress, Guid* riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6021,7 +6021,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pAddress, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pAddress, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6036,7 +6036,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pAddress, ref Guid riid, void** ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pAddress, ref Guid riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6051,7 +6051,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pAddress, ref Guid riid, ref void* ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pAddress, ref Guid riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6177,7 +6177,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal)
+    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6186,7 +6186,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal)
+    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6198,7 +6198,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal)
+    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6210,7 +6210,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal)
+    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6273,7 +6273,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Guid* riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Guid* riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6282,7 +6282,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Guid* riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Guid* riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6294,7 +6294,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, ref Guid riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, ref Guid riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6306,7 +6306,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, ref Guid riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, ref Guid riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6321,7 +6321,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, Guid* riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, Guid* riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6333,7 +6333,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, Guid* riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, Guid* riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6348,7 +6348,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, ref Guid riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, ref Guid riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6363,7 +6363,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, ref Guid riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, ref Guid riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6381,7 +6381,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6390,7 +6390,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6402,7 +6402,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6414,7 +6414,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6429,7 +6429,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6441,7 +6441,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6456,7 +6456,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6471,7 +6471,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6489,7 +6489,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6501,7 +6501,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6516,7 +6516,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6531,7 +6531,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6549,7 +6549,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6564,7 +6564,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6582,7 +6582,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6600,7 +6600,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6621,7 +6621,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6633,7 +6633,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6648,7 +6648,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6663,7 +6663,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6681,7 +6681,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6696,7 +6696,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6714,7 +6714,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6732,7 +6732,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6753,7 +6753,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6768,7 +6768,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6786,7 +6786,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6804,7 +6804,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6825,7 +6825,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6843,7 +6843,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6864,7 +6864,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6885,7 +6885,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6909,7 +6909,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6921,7 +6921,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6936,7 +6936,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6951,7 +6951,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6969,7 +6969,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6984,7 +6984,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7002,7 +7002,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7020,7 +7020,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7041,7 +7041,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7056,7 +7056,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7074,7 +7074,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7092,7 +7092,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7113,7 +7113,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7131,7 +7131,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7152,7 +7152,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7173,7 +7173,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7197,7 +7197,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7212,7 +7212,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7230,7 +7230,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7248,7 +7248,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7269,7 +7269,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7287,7 +7287,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7308,7 +7308,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7329,7 +7329,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7353,7 +7353,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7371,7 +7371,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7392,7 +7392,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7413,7 +7413,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7437,7 +7437,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7458,7 +7458,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7482,7 +7482,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7506,7 +7506,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7533,7 +7533,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7542,7 +7542,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7554,7 +7554,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7566,7 +7566,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7581,7 +7581,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7593,7 +7593,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7608,7 +7608,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7623,7 +7623,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7641,7 +7641,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7653,7 +7653,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7668,7 +7668,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7683,7 +7683,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7701,7 +7701,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7716,7 +7716,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7734,7 +7734,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7752,7 +7752,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7773,7 +7773,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7782,7 +7782,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7794,7 +7794,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7806,7 +7806,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7821,7 +7821,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7833,7 +7833,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7848,7 +7848,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7863,7 +7863,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7881,7 +7881,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7893,7 +7893,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7908,7 +7908,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7923,7 +7923,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7941,7 +7941,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7956,7 +7956,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7974,7 +7974,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7992,7 +7992,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8013,7 +8013,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8025,7 +8025,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8040,7 +8040,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8055,7 +8055,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8073,7 +8073,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8088,7 +8088,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8106,7 +8106,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8124,7 +8124,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8145,7 +8145,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8160,7 +8160,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8178,7 +8178,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8196,7 +8196,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8217,7 +8217,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8235,7 +8235,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8256,7 +8256,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8277,7 +8277,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8301,7 +8301,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ResourceDesc* pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
+    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         ResourceAllocationInfo silkDotNetReturnFixupResult;
@@ -8312,7 +8312,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ResourceDesc* pResourceDescs, ref ResourceAllocationInfo1 pResourceAllocationInfo1)
+    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDescs, ref ResourceAllocationInfo1 pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         ResourceAllocationInfo silkDotNetReturnFixupResult;
@@ -8326,7 +8326,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] in ResourceDesc pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
+    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         ResourceAllocationInfo silkDotNetReturnFixupResult;
@@ -8340,7 +8340,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] in ResourceDesc pResourceDescs, ref ResourceAllocationInfo1 pResourceAllocationInfo1)
+    public static ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pResourceDescs, ref ResourceAllocationInfo1 pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         ResourceAllocationInfo silkDotNetReturnFixupResult;
@@ -8760,7 +8760,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8769,7 +8769,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8781,7 +8781,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8793,7 +8793,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8808,7 +8808,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8820,7 +8820,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8835,7 +8835,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8850,7 +8850,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8868,7 +8868,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8880,7 +8880,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8895,7 +8895,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8910,7 +8910,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8928,7 +8928,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8943,7 +8943,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8961,7 +8961,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8979,7 +8979,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9000,7 +9000,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, Guid* riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, Guid* riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9009,7 +9009,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, Guid* riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, Guid* riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9021,7 +9021,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, ref Guid riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, ref Guid riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9033,7 +9033,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, ref Guid riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, ref Guid riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9048,7 +9048,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pDesc, Guid* riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pDesc, Guid* riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9060,7 +9060,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pDesc, Guid* riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pDesc, Guid* riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9075,7 +9075,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pDesc, ref Guid riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pDesc, ref Guid riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9090,7 +9090,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pDesc, ref Guid riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pDesc, ref Guid riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9108,14 +9108,14 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] BuildRaytracingAccelerationStructureInputs* pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
+    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureInputs* pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BuildRaytracingAccelerationStructureInputs*, RaytracingAccelerationStructurePrebuildInfo*, void>)@this->LpVtbl[63])(@this, pDesc, pInfo);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] BuildRaytracingAccelerationStructureInputs* pDesc, ref RaytracingAccelerationStructurePrebuildInfo pInfo)
+    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureInputs* pDesc, ref RaytracingAccelerationStructurePrebuildInfo pInfo)
     {
         var @this = thisVtbl.Handle;
         fixed (RaytracingAccelerationStructurePrebuildInfo* pInfoPtr = &pInfo)
@@ -9125,7 +9125,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in BuildRaytracingAccelerationStructureInputs pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
+    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BuildRaytracingAccelerationStructureInputs pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
     {
         var @this = thisVtbl.Handle;
         fixed (BuildRaytracingAccelerationStructureInputs* pDescPtr = &pDesc)
@@ -9135,7 +9135,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in BuildRaytracingAccelerationStructureInputs pDesc, ref RaytracingAccelerationStructurePrebuildInfo pInfo)
+    public static void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BuildRaytracingAccelerationStructureInputs pDesc, ref RaytracingAccelerationStructurePrebuildInfo pInfo)
     {
         var @this = thisVtbl.Handle;
         fixed (BuildRaytracingAccelerationStructureInputs* pDescPtr = &pDesc)
@@ -9148,7 +9148,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(this ComPtr<ID3D12Device7> thisVtbl, SerializedDataType SerializedDataType, [Flow(FlowDirection.In)] SerializedDataDriverMatchingIdentifier* pIdentifierToCheck)
+    public static unsafe DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(this ComPtr<ID3D12Device7> thisVtbl, SerializedDataType SerializedDataType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SerializedDataDriverMatchingIdentifier* pIdentifierToCheck)
     {
         var @this = thisVtbl.Handle;
         DriverMatchingIdentifierStatus ret = default;
@@ -9157,7 +9157,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(this ComPtr<ID3D12Device7> thisVtbl, SerializedDataType SerializedDataType, [Flow(FlowDirection.In)] in SerializedDataDriverMatchingIdentifier pIdentifierToCheck)
+    public static DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(this ComPtr<ID3D12Device7> thisVtbl, SerializedDataType SerializedDataType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SerializedDataDriverMatchingIdentifier pIdentifierToCheck)
     {
         var @this = thisVtbl.Handle;
         DriverMatchingIdentifierStatus ret = default;
@@ -9217,7 +9217,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9226,7 +9226,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9238,7 +9238,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9250,7 +9250,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9265,7 +9265,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9277,7 +9277,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9292,7 +9292,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9307,7 +9307,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9325,7 +9325,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9337,7 +9337,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9352,7 +9352,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9367,7 +9367,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9385,7 +9385,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9400,7 +9400,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9418,7 +9418,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9436,7 +9436,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9457,7 +9457,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Guid* riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Guid* riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9466,7 +9466,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Guid* riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Guid* riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9478,7 +9478,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, ref Guid riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, ref Guid riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9490,7 +9490,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, ref Guid riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, ref Guid riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9505,7 +9505,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, Guid* riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, Guid* riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9517,7 +9517,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, Guid* riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, Guid* riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9532,7 +9532,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, ref Guid riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, ref Guid riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9547,7 +9547,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, ref Guid riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, ref Guid riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -9646,7 +9646,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9654,7 +9654,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9662,7 +9662,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9670,7 +9670,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9678,7 +9678,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9686,7 +9686,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9694,7 +9694,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9702,7 +9702,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9710,7 +9710,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
+    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9718,7 +9718,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9727,7 +9727,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, Span<Guid> riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, Span<Guid> riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9735,7 +9735,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc, Span<Guid> riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc, Span<Guid> riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9743,7 +9743,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Guid* riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Guid* riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9751,7 +9751,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandQueueDesc pDesc, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandQueueDesc pDesc, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9760,7 +9760,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Guid* riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Guid* riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9768,7 +9768,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Span<Guid> riid, void** ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Span<Guid> riid, void** ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9776,7 +9776,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Span<Guid> riid, ref void* ppCommandQueue)
+    public static unsafe int CreateCommandQueue(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandQueueDesc> pDesc, Span<Guid> riid, ref void* ppCommandQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9809,7 +9809,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9818,7 +9818,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9826,7 +9826,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9834,7 +9834,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9842,7 +9842,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9851,7 +9851,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9859,7 +9859,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9867,7 +9867,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int CreateGraphicsPipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9875,7 +9875,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9884,7 +9884,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9892,7 +9892,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9900,7 +9900,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9908,7 +9908,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9917,7 +9917,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9925,7 +9925,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9933,7 +9933,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int CreateComputePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10169,7 +10169,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10178,7 +10178,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10186,7 +10186,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10194,7 +10194,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10202,7 +10202,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10211,7 +10211,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10219,7 +10219,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10227,7 +10227,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorHeapDesc> pDescriptorHeapDesc, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10235,7 +10235,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateRootSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10244,7 +10244,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature)
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10252,7 +10252,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature)
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10260,7 +10260,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10268,7 +10268,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRootSignature<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateRootSignature<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10277,7 +10277,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10285,7 +10285,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10293,7 +10293,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature) where T0 : unmanaged
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10301,7 +10301,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateConstantBufferView(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ConstantBufferViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateConstantBufferView(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ConstantBufferViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10309,7 +10309,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateShaderResourceView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CreateShaderResourceView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10317,7 +10317,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<ShaderResourceViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderResourceViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10325,7 +10325,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateShaderResourceView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in ShaderResourceViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CreateShaderResourceView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShaderResourceViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10333,7 +10333,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10341,7 +10341,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<ShaderResourceViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateShaderResourceView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderResourceViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10349,7 +10349,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CreateUnorderedAccessView<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10357,7 +10357,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10365,7 +10365,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateUnorderedAccessView<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void CreateUnorderedAccessView<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10373,7 +10373,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, Span<ID3D12Resource> pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, Span<ID3D12Resource> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10381,7 +10381,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ref ID3D12Resource pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ref ID3D12Resource pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10389,7 +10389,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, Span<ID3D12Resource> pCounterResource, [Flow(FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, Span<ID3D12Resource> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10397,7 +10397,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ref ID3D12Resource pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, ref ID3D12Resource pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10405,7 +10405,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10413,7 +10413,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ComPtr<TI0> pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ComPtr<TI0> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10421,7 +10421,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, ID3D12Resource* pCounterResource, [Flow(FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, ID3D12Resource* pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10429,7 +10429,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ComPtr<TI0> pCounterResource, [Flow(FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CreateUnorderedAccessView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Resource pResource, ComPtr<TI0> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in UnorderedAccessViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10437,7 +10437,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, Span<ID3D12Resource> pCounterResource, [Flow(FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, Span<ID3D12Resource> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10445,7 +10445,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, Span<ID3D12Resource> pCounterResource, [Flow(FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateUnorderedAccessView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, Span<ID3D12Resource> pCounterResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10453,7 +10453,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateRenderTargetView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CreateRenderTargetView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10461,7 +10461,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderTargetViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10469,7 +10469,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateRenderTargetView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in RenderTargetViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CreateRenderTargetView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10477,7 +10477,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10485,7 +10485,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateRenderTargetView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderTargetViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10493,7 +10493,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateDepthStencilView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CreateDepthStencilView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10501,7 +10501,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DepthStencilViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DepthStencilViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10509,7 +10509,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateDepthStencilView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DepthStencilViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CreateDepthStencilView<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DepthStencilViewDesc pDesc, CpuDescriptorHandle DestDescriptor) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10517,7 +10517,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
+    public static unsafe void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10525,7 +10525,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DepthStencilViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateDepthStencilView(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DepthStencilViewDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10533,7 +10533,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CreateSampler(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<SamplerDesc> pDesc, CpuDescriptorHandle DestDescriptor)
+    public static void CreateSampler(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerDesc> pDesc, CpuDescriptorHandle DestDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10541,7 +10541,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10549,7 +10549,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10557,7 +10557,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10565,7 +10565,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10573,7 +10573,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10581,7 +10581,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10589,7 +10589,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10597,7 +10597,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10605,7 +10605,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10613,7 +10613,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10621,7 +10621,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10629,7 +10629,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10637,7 +10637,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10645,7 +10645,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static unsafe void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10653,7 +10653,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
+    public static void CopyDescriptors(this ComPtr<ID3D12Device7> thisVtbl, uint NumDestDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDestDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pSrcDescriptorRangeStarts, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10661,7 +10661,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ResourceAllocationInfo GetResourceAllocationInfo(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDescs)
+    public static ResourceAllocationInfo GetResourceAllocationInfo(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDescs)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10669,7 +10669,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10678,7 +10678,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10686,7 +10686,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10694,7 +10694,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10702,7 +10702,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10711,7 +10711,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10719,7 +10719,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10727,7 +10727,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10735,7 +10735,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10743,7 +10743,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10752,7 +10752,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10760,7 +10760,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10768,7 +10768,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10776,7 +10776,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10784,7 +10784,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10793,7 +10793,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10801,7 +10801,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10809,7 +10809,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10817,7 +10817,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10825,7 +10825,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10834,7 +10834,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10842,7 +10842,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10850,7 +10850,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10858,7 +10858,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10866,7 +10866,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10875,7 +10875,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10883,7 +10883,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10891,7 +10891,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10899,7 +10899,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10907,7 +10907,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10916,7 +10916,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10924,7 +10924,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10932,7 +10932,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10940,7 +10940,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10948,7 +10948,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10957,7 +10957,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10965,7 +10965,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10973,7 +10973,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10981,7 +10981,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10990,7 +10990,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10998,7 +10998,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11006,7 +11006,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11014,7 +11014,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11023,7 +11023,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11031,7 +11031,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11039,7 +11039,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11047,7 +11047,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11056,7 +11056,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11064,7 +11064,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11072,7 +11072,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11080,7 +11080,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11088,7 +11088,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11096,7 +11096,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11104,7 +11104,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11113,7 +11113,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11121,7 +11121,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11129,7 +11129,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11137,7 +11137,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11145,7 +11145,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11153,7 +11153,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11161,7 +11161,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11169,7 +11169,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11178,7 +11178,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11186,7 +11186,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11194,7 +11194,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11202,7 +11202,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11210,7 +11210,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11218,7 +11218,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11226,7 +11226,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11234,7 +11234,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static int CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11243,7 +11243,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11251,7 +11251,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11259,7 +11259,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11267,7 +11267,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11275,7 +11275,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11283,7 +11283,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11291,7 +11291,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11299,7 +11299,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11308,7 +11308,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11316,7 +11316,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11324,7 +11324,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11332,7 +11332,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11340,7 +11340,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11349,7 +11349,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11357,7 +11357,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11365,7 +11365,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11373,7 +11373,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11381,7 +11381,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11390,7 +11390,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11398,7 +11398,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11406,7 +11406,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11414,7 +11414,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11422,7 +11422,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11431,7 +11431,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11439,7 +11439,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11447,7 +11447,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreatePlacedResource(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11455,7 +11455,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11464,7 +11464,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11472,7 +11472,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11480,7 +11480,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11488,7 +11488,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11497,7 +11497,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11505,7 +11505,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11513,7 +11513,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11521,7 +11521,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11529,7 +11529,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11538,7 +11538,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11546,7 +11546,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11554,7 +11554,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11562,7 +11562,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11570,7 +11570,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11579,7 +11579,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11587,7 +11587,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11595,7 +11595,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11603,7 +11603,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11611,7 +11611,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11619,7 +11619,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11627,7 +11627,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11635,7 +11635,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11643,7 +11643,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11651,7 +11651,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11659,7 +11659,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11667,7 +11667,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11675,7 +11675,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11683,7 +11683,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11691,7 +11691,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11699,7 +11699,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11707,7 +11707,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11715,7 +11715,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11723,7 +11723,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11731,7 +11731,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11739,7 +11739,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11747,7 +11747,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11755,7 +11755,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11763,7 +11763,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11771,7 +11771,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11779,7 +11779,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11787,7 +11787,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11795,7 +11795,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11803,7 +11803,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11811,7 +11811,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11819,7 +11819,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11827,7 +11827,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11835,7 +11835,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11843,7 +11843,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11851,7 +11851,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11925,7 +11925,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, uint Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11933,7 +11933,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, uint Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11941,7 +11941,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MakeResident<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
+    public static int MakeResident<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11949,7 +11949,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Evict<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
+    public static int Evict<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11982,7 +11982,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11990,7 +11990,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11998,7 +11998,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12006,7 +12006,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12014,7 +12014,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12022,7 +12022,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12030,7 +12030,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12038,7 +12038,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12046,7 +12046,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12054,7 +12054,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12062,7 +12062,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12070,7 +12070,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12078,7 +12078,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12086,7 +12086,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12094,7 +12094,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12102,7 +12102,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12110,7 +12110,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12118,7 +12118,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12126,7 +12126,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12134,7 +12134,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12142,7 +12142,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12150,7 +12150,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12158,7 +12158,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12166,7 +12166,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12174,7 +12174,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12182,7 +12182,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12190,7 +12190,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12198,7 +12198,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12206,7 +12206,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12214,7 +12214,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
+    public static unsafe void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12222,7 +12222,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
+    public static void GetCopyableFootprints(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12230,7 +12230,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12239,7 +12239,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12247,7 +12247,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12255,7 +12255,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12263,7 +12263,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in QueryHeapDesc pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueryHeapDesc pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12272,7 +12272,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12280,7 +12280,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12288,7 +12288,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateQueryHeap(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueryHeapDesc> pDesc, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12296,7 +12296,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, out ComPtr<TI1> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, out ComPtr<TI1> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12305,7 +12305,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12313,7 +12313,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12321,7 +12321,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, void** ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, void** ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12329,7 +12329,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12337,7 +12337,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12345,7 +12345,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12353,7 +12353,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12362,7 +12362,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12370,7 +12370,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12378,7 +12378,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12386,7 +12386,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12394,7 +12394,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, out ComPtr<TI1> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static int CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, out ComPtr<TI1> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12403,7 +12403,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12411,7 +12411,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12419,7 +12419,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12427,7 +12427,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, void** ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, void** ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12435,7 +12435,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12443,7 +12443,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+    public static unsafe int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature, ref Guid riid, ref void* ppvCommandSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12451,7 +12451,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12459,7 +12459,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12468,7 +12468,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12476,7 +12476,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, void** ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12484,7 +12484,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
+    public static unsafe int CreateCommandSignature(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13252,7 +13252,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreatePipelineLibrary<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13261,7 +13261,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary)
+    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13269,7 +13269,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, ref void* ppPipelineLibrary)
+    public static unsafe int CreatePipelineLibrary(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, ref void* ppPipelineLibrary)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13277,7 +13277,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13285,7 +13285,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePipelineLibrary<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreatePipelineLibrary<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13294,7 +13294,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13302,7 +13302,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13310,7 +13310,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Span<Guid> riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+    public static unsafe int CreatePipelineLibrary<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pLibraryBlob, nuint BlobLength, Span<Guid> riid, ref void* ppPipelineLibrary) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13318,7 +13318,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13326,7 +13326,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13334,7 +13334,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13342,7 +13342,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13350,7 +13350,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13358,7 +13358,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Fence** ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13366,7 +13366,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEventOnMultipleFenceCompletion<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static int SetEventOnMultipleFenceCompletion<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13374,7 +13374,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13382,7 +13382,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13390,7 +13390,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13398,7 +13398,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects, [Flow(FlowDirection.In)] ResidencyPriority* pPriorities) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
+    public static unsafe int SetResidencyPriority<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResidencyPriority* pPriorities) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13406,7 +13406,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects, [Flow(FlowDirection.In)] ReadOnlySpan<ResidencyPriority> pPriorities)
+    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResidencyPriority> pPriorities)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13414,7 +13414,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetResidencyPriority<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects, [Flow(FlowDirection.In)] in ResidencyPriority pPriorities) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
+    public static int SetResidencyPriority<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResidencyPriority pPriorities) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13422,7 +13422,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, [Flow(FlowDirection.In)] ReadOnlySpan<ResidencyPriority> pPriorities)
+    public static unsafe int SetResidencyPriority(this ComPtr<ID3D12Device7> thisVtbl, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResidencyPriority> pPriorities)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13430,7 +13430,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13439,7 +13439,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13447,7 +13447,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13455,7 +13455,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13463,7 +13463,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13472,7 +13472,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13480,7 +13480,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13488,7 +13488,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int CreatePipelineState(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineStateStreamDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13496,7 +13496,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int OpenExistingHeapFromAddress<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13505,7 +13505,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13513,7 +13513,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromAddress(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13521,7 +13521,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pAddress, Guid* riid, void** ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pAddress, Guid* riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13529,7 +13529,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenExistingHeapFromAddress<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pAddress, out ComPtr<TI0> ppvHeap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenExistingHeapFromAddress<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pAddress, out ComPtr<TI0> ppvHeap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13538,7 +13538,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pAddress, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pAddress, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13546,7 +13546,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pAddress, Span<Guid> riid, void** ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pAddress, Span<Guid> riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13554,7 +13554,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pAddress, Span<Guid> riid, ref void* ppvHeap) where T0 : unmanaged
+    public static unsafe int OpenExistingHeapFromAddress<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pAddress, Span<Guid> riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13628,7 +13628,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueMakeResident<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects, ComPtr<TI1> pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI1>
+    public static int EnqueueMakeResident<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppObjects, ComPtr<TI1> pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13636,7 +13636,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] ID3D12Pageable** ppObjects, Span<ID3D12Fence> pFenceToSignal, ulong FenceValueToSignal)
+    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Pageable** ppObjects, Span<ID3D12Fence> pFenceToSignal, ulong FenceValueToSignal)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13644,7 +13644,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueMakeResident<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
+    public static int EnqueueMakeResident<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13652,7 +13652,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, ComPtr<TI0> pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int EnqueueMakeResident<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, ComPtr<TI0> pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13660,7 +13660,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(FlowDirection.In)] in ID3D12Pageable* ppObjects, Span<ID3D12Fence> pFenceToSignal, ulong FenceValueToSignal)
+    public static unsafe int EnqueueMakeResident(this ComPtr<ID3D12Device7> thisVtbl, ResidencyFlags Flags, uint NumObjects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Pageable* ppObjects, Span<ID3D12Fence> pFenceToSignal, ulong FenceValueToSignal)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13693,7 +13693,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13702,7 +13702,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Span<Guid> riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Span<Guid> riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13710,7 +13710,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Span<Guid> riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc, Span<Guid> riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13718,7 +13718,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Guid* riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Guid* riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13726,7 +13726,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13735,7 +13735,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Guid* riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Guid* riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13743,7 +13743,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Span<Guid> riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Span<Guid> riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13751,7 +13751,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Span<Guid> riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc> pDesc, Span<Guid> riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13759,7 +13759,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13768,7 +13768,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13776,7 +13776,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13784,7 +13784,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13792,7 +13792,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13800,7 +13800,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13808,7 +13808,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13816,7 +13816,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13825,7 +13825,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13833,7 +13833,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13841,7 +13841,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13849,7 +13849,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13857,7 +13857,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13866,7 +13866,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13874,7 +13874,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13882,7 +13882,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13890,7 +13890,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13898,7 +13898,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13906,7 +13906,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13914,7 +13914,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13922,7 +13922,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13931,7 +13931,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13939,7 +13939,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13947,7 +13947,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13955,7 +13955,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13963,7 +13963,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13972,7 +13972,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13980,7 +13980,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13988,7 +13988,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13996,7 +13996,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14004,7 +14004,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14012,7 +14012,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14020,7 +14020,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14028,7 +14028,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14037,7 +14037,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14045,7 +14045,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14053,7 +14053,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14061,7 +14061,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14069,7 +14069,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14078,7 +14078,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14086,7 +14086,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14094,7 +14094,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14102,7 +14102,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14110,7 +14110,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14118,7 +14118,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14126,7 +14126,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14134,7 +14134,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14143,7 +14143,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14151,7 +14151,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14159,7 +14159,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14167,7 +14167,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14175,7 +14175,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14184,7 +14184,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14192,7 +14192,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14200,7 +14200,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14208,7 +14208,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14216,7 +14216,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14224,7 +14224,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14232,7 +14232,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14240,7 +14240,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14249,7 +14249,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14257,7 +14257,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14265,7 +14265,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14273,7 +14273,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14281,7 +14281,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14290,7 +14290,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14298,7 +14298,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14306,7 +14306,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14314,7 +14314,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14322,7 +14322,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14330,7 +14330,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14338,7 +14338,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14346,7 +14346,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14355,7 +14355,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14363,7 +14363,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14371,7 +14371,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14379,7 +14379,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14387,7 +14387,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14396,7 +14396,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14404,7 +14404,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14412,7 +14412,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14420,7 +14420,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14428,7 +14428,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14436,7 +14436,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14444,7 +14444,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14452,7 +14452,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14461,7 +14461,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14469,7 +14469,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14477,7 +14477,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14485,7 +14485,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14493,7 +14493,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static int CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14502,7 +14502,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14510,7 +14510,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14518,7 +14518,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14526,7 +14526,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14534,7 +14534,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14542,7 +14542,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14550,7 +14550,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14558,7 +14558,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14567,7 +14567,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14575,7 +14575,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14583,7 +14583,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
+    public static unsafe int CreateCommittedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapProperties> pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riidResource, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14591,7 +14591,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14600,7 +14600,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14608,7 +14608,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14616,7 +14616,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14624,7 +14624,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14632,7 +14632,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14640,7 +14640,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14648,7 +14648,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14657,7 +14657,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14665,7 +14665,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14673,7 +14673,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14681,7 +14681,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14689,7 +14689,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static int CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14698,7 +14698,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14706,7 +14706,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14714,7 +14714,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14722,7 +14722,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14730,7 +14730,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14738,7 +14738,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvHeap) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14746,7 +14746,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14754,7 +14754,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14763,7 +14763,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14771,7 +14771,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14779,7 +14779,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int CreateHeap1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14787,7 +14787,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14796,7 +14796,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14804,7 +14804,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14812,7 +14812,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14820,7 +14820,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14828,7 +14828,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14836,7 +14836,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14844,7 +14844,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14853,7 +14853,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14861,7 +14861,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14869,7 +14869,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14877,7 +14877,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14885,7 +14885,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14894,7 +14894,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14902,7 +14902,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14910,7 +14910,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14918,7 +14918,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14926,7 +14926,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14934,7 +14934,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14942,7 +14942,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14950,7 +14950,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14959,7 +14959,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14967,7 +14967,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14975,7 +14975,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14983,7 +14983,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14991,7 +14991,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15000,7 +15000,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15008,7 +15008,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15016,7 +15016,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15024,7 +15024,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15032,7 +15032,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15040,7 +15040,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15048,7 +15048,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15056,7 +15056,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15065,7 +15065,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15073,7 +15073,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15081,7 +15081,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15089,7 +15089,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15097,7 +15097,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static int CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15106,7 +15106,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15114,7 +15114,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15122,7 +15122,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15130,7 +15130,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15138,7 +15138,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15146,7 +15146,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    public static unsafe int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15154,7 +15154,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15162,7 +15162,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15171,7 +15171,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15179,7 +15179,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, void** ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15187,7 +15187,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
+    public static unsafe int CreateReservedResource1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Span<Guid> riid, ref void* ppvResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15195,7 +15195,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ResourceDesc* pResourceDescs, Span<ResourceAllocationInfo1> pResourceAllocationInfo1)
+    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pResourceDescs, Span<ResourceAllocationInfo1> pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15203,7 +15203,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
+    public static unsafe ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15211,7 +15211,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDescs, Span<ResourceAllocationInfo1> pResourceAllocationInfo1)
+    public static ResourceAllocationInfo GetResourceAllocationInfo1(this ComPtr<ID3D12Device7> thisVtbl, uint visibleMask, uint numResourceDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceDesc> pResourceDescs, Span<ResourceAllocationInfo1> pResourceAllocationInfo1)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15453,7 +15453,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15462,7 +15462,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15470,7 +15470,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15478,7 +15478,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15486,7 +15486,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15495,7 +15495,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15503,7 +15503,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15511,7 +15511,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15519,7 +15519,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15527,7 +15527,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15536,7 +15536,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15544,7 +15544,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15552,7 +15552,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand)
+    public static unsafe int CreateMetaCommand(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15560,7 +15560,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15568,7 +15568,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15577,7 +15577,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15585,7 +15585,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15593,7 +15593,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand) where T0 : unmanaged
+    public static unsafe int CreateMetaCommand<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<Guid> CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, ref void* ppMetaCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15601,7 +15601,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, out ComPtr<TI0> ppStateObject) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, out ComPtr<TI0> ppStateObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15610,7 +15610,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, Span<Guid> riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, Span<Guid> riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15618,7 +15618,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc, Span<Guid> riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc, Span<Guid> riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15626,7 +15626,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Guid* riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Guid* riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15634,7 +15634,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pDesc, out ComPtr<TI0> ppStateObject) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pDesc, out ComPtr<TI0> ppStateObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15643,7 +15643,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Guid* riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Guid* riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15651,7 +15651,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Span<Guid> riid, void** ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Span<Guid> riid, void** ppStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15659,7 +15659,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Span<Guid> riid, ref void* ppStateObject)
+    public static unsafe int CreateStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pDesc, Span<Guid> riid, ref void* ppStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15667,7 +15667,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] BuildRaytracingAccelerationStructureInputs* pDesc, Span<RaytracingAccelerationStructurePrebuildInfo> pInfo)
+    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureInputs* pDesc, Span<RaytracingAccelerationStructurePrebuildInfo> pInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15675,7 +15675,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<BuildRaytracingAccelerationStructureInputs> pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
+    public static unsafe void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BuildRaytracingAccelerationStructureInputs> pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15683,7 +15683,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<BuildRaytracingAccelerationStructureInputs> pDesc, Span<RaytracingAccelerationStructurePrebuildInfo> pInfo)
+    public static void GetRaytracingAccelerationStructurePrebuildInfo(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BuildRaytracingAccelerationStructureInputs> pDesc, Span<RaytracingAccelerationStructurePrebuildInfo> pInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15691,7 +15691,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(this ComPtr<ID3D12Device7> thisVtbl, SerializedDataType SerializedDataType, [Flow(FlowDirection.In)] ReadOnlySpan<SerializedDataDriverMatchingIdentifier> pIdentifierToCheck)
+    public static DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(this ComPtr<ID3D12Device7> thisVtbl, SerializedDataType SerializedDataType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SerializedDataDriverMatchingIdentifier> pIdentifierToCheck)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15723,7 +15723,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, out ComPtr<TI1> ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, out ComPtr<TI1> ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15732,7 +15732,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15740,7 +15740,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15748,7 +15748,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15756,7 +15756,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15764,7 +15764,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15772,7 +15772,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15780,7 +15780,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15789,7 +15789,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15797,7 +15797,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15805,7 +15805,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15813,7 +15813,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15821,7 +15821,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, out ComPtr<TI1> ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static int AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, out ComPtr<TI1> ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15830,7 +15830,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15838,7 +15838,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15846,7 +15846,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15854,7 +15854,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15862,7 +15862,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15870,7 +15870,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
+    public static unsafe int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15878,7 +15878,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15886,7 +15886,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15895,7 +15895,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15903,7 +15903,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15911,7 +15911,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
+    public static unsafe int AddToStateObject(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Span<Guid> riid, ref void* ppNewStateObject)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15919,7 +15919,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15928,7 +15928,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Span<Guid> riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Span<Guid> riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15936,7 +15936,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Span<Guid> riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc, Span<Guid> riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15944,7 +15944,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Guid* riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Guid* riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15952,7 +15952,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15961,7 +15961,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Guid* riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Guid* riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15969,7 +15969,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Span<Guid> riid, void** ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Span<Guid> riid, void** ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15977,7 +15977,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Span<Guid> riid, ref void* ppSession)
+    public static unsafe int CreateProtectedResourceSession1(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ProtectedResourceSessionDesc1> pDesc, Span<Guid> riid, ref void* ppSession)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15994,7 +15994,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandQueueDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16003,7 +16003,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandQueueDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateCommandQueue<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandQueueDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16021,7 +16021,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16030,7 +16030,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateGraphicsPipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16039,7 +16039,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16048,7 +16048,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateComputePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16093,7 +16093,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16102,7 +16102,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DescriptorHeapDesc pDescriptorHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16111,7 +16111,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateRootSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateRootSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16120,7 +16120,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateRootSignature<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateRootSignature<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, uint nodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16129,7 +16129,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16138,7 +16138,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16147,7 +16147,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16156,7 +16156,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16165,7 +16165,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16174,7 +16174,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16183,7 +16183,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16192,7 +16192,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16201,7 +16201,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16210,7 +16210,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16219,7 +16219,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16228,7 +16228,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16237,7 +16237,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16246,7 +16246,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static ComPtr<TI1> CreatePlacedResource<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16255,7 +16255,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16264,7 +16264,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16273,7 +16273,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16282,7 +16282,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreatePlacedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16291,7 +16291,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16300,7 +16300,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16309,7 +16309,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16318,7 +16318,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateReservedResource<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16354,7 +16354,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] QueryHeapDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryHeapDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16363,7 +16363,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in QueryHeapDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateQueryHeap<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueryHeapDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16372,7 +16372,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16381,7 +16381,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16390,7 +16390,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI1> CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static ComPtr<TI1> CreateCommandSignature<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16399,7 +16399,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateCommandSignature<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16408,7 +16408,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreatePipelineLibrary<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pLibraryBlob, nuint BlobLength) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreatePipelineLibrary<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint BlobLength) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16417,7 +16417,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreatePipelineLibrary<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreatePipelineLibrary<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16426,7 +16426,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] PipelineStateStreamDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16435,7 +16435,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreatePipelineState<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16444,7 +16444,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> OpenExistingHeapFromAddress<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] void* pAddress) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> OpenExistingHeapFromAddress<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pAddress) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16453,7 +16453,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenExistingHeapFromAddress<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in T0 pAddress) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenExistingHeapFromAddress<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pAddress) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16489,7 +16489,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16498,7 +16498,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateProtectedResourceSession<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16507,7 +16507,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16516,7 +16516,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16525,7 +16525,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16534,7 +16534,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16543,7 +16543,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16552,7 +16552,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16561,7 +16561,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16570,7 +16570,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16579,7 +16579,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16588,7 +16588,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16597,7 +16597,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16606,7 +16606,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16615,7 +16615,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16624,7 +16624,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16633,7 +16633,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static ComPtr<TI1> CreateCommittedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16642,7 +16642,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateCommittedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialResourceState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16651,7 +16651,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16660,7 +16660,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16669,7 +16669,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI1> CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static ComPtr<TI1> CreateHeap1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16678,7 +16678,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateHeap1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16687,7 +16687,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16696,7 +16696,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16705,7 +16705,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16714,7 +16714,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16723,7 +16723,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16732,7 +16732,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16741,7 +16741,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static ComPtr<TI1> CreateReservedResource1<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16750,7 +16750,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateReservedResource1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceDesc pDesc, ResourceStates InitialState, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16777,7 +16777,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16786,7 +16786,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, Guid* CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16795,7 +16795,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateMetaCommand<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pCreationParametersData, nuint CreationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16804,7 +16804,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateMetaCommand<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref Guid CommandId, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16813,7 +16813,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16822,7 +16822,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16831,7 +16831,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ComPtr<TI0> pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16840,7 +16840,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16849,7 +16849,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI1> AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static ComPtr<TI1> AddToStateObject<TI0, TI1>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ComPtr<TI0> pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<ID3D12StateObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16858,7 +16858,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> AddToStateObject<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16867,7 +16867,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProtectedResourceSessionDesc1* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16876,7 +16876,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateProtectedResourceSession1<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ProtectedResourceSessionDesc1 pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

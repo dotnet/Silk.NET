@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.ALMALENCE
         public const string ExtensionName = "XR_ALMALENCE_digital_lens_control";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetDigitalLensControlALMALENCE", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SetDigitalLensControlAlmalence([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DigitalLensControlALMALENCE* digitalLensControl);
+        public unsafe partial Result SetDigitalLensControlAlmalence([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DigitalLensControlALMALENCE* digitalLensControl);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetDigitalLensControlALMALENCE", Convention = CallingConvention.Winapi)]
-        public partial Result SetDigitalLensControlAlmalence([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DigitalLensControlALMALENCE digitalLensControl);
+        public partial Result SetDigitalLensControlAlmalence([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DigitalLensControlALMALENCE digitalLensControl);
 
         public AlmalenceDigitalLensControl(INativeContext ctx)
             : base(ctx)

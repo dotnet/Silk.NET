@@ -21,28 +21,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
     {
         public const string ExtensionName = "SUN_global_alpha";
         [NativeApi(EntryPoint = "glGlobalAlphaFactorbSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] sbyte factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactoriSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] int factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] int factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactorfSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] float factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] float factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactordSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] double factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] double factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactorubSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] byte factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactorusSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] ushort factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactoruiSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] uint factor);
+        public partial void ObalAlphaFactor([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint factor);
 
         [NativeApi(EntryPoint = "glGlobalAlphaFactorsSUN", Convention = CallingConvention.Winapi)]
-        public partial void ObalAlphaFactors([Flow(FlowDirection.In)] short factor);
+        public partial void ObalAlphaFactors([Flow(Silk.NET.Core.Native.FlowDirection.In)] short factor);
 
         public SunGlobalAlpha(INativeContext ctx)
             : base(ctx)

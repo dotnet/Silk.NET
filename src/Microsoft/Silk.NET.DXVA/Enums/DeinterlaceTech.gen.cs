@@ -13,18 +13,16 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA_DeinterlaceTech")]
     public enum DeinterlaceTech : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_Unknown")]
         DeinterlaceTechUnknown = 0x0,
-        [Obsolete("Deprecated in favour of \"BoblineReplicate\"")]
+        [Obsolete("Deprecated in favour of \"BobLineReplicate\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBLineReplicate")]
         DeinterlaceTechBoblineReplicate = 0x1,
-        [Obsolete("Deprecated in favour of \"BobverticalStretch\"")]
+        [Obsolete("Deprecated in favour of \"BobVerticalStretch\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBVerticalStretch")]
         DeinterlaceTechBobverticalStretch = 0x2,
-        [Obsolete("Deprecated in favour of \"BobverticalStretch4Tap\"")]
+        [Obsolete("Deprecated in favour of \"BobVerticalStretch4Tap\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBVerticalStretch4Tap")]
         DeinterlaceTechBobverticalStretch4Tap = 0x100,
         [Obsolete("Deprecated in favour of \"MedianFiltering\"")]
@@ -42,12 +40,21 @@ namespace Silk.NET.DXVA
         [Obsolete("Deprecated in favour of \"MotionVectorSteered\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_MotionVectorSteered")]
         DeinterlaceTechMotionVectorSteered = 0x80,
+        [NativeName("Name", "DXVA_DeinterlaceTech_BOBLineReplicate")]
+        BobLineReplicate = 0x1,
+        [NativeName("Name", "DXVA_DeinterlaceTech_BOBVerticalStretch")]
+        BobVerticalStretch = 0x2,
+        [NativeName("Name", "DXVA_DeinterlaceTech_BOBVerticalStretch4Tap")]
+        BobVerticalStretch4Tap = 0x100,
         [NativeName("Name", "DXVA_DeinterlaceTech_Unknown")]
         Unknown = 0x0,
+        [Obsolete("Deprecated in favour of \"BobLineReplicate\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBLineReplicate")]
         BoblineReplicate = 0x1,
+        [Obsolete("Deprecated in favour of \"BobVerticalStretch\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBVerticalStretch")]
         BobverticalStretch = 0x2,
+        [Obsolete("Deprecated in favour of \"BobVerticalStretch4Tap\"")]
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBVerticalStretch4Tap")]
         BobverticalStretch4Tap = 0x100,
         [NativeName("Name", "DXVA_DeinterlaceTech_MedianFiltering")]

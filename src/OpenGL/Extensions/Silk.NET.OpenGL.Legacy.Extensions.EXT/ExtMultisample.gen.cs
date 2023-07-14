@@ -21,16 +21,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_multisample";
         [NativeApi(EntryPoint = "glSampleMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
-
-        [NativeApi(EntryPoint = "glSampleMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+        public partial void SampleMask([Flow(Silk.NET.Core.Native.FlowDirection.In)] float value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool invert);
 
         [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
-        public partial void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
+        public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pattern);
 
         [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
-        public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternEXT pattern);
+        public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplePatternEXT pattern);
 
         public ExtMultisample(INativeContext ctx)
             : base(ctx)

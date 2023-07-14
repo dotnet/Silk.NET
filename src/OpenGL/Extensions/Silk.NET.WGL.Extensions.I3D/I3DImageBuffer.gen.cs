@@ -21,40 +21,40 @@ namespace Silk.NET.WGL.Extensions.I3D
     {
         public const string ExtensionName = "I3D_image_buffer";
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] in uint pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] in nint pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] in nint pAddress, [Flow(FlowDirection.In)] in uint pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] in nint pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] in nint pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] in uint pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] in nint pEvent, [Flow(FlowDirection.In)] in nint pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglAssociateImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] in nint pEvent, [Flow(FlowDirection.In)] in nint pAddress, [Flow(FlowDirection.In)] in uint pSize, [Flow(FlowDirection.In)] uint count);
+        public partial Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglCreateImageBufferI3D", Convention = CallingConvention.Winapi)]
-        public partial nint CreateImageBufferI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint dwSize, [Flow(FlowDirection.In)] uint uFlags);
+        public partial nint CreateImageBufferI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dwSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uFlags);
 
         [NativeApi(EntryPoint = "wglDestroyImageBufferI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 DestroyImageBufferI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint pAddress);
+        public partial Silk.NET.Core.Bool32 DestroyImageBufferI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pAddress);
 
         [NativeApi(EntryPoint = "wglReleaseImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 ReleaseImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] uint count);
+        public unsafe partial Silk.NET.Core.Bool32 ReleaseImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "wglReleaseImageBufferEventsI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 ReleaseImageBufferEventsI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] in nint pAddress, [Flow(FlowDirection.In)] uint count);
+        public partial Silk.NET.Core.Bool32 ReleaseImageBufferEventsI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         public I3DImageBuffer(INativeContext ctx)
             : base(ctx)

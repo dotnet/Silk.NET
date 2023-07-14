@@ -12,19 +12,19 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "AccumOp")]
     public enum AccumOp : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM")]
         Accum = 0x100,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LOAD")]
         Load = 0x101,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_RETURN")]
         Return = 0x102,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_MULT")]
         Mult = 0x103,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ADD")]
         Add = 0x104,
     }

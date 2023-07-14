@@ -17,7 +17,7 @@ namespace Silk.NET.WebGPU
     {
         public static WebGPU GetApi()
         {
-             return new(CreateDefaultContext(new WebGPULibraryNameContainer().GetLibraryName()));
+             return new(CreateDefaultContext(new WebGPULibraryNameContainer().GetLibraryNames()));
         }
 
         [Obsolete("Use TryGetDeviceExtension!")]
@@ -39,8 +39,9 @@ namespace Silk.NET.WebGPU
         {
             return extension switch
             {
-                "wgpu.h" => Context.TryGetProcAddress("wgpuBufferDrop", out _), //FIXME: Waiting on upstream wgpu-native fix to implement wgpuGetProcAddress
-                "dawn-webgpu.h" => Context.TryGetProcAddress("wgpuAdapterRelease", out _), 
+                //NOTE: Make sure to review these function names when we update Dawn/WGPU!
+                "wgpu.h" => Context.TryGetProcAddress("wgpuDevicePoll", out _), //FIXME: Waiting on upstream wgpu-native fix to implement wgpuGetProcAddress
+                "dawn-webgpu.h" => Context.TryGetProcAddress("wgpuDeviceTick", out _),
                 _ => false
             };
         }

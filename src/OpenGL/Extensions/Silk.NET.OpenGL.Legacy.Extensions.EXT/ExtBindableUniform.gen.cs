@@ -21,13 +21,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_bindable_uniform";
         [NativeApi(EntryPoint = "glGetUniformBufferSizeEXT", Convention = CallingConvention.Winapi)]
-        public partial int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial int GetUniformBufferSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glGetUniformOffsetEXT", Convention = CallingConvention.Winapi)]
-        public partial nint GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial nint GetUniformOffset([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glUniformBufferEXT", Convention = CallingConvention.Winapi)]
-        public partial void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
+        public partial void UniformBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
 
         public ExtBindableUniform(INativeContext ctx)
             : base(ctx)

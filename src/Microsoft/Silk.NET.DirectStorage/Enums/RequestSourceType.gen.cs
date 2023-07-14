@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectStorage
 {
-    [Flags]
     [NativeName("Name", "DSTORAGE_REQUEST_SOURCE_TYPE")]
     public enum RequestSourceType : ulong
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"File\"")]
         [NativeName("Name", "DSTORAGE_REQUEST_SOURCE_FILE")]
         RequestSourceFile = 0x0,

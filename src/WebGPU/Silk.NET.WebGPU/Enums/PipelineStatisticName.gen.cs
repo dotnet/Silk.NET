@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUPipelineStatisticName")]
     public enum PipelineStatisticName : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUPipelineStatisticName_VertexShaderInvocations")]
         VertexShaderInvocations = 0x0,
         [NativeName("Name", "WGPUPipelineStatisticName_ClipperInvocations")]

@@ -24,7 +24,7 @@ namespace Silk.NET.WGL.Extensions.ARB
         public partial nint GetCurrentReadDC();
 
         [NativeApi(EntryPoint = "wglMakeContextCurrentARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 MakeContextCurrent([Flow(FlowDirection.In)] nint hDrawDC, [Flow(FlowDirection.In)] nint hReadDC, [Flow(FlowDirection.In)] nint hglrc);
+        public partial Silk.NET.Core.Bool32 MakeContextCurrent([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDrawDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hReadDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hglrc);
 
         public ArbMakeCurrentRead(INativeContext ctx)
             : base(ctx)

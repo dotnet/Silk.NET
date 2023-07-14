@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
+    [Flags]
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.luma.predictor")]
     public enum DeviceSideAvcMotionEstimationLumaPredictor : int
     {

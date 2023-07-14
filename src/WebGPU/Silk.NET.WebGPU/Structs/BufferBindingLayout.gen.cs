@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             BufferBindingType? type = null,
-            bool? hasDynamicOffset = null,
+            Silk.NET.Core.Bool32? hasDynamicOffset = null,
             ulong? minBindingSize = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "hasDynamicOffset")]
-        public bool HasDynamicOffset;
+        public Silk.NET.Core.Bool32 HasDynamicOffset;
 
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]

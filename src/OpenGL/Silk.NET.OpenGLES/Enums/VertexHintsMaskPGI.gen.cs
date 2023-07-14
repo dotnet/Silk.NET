@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
+    [Flags]
     [NativeName("Name", "VertexHintsMaskPGI")]
     public enum VertexHintsMaskPGI : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_VERTEX23_BIT_PGI")]
         Vertex23BitPgi = 0x4,
         [NativeName("Name", "GL_VERTEX4_BIT_PGI")]

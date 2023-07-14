@@ -10,43 +10,36 @@ namespace WebGPUTest;
 
 public static unsafe class Program
 {
+    public static Instance* instance;
     public static Adapter* adapter;
     public static Device* device;
+
     public static void Main(string[] args)
     {
         uint[] numbers = { 1, 2, 3, 4 };
         var numbersSize = (uint) numbers.Length * sizeof(uint);
         var numbersLength = (uint) numbers.Length;
 
-        var wgpu = WebGPU.GetApi();
+        var webGpu = WebGPU.GetApi();
 
-        wgpu.TryGetDeviceExtension(null, out Wgpu wgpuSpecific);
+        if (!webGpu.TryGetDeviceExtension(null, out Wgpu wgpuSpecific))
+        {
+            throw new Exception("This code only runs on wgpu-native! Please PR in support for Dawn if you know how to get it working there!");
+        }
+
+        InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
+        instance = webGpu.CreateInstance(&instanceDescriptor);
 
         var requestAdapterOptions = new RequestAdapterOptions();
-        wgpu.InstanceRequestAdapter(null, &requestAdapterOptions, new PfnRequestAdapterCallback(RequestAdapterCallback), null);
+        webGpu.InstanceRequestAdapter(instance, &requestAdapterOptions, new PfnRequestAdapterCallback(RequestAdapterCallback), null);
 
-        var deviceDescriptor = new DeviceDescriptor
-        {
-            Label = (byte*) SilkMarshal.StringToPtr("Device"), //TODO: free this
-            DefaultQueue = new QueueDescriptor(),
-        };
-        var requiredLimits = stackalloc RequiredLimits[1];
-        requiredLimits[0] = new RequiredLimits
-        {
-            Limits = new Limits
-            {
-                MaxBindGroups = 1
-            }
-        };
-        deviceDescriptor.RequiredLimits = requiredLimits;
+        webGpu.AdapterRequestDevice(adapter, null, new PfnRequestDeviceCallback(RequestDeviceCallback), null);
 
-        wgpu.AdapterRequestDevice(adapter, &deviceDescriptor, new PfnRequestDeviceCallback(RequestDeviceCallback), null);
-
-        SetErrorCallback(wgpu);
+        SetErrorCallback(webGpu);
 
         // ReSharper disable once InconsistentNaming
         var shaderModuleWGSLDescriptor = new ShaderModuleWGSLDescriptor();
-        shaderModuleWGSLDescriptor.Chain.SType = SType.ShaderModuleWgsldescriptor;
+        shaderModuleWGSLDescriptor.Chain.SType = SType.ShaderModuleWgslDescriptor;
         shaderModuleWGSLDescriptor.Chain.Next = null;
         shaderModuleWGSLDescriptor.Code = (byte*) SilkMarshal.StringToPtr
         (
@@ -96,7 +89,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             Label = (byte*) SilkMarshal.StringToPtr("Test Compute Shader") //TODO: free this
         };
 
-        var shader = wgpu.DeviceCreateShaderModule(device, shaderModuleDescriptor);
+        var shader = webGpu.DeviceCreateShaderModule(device, shaderModuleDescriptor);
 
         var stagingBufferDescription = new BufferDescriptor
         {
@@ -105,7 +98,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             Size             = numbersSize,
             MappedAtCreation = false
         };
-        var stagingBuffer = wgpu.DeviceCreateBuffer(device, stagingBufferDescription);
+        var stagingBuffer = webGpu.DeviceCreateBuffer(device, stagingBufferDescription);
 
         var storageBufferDescription = new BufferDescriptor
         {
@@ -114,7 +107,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             Size             = numbersSize,
             MappedAtCreation = false
         };
-        var storageBuffer = wgpu.DeviceCreateBuffer(device, storageBufferDescription);
+        var storageBuffer = webGpu.DeviceCreateBuffer(device, storageBufferDescription);
 
         var computePipelineDescriptor = new ComputePipelineDescriptor
         {
@@ -126,9 +119,9 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
                 EntryPoint = (byte*) SilkMarshal.StringToPtr("main") //TODO: free this
             }
         };
-        var computePipeline = wgpu.DeviceCreateComputePipeline(device, computePipelineDescriptor);
+        var computePipeline = webGpu.DeviceCreateComputePipeline(device, computePipelineDescriptor);
 
-        var bindGroupLayout = wgpu.ComputePipelineGetBindGroupLayout(computePipeline, 0);
+        var bindGroupLayout = webGpu.ComputePipelineGetBindGroupLayout(computePipeline, 0);
 
         var bindGroupDescriptor = new BindGroupDescriptor
         {
@@ -145,54 +138,57 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         bindGroupDescriptor.Entries = entries;
         bindGroupDescriptor.EntryCount = 1;
 
-        var bindGroup = wgpu.DeviceCreateBindGroup(device, bindGroupDescriptor);
+        var bindGroup = webGpu.DeviceCreateBindGroup(device, bindGroupDescriptor);
 
         var commandEncoderDescriptor = new CommandEncoderDescriptor
         {
             Label = (byte*) SilkMarshal.StringToPtr("Command Encoder") //TODO: free this 
         };
-        var encoder = wgpu.DeviceCreateCommandEncoder(device, commandEncoderDescriptor);
+        var encoder = webGpu.DeviceCreateCommandEncoder(device, commandEncoderDescriptor);
 
         var computePassDescriptor = new ComputePassDescriptor
         {
             Label = (byte*) SilkMarshal.StringToPtr("Compute Pass") //TODO: free this  
         };
-        var computePass = wgpu.CommandEncoderBeginComputePass(encoder, computePassDescriptor);
+        var computePass = webGpu.CommandEncoderBeginComputePass(encoder, computePassDescriptor);
 
-        wgpu.ComputePassEncoderSetPipeline(computePass, computePipeline);
-        wgpu.ComputePassEncoderSetBindGroup(computePass, 0, bindGroup, 0, null);
-        wgpu.ComputePassEncoderDispatchWorkgroups(computePass, numbersLength, 1, 1);
-        wgpu.ComputePassEncoderEnd(computePass);
-        wgpu.CommandEncoderCopyBufferToBuffer
+        webGpu.ComputePassEncoderSetPipeline(computePass, computePipeline);
+        webGpu.ComputePassEncoderSetBindGroup(computePass, 0, bindGroup, 0, null);
+        webGpu.ComputePassEncoderDispatchWorkgroups(computePass, numbersLength, 1, 1);
+        webGpu.ComputePassEncoderEnd(computePass);
+        webGpu.CommandEncoderCopyBufferToBuffer
         (
             encoder, storageBuffer, 0, stagingBuffer,
             0, numbersSize
         );
 
-        var queue = wgpu.DeviceGetQueue(device);
+        var queue = webGpu.DeviceGetQueue(device);
         var commandBufferDescriptor = new CommandBufferDescriptor
         {
             Label = (byte*) SilkMarshal.StringToPtr("Command Buffer") //TODO: free this  
         };
-        var cmdBuffer = wgpu.CommandEncoderFinish(encoder, commandBufferDescriptor);
+        var cmdBuffer = webGpu.CommandEncoderFinish(encoder, commandBufferDescriptor);
 
         fixed (uint* numberPtr = numbers)
-            wgpu.QueueWriteBuffer(queue, storageBuffer, 0, numberPtr, numbersSize);
+            webGpu.QueueWriteBuffer(queue, storageBuffer, 0, numberPtr, numbersSize);
 
-        wgpu.QueueSubmit(queue, 1, &cmdBuffer);
+        webGpu.QueueSubmit(queue, 1, &cmdBuffer);
 
-        wgpu.BufferMapAsync(stagingBuffer, MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
+        webGpu.BufferMapAsync(stagingBuffer, MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
                                 (arg0, data) =>
                                 {
-                                    Console.WriteLine($"status: {arg0}");
+                                    if(arg0 != BufferMapAsyncStatus.Success)
+                                    {
+                                        throw new Exception($"Unable to map buffer! status: {arg0}");
+                                    }
 
-                                    var times = (uint*) wgpu.BufferGetMappedRange(stagingBuffer, 0, numbersSize); ;
+                                    var times = (uint*) webGpu.BufferGetMappedRange(stagingBuffer, 0, numbersSize); ;
 
                                     Console.WriteLine($"Times: [{times[0]}, {times[1]}, {times[2]}, {times[3]}]");
                                 }), null);
 
         wgpuSpecific.DevicePoll(device, true, null);
-        wgpu.BufferUnmap(stagingBuffer);
+        webGpu.BufferUnmap(stagingBuffer);
     }
 
     private static void ReadBufferMap(BufferMapAsyncStatus arg0, void* arg1)
@@ -202,11 +198,20 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
     private static void RequestDeviceCallback(RequestDeviceStatus arg0, Device* received, byte* arg2, void* arg3)
     {
+        if(arg0 != RequestDeviceStatus.Success)
+        {
+            throw new Exception($"Unable to get WebGPU Device! status: {arg0} message: {SilkMarshal.PtrToString((nint)arg2)}");
+        }
         device = received;
     }
 
     private static unsafe void RequestAdapterCallback(RequestAdapterStatus arg0, Adapter* received, byte* arg2, void* userdata)
     {
+        if(arg0 != RequestAdapterStatus.Success)
+        {
+            throw new Exception($"Unable to get WebGPU Adapter! status: {arg0} message: {SilkMarshal.PtrToString((nint)arg2)}");
+        }
+
         adapter = received;
     }
 

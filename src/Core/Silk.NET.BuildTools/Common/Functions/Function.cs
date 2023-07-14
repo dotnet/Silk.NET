@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -260,7 +261,14 @@ namespace Silk.NET.BuildTools.Common.Functions
                     else if (parameter.Count.IsReference)
                     {
                         // ReSharper disable once PossibleNullReferenceException
-                        attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
+                        if (parameter.Count.Expression is not null)
+                        {
+                            attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\", Expression = \"{parameter.Count.Expression}\")");
+                        }
+                        else
+                        {
+                            attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
+                        }
                     }
                 }
 
@@ -268,10 +276,10 @@ namespace Silk.NET.BuildTools.Common.Functions
                 switch (parameter.Flow)
                 {
                     case FlowDirection.In:
-                        attributes.Add("Flow(FlowDirection.In)");
+                        attributes.Add("Flow(Silk.NET.Core.Native.FlowDirection.In)");
                         break;
                     case FlowDirection.Out:
-                        attributes.Add("Flow(FlowDirection.Out)");
+                        attributes.Add("Flow(Silk.NET.Core.Native.FlowDirection.Out)");
                         break;
                 }
 

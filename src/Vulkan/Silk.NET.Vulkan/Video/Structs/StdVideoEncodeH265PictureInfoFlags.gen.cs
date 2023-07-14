@@ -21,16 +21,21 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH265PictureInfoFlags
         (
-            uint? isReferenceFlag = null,
+            uint? isReference = null,
             uint? irapPicFlag = null,
-            uint? longTermFlag = null,
+            uint? usedForLongTermReference = null,
             uint? discardableFlag = null,
-            uint? crossLayerBlaFlag = null
+            uint? crossLayerBlaFlag = null,
+            uint? picOutputFlag = null,
+            uint? noOutputOfPriorPicsFlag = null,
+            uint? shortTermRefPicSetSpsFlag = null,
+            uint? sliceTemporalMvpEnabledFlag = null,
+            uint? reserved = null
         ) : this()
         {
-            if (isReferenceFlag is not null)
+            if (isReference is not null)
             {
-                IsReferenceFlag = isReferenceFlag.Value;
+                IsReference = isReference.Value;
             }
 
             if (irapPicFlag is not null)
@@ -38,9 +43,9 @@ namespace Silk.NET.Vulkan.Video
                 IrapPicFlag = irapPicFlag.Value;
             }
 
-            if (longTermFlag is not null)
+            if (usedForLongTermReference is not null)
             {
-                LongTermFlag = longTermFlag.Value;
+                UsedForLongTermReference = usedForLongTermReference.Value;
             }
 
             if (discardableFlag is not null)
@@ -52,12 +57,37 @@ namespace Silk.NET.Vulkan.Video
             {
                 CrossLayerBlaFlag = crossLayerBlaFlag.Value;
             }
+
+            if (picOutputFlag is not null)
+            {
+                PicOutputFlag = picOutputFlag.Value;
+            }
+
+            if (noOutputOfPriorPicsFlag is not null)
+            {
+                NoOutputOfPriorPicsFlag = noOutputOfPriorPicsFlag.Value;
+            }
+
+            if (shortTermRefPicSetSpsFlag is not null)
+            {
+                ShortTermRefPicSetSpsFlag = shortTermRefPicSetSpsFlag.Value;
+            }
+
+            if (sliceTemporalMvpEnabledFlag is not null)
+            {
+                SliceTemporalMvpEnabledFlag = sliceTemporalMvpEnabledFlag.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
+            }
         }
 
 
         private uint _bitfield1;
 
-        public uint IsReferenceFlag
+        public uint IsReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -73,7 +103,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        public uint LongTermFlag
+        public uint UsedForLongTermReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);
@@ -95,6 +125,46 @@ namespace Silk.NET.Vulkan.Video
             get => (uint)((_bitfield1 >> 4) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        }
+
+        public uint PicOutputFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 5) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+        }
+
+        public uint NoOutputOfPriorPicsFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 6) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+        }
+
+        public uint ShortTermRefPicSetSpsFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 7) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+        }
+
+        public uint SliceTemporalMvpEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 8) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
+        }
+
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 9) & 0x7FFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x7FFFFFu << 9)) | (uint)(((uint)(value) & 0x7FFFFFu) << 9));
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
     {
         public const string ExtensionName = "KHR_parallel_shader_compile";
         [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsKHR", Convention = CallingConvention.Winapi)]
-        public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+        public partial void MaxShaderCompilerThreads([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         public KhrParallelShaderCompile(INativeContext ctx)
             : base(ctx)

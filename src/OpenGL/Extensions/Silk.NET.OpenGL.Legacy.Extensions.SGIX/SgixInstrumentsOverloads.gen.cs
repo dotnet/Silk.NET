@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     public static class SgixInstrumentsOverloads
     {
-        public static unsafe void InstrumentsBuffer(this SgixInstruments thisApi, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer)
+        public static unsafe void InstrumentsBuffer(this SgixInstruments thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> buffer)
         {
             // SpanOverloader
             thisApi.InstrumentsBuffer(size, out buffer.GetPinnableReference());
         }
 
-        public static unsafe int PollInstruments(this SgixInstruments thisApi, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> marker_p)
+        public static unsafe int PollInstruments(this SgixInstruments thisApi, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> marker_p)
         {
             // SpanOverloader
             return thisApi.PollInstruments(out marker_p.GetPinnableReference());

@@ -85,7 +85,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] char* Name)
+    public static unsafe int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] in char Name)
+    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,14 +126,14 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] char* Name)
+    public static unsafe void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, Name);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] in char Name)
+    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         fixed (char* NamePtr = &Name)
@@ -143,7 +143,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
@@ -186,7 +186,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
+    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -194,7 +194,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
+    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

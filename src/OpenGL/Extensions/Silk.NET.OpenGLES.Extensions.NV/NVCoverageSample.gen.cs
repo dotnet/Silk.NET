@@ -21,13 +21,10 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_coverage_sample";
         [NativeApi(EntryPoint = "glCoverageMaskNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageMask([Flow(FlowDirection.In)] bool mask);
-
-        [NativeApi(EntryPoint = "glCoverageMaskNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageMask([Flow(FlowDirection.In)] Boolean mask);
+        public partial void CoverageMask([Flow(Silk.NET.Core.Native.FlowDirection.In)] bool mask);
 
         [NativeApi(EntryPoint = "glCoverageOperationNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageOperation([Flow(FlowDirection.In)] NV operation);
+        public partial void CoverageOperation([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV operation);
 
         public NVCoverageSample(INativeContext ctx)
             : base(ctx)

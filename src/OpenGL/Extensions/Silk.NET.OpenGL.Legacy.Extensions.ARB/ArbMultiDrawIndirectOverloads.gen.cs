@@ -16,37 +16,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbMultiDrawIndirectOverloads
     {
-        public static unsafe void MultiDrawArraysIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(FlowDirection.In)] ARB mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawArraysIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawArraysIndirect(mode, in indirect.GetPinnableReference(), drawcount, stride);
         }
 
-        public static unsafe void MultiDrawArraysIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawArraysIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawArraysIndirect(mode, in indirect.GetPinnableReference(), drawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirect(mode, type, in indirect.GetPinnableReference(), drawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirect(mode, type, in indirect.GetPinnableReference(), drawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirect(mode, type, in indirect.GetPinnableReference(), drawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirect<T0>(this ArbMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirect(mode, type, in indirect.GetPinnableReference(), drawcount, stride);

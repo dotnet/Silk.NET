@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_blendmode_L65_C9")]
     [NativeName("Name", "SDL_BlendOperation")]
     public enum BlendOperation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Add\"")]
         [NativeName("Name", "SDL_BLENDOPERATION_ADD")]
         BlendoperationAdd = 0x1,

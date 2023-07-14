@@ -17,17 +17,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264RateControlInfoEXT")]
-    public unsafe partial struct VideoEncodeH264RateControlInfoEXT : IExtendsChain<VideoCodingControlInfoKHR>
+    public unsafe partial struct VideoEncodeH264RateControlInfoEXT : IExtendsChain<VideoCodingControlInfoKHR>, IExtendsChain<VideoBeginCodingInfoKHR>
     {
         public VideoEncodeH264RateControlInfoEXT
         (
             StructureType? sType = StructureType.VideoEncodeH264RateControlInfoExt,
             void* pNext = null,
+            VideoEncodeH264RateControlFlagsEXT? flags = null,
             uint? gopFrameCount = null,
             uint? idrPeriod = null,
             uint? consecutiveBFrameCount = null,
-            VideoEncodeH264RateControlStructureEXT? rateControlStructure = null,
-            byte? temporalLayerCount = null
+            uint? temporalLayerCount = null
         ) : this()
         {
             if (sType is not null)
@@ -38,6 +38,11 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
             }
 
             if (gopFrameCount is not null)
@@ -53,11 +58,6 @@ namespace Silk.NET.Vulkan
             if (consecutiveBFrameCount is not null)
             {
                 ConsecutiveBFrameCount = consecutiveBFrameCount.Value;
-            }
-
-            if (rateControlStructure is not null)
-            {
-                RateControlStructure = rateControlStructure.Value;
             }
 
             if (temporalLayerCount is not null)
@@ -77,6 +77,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkVideoEncodeH264RateControlFlagsEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH264RateControlFlagsEXT")]
+        [NativeName("Name", "flags")]
+        public VideoEncodeH264RateControlFlagsEXT Flags;
+/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "gopFrameCount")]
@@ -92,15 +97,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "consecutiveBFrameCount")]
         public uint ConsecutiveBFrameCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264RateControlStructureEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264RateControlStructureEXT")]
-        [NativeName("Name", "rateControlStructure")]
-        public VideoEncodeH264RateControlStructureEXT RateControlStructure;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "temporalLayerCount")]
-        public byte TemporalLayerCount;
+        public uint TemporalLayerCount;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

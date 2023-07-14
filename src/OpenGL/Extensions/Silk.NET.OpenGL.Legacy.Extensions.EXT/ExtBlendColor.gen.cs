@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_blend_color";
         [NativeApi(EntryPoint = "glBlendColorEXT", Convention = CallingConvention.Winapi)]
-        public partial void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
+        public partial void BlendColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] float red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float blue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float alpha);
 
         public ExtBlendColor(INativeContext ctx)
             : base(ctx)

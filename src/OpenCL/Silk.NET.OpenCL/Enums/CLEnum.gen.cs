@@ -1450,6 +1450,14 @@ namespace Silk.NET.OpenCL
         MutableDispatchCapabilitiesKhr = 0x12B0,
         [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
         DeviceMutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        CommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        CommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -2272,6 +2280,8 @@ namespace Silk.NET.OpenCL
         PlatformSemaphoreExportHandleTypesKhr = 0x2038,
         [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
+        [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
+        PlatformCommandBufferCapabilitiesKhr = 0x908,
         [NativeName("Name", "CL_PROFILING_COMMAND_SUBMIT")]
         Submit = 0x1281,
         [NativeName("Name", "CL_PROFILING_COMMAND_START")]
@@ -2446,10 +2456,22 @@ namespace Silk.NET.OpenCL
         MipmapLevel = 0x2005,
         [NativeName("Name", "CL_GL_MIPMAP_LEVEL")]
         GLMipmapLevel = 0x2005,
+        [NativeName("Name", "CL_ICDL_OCL_VERSION")]
+        OclVersion = 0x1,
+        [NativeName("Name", "CL_ICDL_OCL_VERSION")]
+        IcdlOclVersion = 0x1,
+        [NativeName("Name", "CL_ICDL_VERSION")]
+        IcdlVersion = 0x2,
+        [NativeName("Name", "CL_ICDL_NAME")]
+        IcdlName = 0x3,
+        [NativeName("Name", "CL_ICDL_VENDOR")]
+        IcdlVendor = 0x4,
         [NativeName("Name", "CL_LAYER_API_VERSION")]
         ApiVersion = 0x4240,
         [NativeName("Name", "CL_LAYER_API_VERSION")]
         LayerApiVersion = 0x4240,
+        [NativeName("Name", "CL_LAYER_NAME")]
+        LayerName = 0x4241,
         [NativeName("Name", "CL_DEPTH_STENCIL")]
         DepthStencil = 0x10BE,
         [NativeName("Name", "CL_UNORM_INT24")]

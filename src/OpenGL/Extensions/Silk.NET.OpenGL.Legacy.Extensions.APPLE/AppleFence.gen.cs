@@ -21,48 +21,48 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_fence";
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
+        public unsafe partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* fences);
 
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
+        public partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint fences);
 
         [NativeApi(EntryPoint = "glFinishFenceAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
+        public partial void FinishFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
         [NativeApi(EntryPoint = "glFinishObjectAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
+        public partial void FinishObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE @object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "glFinishObjectAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
+        public partial void FinishObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "glGenFencesAPPLE", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
+        public unsafe partial void GenFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* fences);
 
         [NativeApi(EntryPoint = "glGenFencesAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
+        public partial void GenFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint fences);
 
         [NativeApi(EntryPoint = "glIsFenceAPPLE", Convention = CallingConvention.Winapi)]
-        public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
+        public partial bool IsFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
         [NativeApi(EntryPoint = "glSetFenceAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void SetFence([Flow(FlowDirection.In)] uint fence);
+        public partial void SetFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
         [NativeApi(EntryPoint = "glTestFenceAPPLE", Convention = CallingConvention.Winapi)]
-        public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
+        public partial bool TestFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);
 
         [NativeApi(EntryPoint = "glTestObjectAPPLE", Convention = CallingConvention.Winapi)]
-        public partial bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name);
+        public partial bool TestObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE @object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name);
 
         [NativeApi(EntryPoint = "glTestObjectAPPLE", Convention = CallingConvention.Winapi)]
-        public partial bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name);
+        public partial bool TestObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name);
 
-        public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
+        public unsafe void DeleteFence([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fences)
         {
             // ArrayParameterOverloader
             DeleteFences(1, &fences);
         }
 
-        public unsafe void DeleteFences([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
+        public unsafe void DeleteFences([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> fences)
         {
             // ImplicitCountSpanOverloader
             DeleteFences((uint) fences.Length, in fences.GetPinnableReference());
@@ -77,13 +77,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             return ret;
         }
 
-        public unsafe void GenFences([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+        public unsafe void GenFences([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> fences)
         {
             // ImplicitCountSpanOverloader
             GenFences((uint) fences.Length, out fences.GetPinnableReference());
         }
 
-        public unsafe uint GenFences([Flow(FlowDirection.In)] uint n)
+        public unsafe uint GenFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
             GenFences(n, out uint silkRet);

@@ -21,16 +21,16 @@ namespace Silk.NET.WGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_buffer_region";
         [NativeApi(EntryPoint = "wglCreateBufferRegionARB", Convention = CallingConvention.Winapi)]
-        public partial nint CreateBufferRegion([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iLayerPlane, [Flow(FlowDirection.In)] uint uType);
+        public partial nint CreateBufferRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iLayerPlane, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uType);
 
         [NativeApi(EntryPoint = "wglDeleteBufferRegionARB", Convention = CallingConvention.Winapi)]
-        public partial void DeleteBufferRegion([Flow(FlowDirection.In)] nint hRegion);
+        public partial void DeleteBufferRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hRegion);
 
         [NativeApi(EntryPoint = "wglRestoreBufferRegionARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 RestoreBufferRegion([Flow(FlowDirection.In)] nint hRegion, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int width, [Flow(FlowDirection.In)] int height, [Flow(FlowDirection.In)] int xSrc, [Flow(FlowDirection.In)] int ySrc);
+        public partial Silk.NET.Core.Bool32 RestoreBufferRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hRegion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ySrc);
 
         [NativeApi(EntryPoint = "wglSaveBufferRegionARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SaveBufferRegion([Flow(FlowDirection.In)] nint hRegion, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int width, [Flow(FlowDirection.In)] int height);
+        public partial Silk.NET.Core.Bool32 SaveBufferRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hRegion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int height);
 
         public ArbBufferRegion(INativeContext ctx)
             : base(ctx)

@@ -9,7 +9,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <PackageId>Ultz.Native.Assimp</PackageId> <!-- TODO change this in 3.0 -->
-    <PackageVersion>5.2.5</PackageVersion>
+    <PackageVersion>5.2.5.1</PackageVersion>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
@@ -22,7 +22,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
     <Content Include="runtimes\linux-x64\native\libassimp.so.5" PackagePath="runtimes\linux-x64\native\libassimp.so.5" />
     <Content Include="runtimes\osx-x64\native\libassimp.5.dylib" PackagePath="runtimes\osx-x64\native\libassimp.5.dylib" />
     <Content Include="runtimes\win-x64\native\Assimp64.dll" PackagePath="runtimes\win-x64\native\Assimp64.dll" />

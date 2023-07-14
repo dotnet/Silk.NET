@@ -23,9 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264NaluSliceInfoExt,
             void* pNext = null,
-            uint? mbCount = null,
-            VideoEncodeH264ReferenceListsInfoEXT* pReferenceFinalLists = null,
-            Video.StdVideoEncodeH264SliceHeader* pSliceHeaderStd = null
+            int? constantQp = null,
+            Video.StdVideoEncodeH264SliceHeader* pStdSliceHeader = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +37,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (mbCount is not null)
+            if (constantQp is not null)
             {
-                MbCount = mbCount.Value;
+                ConstantQp = constantQp.Value;
             }
 
-            if (pReferenceFinalLists is not null)
+            if (pStdSliceHeader is not null)
             {
-                PReferenceFinalLists = pReferenceFinalLists;
-            }
-
-            if (pSliceHeaderStd is not null)
-            {
-                PSliceHeaderStd = pSliceHeaderStd;
+                PStdSliceHeader = pStdSliceHeader;
             }
         }
 
@@ -65,20 +59,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "mbCount")]
-        public uint MbCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264ReferenceListsInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264ReferenceListsInfoEXT")]
-        [NativeName("Name", "pReferenceFinalLists")]
-        public VideoEncodeH264ReferenceListsInfoEXT* PReferenceFinalLists;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "constantQp")]
+        public int ConstantQp;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH264SliceHeader*")]
         [NativeName("Type.Name", "StdVideoEncodeH264SliceHeader")]
-        [NativeName("Name", "pSliceHeaderStd")]
-        public Video.StdVideoEncodeH264SliceHeader* PSliceHeaderStd;
+        [NativeName("Name", "pStdSliceHeader")]
+        public Video.StdVideoEncodeH264SliceHeader* PStdSliceHeader;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

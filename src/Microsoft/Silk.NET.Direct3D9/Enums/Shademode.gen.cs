@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DSHADEMODE")]
     public enum Shademode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Flat\"")]
         [NativeName("Name", "D3DSHADE_FLAT")]
         ShadeFlat = 0x1,

@@ -21,22 +21,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_point_parameters";
         [NativeApi(EntryPoint = "glPointParameterfARB", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] float param);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPointParameterfARB", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PointParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         public ArbPointParameters(INativeContext ctx)
             : base(ctx)

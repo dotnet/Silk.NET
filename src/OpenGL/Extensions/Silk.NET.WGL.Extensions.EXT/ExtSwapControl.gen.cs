@@ -24,7 +24,7 @@ namespace Silk.NET.WGL.Extensions.EXT
         public partial int GetSwapInterval();
 
         [NativeApi(EntryPoint = "wglSwapIntervalEXT", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SwapInterval([Flow(FlowDirection.In)] int interval);
+        public partial Silk.NET.Core.Bool32 SwapInterval([Flow(Silk.NET.Core.Native.FlowDirection.In)] int interval);
 
         public ExtSwapControl(INativeContext ctx)
             : base(ctx)

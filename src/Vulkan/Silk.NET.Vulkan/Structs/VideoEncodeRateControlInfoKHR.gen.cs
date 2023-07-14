@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeRateControlInfoKHR")]
-    public unsafe partial struct VideoEncodeRateControlInfoKHR : IExtendsChain<VideoCodingControlInfoKHR>
+    public unsafe partial struct VideoEncodeRateControlInfoKHR : IExtendsChain<VideoCodingControlInfoKHR>, IExtendsChain<VideoBeginCodingInfoKHR>
     {
         public VideoEncodeRateControlInfoKHR
         (
@@ -25,8 +25,10 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? flags = null,
             VideoEncodeRateControlModeFlagsKHR? rateControlMode = null,
-            byte? layerCount = null,
-            VideoEncodeRateControlLayerInfoKHR* pLayerConfigs = null
+            uint? layerCount = null,
+            VideoEncodeRateControlLayerInfoKHR* pLayers = null,
+            uint? virtualBufferSizeInMs = null,
+            uint? initialVirtualBufferSizeInMs = null
         ) : this()
         {
             if (sType is not null)
@@ -54,9 +56,19 @@ namespace Silk.NET.Vulkan
                 LayerCount = layerCount.Value;
             }
 
-            if (pLayerConfigs is not null)
+            if (pLayers is not null)
             {
-                PLayerConfigs = pLayerConfigs;
+                PLayers = pLayers;
+            }
+
+            if (virtualBufferSizeInMs is not null)
+            {
+                VirtualBufferSizeInMs = virtualBufferSizeInMs.Value;
+            }
+
+            if (initialVirtualBufferSizeInMs is not null)
+            {
+                InitialVirtualBufferSizeInMs = initialVirtualBufferSizeInMs.Value;
             }
         }
 
@@ -81,15 +93,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "rateControlMode")]
         public VideoEncodeRateControlModeFlagsKHR RateControlMode;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "layerCount")]
-        public byte LayerCount;
+        public uint LayerCount;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeRateControlLayerInfoKHR*")]
         [NativeName("Type.Name", "VkVideoEncodeRateControlLayerInfoKHR")]
-        [NativeName("Name", "pLayerConfigs")]
-        public VideoEncodeRateControlLayerInfoKHR* PLayerConfigs;
+        [NativeName("Name", "pLayers")]
+        public VideoEncodeRateControlLayerInfoKHR* PLayers;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "virtualBufferSizeInMs")]
+        public uint VirtualBufferSizeInMs;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "initialVirtualBufferSizeInMs")]
+        public uint InitialVirtualBufferSizeInMs;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

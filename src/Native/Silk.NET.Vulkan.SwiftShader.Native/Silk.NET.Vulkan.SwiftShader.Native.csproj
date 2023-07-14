@@ -17,7 +17,7 @@
     <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
     <Content Include="runtimes\linux-x64\native\libvk_swiftshader.so" PackagePath="runtimes\linux-x64\native\libvk_swiftshader.so" />
     <Content Include="runtimes\osx-x64\native\libvk_swiftshader.dylib" PackagePath="runtimes\osx-x64\native\libvk_swiftshader.dylib" />
     <Content Include="runtimes\win-x64\native\vk_swiftshader.dll" PackagePath="runtimes\win-x64\native\vk_swiftshader.dll" />

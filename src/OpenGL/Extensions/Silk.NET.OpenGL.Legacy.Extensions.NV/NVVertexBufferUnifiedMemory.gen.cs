@@ -21,63 +21,60 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_vertex_buffer_unified_memory";
         [NativeApi(EntryPoint = "glBufferAddressRangeNV", Convention = CallingConvention.Winapi)]
-        public partial void BufferAddressRange([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong address, [Flow(FlowDirection.In)] nuint length);
+        public partial void BufferAddressRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong address, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length);
 
         [NativeApi(EntryPoint = "glColorFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void ColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void ColorFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glColorFormatNV", Convention = CallingConvention.Winapi)]
+        public partial void ColorFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glEdgeFlagFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void EdgeFlagFormat([Flow(FlowDirection.In)] uint stride);
+        public partial void EdgeFlagFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glFogCoordFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void FogCoordFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void FogCoordFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glGetIntegerui64i_vNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result);
+        public unsafe partial void GetIntegerui64([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* result);
 
         [NativeApi(EntryPoint = "glGetIntegerui64i_vNV", Convention = CallingConvention.Winapi)]
-        public partial void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] out ulong result);
+        public partial void GetIntegerui64([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong result);
 
         [NativeApi(EntryPoint = "glIndexFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void IndexFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void IndexFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glNormalFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void NormalFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void NormalFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glSecondaryColorFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void SecondaryColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void SecondaryColorFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glSecondaryColorFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void SecondaryColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride);
+        public partial void SecondaryColorFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glTexCoordFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void TexCoordFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void TexCoordFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexAttribFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride);
+        public partial void VertexAttribFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool normalized, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexAttribFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride);
-
-        [NativeApi(EntryPoint = "glVertexAttribFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride);
-
-        [NativeApi(EntryPoint = "glVertexAttribFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride);
+        public partial void VertexAttribFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool normalized, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexAttribIFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void VertexAttribIFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexAttribIFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride);
+        public partial void VertexAttribIFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribIType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        public partial void VertexFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexFormatNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride);
+        public partial void VertexFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
-        public unsafe ulong GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index)
+        public unsafe ulong GetIntegerui64([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index)
         {
             // NonKhrReturnTypeOverloader
             GetIntegerui64(value, index, out ulong silkRet);

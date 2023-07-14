@@ -21,66 +21,60 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_bindless_texture";
         [NativeApi(EntryPoint = "glGetImageHandleNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format);
+        public partial ulong GetImageHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool layered, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int layer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV format);
 
         [NativeApi(EntryPoint = "glGetImageHandleNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
-
-        [NativeApi(EntryPoint = "glGetImageHandleNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format);
-
-        [NativeApi(EntryPoint = "glGetImageHandleNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+        public partial ulong GetImageHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool layered, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int layer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format);
 
         [NativeApi(EntryPoint = "glGetTextureHandleNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
+        public partial ulong GetTextureHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture);
 
         [NativeApi(EntryPoint = "glGetTextureSamplerHandleNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
+        public partial ulong GetTextureSamplerHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint sampler);
 
         [NativeApi(EntryPoint = "glIsImageHandleResidentNV", Convention = CallingConvention.Winapi)]
-        public partial bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial bool IsImageHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glIsTextureHandleResidentNV", Convention = CallingConvention.Winapi)]
-        public partial bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial bool IsTextureHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeImageHandleNonResidentNV", Convention = CallingConvention.Winapi)]
-        public partial void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeImageHandleNonResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeImageHandleResidentNV", Convention = CallingConvention.Winapi)]
-        public partial void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] NV access);
+        public partial void MakeImageHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV access);
 
         [NativeApi(EntryPoint = "glMakeTextureHandleNonResidentNV", Convention = CallingConvention.Winapi)]
-        public partial void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeTextureHandleNonResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeTextureHandleResidentNV", Convention = CallingConvention.Winapi)]
-        public partial void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeTextureHandleResident([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64NV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        public partial void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
+        public unsafe partial void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* values);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong values);
+        public partial void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong values);
 
         [NativeApi(EntryPoint = "glUniformHandleui64NV", Convention = CallingConvention.Winapi)]
-        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        public partial void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glUniformHandleui64vNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+        public unsafe partial void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* value);
 
         [NativeApi(EntryPoint = "glUniformHandleui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
+        public partial void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong value);
 
-        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        public unsafe void ProgramUniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> values)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
         }
 
-        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        public unsafe void UniformHandle([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> value)
         {
             // ImplicitCountSpanOverloader
             UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());

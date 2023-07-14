@@ -16,13 +16,13 @@ namespace Silk.NET.WGL.Extensions.ARB
 {
     public static class ArbPbufferOverloads
     {
-        public static unsafe nint CreatePbuffer(this ArbPbuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iPixelFormat, [Flow(FlowDirection.In)] int iWidth, [Flow(FlowDirection.In)] int iHeight, [Flow(FlowDirection.In)] ReadOnlySpan<int> piAttribList)
+        public static unsafe nint CreatePbuffer(this ArbPbuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iHeight, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> piAttribList)
         {
             // SpanOverloader
             return thisApi.CreatePbuffer(hDC, iPixelFormat, iWidth, iHeight, in piAttribList.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryPbuffer(this ArbPbuffer thisApi, [Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] Span<int> piValue)
+        public static unsafe Silk.NET.Core.Bool32 QueryPbuffer(this ArbPbuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> piValue)
         {
             // SpanOverloader
             return thisApi.QueryPbuffer(hPbuffer, iAttribute, out piValue.GetPinnableReference());

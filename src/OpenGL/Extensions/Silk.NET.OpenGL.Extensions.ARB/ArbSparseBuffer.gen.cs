@@ -21,16 +21,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_sparse_buffer";
         [NativeApi(EntryPoint = "glBufferPageCommitmentARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] bool commit);
-
-        [NativeApi(EntryPoint = "glBufferPageCommitmentARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] Boolean commit);
+        public partial void BufferPageCommitment([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool commit);
 
         [NativeApi(EntryPoint = "glNamedBufferPageCommitmentEXT", Convention = CallingConvention.Winapi)]
-        public partial void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] bool commit);
-
-        [NativeApi(EntryPoint = "glNamedBufferPageCommitmentEXT", Convention = CallingConvention.Winapi)]
-        public partial void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] Boolean commit);
+        public partial void NamedBufferPageCommitment([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool commit);
 
         public ArbSparseBuffer(INativeContext ctx)
             : base(ctx)

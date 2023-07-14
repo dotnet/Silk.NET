@@ -66,6 +66,8 @@ namespace Silk.NET.Windowing.Sdl
             return (SdlWindow)(_view = new SdlWindow(opts, null, null, this));
         }
 
+        string Name => nameof(SdlPlatform);
+
         public bool IsViewOnly => IsApplicable && SdlProvider.UninitializedSDL.Value.GetPlatformS() switch
         {
             "Windows" => false,

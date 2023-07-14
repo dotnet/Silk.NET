@@ -139,48 +139,48 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(TagRPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
+        public readonly unsafe int Invoke(RPCOLEMessage* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, TagRPCOLEMESSAGE*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsg, _pRpcChannelBuffer);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, RPCOLEMessage*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsg, _pRpcChannelBuffer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(TagRPCOLEMESSAGE* _prpcmsg, ref IRpcChannelBuffer _pRpcChannelBuffer)
+        public readonly unsafe int Invoke(RPCOLEMessage* _prpcmsg, ref IRpcChannelBuffer _pRpcChannelBuffer)
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IRpcChannelBuffer* _pRpcChannelBufferPtr = &_pRpcChannelBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, TagRPCOLEMESSAGE*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsg, _pRpcChannelBufferPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, RPCOLEMessage*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsg, _pRpcChannelBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(ref TagRPCOLEMESSAGE _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
+        public readonly unsafe int Invoke(ref RPCOLEMessage _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* _prpcmsgPtr = &_prpcmsg)
+            fixed (RPCOLEMessage* _prpcmsgPtr = &_prpcmsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, TagRPCOLEMESSAGE*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsgPtr, _pRpcChannelBuffer);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, RPCOLEMessage*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsgPtr, _pRpcChannelBuffer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Invoke(ref TagRPCOLEMESSAGE _prpcmsg, ref IRpcChannelBuffer _pRpcChannelBuffer)
+        public readonly int Invoke(ref RPCOLEMessage _prpcmsg, ref IRpcChannelBuffer _pRpcChannelBuffer)
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* _prpcmsgPtr = &_prpcmsg)
+            fixed (RPCOLEMessage* _prpcmsgPtr = &_prpcmsg)
             {
                 fixed (IRpcChannelBuffer* _pRpcChannelBufferPtr = &_pRpcChannelBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, TagRPCOLEMESSAGE*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsgPtr, _pRpcChannelBufferPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, RPCOLEMessage*, IRpcChannelBuffer*, int>)@this->LpVtbl[5])(@this, _prpcmsgPtr, _pRpcChannelBufferPtr);
                 }
             }
             return ret;
@@ -272,7 +272,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke<TI0>(TagRPCOLEMESSAGE* _prpcmsg, ComPtr<TI0> _pRpcChannelBuffer) where TI0 : unmanaged, IComVtbl<IRpcChannelBuffer>, IComVtbl<TI0>
+        public readonly unsafe int Invoke<TI0>(RPCOLEMessage* _prpcmsg, ComPtr<TI0> _pRpcChannelBuffer) where TI0 : unmanaged, IComVtbl<IRpcChannelBuffer>, IComVtbl<TI0>
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -280,7 +280,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Invoke<TI0>(ref TagRPCOLEMESSAGE _prpcmsg, ComPtr<TI0> _pRpcChannelBuffer) where TI0 : unmanaged, IComVtbl<IRpcChannelBuffer>, IComVtbl<TI0>
+        public readonly int Invoke<TI0>(ref RPCOLEMessage _prpcmsg, ComPtr<TI0> _pRpcChannelBuffer) where TI0 : unmanaged, IComVtbl<IRpcChannelBuffer>, IComVtbl<TI0>
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

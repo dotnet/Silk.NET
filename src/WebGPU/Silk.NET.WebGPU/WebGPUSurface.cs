@@ -20,7 +20,7 @@ public static class WebGPUSurface
     /// <param name="view">The window to get the surface from</param>
     /// <returns>A newly created Surface*/</returns>
     /// <exception cref="NotSupportedException">Throws when an unsupported platform is detected.</exception>
-    public static unsafe Surface* CreateWebGPUSurface(this INativeWindowSource view, NET.WebGPU.WebGPU wgpu, Instance* instance = null)
+    public static unsafe Surface* CreateWebGPUSurface(this INativeWindowSource view, NET.WebGPU.WebGPU wgpu, Instance* instance)
     {
         var descriptor = new SurfaceDescriptor();
 
@@ -31,7 +31,7 @@ public static class WebGPUSurface
                 Chain = new ChainedStruct
                 {
                     Next  = null,
-                    SType = SType.SurfaceDescriptorFromCanvasHtmlselector
+                    SType = SType.SurfaceDescriptorFromCanvasHtmlSelector
                 },
                 Selector = (byte*) SilkMarshal.StringToPtr("canvas")
             };
@@ -120,7 +120,7 @@ public static class WebGPUSurface
 
         var surface = wgpu.InstanceCreateSurface(instance, descriptor);
 
-        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlselector)
+        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlSelector)
         {
             var htmlDescriptor = (SurfaceDescriptorFromCanvasHTMLSelector*) descriptor.NextInChain;
             

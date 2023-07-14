@@ -165,7 +165,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
+        public readonly unsafe int Write([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -174,7 +174,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
+        public readonly unsafe int Write([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        public readonly unsafe int Write<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -198,7 +198,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+        public readonly int Write<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -387,22 +387,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Stat(TagSTATSTG* pstatstg, uint grfStatFlag)
+        public readonly unsafe int Stat(STATSTG* pstatstg, uint grfStatFlag)
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Stat(ref TagSTATSTG pstatstg, uint grfStatFlag)
+        public readonly int Stat(ref STATSTG pstatstg, uint grfStatFlag)
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTATSTG* pstatstgPtr = &pstatstg)
+            fixed (STATSTG* pstatstgPtr = &pstatstg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
             }
             return ret;
         }

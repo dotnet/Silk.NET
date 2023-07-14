@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_HEAP_TYPE")]
     public enum HeapType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D3D12_HEAP_TYPE_DEFAULT")]
         HeapTypeDefault = 0x1,

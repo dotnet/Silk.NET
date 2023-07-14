@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_DRED_VERSION")]
     public enum DredVersion : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"D3D1210\"")]
         [NativeName("Name", "D3D12_DRED_VERSION_1_0")]
         DredVersion10 = 0x1,

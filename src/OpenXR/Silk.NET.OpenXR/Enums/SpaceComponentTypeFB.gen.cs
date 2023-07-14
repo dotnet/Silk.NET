@@ -18,6 +18,9 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"StorableFB\"")]
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_STORABLE_FB")]
         SpaceComponentTypeStorableFB = 1,
+        [Obsolete("Deprecated in favour of \"SharableFB\"")]
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SHARABLE_FB")]
+        SpaceComponentTypeSharableFB = 2,
         [Obsolete("Deprecated in favour of \"Bounded2DFB\"")]
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_2D_FB")]
         SpaceComponentTypeBounded2DFB = 3,
@@ -37,6 +40,8 @@ namespace Silk.NET.OpenXR
         LocatableFB = 0,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_STORABLE_FB")]
         StorableFB = 1,
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SHARABLE_FB")]
+        SharableFB = 2,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_2D_FB")]
         Bounded2DFB = 3,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_3D_FB")]

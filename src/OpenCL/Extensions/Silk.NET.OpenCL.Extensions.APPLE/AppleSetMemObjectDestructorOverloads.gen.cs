@@ -16,7 +16,7 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
 {
     public static class AppleSetMemObjectDestructorOverloads
     {
-        public static unsafe int SetMemObjectDestructor<T0>(this AppleSetMemObjectDestructor thisApi, [Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int SetMemObjectDestructor<T0>(this AppleSetMemObjectDestructor thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetMemObjectDestructor(memobj, pfn_notify, out user_data.GetPinnableReference());

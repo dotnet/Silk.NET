@@ -85,22 +85,22 @@ public unsafe static class MultiQIVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryMultipleInterfaces(this ComPtr<IMultiQI> thisVtbl, uint cMQIs, TagMULTIQI* pMQIs)
+    public static unsafe int QueryMultipleInterfaces(this ComPtr<IMultiQI> thisVtbl, uint cMQIs, MultiQi* pMQIs)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, TagMULTIQI*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIs);
+        ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, MultiQi*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIs);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryMultipleInterfaces(this ComPtr<IMultiQI> thisVtbl, uint cMQIs, ref TagMULTIQI pMQIs)
+    public static int QueryMultipleInterfaces(this ComPtr<IMultiQI> thisVtbl, uint cMQIs, ref MultiQi pMQIs)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagMULTIQI* pMQIsPtr = &pMQIs)
+        fixed (MultiQi* pMQIsPtr = &pMQIs)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, TagMULTIQI*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIsPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IMultiQI*, uint, MultiQi*, int>)@this->LpVtbl[3])(@this, cMQIs, pMQIsPtr);
         }
         return ret;
     }
@@ -131,7 +131,7 @@ public unsafe static class MultiQIVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryMultipleInterfaces(this ComPtr<IMultiQI> thisVtbl, uint cMQIs, Span<TagMULTIQI> pMQIs)
+    public static int QueryMultipleInterfaces(this ComPtr<IMultiQI> thisVtbl, uint cMQIs, Span<MultiQi> pMQIs)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

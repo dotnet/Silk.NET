@@ -248,7 +248,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -257,7 +257,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -269,7 +269,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -281,7 +281,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -296,7 +296,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -305,7 +305,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -317,7 +317,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -329,7 +329,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -344,14 +344,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
+        public readonly unsafe void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, void>)@this->LpVtbl[7])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
+        public readonly unsafe void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -361,14 +361,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public readonly unsafe void PSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11ShaderResourceView**, void>)@this->LpVtbl[8])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
+        public readonly unsafe void PSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -378,14 +378,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShader(ID3D11PixelShader* pPixelShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void PSSetShader(ID3D11PixelShader* pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11PixelShader*, ID3D11ClassInstance**, uint, void>)@this->LpVtbl[9])(@this, pPixelShader, ppClassInstances, NumClassInstances);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShader(ID3D11PixelShader* pPixelShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void PSSetShader(ID3D11PixelShader* pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -395,7 +395,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShader(ref ID3D11PixelShader pPixelShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void PSSetShader(ref ID3D11PixelShader pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11PixelShader* pPixelShaderPtr = &pPixelShader)
@@ -405,7 +405,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShader(ref ID3D11PixelShader pPixelShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void PSSetShader(ref ID3D11PixelShader pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11PixelShader* pPixelShaderPtr = &pPixelShader)
@@ -418,14 +418,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ID3D11SamplerState** ppSamplers)
+        public readonly unsafe void PSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11SamplerState**, void>)@this->LpVtbl[10])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
+        public readonly unsafe void PSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -435,14 +435,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShader(ID3D11VertexShader* pVertexShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void VSSetShader(ID3D11VertexShader* pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11VertexShader*, ID3D11ClassInstance**, uint, void>)@this->LpVtbl[11])(@this, pVertexShader, ppClassInstances, NumClassInstances);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShader(ID3D11VertexShader* pVertexShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void VSSetShader(ID3D11VertexShader* pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -452,7 +452,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShader(ref ID3D11VertexShader pVertexShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void VSSetShader(ref ID3D11VertexShader pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VertexShader* pVertexShaderPtr = &pVertexShader)
@@ -462,7 +462,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShader(ref ID3D11VertexShader pVertexShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void VSSetShader(ref ID3D11VertexShader pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VertexShader* pVertexShaderPtr = &pVertexShader)
@@ -554,14 +554,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
+        public readonly unsafe void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, void>)@this->LpVtbl[16])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
+        public readonly unsafe void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -588,14 +588,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(FlowDirection.In)] uint* pStrides, [Flow(FlowDirection.In)] uint* pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[18])(@this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(FlowDirection.In)] uint* pStrides, [Flow(FlowDirection.In)] in uint pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pOffsetsPtr = &pOffsets)
@@ -605,7 +605,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(FlowDirection.In)] in uint pStrides, [Flow(FlowDirection.In)] uint* pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pStridesPtr = &pStrides)
@@ -615,7 +615,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(FlowDirection.In)] in uint pStrides, [Flow(FlowDirection.In)] in uint pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pStridesPtr = &pStrides)
@@ -628,7 +628,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(FlowDirection.In)] uint* pStrides, [Flow(FlowDirection.In)] uint* pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -638,7 +638,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(FlowDirection.In)] uint* pStrides, [Flow(FlowDirection.In)] in uint pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -651,7 +651,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(FlowDirection.In)] in uint pStrides, [Flow(FlowDirection.In)] uint* pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -664,7 +664,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(FlowDirection.In)] in uint pStrides, [Flow(FlowDirection.In)] in uint pOffsets)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -711,14 +711,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
+        public readonly unsafe void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, void>)@this->LpVtbl[22])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
+        public readonly unsafe void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -728,14 +728,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShader(ID3D11GeometryShader* pShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void GSSetShader(ID3D11GeometryShader* pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11GeometryShader*, ID3D11ClassInstance**, uint, void>)@this->LpVtbl[23])(@this, pShader, ppClassInstances, NumClassInstances);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShader(ID3D11GeometryShader* pShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void GSSetShader(ID3D11GeometryShader* pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -745,7 +745,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShader(ref ID3D11GeometryShader pShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void GSSetShader(ref ID3D11GeometryShader pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11GeometryShader* pShaderPtr = &pShader)
@@ -755,7 +755,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShader(ref ID3D11GeometryShader pShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void GSSetShader(ref ID3D11GeometryShader pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11GeometryShader* pShaderPtr = &pShader)
@@ -775,14 +775,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public readonly unsafe void VSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11ShaderResourceView**, void>)@this->LpVtbl[25])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
+        public readonly unsafe void VSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -792,14 +792,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ID3D11SamplerState** ppSamplers)
+        public readonly unsafe void VSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11SamplerState**, void>)@this->LpVtbl[26])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
+        public readonly unsafe void VSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -908,14 +908,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public readonly unsafe void GSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11ShaderResourceView**, void>)@this->LpVtbl[31])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
+        public readonly unsafe void GSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -925,14 +925,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ID3D11SamplerState** ppSamplers)
+        public readonly unsafe void GSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11SamplerState**, void>)@this->LpVtbl[32])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
+        public readonly unsafe void GSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -942,14 +942,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
+        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView*, void>)@this->LpVtbl[33])(@this, NumViews, ppRenderTargetViews, pDepthStencilView);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
+        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -959,7 +959,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
+        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -969,7 +969,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
+        public readonly unsafe void OMSetRenderTargets(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -982,14 +982,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView*, uint, uint, ID3D11UnorderedAccessView**, uint*, void>)@this->LpVtbl[34])(@this, NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pUAVInitialCountsPtr = &pUAVInitialCounts)
@@ -999,7 +999,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -1009,7 +1009,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -1022,7 +1022,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1032,7 +1032,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1045,7 +1045,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1058,7 +1058,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1074,7 +1074,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1084,7 +1084,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1097,7 +1097,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1110,7 +1110,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1126,7 +1126,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1139,7 +1139,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1155,7 +1155,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1171,7 +1171,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1247,14 +1247,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppSOTargets, [Flow(FlowDirection.In)] uint* pOffsets)
+        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, ID3D11Buffer**, uint*, void>)@this->LpVtbl[37])(@this, NumBuffers, ppSOTargets, pOffsets);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppSOTargets, [Flow(FlowDirection.In)] in uint pOffsets)
+        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pOffsetsPtr = &pOffsets)
@@ -1264,7 +1264,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppSOTargets, [Flow(FlowDirection.In)] uint* pOffsets)
+        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppSOTargetsPtr = &ppSOTargets)
@@ -1274,7 +1274,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppSOTargets, [Flow(FlowDirection.In)] in uint pOffsets)
+        public readonly unsafe void SOSetTargets(uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppSOTargetsPtr = &ppSOTargets)
@@ -1369,14 +1369,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetViewports(uint NumViewports, [Flow(FlowDirection.In)] Viewport* pViewports)
+        public readonly unsafe void RSSetViewports(uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Viewport* pViewports)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, Viewport*, void>)@this->LpVtbl[44])(@this, NumViewports, pViewports);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetViewports(uint NumViewports, [Flow(FlowDirection.In)] in Viewport pViewports)
+        public readonly void RSSetViewports(uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Viewport pViewports)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Viewport* pViewportsPtr = &pViewports)
@@ -1386,14 +1386,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly void RSSetScissorRects(uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1403,14 +1403,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, void>)@this->LpVtbl[46])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -1420,7 +1420,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
@@ -1430,7 +1430,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
@@ -1443,7 +1443,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1453,7 +1453,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1466,7 +1466,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1479,7 +1479,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1535,14 +1535,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
@@ -1552,7 +1552,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
@@ -1562,7 +1562,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
@@ -1575,7 +1575,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1585,7 +1585,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly unsafe void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1598,7 +1598,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1611,7 +1611,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1916,14 +1916,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public readonly unsafe void HSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11ShaderResourceView**, void>)@this->LpVtbl[59])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
+        public readonly unsafe void HSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -1933,14 +1933,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShader(ID3D11HullShader* pHullShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void HSSetShader(ID3D11HullShader* pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11HullShader*, ID3D11ClassInstance**, uint, void>)@this->LpVtbl[60])(@this, pHullShader, ppClassInstances, NumClassInstances);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShader(ID3D11HullShader* pHullShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void HSSetShader(ID3D11HullShader* pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -1950,7 +1950,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShader(ref ID3D11HullShader pHullShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void HSSetShader(ref ID3D11HullShader pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11HullShader* pHullShaderPtr = &pHullShader)
@@ -1960,7 +1960,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShader(ref ID3D11HullShader pHullShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void HSSetShader(ref ID3D11HullShader pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11HullShader* pHullShaderPtr = &pHullShader)
@@ -1973,14 +1973,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ID3D11SamplerState** ppSamplers)
+        public readonly unsafe void HSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11SamplerState**, void>)@this->LpVtbl[61])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
+        public readonly unsafe void HSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -1990,14 +1990,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
+        public readonly unsafe void HSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, void>)@this->LpVtbl[62])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
+        public readonly unsafe void HSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -2007,14 +2007,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public readonly unsafe void DSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11ShaderResourceView**, void>)@this->LpVtbl[63])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
+        public readonly unsafe void DSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -2024,14 +2024,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShader(ID3D11DomainShader* pDomainShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void DSSetShader(ID3D11DomainShader* pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11DomainShader*, ID3D11ClassInstance**, uint, void>)@this->LpVtbl[64])(@this, pDomainShader, ppClassInstances, NumClassInstances);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShader(ID3D11DomainShader* pDomainShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void DSSetShader(ID3D11DomainShader* pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -2041,7 +2041,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShader(ref ID3D11DomainShader pDomainShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void DSSetShader(ref ID3D11DomainShader pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DomainShader* pDomainShaderPtr = &pDomainShader)
@@ -2051,7 +2051,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShader(ref ID3D11DomainShader pDomainShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void DSSetShader(ref ID3D11DomainShader pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11DomainShader* pDomainShaderPtr = &pDomainShader)
@@ -2064,14 +2064,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ID3D11SamplerState** ppSamplers)
+        public readonly unsafe void DSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11SamplerState**, void>)@this->LpVtbl[65])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
+        public readonly unsafe void DSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -2081,14 +2081,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
+        public readonly unsafe void DSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, void>)@this->LpVtbl[66])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
+        public readonly unsafe void DSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -2098,14 +2098,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public readonly unsafe void CSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11ShaderResourceView**, void>)@this->LpVtbl[67])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShaderResources(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
+        public readonly unsafe void CSSetShaderResources(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -2115,14 +2115,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11UnorderedAccessView**, uint*, void>)@this->LpVtbl[68])(@this, StartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pUAVInitialCountsPtr = &pUAVInitialCounts)
@@ -2132,7 +2132,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts)
+        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -2142,7 +2142,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts)
+        public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -2155,14 +2155,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShader(ID3D11ComputeShader* pComputeShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void CSSetShader(ID3D11ComputeShader* pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11ComputeShader*, ID3D11ClassInstance**, uint, void>)@this->LpVtbl[69])(@this, pComputeShader, ppClassInstances, NumClassInstances);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShader(ID3D11ComputeShader* pComputeShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void CSSetShader(ID3D11ComputeShader* pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -2172,7 +2172,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShader(ref ID3D11ComputeShader pComputeShader, [Flow(FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void CSSetShader(ref ID3D11ComputeShader pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ComputeShader* pComputeShaderPtr = &pComputeShader)
@@ -2182,7 +2182,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShader(ref ID3D11ComputeShader pComputeShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+        public readonly unsafe void CSSetShader(ref ID3D11ComputeShader pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11ComputeShader* pComputeShaderPtr = &pComputeShader)
@@ -2195,14 +2195,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ID3D11SamplerState** ppSamplers)
+        public readonly unsafe void CSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11SamplerState**, void>)@this->LpVtbl[70])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
+        public readonly unsafe void CSSetSamplers(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -2212,14 +2212,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
+        public readonly unsafe void CSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, void>)@this->LpVtbl[71])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
+        public readonly unsafe void CSSetConstantBuffers(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -3793,14 +3793,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)@this->LpVtbl[115])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -3810,7 +3810,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
@@ -3820,7 +3820,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
@@ -3833,7 +3833,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3843,7 +3843,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3856,7 +3856,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
+        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3869,7 +3869,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
+        public readonly void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3885,14 +3885,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
@@ -3902,7 +3902,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
@@ -3912,7 +3912,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
@@ -3925,7 +3925,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3935,7 +3935,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        public readonly unsafe void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3948,7 +3948,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3961,7 +3961,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        public readonly void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -4011,14 +4011,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4028,7 +4028,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4038,7 +4038,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4051,7 +4051,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4061,7 +4061,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4074,7 +4074,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4087,7 +4087,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4103,14 +4103,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4120,7 +4120,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4130,7 +4130,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4143,7 +4143,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4153,7 +4153,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4166,7 +4166,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4179,7 +4179,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4195,14 +4195,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4212,7 +4212,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4222,7 +4222,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4235,7 +4235,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4245,7 +4245,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4258,7 +4258,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4271,7 +4271,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4287,14 +4287,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4304,7 +4304,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4314,7 +4314,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4327,7 +4327,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4337,7 +4337,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4350,7 +4350,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4363,7 +4363,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4379,14 +4379,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4396,7 +4396,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4406,7 +4406,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4419,7 +4419,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4429,7 +4429,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4442,7 +4442,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4455,7 +4455,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4471,14 +4471,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)@this->LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4488,7 +4488,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4498,7 +4498,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4511,7 +4511,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4521,7 +4521,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4534,7 +4534,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4547,7 +4547,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants)
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -5155,14 +5155,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, Color, pRect, NumRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -5172,7 +5172,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorPtr = &Color)
@@ -5182,7 +5182,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorPtr = &Color)
@@ -5195,7 +5195,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
@@ -5205,7 +5205,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
@@ -5218,7 +5218,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
@@ -5231,7 +5231,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
@@ -5247,14 +5247,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceView, pRects, NumRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -5264,7 +5264,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pResourceViewPtr = &pResourceView)
@@ -5274,7 +5274,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardView1(ref ID3D11View pResourceView, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
+        public readonly void DiscardView1(ref ID3D11View pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pResourceViewPtr = &pResourceView)
@@ -5287,7 +5287,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5296,7 +5296,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5308,7 +5308,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5320,7 +5320,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5335,7 +5335,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5347,7 +5347,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5362,7 +5362,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5377,7 +5377,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5395,7 +5395,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5407,7 +5407,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5422,7 +5422,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5437,7 +5437,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5455,7 +5455,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5470,7 +5470,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5488,7 +5488,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5506,7 +5506,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5527,7 +5527,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5539,7 +5539,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5554,7 +5554,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5569,7 +5569,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5587,7 +5587,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5602,7 +5602,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5620,7 +5620,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5638,7 +5638,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5659,7 +5659,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5674,7 +5674,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5692,7 +5692,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5710,7 +5710,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5731,7 +5731,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5749,7 +5749,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5770,7 +5770,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5791,7 +5791,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5815,7 +5815,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5827,7 +5827,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5842,7 +5842,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5857,7 +5857,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5875,7 +5875,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5890,7 +5890,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5908,7 +5908,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5926,7 +5926,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5947,7 +5947,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5962,7 +5962,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5980,7 +5980,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5998,7 +5998,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6019,7 +6019,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6037,7 +6037,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6058,7 +6058,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6079,7 +6079,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6103,7 +6103,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6118,7 +6118,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6136,7 +6136,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6154,7 +6154,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6175,7 +6175,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6193,7 +6193,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6214,7 +6214,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6235,7 +6235,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6259,7 +6259,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6277,7 +6277,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6298,7 +6298,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6319,7 +6319,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6343,7 +6343,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6364,7 +6364,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6388,7 +6388,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6412,7 +6412,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6439,7 +6439,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6451,7 +6451,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6466,7 +6466,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6481,7 +6481,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6499,7 +6499,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6514,7 +6514,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6532,7 +6532,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6550,7 +6550,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6571,7 +6571,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6586,7 +6586,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6604,7 +6604,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6622,7 +6622,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6643,7 +6643,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6661,7 +6661,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6682,7 +6682,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6703,7 +6703,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6727,7 +6727,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6742,7 +6742,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6760,7 +6760,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6778,7 +6778,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6799,7 +6799,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6817,7 +6817,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6838,7 +6838,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6859,7 +6859,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6883,7 +6883,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6901,7 +6901,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6922,7 +6922,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6943,7 +6943,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6967,7 +6967,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6988,7 +6988,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7012,7 +7012,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7036,7 +7036,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7063,7 +7063,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7078,7 +7078,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7096,7 +7096,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7114,7 +7114,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7135,7 +7135,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7153,7 +7153,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7174,7 +7174,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7195,7 +7195,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7219,7 +7219,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7237,7 +7237,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7258,7 +7258,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7279,7 +7279,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7303,7 +7303,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7324,7 +7324,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7348,7 +7348,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7372,7 +7372,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7399,7 +7399,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7417,7 +7417,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7438,7 +7438,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7459,7 +7459,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7483,7 +7483,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7504,7 +7504,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7528,7 +7528,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7552,7 +7552,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7579,7 +7579,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7600,7 +7600,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7624,7 +7624,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7648,7 +7648,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7675,7 +7675,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7699,7 +7699,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7726,7 +7726,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+        public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7753,7 +7753,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
+        public readonly int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7783,7 +7783,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7792,7 +7792,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7804,7 +7804,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7816,7 +7816,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7831,7 +7831,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7843,7 +7843,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7858,7 +7858,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7873,7 +7873,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7891,7 +7891,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7903,7 +7903,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7918,7 +7918,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7933,7 +7933,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7951,7 +7951,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7966,7 +7966,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7984,7 +7984,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8002,7 +8002,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8023,7 +8023,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8035,7 +8035,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8050,7 +8050,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8065,7 +8065,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8083,7 +8083,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8098,7 +8098,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8116,7 +8116,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8134,7 +8134,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8155,7 +8155,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8170,7 +8170,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8188,7 +8188,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8206,7 +8206,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8227,7 +8227,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8245,7 +8245,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8266,7 +8266,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+        public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8287,7 +8287,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
+        public readonly int CopyTileMappings(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8311,14 +8311,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, ulong, uint, void>)@this->LpVtbl[136])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Buffer* pBufferPtr = &pBuffer)
@@ -8328,7 +8328,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -8338,7 +8338,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -8351,7 +8351,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8361,7 +8361,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8374,7 +8374,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8387,7 +8387,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8403,7 +8403,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8413,7 +8413,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8426,7 +8426,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8439,7 +8439,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8455,7 +8455,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8468,7 +8468,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8484,7 +8484,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly unsafe void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8500,7 +8500,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+        public readonly void CopyTiles(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8519,14 +8519,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResource, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSourceTileDataPtr = &pSourceTileData)
@@ -8536,7 +8536,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
@@ -8546,7 +8546,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
@@ -8559,7 +8559,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8569,7 +8569,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8582,7 +8582,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8595,7 +8595,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8611,7 +8611,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8621,7 +8621,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8634,7 +8634,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8647,7 +8647,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8663,7 +8663,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8676,7 +8676,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly unsafe void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8692,7 +8692,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+        public readonly unsafe void UpdateTiles(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8708,7 +8708,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+        public readonly void UpdateTiles<T0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8797,14 +8797,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetMarkerInt([Flow(FlowDirection.In)] char* pLabel, int Data)
+        public readonly unsafe void SetMarkerInt([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, char*, int, void>)@this->LpVtbl[141])(@this, pLabel, Data);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarkerInt([Flow(FlowDirection.In)] in char pLabel, int Data)
+        public readonly void SetMarkerInt([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* pLabelPtr = &pLabel)
@@ -8814,7 +8814,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarkerInt([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
+        public readonly void SetMarkerInt([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
@@ -8823,14 +8823,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginEventInt([Flow(FlowDirection.In)] char* pLabel, int Data)
+        public readonly unsafe void BeginEventInt([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, char*, int, void>)@this->LpVtbl[142])(@this, pLabel, Data);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEventInt([Flow(FlowDirection.In)] in char pLabel, int Data)
+        public readonly void BeginEventInt([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* pLabelPtr = &pLabel)
@@ -8840,7 +8840,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEventInt([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
+        public readonly void BeginEventInt([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
@@ -8914,7 +8914,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8922,7 +8922,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8930,7 +8930,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void VSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8938,7 +8938,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+        public readonly void PSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8946,7 +8946,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PSSetShader<TI0, TI1>(ComPtr<TI0> pPixelShader, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
+        public readonly void PSSetShader<TI0, TI1>(ComPtr<TI0> pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8954,7 +8954,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetShader<TI0>(ComPtr<TI0> pPixelShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+        public readonly unsafe void PSSetShader<TI0>(ComPtr<TI0> pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8962,7 +8962,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PSSetShader<TI0>(ref ID3D11PixelShader pPixelShader, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly void PSSetShader<TI0>(ref ID3D11PixelShader pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8970,7 +8970,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
+        public readonly void PSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8978,7 +8978,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VSSetShader<TI0, TI1>(ComPtr<TI0> pVertexShader, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
+        public readonly void VSSetShader<TI0, TI1>(ComPtr<TI0> pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8986,7 +8986,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetShader<TI0>(ComPtr<TI0> pVertexShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+        public readonly unsafe void VSSetShader<TI0>(ComPtr<TI0> pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8994,7 +8994,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VSSetShader<TI0>(ref ID3D11VertexShader pVertexShader, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly void VSSetShader<TI0>(ref ID3D11VertexShader pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9026,7 +9026,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void PSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9042,7 +9042,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(FlowDirection.In)] uint* pStrides, [Flow(FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9050,7 +9050,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(FlowDirection.In)] uint* pStrides, [Flow(FlowDirection.In)] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9058,7 +9058,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(FlowDirection.In)] in uint pStrides, [Flow(FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9066,7 +9066,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(FlowDirection.In)] in uint pStrides, [Flow(FlowDirection.In)] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void IASetVertexBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9082,7 +9082,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void GSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9090,7 +9090,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GSSetShader<TI0, TI1>(ComPtr<TI0> pShader, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
+        public readonly void GSSetShader<TI0, TI1>(ComPtr<TI0> pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9098,7 +9098,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetShader<TI0>(ComPtr<TI0> pShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+        public readonly unsafe void GSSetShader<TI0>(ComPtr<TI0> pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9106,7 +9106,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GSSetShader<TI0>(ref ID3D11GeometryShader pShader, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly void GSSetShader<TI0>(ref ID3D11GeometryShader pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9114,7 +9114,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+        public readonly void VSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9122,7 +9122,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
+        public readonly void VSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9170,7 +9170,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+        public readonly void GSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9178,7 +9178,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
+        public readonly void GSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9186,7 +9186,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargets<TI0, TI1>(uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
+        public readonly void OMSetRenderTargets<TI0, TI1>(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9194,7 +9194,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargets<TI0>(uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+        public readonly void OMSetRenderTargets<TI0>(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9202,7 +9202,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets<TI0>(uint NumViews, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargets<TI0>(uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9210,7 +9210,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI2> ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9218,7 +9218,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI2> ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
+        public readonly void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9226,7 +9226,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9234,7 +9234,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9242,7 +9242,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9250,7 +9250,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+        public readonly void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9258,7 +9258,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9266,7 +9266,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9274,7 +9274,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9282,7 +9282,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9290,7 +9290,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9298,7 +9298,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9306,7 +9306,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9314,7 +9314,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+        public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9346,7 +9346,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets<TI0>(uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSOTargets, [Flow(FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void SOSetTargets<TI0>(uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9354,7 +9354,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SOSetTargets<TI0>(uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSOTargets, [Flow(FlowDirection.In)] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void SOSetTargets<TI0>(uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9394,7 +9394,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe void CopySubresourceRegion<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9402,7 +9402,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly void CopySubresourceRegion<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9410,7 +9410,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopySubresourceRegion<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9418,7 +9418,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void CopySubresourceRegion<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9426,7 +9426,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopySubresourceRegion<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9434,7 +9434,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void CopySubresourceRegion<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9466,7 +9466,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9474,7 +9474,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9482,7 +9482,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9490,7 +9490,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UpdateSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void UpdateSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9634,7 +9634,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void HSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+        public readonly void HSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9642,7 +9642,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void HSSetShader<TI0, TI1>(ComPtr<TI0> pHullShader, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
+        public readonly void HSSetShader<TI0, TI1>(ComPtr<TI0> pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9650,7 +9650,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetShader<TI0>(ComPtr<TI0> pHullShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+        public readonly unsafe void HSSetShader<TI0>(ComPtr<TI0> pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9658,7 +9658,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void HSSetShader<TI0>(ref ID3D11HullShader pHullShader, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly void HSSetShader<TI0>(ref ID3D11HullShader pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9666,7 +9666,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void HSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
+        public readonly void HSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9674,7 +9674,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void HSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void HSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9682,7 +9682,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+        public readonly void DSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9690,7 +9690,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DSSetShader<TI0, TI1>(ComPtr<TI0> pDomainShader, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
+        public readonly void DSSetShader<TI0, TI1>(ComPtr<TI0> pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9698,7 +9698,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetShader<TI0>(ComPtr<TI0> pDomainShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+        public readonly unsafe void DSSetShader<TI0>(ComPtr<TI0> pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9706,7 +9706,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DSSetShader<TI0>(ref ID3D11DomainShader pDomainShader, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly void DSSetShader<TI0>(ref ID3D11DomainShader pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9714,7 +9714,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
+        public readonly void DSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9722,7 +9722,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void DSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9730,7 +9730,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+        public readonly void CSSetShaderResources<TI0>(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppShaderResourceViews) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9738,7 +9738,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetUnorderedAccessViews<TI0>(uint StartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+        public readonly unsafe void CSSetUnorderedAccessViews<TI0>(uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9746,7 +9746,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetUnorderedAccessViews<TI0>(uint StartSlot, uint NumUAVs, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+        public readonly void CSSetUnorderedAccessViews<TI0>(uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9754,7 +9754,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetShader<TI0, TI1>(ComPtr<TI0> pComputeShader, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
+        public readonly void CSSetShader<TI0, TI1>(ComPtr<TI0> pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9762,7 +9762,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetShader<TI0>(ComPtr<TI0> pComputeShader, [Flow(FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+        public readonly unsafe void CSSetShader<TI0>(ComPtr<TI0> pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9770,7 +9770,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetShader<TI0>(ref ID3D11ComputeShader pComputeShader, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly void CSSetShader<TI0>(ref ID3D11ComputeShader pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9778,7 +9778,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
+        public readonly void CSSetSamplers<TI0>(uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSamplers) where TI0 : unmanaged, IComVtbl<ID3D11SamplerState>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9786,7 +9786,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void CSSetConstantBuffers<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10474,7 +10474,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe void CopySubresourceRegion1<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10482,7 +10482,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion1<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly void CopySubresourceRegion1<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10490,7 +10490,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopySubresourceRegion1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10498,7 +10498,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void CopySubresourceRegion1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10506,7 +10506,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopySubresourceRegion1<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopySubresourceRegion1<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10514,7 +10514,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopySubresourceRegion1<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void CopySubresourceRegion1<TI0>(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10522,7 +10522,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateSubresource1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10530,7 +10530,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateSubresource1<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10538,7 +10538,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateSubresource1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateSubresource1<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10546,7 +10546,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UpdateSubresource1<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void UpdateSubresource1<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10570,7 +10570,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10578,7 +10578,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10586,7 +10586,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10594,7 +10594,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void VSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10602,7 +10602,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10610,7 +10610,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10618,7 +10618,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10626,7 +10626,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void HSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10634,7 +10634,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10642,7 +10642,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10650,7 +10650,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10658,7 +10658,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void DSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10666,7 +10666,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10674,7 +10674,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10682,7 +10682,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10690,7 +10690,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void GSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10698,7 +10698,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10706,7 +10706,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10714,7 +10714,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10722,7 +10722,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void PSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10730,7 +10730,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10738,7 +10738,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] uint* pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10746,7 +10746,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10754,7 +10754,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(FlowDirection.In)] in uint pFirstConstant, [Flow(FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void CSSetConstantBuffers1<TI0>(uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10978,7 +10978,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] float* Color, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+        public readonly unsafe void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10986,7 +10986,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] float* Color, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+        public readonly unsafe void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10994,7 +10994,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+        public readonly unsafe void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11002,7 +11002,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+        public readonly void ClearView<TI0>(ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11010,7 +11010,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1<TI0>(ComPtr<TI0> pResourceView, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+        public readonly unsafe void DiscardView1<TI0>(ComPtr<TI0> pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11018,7 +11018,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardView1<TI0>(ComPtr<TI0> pResourceView, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+        public readonly void DiscardView1<TI0>(ComPtr<TI0> pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11026,7 +11026,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11034,7 +11034,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11042,7 +11042,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11050,7 +11050,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11058,7 +11058,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11066,7 +11066,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11074,7 +11074,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11082,7 +11082,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11090,7 +11090,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11098,7 +11098,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11106,7 +11106,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11114,7 +11114,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11122,7 +11122,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11130,7 +11130,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11138,7 +11138,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11146,7 +11146,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11154,7 +11154,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11162,7 +11162,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11170,7 +11170,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11178,7 +11178,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11186,7 +11186,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11194,7 +11194,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11202,7 +11202,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11210,7 +11210,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11218,7 +11218,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11226,7 +11226,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11234,7 +11234,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11242,7 +11242,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11250,7 +11250,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11258,7 +11258,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11266,7 +11266,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11274,7 +11274,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11282,7 +11282,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11290,7 +11290,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11298,7 +11298,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11306,7 +11306,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11314,7 +11314,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11322,7 +11322,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11330,7 +11330,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11338,7 +11338,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11346,7 +11346,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11354,7 +11354,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11362,7 +11362,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11370,7 +11370,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11378,7 +11378,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11386,7 +11386,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11394,7 +11394,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11402,7 +11402,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11410,7 +11410,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11418,7 +11418,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11426,7 +11426,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11434,7 +11434,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11442,7 +11442,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11450,7 +11450,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11458,7 +11458,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11466,7 +11466,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly int UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11474,7 +11474,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11482,7 +11482,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11490,7 +11490,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11498,7 +11498,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11506,7 +11506,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11514,7 +11514,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11522,7 +11522,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11530,7 +11530,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly int UpdateTileMappings<TI0>(ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11538,7 +11538,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11546,7 +11546,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11554,7 +11554,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11562,7 +11562,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11570,7 +11570,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11578,7 +11578,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11586,7 +11586,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11594,7 +11594,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11602,7 +11602,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11610,7 +11610,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11618,7 +11618,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11626,7 +11626,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11634,7 +11634,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11642,7 +11642,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11650,7 +11650,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11658,7 +11658,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11666,7 +11666,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11674,7 +11674,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11682,7 +11682,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11690,7 +11690,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11698,7 +11698,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11706,7 +11706,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11714,7 +11714,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11722,7 +11722,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11730,7 +11730,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11738,7 +11738,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11746,7 +11746,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11754,7 +11754,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] uint* pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11762,7 +11762,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11770,7 +11770,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11778,7 +11778,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11786,7 +11786,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(FlowDirection.In)] in uint pRangeFlags, [Flow(FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly int UpdateTileMappings<TI0>(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11794,7 +11794,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11802,7 +11802,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11810,7 +11810,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11818,7 +11818,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11826,7 +11826,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11834,7 +11834,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11842,7 +11842,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11850,7 +11850,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11858,7 +11858,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11866,7 +11866,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11874,7 +11874,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly unsafe int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11882,7 +11882,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+        public readonly int CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11890,7 +11890,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11898,7 +11898,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11906,7 +11906,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11914,7 +11914,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly int CopyTileMappings<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11922,7 +11922,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11930,7 +11930,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11938,7 +11938,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11946,7 +11946,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11954,7 +11954,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11962,7 +11962,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11970,7 +11970,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11978,7 +11978,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly int CopyTileMappings<TI0>(ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11986,7 +11986,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11994,7 +11994,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12002,7 +12002,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12010,7 +12010,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12018,7 +12018,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12026,7 +12026,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12034,7 +12034,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+        public readonly void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12042,7 +12042,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12050,7 +12050,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12058,7 +12058,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12066,7 +12066,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12074,7 +12074,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        public readonly void CopyTiles<TI0>(ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12082,7 +12082,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12090,7 +12090,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12098,7 +12098,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12106,7 +12106,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12114,7 +12114,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12122,7 +12122,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12130,7 +12130,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe void UpdateTiles<TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -12138,7 +12138,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly void UpdateTiles<T0, TI0>(ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUBlendOperation")]
     public enum BlendOperation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUBlendOperation_Add")]
         Add = 0x0,
         [NativeName("Name", "WGPUBlendOperation_Subtract")]

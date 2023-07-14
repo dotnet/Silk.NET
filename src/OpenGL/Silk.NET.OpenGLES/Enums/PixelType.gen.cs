@@ -34,7 +34,7 @@ namespace Silk.NET.OpenGLES
         HalfFloatNV = 0x140B,
         [NativeName("Name", "GL_HALF_APPLE")]
         HalfApple = 0x140B,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_BITMAP")]
         Bitmap = 0x1A00,
         [NativeName("Name", "GL_UNSIGNED_BYTE_3_3_2")]

@@ -9,15 +9,18 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "_GET_FILEEX_INFO_LEVELS")]
     public enum GetFileexInfoLevels : int
     {
-        [NativeName("Name", "")]
-        None = 0,
+        [Obsolete("Deprecated in favour of \"InfoStandard\"")]
         [NativeName("Name", "GetFileExInfoStandard")]
         GetFileExInfoStandard = 0x0,
+        [Obsolete("Deprecated in favour of \"MaxInfoLevel\"")]
         [NativeName("Name", "GetFileExMaxInfoLevel")]
         GetFileExMaxInfoLevel = 0x1,
+        [NativeName("Name", "GetFileExInfoStandard")]
+        InfoStandard = 0x0,
+        [NativeName("Name", "GetFileExMaxInfoLevel")]
+        MaxInfoLevel = 0x1,
     }
 }

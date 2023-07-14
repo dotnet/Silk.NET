@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "tagMSHLFLAGS")]
     public enum TagMSHLFLAGS : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Normal\"")]
         [NativeName("Name", "MSHLFLAGS_NORMAL")]
         MshlflagsNormal = 0x0,

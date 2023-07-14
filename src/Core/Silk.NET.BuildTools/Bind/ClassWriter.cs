@@ -39,22 +39,22 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    internal class {task.Task.NameContainer.ClassName} : SearchPathContainer");
             sw.WriteLine("    {");
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Linux => \"{task.Task.NameContainer.Linux}\";");
+            sw.WriteLine($"        public override string[] Linux => new[] {{ \"{task.Task.NameContainer.Linux}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string MacOS => \"{task.Task.NameContainer.MacOS}\";");
+            sw.WriteLine($"        public override string[] MacOS => new[] {{ \"{task.Task.NameContainer.MacOS}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Android => \"{task.Task.NameContainer.Android}\";");
+            sw.WriteLine($"        public override string[] Android => new[] {{ \"{task.Task.NameContainer.Android}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string IOS => \"{task.Task.NameContainer.IOS}\";");
+            sw.WriteLine($"        public override string[] IOS => new[] {{ \"{task.Task.NameContainer.IOS}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows64 => \"{task.Task.NameContainer.Windows64}\";");
+            sw.WriteLine($"        public override string[] Windows64 => new[] {{ \"{task.Task.NameContainer.Windows64}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows86 => \"{task.Task.NameContainer.Windows86}\";");
+            sw.WriteLine($"        public override string[] Windows86 => new[] {{ \"{task.Task.NameContainer.Windows86}\" }};");
             sw.WriteLine("    }");
             sw.WriteLine("}");
         }
@@ -65,7 +65,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The current project.</param>
         /// <param name="profile">The profile to write mixed-mode classes for.</param>
         /// <param name="folder">The folder to store the generated classes in.</param>
-        public static void WriteMixedModeClasses(this Project project, Profile profile, string folder, BindState task)
+        public static void WriteMixedModeClasses(this Project project, Profile profile, string folder, string manualFolder, BindState task)
         {
             // public abstract class MixedModeClass : IMixedModeClass
             // {
@@ -245,9 +245,9 @@ namespace Silk.NET.BuildTools.Bind
                     FinishOverloadsFile(swOverloads);
                     sw.Flush();
                     sw.Dispose();
-                    if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")) && allFunctions.Any())
+                    if (!File.Exists(Path.Combine(manualFolder, $"{@class.ClassName}.cs")) && allFunctions.Any())
                     {
-                        sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.cs")) {NewLine = "\n"};
+                        sw = new StreamWriter(Path.Combine(manualFolder, $"{@class.ClassName}.cs")) {NewLine = "\n"};
                         sw.WriteCoreUsings();
                         sw.WriteLine("using static Silk.NET.Core.Attributes.ExtensionAttribute;");
                         sw.WriteLine();
@@ -264,7 +264,7 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine
                             (
                                 $"             return new(CreateDefaultContext" +
-                                $"(new {task.Task.NameContainer.ClassName}().GetLibraryName()));"
+                                $"(new {task.Task.NameContainer.ClassName}().GetLibraryNames()));"
                             );
                         }
                         else
@@ -296,7 +296,7 @@ namespace Silk.NET.BuildTools.Bind
                     if (!(task.Task.NameContainer is null))
                     {
                         project.WriteNameContainer
-                            (profile, Path.Combine(folder, $"{task.Task.NameContainer.ClassName}.cs"), task);
+                            (profile, Path.Combine(manualFolder, $"{task.Task.NameContainer.ClassName}.cs"), task);
                     }
                 }
                 else

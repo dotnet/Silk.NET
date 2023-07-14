@@ -17,21 +17,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrExternalMemoryFdOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryF(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
+        public static unsafe Result GetMemoryF(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> pFd)
         {
             // SpanOverloader
             return thisApi.GetMemoryF(device, pGetFdInfo, out pFd.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryF(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd)
+        public static unsafe Result GetMemoryF(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* pFd)
         {
             // SpanOverloader
             return thisApi.GetMemoryF(device, in pGetFdInfo.GetPinnableReference(), pFd);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryF(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
+        public static unsafe Result GetMemoryF(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> pFd)
         {
             // SpanOverloader
             return thisApi.GetMemoryF(device, in pGetFdInfo.GetPinnableReference(), out pFd.GetPinnableReference());
@@ -39,7 +39,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryFdProperties = new(StructureType.MemoryFDPropertiesKhr);")]
-        public static unsafe Result GetMemoryFdProperties(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryFdPropertiesKHR> pMemoryFdProperties)
+        public static unsafe Result GetMemoryFdProperties(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<MemoryFdPropertiesKHR> pMemoryFdProperties)
         {
             // SpanOverloader
             return thisApi.GetMemoryFdProperties(device, handleType, fd, out pMemoryFdProperties.GetPinnableReference());

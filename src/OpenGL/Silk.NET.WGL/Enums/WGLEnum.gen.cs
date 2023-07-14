@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WGL
 {
+    [Flags]
     [NativeName("Name", "GLenum")]
     public enum WGLEnum : int
     {

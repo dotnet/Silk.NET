@@ -5,10 +5,6 @@ struct VertexOutputs {
     @location(0) tex_coord: vec2<f32>
 }
 
-struct FragmentInputs {
-    @location(0) tex_coord: vec2<f32>
-}
-
 @group(1) @binding(0) var<uniform> projection_matrix: mat4x4<f32>;
 
 @vertex
@@ -30,6 +26,6 @@ fn vs_main(
 @group(0) @binding(1) var s: sampler;
 
 @fragment
-fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
+fn fs_main(input: VertexOutputs) -> @location(0) vec4<f32> {
     return textureSample(t, s, input.tex_coord);
 }

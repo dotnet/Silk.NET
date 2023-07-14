@@ -21,66 +21,66 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     {
         public const string ExtensionName = "OES_mapbuffer";
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glMapBufferOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES access);
+        public unsafe partial void* MapBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES access);
 
         [NativeApi(EntryPoint = "glMapBufferOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferAccessARB access);
+        public unsafe partial void* MapBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferAccessARB access);
 
         [NativeApi(EntryPoint = "glMapBufferOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES access);
+        public unsafe partial void* MapBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES access);
 
         [NativeApi(EntryPoint = "glMapBufferOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferAccessARB access);
+        public unsafe partial void* MapBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferAccessARB access);
 
         [NativeApi(EntryPoint = "glUnmapBufferOES", Convention = CallingConvention.Winapi)]
-        public partial bool UnmapBuffer([Flow(FlowDirection.In)] OES target);
+        public partial bool UnmapBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target);
 
-        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname)
+        public unsafe void* GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname)
         {
             // NonKhrReturnTypeOverloader
             GetBufferPointer(target, pname, out void* silkRet);
             return silkRet;
         }
 
-        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        public unsafe void* GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPointerNameARB pname)
         {
             // NonKhrReturnTypeOverloader
             GetBufferPointer(target, pname, out void* silkRet);
             return silkRet;
         }
 
-        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES pname)
+        public unsafe void* GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES pname)
         {
             // NonKhrReturnTypeOverloader
             GetBufferPointer(target, pname, out void* silkRet);
             return silkRet;
         }
 
-        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        public unsafe void* GetBufferPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferPointerNameARB pname)
         {
             // NonKhrReturnTypeOverloader
             GetBufferPointer(target, pname, out void* silkRet);

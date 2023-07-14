@@ -16,31 +16,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVTimelineSemaphoreOverloads
     {
-        public static unsafe void CreateSemaphores(this NVTimelineSemaphore thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> semaphores)
+        public static unsafe void CreateSemaphores(this NVTimelineSemaphore thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> semaphores)
         {
             // SpanOverloader
             thisApi.CreateSemaphores(n, out semaphores.GetPinnableReference());
         }
 
-        public static unsafe void GetSemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetSemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetSemaphoreParameter(semaphore, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetSemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetSemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetSemaphoreParameter(semaphore, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void SemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void SemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.SemaphoreParameter(semaphore, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void SemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void SemaphoreParameter(this NVTimelineSemaphore thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.SemaphoreParameter(semaphore, pname, in @params.GetPinnableReference());

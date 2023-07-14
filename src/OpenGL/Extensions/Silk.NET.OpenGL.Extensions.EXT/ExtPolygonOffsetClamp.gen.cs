@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_polygon_offset_clamp";
         [NativeApi(EntryPoint = "glPolygonOffsetClampEXT", Convention = CallingConvention.Winapi)]
-        public partial void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
+        public partial void PolygonOffsetClamp([Flow(Silk.NET.Core.Native.FlowDirection.In)] float factor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float units, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float clamp);
 
         public ExtPolygonOffsetClamp(INativeContext ctx)
             : base(ctx)

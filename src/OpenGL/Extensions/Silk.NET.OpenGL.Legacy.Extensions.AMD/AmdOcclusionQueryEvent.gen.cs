@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     {
         public const string ExtensionName = "AMD_occlusion_query_event";
         [NativeApi(EntryPoint = "glQueryObjectParameteruiAMD", Convention = CallingConvention.Winapi)]
-        public partial void QueryObjectParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint param);
+        public partial void QueryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param);
 
         [NativeApi(EntryPoint = "glQueryObjectParameteruiAMD", Convention = CallingConvention.Winapi)]
-        public partial void QueryObjectParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] OcclusionQueryEventMaskAMD param);
+        public partial void QueryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryEventMaskAMD param);
 
         [NativeApi(EntryPoint = "glQueryObjectParameteruiAMD", Convention = CallingConvention.Winapi)]
-        public partial void QueryObjectParameter([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint param);
+        public partial void QueryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param);
 
         [NativeApi(EntryPoint = "glQueryObjectParameteruiAMD", Convention = CallingConvention.Winapi)]
-        public partial void QueryObjectParameter([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] OcclusionQueryEventMaskAMD param);
+        public partial void QueryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryEventMaskAMD param);
 
         public AmdOcclusionQueryEvent(INativeContext ctx)
             : base(ctx)

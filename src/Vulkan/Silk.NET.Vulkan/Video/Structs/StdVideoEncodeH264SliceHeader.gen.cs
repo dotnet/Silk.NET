@@ -24,13 +24,11 @@ namespace Silk.NET.Vulkan.Video
             StdVideoEncodeH264SliceHeaderFlags? flags = null,
             uint? firstMbInSlice = null,
             StdVideoH264SliceType? sliceType = null,
-            ushort? idrPicId = null,
-            byte? numRefIdxL0ActiveMinus1 = null,
-            byte? numRefIdxL1ActiveMinus1 = null,
-            StdVideoH264CabacInitIdc? cabacInitIdc = null,
-            StdVideoH264DisableDeblockingFilterIdc? disableDeblockingFilterIdc = null,
             byte? sliceAlphaC0OffsetDiv2 = null,
             byte? sliceBetaOffsetDiv2 = null,
+            ushort? reserved1 = null,
+            StdVideoH264CabacInitIdc? cabacInitIdc = null,
+            StdVideoH264DisableDeblockingFilterIdc? disableDeblockingFilterIdc = null,
             StdVideoEncodeH264WeightTable* pWeightTable = null
         ) : this()
         {
@@ -49,19 +47,19 @@ namespace Silk.NET.Vulkan.Video
                 SliceType = sliceType.Value;
             }
 
-            if (idrPicId is not null)
+            if (sliceAlphaC0OffsetDiv2 is not null)
             {
-                IdrPicId = idrPicId.Value;
+                SliceAlphaC0OffsetDiv2 = sliceAlphaC0OffsetDiv2.Value;
             }
 
-            if (numRefIdxL0ActiveMinus1 is not null)
+            if (sliceBetaOffsetDiv2 is not null)
             {
-                NumRefIdxL0ActiveMinus1 = numRefIdxL0ActiveMinus1.Value;
+                SliceBetaOffsetDiv2 = sliceBetaOffsetDiv2.Value;
             }
 
-            if (numRefIdxL1ActiveMinus1 is not null)
+            if (reserved1 is not null)
             {
-                NumRefIdxL1ActiveMinus1 = numRefIdxL1ActiveMinus1.Value;
+                Reserved1 = reserved1.Value;
             }
 
             if (cabacInitIdc is not null)
@@ -72,16 +70,6 @@ namespace Silk.NET.Vulkan.Video
             if (disableDeblockingFilterIdc is not null)
             {
                 DisableDeblockingFilterIdc = disableDeblockingFilterIdc.Value;
-            }
-
-            if (sliceAlphaC0OffsetDiv2 is not null)
-            {
-                SliceAlphaC0OffsetDiv2 = sliceAlphaC0OffsetDiv2.Value;
-            }
-
-            if (sliceBetaOffsetDiv2 is not null)
-            {
-                SliceBetaOffsetDiv2 = sliceBetaOffsetDiv2.Value;
             }
 
             if (pWeightTable is not null)
@@ -106,20 +94,20 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "slice_type")]
         public StdVideoH264SliceType SliceType;
 
+        [NativeName("Type", "int8_t")]
+        [NativeName("Type.Name", "int8_t")]
+        [NativeName("Name", "slice_alpha_c0_offset_div2")]
+        public byte SliceAlphaC0OffsetDiv2;
+
+        [NativeName("Type", "int8_t")]
+        [NativeName("Type.Name", "int8_t")]
+        [NativeName("Name", "slice_beta_offset_div2")]
+        public byte SliceBetaOffsetDiv2;
+
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "idr_pic_id")]
-        public ushort IdrPicId;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_ref_idx_l0_active_minus1")]
-        public byte NumRefIdxL0ActiveMinus1;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_ref_idx_l1_active_minus1")]
-        public byte NumRefIdxL1ActiveMinus1;
+        [NativeName("Name", "reserved1")]
+        public ushort Reserved1;
 
         [NativeName("Type", "StdVideoH264CabacInitIdc")]
         [NativeName("Type.Name", "StdVideoH264CabacInitIdc")]
@@ -130,16 +118,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "StdVideoH264DisableDeblockingFilterIdc")]
         [NativeName("Name", "disable_deblocking_filter_idc")]
         public StdVideoH264DisableDeblockingFilterIdc DisableDeblockingFilterIdc;
-
-        [NativeName("Type", "int8_t")]
-        [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "slice_alpha_c0_offset_div2")]
-        public byte SliceAlphaC0OffsetDiv2;
-
-        [NativeName("Type", "int8_t")]
-        [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "slice_beta_offset_div2")]
-        public byte SliceBetaOffsetDiv2;
 
         [NativeName("Type", "const StdVideoEncodeH264WeightTable *")]
         [NativeName("Type.Name", "const StdVideoEncodeH264WeightTable *")]

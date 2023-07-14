@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_events_L706_C9")]
     [NativeName("Name", "SDL_eventaction")]
     public enum Eventaction : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "SDL_ADDEVENT")]
         Addevent = 0x0,
         [NativeName("Name", "SDL_PEEKEVENT")]

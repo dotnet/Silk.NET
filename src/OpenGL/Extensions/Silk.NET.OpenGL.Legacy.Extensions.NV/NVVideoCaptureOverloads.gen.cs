@@ -16,61 +16,61 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVVideoCaptureOverloads
     {
-        public static unsafe void GetVideoCapture(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetVideoCapture(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetVideoCapture(video_capture_slot, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetVideoCaptureStream(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetVideoCaptureStream(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetVideoCaptureStream(video_capture_slot, stream, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetVideoCaptureStream(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetVideoCaptureStream(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetVideoCaptureStream(video_capture_slot, stream, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetVideoCaptureStream(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<double> @params)
+        public static unsafe void GetVideoCaptureStream(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<double> @params)
         {
             // SpanOverloader
             thisApi.GetVideoCaptureStream(video_capture_slot, stream, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe NV VideoCapture(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] uint* sequence_num, [Flow(FlowDirection.Out)] Span<ulong> capture_time)
+        public static unsafe NV VideoCapture(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sequence_num, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ulong> capture_time)
         {
             // SpanOverloader
             return thisApi.VideoCapture(video_capture_slot, sequence_num, out capture_time.GetPinnableReference());
         }
 
-        public static unsafe NV VideoCapture(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] Span<uint> sequence_num, [Flow(FlowDirection.Out)] ulong* capture_time)
+        public static unsafe NV VideoCapture(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sequence_num, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* capture_time)
         {
             // SpanOverloader
             return thisApi.VideoCapture(video_capture_slot, out sequence_num.GetPinnableReference(), capture_time);
         }
 
-        public static unsafe NV VideoCapture(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] Span<uint> sequence_num, [Flow(FlowDirection.Out)] Span<ulong> capture_time)
+        public static unsafe NV VideoCapture(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sequence_num, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ulong> capture_time)
         {
             // SpanOverloader
             return thisApi.VideoCapture(video_capture_slot, out sequence_num.GetPinnableReference(), out capture_time.GetPinnableReference());
         }
 
-        public static unsafe void VideoCaptureStreamParameter(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void VideoCaptureStreamParameter(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.VideoCaptureStreamParameter(video_capture_slot, stream, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void VideoCaptureStreamParameter(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void VideoCaptureStreamParameter(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.VideoCaptureStreamParameter(video_capture_slot, stream, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void VideoCaptureStreamParameter(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<double> @params)
+        public static unsafe void VideoCaptureStreamParameter(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> @params)
         {
             // SpanOverloader
             thisApi.VideoCaptureStreamParameter(video_capture_slot, stream, pname, in @params.GetPinnableReference());

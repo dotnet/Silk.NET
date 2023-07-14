@@ -30,116 +30,116 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AcquireNextImageInfoKHR* pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
+        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AcquireNextImageInfoKHR* pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AcquireNextImageInfoKHR* pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
+        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AcquireNextImageInfoKHR* pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
+        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
+        public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroySwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroySwapchainKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
+        public partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceGroupPresentCapabilities([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities);
+        public unsafe partial Result GetDeviceGroupPresentCapabilities([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pDeviceGroupPresentCapabilities = new(StructureType.DeviceGroupPresentCapabilitiesKhr);")]
         [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetDeviceGroupPresentCapabilities([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceGroupPresentCapabilitiesKHR pDeviceGroupPresentCapabilities);
+        public partial Result GetDeviceGroupPresentCapabilities([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeviceGroupPresentCapabilitiesKHR pDeviceGroupPresentCapabilities);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceGroupSurfacePresentModes([Count(Count = 0)] Device device, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceGroupPresentModeFlagsKHR* pModes);
+        public unsafe partial Result GetDeviceGroupSurfacePresentModes([Count(Count = 0)] Device device, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceGroupPresentModeFlagsKHR* pModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetDeviceGroupSurfacePresentModes([Count(Count = 0)] Device device, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceGroupPresentModeFlagsKHR pModes);
+        public partial Result GetDeviceGroupSurfacePresentModes([Count(Count = 0)] Device device, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeviceGroupPresentModeFlagsKHR pModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects);
+        public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Rect2D* pRects);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] out Rect2D pRects);
+        public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Rect2D pRects);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects);
+        public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Rect2D* pRects);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] out Rect2D pRects);
+        public partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Rect2D pRects);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Image* pSwapchainImages);
+        public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Image* pSwapchainImages);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] out Image pSwapchainImages);
+        public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Image pSwapchainImages);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Image* pSwapchainImages);
+        public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Image* pSwapchainImages);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] out Image pSwapchainImages);
+        public partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Image pSwapchainImages);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueuePresentKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] PresentInfoKHR* pPresentInfo);
+        public unsafe partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PresentInfoKHR* pPresentInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueuePresentKHR", Convention = CallingConvention.Winapi)]
-        public partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] in PresentInfoKHR pPresentInfo);
+        public partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PresentInfoKHR pPresentInfo);
 
         public KhrSwapchain(INativeContext ctx)
             : base(ctx)

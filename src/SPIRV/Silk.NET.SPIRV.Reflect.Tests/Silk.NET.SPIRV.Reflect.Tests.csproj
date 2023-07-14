@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <RuntimeIdentifier>$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="xunit" Version="2.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+    <ProjectReference Include="..\Silk.NET.SPIRV.Reflect\Silk.NET.SPIRV.Reflect.csproj" />
+
+    <!-- <None Include="../../Native/Silk.NET.SPIRV.Reflect.Native/runtimes/win-x64/*.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /> -->
+    <!-- <None Include="../../Native/Silk.NET.SPIRV.Reflect.Native/runtimes/linux-x64/*.so" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /> -->
+    <None Include="../../Native/Silk.NET.SPIRV.Reflect.Native/**/*.so" CopyToOutputDirectory="Always" />
+    <None Include="../../Native/Silk.NET.SPIRV.Reflect.Native/**/*.dylib" CopyToOutputDirectory="Always" />
+    <None Include="../../Native/Silk.NET.SPIRV.Reflect.Native/**/*.dll" CopyToOutputDirectory="Always" />
+    <None Remove="../../Native/Silk.NET.SPIRV.Reflect.Native/bin/**/*.dll" />
+    <None Remove="../../Native/Silk.NET.SPIRV.Reflect.Native/obj/**/*.dll" />
+
+    <None Include="shader.frag.spv" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+</Project>

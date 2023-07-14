@@ -12,22 +12,22 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "ClientAttribMask")]
     public enum ClientAttribMask : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_PIXEL_STORE_BIT")]
         ClientPixelStoreBit = 0x1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_VERTEX_ARRAY_BIT")]
         ClientVertexArrayBit = 0x2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_ALL_ATTRIB_BITS")]
         ClientAllAttribBits = unchecked((int)0xFFFFFFFF),
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_PIXEL_STORE_BIT")]
         PixelStoreBit = 0x1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_VERTEX_ARRAY_BIT")]
         VertexArrayBit = 0x2,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_CLIENT_ALL_ATTRIB_BITS")]
         AllAttribBits = unchecked((int)0xFFFFFFFF),
     }

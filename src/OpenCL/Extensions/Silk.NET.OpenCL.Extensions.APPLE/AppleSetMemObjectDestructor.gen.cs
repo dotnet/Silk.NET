@@ -21,10 +21,10 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_SetMemObjectDestructor";
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE", Convention = CallingConvention.Winapi)]
-        public unsafe partial int SetMemObjectDestructor([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int SetMemObjectDestructor([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE", Convention = CallingConvention.Winapi)]
-        public partial int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public partial int SetMemObjectDestructor<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         public AppleSetMemObjectDestructor(INativeContext ctx)
             : base(ctx)

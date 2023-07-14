@@ -21,108 +21,108 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_invalidate_subdata";
         [NativeApi(EntryPoint = "glInvalidateBufferData", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateBufferData([Flow(FlowDirection.In)] uint buffer);
+        public partial void InvalidateBufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glInvalidateBufferSubData", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length);
+        public partial void InvalidateBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ARB* attachments);
+        public unsafe partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in ARB attachments);
+        public partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ARB attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
+        public unsafe partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
+        public partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ARB* attachments);
+        public unsafe partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in ARB attachments);
+        public partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ARB attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
+        public unsafe partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
+        public partial void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ARB* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB* attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in ARB attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ARB attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in InvalidateFramebufferAttachment attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ARB* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB* attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in ARB attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ARB attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in InvalidateFramebufferAttachment attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateTexImage", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        public partial void InvalidateTexImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level);
 
         [NativeApi(EntryPoint = "glInvalidateTexSubImage", Convention = CallingConvention.Winapi)]
-        public partial void InvalidateTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+        public partial void InvalidateTexSubImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth);
 
-        public unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> attachments)
+        public unsafe void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ARB> attachments)
         {
             // ImplicitCountSpanOverloader
             InvalidateFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
         }
 
-        public unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
+        public unsafe void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
         {
             // ImplicitCountSpanOverloader
             InvalidateFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
         }
 
-        public unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> attachments)
+        public unsafe void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ARB> attachments)
         {
             // ImplicitCountSpanOverloader
             InvalidateFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
         }
 
-        public unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
+        public unsafe void InvalidateFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
         {
             // ImplicitCountSpanOverloader
             InvalidateFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
         }
 
-        public unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+        public unsafe void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ARB> attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height)
         {
             // ImplicitCountSpanOverloader
             InvalidateSubFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
-        public unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+        public unsafe void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height)
         {
             // ImplicitCountSpanOverloader
             InvalidateSubFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
-        public unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+        public unsafe void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ARB> attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height)
         {
             // ImplicitCountSpanOverloader
             InvalidateSubFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
-        public unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+        public unsafe void InvalidateSubFramebuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height)
         {
             // ImplicitCountSpanOverloader
             InvalidateSubFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference(), x, y, width, height);

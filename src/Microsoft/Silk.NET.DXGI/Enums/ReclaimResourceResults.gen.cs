@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "_DXGI_RECLAIM_RESOURCE_RESULTS")]
     public enum ReclaimResourceResults : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"OK\"")]
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_OK")]
         ReclaimResourceResultOK = 0x0,

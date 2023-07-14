@@ -9,12 +9,15 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
+    [Flags]
     [NativeName("Name", "ClearBufferMask")]
     public enum ClearBufferMask : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_DEPTH_BUFFER_BIT")]
         DepthBufferBit = 0x100,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_ACCUM_BUFFER_BIT")]
         AccumBufferBit = 0x200,
         [NativeName("Name", "GL_STENCIL_BUFFER_BIT")]

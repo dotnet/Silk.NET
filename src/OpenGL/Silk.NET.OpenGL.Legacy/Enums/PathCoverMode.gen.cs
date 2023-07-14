@@ -18,7 +18,5 @@ namespace Silk.NET.OpenGL.Legacy
         ConvexHullNV = 0x908B,
         [NativeName("Name", "GL_BOUNDING_BOX_NV")]
         BoundingBoxNV = 0x908D,
-        [NativeName("Name", "GL_BOUNDING_BOX_OF_BOUNDING_BOXES_NV")]
-        BoundingBoxOfBoundingBoxesNV = 0x909C,
     }
 }

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectStorage
 {
-    [Flags]
     [NativeName("Name", "DSTORAGE_STAGING_BUFFER_SIZE")]
     public enum StagingBufferSize : uint
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Size0\"")]
         [NativeName("Name", "DSTORAGE_STAGING_BUFFER_SIZE_0")]
         StagingBufferSize0 = 0x0,

@@ -17,18 +17,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeRateControlLayerInfoKHR")]
-    public unsafe partial struct VideoEncodeRateControlLayerInfoKHR : IChainStart, IExtendsChain<VideoCodingControlInfoKHR>
+    public unsafe partial struct VideoEncodeRateControlLayerInfoKHR : IChainStart
     {
         public VideoEncodeRateControlLayerInfoKHR
         (
             StructureType? sType = StructureType.VideoEncodeRateControlLayerInfoKhr,
             void* pNext = null,
-            uint? averageBitrate = null,
-            uint? maxBitrate = null,
+            ulong? averageBitrate = null,
+            ulong? maxBitrate = null,
             uint? frameRateNumerator = null,
-            uint? frameRateDenominator = null,
-            uint? virtualBufferSizeInMs = null,
-            uint? initialVirtualBufferSizeInMs = null
+            uint? frameRateDenominator = null
         ) : this()
         {
             if (sType is not null)
@@ -60,16 +58,6 @@ namespace Silk.NET.Vulkan
             {
                 FrameRateDenominator = frameRateDenominator.Value;
             }
-
-            if (virtualBufferSizeInMs is not null)
-            {
-                VirtualBufferSizeInMs = virtualBufferSizeInMs.Value;
-            }
-
-            if (initialVirtualBufferSizeInMs is not null)
-            {
-                InitialVirtualBufferSizeInMs = initialVirtualBufferSizeInMs.Value;
-            }
         }
 
 /// <summary></summary>
@@ -83,15 +71,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "averageBitrate")]
-        public uint AverageBitrate;
+        public ulong AverageBitrate;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "maxBitrate")]
-        public uint MaxBitrate;
+        public ulong MaxBitrate;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -102,16 +90,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "frameRateDenominator")]
         public uint FrameRateDenominator;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "virtualBufferSizeInMs")]
-        public uint VirtualBufferSizeInMs;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "initialVirtualBufferSizeInMs")]
-        public uint InitialVirtualBufferSizeInMs;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

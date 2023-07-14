@@ -17,10 +17,17 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVScissorExclusiveOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetExclusiveScissor(this NVScissorExclusive thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pExclusiveScissors)
+        public static unsafe void CmdSetExclusiveScissor(this NVScissorExclusive thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pExclusiveScissors)
         {
             // SpanOverloader
             thisApi.CmdSetExclusiveScissor(commandBuffer, firstExclusiveScissor, exclusiveScissorCount, in pExclusiveScissors.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetExclusiveScissorEnable(this NVScissorExclusive thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Bool32> pExclusiveScissorEnables)
+        {
+            // SpanOverloader
+            thisApi.CmdSetExclusiveScissorEnable(commandBuffer, firstExclusiveScissor, exclusiveScissorCount, in pExclusiveScissorEnables.GetPinnableReference());
         }
 
     }

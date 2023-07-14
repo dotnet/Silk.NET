@@ -27,9 +27,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"VariableDescriptorCountBit\"")]
         [NativeName("Name", "VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT")]
         DescriptorBindingVariableDescriptorCountBit = 8,
-        [Obsolete("Deprecated in favour of \"Reserved4BitQCom\"")]
-        [NativeName("Name", "VK_DESCRIPTOR_BINDING_RESERVED_4_BIT_QCOM")]
-        DescriptorBindingReserved4BitQCom = 16,
         [NativeName("Name", "VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT")]
         UpdateAfterBindBit = 1,
         [NativeName("Name", "VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT")]
@@ -38,7 +35,5 @@ namespace Silk.NET.Vulkan
         PartiallyBoundBit = 4,
         [NativeName("Name", "VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT")]
         VariableDescriptorCountBit = 8,
-        [NativeName("Name", "VK_DESCRIPTOR_BINDING_RESERVED_4_BIT_QCOM")]
-        Reserved4BitQCom = 16,
     }
 }

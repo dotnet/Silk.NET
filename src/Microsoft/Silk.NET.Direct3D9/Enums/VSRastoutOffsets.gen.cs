@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DVS_RASTOUT_OFFSETS")]
     public enum VSRastoutOffsets : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Position\"")]
         [NativeName("Name", "D3DSRO_POSITION")]
         SroPosition = 0x0,

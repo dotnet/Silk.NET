@@ -16,49 +16,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     public static class SgixListPriorityOverloads
     {
-        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ListParameter(list, pname, in @params.GetPinnableReference());

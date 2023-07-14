@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_sample_shading";
         [NativeApi(EntryPoint = "glMinSampleShadingARB", Convention = CallingConvention.Winapi)]
-        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
+        public partial void MinSampleShading([Flow(Silk.NET.Core.Native.FlowDirection.In)] float value);
 
         public ArbSampleShading(INativeContext ctx)
             : base(ctx)

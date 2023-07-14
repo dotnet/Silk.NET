@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_CPU_PAGE_PROPERTY")]
     public enum CpuPageProperty : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D12_CPU_PAGE_PROPERTY_UNKNOWN")]
         CpuPagePropertyUnknown = 0x0,

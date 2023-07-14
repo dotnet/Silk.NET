@@ -21,31 +21,49 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH264PictureInfoFlags
         (
-            uint? idrFlag = null,
-            uint? isReferenceFlag = null,
-            uint? usedForLongTermReference = null
+            uint? idrPicFlag = null,
+            uint? isReference = null,
+            uint? noOutputOfPriorPicsFlag = null,
+            uint? longTermReferenceFlag = null,
+            uint? adaptiveRefPicMarkingModeFlag = null,
+            uint? reserved = null
         ) : this()
         {
-            if (idrFlag is not null)
+            if (idrPicFlag is not null)
             {
-                IdrFlag = idrFlag.Value;
+                IdrPicFlag = idrPicFlag.Value;
             }
 
-            if (isReferenceFlag is not null)
+            if (isReference is not null)
             {
-                IsReferenceFlag = isReferenceFlag.Value;
+                IsReference = isReference.Value;
             }
 
-            if (usedForLongTermReference is not null)
+            if (noOutputOfPriorPicsFlag is not null)
             {
-                UsedForLongTermReference = usedForLongTermReference.Value;
+                NoOutputOfPriorPicsFlag = noOutputOfPriorPicsFlag.Value;
+            }
+
+            if (longTermReferenceFlag is not null)
+            {
+                LongTermReferenceFlag = longTermReferenceFlag.Value;
+            }
+
+            if (adaptiveRefPicMarkingModeFlag is not null)
+            {
+                AdaptiveRefPicMarkingModeFlag = adaptiveRefPicMarkingModeFlag.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
             }
         }
 
 
         private uint _bitfield1;
 
-        public uint IdrFlag
+        public uint IdrPicFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -53,7 +71,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        public uint IsReferenceFlag
+        public uint IsReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);
@@ -61,12 +79,36 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        public uint UsedForLongTermReference
+        public uint NoOutputOfPriorPicsFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        }
+
+        public uint LongTermReferenceFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+        }
+
+        public uint AdaptiveRefPicMarkingModeFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        }
+
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 5) & 0x7FFFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x7FFFFFFu << 5)) | (uint)(((uint)(value) & 0x7FFFFFFu) << 5));
         }
     }
 }

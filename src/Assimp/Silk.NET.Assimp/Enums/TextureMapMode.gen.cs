@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiTextureMapMode")]
     public enum TextureMapMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Wrap\"")]
         [NativeName("Name", "aiTextureMapMode_Wrap")]
         TextureMapModeWrap = 0x0,

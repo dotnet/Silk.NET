@@ -17,56 +17,56 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrSamplerYcbcrConversionOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, pAllocator, out pYcbcrConversion.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, in pAllocator.GetPinnableReference(), pYcbcrConversion);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pYcbcrConversion.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), pAllocator, pYcbcrConversion);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pYcbcrConversion.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pYcbcrConversion);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        public static unsafe Result CreateSamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
         {
             // SpanOverloader
             return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pYcbcrConversion.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroySamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        public static unsafe void DestroySamplerYcbcrConversion(this KhrSamplerYcbcrConversion thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroySamplerYcbcrConversion(device, ycbcrConversion, in pAllocator.GetPinnableReference());

@@ -62,6 +62,11 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
+                    if (Generator.TestMode)
+                    {
+                        sw.WriteLine($"    // {attr.Name}: {string.Join(", ", attr.Arguments)}");
+                    }
+
                     if (attr.Arguments.Count > 0)
                     {
                         switch (attr.Arguments[0])
@@ -139,7 +144,7 @@ namespace Silk.NET.BuildTools.Bind
 
             interfaces.AddRange
             (
-                chainExtensions?.Select(e => $"IExtendsChain<{e}>") ??
+                chainExtensions?.Distinct().Select(e => $"IExtendsChain<{e}>") ??
                 Enumerable.Empty<string>()
             );
             if (!interfaces.Any())
@@ -189,7 +194,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
-            foreach (var comBase in @struct.ComBases)
+            foreach (var comBase in @struct.ComBases.RemoveDuplicates())
             {
                 var asSuffix = comBase.Split('.').Last();
                 asSuffix = asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase;
@@ -330,9 +335,12 @@ namespace Silk.NET.BuildTools.Bind
                             ? int.Parse
                             (
                                 profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
-                                    ?
-                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?.Value ??
+                                profile.Projects.SelectMany(x => x.Value.Enums)
+                                    .SelectMany(x => x.Tokens)
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?.Value ??
+                                throw new InvalidDataException
+                                    ("Couldn't find constant referenced: " + structField.Count.ConstantName)
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
@@ -402,7 +410,7 @@ namespace Silk.NET.BuildTools.Bind
                                 profile.Projects.SelectMany(x => x.Value.Enums.SelectMany(y => y.Tokens))
                                     .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
                                     ?
-                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
+                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced: " + structField.Count.ConstantName)
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
@@ -453,7 +461,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             foreach (var function in @struct.Functions.Concat
-                         (ComVtblProcessor.GetHelperFunctions(@struct, profile)))
+                         (ComVtblProcessor.GetHelperFunctions(task, @struct, profile)))
             {
                 if (function.Signature.Kind == SignatureKind.PotentiallyConflictingOverload)
                 {
@@ -598,7 +606,7 @@ namespace Silk.NET.BuildTools.Bind
                 vt.WriteLine();
                 vt.WriteLine($"public unsafe static class {className}");
                 vt.WriteLine("{");
-                foreach (var helper in ComVtblProcessor.GetHelperFunctions(@struct, profile, true))
+                foreach (var helper in ComVtblProcessor.GetHelperFunctions(task, @struct, profile, true))
                 {
                     using (var sr = new StringReader(helper.Signature.Doc))
                     {

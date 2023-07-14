@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_alpha_test";
         [NativeApi(EntryPoint = "glAlphaFuncQCOM", Convention = CallingConvention.Winapi)]
-        public partial void AlphaFunc([Flow(FlowDirection.In)] QCOM func, [Flow(FlowDirection.In)] float @ref);
+        public partial void AlphaFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM func, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float @ref);
 
         public QComAlphaTest(INativeContext ctx)
             : base(ctx)

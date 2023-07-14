@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL
 {
+    [Flags]
     [NativeName("Name", "PathMetricMask")]
     public enum PathMetricMask : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_GLYPH_WIDTH_BIT_NV")]
         GlyphWidthBitNV = 0x1,
         [NativeName("Name", "GL_GLYPH_HEIGHT_BIT_NV")]

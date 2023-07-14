@@ -45,21 +45,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadRenderModelFB(this FBRenderModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] RenderModelLoadInfoFB* info, [Count(Count = 0)] Span<RenderModelBufferFB> buffer)
+        public static unsafe Result LoadRenderModelFB(this FBRenderModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderModelLoadInfoFB* info, [Count(Count = 0)] Span<RenderModelBufferFB> buffer)
         {
             // SpanOverloader
             return thisApi.LoadRenderModelFB(session, info, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadRenderModelFB(this FBRenderModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<RenderModelLoadInfoFB> info, [Count(Count = 0)] RenderModelBufferFB* buffer)
+        public static unsafe Result LoadRenderModelFB(this FBRenderModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderModelLoadInfoFB> info, [Count(Count = 0)] RenderModelBufferFB* buffer)
         {
             // SpanOverloader
             return thisApi.LoadRenderModelFB(session, in info.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadRenderModelFB(this FBRenderModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<RenderModelLoadInfoFB> info, [Count(Count = 0)] Span<RenderModelBufferFB> buffer)
+        public static unsafe Result LoadRenderModelFB(this FBRenderModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderModelLoadInfoFB> info, [Count(Count = 0)] Span<RenderModelBufferFB> buffer)
         {
             // SpanOverloader
             return thisApi.LoadRenderModelFB(session, in info.GetPinnableReference(), ref buffer.GetPinnableReference());

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS")]
     public enum DriverMatchingIdentifierStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CompatibleWithDevice\"")]
         [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_COMPATIBLE_WITH_DEVICE")]
         DriverMatchingIdentifierCompatibleWithDevice = 0x0,

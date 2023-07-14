@@ -21,16 +21,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     {
         public const string ExtensionName = "SGIS_multisample";
         [NativeApi(EntryPoint = "glSampleMaskSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
-
-        [NativeApi(EntryPoint = "glSampleMaskSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+        public partial void SampleMask([Flow(Silk.NET.Core.Native.FlowDirection.In)] float value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool invert);
 
         [NativeApi(EntryPoint = "glSamplePatternSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
+        public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pattern);
 
         [NativeApi(EntryPoint = "glSamplePatternSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
+        public partial void SamplePattern([Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplePatternSGIS pattern);
 
         public SgisMultisample(INativeContext ctx)
             : base(ctx)

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_parallel_shader_compile";
         [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB", Convention = CallingConvention.Winapi)]
-        public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+        public partial void MaxShaderCompilerThreads([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         public ArbParallelShaderCompile(INativeContext ctx)
             : base(ctx)

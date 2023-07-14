@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DSHADER_MIN_PRECISION")]
     public enum ShaderMinPrecision : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "D3DMP_DEFAULT")]
         MPDefault = 0x0,
         [NativeName("Name", "D3DMP_16")]

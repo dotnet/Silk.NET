@@ -22,5 +22,7 @@ namespace Silk.NET.OpenXR
         UnboundedMsft = 1000038000,
         [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_COMBINED_EYE_VARJO")]
         CombinedEyeVarjo = 1000121000,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR_EXT")]
+        LocalFloorExt = 1000426000,
     }
 }

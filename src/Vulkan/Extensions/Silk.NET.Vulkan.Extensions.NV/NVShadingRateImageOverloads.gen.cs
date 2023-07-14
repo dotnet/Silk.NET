@@ -17,14 +17,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVShadingRateImageOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetCoarseSampleOrder(this NVShadingRateImage thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] ReadOnlySpan<CoarseSampleOrderCustomNV> pCustomSampleOrders)
+        public static unsafe void CmdSetCoarseSampleOrder(this NVShadingRateImage thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CoarseSampleOrderCustomNV> pCustomSampleOrders)
         {
             // SpanOverloader
             thisApi.CmdSetCoarseSampleOrder(commandBuffer, sampleOrderType, customSampleOrderCount, in pCustomSampleOrders.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetViewportShadingRatePalette(this NVShadingRateImage thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ShadingRatePaletteNV> pShadingRatePalettes)
+        public static unsafe void CmdSetViewportShadingRatePalette(this NVShadingRateImage thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShadingRatePaletteNV> pShadingRatePalettes)
         {
             // SpanOverloader
             thisApi.CmdSetViewportShadingRatePalette(commandBuffer, firstViewport, viewportCount, in pShadingRatePalettes.GetPinnableReference());

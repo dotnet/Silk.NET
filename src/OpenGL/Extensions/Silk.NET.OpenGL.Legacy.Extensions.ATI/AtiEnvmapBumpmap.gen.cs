@@ -21,54 +21,54 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     {
         public const string ExtensionName = "ATI_envmap_bumpmap";
         [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
+        public partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
+        public partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
+        public unsafe partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
+        public partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
+        public unsafe partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* param);
 
         [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
+        public partial void GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+        public partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
-        public partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+        public partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        public unsafe partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
+        public partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        public unsafe partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* param);
 
         [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
-        public partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
+        public partial void TexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float param);
 
-        public unsafe int GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname)
+        public unsafe int GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname)
         {
             // ReturnTypeOverloader
             int ret = default;
@@ -76,11 +76,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
             return ret;
         }
 
-        public unsafe int GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname)
+        public unsafe int GetTexBumpParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] GetTexBumpParameterATI pname)
         {
-            // NonKhrReturnTypeOverloader
-            GetTexBumpParameter(pname, out int silkRet);
-            return silkRet;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetTexBumpParameter(pname, &ret);
+            return ret;
         }
 
         public AtiEnvmapBumpmap(INativeContext ctx)

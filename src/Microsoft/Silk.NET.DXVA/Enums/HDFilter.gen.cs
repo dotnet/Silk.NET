@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_DXVAHD_FILTER")]
     public enum HDFilter : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Brightness\"")]
         [NativeName("Name", "DXVAHD_FILTER_BRIGHTNESS")]
         HDFilterBrightness = 0x0,

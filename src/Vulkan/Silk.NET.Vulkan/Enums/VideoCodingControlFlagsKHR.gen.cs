@@ -21,14 +21,14 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"EncodeRateControlBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR")]
         VideoCodingControlEncodeRateControlBitKhr = 2,
-        [Obsolete("Deprecated in favour of \"EncodeRateControlLayerBitKhr\"")]
-        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_LAYER_BIT_KHR")]
-        VideoCodingControlEncodeRateControlLayerBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"EncodeQualityLevelBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR")]
+        VideoCodingControlEncodeQualityLevelBitKhr = 4,
         [NativeName("Name", "VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR")]
         ResetBitKhr = 1,
         [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR")]
         EncodeRateControlBitKhr = 2,
-        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_LAYER_BIT_KHR")]
-        EncodeRateControlLayerBitKhr = 4,
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR")]
+        EncodeQualityLevelBitKhr = 4,
     }
 }

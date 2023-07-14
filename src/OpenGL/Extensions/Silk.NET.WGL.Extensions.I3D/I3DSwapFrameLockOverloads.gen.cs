@@ -16,13 +16,13 @@ namespace Silk.NET.WGL.Extensions.I3D
 {
     public static class I3DSwapFrameLockOverloads
     {
-        public static unsafe Silk.NET.Core.Bool32 IsEnabledFrameLockI3D(this I3DSwapFrameLock thisApi, [Flow(FlowDirection.Out)] Span<Silk.NET.Core.Bool32> pFlag)
+        public static unsafe Silk.NET.Core.Bool32 IsEnabledFrameLockI3D(this I3DSwapFrameLock thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Silk.NET.Core.Bool32> pFlag)
         {
             // SpanOverloader
             return thisApi.IsEnabledFrameLockI3D(out pFlag.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryFrameLockMasterI3D(this I3DSwapFrameLock thisApi, [Flow(FlowDirection.Out)] Span<Silk.NET.Core.Bool32> pFlag)
+        public static unsafe Silk.NET.Core.Bool32 QueryFrameLockMasterI3D(this I3DSwapFrameLock thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Silk.NET.Core.Bool32> pFlag)
         {
             // SpanOverloader
             return thisApi.QueryFrameLockMasterI3D(out pFlag.GetPinnableReference());

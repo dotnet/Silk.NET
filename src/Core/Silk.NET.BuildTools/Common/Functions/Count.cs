@@ -107,6 +107,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         public string? ValueReference { get; set; }
 
         /// <summary>
+        /// Mathematical expression following the count.
+        /// </summary>
+        public string? Expression { get; set; }
+
+        /// <summary>
         /// Gets or sets the function that the parameter in question is part of.
         /// </summary>
         [JsonIgnore]

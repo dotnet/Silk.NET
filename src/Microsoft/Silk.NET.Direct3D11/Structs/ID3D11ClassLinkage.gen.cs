@@ -239,7 +239,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -248,7 +248,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -260,7 +260,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -272,7 +272,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -287,7 +287,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -296,7 +296,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -308,7 +308,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -320,7 +320,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([Flow(FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int GetClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -344,7 +344,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([Flow(FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int GetClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -356,7 +356,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([Flow(FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int GetClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -368,7 +368,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([Flow(FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int GetClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -383,7 +383,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int GetClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -394,7 +394,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int GetClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -408,7 +408,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([Flow(FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int CreateClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -417,7 +417,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([Flow(FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int CreateClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -429,7 +429,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([Flow(FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int CreateClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -441,7 +441,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([Flow(FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int CreateClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -456,7 +456,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int CreateClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -467,7 +467,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int CreateClassInstance([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -498,7 +498,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -506,7 +506,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -514,7 +514,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance<TI0>([Flow(FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly unsafe int GetClassInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -522,7 +522,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetClassInstance<TI0>([Flow(FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly int GetClassInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -530,7 +530,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetClassInstance<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly int GetClassInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -538,7 +538,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance<TI0>([Flow(FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly unsafe int CreateClassInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -546,7 +546,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateClassInstance<TI0>([Flow(FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly int CreateClassInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -554,7 +554,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateClassInstance<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+        public readonly int CreateClassInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -18,6 +18,8 @@ namespace Silk.NET.Input.Glfw
         private unsafe WindowHandle* _handle;
         private GlfwCallbacks.CharCallback? _char;
         private GlfwCallbacks.KeyCallback? _key;
+        private List<int> _scancodesDown = new List<int>();
+
         public string Name { get; } = "Silk.NET Keyboard (via GLFW)";
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
@@ -30,6 +32,8 @@ namespace Silk.NET.Input.Glfw
 
         public unsafe bool IsKeyPressed
             (Key key) => GlfwProvider.GLFW.Value.GetKey(_handle, ConvertKey(key)) == (int) InputAction.Press;
+
+        public unsafe bool IsScancodePressed(int scancode) => _scancodesDown.Contains(scancode);
 
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
@@ -49,13 +53,22 @@ namespace Silk.NET.Input.Glfw
             _handle = events.Handle;
             events.Char += _char = (_, c) => KeyChar?.Invoke(this, (char) c);
             events.Key += _key = (_, key, code, action, mods) =>
-                (action switch
+            {
+                Action<IKeyboard, Key, int>? evt = null;
+                switch(action)
                 {
-                    InputAction.Press => KeyDown,
-                    InputAction.Release => KeyUp,
-                    InputAction.Repeat => null,
-                    _ => null
-                })?.Invoke(this, ConvertKey(key), code);
+                    case InputAction.Press:
+                        evt = KeyDown;
+                        _scancodesDown.Add(code);
+                        break;
+                    case InputAction.Release:
+                        evt = KeyUp;
+                        _scancodesDown.Remove(code);
+                        break;
+                }
+
+                evt?.Invoke(this, ConvertKey(key), code);
+            };
         }
 
         public void Unsubscribe(GlfwEvents events)

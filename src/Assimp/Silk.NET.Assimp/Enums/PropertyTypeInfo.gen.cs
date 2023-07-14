@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiPropertyTypeInfo")]
     public enum PropertyTypeInfo : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Float\"")]
         [NativeName("Name", "aiPTI_Float")]
         PtiFloat = 0x1,

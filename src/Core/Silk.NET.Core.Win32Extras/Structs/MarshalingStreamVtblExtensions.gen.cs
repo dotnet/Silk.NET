@@ -133,7 +133,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,7 +142,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -355,22 +355,22 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Stat(this ComPtr<IMarshalingStream> thisVtbl, TagSTATSTG* pstatstg, uint grfStatFlag)
+    public static unsafe int Stat(this ComPtr<IMarshalingStream> thisVtbl, STATSTG* pstatstg, uint grfStatFlag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
+        ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, ref TagSTATSTG pstatstg, uint grfStatFlag)
+    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, ref STATSTG pstatstg, uint grfStatFlag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagSTATSTG* pstatstgPtr = &pstatstg)
+        fixed (STATSTG* pstatstgPtr = &pstatstg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, STATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
         }
         return ret;
     }
@@ -467,7 +467,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -475,7 +475,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -483,7 +483,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -587,7 +587,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, Span<TagSTATSTG> pstatstg, uint grfStatFlag)
+    public static int Stat(this ComPtr<IMarshalingStream> thisVtbl, Span<STATSTG> pstatstg, uint grfStatFlag)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

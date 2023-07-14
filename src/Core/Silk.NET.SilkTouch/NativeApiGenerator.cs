@@ -79,7 +79,6 @@ namespace Silk.NET.SilkTouch
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
 
-
             foreach (var group in receiver.ClassDeclarations.Select(x => (x.Item1, x.Item2, x.Item2.GetDeclaredSymbol(x.Item1)))
                 .GroupBy(x => x.Item3, SymbolEqualityComparer.Default))
             {
@@ -111,7 +110,7 @@ namespace Silk.NET.SilkTouch
             hintName = hintName.Select(x => char.IsLetterOrDigit(x) ? x : '_').ToArray().AsSpan().ToString();
             var name = $"{hintName}.{Guid.NewGuid()}.gen";
             context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-            // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+            // File.WriteAllText(@"C:\st\" + name, s);
         }
 
         private string ProcessClassDeclaration
@@ -503,7 +502,7 @@ namespace Silk.NET.SilkTouch
 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                var context = new MarshalContext(compilation, symbol);
+                var context = new MarshalContext(compilation, symbol, entryPoint);
 
                 marshalBuilder.Run(context);
 

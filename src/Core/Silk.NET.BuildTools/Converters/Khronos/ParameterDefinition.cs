@@ -47,6 +47,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// Is this parameter a constant?
         /// </summary>
         public bool IsConst { get; }
+        
+        /// <summary>
+        /// The API for which this parameter is applicable.
+        /// </summary>
+        public string? Api { get; }
 
         /// <summary>
         /// Define a new parameter.
@@ -58,7 +63,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="count">The element count of this parameter.</param>
         /// <param name="symbolicCount">The symbolic element count of this parameter.</param>
         /// <param name="isConst">Is this parameter a constant?</param>
-        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional, int count, string symbolicCount, bool isConst)
+        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional, int count, string symbolicCount, bool isConst, string? api)
         {
             Name = name;
             Type = type;
@@ -68,6 +73,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             IsConst = isConst;
             ElementCountSymbolic = symbolicCount == "null-terminated" ? null : symbolicCount;
             IsNullTerminated = symbolicCount?.Contains("null-terminated") ?? false;
+            Api = api;
         }
 
         /// <summary>
@@ -130,11 +136,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
 
             var type = new TypeSpec(typeName, pointerLevel);
+            var api = xe.Attribute("api")?.Value;
 
             return new ParameterDefinition
             (
                 name, type, ParameterModifier.None, isOptional,
-                count, symbolic, isConst
+                count, symbolic, isConst, api
             );
         }
     }

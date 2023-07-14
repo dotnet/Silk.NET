@@ -17,7 +17,7 @@
     <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
     <Content Include="runtimes\linux-x64\native\libvulkan.so" PackagePath="runtimes\linux-x64\native\libvulkan.so" />
     <Content Include="runtimes\osx-x64\native\libvulkan.dylib" PackagePath="runtimes\osx-x64\native\libvulkan.dylib" />
     <Content Include="runtimes\win-x64\native\vulkan-1.dll" PackagePath="runtimes\win-x64\native\vulkan-1.dll" />

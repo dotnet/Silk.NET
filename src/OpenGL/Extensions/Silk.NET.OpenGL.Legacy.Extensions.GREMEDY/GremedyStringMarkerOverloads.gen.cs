@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
     public static class GremedyStringMarkerOverloads
     {
-        public static unsafe void StringMarker<T0>(this GremedyStringMarker thisApi, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void StringMarker<T0>(this GremedyStringMarker thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.StringMarker(len, in @string.GetPinnableReference());

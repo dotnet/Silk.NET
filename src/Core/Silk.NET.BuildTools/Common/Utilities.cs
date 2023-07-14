@@ -6,7 +6,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
+using ClangSharp;
 using ClangSharp.Interop;
 
 using Silk.NET.BuildTools.Common.Functions;
@@ -137,25 +140,48 @@ namespace Silk.NET.BuildTools.Common
         /// This uses .ToString() to sort faster through the duplicate entries
         /// </summary>
         /// <param name="enumerable">The enumerable to process.</param>
+        /// <param name="getSignature">A function that returns a trivially hashable signature for the item.</param>
+        /// <param name="postDuplicate">
+        /// A function that is executed when a duplicate is found; with the current proposed non-duplicate items, the
+        /// items the discovered duplicate was checked against, and the duplicate.
+        /// </param>
         /// <typeparam name="T">The type contained within this enumerable.</typeparam>
         /// <returns>An enumerable with no duplicates.</returns>
-        public static IEnumerable<T> RemoveDuplicatesFast<T>(this IEnumerable<T> enumerable, Func<T, string> GetSignature)
+        public static IEnumerable<T> RemoveDuplicatesFast<T>
+        (
+            this IEnumerable<T> enumerable,
+            Func<T, string> getSignature,
+            Action<List<T>, List<T>, T>? postDuplicate = null  
+        )
         {
             // note: this is required because ApiProfile.GetCategories() returns duplicates.
             var ret = new List<T>();
             var checker = new Dictionary<string, List<T>>();
             foreach (var item in enumerable)
             {
-                var signature = GetSignature(item);
+                // get a signature description (basically the parameter types)
+                var signature = getSignature(item);
+                
+                // if we've seen these parameters before for this function.
                 if (checker.ContainsKey(signature))
                 {
-                    if (checker[signature].Any(x => x.Equals(item))) continue;
+                    // if we've seen this signature before, continue and do not add.
+                    if (checker[signature].Any(x => x.Equals(item)))
+                    {
+                        postDuplicate?.Invoke(ret, checker[signature], item);
+                        continue;
+                    }
+                    
+                    // otherwise, register this function for duplicate checking.
                     checker[signature].Add(item);
                 }
                 else
                 {
+                    // else, register this signature for duplicate checking.
                     checker.Add(signature, new List<T>() { item });
                 }
+                
+                // not a duplicate!
                 ret.Add(item);
             }
 
@@ -586,5 +612,105 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The edited string.</returns>
         public static string RemoveTempNames(this string s)
             => Generator.TempFolders.Aggregate(s, (now, tmp) => now.Replace(tmp, "<...>"));
+
+        /// <summary>
+        /// Gets the content for the NativeName Src attribute for this decl. 
+        /// </summary>
+        /// <param name="decl">The decl.</param>
+        /// <returns>The content for the NativeName attribute.</returns>
+        public static string ToNativeName(this Decl decl)
+        {
+            decl.Location.GetSpellingLocation(out var file, out var line, out var column, out _);
+            return $"Line {line}, Column {column} in {Path.GetFileName(file.Name.ToString())}";
+        }
+        
+        public static bool IsProbablyABitmask(this Enums.Enum @enum)
+            => @enum.Tokens.Count > 1 && // there is more than one token
+               // at least approx 50% of the tokens have only one bit set
+               @enum.Tokens.Count(x => BitOperations.PopCount(ParseToken(x.Value, @enum)) == 1)
+               >= MathF.Floor(@enum.Tokens.Count / 2f) &&
+               // it's not sequential (1, 2, 3)
+               !@enum.IsSequential();
+
+        private static bool IsSequential(this Enums.Enum @enum)
+        {
+            const int maxMisses = 1;
+            var misses = 0;
+            for (var i = 0; i < @enum.Tokens.Count; i++)
+            {
+                if (ParseToken(@enum.Tokens[i].Value, @enum) != (ulong)(i - misses) &&
+                    ParseToken(@enum.Tokens[i].Value, @enum) != (ulong)((i - misses) + 1))
+                {
+                    misses++;
+                }
+
+                if (misses > maxMisses)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static bool HasDefaultValue(this Enums.Enum @enum)
+            => @enum.Tokens.Any(x => ParseToken(x.Value, @enum) is 0);
+
+        private static ulong ParseToken(string value, Enums.Enum @enum) => value.StartsWith("0x")
+            ? ulong.Parse(value[2..], NumberStyles.HexNumber, null)
+            : value.StartsWith("unchecked")
+                ? ParseToken(value[$"unchecked(({@enum.EnumBaseType.Name})".Length..].TrimEnd(')').Trim(), @enum)
+                : ulong.TryParse(value, out var val)
+                    ? val
+                    : long.TryParse(value, out var signedVal)
+                        ? @enum.EnumBaseType.Name switch
+                        {
+                            "int" => unchecked((ulong) (int) signedVal),
+                            "uint" => unchecked((uint) signedVal),
+                            "long" or "ulong" => unchecked((ulong) signedVal),
+                            _ => throw new ArgumentOutOfRangeException()
+                        }
+                        : throw new ArgumentException("failed to parse", nameof(value));
+        /// <summary>
+        /// Separates the input words with underscore
+        /// </summary>
+        /// <param name="input">The string to be underscored</param>
+        /// <returns></returns>
+        public static string LenientUnderscore(this string input)
+        {
+            // This is a modified version of Humanizer's Underscore methods with the following changes:
+            // - The regex ([\p{Ll}\d])([\p{Lu}]) has been replaced with
+            //   ([\p{Ll}\d])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}]) - In this regex, the positive lookahead assertion
+            //   (?=[\p{Lu}][\p{Lu}\p{Ll}]) ensures that the next character after the match is an uppercase letter,
+            //   followed by any letter (uppercase or lowercase). This will only match if the 2nd character after the
+            //   initial match is uppercase. That was suggested by ChatGPT, a human had to add the final
+            //   [\p{Ll}])([\p{Lu}]) to ensure we don't erroneous match non-pascal case strings and to capture the
+            //   second character to ensure we can do the replacement. Still pretty smart though.
+            // - The final ToLower has been omitted as it was not deemed necessary 
+            // - The regex ([\p{Ll}])([\p{Lu}]) has been added to replace lowercase letters followed by an uppercase letter with the 
+            //   same sequence but with an underscore inbetween, 
+            //   this fixes cases like SpvImageFormatR32ui being Spv_Image_FormatR32ui instead of Spv_Image_Format_R32ui
+            return Regex.Replace
+            (
+                Regex.Replace
+                (
+                    Regex.Replace
+                    (
+                        Regex.Replace
+                        (
+                            input, 
+                            @"([\p{Lu}]+)([\p{Lu}][\p{Ll}])", 
+                            "$1_$2"
+                        ),
+                        @"([\p{Ll}])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}])", 
+                        "$1_$2"
+                    ),
+                    @"([\p{Ll}])([\p{Lu}])", 
+                    "$1_$2"
+                ),
+                @"[-\s]", 
+                "_"
+            );
+        }
     }
 }

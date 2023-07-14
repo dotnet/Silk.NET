@@ -163,13 +163,15 @@ namespace Silk.NET.Windowing.Glfw
             }
             set
             {
-                if (ExtendedOptionsCache.WindowState == WindowState.Normal)
+                // if we're not fullscreen
+                if (ExtendedOptionsCache.WindowState is not WindowState.Fullscreen)
                 {
                     _nonFullscreenPosition = CorePosition;
                     _nonFullscreenSize = CoreSize;
                 }
-                else if (ExtendedOptionsCache.WindowState == WindowState.Fullscreen &&
-                         value != WindowState.Fullscreen)
+                
+                // if we're fullscreen and going not fullscreen
+                if (ExtendedOptionsCache.WindowState == WindowState.Fullscreen && value != WindowState.Fullscreen)
                 {
                     _glfw.SetWindowMonitor
                     (
@@ -371,6 +373,8 @@ namespace Silk.NET.Windowing.Glfw
             _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
 
             var share = SharedContext;
+            _nonFullscreenSize = opts.Size;
+            _nonFullscreenPosition = opts.Position;
 
             // Create window
             _glfwWindow = _glfw.CreateWindow
@@ -385,10 +389,16 @@ namespace Silk.NET.Windowing.Glfw
                 }
             );
 
+            if (opts.WindowState is not WindowState.Fullscreen)
+            {
+                CorePosition = opts.Position;
+            }
+
+            IsInitialized = true;
             if (opts.IsVisible)
             {
                 _glfw.ShowWindow(_glfwWindow);
-                CoreWindowState = opts.WindowState;
+                WindowState = opts.WindowState;
             }
             else
             {

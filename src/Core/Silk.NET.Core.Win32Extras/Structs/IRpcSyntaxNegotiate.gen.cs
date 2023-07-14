@@ -111,22 +111,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int NegotiateSyntax(TagRPCOLEMESSAGE* pMsg)
+        public readonly unsafe int NegotiateSyntax(RPCOLEMessage* pMsg)
         {
             var @this = (IRpcSyntaxNegotiate*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[3])(@this, pMsg);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, RPCOLEMessage*, int>)@this->LpVtbl[3])(@this, pMsg);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int NegotiateSyntax(ref TagRPCOLEMESSAGE pMsg)
+        public readonly int NegotiateSyntax(ref RPCOLEMessage pMsg)
         {
             var @this = (IRpcSyntaxNegotiate*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+            fixed (RPCOLEMessage* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[3])(@this, pMsgPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcSyntaxNegotiate*, RPCOLEMessage*, int>)@this->LpVtbl[3])(@this, pMsgPtr);
             }
             return ret;
         }

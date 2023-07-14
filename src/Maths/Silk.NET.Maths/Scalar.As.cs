@@ -1008,6 +1008,7 @@ namespace Silk.NET.Maths
 
                 ThrowUnsupportedType();
                 return default!;
+
             }
 
             ThrowUnsupportedType();

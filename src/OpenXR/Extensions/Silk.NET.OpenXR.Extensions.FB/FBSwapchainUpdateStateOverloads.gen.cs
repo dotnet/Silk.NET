@@ -24,7 +24,7 @@ namespace Silk.NET.OpenXR.Extensions.FB
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result UpdateSwapchainFB(this FBSwapchainUpdateState thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainStateBaseHeaderFB> state)
+        public static unsafe Result UpdateSwapchainFB(this FBSwapchainUpdateState thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainStateBaseHeaderFB> state)
         {
             // SpanOverloader
             return thisApi.UpdateSwapchainFB(swapchain, in state.GetPinnableReference());

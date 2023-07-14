@@ -17,7 +17,7 @@ namespace Silk.NET.OpenXR.Extensions.HTC
     public static class HtcFoveationOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result ApplyFoveationHtc(this HtcFoveation thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FoveationApplyInfoHTC> applyInfo)
+        public static unsafe Result ApplyFoveationHtc(this HtcFoveation thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FoveationApplyInfoHTC> applyInfo)
         {
             // SpanOverloader
             return thisApi.ApplyFoveationHtc(session, in applyInfo.GetPinnableReference());

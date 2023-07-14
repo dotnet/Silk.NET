@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     public static class AtiDrawBuffersOverloads
     {
-        public static unsafe void DrawBuffers(this AtiDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ATI> bufs)
+        public static unsafe void DrawBuffers(this AtiDrawBuffers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ATI> bufs)
         {
             // SpanOverloader
             thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
         }
 
-        public static unsafe void DrawBuffers(this AtiDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
+        public static unsafe void DrawBuffers(this AtiDrawBuffers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
         {
             // SpanOverloader
             thisApi.DrawBuffers(n, in bufs.GetPinnableReference());

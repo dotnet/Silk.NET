@@ -11,21 +11,21 @@ namespace Silk.NET.Direct3D.Compilers
     internal class DXCLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libdxcompiler.so";
+        public override string[] Linux => new[] { "libdxcompiler.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libdxcompiler.dylib";
+        public override string[] MacOS => new[] { "libdxcompiler.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libdxcompiler.so";
+        public override string[] Android => new[] { "libdxcompiler.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "dxcompiler.dll";
+        public override string[] Windows64 => new[] { "dxcompiler.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "dxcompiler.dll";
+        public override string[] Windows86 => new[] { "dxcompiler.dll" };
     }
 }

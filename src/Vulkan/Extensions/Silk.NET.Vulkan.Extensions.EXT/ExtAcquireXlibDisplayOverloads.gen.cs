@@ -24,21 +24,21 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetRandROutputDisplay(this ExtAcquireXlibDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] nint* dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayKHR> pDisplay)
+        public static unsafe Result GetRandROutputDisplay(this ExtAcquireXlibDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] nint* dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayKHR> pDisplay)
         {
             // SpanOverloader
             return thisApi.GetRandROutputDisplay(physicalDevice, dpy, rrOutput, out pDisplay.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetRandROutputDisplay(this ExtAcquireXlibDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<nint> dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay)
+        public static unsafe Result GetRandROutputDisplay(this ExtAcquireXlibDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<nint> dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayKHR* pDisplay)
         {
             // SpanOverloader
             return thisApi.GetRandROutputDisplay(physicalDevice, ref dpy.GetPinnableReference(), rrOutput, pDisplay);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetRandROutputDisplay(this ExtAcquireXlibDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<nint> dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayKHR> pDisplay)
+        public static unsafe Result GetRandROutputDisplay(this ExtAcquireXlibDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<nint> dpy, [Count(Count = 0)] nint rrOutput, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayKHR> pDisplay)
         {
             // SpanOverloader
             return thisApi.GetRandROutputDisplay(physicalDevice, ref dpy.GetPinnableReference(), rrOutput, out pDisplay.GetPinnableReference());

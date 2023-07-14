@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGLES
         Zero = 0x0,
         [NativeName("Name", "GL_ONE")]
         One = 0x1,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PRIMARY_COLOR")]
         PrimaryColor = 0x8577,
         [NativeName("Name", "GL_PRIMARY_COLOR_ARB")]

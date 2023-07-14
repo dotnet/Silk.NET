@@ -23,9 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH265NaluSliceSegmentInfoExt,
             void* pNext = null,
-            uint? ctbCount = null,
-            VideoEncodeH265ReferenceListsInfoEXT* pReferenceFinalLists = null,
-            Video.StdVideoEncodeH265SliceSegmentHeader* pSliceSegmentHeaderStd = null
+            int? constantQp = null,
+            Video.StdVideoEncodeH265SliceSegmentHeader* pStdSliceSegmentHeader = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +37,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (ctbCount is not null)
+            if (constantQp is not null)
             {
-                CtbCount = ctbCount.Value;
+                ConstantQp = constantQp.Value;
             }
 
-            if (pReferenceFinalLists is not null)
+            if (pStdSliceSegmentHeader is not null)
             {
-                PReferenceFinalLists = pReferenceFinalLists;
-            }
-
-            if (pSliceSegmentHeaderStd is not null)
-            {
-                PSliceSegmentHeaderStd = pSliceSegmentHeaderStd;
+                PStdSliceSegmentHeader = pStdSliceSegmentHeader;
             }
         }
 
@@ -65,20 +59,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "ctbCount")]
-        public uint CtbCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH265ReferenceListsInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH265ReferenceListsInfoEXT")]
-        [NativeName("Name", "pReferenceFinalLists")]
-        public VideoEncodeH265ReferenceListsInfoEXT* PReferenceFinalLists;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "constantQp")]
+        public int ConstantQp;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH265SliceSegmentHeader*")]
         [NativeName("Type.Name", "StdVideoEncodeH265SliceSegmentHeader")]
-        [NativeName("Name", "pSliceSegmentHeaderStd")]
-        public Video.StdVideoEncodeH265SliceSegmentHeader* PSliceSegmentHeaderStd;
+        [NativeName("Name", "pStdSliceSegmentHeader")]
+        public Video.StdVideoEncodeH265SliceSegmentHeader* PStdSliceSegmentHeader;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

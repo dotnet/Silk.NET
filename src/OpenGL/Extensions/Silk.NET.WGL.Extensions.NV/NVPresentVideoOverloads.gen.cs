@@ -16,19 +16,19 @@ namespace Silk.NET.WGL.Extensions.NV
 {
     public static class NVPresentVideoOverloads
     {
-        public static unsafe Silk.NET.Core.Bool32 BindVideoDevice(this NVPresentVideo thisApi, [Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] uint uVideoSlot, [Flow(FlowDirection.In)] nint hVideoDevice, [Flow(FlowDirection.In)] ReadOnlySpan<int> piAttribList)
+        public static unsafe Silk.NET.Core.Bool32 BindVideoDevice(this NVPresentVideo thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> piAttribList)
         {
             // SpanOverloader
             return thisApi.BindVideoDevice(hDc, uVideoSlot, hVideoDevice, in piAttribList.GetPinnableReference());
         }
 
-        public static unsafe int EnumerateVideoDevices(this NVPresentVideo thisApi, [Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.Out)] Span<nint> phDeviceList)
+        public static unsafe int EnumerateVideoDevices(this NVPresentVideo thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> phDeviceList)
         {
             // SpanOverloader
             return thisApi.EnumerateVideoDevices(hDc, out phDeviceList.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryCurrentContext(this NVPresentVideo thisApi, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] Span<int> piValue)
+        public static unsafe Silk.NET.Core.Bool32 QueryCurrentContext(this NVPresentVideo thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> piValue)
         {
             // SpanOverloader
             return thisApi.QueryCurrentContext(iAttribute, out piValue.GetPinnableReference());

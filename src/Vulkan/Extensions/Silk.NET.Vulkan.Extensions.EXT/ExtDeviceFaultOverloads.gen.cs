@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pFaultInfo = new(StructureType.DeviceFaultInfoExt);")]
-        public static unsafe Result GetDeviceFaultInfo(this ExtDeviceFault thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeviceFaultCountsEXT* pFaultCounts, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DeviceFaultInfoEXT> pFaultInfo)
+        public static unsafe Result GetDeviceFaultInfo(this ExtDeviceFault thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeviceFaultCountsEXT* pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DeviceFaultInfoEXT> pFaultInfo)
         {
             // SpanOverloader
             return thisApi.GetDeviceFaultInfo(device, pFaultCounts, out pFaultInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDeviceFaultInfo(this ExtDeviceFault thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Span<DeviceFaultCountsEXT> pFaultCounts, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceFaultInfoEXT* pFaultInfo)
+        public static unsafe Result GetDeviceFaultInfo(this ExtDeviceFault thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Span<DeviceFaultCountsEXT> pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceFaultInfoEXT* pFaultInfo)
         {
             // SpanOverloader
             return thisApi.GetDeviceFaultInfo(device, ref pFaultCounts.GetPinnableReference(), pFaultInfo);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pFaultInfo = new(StructureType.DeviceFaultInfoExt);")]
-        public static unsafe Result GetDeviceFaultInfo(this ExtDeviceFault thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Span<DeviceFaultCountsEXT> pFaultCounts, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DeviceFaultInfoEXT> pFaultInfo)
+        public static unsafe Result GetDeviceFaultInfo(this ExtDeviceFault thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Span<DeviceFaultCountsEXT> pFaultCounts, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DeviceFaultInfoEXT> pFaultInfo)
         {
             // SpanOverloader
             return thisApi.GetDeviceFaultInfo(device, ref pFaultCounts.GetPinnableReference(), out pFaultInfo.GetPinnableReference());

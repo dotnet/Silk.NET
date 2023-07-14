@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBTriangleMeshOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateTriangleMeshFB(this FBTriangleMesh thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] TriangleMeshCreateInfoFB* createInfo, [Count(Count = 0)] Span<TriangleMeshFB> outTriangleMesh)
+        public static unsafe Result CreateTriangleMeshFB(this FBTriangleMesh thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleMeshCreateInfoFB* createInfo, [Count(Count = 0)] Span<TriangleMeshFB> outTriangleMesh)
         {
             // SpanOverloader
             return thisApi.CreateTriangleMeshFB(session, createInfo, ref outTriangleMesh.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateTriangleMeshFB(this FBTriangleMesh thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<TriangleMeshCreateInfoFB> createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh)
+        public static unsafe Result CreateTriangleMeshFB(this FBTriangleMesh thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TriangleMeshCreateInfoFB> createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh)
         {
             // SpanOverloader
             return thisApi.CreateTriangleMeshFB(session, in createInfo.GetPinnableReference(), outTriangleMesh);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateTriangleMeshFB(this FBTriangleMesh thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<TriangleMeshCreateInfoFB> createInfo, [Count(Count = 0)] Span<TriangleMeshFB> outTriangleMesh)
+        public static unsafe Result CreateTriangleMeshFB(this FBTriangleMesh thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TriangleMeshCreateInfoFB> createInfo, [Count(Count = 0)] Span<TriangleMeshFB> outTriangleMesh)
         {
             // SpanOverloader
             return thisApi.CreateTriangleMeshFB(session, in createInfo.GetPinnableReference(), ref outTriangleMesh.GetPinnableReference());

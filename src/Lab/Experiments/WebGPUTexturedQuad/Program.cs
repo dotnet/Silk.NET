@@ -1,4 +1,6 @@
 using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.WebGPU;
@@ -28,10 +30,10 @@ public static unsafe class WebGPUTexturedQuad
     }
 
     // ReSharper disable once InconsistentNaming
-    private static WebGPU         wgpu            = null!;
-    private static WebGPUDisposal _WebGpuDisposal = null!;
-    private static IWindow?       _Window;
+    private static WebGPU   wgpu = null!;
+    private static IWindow? _Window;
 
+    private static Instance*       _Instance;
     private static Surface*        _Surface;
     private static Adapter*        _Adapter;
     private static Device*         _Device;
@@ -85,9 +87,10 @@ public static unsafe class WebGPUTexturedQuad
     {
         wgpu = WebGPU.GetApi();
 
-        _WebGpuDisposal = new WebGPUDisposal(wgpu);
+        InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
+        _Instance = wgpu.CreateInstance(instanceDescriptor);
 
-        _Surface = _Window.CreateWebGPUSurface(wgpu);
+        _Surface = _Window.CreateWebGPUSurface(wgpu, _Instance);
 
         { //Get adapter
             var requestAdapterOptions = new RequestAdapterOptions
@@ -97,7 +100,7 @@ public static unsafe class WebGPUTexturedQuad
 
             wgpu.InstanceRequestAdapter
             (
-                null,
+                _Instance,
                 requestAdapterOptions,
                 new PfnRequestAdapterCallback((_, adapter1, _, _) => _Adapter = adapter1),
                 null
@@ -114,19 +117,15 @@ public static unsafe class WebGPUTexturedQuad
         PrintAdapterFeatures();
 
         { //Get device
-            var requiredLimits = stackalloc RequiredLimits[1];
-            requiredLimits->Limits.MaxBindGroups = 2;
-
             var deviceDescriptor = new DeviceDescriptor
             {
-                RequiredLimits = requiredLimits,
-                DefaultQueue   = new QueueDescriptor()
+                DeviceLostCallback = new PfnDeviceLostCallback(DeviceLost),
             };
 
             wgpu.AdapterRequestDevice
             (
                 _Adapter,
-                deviceDescriptor,
+                in deviceDescriptor,
                 new PfnRequestDeviceCallback((_, device1, _, _) => _Device = device1),
                 null
             );
@@ -135,7 +134,6 @@ public static unsafe class WebGPUTexturedQuad
         } //Get device
 
         wgpu.DeviceSetUncapturedErrorCallback(_Device, new PfnErrorCallback(UncapturedError), null);
-        wgpu.DeviceSetDeviceLostCallback(_Device, new PfnDeviceLostCallback(DeviceLost), null);
 
         { //Load shader
             var wgslDescriptor = new ShaderModuleWGSLDescriptor
@@ -143,7 +141,7 @@ public static unsafe class WebGPUTexturedQuad
                 Code = (byte*) SilkMarshal.StringToPtr(File.ReadAllText("shader.wgsl")),
                 Chain = new ChainedStruct
                 {
-                    SType = SType.ShaderModuleWgsldescriptor
+                    SType = SType.ShaderModuleWgslDescriptor
                 }
             };
 
@@ -195,7 +193,7 @@ public static unsafe class WebGPUTexturedQuad
                 Usage           = TextureUsage.CopyDst | TextureUsage.TextureBinding,
                 MipLevelCount   = 1,
                 SampleCount     = 1,
-                Dimension       = TextureDimension.TextureDimension2D,
+                Dimension       = TextureDimension.Dimension2D,
                 ViewFormats     = &viewFormat,
                 ViewFormatCount = 1
             };
@@ -205,8 +203,8 @@ public static unsafe class WebGPUTexturedQuad
             var viewDescriptor = new TextureViewDescriptor
             {
                 Format          = TextureFormat.Rgba8Unorm,
-                Dimension       = TextureViewDimension.TextureViewDimension2D,
-                Aspect          = TextureAspect.None,
+                Dimension       = TextureViewDimension.Dimension2D,
+                Aspect          = TextureAspect.All,
                 MipLevelCount   = 1,
                 ArrayLayerCount = 1,
                 BaseArrayLayer  = 0,
@@ -232,7 +230,7 @@ public static unsafe class WebGPUTexturedQuad
                         var imageCopyTexture = new ImageCopyTexture
                         {
                             Texture  = _Texture,
-                            Aspect   = TextureAspect.None,
+                            Aspect   = TextureAspect.All,
                             MipLevel = 0,
                             Origin   = new Origin3D(0, (uint) i, 0)
                         };
@@ -265,10 +263,11 @@ public static unsafe class WebGPUTexturedQuad
         { //Create sampler
             var descriptor = new SamplerDescriptor
             {
-                Compare      = CompareFunction.Undefined,
-                MipmapFilter = MipmapFilterMode.Linear,
-                MagFilter    = FilterMode.Linear,
-                MinFilter    = FilterMode.Linear
+                Compare       = CompareFunction.Undefined,
+                MipmapFilter  = MipmapFilterMode.Linear,
+                MagFilter     = FilterMode.Linear,
+                MinFilter     = FilterMode.Linear,
+                MaxAnisotropy = 1
             };
 
             _Sampler = wgpu.DeviceCreateSampler(_Device, descriptor);
@@ -283,7 +282,7 @@ public static unsafe class WebGPUTexturedQuad
                 {
                     Multisampled  = false,
                     SampleType    = TextureSampleType.Float,
-                    ViewDimension = TextureViewDimension.TextureViewDimension2D
+                    ViewDimension = TextureViewDimension.Dimension2D
                 },
                 Visibility = ShaderStage.Fragment
             };
@@ -364,7 +363,8 @@ public static unsafe class WebGPUTexturedQuad
             var bindGroupEntry = new BindGroupEntry
             {
                 Binding = 0,
-                Buffer  = _ProjectionMatrixBuffer
+                Buffer  = _ProjectionMatrixBuffer,
+                Size = (ulong) sizeof(Matrix4x4)
             };
 
             _ProjectionMatrixBindGroup = wgpu.DeviceCreateBindGroup
@@ -385,7 +385,7 @@ public static unsafe class WebGPUTexturedQuad
                 {
                     SrcFactor = BlendFactor.SrcAlpha,
                     DstFactor = BlendFactor.OneMinusSrcAlpha,
-                    Operation = BlendOperation.None
+                    Operation = BlendOperation.Add
                 },
                 Alpha = new BlendComponent
                 {
@@ -568,7 +568,7 @@ public static unsafe class WebGPUTexturedQuad
         wgpu.RenderPassEncoderDraw(renderPass, 6, 1, 0, 0);
 
         wgpu.RenderPassEncoderEnd(renderPass);
-        _WebGpuDisposal.Dispose(nextTexture);
+        wgpu.TextureViewRelease(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
@@ -581,11 +581,12 @@ public static unsafe class WebGPUTexturedQuad
 
     private static void WindowClosing()
     {
-        _WebGpuDisposal.Dispose(_Shader);
-        _WebGpuDisposal.Dispose(_Pipeline);
-        _WebGpuDisposal.Dispose(_Device);
-        _WebGpuDisposal.Dispose(_Adapter);
-        _WebGpuDisposal.Dispose(_Surface);
+        wgpu.ShaderModuleRelease(_Shader);
+        wgpu.RenderPipelineRelease(_Pipeline);
+        wgpu.DeviceRelease(_Device);
+        wgpu.AdapterRelease(_Adapter);
+        wgpu.SurfaceRelease(_Surface);
+        wgpu.InstanceRelease(_Instance);
 
         wgpu.Dispose();
     }

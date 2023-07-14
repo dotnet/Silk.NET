@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Khr);")]
-        public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceCapabilities2KHR> pSurfaceCapabilities)
+        public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SurfaceCapabilities2KHR> pSurfaceCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceCapabilities2(physicalDevice, pSurfaceInfo, out pSurfaceCapabilities.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilities2KHR* pSurfaceCapabilities)
+        public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SurfaceCapabilities2KHR* pSurfaceCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceCapabilities2(physicalDevice, in pSurfaceInfo.GetPinnableReference(), pSurfaceCapabilities);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Khr);")]
-        public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceCapabilities2KHR> pSurfaceCapabilities)
+        public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SurfaceCapabilities2KHR> pSurfaceCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceCapabilities2(physicalDevice, in pSurfaceInfo.GetPinnableReference(), out pSurfaceCapabilities.GetPinnableReference());
@@ -41,14 +41,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, pSurfaceInfo, pSurfaceFormatCount, out pSurfaceFormats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, pSurfaceInfo, ref pSurfaceFormatCount.GetPinnableReference(), pSurfaceFormats);
@@ -56,14 +56,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, pSurfaceInfo, ref pSurfaceFormatCount.GetPinnableReference(), out pSurfaceFormats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, in pSurfaceInfo.GetPinnableReference(), pSurfaceFormatCount, pSurfaceFormats);
@@ -71,14 +71,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, in pSurfaceInfo.GetPinnableReference(), pSurfaceFormatCount, out pSurfaceFormats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, in pSurfaceInfo.GetPinnableReference(), ref pSurfaceFormatCount.GetPinnableReference(), pSurfaceFormats);
@@ -86,7 +86,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats2(this KhrGetSurfaceCapabilities2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SurfaceFormat2KHR> pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats2(physicalDevice, in pSurfaceInfo.GetPinnableReference(), ref pSurfaceFormatCount.GetPinnableReference(), out pSurfaceFormats.GetPinnableReference());

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_MESSAGE_CALLBACK_FLAGS")]
     public enum MessageCallbackFlags : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FlagNone\"")]
         [NativeName("Name", "D3D12_MESSAGE_CALLBACK_FLAG_NONE")]
         MessageCallbackFlagNone = 0x0,

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Ultz_NativePackages_GLFW_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Ultz_NativePackages_GLFW_IsWindows>
+    <_Ultz_NativePackages_GLFW_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Ultz_NativePackages_GLFW_IsMacOS>
+    <_Ultz_NativePackages_GLFW_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Ultz_NativePackages_GLFW_IsLinux>
+
+    <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsMacOS)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">osx-x64</_Ultz_NativePackages_GLFW_NativeRuntime>
+    <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Ultz_NativePackages_GLFW_NativeRuntime>
+    <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Ultz_NativePackages_GLFW_NativeRuntime>
+    <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Ultz_NativePackages_GLFW_NativeRuntime>
+    <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsWindows)' == 'true' And '$(PlatformTarget)' == 'arm64'">win-arm64</_Ultz_NativePackages_GLFW_NativeRuntime>
+
+    <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'win-x86'">glfw3.dll</_Ultz_NativePackages_GLFW_NativeLibName>
+    <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'win-x64'">glfw3.dll</_Ultz_NativePackages_GLFW_NativeLibName>
+    <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'win-arm64'">glfw3.dll</_Ultz_NativePackages_GLFW_NativeLibName>
+    <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'osx-x64'">libglfw.3.dylib</_Ultz_NativePackages_GLFW_NativeLibName>
+    <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'linux-x64'">libglfw.so.3</_Ultz_NativePackages_GLFW_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Ultz_NativePackages_GLFW_NativeRuntime)\native\$(_Ultz_NativePackages_GLFW_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>

@@ -17,7 +17,7 @@
         <IncludeContentInPack>true</IncludeContentInPack>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+        <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
         <Content Include="runtimes\linux-x64\native\libGLESv2.so" PackagePath="runtimes\linux-x64\native\libGLESv2.so" />
         <Content Include="runtimes\osx-x64\native\libGLESv2.dylib" PackagePath="runtimes\osx-x64\native\libGLESv2.dylib" />
         <Content Include="runtimes\win-x64\native\libGLESv2.dll" PackagePath="runtimes\win-x64\native\libGLESv2.dll" />

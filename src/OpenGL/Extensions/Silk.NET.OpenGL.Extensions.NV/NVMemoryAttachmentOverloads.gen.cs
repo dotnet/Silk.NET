@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
 {
     public static class NVMemoryAttachmentOverloads
     {
-        public static unsafe void GetMemoryObjectDetachedResources(this NVMemoryAttachment thisApi, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] Span<uint> @params)
+        public static unsafe void GetMemoryObjectDetachedResources(this NVMemoryAttachment thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> @params)
         {
             // SpanOverloader
             thisApi.GetMemoryObjectDetachedResources(memory, pname, first, count, out @params.GetPinnableReference());

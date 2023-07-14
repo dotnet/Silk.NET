@@ -69,9 +69,9 @@ var window = Window.Create(options);
 
 // Load the DXGI and Direct3D11 libraries for later use.
 // Given this is not tied to the window, this doesn't need to be done in the OnLoad event.
-var dxgi = DXGI.GetApi();
-var d3d11 = D3D11.GetApi();
-var compiler = D3DCompiler.GetApi();
+DXGI dxgi = null!;
+D3D11 d3d11 = null!;
+D3DCompiler compiler = null!;
 
 // These variables are initialized within the Load event.
 ComPtr<IDXGIFactory2> factory = default;
@@ -107,8 +107,18 @@ compiler.Dispose();
 d3d11.Dispose();
 dxgi.Dispose();
 
+//dispose the window, and its internal resources
+window.Dispose();
+
 unsafe void OnLoad()
 {
+    //Whether or not to force use of DXVK on platforms where native DirectX implementations are available
+    const bool forceDxvk = false;
+
+    dxgi = DXGI.GetApi(window, forceDxvk);
+    d3d11 = D3D11.GetApi(window, forceDxvk);
+    compiler = D3DCompiler.GetApi();
+    
     // Set-up input context.
     var input = window.CreateInput();
     foreach (var keyboard in input.Keyboards)
@@ -134,9 +144,14 @@ unsafe void OnLoad()
         )
     );
     
-    // Log debug messages for this device (given that we've enabled the debug flag). Don't do this in release code!
-    device.SetInfoQueueCallback(msg => Console.WriteLine(SilkMarshal.PtrToString((nint) msg.PDescription)));
-    
+    //This is not supported under DXVK 
+    //TODO: PR a stub into DXVK for this maybe?
+    if (OperatingSystem.IsWindows())
+    {
+        // Log debug messages for this device (given that we've enabled the debug flag). Don't do this in release code!
+        device.SetInfoQueueCallback(msg => Console.WriteLine(SilkMarshal.PtrToString((nint) msg.PDescription)));
+    }
+
     // Create our swapchain.
     var swapChainDesc = new SwapChainDesc1
     {

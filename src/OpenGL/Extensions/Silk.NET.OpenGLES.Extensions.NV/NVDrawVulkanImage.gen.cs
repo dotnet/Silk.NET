@@ -21,25 +21,25 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_draw_vulkan_image";
         [NativeApi(EntryPoint = "glDrawVkImageNV", Convention = CallingConvention.Winapi)]
-        public partial void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
+        public partial void DrawVkImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong vkImage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float s0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float t0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float t1);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial nint GetVkProcAddr([Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
-        public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+        public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
-        public partial nint GetVkProcAddr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
+        public partial nint GetVkProcAddr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         [NativeApi(EntryPoint = "glSignalVkFenceNV", Convention = CallingConvention.Winapi)]
-        public partial void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);
+        public partial void SignalVkFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong vkFence);
 
         [NativeApi(EntryPoint = "glSignalVkSemaphoreNV", Convention = CallingConvention.Winapi)]
-        public partial void SignalVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
+        public partial void SignalVkSemaphore([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong vkSemaphore);
 
         [NativeApi(EntryPoint = "glWaitVkSemaphoreNV", Convention = CallingConvention.Winapi)]
-        public partial void WaitVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
+        public partial void WaitVkSemaphore([Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong vkSemaphore);
 
         public NVDrawVulkanImage(INativeContext ctx)
             : base(ctx)

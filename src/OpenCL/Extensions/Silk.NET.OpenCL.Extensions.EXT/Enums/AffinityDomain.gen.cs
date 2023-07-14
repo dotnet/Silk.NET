@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
+    [Flags]
     [NativeName("Name", "cl_affinity_domain_ext")]
     public enum AffinityDomain : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L1_CACHE_EXT")]
         L1Cache = 0x1,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L2_CACHE_EXT")]

@@ -16,19 +16,19 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrIlProgramOverloads
     {
-        public static unsafe nint CreateProgramWithIL(this KhrIlProgram thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] void* il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateProgramWithIL(this KhrIlProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithIL(context, il, length, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe nint CreateProgramWithIL<T0>(this KhrIlProgram thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateProgramWithIL<T0>(this KhrIlProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateProgramWithIL(context, in il.GetPinnableReference(), length, errcode_ret);
         }
 
-        public static unsafe nint CreateProgramWithIL<T0>(this KhrIlProgram thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateProgramWithIL<T0>(this KhrIlProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateProgramWithIL(context, in il.GetPinnableReference(), length, out errcode_ret.GetPinnableReference());

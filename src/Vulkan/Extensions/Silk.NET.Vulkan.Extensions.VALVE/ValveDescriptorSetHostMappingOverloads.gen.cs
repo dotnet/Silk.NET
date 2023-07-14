@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.VALVE
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pHostMapping = new(StructureType.DescriptorSetLayoutHostMappingInfoValve);")]
-        public static unsafe void GetDescriptorSetLayoutHostMappingInfoValve(this ValveDescriptorSetHostMapping thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetBindingReferenceVALVE* pBindingReference, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping)
+        public static unsafe void GetDescriptorSetLayoutHostMappingInfoValve(this ValveDescriptorSetHostMapping thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetBindingReferenceVALVE* pBindingReference, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping)
         {
             // SpanOverloader
             thisApi.GetDescriptorSetLayoutHostMappingInfoValve(device, pBindingReference, out pHostMapping.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetDescriptorSetLayoutHostMappingInfoValve(this ValveDescriptorSetHostMapping thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetBindingReferenceVALVE> pBindingReference, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutHostMappingInfoVALVE* pHostMapping)
+        public static unsafe void GetDescriptorSetLayoutHostMappingInfoValve(this ValveDescriptorSetHostMapping thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetBindingReferenceVALVE> pBindingReference, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutHostMappingInfoVALVE* pHostMapping)
         {
             // SpanOverloader
             thisApi.GetDescriptorSetLayoutHostMappingInfoValve(device, in pBindingReference.GetPinnableReference(), pHostMapping);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.VALVE
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pHostMapping = new(StructureType.DescriptorSetLayoutHostMappingInfoValve);")]
-        public static unsafe void GetDescriptorSetLayoutHostMappingInfoValve(this ValveDescriptorSetHostMapping thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetBindingReferenceVALVE> pBindingReference, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping)
+        public static unsafe void GetDescriptorSetLayoutHostMappingInfoValve(this ValveDescriptorSetHostMapping thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetBindingReferenceVALVE> pBindingReference, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping)
         {
             // SpanOverloader
             thisApi.GetDescriptorSetLayoutHostMappingInfoValve(device, in pBindingReference.GetPinnableReference(), out pHostMapping.GetPinnableReference());

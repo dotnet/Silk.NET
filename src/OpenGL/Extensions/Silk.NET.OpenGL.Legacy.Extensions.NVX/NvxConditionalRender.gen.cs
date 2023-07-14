@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
     {
         public const string ExtensionName = "NVX_conditional_render";
         [NativeApi(EntryPoint = "glBeginConditionalRenderNVX", Convention = CallingConvention.Winapi)]
-        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id);
+        public partial void BeginConditionalRender([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glEndConditionalRenderNVX", Convention = CallingConvention.Winapi)]
         public partial void EndConditionalRender();

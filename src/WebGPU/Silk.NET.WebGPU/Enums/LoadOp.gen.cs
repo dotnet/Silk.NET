@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPULoadOp")]
     public enum LoadOp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPULoadOp_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPULoadOp_Clear")]

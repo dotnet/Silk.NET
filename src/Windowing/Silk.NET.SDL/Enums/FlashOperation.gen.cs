@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L208_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L209_C9")]
     [NativeName("Name", "SDL_FlashOperation")]
     public enum FlashOperation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Cancel\"")]
         [NativeName("Name", "SDL_FLASH_CANCEL")]
         FlashCancel = 0x0,

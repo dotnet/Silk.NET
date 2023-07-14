@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_motion_estimation_desc_intel.mb_block_type")]
     public enum MotionEstimationDescMbBlockType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_ME_MB_TYPE_16x16_INTEL")]
         Type16x16 = 0x0,
         [NativeName("Name", "CL_ME_MB_TYPE_8x8_INTEL")]

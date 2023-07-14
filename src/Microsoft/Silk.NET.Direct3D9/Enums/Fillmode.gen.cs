@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DFILLMODE")]
     public enum Fillmode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Point\"")]
         [NativeName("Name", "D3DFILL_POINT")]
         FillPoint = 0x1,

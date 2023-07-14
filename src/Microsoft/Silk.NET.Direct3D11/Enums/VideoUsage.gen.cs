@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_VIDEO_USAGE")]
     public enum VideoUsage : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PlaybackNormal\"")]
         [NativeName("Name", "D3D11_VIDEO_USAGE_PLAYBACK_NORMAL")]
         VideoUsagePlaybackNormal = 0x0,

@@ -23,11 +23,11 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? colorAttachmentCount = null,
+            nuint? colorAttachmentCount = null,
             RenderPassColorAttachment* colorAttachments = null,
             RenderPassDepthStencilAttachment* depthStencilAttachment = null,
             QuerySet* occlusionQuerySet = null,
-            uint? timestampWriteCount = null,
+            nuint? timestampWriteCount = null,
             RenderPassTimestampWrite* timestampWrites = null
         ) : this()
         {
@@ -83,10 +83,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "colorAttachmentCount")]
-        public uint ColorAttachmentCount;
+        public nuint ColorAttachmentCount;
 
         [NativeName("Type", "const WGPURenderPassColorAttachment *")]
         [NativeName("Type.Name", "const WGPURenderPassColorAttachment *")]
@@ -103,10 +103,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "occlusionQuerySet")]
         public QuerySet* OcclusionQuerySet;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "timestampWriteCount")]
-        public uint TimestampWriteCount;
+        public nuint TimestampWriteCount;
 
         [NativeName("Type", "const WGPURenderPassTimestampWrite *")]
         [NativeName("Type.Name", "const WGPURenderPassTimestampWrite *")]

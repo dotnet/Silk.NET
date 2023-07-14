@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_TYPE")]
     public enum DescriptorHeapType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CbvSrvUav\"")]
         [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV")]
         DescriptorHeapTypeCbvSrvUav = 0x0,

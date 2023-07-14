@@ -24,7 +24,8 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             Surface* compatibleSurface = null,
             PowerPreference? powerPreference = null,
-            bool? forceFallbackAdapter = null
+            BackendType? backendType = null,
+            Silk.NET.Core.Bool32? forceFallbackAdapter = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -40,6 +41,11 @@ namespace Silk.NET.WebGPU
             if (powerPreference is not null)
             {
                 PowerPreference = powerPreference.Value;
+            }
+
+            if (backendType is not null)
+            {
+                BackendType = backendType.Value;
             }
 
             if (forceFallbackAdapter is not null)
@@ -64,9 +70,14 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "powerPreference")]
         public PowerPreference PowerPreference;
 
+        [NativeName("Type", "WGPUBackendType")]
+        [NativeName("Type.Name", "WGPUBackendType")]
+        [NativeName("Name", "backendType")]
+        public BackendType BackendType;
+
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "forceFallbackAdapter")]
-        public bool ForceFallbackAdapter;
+        public Silk.NET.Core.Bool32 ForceFallbackAdapter;
     }
 }

@@ -24,6 +24,11 @@ namespace Tutorial
 
             //Run the window.
             window.Run();
+
+            // window.Run() is a BLOCKING method - this means that it will halt execution of any code in the current
+            // method until the window has finished running. Therefore, this dispose method will not be called until you
+            // close the window.
+            window.Dispose();
         }
 
 

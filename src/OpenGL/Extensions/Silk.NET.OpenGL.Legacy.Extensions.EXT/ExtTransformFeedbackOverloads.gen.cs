@@ -16,277 +16,277 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtTransformFeedbackOverloads
     {
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, type, name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<EXT> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, type, name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        public static unsafe void GetTransformFeedbackVarying(this ExtTransformFeedback thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> name)
         {
             // SpanOverloader
             thisApi.GetTransformFeedbackVarying(program, index, bufSize, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());

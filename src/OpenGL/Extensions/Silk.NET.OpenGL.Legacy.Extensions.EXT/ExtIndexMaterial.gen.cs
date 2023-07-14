@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_index_material";
         [NativeApi(EntryPoint = "glIndexMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
+        public partial void IndexMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glIndexMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+        public partial void IndexMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexMaterialParameterEXT mode);
 
         [NativeApi(EntryPoint = "glIndexMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] EXT mode);
+        public partial void IndexMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glIndexMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+        public partial void IndexMaterial([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexMaterialParameterEXT mode);
 
         public ExtIndexMaterial(INativeContext ctx)
             : base(ctx)

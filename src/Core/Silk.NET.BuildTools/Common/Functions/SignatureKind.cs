@@ -8,6 +8,6 @@ namespace Silk.NET.BuildTools.Common.Functions
         Normal,
         SimpleOverload,
         ReturnOverload,
-        PotentiallyConflictingOverload,
+        PotentiallyConflictingOverload
     }
 }

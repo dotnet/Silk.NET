@@ -16,25 +16,25 @@ namespace Silk.NET.WGL.Extensions.NV
 {
     public static class NVGpuAffinityOverloads
     {
-        public static unsafe nint CreateAffinityDC(this NVGpuAffinity thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<nint> phGpuList)
+        public static unsafe nint CreateAffinityDC(this NVGpuAffinity thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> phGpuList)
         {
             // SpanOverloader
             return thisApi.CreateAffinityDC(in phGpuList.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 EnumGp(this NVGpuAffinity thisApi, [Flow(FlowDirection.In)] uint iGpuIndex, [Flow(FlowDirection.Out)] Span<nint> phGpu)
+        public static unsafe Silk.NET.Core.Bool32 EnumGp(this NVGpuAffinity thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> phGpu)
         {
             // SpanOverloader
             return thisApi.EnumGp(iGpuIndex, out phGpu.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 EnumGpuDevices(this NVGpuAffinity thisApi, [Flow(FlowDirection.In)] nint hGpu, [Flow(FlowDirection.In)] uint iDeviceIndex, [Flow(FlowDirection.In)] ReadOnlySpan<GpuDevice> lpGpuDevice)
+        public static unsafe Silk.NET.Core.Bool32 EnumGpuDevices(this NVGpuAffinity thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iDeviceIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GpuDevice> lpGpuDevice)
         {
             // SpanOverloader
             return thisApi.EnumGpuDevices(hGpu, iDeviceIndex, in lpGpuDevice.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 EnumGpusFromAffinityDC(this NVGpuAffinity thisApi, [Flow(FlowDirection.In)] nint hAffinityDC, [Flow(FlowDirection.In)] uint iGpuIndex, [Flow(FlowDirection.Out)] Span<nint> hGpu)
+        public static unsafe Silk.NET.Core.Bool32 EnumGpusFromAffinityDC(this NVGpuAffinity thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hAffinityDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> hGpu)
         {
             // SpanOverloader
             return thisApi.EnumGpusFromAffinityDC(hAffinityDC, iGpuIndex, out hGpu.GetPinnableReference());

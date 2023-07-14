@@ -9,20 +9,23 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_COPP_StatusHDCPFlags")]
     public enum COPPStatusHDCPFlags : int
     {
-        [NativeName("Name", "")]
-        None = 0,
-        [Obsolete("Deprecated in favour of \"Hdcprepeater\"")]
+        [Obsolete("Deprecated in favour of \"Repeater\"")]
         [NativeName("Name", "COPP_HDCPRepeater")]
         CoppHdcprepeater = 0x1,
-        [Obsolete("Deprecated in favour of \"HdcpflagsReserved\"")]
+        [Obsolete("Deprecated in favour of \"FlagsReserved\"")]
         [NativeName("Name", "COPP_HDCPFlagsReserved")]
         CoppHdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
         [NativeName("Name", "COPP_HDCPRepeater")]
+        Repeater = 0x1,
+        [NativeName("Name", "COPP_HDCPFlagsReserved")]
+        FlagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
+        [Obsolete("Deprecated in favour of \"Repeater\"")]
+        [NativeName("Name", "COPP_HDCPRepeater")]
         Hdcprepeater = 0x1,
+        [Obsolete("Deprecated in favour of \"FlagsReserved\"")]
         [NativeName("Name", "COPP_HDCPFlagsReserved")]
         HdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
     }

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL
 {
+    [Flags]
     [NativeName("Name", "SubgroupSupportedFeatures")]
     public enum SubgroupSupportedFeatures : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"BasicBitKhr\"")]
         [NativeName("Name", "GL_SUBGROUP_FEATURE_BASIC_BIT_KHR")]
         SubgroupFeatureBasicBitKhr = 0x1,

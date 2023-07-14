@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGLES
         UnsignedShort = 0x1403,
         [NativeName("Name", "GL_UNSIGNED_INT")]
         UnsignedInt = 0x1405,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_INDEX")]
         ColorIndex = 0x1900,
         [NativeName("Name", "GL_STENCIL_INDEX")]
@@ -37,10 +37,10 @@ namespace Silk.NET.OpenGLES
         Rgb = 0x1907,
         [NativeName("Name", "GL_RGBA")]
         Rgba = 0x1908,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE")]
         Luminance = 0x1909,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LUMINANCE_ALPHA")]
         LuminanceAlpha = 0x190A,
         [NativeName("Name", "GL_ABGR_EXT")]

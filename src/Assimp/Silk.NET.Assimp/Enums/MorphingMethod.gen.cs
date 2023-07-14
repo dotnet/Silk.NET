@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiMorphingMethod")]
     public enum MorphingMethod : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"VertexBlend\"")]
         [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
         MorphingMethodVertexBlend = 0x1,

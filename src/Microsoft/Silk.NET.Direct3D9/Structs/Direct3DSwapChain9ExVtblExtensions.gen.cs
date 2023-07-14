@@ -85,7 +85,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
+    public static int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -434,7 +434,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -442,7 +442,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -450,7 +450,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -458,7 +458,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -466,7 +466,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -474,7 +474,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -482,7 +482,7 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
+    public static int Present(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

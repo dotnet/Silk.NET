@@ -24,16 +24,18 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoEncodeH264CapabilitiesExt,
             void* pNext = null,
             VideoEncodeH264CapabilityFlagsEXT? flags = null,
-            VideoEncodeH264InputModeFlagsEXT? inputModeFlags = null,
-            VideoEncodeH264OutputModeFlagsEXT? outputModeFlags = null,
-            byte? maxPPictureL0ReferenceCount = null,
-            byte? maxBPictureL0ReferenceCount = null,
-            byte? maxL1ReferenceCount = null,
-            Bool32? motionVectorsOverPicBoundariesFlag = null,
-            uint? maxBytesPerPicDenom = null,
-            uint? maxBitsPerMbDenom = null,
-            uint? log2MaxMvLengthHorizontal = null,
-            uint? log2MaxMvLengthVertical = null
+            Video.StdVideoH264LevelIdc? maxLevelIdc = null,
+            uint? maxSliceCount = null,
+            uint? maxPPictureL0ReferenceCount = null,
+            uint? maxBPictureL0ReferenceCount = null,
+            uint? maxL1ReferenceCount = null,
+            uint? maxTemporalLayerCount = null,
+            Bool32? expectDyadicTemporalLayerPattern = null,
+            int? minQp = null,
+            int? maxQp = null,
+            Bool32? prefersGopRemainingFrames = null,
+            Bool32? requiresGopRemainingFrames = null,
+            VideoEncodeH264StdFlagsEXT? stdSyntaxFlags = null
         ) : this()
         {
             if (sType is not null)
@@ -51,14 +53,14 @@ namespace Silk.NET.Vulkan
                 Flags = flags.Value;
             }
 
-            if (inputModeFlags is not null)
+            if (maxLevelIdc is not null)
             {
-                InputModeFlags = inputModeFlags.Value;
+                MaxLevelIdc = maxLevelIdc.Value;
             }
 
-            if (outputModeFlags is not null)
+            if (maxSliceCount is not null)
             {
-                OutputModeFlags = outputModeFlags.Value;
+                MaxSliceCount = maxSliceCount.Value;
             }
 
             if (maxPPictureL0ReferenceCount is not null)
@@ -76,29 +78,39 @@ namespace Silk.NET.Vulkan
                 MaxL1ReferenceCount = maxL1ReferenceCount.Value;
             }
 
-            if (motionVectorsOverPicBoundariesFlag is not null)
+            if (maxTemporalLayerCount is not null)
             {
-                MotionVectorsOverPicBoundariesFlag = motionVectorsOverPicBoundariesFlag.Value;
+                MaxTemporalLayerCount = maxTemporalLayerCount.Value;
             }
 
-            if (maxBytesPerPicDenom is not null)
+            if (expectDyadicTemporalLayerPattern is not null)
             {
-                MaxBytesPerPicDenom = maxBytesPerPicDenom.Value;
+                ExpectDyadicTemporalLayerPattern = expectDyadicTemporalLayerPattern.Value;
             }
 
-            if (maxBitsPerMbDenom is not null)
+            if (minQp is not null)
             {
-                MaxBitsPerMbDenom = maxBitsPerMbDenom.Value;
+                MinQp = minQp.Value;
             }
 
-            if (log2MaxMvLengthHorizontal is not null)
+            if (maxQp is not null)
             {
-                Log2MaxMvLengthHorizontal = log2MaxMvLengthHorizontal.Value;
+                MaxQp = maxQp.Value;
             }
 
-            if (log2MaxMvLengthVertical is not null)
+            if (prefersGopRemainingFrames is not null)
             {
-                Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
+                PrefersGopRemainingFrames = prefersGopRemainingFrames.Value;
+            }
+
+            if (requiresGopRemainingFrames is not null)
+            {
+                RequiresGopRemainingFrames = requiresGopRemainingFrames.Value;
+            }
+
+            if (stdSyntaxFlags is not null)
+            {
+                StdSyntaxFlags = stdSyntaxFlags.Value;
             }
         }
 
@@ -118,55 +130,65 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public VideoEncodeH264CapabilityFlagsEXT Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264InputModeFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264InputModeFlagsEXT")]
-        [NativeName("Name", "inputModeFlags")]
-        public VideoEncodeH264InputModeFlagsEXT InputModeFlags;
+        [NativeName("Type", "StdVideoH264LevelIdc")]
+        [NativeName("Type.Name", "StdVideoH264LevelIdc")]
+        [NativeName("Name", "maxLevelIdc")]
+        public Video.StdVideoH264LevelIdc MaxLevelIdc;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264OutputModeFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264OutputModeFlagsEXT")]
-        [NativeName("Name", "outputModeFlags")]
-        public VideoEncodeH264OutputModeFlagsEXT OutputModeFlags;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxSliceCount")]
+        public uint MaxSliceCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxPPictureL0ReferenceCount")]
-        public byte MaxPPictureL0ReferenceCount;
+        public uint MaxPPictureL0ReferenceCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxBPictureL0ReferenceCount")]
-        public byte MaxBPictureL0ReferenceCount;
+        public uint MaxBPictureL0ReferenceCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxL1ReferenceCount")]
-        public byte MaxL1ReferenceCount;
+        public uint MaxL1ReferenceCount;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxTemporalLayerCount")]
+        public uint MaxTemporalLayerCount;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "motionVectorsOverPicBoundariesFlag")]
-        public Bool32 MotionVectorsOverPicBoundariesFlag;
+        [NativeName("Name", "expectDyadicTemporalLayerPattern")]
+        public Bool32 ExpectDyadicTemporalLayerPattern;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxBytesPerPicDenom")]
-        public uint MaxBytesPerPicDenom;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "minQp")]
+        public int MinQp;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxBitsPerMbDenom")]
-        public uint MaxBitsPerMbDenom;
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "maxQp")]
+        public int MaxQp;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "log2MaxMvLengthHorizontal")]
-        public uint Log2MaxMvLengthHorizontal;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "prefersGopRemainingFrames")]
+        public Bool32 PrefersGopRemainingFrames;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "log2MaxMvLengthVertical")]
-        public uint Log2MaxMvLengthVertical;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "requiresGopRemainingFrames")]
+        public Bool32 RequiresGopRemainingFrames;
+/// <summary></summary>
+        [NativeName("Type", "VkVideoEncodeH264StdFlagsEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH264StdFlagsEXT")]
+        [NativeName("Name", "stdSyntaxFlags")]
+        public VideoEncodeH264StdFlagsEXT StdSyntaxFlags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

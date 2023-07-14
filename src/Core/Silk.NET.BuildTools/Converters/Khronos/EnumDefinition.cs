@@ -30,6 +30,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The number of bits this enum's values occupy.
         /// </summary>
         public int BitWidth { get; set; }
+        
+        /// <summary>
+        /// The specific API this enum is applicable to.
+        /// </summary>
+        public string? Api { get; }
 
         /// <summary>
         /// The enum definition.
@@ -38,7 +43,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="type">The type of the enum.</param>
         /// <param name="values">The values of the enum.</param>
         /// <param name="bitWidth">The bit width of the enum.</param>
-        public EnumDefinition(string name, EnumType type, EnumValue[] values, int bitWidth)
+        public EnumDefinition(string name, EnumType type, EnumValue[] values, int bitWidth, string? api)
         {
             Require.NotNullOrEmpty(name);
             Require.NotNull(values);
@@ -47,6 +52,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Type = type;
             Values = values;
             BitWidth = bitWidth;
+            Api = api;
         }
         
         /// <summary>
@@ -54,7 +60,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>A clone of the enum.</returns>
-        public EnumDefinition Clone(string newName) => new(newName, Type, Values, BitWidth);
+        public EnumDefinition Clone(string newName) => new(newName, Type, Values, BitWidth, Api);
 
         /// <summary>
         /// Creates an EnumDefinition from an XML document.
@@ -80,7 +86,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var name = xe.Attribute("name")?.Value;
             var values = xe.Elements("enum").Select(EnumValue.CreateFromXml).ToArray();
             var bitWidth = xe.Attribute("bitwidth")?.Value;
-            return new(name, type, values, bitWidth is null ? 32 : int.Parse(bitWidth));
+            var api = xe.Attribute("api")?.Value;
+            return new(name, type, values, bitWidth is null ? 32 : int.Parse(bitWidth), api);
         }
 
         /// <inheritdoc />
@@ -130,6 +137,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The comment of the EnumValue.
         /// </summary>
         public string Comment { get; }
+        
+        /// <summary>
+        /// The API for which this value is applicable.
+        /// </summary>
+        public string? Api { get; }
 
         /// <summary>
         /// Create a new EnumValue.
@@ -137,11 +149,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="name">The name of the value.</param>
         /// <param name="value">The value of the enum value.</param>
         /// <param name="comment">The comment of the EnumValue.</param>
-        public EnumValue(string name, long value, string comment)
+        public EnumValue(string name, long value, string comment, string? api)
         {
             Name = name;
             Value = value;
             Comment = comment;
+            Api = api;
         }
 
         /// <summary>
@@ -166,7 +179,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                     .Elements("enum")
                     .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias")?.Value));
                 
-                return new EnumValue(xe.Attribute("name")?.Value, ret.Value, ret.Comment);
+                return new EnumValue(xe.Attribute("name")?.Value, ret.Value, ret.Comment, ret.Api);
             }
 
             var name = xe.Attribute("name")?.Value;
@@ -193,7 +206,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             var commentAttr = xe.Attribute("comment");
             var comment = commentAttr != null ? commentAttr.Value : string.Empty;
-            return new EnumValue(name, value, comment);
+            var api = xe.Attribute("api")?.Value;
+            return new EnumValue(name, value, comment, api);
         }
     }
 }

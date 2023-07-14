@@ -21,25 +21,25 @@ namespace Silk.NET.WGL.Extensions.NV
     {
         public const string ExtensionName = "NV_video_capture";
         [NativeApi(EntryPoint = "wglBindVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 BindVideoCaptureDevice([Flow(FlowDirection.In)] uint uVideoSlot, [Flow(FlowDirection.In)] nint hDevice);
+        public partial Silk.NET.Core.Bool32 BindVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice);
 
         [NativeApi(EntryPoint = "wglEnumerateVideoCaptureDevicesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint EnumerateVideoCaptureDevices([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.Out)] nint* phDeviceList);
+        public unsafe partial uint EnumerateVideoCaptureDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* phDeviceList);
 
         [NativeApi(EntryPoint = "wglEnumerateVideoCaptureDevicesNV", Convention = CallingConvention.Winapi)]
-        public partial uint EnumerateVideoCaptureDevices([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.Out)] out nint phDeviceList);
+        public partial uint EnumerateVideoCaptureDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint phDeviceList);
 
         [NativeApi(EntryPoint = "wglLockVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 LockVideoCaptureDevice([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] nint hDevice);
+        public partial Silk.NET.Core.Bool32 LockVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice);
 
         [NativeApi(EntryPoint = "wglQueryVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryVideoCaptureDevice([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] int* piValue);
+        public unsafe partial Silk.NET.Core.Bool32 QueryVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValue);
 
         [NativeApi(EntryPoint = "wglQueryVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryVideoCaptureDevice([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] out int piValue);
+        public partial Silk.NET.Core.Bool32 QueryVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValue);
 
         [NativeApi(EntryPoint = "wglReleaseVideoCaptureDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 ReleaseVideoCaptureDevice([Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] nint hDevice);
+        public partial Silk.NET.Core.Bool32 ReleaseVideoCaptureDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice);
 
         public NVVideoCapture(INativeContext ctx)
             : base(ctx)

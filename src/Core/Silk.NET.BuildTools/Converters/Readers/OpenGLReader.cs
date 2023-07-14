@@ -441,7 +441,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     valueReferenceExpression = new string(expression);
 
                     hasValueReference = true;
-                    return new Count(valueReferenceName);
+                    return new Count(valueReferenceName) { Expression = valueReferenceExpression };
                 }
             }
             
@@ -849,12 +849,17 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         (
                             new Token
                             {
-                                Attributes = removals.ContainsKey(@enum.Key) && !revivals.ContainsKey(@enum.Key)
+                                Attributes = removals.TryGetValue(@enum.Key, out var ver) &&
+                                             !revivals.ContainsKey(@enum.Key)
                                     ? new List<Attribute>
                                     {
                                         new Attribute
                                         {
-                                            Name = "System.Obsolete"
+                                            Name = "System.Obsolete",
+                                            Arguments = new List<string>
+                                            {
+                                                $"\"Deprecated in version {ver?.ToString(2)}\""
+                                            }
                                         }
                                     }
                                     : new List<Attribute>(),
@@ -875,12 +880,17 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             {
                                 new Token
                                 {
-                                    Attributes = removals.ContainsKey(@enum.Key) && !revivals.ContainsKey(@enum.Key)
+                                    Attributes = removals.TryGetValue(@enum.Key, out var ver) &&
+                                                 !revivals.ContainsKey(@enum.Key)
                                         ? new List<Attribute>
                                         {
                                             new Attribute
                                             {
-                                                Name = "System.Obsolete"
+                                                Name = "System.Obsolete",
+                                                Arguments = new List<string>
+                                                {
+                                                    $"\"Deprecated in version {ver?.ToString(2)}\""
+                                                }
                                             }
                                         }
                                         : new List<Attribute>(),

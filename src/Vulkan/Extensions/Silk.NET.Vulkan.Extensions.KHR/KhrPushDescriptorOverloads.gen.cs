@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrPushDescriptorOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdPushDescriptorSet(this KhrPushDescriptor thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
+        public static unsafe void CmdPushDescriptorSet(this KhrPushDescriptor thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
         {
             // SpanOverloader
             thisApi.CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, in pDescriptorWrites.GetPinnableReference());

@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
 {
     public static class NVDrawBuffersOverloads
     {
-        public static unsafe void DrawBuffers(this NVDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<NV> bufs)
+        public static unsafe void DrawBuffers(this NVDrawBuffers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NV> bufs)
         {
             // SpanOverloader
             thisApi.DrawBuffers(n, in bufs.GetPinnableReference());

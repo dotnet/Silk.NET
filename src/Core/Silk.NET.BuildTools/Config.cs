@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -32,6 +33,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("bakery")] public BakeryOptions BakeryOpts { get; set; }
         [JsonProperty("output")] public OutputOptions OutputOpts { get; set; }
         [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
+        [JsonProperty("prefixOverrides")] public Dictionary<string, string> PrefixOverrides { get; set; } = new();
         [JsonProperty("namespace")] public string Namespace { get; set; }
         [JsonProperty("overloadExclusions")] public Dictionary<string, string[]>? OverloaderExclusions { get; set; }
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
@@ -87,6 +89,13 @@ namespace Silk.NET.BuildTools
         /// </summary>
         [JsonProperty("path")]
         public string Folder { get; set; }
+
+        /// <summary>
+        /// Gets or sets the folder within the base output path where the binder will write the generated files, with
+        /// the exception of the csproj.
+        /// </summary>
+        [JsonProperty("innerPath")]
+        public string? Subfolder { get; set; }
 
         /// <summary>
         /// Gets or sets the path to the license header.

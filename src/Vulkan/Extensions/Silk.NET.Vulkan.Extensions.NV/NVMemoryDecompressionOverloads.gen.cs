@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVMemoryDecompressionOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdDecompressMemory(this NVMemoryDecompression thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint decompressRegionCount, [Count(Parameter = "decompressRegionCount"), Flow(FlowDirection.In)] ReadOnlySpan<DecompressMemoryRegionNV> pDecompressMemoryRegions)
+        public static unsafe void CmdDecompressMemory(this NVMemoryDecompression thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint decompressRegionCount, [Count(Parameter = "decompressRegionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DecompressMemoryRegionNV> pDecompressMemoryRegions)
         {
             // SpanOverloader
             thisApi.CmdDecompressMemory(commandBuffer, decompressRegionCount, in pDecompressMemoryRegions.GetPinnableReference());

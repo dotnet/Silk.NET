@@ -38,6 +38,8 @@ namespace Silk.NET.Windowing.Glfw
                 return true;
             }
         );
+
+        string Name => nameof(GlfwPlatform);
         
         /// <inheritdoc />
         public bool IsViewOnly { get; } = false;

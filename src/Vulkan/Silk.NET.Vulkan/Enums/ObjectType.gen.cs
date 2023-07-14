@@ -108,11 +108,15 @@ namespace Silk.NET.Vulkan
         MicromapExt = 1000396000,
         [NativeName("Name", "VK_OBJECT_TYPE_OPTICAL_FLOW_SESSION_NV")]
         OpticalFlowSessionNV = 1000464000,
+        [NativeName("Name", "VK_OBJECT_TYPE_SHADER_EXT")]
+        ShaderExt = 1000482000,
         [NativeName("Name", "VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
         SamplerYcbcrConversion = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]
         DescriptorUpdateTemplate = 1000085000,
         [NativeName("Name", "VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
         PrivateDataSlot = 1000295000,
+        [NativeName("Name", "VK_OBJECT_TYPE_SEMAPHORE_SCI_SYNC_POOL_NV")]
+        SemaphoreSciSyncPoolNV = 1000489000,
     }
 }

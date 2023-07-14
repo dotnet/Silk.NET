@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DBLENDOP")]
     public enum Blendop : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Add\"")]
         [NativeName("Name", "D3DBLENDOP_ADD")]
         BlendopAdd = 0x1,

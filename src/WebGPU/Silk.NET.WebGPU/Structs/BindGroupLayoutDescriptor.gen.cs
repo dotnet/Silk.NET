@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? entryCount = null,
+            nuint? entryCount = null,
             BindGroupLayoutEntry* entries = null
         ) : this()
         {
@@ -59,10 +59,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "entryCount")]
-        public uint EntryCount;
+        public nuint EntryCount;
 
         [NativeName("Type", "const WGPUBindGroupLayoutEntry *")]
         [NativeName("Type.Name", "const WGPUBindGroupLayoutEntry *")]

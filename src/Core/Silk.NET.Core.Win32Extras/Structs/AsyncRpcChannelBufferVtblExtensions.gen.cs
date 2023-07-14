@@ -85,118 +85,118 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage, Guid* riid)
+    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage, Guid* riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
+        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage, ref Guid riid)
+    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage, ref Guid riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMessage, Guid* riid)
+    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMessage, Guid* riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMessage, ref Guid riid)
+    public static int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMessage, ref Guid riid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage, uint* pStatus)
+    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage, uint* pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
+        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage, ref uint pStatus)
+    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage, ref uint pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pStatusPtr = &pStatus)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMessage, uint* pStatus)
+    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMessage, uint* pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMessage, ref uint pStatus)
+    public static int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMessage, ref uint pStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
             fixed (uint* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FreeBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage)
+    public static unsafe int FreeBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessage);
+        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessage);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int FreeBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMessage)
+    public static int FreeBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMessage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
+        fixed (RPCOLEMessage* pMessagePtr = &pMessage)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
         }
         return ret;
     }
@@ -280,40 +280,40 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ISynchronize* pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ISynchronize* pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSync, pulStatus);
+        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSync, pulStatus);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ISynchronize* pSync, ref uint pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ISynchronize* pSync, ref uint pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pulStatusPtr = &pulStatus)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSync, pulStatusPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSync, pulStatusPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ref ISynchronize pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ref ISynchronize pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ISynchronize* pSyncPtr = &pSync)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatus);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ref ISynchronize pSync, ref uint pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ref ISynchronize pSync, ref uint pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -321,66 +321,66 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
         {
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatusPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ISynchronize* pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ISynchronize* pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSync, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSync, pulStatus);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ISynchronize* pSync, ref uint pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ISynchronize* pSync, ref uint pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSync, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSync, pulStatusPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ref ISynchronize pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ref ISynchronize pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (ISynchronize* pSyncPtr = &pSync)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatus);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ref ISynchronize pSync, ref uint pulStatus)
+    public static int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ref ISynchronize pSync, ref uint pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (ISynchronize* pSyncPtr = &pSync)
             {
                 fixed (uint* pulStatusPtr = &pulStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatusPtr);
                 }
             }
         }
@@ -388,88 +388,88 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint* pulStatus)
+    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsg, pulStatus);
+        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[10])(@this, pMsg, pulStatus);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ref uint pulStatus)
+    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ref uint pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pulStatusPtr = &pulStatus)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsg, pulStatusPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[10])(@this, pMsg, pulStatusPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, uint* pulStatus)
+    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, pulStatus);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ref uint pulStatus)
+    public static int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ref uint pulStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, pulStatusPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint* pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, uint* pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContext);
+        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContext);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint* pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, uint* pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvDestContextPtr = &ppvDestContext)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContextPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContextPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ref uint pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ref uint pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pdwDestContextPtr = &pdwDestContext)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContext);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContext);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -477,66 +477,66 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
         {
             fixed (void** ppvDestContextPtr = &ppvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContextPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContextPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, uint* pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, uint* pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContext);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContext);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, uint* pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, uint* pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (void** ppvDestContextPtr = &ppvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContextPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContextPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ref uint pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ref uint pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (uint* pdwDestContextPtr = &pdwDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContext);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContext);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ref uint pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
+        fixed (RPCOLEMessage* pMsgPtr = &pMsg)
         {
             fixed (uint* pdwDestContextPtr = &pdwDestContext)
             {
                 fixed (void** ppvDestContextPtr = &ppvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, RPCOLEMessage*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContextPtr);
                 }
             }
         }
@@ -569,7 +569,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage, Span<Guid> riid)
+    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage, Span<Guid> riid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -577,7 +577,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, Guid* riid)
+    public static unsafe int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMessage, Guid* riid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -585,7 +585,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, Span<Guid> riid)
+    public static int GetBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMessage, Span<Guid> riid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -593,7 +593,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMessage, Span<uint> pStatus)
+    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMessage, Span<uint> pStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -601,7 +601,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, uint* pStatus)
+    public static unsafe int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMessage, uint* pStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -609,7 +609,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage, Span<uint> pStatus)
+    public static int SendReceive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMessage, Span<uint> pStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -617,7 +617,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FreeBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMessage)
+    public static int FreeBuffer(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMessage)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -649,7 +649,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ComPtr<TI0> pSync, uint* pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+    public static unsafe int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ComPtr<TI0> pSync, uint* pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -657,7 +657,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ISynchronize* pSync, Span<uint> pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ISynchronize* pSync, Span<uint> pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -665,7 +665,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, ComPtr<TI0> pSync, ref uint pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+    public static unsafe int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, ComPtr<TI0> pSync, ref uint pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -673,7 +673,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, Span<ISynchronize> pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, Span<ISynchronize> pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -681,7 +681,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, Span<ISynchronize> pSync, Span<uint> pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, Span<ISynchronize> pSync, Span<uint> pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -689,7 +689,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, ISynchronize* pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, ISynchronize* pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -697,7 +697,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ComPtr<TI0> pSync, uint* pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+    public static unsafe int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ComPtr<TI0> pSync, uint* pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -705,7 +705,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, ISynchronize* pSync, Span<uint> pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, ISynchronize* pSync, Span<uint> pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -713,7 +713,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref TagRPCOLEMESSAGE pMsg, ComPtr<TI0> pSync, ref uint pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+    public static int Send<TI0>(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, ref RPCOLEMessage pMsg, ComPtr<TI0> pSync, ref uint pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -721,7 +721,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, Span<ISynchronize> pSync, uint* pulStatus)
+    public static unsafe int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, Span<ISynchronize> pSync, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -729,7 +729,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, Span<ISynchronize> pSync, Span<uint> pulStatus)
+    public static int Send(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, Span<ISynchronize> pSync, Span<uint> pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -737,7 +737,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, Span<uint> pulStatus)
+    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, Span<uint> pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -745,7 +745,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, uint* pulStatus)
+    public static unsafe int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, uint* pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -753,7 +753,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, Span<uint> pulStatus)
+    public static int Receive(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, Span<uint> pulStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -761,7 +761,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, Span<uint> pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, Span<uint> pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -769,7 +769,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, TagRPCOLEMESSAGE* pMsg, Span<uint> pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, RPCOLEMessage* pMsg, Span<uint> pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -777,7 +777,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, uint* pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, uint* pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -785,7 +785,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, uint* pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, uint* pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -793,7 +793,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, Span<uint> pdwDestContext, void** ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, Span<uint> pdwDestContext, void** ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -801,7 +801,7 @@ public unsafe static class AsyncRpcChannelBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, Span<uint> pdwDestContext, ref void* ppvDestContext)
+    public static unsafe int GetDestCtxEx(this ComPtr<IAsyncRpcChannelBuffer> thisVtbl, Span<RPCOLEMessage> pMsg, Span<uint> pdwDestContext, ref void* ppvDestContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

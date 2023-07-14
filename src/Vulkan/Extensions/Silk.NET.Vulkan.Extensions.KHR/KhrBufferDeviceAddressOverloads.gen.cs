@@ -17,21 +17,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrBufferDeviceAddressOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe ulong GetBufferDeviceAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
+        public static unsafe ulong GetBufferDeviceAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.GetBufferDeviceAddress(device, in pInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe ulong GetBufferOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
+        public static unsafe ulong GetBufferOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.GetBufferOpaqueCaptureAddress(device, in pInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe ulong GetDeviceMemoryOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
+        public static unsafe ulong GetDeviceMemoryOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.GetDeviceMemoryOpaqueCaptureAddress(device, in pInfo.GetPinnableReference());

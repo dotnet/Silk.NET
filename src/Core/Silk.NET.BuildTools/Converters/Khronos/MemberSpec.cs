@@ -14,8 +14,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string Comment { get; }
         public string LegalValues { get; }
         public int? NumBits { get; }
+        public string? Api { get; }
 
-        public MemberSpec(string name, TypeSpec type, bool isOptional, int elementCount, string elementCountSymbolic, string comment, string legalValues, int? numBits = null)
+        public MemberSpec(string name, TypeSpec type, bool isOptional, int elementCount, string elementCountSymbolic, string comment, string legalValues, int? numBits = null, string? api = null)
         {
             Name = name;
             Type = type;
@@ -25,6 +26,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Comment = comment;
             LegalValues = legalValues;
             NumBits = numBits;
+            Api = api;
         }
 
         public static MemberSpec CreateFromXml(XElement xe)
@@ -106,8 +108,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
 
             int? numBits = sNumBits is not null ? int.Parse(sNumBits[1..]) : null;
+            var api = xe.Attribute("api")?.Value;
 
-            return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value, numBits);
+            return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value, numBits, api);
         }
 
         public override string ToString()

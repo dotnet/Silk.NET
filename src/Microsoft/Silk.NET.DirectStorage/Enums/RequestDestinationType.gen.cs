@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectStorage
 {
-    [Flags]
     [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_TYPE")]
     public enum RequestDestinationType : ulong
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Memory\"")]
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_MEMORY")]
         RequestDestinationMemory = 0x0,

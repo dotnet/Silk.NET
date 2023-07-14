@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         public const string ExtensionName = "XR_EXT_hand_tracking";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
+        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
+        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
+        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
+        public partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyHandTrackerEXT", Convention = CallingConvention.Winapi)]
@@ -42,19 +42,19 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
+        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
+        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
+        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT", Convention = CallingConvention.Winapi)]
-        public partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
+        public partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
 
         public ExtHandTracking(INativeContext ctx)
             : base(ctx)

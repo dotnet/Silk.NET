@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_alpha_to_coverage_dither_control";
         [NativeApi(EntryPoint = "glAlphaToCoverageDitherControlNV", Convention = CallingConvention.Winapi)]
-        public partial void AlphaToCoverageDitherControl([Flow(FlowDirection.In)] NV mode);
+        public partial void AlphaToCoverageDitherControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode);
 
         public NVAlphaToCoverageDitherControl(INativeContext ctx)
             : base(ctx)

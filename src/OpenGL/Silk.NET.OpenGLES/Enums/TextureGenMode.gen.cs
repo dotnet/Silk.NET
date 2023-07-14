@@ -12,13 +12,13 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "TextureGenMode")]
     public enum TextureGenMode : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EYE_LINEAR")]
         EyeLinear = 0x2400,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_OBJECT_LINEAR")]
         ObjectLinear = 0x2401,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SPHERE_MAP")]
         SphereMap = 0x2402,
         [NativeName("Name", "GL_EYE_DISTANCE_TO_POINT_SGIS")]

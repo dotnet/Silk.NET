@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]
     public enum ProgrammableSamplePositionsTier : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TierNotSupported\"")]
         [NativeName("Name", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER_NOT_SUPPORTED")]
         ProgrammableSamplePositionsTierNotSupported = 0x0,

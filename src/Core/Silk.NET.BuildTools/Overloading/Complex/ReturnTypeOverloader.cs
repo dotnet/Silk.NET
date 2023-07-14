@@ -18,25 +18,26 @@ namespace Silk.NET.BuildTools.Overloading
     {
         internal static bool IsApplicable(Function function)
         {
-            // function is in its original form
-            if (function.Kind != SignatureKind.Normal)
-            {
-                return false;
-            }
-            
-            // function has 1 - 2 parameters
-            var parameterCount = function.Parameters.Count;
-            if (parameterCount == 0 || parameterCount > 2)
-            {
-                return false;
-            }
-
             // function's name starts with Get, Gen, New, or Create
             var hasCorrectPrefix = function.Name.StartsWith("Get") ||
                                    function.Name.StartsWith("Gen") ||
                                    function.Name.StartsWith("New") ||
                                    function.Name.StartsWith("Create");
+
             if (!hasCorrectPrefix)
+            {
+                return false;
+            }
+
+            var hasCorrectDsaSignature = function.Parameters.Count >= 2 &&
+                                         function.Parameters[^1].Count?.ValueReference ==
+                                         function.Parameters[^2].Name &&
+                                         function.Parameters[^1].Type is not { Name: "void", IndirectionLevels: 1 } &&
+                                         function.NativeName.StartsWith("gl");
+            
+            // function has 1 - 2 parameters (backcompat assumption for functions that are not count annotated properly)
+            var parameterCount = function.Parameters.Count;
+            if (parameterCount is 0 or > 2 && !hasCorrectDsaSignature)
             {
                 return false;
             }
@@ -71,7 +72,7 @@ namespace Silk.NET.BuildTools.Overloading
             }
 
             // the last parameter does not have a specific count set
-            if (!(lastParameter.Count is null) && lastParameter.Count.IsStatic)
+            if (lastParameter.Count is not null && lastParameter.Count.IsStatic)
             {
                 if (lastParameter.Count.StaticCount > 1)
                 {
@@ -127,7 +128,7 @@ namespace Silk.NET.BuildTools.Overloading
             }
 
             var sizeParameterType = newParameters.Last().Type;
-            if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
+            if (sizeParameterType.Name is not ("nint" or "nuint" or "int" or "uint") || sizeParameterType.IsPointer)
             {
                 overload = new ImplementedFunction
                 (

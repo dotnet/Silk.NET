@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoDecodeH264PictureLayoutFlagsKHR")]
     public enum VideoDecodeH264PictureLayoutFlagsKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ProgressiveKhr\"")]
         [NativeName("Name", "VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_PROGRESSIVE_KHR")]
         VideoDecodeH264PictureLayoutProgressiveKhr = 0,
