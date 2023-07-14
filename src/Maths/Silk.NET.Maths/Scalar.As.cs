@@ -26,7 +26,7 @@ namespace Silk.NET.Maths
     /// </summary>
     /// <seealso cref="Scalar{T}"/>
     public partial class Scalar
-    {
+    { 
         /// <summary>
         /// Convert <paramref name="val"/> from <typeparamref name="TFrom"/> to <typeparamref name="TTo"/>
         /// </summary>
