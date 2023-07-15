@@ -75,6 +75,13 @@ jobs:
         path: "build/output_packages/*.nupkg"
         if-no-files-found: warn
         retention-days: 1
+    - name: Upload Assembly
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: temp_asm
+        path: "**/{bin,obj}/**/*"
+        if-no-files-found: warn
+        retention-days: 30
     - name: Sign Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       run: .\build.cmd SignPackages --akv-certificate ${{ secrets.AKV_CERTIFICATE }} --akv-client-id ${{ secrets.AKV_CLIENT_ID }} --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }} --akv-tenant ${{ secrets.AKV_TENANT }} --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
