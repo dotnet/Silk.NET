@@ -41,10 +41,10 @@ public sealed class ClangScraper
         {
             if (files.ContainsKey(fileName))
             {
-                throw new InvalidOperationException();
+                _logger.LogWarning("ClangSharp has requested to overwrite {0}!", fileName);
             }
 
-            return files[fileName] = new MemoryStream();
+            return files[Path.ChangeExtension(fileName, ".gen.cs")] = new MemoryStream();
         }
 
         using var pinvokeGenerator = new PInvokeGenerator(config.GeneratorConfiguration, OutputStreamFactory);
@@ -52,6 +52,10 @@ public sealed class ClangScraper
         foreach (var file in config.Files)
         {
             var filePath = Path.Combine(config.FileDirectory, file);
+            var fileName = Path.GetFileName(file);
+            _logger.LogTrace("About to process {0} in accordance with the rsp from {1}",
+                filePath,
+                config.FileDirectory);
 
             var translationUnitError = CXTranslationUnit.TryParse(pinvokeGenerator.IndexHandle, filePath,
                 config.ClangCommandLineArgs, Array.Empty<CXUnsavedFile>(), config.TranslationFlags, out var handle);
@@ -59,14 +63,14 @@ public sealed class ClangScraper
 
             if (translationUnitError != CXError_Success)
             {
-                var msg = $"Parsing failed for '{filePath}' due to '{translationUnitError}'.";
+                var msg = $"Parsing failed for '{fileName}' due to '{translationUnitError}'.";
                 _logger.LogError(msg);
                 diagnostics.Add(new Diagnostic(DiagnosticLevel.Error, msg));
                 skipProcessing = true;
             }
             else if (handle.NumDiagnostics != 0)
             {
-                _logger.LogInformation($"Diagnostics for '{filePath}':");
+                _logger.LogInformation($"Diagnostics for '{fileName}':");
 
                 for (uint i = 0; i < handle.NumDiagnostics; ++i)
                 {
@@ -89,7 +93,7 @@ public sealed class ClangScraper
 
             if (skipProcessing)
             {
-                _logger.LogError($"Skipping '{filePath}' due to one or more errors listed above.");
+                _logger.LogError($"Skipping '{fileName}' due to one or more errors listed above.");
                 continue;
             }
 
@@ -98,8 +102,9 @@ public sealed class ClangScraper
                 using var translationUnit = TranslationUnit.GetOrCreate(handle);
                 Debug.Assert(translationUnit is not null);
 
-                _logger.LogInformation($"Generating raw bindings for '{filePath}'");
+                _logger.LogInformation("Generating raw bindings for '{0}'", fileName);
                 pinvokeGenerator.GenerateBindings(translationUnit, filePath, config.ClangCommandLineArgs, config.TranslationFlags);
+                pinvokeGenerator.Close();
                 _logger.LogDebug("Completed generation for {0}, file count: {1}", filePath, files.Count);
             }
             catch (Exception e)
@@ -110,15 +115,37 @@ public sealed class ClangScraper
             }
         }
 
-        return new GeneratedBindings(files.ToDictionary(kvp => kvp.Key, kvp => {
+        return new GeneratedBindings(files.ToDictionary(
+            kvp => IsSubPathOf(kvp.Key, config.GeneratorConfiguration.TestOutputLocation)
+                ? $"tests/{Path.GetRelativePath(config.GeneratorConfiguration.TestOutputLocation, kvp.Key)}"
+                : $"sources/{Path.GetRelativePath(config.GeneratorConfiguration.OutputLocation, kvp.Key)}",
+            kvp => {
             // Copy the memory stream to a memory mapped file to ensure we don't eat RAM
-            var mmf = MemoryMappedFile.CreateNew(null, ((MemoryStream)kvp.Value).Length);
+            var arr = ((MemoryStream)kvp.Value).ToArray();
+            var mmf = MemoryMappedFile.CreateNew(null, arr.Length);
             using var stream = mmf.CreateViewStream();
-            kvp.Value.CopyTo(stream);
+            stream.Write(arr);
+            stream.Flush();
             kvp.Value.Dispose();
 
             // Return a read-only stream to ensure noone tries to write to it directly
-            return (Stream)mmf.CreateViewStream(0, kvp.Value.Length, MemoryMappedFileAccess.Read);
+            return (Stream)mmf.CreateViewStream(0, arr.Length, MemoryMappedFileAccess.Read);
         }), diagnostics);
+    }
+
+    /// <summary>
+    /// Returns true if <paramref name="path"/> starts with the path <paramref name="baseDirPath"/>.
+    /// The comparison is case-insensitive, handles / and \ slashes as folder separators and
+    /// only matches if the base dir folder name is matched exactly ("c:\foobar\file.txt" is not a sub path of "c:\foo").
+    /// </summary>
+    private static bool IsSubPathOf(string path, string baseDirPath)
+    {
+        var normalizedPath = Path.GetFullPath(path.Replace('\\', '/')
+            .TrimEnd('/'));
+
+        var normalizedBaseDirPath = Path.GetFullPath(baseDirPath.Replace('\\', '/')
+            .TrimEnd('/'));
+
+        return normalizedPath.StartsWith(normalizedBaseDirPath, StringComparison.OrdinalIgnoreCase);
     }
 }

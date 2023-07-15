@@ -1213,7 +1213,12 @@ public class ResponseFileHandler
         _logger.LogTrace("Reading {0}", fullPath);
         foreach (var arg in File.ReadAllLines(fullPath))
         {
-            if (arg.Length > 0 && arg[0] == '@')
+            if (string.IsNullOrWhiteSpace(arg))
+            {
+                continue;
+            }
+
+            if (arg[0] == '@')
             {
                 var innerRsp = Path.GetFullPath(arg[1..], directory);
                 _logger.LogTrace("{0} includes {1}", fullPath, innerRsp);

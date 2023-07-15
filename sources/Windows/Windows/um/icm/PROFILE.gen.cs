@@ -1,0 +1,17 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/icm.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+namespace TerraFX.Interop.Windows;
+/// <include file='PROFILE.xml' path='doc/member[@name="PROFILE"]/*'/>
+public unsafe partial struct PROFILE
+{
+    /// <include file='PROFILE.xml' path='doc/member[@name="PROFILE.dwType"]/*'/>
+    [NativeTypeName("DWORD")]
+    public uint dwType;
+    /// <include file='PROFILE.xml' path='doc/member[@name="PROFILE.pProfileData"]/*'/>
+    [NativeTypeName("PVOID")]
+    public void* pProfileData;
+    /// <include file='PROFILE.xml' path='doc/member[@name="PROFILE.cbDataSize"]/*'/>
+    [NativeTypeName("DWORD")]
+    public uint cbDataSize;
+}

@@ -1,0 +1,12 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+namespace TerraFX.Interop.Windows;
+/// <include file='FILE_WRITE_FLAGS.xml' path='doc/member[@name="FILE_WRITE_FLAGS"]/*'/>
+public enum FILE_WRITE_FLAGS
+{
+    /// <include file='FILE_WRITE_FLAGS.xml' path='doc/member[@name="FILE_WRITE_FLAGS.FILE_WRITE_FLAGS_NONE"]/*'/>
+    FILE_WRITE_FLAGS_NONE = 0,
+    /// <include file='FILE_WRITE_FLAGS.xml' path='doc/member[@name="FILE_WRITE_FLAGS.FILE_WRITE_FLAGS_WRITE_THROUGH"]/*'/>
+    FILE_WRITE_FLAGS_WRITE_THROUGH = 0x000000001,
+}

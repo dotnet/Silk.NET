@@ -1,0 +1,16 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+namespace TerraFX.Interop.Windows;
+/// <include file='WS_XML_CANONICALIZATION_ALGORITHM.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_ALGORITHM"]/*'/>
+public enum WS_XML_CANONICALIZATION_ALGORITHM
+{
+    /// <include file='WS_XML_CANONICALIZATION_ALGORITHM.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_ALGORITHM.WS_EXCLUSIVE_XML_CANONICALIZATION_ALGORITHM"]/*'/>
+    WS_EXCLUSIVE_XML_CANONICALIZATION_ALGORITHM = 0,
+    /// <include file='WS_XML_CANONICALIZATION_ALGORITHM.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_ALGORITHM.WS_EXCLUSIVE_WITH_COMMENTS_XML_CANONICALIZATION_ALGORITHM"]/*'/>
+    WS_EXCLUSIVE_WITH_COMMENTS_XML_CANONICALIZATION_ALGORITHM = 1,
+    /// <include file='WS_XML_CANONICALIZATION_ALGORITHM.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_ALGORITHM.WS_INCLUSIVE_XML_CANONICALIZATION_ALGORITHM"]/*'/>
+    WS_INCLUSIVE_XML_CANONICALIZATION_ALGORITHM = 2,
+    /// <include file='WS_XML_CANONICALIZATION_ALGORITHM.xml' path='doc/member[@name="WS_XML_CANONICALIZATION_ALGORITHM.WS_INCLUSIVE_WITH_COMMENTS_XML_CANONICALIZATION_ALGORITHM"]/*'/>
+    WS_INCLUSIVE_WITH_COMMENTS_XML_CANONICALIZATION_ALGORITHM = 3,
+}

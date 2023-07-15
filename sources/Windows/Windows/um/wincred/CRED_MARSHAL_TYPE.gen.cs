@@ -1,0 +1,18 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+namespace TerraFX.Interop.Windows;
+/// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE"]/*'/>
+public enum CRED_MARSHAL_TYPE
+{
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.CertCredential"]/*'/>
+    CertCredential = 1,
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.UsernameTargetCredential"]/*'/>
+    UsernameTargetCredential,
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.BinaryBlobCredential"]/*'/>
+    BinaryBlobCredential,
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.UsernameForPackedCredentials"]/*'/>
+    UsernameForPackedCredentials,
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.BinaryBlobForSystem"]/*'/>
+    BinaryBlobForSystem,
+}

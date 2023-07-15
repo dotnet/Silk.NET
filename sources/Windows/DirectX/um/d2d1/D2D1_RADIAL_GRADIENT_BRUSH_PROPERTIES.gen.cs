@@ -1,0 +1,18 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/d2d1.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+namespace TerraFX.Interop.DirectX;
+/// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES"]/*'/>
+public partial struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
+{
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center"]/*'/>
+    [NativeTypeName("D2D1_POINT_2F")]
+    public D2D_POINT_2F center;
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset"]/*'/>
+    [NativeTypeName("D2D1_POINT_2F")]
+    public D2D_POINT_2F gradientOriginOffset;
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX"]/*'/>
+    public float radiusX;
+    /// <include file='D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.xml' path='doc/member[@name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY"]/*'/>
+    public float radiusY;
+}
