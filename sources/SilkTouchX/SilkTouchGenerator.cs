@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -37,8 +38,10 @@ public class SilkTouchGenerator
     /// Generates binding syntax trees per the given configuration.
     /// </summary>
     /// <param name="job">The configuration.</param>
+    /// <param name="ct">Cancellation token (if any)</param>
     /// <returns>The generated bindings' syntax trees.</returns>
-    public async Task<GeneratedSyntax> GenerateSyntaxAsync(SilkTouchConfiguration job)
+    public async Task<GeneratedSyntax> GenerateSyntaxAsync(SilkTouchConfiguration job,
+        CancellationToken ct = default)
     {
         // Read the response files
         var rsps = job.ClangSharpResponseFiles.SelectMany(file =>
@@ -57,49 +60,48 @@ public class SilkTouchGenerator
         // Run the scraper over the response files
         var aggregatedBindings = new ConcurrentDictionary<string, Stream>();
         var aggregatedDiagnostics = new ConcurrentBag<Diagnostic>();
-        await Parallel.ForEachAsync(rsps,
-            async (rsp, ct) => await Task.Run(() => {
-                var rawBindings = _scraper.ScrapeRawBindings(rsp);
-                foreach (var (k, v) in rawBindings.Files)
+        await Parallel.ForEachAsync(rsps, ct, async (rsp, innerCt) => await Task.Run(() => {
+            var rawBindings = _scraper.ScrapeRawBindings(rsp);
+            foreach (var (k, v) in rawBindings.Files)
+            {
+                string relativeKey;
+                if (k.StartsWith("sources/"))
                 {
-                    string relativeKey;
-                    if (k.StartsWith("sources/"))
-                    {
-                        relativeKey =
-                            Path.Combine(
-                                "sources",
-                                Path.GetRelativePath(srcRoot, rsp.GeneratorConfiguration.OutputLocation),
-                                k[8..]);
-                    }
-                    else if (k.StartsWith("tests/"))
-                    {
-                        relativeKey =
-                            Path.Combine(
-                                "tests",
-                                Path.GetRelativePath(testRoot, rsp.GeneratorConfiguration.TestOutputLocation),
-                                k[6..]);
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Bad scraper output keys.");
-                    }
-
-                    relativeKey = relativeKey.Replace('\\', '/').TrimEnd('/');
-                    if (!aggregatedBindings.TryAdd(relativeKey, v))
-                    {
-                        _logger.LogError("Failed to add {0} - are the response file outputs conflicting?", relativeKey);
-                    }
-                    else
-                    {
-                        _logger.LogTrace("ClangSharp generated {0}", relativeKey);
-                    }
+                    relativeKey =
+                        Path.Combine(
+                            "sources",
+                            Path.GetRelativePath(srcRoot, rsp.GeneratorConfiguration.OutputLocation),
+                            k[8..]);
+                }
+                else if (k.StartsWith("tests/"))
+                {
+                    relativeKey =
+                        Path.Combine(
+                            "tests",
+                            Path.GetRelativePath(testRoot, rsp.GeneratorConfiguration.TestOutputLocation),
+                            k[6..]);
+                }
+                else
+                {
+                    throw new InvalidOperationException("Bad scraper output keys.");
                 }
 
-                foreach (var diag in rawBindings.Diagnostics)
+                relativeKey = relativeKey.Replace('\\', '/').TrimEnd('/');
+                if (!aggregatedBindings.TryAdd(relativeKey, v))
                 {
-                    aggregatedDiagnostics.Add(diag);
+                    _logger.LogError("Failed to add {0} - are the response file outputs conflicting?", relativeKey);
                 }
-            }, ct));
+                else
+                {
+                    _logger.LogTrace("ClangSharp generated {0}", relativeKey);
+                }
+            }
+
+            foreach (var diag in rawBindings.Diagnostics)
+            {
+                aggregatedDiagnostics.Add(diag);
+            }
+        }, innerCt));
 
         // Read the bindings as syntax trees
         var syntaxTrees = aggregatedBindings.ToDictionary(kvp => kvp.Key,
@@ -117,15 +119,17 @@ public class SilkTouchGenerator
     /// Generates bindings and stores them in memory-mapped file streams.
     /// </summary>
     /// <param name="job">The generation configuration.</param>
+    /// <param name="ct">Cancellation token (if any)</param>
     /// <returns>The generated bindings as memory-mapped streams.</returns>
-    public async Task<GeneratedBindings> GenerateBindingsAsync(SilkTouchConfiguration job)
+    public async Task<GeneratedBindings> GenerateBindingsAsync(SilkTouchConfiguration job,
+        CancellationToken ct = default)
     {
-        var result = await GenerateSyntaxAsync(job);
+        var result = await GenerateSyntaxAsync(job, ct);
         return new GeneratedBindings(result.Files.ToDictionary(x => x.Key, x => {
             // Create a temporary stream - this will be copied into a mmap later to ensure that we don't eat RAM
             using var ms = new MemoryStream();
             using var sw = new StreamWriter(ms);
-            x.Value.WriteTo(sw);
+            x.Value.NormalizeWhitespace(eol: "\n").WriteTo(sw);
             sw.Flush();
             ms.Seek(0, SeekOrigin.Begin);
 
@@ -144,7 +148,9 @@ public class SilkTouchGenerator
     /// Generates bindings and outputs them in accordance to the given configuration.
     /// </summary>
     /// <param name="job">The generation configuration.</param>
-    public async Task<IReadOnlyList<Diagnostic>> OutputBindingsAsync(SilkTouchConfiguration job)
+    /// <param name="ct">Cancellation token (if any)</param>
+    public async Task<IReadOnlyList<Diagnostic>> OutputBindingsAsync(SilkTouchConfiguration job,
+        CancellationToken ct = default)
     {
         var result = await GenerateSyntaxAsync(job);
         if (string.IsNullOrWhiteSpace(job.OutputSourceRoot))
@@ -180,7 +186,7 @@ public class SilkTouchGenerator
             }
 
             await using var sw = new StreamWriter(outPath);
-            syntax.NormalizeWhitespace().WriteTo(sw);
+            syntax.NormalizeWhitespace(eol: "\n").WriteTo(sw);
             await sw.FlushAsync();
         }
 

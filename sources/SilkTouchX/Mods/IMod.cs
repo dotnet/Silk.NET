@@ -1,4 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using SilkTouchX.Clang;
 
 namespace SilkTouchX.Mods;
 
@@ -14,9 +20,53 @@ namespace SilkTouchX.Mods;
 public interface IMod
 {
     /// <summary>
-    /// For a configuration section representing a SilkTouch job referencing this mod, adds the configuration required
-    /// for this mod to execute.
+    /// Gets the configuration type for this mod - this is used to call
+    /// <see cref="OptionsConfigurationServiceCollectionExtensions.Configure{TOptions}(IServiceCollection, string, IConfiguration)" />
+    /// with the appropriate type. May be null if no configuration is required.
     /// </summary>
-    /// <param name="section">The configuration section.</param>
-    void AddConfigurationToSection(IConfigurationSection section);
+    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)]
+    static abstract Type? ConfigurationType { get; }
+
+    /// <summary>
+    /// Runs before SilkTouch does anything with the given job name and job configuration.
+    /// </summary>
+    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
+    /// <param name="config">The job config.</param>
+    /// <returns>An asynchronous task.</returns>
+    Task BeforeJobAsync(string key, SilkTouchConfiguration config)
+        => Task.CompletedTask;
+
+    /// <summary>
+    /// Runs before SilkTouch invokes ClangSharp with the given parsed response files. Gives each mod an opportunity to
+    /// modify the generator configuration.
+    /// </summary>
+    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
+    /// <param name="rsps">The read response files.</param>
+    /// <returns>
+    /// The modified response files to be passed into either the next mod or ClangSharp if this is the last mod.
+    /// </returns>
+    Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+        => Task.FromResult(rsps);
+
+    /// <summary>
+    /// Runs after SilkTouch has invoked ClangSharp which generated the given syntax nodes. Gives each mod an
+    /// opportunity to mutate the syntax tree.
+    /// </summary>
+    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
+    /// <param name="syntax">The generated output from ClangSharp (or the previous mod).</param>
+    /// <returns>
+    /// The modified response files to be either passed to the next mod or output from the generator if this is the last
+    /// mod.
+    /// </returns>
+    Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+        => Task.FromResult(syntax);
+
+    /// <summary>
+    /// Runs after all generation activities have completed. Gives each mod an opportunity to clean up its state for
+    /// this job.
+    /// </summary>
+    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
+    /// <returns>An asynchronous task.</returns>
+    Task AfterJobAsync(string key)
+        => Task.CompletedTask;
 }

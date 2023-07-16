@@ -1,6 +1,6 @@
 ﻿{
-  "Jobs": [
-    {
+  "Jobs": {
+    "Microsoft": {
       "ClangSharpResponseFiles": [
         "../../submodules/terrafx.interop.windows/generation/**/generate.rsp"
       ],
@@ -9,5 +9,5 @@
       "OutputSourceRoot": "../Windows",
       "OutputTestRoot": "../../tests/Windows"
     }
-  ]
+  }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.CommandLine;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -31,56 +32,22 @@ rootCommand.SetHandler(async ctx => {
         .Aggregate(cb, (current, file) => current.AddJsonFile(Path.GetFullPath(file)));
     var config = cb.Build();
 
-    // TODO After building the config, do a first pass for loading mods
-    foreach (var job in config.GetSection("Jobs").GetChildren())
-    {
-        foreach (var m in job.GetSection("Mods").Get<string[]>() ?? Array.Empty<string>())
-        {
-            var modSection = job.GetSection(m);
-            // register something with DI using modSection for configuration and m as the type
-        }
-    }
-
-    var sp = new ServiceCollection().AddLogging(builder => {
+    var sp = new ServiceCollection()
+        .AddLogging(builder => {
             builder.AddSimpleConsole(opts => {
                 opts.SingleLine = true;
             });
             builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(logging));
-        }).AddSingleton<ClangScraper>().AddSingleton<ResponseFileHandler>().AddSingleton<SilkTouchGenerator>()
+        })
+        .AddOptions()
+        .AddSilkTouch(config)
         .BuildServiceProvider();
-    var generator = sp.GetRequiredService<SilkTouchGenerator>();
-    foreach (var job in config.GetSection("Jobs").GetChildren())
-    {
-        await generator.OutputBindingsAsync(job.Get<SilkTouchConfiguration>() ??
-                                            throw new InvalidOperationException("failed to bind configuration"));
-    }
 
-    // var serviceCollection = new ServiceCollection()
-    //     .AddLogging(builder =>
-    //         {
-    //             builder.AddConsole();
-    //             builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(logging));
-    //         }
-    //     )
-    //     // services.AddSingleton<IOptionsChangeTokenSource<TOptions>>(new ConfigurationChangeTokenSource<TOptions>(name, config));
-    //     // return services.AddSingleton<IConfigureOptions<TOptions>>(new NamedConfigureFromConfigurationOptions<TOptions>(name, config, configureBinder));
-    //     .Configure<SilkTouchConfiguration>(config);
-    // if (OperatingSystem.IsWindows())
-    // {
-    //     serviceCollection.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
-    // }
-    // else if (OperatingSystem.IsMacOS())
-    // {
-    //     serviceCollection.AddSingleton<IStdIncludeResolver, MacOSStdIncludeResolver>();
-    // }
-    // else
-    // {
-    //     serviceCollection.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
-    // }
-    // var serviceProvider = serviceCollection
-    //     .AddSingleton<ClangScraper>()
-    //     .AddSingleton<ResponseFileHandler>()
-    //     .BuildServiceProvider();
+    var generator = sp.GetRequiredService<SilkTouchGenerator>();
+    await Parallel.ForEachAsync(config.GetSection("Jobs").GetChildren(), async (job, ct) => {
+        await generator.OutputBindingsAsync(job.Get<SilkTouchConfiguration>() ??
+                                            throw new InvalidOperationException("failed to bind configuration"), ct);
+    });
 });
 
 await rootCommand.InvokeAsync(args);
