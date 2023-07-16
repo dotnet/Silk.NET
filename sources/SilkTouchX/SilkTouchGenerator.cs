@@ -12,6 +12,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Logging;
 using SilkTouchX.Clang;
+using SilkTouchX.Mods;
 using Diagnostic = ClangSharp.Diagnostic;
 
 namespace SilkTouchX;
@@ -21,6 +22,7 @@ namespace SilkTouchX;
 /// </summary>
 public class SilkTouchGenerator
 {
+    private readonly IReadOnlyList<IMod> _mods;
     private readonly ClangScraper _scraper;
     private readonly ResponseFileHandler _rspHandler;
     private readonly ILogger<SilkTouchGenerator> _logger;
@@ -31,18 +33,31 @@ public class SilkTouchGenerator
     /// <param name="scraper">The scraper.</param>
     /// <param name="rspHandler">The response file handler.</param>
     /// <param name="logger">The logger.</param>
-    public SilkTouchGenerator(ClangScraper scraper, ResponseFileHandler rspHandler, ILogger<SilkTouchGenerator> logger) =>
-        (_scraper, _rspHandler, _logger) = (scraper, rspHandler, logger);
+    /// <param name="mods">The mods to use.</param>
+    public SilkTouchGenerator(ClangScraper scraper,
+        ResponseFileHandler rspHandler,
+        ILogger<SilkTouchGenerator> logger,
+        IEnumerable<IMod> mods)
+        => (_scraper, _rspHandler, _logger, _mods) = (scraper, rspHandler, logger, mods.ToArray());
 
     /// <summary>
     /// Generates binding syntax trees per the given configuration.
     /// </summary>
+    /// <param name="key">The name of the current job (used as a configuration key).</param>
     /// <param name="job">The configuration.</param>
     /// <param name="ct">Cancellation token (if any)</param>
     /// <returns>The generated bindings' syntax trees.</returns>
-    public async Task<GeneratedSyntax> GenerateSyntaxAsync(SilkTouchConfiguration job,
+    public async Task<GeneratedSyntax> GenerateSyntaxAsync(string key,
+        SilkTouchConfiguration job,
         CancellationToken ct = default)
     {
+        // Prepare the mods
+        foreach (var mod in _mods)
+        {
+            _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, key);
+            await mod.BeforeJobAsync(key, job);
+        }
+
         // Read the response files
         var rsps = job.ClangSharpResponseFiles.SelectMany(file =>
                 _rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
@@ -55,7 +70,12 @@ public class SilkTouchGenerator
         srcRoot = Path.GetFullPath(srcRoot);
         testRoot = Path.GetFullPath(testRoot);
 
-        // TODO mod the response files
+        // Mod the response files
+        // ReSharper disable once LoopCanBeConvertedToQuery
+        foreach (var mod in _mods)
+        {
+            rsps = await mod.BeforeScrapeAsync(key, rsps);
+        }
 
         // Run the scraper over the response files
         var aggregatedBindings = new ConcurrentDictionary<string, Stream>();
@@ -107,24 +127,31 @@ public class SilkTouchGenerator
         var syntaxTrees = aggregatedBindings.ToDictionary(kvp => kvp.Key,
             kvp => CSharpSyntaxTree.ParseText(SourceText.From(kvp.Value)).GetRoot());
         aggregatedBindings.Clear(); // GC ASAP
+        var bindings = new GeneratedSyntax(syntaxTrees, aggregatedDiagnostics.ToList());
 
-        // TODO mod the bindings
-        // TODO convert the syntax trees back to streams
+        // Mod the bindings
+        foreach (var mod in _mods)
+        {
+            bindings = await mod.AfterScrapeAsync(key, bindings);
+            await mod.AfterJobAsync(key);
+        }
 
         // Output the generated bindings
-        return new GeneratedSyntax(syntaxTrees, aggregatedDiagnostics.ToList());
+        return bindings;
     }
 
     /// <summary>
     /// Generates bindings and stores them in memory-mapped file streams.
     /// </summary>
+    /// <param name="key">The name of the current job (used as a configuration key).</param>
     /// <param name="job">The generation configuration.</param>
     /// <param name="ct">Cancellation token (if any)</param>
     /// <returns>The generated bindings as memory-mapped streams.</returns>
-    public async Task<GeneratedBindings> GenerateBindingsAsync(SilkTouchConfiguration job,
+    public async Task<GeneratedBindings> GenerateBindingsAsync(string key,
+        SilkTouchConfiguration job,
         CancellationToken ct = default)
     {
-        var result = await GenerateSyntaxAsync(job, ct);
+        var result = await GenerateSyntaxAsync(key, job, ct);
         return new GeneratedBindings(result.Files.ToDictionary(x => x.Key, x => {
             // Create a temporary stream - this will be copied into a mmap later to ensure that we don't eat RAM
             using var ms = new MemoryStream();
@@ -147,12 +174,14 @@ public class SilkTouchGenerator
     /// <summary>
     /// Generates bindings and outputs them in accordance to the given configuration.
     /// </summary>
+    /// <param name="key">The name of the current job (used as a configuration key).</param>
     /// <param name="job">The generation configuration.</param>
     /// <param name="ct">Cancellation token (if any)</param>
-    public async Task<IReadOnlyList<Diagnostic>> OutputBindingsAsync(SilkTouchConfiguration job,
+    public async Task<IReadOnlyList<Diagnostic>> OutputBindingsAsync(string key,
+        SilkTouchConfiguration job,
         CancellationToken ct = default)
     {
-        var result = await GenerateSyntaxAsync(job);
+        var result = await GenerateSyntaxAsync(key, job, ct);
         if (string.IsNullOrWhiteSpace(job.OutputSourceRoot))
         {
             _logger.LogWarning("Not outputting source files due to OutputSourceRoot being omitted.");

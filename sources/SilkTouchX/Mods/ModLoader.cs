@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace SilkTouchX.Mods;
 
@@ -13,5 +12,9 @@ public class ModLoader
     /// </summary>
     /// <param name="name">The name.</param>
     /// <returns>The loaded mod if the mod was found, null otherwise.</returns>
-    public static Type? LoadModByName(string name) => null;
+    public static Type? LoadModByName(string name) => name switch
+    {
+        nameof(ChangeNamespace) => typeof(ChangeNamespace),
+        _ => null
+    };
 }

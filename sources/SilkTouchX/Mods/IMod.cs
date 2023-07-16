@@ -20,14 +20,6 @@ namespace SilkTouchX.Mods;
 public interface IMod
 {
     /// <summary>
-    /// Gets the configuration type for this mod - this is used to call
-    /// <see cref="OptionsConfigurationServiceCollectionExtensions.Configure{TOptions}(IServiceCollection, string, IConfiguration)" />
-    /// with the appropriate type. May be null if no configuration is required.
-    /// </summary>
-    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)]
-    static abstract Type? ConfigurationType { get; }
-
-    /// <summary>
     /// Runs before SilkTouch does anything with the given job name and job configuration.
     /// </summary>
     /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>

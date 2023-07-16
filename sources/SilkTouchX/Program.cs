@@ -43,10 +43,11 @@ rootCommand.SetHandler(async ctx => {
         .AddSilkTouch(config)
         .BuildServiceProvider();
 
-    var generator = sp.GetRequiredService<SilkTouchGenerator>();
     await Parallel.ForEachAsync(config.GetSection("Jobs").GetChildren(), async (job, ct) => {
-        await generator.OutputBindingsAsync(job.Get<SilkTouchConfiguration>() ??
-                                            throw new InvalidOperationException("failed to bind configuration"), ct);
+        var generator = sp.GetRequiredService<SilkTouchGenerator>();
+        await generator.OutputBindingsAsync(job.Key,
+            job.Get<SilkTouchConfiguration>() ??
+            throw new InvalidOperationException("failed to bind configuration"), ct);
     });
 });
 

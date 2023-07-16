@@ -1,10 +1,12 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
 using SilkTouchX.Mods;
 
@@ -43,11 +45,12 @@ public static class ServiceCollectionExtensions
     /// <item><description><see cref="ClangScraper"/></description></item>
     /// <item><description><see cref="ResponseFileHandler"/></description></item>
     /// <item><description><see cref="SilkTouchGenerator"/></description></item>
+    /// <item><description>An appropriate implementation of <see cref="IStdIncludeResolver"/></description></item>
     /// <item><description>Mod implementations referenced in the configurations</description></item>
     /// <item>
     /// <description>
     /// <see cref="Microsoft.Extensions.Configuration"/> types for <see cref="SilkTouchConfiguration"/> and the
-    /// <see cref="IMod.ConfigurationType"/>s for any of the loaded mods.
+    /// <see cref="ModConfigurationAttribute{TOptions}"/>s for any of the loaded mods.
     /// </description>
     /// </item>
     /// </list>
@@ -64,7 +67,7 @@ public static class ServiceCollectionExtensions
     /// <item>
     /// <description>
     /// In each <see cref="SilkTouchConfiguration"/> within <c>"Jobs"</c>, contains a subsection for each of the
-    /// <see cref="SilkTouchConfiguration.Mods"/> referenced that has a <see cref="IMod.ConfigurationType"/>.
+    /// <see cref="SilkTouchConfiguration.Mods"/> referenced that has a <see cref="ModConfigurationAttribute{TOptions}"/>.
     /// </description>
     /// </item>
     /// </list>
@@ -72,36 +75,93 @@ public static class ServiceCollectionExtensions
     /// <returns>The modified service collection (for chaining purposes).</returns>
     public static IServiceCollection AddSilkTouch(this IServiceCollection services, IConfiguration config)
     {
+        // References for our use of Microsoft.Extensions.Configuration/DependencyInjection:
+        // - https://stevetalkscode.co.uk/using-iconfigureoptions
+        // - https://stevetalkscode.co.uk/configuration-bridging-part-2
+        // - https://andrewlock.net/configuring-named-options-using-iconfigurenamedoptions-and-configureall/
+        // - https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/
+        // - https://discordapp.com/channels/143867839282020352/663803973119115264/1129546023388332075 (C# Discord)
+
         services.AddSingleton<ClangScraper>();
         services.AddSingleton<ResponseFileHandler>();
+        if (OperatingSystem.IsWindows())
+        {
+            services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
+        }
+        else if (OperatingSystem.IsMacOS())
+        {
+            services.AddSingleton<IStdIncludeResolver, MacOSStdIncludeResolver>();
+        }
+        else
+        {
+            services.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
+        }
 
-        // Build the config and load the mods
+        // First pass to build the config and load the mods
+        var loadedMods = new Dictionary<string, Type>();
         foreach (var job in config.GetSection("Jobs").GetChildren())
         {
             var mods = job.GetSection("Mods").Get<string[]>() ?? Array.Empty<string>();
+            services.Configure<SilkTouchConfiguration>(job.Key, job);
             foreach (var m in mods)
             {
                 var loadedMod = ModLoader.LoadModByName(m);
-                if (loadedMod is not null && services.All(x => x.ImplementationType != loadedMod))
+                if (loadedMod is null || services.Any(x => x.ImplementationType == loadedMod))
                 {
-                    services.AddSingleton(loadedMod);
+                    continue;
                 }
+
+                loadedMods[m] = loadedMod;
                 // TODO else log?
 
-                if (loadedMod?
-                        .GetProperty(nameof(IMod.ConfigurationType), BindingFlags.Static)?
-                        .GetMethod?
-                        .Invoke(null, null) is Type cfgType)
+                if (ModConfigurationAttribute.GetConfigurationType(loadedMod) is { } cfgType)
                 {
                     _configure
                         .MakeGenericMethod(cfgType)
                         .Invoke(null, new object?[] { services, job.Key, job.GetSection(m) });
                 }
             }
-
-            services.Configure<SilkTouchConfiguration>(job.Key, job);
         }
 
-        return services.AddSingleton<SilkTouchGenerator>();
+        // Second pass to register the mods and generator with DI
+        // "order is important" according to this blog post:
+        // https://andrewlock.net/configuring-named-options-using-iconfigurenamedoptions-and-configureall/
+        services.AddSingleton<SilkTouchGenerator>();
+        foreach (var job in config.GetSection("Jobs").GetChildren())
+        {
+            var mods = job.GetSection("Mods").Get<string[]>() ?? Array.Empty<string>();
+            foreach (var m in mods)
+            {
+                services.AddSingleton(loadedMods[m]);
+                services.AddSingleton<IMod>(s => (IMod)s.GetRequiredService(loadedMods[m]));
+            }
+        }
+
+        // Third pass to add the IConfigureOptions/IConfigureNamedOptions
+        foreach (var job in config.GetSection("Jobs").GetChildren())
+        {
+            var mods = job.GetSection("Mods").Get<string[]>() ?? Array.Empty<string>();
+            foreach (var m in mods)
+            {
+                if (ModConfigurationAttribute.GetConfigurationType(loadedMods[m]) is not { } cfgType)
+                {
+                    continue;
+                }
+
+                var cfgOpts = typeof(IConfigureOptions<>).MakeGenericType(cfgType);
+                if (loadedMods[m].IsAssignableTo(cfgOpts))
+                {
+                    services.AddSingleton(cfgOpts, s => (IMod)s.GetRequiredService(loadedMods[m]));
+                }
+
+                cfgOpts = typeof(IConfigureNamedOptions<>).MakeGenericType(cfgType);
+                if (loadedMods[m].IsAssignableTo(cfgOpts))
+                {
+                    services.AddSingleton(cfgOpts, s => (IMod)s.GetRequiredService(loadedMods[m]));
+                }
+            }
+        }
+
+        return services;
     }
 }
