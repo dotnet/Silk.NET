@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMuxStreamAttributesManager.xml' path='doc/member[@name="IMFMuxStreamAttributesManager"]/*'/>
 [Guid("CE8BD576-E440-43B3-BE34-1E53F565F7E8")]
 [NativeTypeName("struct IMFMuxStreamAttributesManager : IUnknown")]

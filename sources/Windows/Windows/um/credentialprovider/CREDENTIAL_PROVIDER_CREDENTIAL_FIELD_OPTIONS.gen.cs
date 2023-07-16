@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS

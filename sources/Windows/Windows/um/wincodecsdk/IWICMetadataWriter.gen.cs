@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICMetadataWriter.xml' path='doc/member[@name="IWICMetadataWriter"]/*'/>
 [Guid("F7836E16-3BE0-470B-86BB-160D0AECD7DE")]
 [NativeTypeName("struct IWICMetadataWriter : IWICMetadataReader")]

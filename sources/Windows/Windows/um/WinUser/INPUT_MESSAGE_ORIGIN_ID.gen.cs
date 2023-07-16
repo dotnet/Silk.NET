@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INPUT_MESSAGE_ORIGIN_ID.xml' path='doc/member[@name="INPUT_MESSAGE_ORIGIN_ID"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum INPUT_MESSAGE_ORIGIN_ID

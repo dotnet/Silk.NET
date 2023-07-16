@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_SPEC_VERSION.xml' path='doc/member[@name="STORAGE_SPEC_VERSION"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 [SupportedOSPlatform("windows10.0")]

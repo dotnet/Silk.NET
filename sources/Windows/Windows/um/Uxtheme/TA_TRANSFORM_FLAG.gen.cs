@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TA_TRANSFORM_FLAG.xml' path='doc/member[@name="TA_TRANSFORM_FLAG"]/*'/>
 [Flags]
 public enum TA_TRANSFORM_FLAG

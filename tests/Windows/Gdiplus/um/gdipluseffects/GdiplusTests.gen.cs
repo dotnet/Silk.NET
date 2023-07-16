@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Gdiplus.Gdiplus;
+using static Silk.NET.Gdiplus.Gdiplus;
 
-namespace TerraFX.Interop.Gdiplus.UnitTests;
+namespace Silk.NET.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref = "Gdiplus"/> class.</summary>
 public static unsafe partial class GdiplusTests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFT_REGISTER_TYPE_INFO.xml' path='doc/member[@name="MFT_REGISTER_TYPE_INFO"]/*'/>
 public partial struct MFT_REGISTER_TYPE_INFO
 {

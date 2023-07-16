@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioMidrange.xml' path='doc/member[@name="IAudioMidrange"]/*'/>
 [Guid("5E54B6D7-B44B-40D9-9A9E-E691D9CE6EDF")]
 [NativeTypeName("struct IAudioMidrange : IPerChannelDbLevel")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_GRID_FIT_MODE.xml' path='doc/member[@name="DWRITE_GRID_FIT_MODE"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum DWRITE_GRID_FIT_MODE

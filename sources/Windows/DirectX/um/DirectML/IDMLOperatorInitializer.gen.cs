@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDMLOperatorInitializer.xml' path='doc/member[@name="IDMLOperatorInitializer"]/*'/>
 [Guid("427C1113-435C-469C-8676-4D5DD072F813")]
 [NativeTypeName("struct IDMLOperatorInitializer : IDMLDispatchable")]

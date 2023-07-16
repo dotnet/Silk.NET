@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IOpenSearchSource.xml' path='doc/member[@name="IOpenSearchSource"]/*'/>
 [Guid("F0EE7333-E6FC-479B-9F25-A860C234A38E")]
 [NativeTypeName("struct IOpenSearchSource : IUnknown")]

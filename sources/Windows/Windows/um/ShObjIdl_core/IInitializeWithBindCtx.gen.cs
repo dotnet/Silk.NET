@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInitializeWithBindCtx.xml' path='doc/member[@name="IInitializeWithBindCtx"]/*'/>
 [Guid("71C0D2BC-726D-45CC-A6C0-2E31C1DB2159")]
 [NativeTypeName("struct IInitializeWithBindCtx : IUnknown")]

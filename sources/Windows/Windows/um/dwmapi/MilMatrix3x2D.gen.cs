@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MilMatrix3x2D.xml' path='doc/member[@name="MilMatrix3x2D"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MilMatrix3x2D

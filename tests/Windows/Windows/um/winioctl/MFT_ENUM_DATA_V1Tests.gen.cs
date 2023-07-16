@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MFT_ENUM_DATA_V1"/> struct.</summary>
 public static unsafe partial class MFT_ENUM_DATA_V1Tests
 {

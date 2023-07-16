@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextBouten.xml' path='doc/member[@name="IMFTimedTextBouten"]/*'/>
 [Guid("3C5F3E8A-90C0-464E-8136-898D2975F847")]
 [NativeTypeName("struct IMFTimedTextBouten : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyDescription2.xml' path='doc/member[@name="IPropertyDescription2"]/*'/>
 [Guid("57D2EDED-5062-400E-B107-5DAE79FE57A6")]
 [NativeTypeName("struct IPropertyDescription2 : IPropertyDescription")]

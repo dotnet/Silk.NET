@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IQueryContinueWithStatus.xml' path='doc/member[@name="IQueryContinueWithStatus"]/*'/>
 [Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
 [NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]

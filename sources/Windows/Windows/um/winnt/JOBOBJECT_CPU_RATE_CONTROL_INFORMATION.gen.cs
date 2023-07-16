@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct JOBOBJECT_CPU_RATE_CONTROL_INFORMATION

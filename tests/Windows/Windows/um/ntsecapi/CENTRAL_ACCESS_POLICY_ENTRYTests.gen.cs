@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CENTRAL_ACCESS_POLICY_ENTRY"/> struct.</summary>
 public static unsafe partial class CENTRAL_ACCESS_POLICY_ENTRYTests
 {

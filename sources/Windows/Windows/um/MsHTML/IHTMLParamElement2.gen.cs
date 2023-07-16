@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2"]/*'/>
 [Guid("30510444-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLParamElement2 : IDispatch")]

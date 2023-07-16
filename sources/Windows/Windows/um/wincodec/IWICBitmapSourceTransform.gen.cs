@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICBitmapSourceTransform.xml' path='doc/member[@name="IWICBitmapSourceTransform"]/*'/>
 [Guid("3B16811B-6A43-4EC9-B713-3D5A0C13B940")]
 [NativeTypeName("struct IWICBitmapSourceTransform : IUnknown")]

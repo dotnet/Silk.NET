@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "INTERACTION_CONTEXT_OUTPUT2"/> struct.</summary>
 public static unsafe partial class INTERACTION_CONTEXT_OUTPUT2Tests
 {

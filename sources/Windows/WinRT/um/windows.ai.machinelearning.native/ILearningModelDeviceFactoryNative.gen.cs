@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/windows.ai.machinelearning.native.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.DirectX;
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.DirectX;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='ILearningModelDeviceFactoryNative.xml' path='doc/member[@name="ILearningModelDeviceFactoryNative"]/*'/>
 [Guid("1E9B31A1-662E-4AE0-AF67-F63BB337E634")]
 [NativeTypeName("struct ILearningModelDeviceFactoryNative : IUnknown")]

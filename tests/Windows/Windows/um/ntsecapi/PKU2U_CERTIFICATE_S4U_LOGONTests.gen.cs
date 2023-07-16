@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PKU2U_CERTIFICATE_S4U_LOGON"/> struct.</summary>
 public static unsafe partial class PKU2U_CERTIFICATE_S4U_LOGONTests
 {

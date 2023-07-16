@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "TAPE_WMI_OPERATIONS"/> struct.</summary>
 public static unsafe partial class TAPE_WMI_OPERATIONSTests
 {

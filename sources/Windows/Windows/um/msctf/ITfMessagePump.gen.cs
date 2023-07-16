@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump"]/*'/>
 [Guid("8F1B8AD8-0B6B-4874-90C5-BD76011E8F7C")]
 [NativeTypeName("struct ITfMessagePump : IUnknown")]

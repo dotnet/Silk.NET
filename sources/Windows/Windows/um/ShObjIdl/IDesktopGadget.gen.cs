@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDesktopGadget.xml' path='doc/member[@name="IDesktopGadget"]/*'/>
 [Guid("C1646BC4-F298-4F91-A204-EB2DD1709D1A")]
 [NativeTypeName("struct IDesktopGadget : IUnknown")]

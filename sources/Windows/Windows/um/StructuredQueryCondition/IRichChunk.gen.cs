@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRichChunk.xml' path='doc/member[@name="IRichChunk"]/*'/>
 [Guid("4FDEF69C-DBC9-454E-9910-B34F3C64B510")]
 [NativeTypeName("struct IRichChunk : IUnknown")]

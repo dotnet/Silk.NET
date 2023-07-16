@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "TCP_ESTATS_FINE_RTT_ROD_v0"/> struct.</summary>
 public static unsafe partial class TCP_ESTATS_FINE_RTT_ROD_v0Tests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDDrawExclModeVideoCallback.xml' path='doc/member[@name="IDDrawExclModeVideoCallback"]/*'/>
 [Guid("913C24A0-20AB-11D2-9038-00A0C9697298")]
 [NativeTypeName("struct IDDrawExclModeVideoCallback : IUnknown")]

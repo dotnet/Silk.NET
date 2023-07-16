@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MsftWriteSpeedDescriptor.xml' path='doc/member[@name="MsftWriteSpeedDescriptor"]/*'/>
 [Guid("27354123-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftWriteSpeedDescriptor : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIXERCONTROLDETAILS_BOOLEAN.xml' path='doc/member[@name="MIXERCONTROLDETAILS_BOOLEAN"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MIXERCONTROLDETAILS_BOOLEAN

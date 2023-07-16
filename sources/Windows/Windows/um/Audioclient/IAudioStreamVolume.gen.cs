@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume"]/*'/>
 [Guid("93014887-242D-4068-8A15-CF5E93B90FE3")]
 [NativeTypeName("struct IAudioStreamVolume : IUnknown")]

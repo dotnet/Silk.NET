@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICoCreateLocally.xml' path='doc/member[@name="ICoCreateLocally"]/*'/>
 [Guid("03DE00AA-F272-41E3-99CB-03C5E8114EA0")]
 [NativeTypeName("struct ICoCreateLocally : IUnknown")]

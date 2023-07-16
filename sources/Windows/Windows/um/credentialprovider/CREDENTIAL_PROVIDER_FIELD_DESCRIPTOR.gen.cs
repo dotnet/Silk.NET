@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR"]/*'/>
 public unsafe partial struct CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR
 {

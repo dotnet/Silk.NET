@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VirtualDesktopManager.xml' path='doc/member[@name="VirtualDesktopManager"]/*'/>
 [Guid("AA509086-5CA9-4C25-8F95-589D3C07B48A")]
 public unsafe partial struct VirtualDesktopManager : INativeGuid

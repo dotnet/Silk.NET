@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSecureChannel.xml' path='doc/member[@name="IMFSecureChannel"]/*'/>
 [Guid("D0AE555D-3B12-4D97-B060-0990BC5AEB67")]
 [NativeTypeName("struct IMFSecureChannel : IUnknown")]

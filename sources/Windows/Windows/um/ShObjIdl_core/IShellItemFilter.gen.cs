@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellItemFilter.xml' path='doc/member[@name="IShellItemFilter"]/*'/>
 [Guid("2659B475-EEB8-48B7-8F07-B378810F48CF")]
 [NativeTypeName("struct IShellItemFilter : IUnknown")]

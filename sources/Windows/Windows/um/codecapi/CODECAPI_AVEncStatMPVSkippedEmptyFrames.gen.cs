@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncStatMPVSkippedEmptyFrames.xml' path='doc/member[@name="CODECAPI_AVEncStatMPVSkippedEmptyFrames"]/*'/>
 [Guid("32195FD3-590D-4812-A7ED-6D639A1F9711")]
 public unsafe partial struct CODECAPI_AVEncStatMPVSkippedEmptyFrames : INativeGuid

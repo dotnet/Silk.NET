@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IResolveShellLink.xml' path='doc/member[@name="IResolveShellLink"]/*'/>
 [Guid("5CD52983-9449-11D2-963A-00C04F79ADF0")]
 [NativeTypeName("struct IResolveShellLink : IUnknown")]

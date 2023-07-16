@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class SPC
 {
     [NativeTypeName("#define SPC_COMMON_NAME_OBJID szOID_COMMON_NAME")]

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFContentProtectionDevice.xml' path='doc/member[@name="IMFContentProtectionDevice"]/*'/>
 [Guid("E6257174-A060-4C9A-A088-3B1B471CAD28")]
 [NativeTypeName("struct IMFContentProtectionDevice : IUnknown")]

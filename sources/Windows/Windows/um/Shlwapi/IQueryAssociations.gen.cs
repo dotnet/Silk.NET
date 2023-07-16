@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IQueryAssociations.xml' path='doc/member[@name="IQueryAssociations"]/*'/>
 [Guid("C46CA590-3C3F-11D2-BEE6-0000F805CA57")]
 [NativeTypeName("struct IQueryAssociations : IUnknown")]

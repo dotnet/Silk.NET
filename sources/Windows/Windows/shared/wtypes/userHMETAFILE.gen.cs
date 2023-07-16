@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='userHMETAFILE.xml' path='doc/member[@name="userHMETAFILE"]/*'/>
 public partial struct userHMETAFILE
 {

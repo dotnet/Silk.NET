@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService"]/*'/>
 [Guid("02BA3B52-0547-11D1-B833-00C04FC9B31F")]
 [NativeTypeName("struct IBrowserService : IUnknown")]

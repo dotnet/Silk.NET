@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/dcomp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDCompositionBlendEffect.xml' path='doc/member[@name="IDCompositionBlendEffect"]/*'/>
 [Guid("33ECDC0A-578A-4A11-9C14-0CB90517F9C5")]
 [NativeTypeName("struct IDCompositionBlendEffect : IDCompositionFilterEffect")]

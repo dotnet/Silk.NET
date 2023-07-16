@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpPhoneticAlphabetSelection.xml' path='doc/member[@name="ISpPhoneticAlphabetSelection"]/*'/>
 [Guid("B2745EFD-42CE-48CA-81F1-A96E02538A90")]
 [NativeTypeName("struct ISpPhoneticAlphabetSelection : IUnknown")]

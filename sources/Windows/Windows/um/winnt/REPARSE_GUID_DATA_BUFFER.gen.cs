@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='REPARSE_GUID_DATA_BUFFER.xml' path='doc/member[@name="REPARSE_GUID_DATA_BUFFER"]/*'/>
 public partial struct REPARSE_GUID_DATA_BUFFER
 {

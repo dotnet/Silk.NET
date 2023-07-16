@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_MEDIA_INFO.xml' path='doc/member[@name="DEVICE_MEDIA_INFO"]/*'/>
 public partial struct DEVICE_MEDIA_INFO
 {

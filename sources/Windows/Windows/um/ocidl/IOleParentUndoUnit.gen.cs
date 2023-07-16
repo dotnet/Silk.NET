@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IOleParentUndoUnit.xml' path='doc/member[@name="IOleParentUndoUnit"]/*'/>
 [Guid("A1FAF330-EF97-11CE-9BC9-00AA00608E01")]
 [NativeTypeName("struct IOleParentUndoUnit : IOleUndoUnit")]

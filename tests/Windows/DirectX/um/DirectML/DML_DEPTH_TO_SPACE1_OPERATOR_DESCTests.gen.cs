@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DML_DEPTH_TO_SPACE1_OPERATOR_DESC"/> struct.</summary>
 public static unsafe partial class DML_DEPTH_TO_SPACE1_OPERATOR_DESCTests
 {

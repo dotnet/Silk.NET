@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_MEMORY_EXHAUSTION_INFO.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.10586.0")]
 public partial struct PROCESS_MEMORY_EXHAUSTION_INFO

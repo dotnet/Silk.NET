@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='InternetPrintOrdering.xml' path='doc/member[@name="InternetPrintOrdering"]/*'/>
 [Guid("ADD36AA8-751A-4579-A266-D66F5202CCBB")]
 public unsafe partial struct InternetPrintOrdering : INativeGuid

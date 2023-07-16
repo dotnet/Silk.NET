@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSampleGrabberSinkCallback2.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback2"]/*'/>
 [Guid("CA86AA50-C46E-429E-AB27-16D6AC6844CB")]
 [NativeTypeName("struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSinkCallback")]

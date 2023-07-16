@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DWMTRANSITION_OWNEDWINDOW_TARGET.xml' path='doc/member[@name="DWMTRANSITION_OWNEDWINDOW_TARGET"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum DWMTRANSITION_OWNEDWINDOW_TARGET

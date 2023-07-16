@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HTMLTextContainerEvents.xml' path='doc/member[@name="HTMLTextContainerEvents"]/*'/>
 [Guid("1FF6AA72-5842-11CF-A707-00AA00C0098D")]
 [NativeTypeName("struct HTMLTextContainerEvents : IDispatch")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ILaunchUIContextProvider.xml' path='doc/member[@name="ILaunchUIContextProvider"]/*'/>
 [Guid("0D12C4C8-A3D9-4E24-94C1-0E20C5A956C4")]
 [NativeTypeName("struct ILaunchUIContextProvider : IUnknown")]

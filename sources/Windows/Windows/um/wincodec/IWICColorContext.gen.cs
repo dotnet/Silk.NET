@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext"]/*'/>
 [Guid("3C613A02-34B2-44EA-9A7C-45AEA9C6FD6D")]
 [NativeTypeName("struct IWICColorContext : IUnknown")]

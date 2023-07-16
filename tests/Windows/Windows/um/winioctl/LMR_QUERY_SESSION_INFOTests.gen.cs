@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "LMR_QUERY_SESSION_INFO"/> struct.</summary>
 public static unsafe partial class LMR_QUERY_SESSION_INFOTests
 {

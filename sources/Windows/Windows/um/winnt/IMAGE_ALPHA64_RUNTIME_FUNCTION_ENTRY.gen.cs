@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public partial struct IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY

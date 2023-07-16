@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct D3D11_SUBRESOURCE_TILING

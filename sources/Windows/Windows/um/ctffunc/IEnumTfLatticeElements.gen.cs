@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumTfLatticeElements.xml' path='doc/member[@name="IEnumTfLatticeElements"]/*'/>
 [Guid("56988052-47DA-4A05-911A-E3D941F17145")]
 [NativeTypeName("struct IEnumTfLatticeElements : IUnknown")]

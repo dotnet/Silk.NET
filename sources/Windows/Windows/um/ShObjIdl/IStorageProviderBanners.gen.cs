@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners"]/*'/>
 [Guid("5EFB46D7-47C0-4B68-ACDA-DED47C90EC91")]
 [NativeTypeName("struct IStorageProviderBanners : IUnknown")]

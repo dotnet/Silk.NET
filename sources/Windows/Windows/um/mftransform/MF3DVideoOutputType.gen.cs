@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF3DVideoOutputType.xml' path='doc/member[@name="MF3DVideoOutputType"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MF3DVideoOutputType

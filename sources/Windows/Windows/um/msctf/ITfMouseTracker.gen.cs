@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfMouseTracker.xml' path='doc/member[@name="ITfMouseTracker"]/*'/>
 [Guid("09D146CD-A544-4132-925B-7AFA8EF322D0")]
 [NativeTypeName("struct ITfMouseTracker : IUnknown")]

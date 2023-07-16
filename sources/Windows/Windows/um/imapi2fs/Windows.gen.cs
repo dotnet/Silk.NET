@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class Windows
 {
     [NativeTypeName("#define IMAPI2FS_BOOT_ENTRY_COUNT_MAX 32")]

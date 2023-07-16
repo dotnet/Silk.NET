@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob"]/*'/>
 [Guid("E9931663-80BF-4C6E-98AF-5DCF58747D1F")]
 [NativeTypeName("struct IMFSaveJob : IUnknown")]

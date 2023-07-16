@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MIB_IPMCAST_OIF_STATS_W2K"/> struct.</summary>
 public static unsafe partial class MIB_IPMCAST_OIF_STATS_W2KTests
 {

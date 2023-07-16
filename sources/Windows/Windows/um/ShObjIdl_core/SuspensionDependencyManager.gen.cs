@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SuspensionDependencyManager.xml' path='doc/member[@name="SuspensionDependencyManager"]/*'/>
 [Guid("6B273FC5-61FD-4918-95A2-C3B5E9D7F581")]
 public unsafe partial struct SuspensionDependencyManager : INativeGuid

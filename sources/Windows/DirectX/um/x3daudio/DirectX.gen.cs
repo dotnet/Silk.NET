@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/x3daudio.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static unsafe partial class DirectX
 {
     [NativeTypeName("const X3DAUDIO_DISTANCE_CURVE_POINT[2]")]

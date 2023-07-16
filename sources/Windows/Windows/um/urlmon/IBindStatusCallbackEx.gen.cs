@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBindStatusCallbackEx.xml' path='doc/member[@name="IBindStatusCallbackEx"]/*'/>
 [Guid("AAA74EF9-8EE7-4659-88D9-F8C504DA73CC")]
 [NativeTypeName("struct IBindStatusCallbackEx : IBindStatusCallback")]

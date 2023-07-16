@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInternetZoneManagerEx.xml' path='doc/member[@name="IInternetZoneManagerEx"]/*'/>
 [Guid("A4C23339-8E06-431E-9BF4-7E711C085648")]
 [NativeTypeName("struct IInternetZoneManagerEx : IInternetZoneManager")]

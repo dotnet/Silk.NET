@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfThreadFocusSink.xml' path='doc/member[@name="ITfThreadFocusSink"]/*'/>
 [Guid("C0F1DB0C-3A20-405C-A303-96B6010A885F")]
 [NativeTypeName("struct ITfThreadFocusSink : IUnknown")]

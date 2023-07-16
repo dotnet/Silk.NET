@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='USN_RECORD_UNION.xml' path='doc/member[@name="USN_RECORD_UNION"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct USN_RECORD_UNION

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY"/> struct.</summary>
 public static unsafe partial class PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICYTests
 {

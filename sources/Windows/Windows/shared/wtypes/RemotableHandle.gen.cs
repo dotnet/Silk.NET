@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RemotableHandle.xml' path='doc/member[@name="RemotableHandle"]/*'/>
 public partial struct RemotableHandle
 {

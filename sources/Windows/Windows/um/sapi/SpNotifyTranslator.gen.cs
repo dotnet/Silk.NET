@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpNotifyTranslator.xml' path='doc/member[@name="SpNotifyTranslator"]/*'/>
 [Guid("E2AE5372-5D40-11D2-960E-00C04F8EE628")]
 public unsafe partial struct SpNotifyTranslator : INativeGuid

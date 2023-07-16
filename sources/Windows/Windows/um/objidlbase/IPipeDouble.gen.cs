@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPipeDouble.xml' path='doc/member[@name="IPipeDouble"]/*'/>
 [Guid("DB2F3ACE-2F86-11D1-8E04-00C04FB9989A")]
 [NativeTypeName("struct IPipeDouble : IUnknown")]

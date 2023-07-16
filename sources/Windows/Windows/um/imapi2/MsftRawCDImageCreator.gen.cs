@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MsftRawCDImageCreator.xml' path='doc/member[@name="MsftRawCDImageCreator"]/*'/>
 [Guid("25983561-9D65-49CE-B335-40630D901227")]
 public unsafe partial struct MsftRawCDImageCreator : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase"]/*'/>
 [Guid("27354156-8F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2Erase : IDiscFormat2")]

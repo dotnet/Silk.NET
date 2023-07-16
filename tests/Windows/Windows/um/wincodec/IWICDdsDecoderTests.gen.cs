@@ -5,9 +5,9 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "IWICDdsDecoder"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IWICDdsDecoderTests

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DIALOG_DPI_CHANGE_BEHAVIORS.xml' path='doc/member[@name="DIALOG_DPI_CHANGE_BEHAVIORS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.15063.0")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS.xml' path='doc/member[@name="DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS"]/*'/>
 [Flags]
 public enum DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS

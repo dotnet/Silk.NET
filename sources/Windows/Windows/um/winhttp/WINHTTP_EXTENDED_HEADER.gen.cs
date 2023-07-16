@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINHTTP_EXTENDED_HEADER.xml' path='doc/member[@name="WINHTTP_EXTENDED_HEADER"]/*'/>
 public unsafe partial struct WINHTTP_EXTENDED_HEADER
 {

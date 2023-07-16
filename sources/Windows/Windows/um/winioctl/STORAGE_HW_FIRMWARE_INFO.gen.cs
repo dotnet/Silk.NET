@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO"]/*'/>
 public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
 {

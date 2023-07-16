@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext"]/*'/>
 [Guid("09F656A2-41AF-480C-88F7-16CC0D164615")]
 [NativeTypeName("struct ISearchContext : IUnknown")]

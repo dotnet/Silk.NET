@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestPackageDependency2.xml' path='doc/member[@name="IAppxManifestPackageDependency2"]/*'/>
 [Guid("DDA0B713-F3FF-49D3-898A-2786780C5D98")]
 [NativeTypeName("struct IAppxManifestPackageDependency2 : IAppxManifestPackageDependency")]

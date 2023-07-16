@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DFileSystemImageImportEvents.xml' path='doc/member[@name="DFileSystemImageImportEvents"]/*'/>
 [Guid("D25C30F9-4087-4366-9E24-E55BE286424B")]
 [NativeTypeName("struct DFileSystemImageImportEvents : IDispatch")]

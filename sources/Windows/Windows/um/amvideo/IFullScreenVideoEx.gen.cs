@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx"]/*'/>
 [Guid("53479470-F1DD-11CF-BC42-00AA00AC74F6")]
 [NativeTypeName("struct IFullScreenVideoEx : IFullScreenVideo")]

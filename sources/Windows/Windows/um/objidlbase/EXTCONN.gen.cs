@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EXTCONN.xml' path='doc/member[@name="EXTCONN"]/*'/>
 [Flags]
 public enum EXTCONN

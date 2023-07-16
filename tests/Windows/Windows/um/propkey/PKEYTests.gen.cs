@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.PKEY;
+using static Silk.NET.Windows.PKEY;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PKEY"/> class.</summary>
 public static partial class PKEYTests
 {

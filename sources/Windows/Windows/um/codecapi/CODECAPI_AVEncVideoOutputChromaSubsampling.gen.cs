@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoOutputChromaSubsampling.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputChromaSubsampling"]/*'/>
 [Guid("FA561C6C-7D17-44F0-83C9-32ED12E96343")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputChromaSubsampling : INativeGuid

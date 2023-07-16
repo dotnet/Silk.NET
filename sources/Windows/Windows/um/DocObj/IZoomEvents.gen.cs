@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IZoomEvents.xml' path='doc/member[@name="IZoomEvents"]/*'/>
 [Guid("41B68150-904C-4E17-A0BA-A438182E359D")]
 [NativeTypeName("struct IZoomEvents : IUnknown")]

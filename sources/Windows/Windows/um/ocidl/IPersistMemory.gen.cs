@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPersistMemory.xml' path='doc/member[@name="IPersistMemory"]/*'/>
 [Guid("BD1AE5E0-A6AE-11CE-BD37-504200C10000")]
 [NativeTypeName("struct IPersistMemory : IPersist")]

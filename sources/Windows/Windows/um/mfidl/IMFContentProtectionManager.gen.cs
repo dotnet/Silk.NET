@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFContentProtectionManager.xml' path='doc/member[@name="IMFContentProtectionManager"]/*'/>
 [Guid("ACF92459-6A61-42BD-B57C-B43E51203CB0")]
 [NativeTypeName("struct IMFContentProtectionManager : IUnknown")]

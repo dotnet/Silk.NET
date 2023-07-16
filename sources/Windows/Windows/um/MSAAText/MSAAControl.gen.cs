@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MSAAControl.xml' path='doc/member[@name="MSAAControl"]/*'/>
 [Guid("08CD963F-7A3E-4F5C-9BD8-D692BB043C5B")]
 public unsafe partial struct MSAAControl : INativeGuid

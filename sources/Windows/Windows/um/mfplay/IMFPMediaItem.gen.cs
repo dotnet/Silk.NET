@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFPMediaItem.xml' path='doc/member[@name="IMFPMediaItem"]/*'/>
 [Guid("90EB3E6B-ECBF-45CC-B1DA-C6FE3EA70D57")]
 [NativeTypeName("struct IMFPMediaItem : IUnknown")]

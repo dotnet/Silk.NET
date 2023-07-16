@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MANAGEMENT_SERVICE_INFO.xml' path='doc/member[@name="MANAGEMENT_SERVICE_INFO"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct MANAGEMENT_SERVICE_INFO

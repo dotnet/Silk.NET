@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPSFactoryBuffer.xml' path='doc/member[@name="IPSFactoryBuffer"]/*'/>
 [Guid("D5F569D0-593B-101A-B569-08002B2DBF7A")]
 [NativeTypeName("struct IPSFactoryBuffer : IUnknown")]

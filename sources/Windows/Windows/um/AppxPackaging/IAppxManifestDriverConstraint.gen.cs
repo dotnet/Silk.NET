@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint"]/*'/>
 [Guid("C031BEE4-BBCC-48EA-A237-C34045C80A07")]
 [NativeTypeName("struct IAppxManifestDriverConstraint : IUnknown")]

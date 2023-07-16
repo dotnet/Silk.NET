@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_QUATERNION.xml' path='doc/member[@name="MF_QUATERNION"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct MF_QUATERNION

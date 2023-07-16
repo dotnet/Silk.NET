@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ImageList.xml' path='doc/member[@name="ImageList"]/*'/>
 [Guid("7C476BA2-02B1-48F4-8048-B24619DDC058")]
 public unsafe partial struct ImageList : INativeGuid

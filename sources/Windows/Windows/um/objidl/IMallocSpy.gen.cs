@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy"]/*'/>
 [Guid("0000001D-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IMallocSpy : IUnknown")]

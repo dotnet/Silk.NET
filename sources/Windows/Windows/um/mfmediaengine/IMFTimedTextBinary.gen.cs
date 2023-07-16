@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextBinary.xml' path='doc/member[@name="IMFTimedTextBinary"]/*'/>
 [Guid("4AE3A412-0545-43C4-BF6F-6B97A5C6C432")]
 [NativeTypeName("struct IMFTimedTextBinary : IUnknown")]

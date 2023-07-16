@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CMSG_CNG_CONTENT_DECRYPT_INFO"/> struct.</summary>
 public static unsafe partial class CMSG_CNG_CONTENT_DECRYPT_INFOTests
 {

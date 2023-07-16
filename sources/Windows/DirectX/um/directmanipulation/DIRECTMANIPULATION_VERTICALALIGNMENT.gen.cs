@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIRECTMANIPULATION_VERTICALALIGNMENT.xml' path='doc/member[@name="DIRECTMANIPULATION_VERTICALALIGNMENT"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NON_PAGED_DEBUG_INFO.xml' path='doc/member[@name="NON_PAGED_DEBUG_INFO"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public partial struct NON_PAGED_DEBUG_INFO

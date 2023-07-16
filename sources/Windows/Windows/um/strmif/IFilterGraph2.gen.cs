@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFilterGraph2.xml' path='doc/member[@name="IFilterGraph2"]/*'/>
 [Guid("36B73882-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct IFilterGraph2 : IGraphBuilder")]

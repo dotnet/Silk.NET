@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MF_VIDEO_SPHERICAL_VIEWDIRECTION"/> struct.</summary>
 public static unsafe partial class MF_VIDEO_SPHERICAL_VIEWDIRECTIONTests
 {

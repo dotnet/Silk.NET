@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxEncryptionFactory3.xml' path='doc/member[@name="IAppxEncryptionFactory3"]/*'/>
 [Guid("09EDCA37-CD64-47D6-B7E8-1CB11D4F7E05")]
 [NativeTypeName("struct IAppxEncryptionFactory3 : IUnknown")]

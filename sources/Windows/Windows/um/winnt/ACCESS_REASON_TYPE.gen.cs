@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ACCESS_REASON_TYPE.xml' path='doc/member[@name="ACCESS_REASON_TYPE"]/*'/>
 [Flags]
 public enum ACCESS_REASON_TYPE

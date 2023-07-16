@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_OPTIONAL_HEADER64.xml' path='doc/member[@name="IMAGE_OPTIONAL_HEADER64"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public partial struct IMAGE_OPTIONAL_HEADER64

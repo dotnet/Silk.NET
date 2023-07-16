@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFWorkQueueServicesEx.xml' path='doc/member[@name="IMFWorkQueueServicesEx"]/*'/>
 [Guid("96BF961B-40FE-42F1-BA9D-320238B49700")]
 [NativeTypeName("struct IMFWorkQueueServicesEx : IMFWorkQueueServices")]

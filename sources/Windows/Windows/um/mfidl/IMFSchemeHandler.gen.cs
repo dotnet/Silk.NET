@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSchemeHandler.xml' path='doc/member[@name="IMFSchemeHandler"]/*'/>
 [Guid("6D4C7B74-52A0-4BB7-B0DB-55F29F47A668")]
 [NativeTypeName("struct IMFSchemeHandler : IUnknown")]

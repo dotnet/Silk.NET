@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct INTERACTION_ARGUMENTS_MANIPULATION

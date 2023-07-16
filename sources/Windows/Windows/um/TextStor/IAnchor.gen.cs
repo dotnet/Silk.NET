@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor"]/*'/>
 [Guid("0FEB7E34-5A60-4356-8EF7-ABDEC2FF7CF8")]
 [NativeTypeName("struct IAnchor : IUnknown")]

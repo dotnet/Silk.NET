@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CRL_DIST_POINTS_INFO"/> struct.</summary>
 public static unsafe partial class CRL_DIST_POINTS_INFOTests
 {

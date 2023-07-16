@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DIRECTX_AUDIO_ACTIVATION_PARAMS"/> struct.</summary>
 public static unsafe partial class DIRECTX_AUDIO_ACTIVATION_PARAMSTests
 {

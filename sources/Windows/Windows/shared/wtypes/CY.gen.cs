@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CY.xml' path='doc/member[@name="CY"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct CY

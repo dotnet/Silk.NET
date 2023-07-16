@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WIM_PROVIDER_OVERLAY_ENTRY.xml' path='doc/member[@name="WIM_PROVIDER_OVERLAY_ENTRY"]/*'/>
 public partial struct WIM_PROVIDER_OVERLAY_ENTRY
 {

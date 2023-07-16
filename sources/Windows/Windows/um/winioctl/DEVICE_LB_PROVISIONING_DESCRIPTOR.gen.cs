@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR

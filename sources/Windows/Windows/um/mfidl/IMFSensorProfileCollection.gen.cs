@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection"]/*'/>
 [Guid("C95EA55B-0187-48BE-9353-8D2507662351")]
 [NativeTypeName("struct IMFSensorProfileCollection : IUnknown")]

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SOLE_AUTHENTICATION_LIST"/> struct.</summary>
 public static unsafe partial class SOLE_AUTHENTICATION_LISTTests
 {

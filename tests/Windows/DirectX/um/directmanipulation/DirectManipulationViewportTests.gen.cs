@@ -4,9 +4,9 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DirectManipulationViewport"/> struct.</summary>
 public static unsafe partial class DirectManipulationViewportTests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ENLISTMENT_CRM_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_CRM_INFORMATION"]/*'/>
 public partial struct ENLISTMENT_CRM_INFORMATION
 {

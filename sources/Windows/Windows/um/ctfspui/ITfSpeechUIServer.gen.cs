@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfSpeechUIServer.xml' path='doc/member[@name="ITfSpeechUIServer"]/*'/>
 [Guid("90E9A944-9244-489F-A78F-DE67AFC013A7")]
 [NativeTypeName("struct ITfSpeechUIServer : IUnknown")]

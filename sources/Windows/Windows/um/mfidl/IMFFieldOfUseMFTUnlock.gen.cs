@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFFieldOfUseMFTUnlock.xml' path='doc/member[@name="IMFFieldOfUseMFTUnlock"]/*'/>
 [Guid("508E71D3-EC66-4FC3-8775-B4B9ED6BA847")]
 [NativeTypeName("struct IMFFieldOfUseMFTUnlock : IUnknown")]

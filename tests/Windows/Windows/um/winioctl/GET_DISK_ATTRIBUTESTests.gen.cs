@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "GET_DISK_ATTRIBUTES"/> struct.</summary>
 public static unsafe partial class GET_DISK_ATTRIBUTESTests
 {

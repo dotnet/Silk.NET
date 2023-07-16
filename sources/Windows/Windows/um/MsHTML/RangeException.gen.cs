@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RangeException.xml' path='doc/member[@name="RangeException"]/*'/>
 [Guid("3051072E-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct RangeException : INativeGuid

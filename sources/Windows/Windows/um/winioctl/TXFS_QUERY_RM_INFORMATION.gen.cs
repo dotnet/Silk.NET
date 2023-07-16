@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TXFS_QUERY_RM_INFORMATION.xml' path='doc/member[@name="TXFS_QUERY_RM_INFORMATION"]/*'/>
 public partial struct TXFS_QUERY_RM_INFORMATION
 {

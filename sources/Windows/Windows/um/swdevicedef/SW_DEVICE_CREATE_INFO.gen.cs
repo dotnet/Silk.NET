@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO"]/*'/>
 public unsafe partial struct SW_DEVICE_CREATE_INFO
 {

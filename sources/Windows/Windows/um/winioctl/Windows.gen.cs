@@ -4,10 +4,10 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.GUID;
-using static TerraFX.Interop.Windows.STORAGE_IDENTIFIER_TYPE;
+using static Silk.NET.Windows.GUID;
+using static Silk.NET.Windows.STORAGE_IDENTIFIER_TYPE;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmParameterBlock"]/*'/>

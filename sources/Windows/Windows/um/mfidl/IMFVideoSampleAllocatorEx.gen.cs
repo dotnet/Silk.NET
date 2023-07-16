@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFVideoSampleAllocatorEx.xml' path='doc/member[@name="IMFVideoSampleAllocatorEx"]/*'/>
 [Guid("545B3A48-3283-4F62-866F-A62D8F598F9F")]
 [NativeTypeName("struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator")]

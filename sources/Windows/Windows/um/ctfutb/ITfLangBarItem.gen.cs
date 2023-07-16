@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem"]/*'/>
 [Guid("73540D69-EDEB-4EE9-96C9-23AA30B25916")]
 [NativeTypeName("struct ITfLangBarItem : IUnknown")]

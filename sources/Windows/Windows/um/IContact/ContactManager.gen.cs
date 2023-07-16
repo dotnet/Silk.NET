@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ContactManager.xml' path='doc/member[@name="ContactManager"]/*'/>
 [Guid("7165C8AB-AF88-42BD-86FD-5310B4285A02")]
 public unsafe partial struct ContactManager : INativeGuid

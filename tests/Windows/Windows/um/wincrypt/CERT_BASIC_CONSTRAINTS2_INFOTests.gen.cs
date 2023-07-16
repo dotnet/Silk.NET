@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CERT_BASIC_CONSTRAINTS2_INFO"/> struct.</summary>
 public static unsafe partial class CERT_BASIC_CONSTRAINTS2_INFOTests
 {

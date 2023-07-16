@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ADDRINFOEX2W.xml' path='doc/member[@name="ADDRINFOEX2W"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ADDRINFOEX2W

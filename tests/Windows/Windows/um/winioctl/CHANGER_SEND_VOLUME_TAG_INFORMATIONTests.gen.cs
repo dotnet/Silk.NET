@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CHANGER_SEND_VOLUME_TAG_INFORMATION"/> struct.</summary>
 public static unsafe partial class CHANGER_SEND_VOLUME_TAG_INFORMATIONTests
 {

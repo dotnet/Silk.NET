@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo"]/*'/>
 [Guid("401518EC-DB00-4611-9B29-2A0E4B9AFA85")]
 [NativeTypeName("struct IVersionInfo : IUnknown")]

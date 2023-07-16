@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript"]/*'/>
 [Guid("10F63BCE-201A-11D3-AC70-00C04F8EE6C0")]
 [NativeTypeName("struct ISpTranscript : IUnknown")]

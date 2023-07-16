@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.MFT;
+using static Silk.NET.Windows.MFT;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MFT"/> class.</summary>
 public static partial class MFTTests
 {

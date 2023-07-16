@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCaptureEngineOnSampleCallback2.xml' path='doc/member[@name="IMFCaptureEngineOnSampleCallback2"]/*'/>
 [Guid("E37CEED7-340F-4514-9F4D-9C2AE026100B")]
 [NativeTypeName("struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback")]

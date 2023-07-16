@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpLexicon.xml' path='doc/member[@name="SpLexicon"]/*'/>
 [Guid("0655E396-25D0-11D3-9C26-00C04F8EF87C")]
 public unsafe partial struct SpLexicon : INativeGuid

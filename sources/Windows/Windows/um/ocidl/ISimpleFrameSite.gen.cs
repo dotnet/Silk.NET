@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISimpleFrameSite.xml' path='doc/member[@name="ISimpleFrameSite"]/*'/>
 [Guid("742B0E01-14E6-101B-914E-00AA00300CAB")]
 [NativeTypeName("struct ISimpleFrameSite : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HTMLWindowEvents.xml' path='doc/member[@name="HTMLWindowEvents"]/*'/>
 [Guid("96A0A4E0-D062-11CF-94B6-00AA0060275C")]
 [NativeTypeName("struct HTMLWindowEvents : IDispatch")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUIAnimationVariableChangeHandler.xml' path='doc/member[@name="IUIAnimationVariableChangeHandler"]/*'/>
 [Guid("6358B7BA-87D2-42D5-BF71-82E919DD5862")]
 [NativeTypeName("struct IUIAnimationVariableChangeHandler : IUnknown")]

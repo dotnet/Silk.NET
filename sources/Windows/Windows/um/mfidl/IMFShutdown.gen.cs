@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFShutdown.xml' path='doc/member[@name="IMFShutdown"]/*'/>
 [Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1")]
 [NativeTypeName("struct IMFShutdown : IUnknown")]

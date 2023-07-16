@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER"]/*'/>
 public unsafe partial struct SIP_ADD_NEWPROVIDER
 {

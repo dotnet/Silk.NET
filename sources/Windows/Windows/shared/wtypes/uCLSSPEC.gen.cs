@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='uCLSSPEC.xml' path='doc/member[@name="uCLSSPEC"]/*'/>
 public partial struct uCLSSPEC
 {

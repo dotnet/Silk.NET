@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public readonly unsafe partial struct HCERT_SERVER_OCSP_RESPONSE : IComparable, IComparable<HCERT_SERVER_OCSP_RESPONSE>, IEquatable<HCERT_SERVER_OCSP_RESPONSE>, IFormattable
 {
     public readonly void* Value;

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink"]/*'/>
 [Guid("77346CFD-5B49-4D73-ACE0-5B52A859F2E0")]
 [NativeTypeName("struct IMFCapturePreviewSink : IMFCaptureSink")]

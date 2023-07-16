@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FDIDECRYPT.xml' path='doc/member[@name="FDIDECRYPT"]/*'/>
 public unsafe partial struct FDIDECRYPT
 {

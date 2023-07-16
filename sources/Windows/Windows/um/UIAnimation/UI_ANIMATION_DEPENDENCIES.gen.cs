@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='UI_ANIMATION_DEPENDENCIES.xml' path='doc/member[@name="UI_ANIMATION_DEPENDENCIES"]/*'/>
 [Flags]
 public enum UI_ANIMATION_DEPENDENCIES

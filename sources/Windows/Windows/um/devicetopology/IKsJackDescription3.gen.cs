@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IKsJackDescription3.xml' path='doc/member[@name="IKsJackDescription3"]/*'/>
 [Guid("E3F6778B-6660-4CC8-A291-ECC4192D9967")]
 [NativeTypeName("struct IKsJackDescription3 : IUnknown")]

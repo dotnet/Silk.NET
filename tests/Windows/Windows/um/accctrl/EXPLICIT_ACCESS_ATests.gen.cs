@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "EXPLICIT_ACCESS_A"/> struct.</summary>
 public static unsafe partial class EXPLICIT_ACCESS_ATests
 {

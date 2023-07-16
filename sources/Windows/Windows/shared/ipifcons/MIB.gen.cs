@@ -1,9 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from shared/ipifcons.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using static TerraFX.Interop.Windows.INTERNAL_IF_OPER_STATUS;
+using static Silk.NET.Windows.INTERNAL_IF_OPER_STATUS;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class MIB
 {
     [NativeTypeName("#define MIB_IF_TYPE_OTHER 1")]

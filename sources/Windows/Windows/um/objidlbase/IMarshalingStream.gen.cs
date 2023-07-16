@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMarshalingStream.xml' path='doc/member[@name="IMarshalingStream"]/*'/>
 [Guid("D8F2F5E6-6102-4863-9F26-389A4676EFDE")]
 [NativeTypeName("struct IMarshalingStream : IStream")]

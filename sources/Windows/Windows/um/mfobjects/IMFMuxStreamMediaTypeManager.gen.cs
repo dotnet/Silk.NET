@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager"]/*'/>
 [Guid("505A2C72-42F7-4690-AEAB-8F513D0FFDB8")]
 [NativeTypeName("struct IMFMuxStreamMediaTypeManager : IUnknown")]

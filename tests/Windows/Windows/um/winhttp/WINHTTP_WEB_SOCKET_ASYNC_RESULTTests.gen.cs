@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WINHTTP_WEB_SOCKET_ASYNC_RESULT"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class WINHTTP_WEB_SOCKET_ASYNC_RESULTTests

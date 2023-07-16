@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecHEAACDynamicRangeControl.xml' path='doc/member[@name="CODECAPI_AVDecHEAACDynamicRangeControl"]/*'/>
 [Guid("287C8ABE-69A4-4D39-8080-D3D9712178A0")]
 public unsafe partial struct CODECAPI_AVDecHEAACDynamicRangeControl : INativeGuid

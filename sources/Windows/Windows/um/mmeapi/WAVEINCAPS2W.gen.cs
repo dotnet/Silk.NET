@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WAVEINCAPS2W.xml' path='doc/member[@name="WAVEINCAPS2W"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct WAVEINCAPS2W

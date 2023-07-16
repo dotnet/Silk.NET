@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IN6_ADDR.xml' path='doc/member[@name="IN6_ADDR"]/*'/>
 public partial struct IN6_ADDR
 {

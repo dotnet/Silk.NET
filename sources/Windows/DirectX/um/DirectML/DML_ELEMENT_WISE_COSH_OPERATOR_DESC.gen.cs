@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DML_ELEMENT_WISE_COSH_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_COSH_OPERATOR_DESC"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct DML_ELEMENT_WISE_COSH_OPERATOR_DESC

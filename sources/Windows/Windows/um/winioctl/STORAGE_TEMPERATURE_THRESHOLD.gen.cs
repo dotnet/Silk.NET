@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct STORAGE_TEMPERATURE_THRESHOLD

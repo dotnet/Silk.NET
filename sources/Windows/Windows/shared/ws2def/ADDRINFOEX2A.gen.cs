@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ADDRINFOEX2A.xml' path='doc/member[@name="ADDRINFOEX2A"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 [Obsolete("ADDRINFOEX2W")]

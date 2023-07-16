@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCameraControlDefaultsCollection.xml' path='doc/member[@name="IMFCameraControlDefaultsCollection"]/*'/>
 [Guid("92D43D0F-54A8-4BAE-96DA-356D259A5C26")]
 [NativeTypeName("struct IMFCameraControlDefaultsCollection : IMFAttributes")]

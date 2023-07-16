@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInternetSecurityManagerEx2.xml' path='doc/member[@name="IInternetSecurityManagerEx2"]/*'/>
 [Guid("F1E50292-A795-4117-8E09-2B560A72AC60")]
 [NativeTypeName("struct IInternetSecurityManagerEx2 : IInternetSecurityManagerEx")]

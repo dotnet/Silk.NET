@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FilgraphManager.xml' path='doc/member[@name="FilgraphManager"]/*'/>
 [Guid("E436EBB3-524F-11CE-9F53-0020AF0BA770")]
 public unsafe partial struct FilgraphManager : INativeGuid

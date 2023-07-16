@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OBJECT_TYPE_LIST.xml' path='doc/member[@name="OBJECT_TYPE_LIST"]/*'/>
 public unsafe partial struct OBJECT_TYPE_LIST
 {

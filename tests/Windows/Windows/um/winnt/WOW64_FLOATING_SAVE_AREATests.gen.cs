@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WOW64_FLOATING_SAVE_AREA"/> struct.</summary>
 public static unsafe partial class WOW64_FLOATING_SAVE_AREATests
 {

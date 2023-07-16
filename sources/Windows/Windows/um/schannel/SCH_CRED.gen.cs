@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCH_CRED.xml' path='doc/member[@name="SCH_CRED"]/*'/>
 public unsafe partial struct SCH_CRED
 {

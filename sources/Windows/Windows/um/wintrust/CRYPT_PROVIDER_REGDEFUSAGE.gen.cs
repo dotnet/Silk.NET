@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRYPT_PROVIDER_REGDEFUSAGE.xml' path='doc/member[@name="CRYPT_PROVIDER_REGDEFUSAGE"]/*'/>
 public unsafe partial struct CRYPT_PROVIDER_REGDEFUSAGE
 {

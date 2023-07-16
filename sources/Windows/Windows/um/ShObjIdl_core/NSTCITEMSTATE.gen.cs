@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE"]/*'/>
 [Flags]
 public enum NSTCITEMSTATE

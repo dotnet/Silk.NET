@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBasicVideo2.xml' path='doc/member[@name="IBasicVideo2"]/*'/>
 [Guid("329BB360-F6EA-11D1-9038-00A0C9697298")]
 [NativeTypeName("struct IBasicVideo2 : IBasicVideo")]

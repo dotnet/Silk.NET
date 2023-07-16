@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_ID_DESCRIPTOR.xml' path='doc/member[@name="FILE_ID_DESCRIPTOR"]/*'/>
 public partial struct FILE_ID_DESCRIPTOR
 {

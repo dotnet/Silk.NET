@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE

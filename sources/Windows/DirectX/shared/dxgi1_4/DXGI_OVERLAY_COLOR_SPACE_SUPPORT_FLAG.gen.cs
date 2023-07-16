@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG.xml' path='doc/member[@name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

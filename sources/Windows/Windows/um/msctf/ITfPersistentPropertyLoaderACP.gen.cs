@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfPersistentPropertyLoaderACP.xml' path='doc/member[@name="ITfPersistentPropertyLoaderACP"]/*'/>
 [Guid("4EF89150-0807-11D3-8DF0-00105A2799B5")]
 [NativeTypeName("struct ITfPersistentPropertyLoaderACP : IUnknown")]

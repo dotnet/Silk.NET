@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PERF_BIN.xml' path='doc/member[@name="PERF_BIN"]/*'/>
 public partial struct PERF_BIN
 {

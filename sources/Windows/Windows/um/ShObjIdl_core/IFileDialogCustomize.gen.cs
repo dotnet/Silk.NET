@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize"]/*'/>
 [Guid("E6FDD21A-163F-4975-9C8C-A69F1BA37034")]
 [NativeTypeName("struct IFileDialogCustomize : IUnknown")]

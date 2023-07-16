@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "XAPO_REGISTRATION_PROPERTIES"/> struct.</summary>
 public static unsafe partial class XAPO_REGISTRATION_PROPERTIESTests
 {

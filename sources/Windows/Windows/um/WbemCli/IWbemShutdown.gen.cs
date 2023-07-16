@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWbemShutdown.xml' path='doc/member[@name="IWbemShutdown"]/*'/>
 [Guid("B7B31DF9-D515-11D3-A11C-00105A1F515A")]
 [NativeTypeName("struct IWbemShutdown : IUnknown")]

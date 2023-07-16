@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MONITOR_DPI_TYPE.xml' path='doc/member[@name="MONITOR_DPI_TYPE"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum MONITOR_DPI_TYPE

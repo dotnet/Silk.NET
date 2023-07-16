@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "STREAMS_QUERY_PARAMETERS_OUTPUT_BUFFER"/> struct.</summary>
 public static unsafe partial class STREAMS_QUERY_PARAMETERS_OUTPUT_BUFFERTests
 {

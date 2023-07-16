@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfThreadMgrEx.xml' path='doc/member[@name="ITfThreadMgrEx"]/*'/>
 [Guid("3E90ADE3-7594-4CB0-BB58-69628F5F458C")]
 [NativeTypeName("struct ITfThreadMgrEx : ITfThreadMgr")]

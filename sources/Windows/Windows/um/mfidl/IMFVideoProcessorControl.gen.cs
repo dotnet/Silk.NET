@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl"]/*'/>
 [Guid("A3F675D5-6119-4F7F-A100-1D8B280F0EFB")]
 [NativeTypeName("struct IMFVideoProcessorControl : IUnknown")]

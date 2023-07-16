@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfReadOnlyProperty.xml' path='doc/member[@name="ITfReadOnlyProperty"]/*'/>
 [Guid("17D49A3D-F8B8-4B2F-B254-52319DD64C53")]
 [NativeTypeName("struct ITfReadOnlyProperty : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE.xml' path='doc/member[@name="WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE"]/*'/>
 public unsafe partial struct WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE
 {

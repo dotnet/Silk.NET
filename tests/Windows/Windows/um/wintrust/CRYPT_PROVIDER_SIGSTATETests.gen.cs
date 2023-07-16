@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CRYPT_PROVIDER_SIGSTATE"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CRYPT_PROVIDER_SIGSTATETests

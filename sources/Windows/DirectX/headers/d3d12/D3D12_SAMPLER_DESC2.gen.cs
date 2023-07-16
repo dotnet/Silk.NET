@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_SAMPLER_DESC2.xml' path='doc/member[@name="D3D12_SAMPLER_DESC2"]/*'/>
 public unsafe partial struct D3D12_SAMPLER_DESC2
 {

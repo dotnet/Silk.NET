@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OLECMDID_REFRESHFLAG.xml' path='doc/member[@name="OLECMDID_REFRESHFLAG"]/*'/>
 [Flags]
 public enum OLECMDID_REFRESHFLAG

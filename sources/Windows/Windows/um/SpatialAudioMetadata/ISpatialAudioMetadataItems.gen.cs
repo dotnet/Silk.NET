@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems"]/*'/>
 [Guid("BCD7C78F-3098-4F22-B547-A2F25A381269")]
 [NativeTypeName("struct ISpatialAudioMetadataItems : IUnknown")]

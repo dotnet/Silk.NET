@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource"]/*'/>
 [Guid("00ADB003-BDE9-45C6-8E29-D09F9353E108")]
 [NativeTypeName("struct ITransferSource : IUnknown")]

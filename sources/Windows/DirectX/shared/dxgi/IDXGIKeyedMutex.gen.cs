@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDXGIKeyedMutex.xml' path='doc/member[@name="IDXGIKeyedMutex"]/*'/>
 [Guid("9D8E1289-D7B3-465F-8126-250E349AF85D")]
 [NativeTypeName("struct IDXGIKeyedMutex : IDXGIDeviceSubObject")]

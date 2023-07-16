@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 using System;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 public readonly unsafe partial struct InstanceHandle : IComparable, IComparable<InstanceHandle>, IEquatable<InstanceHandle>, IFormattable
 {
     public readonly ulong Value;

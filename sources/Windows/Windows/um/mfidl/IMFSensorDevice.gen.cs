@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice"]/*'/>
 [Guid("FB9F48F2-2A18-4E28-9730-786F30F04DC4")]
 [NativeTypeName("struct IMFSensorDevice : IUnknown")]

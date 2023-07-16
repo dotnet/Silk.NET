@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "IMPORT_OBJECT_HEADER"/> struct.</summary>
 public static unsafe partial class IMPORT_OBJECT_HEADERTests
 {

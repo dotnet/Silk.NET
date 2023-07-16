@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage"]/*'/>
 [Guid("48EFB120-AB49-11D2-AED2-00A0C995E8D5")]
 [NativeTypeName("struct IDrawVideoImage : IUnknown")]

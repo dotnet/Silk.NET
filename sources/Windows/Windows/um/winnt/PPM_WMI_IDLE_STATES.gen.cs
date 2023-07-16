@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PPM_WMI_IDLE_STATES.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES"]/*'/>
 public partial struct PPM_WMI_IDLE_STATES
 {

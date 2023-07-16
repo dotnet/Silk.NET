@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PACKAGE_VERSION.xml' path='doc/member[@name="PACKAGE_VERSION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct PACKAGE_VERSION

@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDWriteFactory3.xml' path='doc/member[@name="IDWriteFactory3"]/*'/>
 [Guid("9A1B41C3-D3BB-466A-87FC-FE67556A3B65")]
 [NativeTypeName("struct IDWriteFactory3 : IDWriteFactory2")]

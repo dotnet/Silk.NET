@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SharingConfigurationManager.xml' path='doc/member[@name="SharingConfigurationManager"]/*'/>
 [Guid("49F371E1-8C5C-4D9C-9A3B-54A6827F513C")]
 public unsafe partial struct SharingConfigurationManager : INativeGuid

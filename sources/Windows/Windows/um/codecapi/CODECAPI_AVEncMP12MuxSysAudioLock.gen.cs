@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMP12MuxSysAudioLock.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxSysAudioLock"]/*'/>
 [Guid("0FBB5752-1D43-47BF-BD79-F2293D8CE337")]
 public unsafe partial struct CODECAPI_AVEncMP12MuxSysAudioLock : INativeGuid

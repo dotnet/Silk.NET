@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CREATIVEFASTSPEECH10WAVEFORMAT.xml' path='doc/member[@name="CREATIVEFASTSPEECH10WAVEFORMAT"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct CREATIVEFASTSPEECH10WAVEFORMAT

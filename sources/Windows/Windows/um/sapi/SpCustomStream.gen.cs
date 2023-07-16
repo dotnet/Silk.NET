@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpCustomStream.xml' path='doc/member[@name="SpCustomStream"]/*'/>
 [Guid("8DBEF13F-1948-4AA8-8CF0-048EEBED95D8")]
 public unsafe partial struct SpCustomStream : INativeGuid

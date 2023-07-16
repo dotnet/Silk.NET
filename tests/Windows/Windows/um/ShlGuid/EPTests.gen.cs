@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.EP;
+using static Silk.NET.Windows.EP;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "EP"/> class.</summary>
 public static partial class EPTests
 {

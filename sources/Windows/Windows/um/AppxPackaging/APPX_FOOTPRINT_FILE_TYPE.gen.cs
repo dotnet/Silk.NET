@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_FOOTPRINT_FILE_TYPE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum APPX_FOOTPRINT_FILE_TYPE

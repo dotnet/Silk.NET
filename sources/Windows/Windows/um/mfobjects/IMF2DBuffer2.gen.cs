@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMF2DBuffer2.xml' path='doc/member[@name="IMF2DBuffer2"]/*'/>
 [Guid("33AE5EA6-4316-436F-8DDD-D73D22F829EC")]
 [NativeTypeName("struct IMF2DBuffer2 : IMF2DBuffer")]

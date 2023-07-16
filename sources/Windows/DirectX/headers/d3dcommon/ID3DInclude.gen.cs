@@ -1,10 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
-using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude"]/*'/>
 public unsafe partial struct ID3DInclude : ID3DInclude.Interface
 {

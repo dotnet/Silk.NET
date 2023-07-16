@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents"]/*'/>
 [Guid("24918ACC-64B3-37C1-8CA9-74A66E9957A8")]
 [NativeTypeName("struct IAudioSessionEvents : IUnknown")]

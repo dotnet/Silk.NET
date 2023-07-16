@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SV2CVW2_PARAMS.xml' path='doc/member[@name="SV2CVW2_PARAMS"]/*'/>
 public unsafe partial struct SV2CVW2_PARAMS
 {

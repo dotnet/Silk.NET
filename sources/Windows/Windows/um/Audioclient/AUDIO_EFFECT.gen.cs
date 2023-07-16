@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDIO_EFFECT.xml' path='doc/member[@name="AUDIO_EFFECT"]/*'/>
 [SupportedOSPlatform("windows10.0.22621.0")]
 public partial struct AUDIO_EFFECT

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA"]/*'/>
 public partial struct CM_POWER_DATA
 {

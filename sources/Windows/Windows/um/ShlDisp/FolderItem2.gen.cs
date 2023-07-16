@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FolderItem2.xml' path='doc/member[@name="FolderItem2"]/*'/>
 [Guid("EDC817AA-92B8-11D1-B075-00C04FC33AA5")]
 [NativeTypeName("struct FolderItem2 : FolderItem")]

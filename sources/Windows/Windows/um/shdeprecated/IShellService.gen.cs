@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellService.xml' path='doc/member[@name="IShellService"]/*'/>
 [Guid("5836FB00-8187-11CF-A12B-00AA004AE837")]
 [NativeTypeName("struct IShellService : IUnknown")]

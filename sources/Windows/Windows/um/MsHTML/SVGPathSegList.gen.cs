@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SVGPathSegList.xml' path='doc/member[@name="SVGPathSegList"]/*'/>
 [Guid("305105B4-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGPathSegList : INativeGuid

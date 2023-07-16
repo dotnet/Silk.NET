@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class D3DCOMPILER
 {
     [NativeTypeName("#define D3DCOMPILER_DLL_W L\"d3dcompiler_47.dll\"")]

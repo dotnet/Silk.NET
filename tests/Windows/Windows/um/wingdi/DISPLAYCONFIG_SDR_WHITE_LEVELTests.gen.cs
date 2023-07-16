@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DISPLAYCONFIG_SDR_WHITE_LEVEL"/> struct.</summary>
 public static unsafe partial class DISPLAYCONFIG_SDR_WHITE_LEVELTests
 {

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INTERACTION_CONFIGURATION_FLAGS.xml' path='doc/member[@name="INTERACTION_CONFIGURATION_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

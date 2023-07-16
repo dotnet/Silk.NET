@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB"]/*'/>
 [Guid("D92995F8-CF5E-4A76-BF59-EAD39EA2B97E")]
 [NativeTypeName("struct INamespaceWalkCB : IUnknown")]

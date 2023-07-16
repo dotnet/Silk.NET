@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DWM_PRESENT_PARAMETERS.xml' path='doc/member[@name="DWM_PRESENT_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DWM_PRESENT_PARAMETERS

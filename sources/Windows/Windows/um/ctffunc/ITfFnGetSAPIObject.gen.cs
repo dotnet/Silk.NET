@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnGetSAPIObject.xml' path='doc/member[@name="ITfFnGetSAPIObject"]/*'/>
 [Guid("5C0AB7EA-167D-4F59-BFB5-4693755E90CA")]
 [NativeTypeName("struct ITfFnGetSAPIObject : ITfFunction")]

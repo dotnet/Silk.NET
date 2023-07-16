@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl"]/*'/>
 [Guid("28724C91-DF35-4856-9F76-D6A26413F3DF")]
 [NativeTypeName("struct IAudioAmbisonicsControl : IUnknown")]

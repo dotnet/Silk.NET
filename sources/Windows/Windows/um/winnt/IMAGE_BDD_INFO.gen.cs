@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_BDD_INFO.xml' path='doc/member[@name="IMAGE_BDD_INFO"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_BDD_INFO

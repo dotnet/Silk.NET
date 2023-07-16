@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CREATEFILE2_EXTENDED_PARAMETERS

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMPVQuantMatrixChromaIntra.xml' path='doc/member[@name="CODECAPI_AVEncMPVQuantMatrixChromaIntra"]/*'/>
 [Guid("9EB9ECD4-018D-4FFD-8F2D-39E49F07B17A")]
 public unsafe partial struct CODECAPI_AVEncMPVQuantMatrixChromaIntra : INativeGuid

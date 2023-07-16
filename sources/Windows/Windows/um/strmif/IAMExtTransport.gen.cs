@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport"]/*'/>
 [Guid("A03CD5F0-3045-11CF-8C44-00AA006B6814")]
 [NativeTypeName("struct IAMExtTransport : IUnknown")]

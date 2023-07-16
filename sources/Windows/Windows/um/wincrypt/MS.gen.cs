@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class MS
 {
     [NativeTypeName("#define MS_DEF_PROV_A \"Microsoft Base Cryptographic Provider v1.0\"")]

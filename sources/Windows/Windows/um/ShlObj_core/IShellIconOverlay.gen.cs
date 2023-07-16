@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellIconOverlay.xml' path='doc/member[@name="IShellIconOverlay"]/*'/>
 [Guid("7D688A70-C613-11D0-999B-00C04FD655E1")]
 [NativeTypeName("struct IShellIconOverlay : IUnknown")]

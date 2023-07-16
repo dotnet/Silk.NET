@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXmlWriterLite.xml' path='doc/member[@name="IXmlWriterLite"]/*'/>
 [Guid("862494C6-1310-4AAD-B3CD-2DBEEBF670D3")]
 [NativeTypeName("struct IXmlWriterLite : IUnknown")]

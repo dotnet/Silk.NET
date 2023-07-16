@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class XAUDIO2D
 {
     [NativeTypeName("#define XAUDIO2D_DLL_A \"xaudio2_9d.dll\"")]

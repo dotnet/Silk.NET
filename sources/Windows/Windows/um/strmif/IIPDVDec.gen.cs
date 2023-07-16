@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IIPDVDec.xml' path='doc/member[@name="IIPDVDec"]/*'/>
 [Guid("B8E8BD60-0BFE-11D0-AF91-00AA00B67A42")]
 [NativeTypeName("struct IIPDVDec : IUnknown")]

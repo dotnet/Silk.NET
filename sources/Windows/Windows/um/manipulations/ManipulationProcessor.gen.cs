@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ManipulationProcessor.xml' path='doc/member[@name="ManipulationProcessor"]/*'/>
 [Guid("597D4FB0-47FD-4AFF-89B9-C6CFAE8CF08E")]
 public unsafe partial struct ManipulationProcessor : INativeGuid

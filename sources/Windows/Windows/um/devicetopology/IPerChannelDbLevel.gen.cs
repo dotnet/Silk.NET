@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel"]/*'/>
 [Guid("C2F8E001-F205-4BC9-99BC-C13B1E048CCB")]
 [NativeTypeName("struct IPerChannelDbLevel : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D1_GRADIENT_MESH_PATCH.xml' path='doc/member[@name="D2D1_GRADIENT_MESH_PATCH"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct D2D1_GRADIENT_MESH_PATCH

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumSpObjectTokens.xml' path='doc/member[@name="IEnumSpObjectTokens"]/*'/>
 [Guid("06B64F9E-7FDA-11D2-B4F2-00C04F797396")]
 [NativeTypeName("struct IEnumSpObjectTokens : IUnknown")]

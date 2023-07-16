@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITimeAndNoticeControl.xml' path='doc/member[@name="ITimeAndNoticeControl"]/*'/>
 [Guid("BC0BF6AE-8878-11D1-83E9-00C04FC2C6D4")]
 [NativeTypeName("struct ITimeAndNoticeControl : IUnknown")]

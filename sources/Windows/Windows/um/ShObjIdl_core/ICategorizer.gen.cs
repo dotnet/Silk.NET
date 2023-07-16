@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer"]/*'/>
 [Guid("A3B14589-9174-49A8-89A3-06A1AE2B9BA7")]
 [NativeTypeName("struct ICategorizer : IUnknown")]

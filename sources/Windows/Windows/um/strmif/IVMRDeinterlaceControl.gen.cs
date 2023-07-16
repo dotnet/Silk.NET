@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl"]/*'/>
 [Guid("BB057577-0DB8-4E6A-87A7-1A8C9A505A0F")]
 [NativeTypeName("struct IVMRDeinterlaceControl : IUnknown")]

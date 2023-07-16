@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INoMarshal.xml' path='doc/member[@name="INoMarshal"]/*'/>
 [Guid("ECC8691B-C1DB-4DC0-855E-65F6C551AF49")]
 [NativeTypeName("struct INoMarshal : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.xml' path='doc/member[@name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE

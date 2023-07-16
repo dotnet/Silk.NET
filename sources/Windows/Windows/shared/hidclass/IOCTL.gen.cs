@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from shared/hidclass.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class IOCTL
 {
     [NativeTypeName("#define IOCTL_HID_GET_DRIVER_CONFIG HID_BUFFER_CTL_CODE(100)")]

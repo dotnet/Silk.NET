@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='QUEUE_USER_APC_FLAGS.xml' path='doc/member[@name="QUEUE_USER_APC_FLAGS"]/*'/>
 [Flags]
 public enum QUEUE_USER_APC_FLAGS

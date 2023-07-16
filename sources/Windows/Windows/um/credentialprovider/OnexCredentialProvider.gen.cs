@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OnexCredentialProvider.xml' path='doc/member[@name="OnexCredentialProvider"]/*'/>
 [Guid("07AA0886-CC8D-4E19-A410-1C75AF686E62")]
 public unsafe partial struct OnexCredentialProvider : INativeGuid

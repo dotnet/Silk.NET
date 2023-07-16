@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellRunDll.xml' path='doc/member[@name="IShellRunDll"]/*'/>
 [Guid("FCE4BDE0-4B68-4B80-8E9C-7426315A7388")]
 [NativeTypeName("struct IShellRunDll : IUnknown")]

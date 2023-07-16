@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAcousticEchoCancellationControl.xml' path='doc/member[@name="IAcousticEchoCancellationControl"]/*'/>
 [Guid("F4AE25B5-AAA3-437D-B6B3-DBBE2D0E9549")]
 [NativeTypeName("struct IAcousticEchoCancellationControl : IUnknown")]

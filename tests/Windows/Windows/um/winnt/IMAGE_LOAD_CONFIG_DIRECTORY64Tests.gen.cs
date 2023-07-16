@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "IMAGE_LOAD_CONFIG_DIRECTORY64"/> struct.</summary>
 public static unsafe partial class IMAGE_LOAD_CONFIG_DIRECTORY64Tests
 {

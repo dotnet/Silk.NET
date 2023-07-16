@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AccDictionary.xml' path='doc/member[@name="AccDictionary"]/*'/>
 [Guid("6572EE16-5FE5-4331-BB6D-76A49C56E423")]
 public unsafe partial struct AccDictionary : INativeGuid

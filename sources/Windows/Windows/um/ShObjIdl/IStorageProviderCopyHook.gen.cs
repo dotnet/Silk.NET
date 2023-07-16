@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IStorageProviderCopyHook.xml' path='doc/member[@name="IStorageProviderCopyHook"]/*'/>
 [Guid("7BF992A9-AF7A-4DBA-B2E5-4D080B1ECBC6")]
 [NativeTypeName("struct IStorageProviderCopyHook : IUnknown")]

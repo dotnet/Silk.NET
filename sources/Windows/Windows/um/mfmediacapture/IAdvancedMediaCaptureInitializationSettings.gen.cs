@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAdvancedMediaCaptureInitializationSettings.xml' path='doc/member[@name="IAdvancedMediaCaptureInitializationSettings"]/*'/>
 [Guid("3DE21209-8BA6-4F2A-A577-2819B56FF14D")]
 [NativeTypeName("struct IAdvancedMediaCaptureInitializationSettings : IUnknown")]

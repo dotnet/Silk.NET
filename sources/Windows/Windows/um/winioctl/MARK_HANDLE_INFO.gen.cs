@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MARK_HANDLE_INFO.xml' path='doc/member[@name="MARK_HANDLE_INFO"]/*'/>
 public partial struct MARK_HANDLE_INFO
 {

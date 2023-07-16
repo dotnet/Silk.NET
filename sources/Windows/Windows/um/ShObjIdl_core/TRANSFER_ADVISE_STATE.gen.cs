@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSFER_ADVISE_STATE.xml' path='doc/member[@name="TRANSFER_ADVISE_STATE"]/*'/>
 [Flags]
 public enum TRANSFER_ADVISE_STATE

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDIT_POLICY_INFORMATION.xml' path='doc/member[@name="AUDIT_POLICY_INFORMATION"]/*'/>
 public partial struct AUDIT_POLICY_INFORMATION
 {

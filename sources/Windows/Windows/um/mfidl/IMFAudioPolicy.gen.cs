@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy"]/*'/>
 [Guid("A0638C2B-6465-4395-9AE7-A321A9FD2856")]
 [NativeTypeName("struct IMFAudioPolicy : IUnknown")]

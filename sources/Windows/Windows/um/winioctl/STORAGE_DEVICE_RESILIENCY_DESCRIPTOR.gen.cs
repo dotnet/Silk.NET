@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct STORAGE_DEVICE_RESILIENCY_DESCRIPTOR

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PINLogonCredentialProvider.xml' path='doc/member[@name="PINLogonCredentialProvider"]/*'/>
 [Guid("CB82EA12-9F71-446D-89E1-8D0924E1256E")]
 public unsafe partial struct PINLogonCredentialProvider : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUriBuilderFactory.xml' path='doc/member[@name="IUriBuilderFactory"]/*'/>
 [Guid("E982CE48-0B96-440C-BC37-0C869B27A29E")]
 [NativeTypeName("struct IUriBuilderFactory : IUnknown")]

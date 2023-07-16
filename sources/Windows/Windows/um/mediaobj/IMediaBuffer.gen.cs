@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMediaBuffer.xml' path='doc/member[@name="IMediaBuffer"]/*'/>
 [Guid("59EFF8B9-938C-4A26-82F2-95CB84CDC837")]
 [NativeTypeName("struct IMediaBuffer : IUnknown")]

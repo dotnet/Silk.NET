@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AudioClient3ActivationParams.xml' path='doc/member[@name="AudioClient3ActivationParams"]/*'/>
 public partial struct AudioClient3ActivationParams
 {

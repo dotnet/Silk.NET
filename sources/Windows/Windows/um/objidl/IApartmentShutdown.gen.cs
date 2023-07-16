@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IApartmentShutdown.xml' path='doc/member[@name="IApartmentShutdown"]/*'/>
 [Guid("A2F05A09-27A2-42B5-BC0E-AC163EF49D9B")]
 [NativeTypeName("struct IApartmentShutdown : IUnknown")]

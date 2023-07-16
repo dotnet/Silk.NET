@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMCertifiedOutputProtection.xml' path='doc/member[@name="IAMCertifiedOutputProtection"]/*'/>
 [Guid("6FEDED3E-0FF1-4901-A2F1-43F7012C8515")]
 [NativeTypeName("struct IAMCertifiedOutputProtection : IUnknown")]

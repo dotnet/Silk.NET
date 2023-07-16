@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IGetCapabilitiesKey.xml' path='doc/member[@name="IGetCapabilitiesKey"]/*'/>
 [Guid("A8809222-07BB-48EA-951C-33158100625B")]
 [NativeTypeName("struct IGetCapabilitiesKey : IUnknown")]

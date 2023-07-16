@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSACTION_BASIC_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BASIC_INFORMATION"]/*'/>
 public partial struct TRANSACTION_BASIC_INFORMATION
 {

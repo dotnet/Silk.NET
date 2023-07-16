@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SET_PARTITION_INFORMATION_EX.xml' path='doc/member[@name="SET_PARTITION_INFORMATION_EX"]/*'/>
 public partial struct SET_PARTITION_INFORMATION_EX
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='_IManipulationEvents.xml' path='doc/member[@name="_IManipulationEvents"]/*'/>
 [Guid("4F62C8DA-9C53-4B22-93DF-927A862BBB03")]
 [NativeTypeName("struct _IManipulationEvents : IUnknown")]

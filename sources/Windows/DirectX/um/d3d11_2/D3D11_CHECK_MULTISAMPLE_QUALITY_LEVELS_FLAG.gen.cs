@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG.xml' path='doc/member[@name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.3")]

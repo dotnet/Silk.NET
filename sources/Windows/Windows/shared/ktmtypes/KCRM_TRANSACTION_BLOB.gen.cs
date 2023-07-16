@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KCRM_TRANSACTION_BLOB.xml' path='doc/member[@name="KCRM_TRANSACTION_BLOB"]/*'/>
 public unsafe partial struct KCRM_TRANSACTION_BLOB
 {

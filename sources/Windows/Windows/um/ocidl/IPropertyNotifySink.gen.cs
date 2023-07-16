@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyNotifySink.xml' path='doc/member[@name="IPropertyNotifySink"]/*'/>
 [Guid("9BFBBC02-EFF1-101A-84ED-00AA00341D07")]
 [NativeTypeName("struct IPropertyNotifySink : IUnknown")]

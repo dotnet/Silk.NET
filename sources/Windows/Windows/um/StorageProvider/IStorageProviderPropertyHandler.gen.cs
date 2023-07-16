@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IStorageProviderPropertyHandler.xml' path='doc/member[@name="IStorageProviderPropertyHandler"]/*'/>
 [Guid("301DFBE5-524C-4B0F-8B2D-21C40B3A2988")]
 [NativeTypeName("struct IStorageProviderPropertyHandler : IUnknown")]

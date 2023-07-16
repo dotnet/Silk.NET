@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler"]/*'/>
 [Guid("226C537B-1E76-4D9E-A760-33DB29922F18")]
 [NativeTypeName("struct IFrameworkInputPaneHandler : IUnknown")]

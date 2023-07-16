@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI"]/*'/>
 [Guid("901DB4C7-31CE-41A2-85DC-8FA0BF41B8DA")]
 [NativeTypeName("struct ICodecAPI : IUnknown")]

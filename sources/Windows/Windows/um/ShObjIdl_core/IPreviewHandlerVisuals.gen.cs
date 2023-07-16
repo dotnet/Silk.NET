@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPreviewHandlerVisuals.xml' path='doc/member[@name="IPreviewHandlerVisuals"]/*'/>
 [Guid("196BF9A5-B346-4EF0-AA1E-5DCDB76768B1")]
 [NativeTypeName("struct IPreviewHandlerVisuals : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFVideoMediaType.xml' path='doc/member[@name="IMFVideoMediaType"]/*'/>
 [Guid("B99F381F-A8F9-47A2-A5AF-CA3A225A3890")]
 [NativeTypeName("struct IMFVideoMediaType : IMFMediaType")]

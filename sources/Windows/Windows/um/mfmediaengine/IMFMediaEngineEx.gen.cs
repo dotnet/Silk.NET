@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaEngineEx.xml' path='doc/member[@name="IMFMediaEngineEx"]/*'/>
 [Guid("83015EAD-B1E6-40D0-A98A-37145FFE1AD1")]
 [NativeTypeName("struct IMFMediaEngineEx : IMFMediaEngine")]

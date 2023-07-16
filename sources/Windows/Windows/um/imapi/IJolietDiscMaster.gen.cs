@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster"]/*'/>
 [Guid("E3BC42CE-4E5C-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IJolietDiscMaster : IUnknown")]

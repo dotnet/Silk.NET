@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileSearchBand.xml' path='doc/member[@name="IFileSearchBand"]/*'/>
 [Guid("2D91EEA1-9932-11D2-BE86-00A0C9A83DA1")]
 [NativeTypeName("struct IFileSearchBand : IDispatch")]

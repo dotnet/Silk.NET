@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHTCAttachBehavior2.xml' path='doc/member[@name="IHTCAttachBehavior2"]/*'/>
 [Guid("3050F7EB-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTCAttachBehavior2 : IDispatch")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient"]/*'/>
 [Guid("2347D60B-3FB5-480C-8803-8DF3ADCD3EF0")]
 [NativeTypeName("struct IMFRealTimeClient : IUnknown")]

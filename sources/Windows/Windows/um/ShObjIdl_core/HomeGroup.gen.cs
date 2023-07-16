@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HomeGroup.xml' path='doc/member[@name="HomeGroup"]/*'/>
 [Guid("DE77BA04-3C92-4D11-A1A5-42352A53E0E3")]
 public unsafe partial struct HomeGroup : INativeGuid

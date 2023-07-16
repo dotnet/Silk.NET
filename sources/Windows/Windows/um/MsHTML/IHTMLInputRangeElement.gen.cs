@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement"]/*'/>
 [Guid("3050F2D4-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLInputRangeElement : IDispatch")]

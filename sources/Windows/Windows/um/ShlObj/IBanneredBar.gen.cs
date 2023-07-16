@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBanneredBar.xml' path='doc/member[@name="IBanneredBar"]/*'/>
 [Guid("596A9A94-013E-11D1-8D34-00A0C90F2719")]
 [NativeTypeName("struct IBanneredBar : IUnknown")]

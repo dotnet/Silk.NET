@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBannerNotificationHandler.xml' path='doc/member[@name="IBannerNotificationHandler"]/*'/>
 [Guid("8D7B2BA7-DB05-46A8-823C-D2B6DE08EE91")]
 [NativeTypeName("struct IBannerNotificationHandler : IUnknown")]

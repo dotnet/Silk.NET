@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROPBAG2.xml' path='doc/member[@name="PROPBAG2"]/*'/>
 public unsafe partial struct PROPBAG2
 {

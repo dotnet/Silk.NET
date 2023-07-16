@@ -4,10 +4,10 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
-using static TerraFX.Interop.Windows.SpeechPartOfSpeech;
+using static Silk.NET.Windows.IID;
+using static Silk.NET.Windows.SpeechPartOfSpeech;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon"]/*'/>
 [Guid("3DA7627A-C7AE-4B23-8708-638C50362C25")]
 [NativeTypeName("struct ISpeechLexicon : IDispatch")]

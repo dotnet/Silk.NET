@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_TRANSFER_MODE.xml' path='doc/member[@name="WS_TRANSFER_MODE"]/*'/>
 [Flags]
 public enum WS_TRANSFER_MODE

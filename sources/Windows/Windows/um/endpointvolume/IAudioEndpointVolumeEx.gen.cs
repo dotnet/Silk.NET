@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioEndpointVolumeEx.xml' path='doc/member[@name="IAudioEndpointVolumeEx"]/*'/>
 [Guid("66E11784-F695-4F28-A505-A7080081A78F")]
 [NativeTypeName("struct IAudioEndpointVolumeEx : IAudioEndpointVolume")]

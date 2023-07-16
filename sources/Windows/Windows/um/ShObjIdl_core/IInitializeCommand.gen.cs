@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInitializeCommand.xml' path='doc/member[@name="IInitializeCommand"]/*'/>
 [Guid("85075ACF-231F-40EA-9610-D26B7B58F638")]
 [NativeTypeName("struct IInitializeCommand : IUnknown")]

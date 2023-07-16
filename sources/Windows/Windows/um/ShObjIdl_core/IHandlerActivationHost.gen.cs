@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost"]/*'/>
 [Guid("35094A87-8BB1-4237-96C6-C417EEBDB078")]
 [NativeTypeName("struct IHandlerActivationHost : IUnknown")]

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WINHTTP_MATCH_CONNECTION_GUID"/> struct.</summary>
 public static unsafe partial class WINHTTP_MATCH_CONNECTION_GUIDTests
 {

@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.DirectX.DirectX;
+using static Silk.NET.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DirectX"/> class.</summary>
 public static partial class DirectXTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRpcSyntaxNegotiate.xml' path='doc/member[@name="IRpcSyntaxNegotiate"]/*'/>
 [Guid("58A08519-24C8-4935-B482-3FD823333A4F")]
 [NativeTypeName("struct IRpcSyntaxNegotiate : IUnknown")]

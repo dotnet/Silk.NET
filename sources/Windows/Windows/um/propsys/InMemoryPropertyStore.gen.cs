@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='InMemoryPropertyStore.xml' path='doc/member[@name="InMemoryPropertyStore"]/*'/>
 [Guid("9A02E012-6303-4E1E-B9A1-630F802592C5")]
 public unsafe partial struct InMemoryPropertyStore : INativeGuid

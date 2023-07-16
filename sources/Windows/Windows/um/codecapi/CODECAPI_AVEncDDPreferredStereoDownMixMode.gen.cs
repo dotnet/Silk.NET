@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncDDPreferredStereoDownMixMode.xml' path='doc/member[@name="CODECAPI_AVEncDDPreferredStereoDownMixMode"]/*'/>
 [Guid("7F4E6B31-9185-403D-B0A2-763743E6F063")]
 public unsafe partial struct CODECAPI_AVEncDDPreferredStereoDownMixMode : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfToolTipUIElement.xml' path='doc/member[@name="ITfToolTipUIElement"]/*'/>
 [Guid("52B18B5C-555D-46B2-B00A-FA680144FBDB")]
 [NativeTypeName("struct ITfToolTipUIElement : ITfUIElement")]

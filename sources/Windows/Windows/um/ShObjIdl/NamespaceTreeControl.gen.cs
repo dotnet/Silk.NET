@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NamespaceTreeControl.xml' path='doc/member[@name="NamespaceTreeControl"]/*'/>
 [Guid("AE054212-3535-4430-83ED-D501AA6680E6")]
 public unsafe partial struct NamespaceTreeControl : INativeGuid

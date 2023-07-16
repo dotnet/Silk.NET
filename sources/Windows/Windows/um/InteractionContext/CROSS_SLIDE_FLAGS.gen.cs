@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CROSS_SLIDE_FLAGS.xml' path='doc/member[@name="CROSS_SLIDE_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

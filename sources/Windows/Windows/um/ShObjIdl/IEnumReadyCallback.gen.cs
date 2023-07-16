@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumReadyCallback.xml' path='doc/member[@name="IEnumReadyCallback"]/*'/>
 [Guid("61E00D45-8FFF-4E60-924E-6537B61612DD")]
 [NativeTypeName("struct IEnumReadyCallback : IUnknown")]

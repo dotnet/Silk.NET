@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct DEVICEDUMP_PUBLIC_SUBSECTION

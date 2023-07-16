@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DAV_CALLBACK_AUTH_BLOB"/> struct.</summary>
 public static unsafe partial class DAV_CALLBACK_AUTH_BLOBTests
 {

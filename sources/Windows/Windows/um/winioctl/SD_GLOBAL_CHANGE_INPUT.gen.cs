@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SD_GLOBAL_CHANGE_INPUT.xml' path='doc/member[@name="SD_GLOBAL_CHANGE_INPUT"]/*'/>
 public partial struct SD_GLOBAL_CHANGE_INPUT
 {

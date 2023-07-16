@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInertiaProcessor.xml' path='doc/member[@name="IInertiaProcessor"]/*'/>
 [Guid("18B00C6D-C5EE-41B1-90A9-9D4A929095AD")]
 [NativeTypeName("struct IInertiaProcessor : IUnknown")]

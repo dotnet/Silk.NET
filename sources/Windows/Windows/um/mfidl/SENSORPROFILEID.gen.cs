@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SENSORPROFILEID.xml' path='doc/member[@name="SENSORPROFILEID"]/*'/>
 [SupportedOSPlatform("windows10.0.16299.0")]
 public partial struct SENSORPROFILEID

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D2D1_FACTORY_OPTIONS"/> struct.</summary>
 public static unsafe partial class D2D1_FACTORY_OPTIONSTests
 {

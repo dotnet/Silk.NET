@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SecPkgContext_ClientCertPolicyResult.xml' path='doc/member[@name="SecPkgContext_ClientCertPolicyResult"]/*'/>
 public partial struct SecPkgContext_ClientCertPolicyResult
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICreateDevEnum.xml' path='doc/member[@name="ICreateDevEnum"]/*'/>
 [Guid("29840822-5B84-11D0-BD3B-00A0C911CE86")]
 [NativeTypeName("struct ICreateDevEnum : IUnknown")]

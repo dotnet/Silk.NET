@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfCompartmentEventSink.xml' path='doc/member[@name="ITfCompartmentEventSink"]/*'/>
 [Guid("743ABD5F-F26D-48DF-8CC5-238492419B64")]
 [NativeTypeName("struct ITfCompartmentEventSink : IUnknown")]

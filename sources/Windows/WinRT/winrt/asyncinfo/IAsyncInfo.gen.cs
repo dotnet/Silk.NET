@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from winrt/asyncinfo.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo"]/*'/>
 [Guid("00000036-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IAsyncInfo : IInspectable")]

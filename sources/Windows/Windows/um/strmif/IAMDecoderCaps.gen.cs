@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMDecoderCaps.xml' path='doc/member[@name="IAMDecoderCaps"]/*'/>
 [Guid("C0DFF467-D499-4986-972B-E1D9090FA941")]
 [NativeTypeName("struct IAMDecoderCaps : IUnknown")]

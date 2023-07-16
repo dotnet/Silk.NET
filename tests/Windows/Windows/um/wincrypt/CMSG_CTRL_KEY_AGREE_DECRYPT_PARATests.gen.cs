@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CMSG_CTRL_KEY_AGREE_DECRYPT_PARA"/> struct.</summary>
 public static unsafe partial class CMSG_CTRL_KEY_AGREE_DECRYPT_PARATests
 {

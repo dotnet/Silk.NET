@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 [Guid("C4137916-2BE1-46FD-8599-441536F49856")]
 public unsafe partial struct FXMasteringLimiter : INativeGuid
 {

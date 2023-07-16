@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IKsFormatSupport.xml' path='doc/member[@name="IKsFormatSupport"]/*'/>
 [Guid("3CB4A69D-BB6F-4D2B-95B7-452D2C155DB5")]
 [NativeTypeName("struct IKsFormatSupport : IUnknown")]

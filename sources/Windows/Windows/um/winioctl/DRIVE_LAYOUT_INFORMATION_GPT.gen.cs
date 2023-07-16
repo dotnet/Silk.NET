@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DRIVE_LAYOUT_INFORMATION_GPT.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_GPT"]/*'/>
 public partial struct DRIVE_LAYOUT_INFORMATION_GPT
 {

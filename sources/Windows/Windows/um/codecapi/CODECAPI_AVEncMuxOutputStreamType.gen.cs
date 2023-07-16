@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMuxOutputStreamType.xml' path='doc/member[@name="CODECAPI_AVEncMuxOutputStreamType"]/*'/>
 [Guid("CEDD9E8F-34D3-44DB-A1D8-F81520254F3E")]
 public unsafe partial struct CODECAPI_AVEncMuxOutputStreamType : INativeGuid

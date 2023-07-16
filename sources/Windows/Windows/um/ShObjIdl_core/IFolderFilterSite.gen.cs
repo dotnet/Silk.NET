@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFolderFilterSite.xml' path='doc/member[@name="IFolderFilterSite"]/*'/>
 [Guid("C0A651F5-B48B-11D2-B5ED-006097C686F6")]
 [NativeTypeName("struct IFolderFilterSite : IUnknown")]

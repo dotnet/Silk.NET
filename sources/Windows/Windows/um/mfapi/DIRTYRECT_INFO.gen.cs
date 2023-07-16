@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DIRTYRECT_INFO.xml' path='doc/member[@name="DIRTYRECT_INFO"]/*'/>
 public partial struct DIRTYRECT_INFO
 {

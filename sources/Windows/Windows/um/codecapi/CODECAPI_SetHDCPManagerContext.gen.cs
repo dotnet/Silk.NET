@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_SetHDCPManagerContext.xml' path='doc/member[@name="CODECAPI_SetHDCPManagerContext"]/*'/>
 [Guid("6D2D1FC8-3DC9-47EB-A1A2-471C80CD60D0")]
 public unsafe partial struct CODECAPI_SetHDCPManagerContext : INativeGuid

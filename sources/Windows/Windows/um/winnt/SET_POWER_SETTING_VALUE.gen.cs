@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SET_POWER_SETTING_VALUE.xml' path='doc/member[@name="SET_POWER_SETTING_VALUE"]/*'/>
 public unsafe partial struct SET_POWER_SETTING_VALUE
 {

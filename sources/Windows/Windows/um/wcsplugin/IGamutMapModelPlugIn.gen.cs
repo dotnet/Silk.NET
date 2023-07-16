@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IGamutMapModelPlugIn.xml' path='doc/member[@name="IGamutMapModelPlugIn"]/*'/>
 [Guid("2DD80115-AD1E-41F6-A219-A4F4B583D1F9")]
 [NativeTypeName("struct IGamutMapModelPlugIn : IUnknown")]

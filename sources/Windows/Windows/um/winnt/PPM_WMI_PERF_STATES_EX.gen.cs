@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PPM_WMI_PERF_STATES_EX.xml' path='doc/member[@name="PPM_WMI_PERF_STATES_EX"]/*'/>
 public unsafe partial struct PPM_WMI_PERF_STATES_EX
 {

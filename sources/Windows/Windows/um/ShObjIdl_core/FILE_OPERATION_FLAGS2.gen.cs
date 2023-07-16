@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_OPERATION_FLAGS2.xml' path='doc/member[@name="FILE_OPERATION_FLAGS2"]/*'/>
 [Flags]
 public enum FILE_OPERATION_FLAGS2

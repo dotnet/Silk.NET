@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PHYSICAL_ELEMENT_STATUS_REQUEST"/> struct.</summary>
 public static unsafe partial class PHYSICAL_ELEMENT_STATUS_REQUESTTests
 {

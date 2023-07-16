@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_META_COMMAND_DESC.xml' path='doc/member[@name="D3D12_META_COMMAND_DESC"]/*'/>
 public unsafe partial struct D3D12_META_COMMAND_DESC
 {

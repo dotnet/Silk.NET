@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ImageRecompress.xml' path='doc/member[@name="ImageRecompress"]/*'/>
 [Guid("6E33091C-D2F8-4740-B55E-2E11D1477A2C")]
 public unsafe partial struct ImageRecompress : INativeGuid

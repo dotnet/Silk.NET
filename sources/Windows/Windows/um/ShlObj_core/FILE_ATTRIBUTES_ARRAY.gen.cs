@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct FILE_ATTRIBUTES_ARRAY

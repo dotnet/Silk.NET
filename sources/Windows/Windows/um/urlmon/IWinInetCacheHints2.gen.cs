@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWinInetCacheHints2.xml' path='doc/member[@name="IWinInetCacheHints2"]/*'/>
 [Guid("7857AEAC-D31F-49BF-884E-DD46DF36780A")]
 [NativeTypeName("struct IWinInetCacheHints2 : IWinInetCacheHints")]

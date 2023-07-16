@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IObjectWithSelection.xml' path='doc/member[@name="IObjectWithSelection"]/*'/>
 [Guid("1C9CD5BB-98E9-4491-A60F-31AACC72B83C")]
 [NativeTypeName("struct IObjectWithSelection : IUnknown")]

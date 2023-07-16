@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace"]/*'/>
 [Guid("651B9AD0-0FC7-4AA9-9538-D89931010741")]
 [NativeTypeName("struct IMediaObjectInPlace : IUnknown")]

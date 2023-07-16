@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVideoEncoder.xml' path='doc/member[@name="IVideoEncoder"]/*'/>
 [Guid("02997C3B-8E1B-460E-9270-545E0DE9563E")]
 [NativeTypeName("struct IVideoEncoder : IEncoderAPI")]

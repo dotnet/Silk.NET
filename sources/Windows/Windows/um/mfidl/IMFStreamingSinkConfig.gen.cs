@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFStreamingSinkConfig.xml' path='doc/member[@name="IMFStreamingSinkConfig"]/*'/>
 [Guid("9DB7AA41-3CC5-40D4-8509-555804AD34CC")]
 [NativeTypeName("struct IMFStreamingSinkConfig : IUnknown")]

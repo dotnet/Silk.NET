@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2"]/*'/>
 [Guid("DB639199-C809-4C89-BFCA-D0BBB9729D6E")]
 [NativeTypeName("struct IMFTimedTextStyle2 : IUnknown")]

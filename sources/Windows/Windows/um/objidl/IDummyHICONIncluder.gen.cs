@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDummyHICONIncluder.xml' path='doc/member[@name="IDummyHICONIncluder"]/*'/>
 [Guid("947990DE-CC28-11D2-A0F7-00805F858FB1")]
 [NativeTypeName("struct IDummyHICONIncluder : IUnknown")]

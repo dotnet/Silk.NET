@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncSliceControlSize.xml' path='doc/member[@name="CODECAPI_AVEncSliceControlSize"]/*'/>
 [Guid("92F51DF3-07A5-4172-AEFE-C69CA3B60E35")]
 public unsafe partial struct CODECAPI_AVEncSliceControlSize : INativeGuid

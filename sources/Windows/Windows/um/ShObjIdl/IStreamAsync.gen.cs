@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IStreamAsync.xml' path='doc/member[@name="IStreamAsync"]/*'/>
 [Guid("FE0B6665-E0CA-49B9-A178-2B5CB48D92A5")]
 [NativeTypeName("struct IStreamAsync : IStream")]

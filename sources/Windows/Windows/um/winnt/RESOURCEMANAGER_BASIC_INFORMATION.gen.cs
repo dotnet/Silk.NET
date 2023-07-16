@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION"]/*'/>
 public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
 {

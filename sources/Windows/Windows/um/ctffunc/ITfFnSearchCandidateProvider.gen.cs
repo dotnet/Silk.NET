@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnSearchCandidateProvider.xml' path='doc/member[@name="ITfFnSearchCandidateProvider"]/*'/>
 [Guid("87A2AD8F-F27B-4920-8501-67602280175D")]
 [NativeTypeName("struct ITfFnSearchCandidateProvider : ITfFunction")]

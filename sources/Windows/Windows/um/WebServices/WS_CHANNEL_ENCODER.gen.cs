@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_CHANNEL_ENCODER.xml' path='doc/member[@name="WS_CHANNEL_ENCODER"]/*'/>
 public unsafe partial struct WS_CHANNEL_ENCODER
 {

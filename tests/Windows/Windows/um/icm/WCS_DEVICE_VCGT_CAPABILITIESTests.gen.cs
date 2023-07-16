@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WCS_DEVICE_VCGT_CAPABILITIES"/> struct.</summary>
 public static unsafe partial class WCS_DEVICE_VCGT_CAPABILITIESTests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class SCHEME
 {
     [NativeTypeName("#define SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC \"SchemeDllRetrieveEncodedObject\"")]

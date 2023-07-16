@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA"]/*'/>
 public unsafe partial struct STORAGE_DIAGNOSTIC_DATA
 {

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_TCPTABLE.xml' path='doc/member[@name="MIB_TCPTABLE"]/*'/>
 public partial struct MIB_TCPTABLE
 {

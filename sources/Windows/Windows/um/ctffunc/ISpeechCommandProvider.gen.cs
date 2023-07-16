@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider"]/*'/>
 [Guid("38E09D4C-586D-435A-B592-C8A86691DEC6")]
 [NativeTypeName("struct ISpeechCommandProvider : IUnknown")]

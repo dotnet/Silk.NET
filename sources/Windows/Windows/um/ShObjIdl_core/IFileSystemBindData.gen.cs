@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileSystemBindData.xml' path='doc/member[@name="IFileSystemBindData"]/*'/>
 [Guid("01E18D10-4D8B-11D2-855D-006008059367")]
 [NativeTypeName("struct IFileSystemBindData : IUnknown")]

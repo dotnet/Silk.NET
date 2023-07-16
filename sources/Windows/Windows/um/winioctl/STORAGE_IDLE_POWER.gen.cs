@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_IDLE_POWER.xml' path='doc/member[@name="STORAGE_IDLE_POWER"]/*'/>
 public partial struct STORAGE_IDLE_POWER
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnConfigureRegisterWord.xml' path='doc/member[@name="ITfFnConfigureRegisterWord"]/*'/>
 [Guid("BB95808A-6D8F-4BCA-8400-5390B586AEDF")]
 [NativeTypeName("struct ITfFnConfigureRegisterWord : ITfFunction")]

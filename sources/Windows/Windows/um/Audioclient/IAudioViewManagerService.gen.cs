@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioViewManagerService.xml' path='doc/member[@name="IAudioViewManagerService"]/*'/>
 [Guid("A7A7EF10-1F49-45E0-AD35-612057CC8F74")]
 [NativeTypeName("struct IAudioViewManagerService : IUnknown")]

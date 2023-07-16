@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IActivateAudioInterfaceAsyncOperation.xml' path='doc/member[@name="IActivateAudioInterfaceAsyncOperation"]/*'/>
 [Guid("72A22D78-CDE4-431D-B8CC-843A71199B6D")]
 [NativeTypeName("struct IActivateAudioInterfaceAsyncOperation : IUnknown")]

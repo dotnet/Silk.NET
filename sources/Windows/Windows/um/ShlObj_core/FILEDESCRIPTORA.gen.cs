@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct FILEDESCRIPTORA

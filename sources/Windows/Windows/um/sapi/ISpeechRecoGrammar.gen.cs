@@ -4,10 +4,10 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
-using static TerraFX.Interop.Windows.SpeechLoadOption;
+using static Silk.NET.Windows.IID;
+using static Silk.NET.Windows.SpeechLoadOption;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar"]/*'/>
 [Guid("B6D6F79F-2158-4E50-B5BC-9A9CCD852A09")]
 [NativeTypeName("struct ISpeechRecoGrammar : IDispatch")]

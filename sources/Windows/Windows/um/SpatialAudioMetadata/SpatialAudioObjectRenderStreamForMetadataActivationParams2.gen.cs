@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpatialAudioObjectRenderStreamForMetadataActivationParams2.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamForMetadataActivationParams2"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SpatialAudioObjectRenderStreamForMetadataActivationParams2

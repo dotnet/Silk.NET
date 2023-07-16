@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct REPAIR_COPIES_OUTPUT

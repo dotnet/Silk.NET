@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE

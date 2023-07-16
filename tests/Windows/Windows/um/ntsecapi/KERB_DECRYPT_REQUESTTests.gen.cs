@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "KERB_DECRYPT_REQUEST"/> struct.</summary>
 public static unsafe partial class KERB_DECRYPT_REQUESTTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpRecoContext.xml' path='doc/member[@name="ISpRecoContext"]/*'/>
 [Guid("F740A62F-7C15-489E-8234-940A33D9272D")]
 [NativeTypeName("struct ISpRecoContext : ISpEventSource")]

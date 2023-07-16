@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellChangeNotify.xml' path='doc/member[@name="IShellChangeNotify"]/*'/>
 [Guid("D82BE2B1-5764-11D0-A96E-00C04FD705A2")]
 [NativeTypeName("struct IShellChangeNotify : IUnknown")]

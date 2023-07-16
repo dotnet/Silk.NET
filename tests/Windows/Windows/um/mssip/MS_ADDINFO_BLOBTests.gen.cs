@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MS_ADDINFO_BLOB"/> struct.</summary>
 public static unsafe partial class MS_ADDINFO_BLOBTests
 {

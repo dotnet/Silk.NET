@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TLIBATTR.xml' path='doc/member[@name="TLIBATTR"]/*'/>
 public partial struct TLIBATTR
 {

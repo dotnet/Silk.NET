@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioVolumeLevel.xml' path='doc/member[@name="IAudioVolumeLevel"]/*'/>
 [Guid("7FB7B48F-531D-44A2-BCB3-5AD5A134B3DC")]
 [NativeTypeName("struct IAudioVolumeLevel : IPerChannelDbLevel")]

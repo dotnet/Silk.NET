@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct USN_TRACK_MODIFIED_RANGES

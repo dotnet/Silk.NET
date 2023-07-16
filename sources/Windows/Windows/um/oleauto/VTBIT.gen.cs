@@ -1,9 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/oleauto.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using static TerraFX.Interop.Windows.VARENUM;
+using static Silk.NET.Windows.VARENUM;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class VTBIT
 {
     [NativeTypeName("#define VTBIT_I1 (1 << VT_I1)")]

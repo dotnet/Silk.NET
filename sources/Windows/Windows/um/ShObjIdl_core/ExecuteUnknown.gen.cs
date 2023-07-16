@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ExecuteUnknown.xml' path='doc/member[@name="ExecuteUnknown"]/*'/>
 [Guid("E44E9428-BDBC-4987-A099-40DC8FD255E7")]
 public unsafe partial struct ExecuteUnknown : INativeGuid

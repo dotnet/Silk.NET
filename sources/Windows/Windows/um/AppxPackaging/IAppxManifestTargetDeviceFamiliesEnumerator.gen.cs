@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestTargetDeviceFamiliesEnumerator.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamiliesEnumerator"]/*'/>
 [Guid("36537F36-27A4-4788-88C0-733819575017")]
 [NativeTypeName("struct IAppxManifestTargetDeviceFamiliesEnumerator : IUnknown")]

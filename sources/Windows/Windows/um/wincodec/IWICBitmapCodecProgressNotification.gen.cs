@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICBitmapCodecProgressNotification.xml' path='doc/member[@name="IWICBitmapCodecProgressNotification"]/*'/>
 [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
 [NativeTypeName("struct IWICBitmapCodecProgressNotification : IUnknown")]

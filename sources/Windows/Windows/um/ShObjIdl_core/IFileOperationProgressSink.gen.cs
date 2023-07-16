@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink"]/*'/>
 [Guid("04B0F1A7-9490-44BC-96E1-4296A31252E2")]
 [NativeTypeName("struct IFileOperationProgressSink : IUnknown")]

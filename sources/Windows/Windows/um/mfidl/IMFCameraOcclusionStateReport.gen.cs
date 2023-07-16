@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCameraOcclusionStateReport.xml' path='doc/member[@name="IMFCameraOcclusionStateReport"]/*'/>
 [Guid("1640B2CF-74DA-4462-A43B-B76D3BDC1434")]
 [NativeTypeName("struct IMFCameraOcclusionStateReport : IUnknown")]

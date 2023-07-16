@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INewWDEvents.xml' path='doc/member[@name="INewWDEvents"]/*'/>
 [Guid("0751C551-7568-41C9-8E5B-E22E38919236")]
 [NativeTypeName("struct INewWDEvents : IWebWizardHost")]

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter"]/*'/>
 [Guid("091878A3-BF11-4A5C-BC9F-33995B06EF2D")]
 [NativeTypeName("struct IMFNetResourceFilter : IUnknown")]

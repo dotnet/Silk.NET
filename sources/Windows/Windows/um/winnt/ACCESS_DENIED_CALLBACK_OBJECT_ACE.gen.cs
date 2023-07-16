@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ACCESS_DENIED_CALLBACK_OBJECT_ACE.xml' path='doc/member[@name="ACCESS_DENIED_CALLBACK_OBJECT_ACE"]/*'/>
 public partial struct ACCESS_DENIED_CALLBACK_OBJECT_ACE
 {

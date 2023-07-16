@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_SHADER_CACHE_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D11_SHADER_CACHE_SUPPORT_FLAGS"]/*'/>
 [Flags]
 public enum D3D11_SHADER_CACHE_SUPPORT_FLAGS

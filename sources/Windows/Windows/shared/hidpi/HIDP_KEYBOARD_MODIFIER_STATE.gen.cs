@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE"]/*'/>
 public partial struct HIDP_KEYBOARD_MODIFIER_STATE
 {

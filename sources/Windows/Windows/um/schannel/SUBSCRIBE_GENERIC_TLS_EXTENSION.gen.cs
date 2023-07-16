@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SUBSCRIBE_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SUBSCRIBE_GENERIC_TLS_EXTENSION"]/*'/>
 public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_BASIC_INFORMATION.xml' path='doc/member[@name="PROCESS_BASIC_INFORMATION"]/*'/>
 public unsafe partial struct PROCESS_BASIC_INFORMATION
 {

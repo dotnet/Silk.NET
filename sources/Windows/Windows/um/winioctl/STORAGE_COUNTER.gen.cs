@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_COUNTER.xml' path='doc/member[@name="STORAGE_COUNTER"]/*'/>
 public partial struct STORAGE_COUNTER
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PublishDropTarget.xml' path='doc/member[@name="PublishDropTarget"]/*'/>
 [Guid("CC6EEFFB-43F6-46C5-9619-51D571967F7D")]
 public unsafe partial struct PublishDropTarget : INativeGuid

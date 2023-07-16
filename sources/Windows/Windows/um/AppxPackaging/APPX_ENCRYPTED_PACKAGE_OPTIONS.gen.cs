@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_ENCRYPTED_PACKAGE_OPTIONS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_OPTIONS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

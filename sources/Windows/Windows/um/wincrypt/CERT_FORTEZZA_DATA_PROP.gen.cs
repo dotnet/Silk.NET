@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CERT_FORTEZZA_DATA_PROP.xml' path='doc/member[@name="CERT_FORTEZZA_DATA_PROP"]/*'/>
 public unsafe partial struct CERT_FORTEZZA_DATA_PROP
 {

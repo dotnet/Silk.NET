@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep"]/*'/>
 [Guid("E46A9787-2B71-444D-A4B5-1FAB7B708D6A")]
 [NativeTypeName("struct IVideoFrameStep : IUnknown")]

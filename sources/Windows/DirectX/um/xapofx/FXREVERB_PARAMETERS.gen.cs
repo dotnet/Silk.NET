@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='FXREVERB_PARAMETERS.xml' path='doc/member[@name="FXREVERB_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXREVERB_PARAMETERS

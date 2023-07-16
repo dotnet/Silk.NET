@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_PACKAGE_ARCHITECTURE2.xml' path='doc/member[@name="APPX_PACKAGE_ARCHITECTURE2"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum APPX_PACKAGE_ARCHITECTURE2

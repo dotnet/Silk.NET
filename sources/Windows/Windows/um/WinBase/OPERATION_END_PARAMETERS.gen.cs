@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OPERATION_END_PARAMETERS.xml' path='doc/member[@name="OPERATION_END_PARAMETERS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct OPERATION_END_PARAMETERS

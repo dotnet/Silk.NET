@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream"]/*'/>
 [Guid("AD4C1B00-4BF7-422F-9175-756693D9130D")]
 [NativeTypeName("struct IMFByteStream : IUnknown")]

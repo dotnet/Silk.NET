@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='ResourceType.xml' path='doc/member[@name="ResourceType"]/*'/>
 [SupportedOSPlatform("windows10.0.14393.0")]
 public enum ResourceType

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_DATA_SET_REPAIR_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_PARAMETERS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_DATA_SET_REPAIR_PARAMETERS

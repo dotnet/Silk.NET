@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXMLError.xml' path='doc/member[@name="IXMLError"]/*'/>
 [Guid("948C5AD3-C58D-11D0-9C0B-00C04FC99C8E")]
 [NativeTypeName("struct IXMLError : IUnknown")]

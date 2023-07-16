@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr"]/*'/>
 [Guid("C3ACEFB5-F69D-4905-938F-FCADCF4BE830")]
 [NativeTypeName("struct ITfCategoryMgr : IUnknown")]

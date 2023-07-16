@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileSystemImage2.xml' path='doc/member[@name="IFileSystemImage2"]/*'/>
 [Guid("D7644B2C-1537-4767-B62F-F1387B02DDFD")]
 [NativeTypeName("struct IFileSystemImage2 : IFileSystemImage")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="CODECAPI_AVDecVideoH264ErrorConcealment"]/*'/>
 [Guid("ECECACE8-3436-462C-9294-CD7BACD758A9")]
 public unsafe partial struct CODECAPI_AVDecVideoH264ErrorConcealment : INativeGuid

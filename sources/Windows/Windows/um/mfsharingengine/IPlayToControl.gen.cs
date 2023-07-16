@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPlayToControl.xml' path='doc/member[@name="IPlayToControl"]/*'/>
 [Guid("607574EB-F4B6-45C1-B08C-CB715122901D")]
 [NativeTypeName("struct IPlayToControl : IUnknown")]

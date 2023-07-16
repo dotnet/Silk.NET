@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "FILE_MAKE_COMPATIBLE_BUFFER"/> struct.</summary>
 public static unsafe partial class FILE_MAKE_COMPATIBLE_BUFFERTests
 {

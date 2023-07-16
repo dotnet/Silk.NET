@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget"]/*'/>
 [Guid("390E3878-FD55-4E18-819D-4682081C0CFD")]
 [NativeTypeName("struct IEnterpriseDropTarget : IUnknown")]

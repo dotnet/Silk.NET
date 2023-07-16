@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MPEGLAYER3WAVEFORMAT.xml' path='doc/member[@name="MPEGLAYER3WAVEFORMAT"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MPEGLAYER3WAVEFORMAT

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CWMO_FLAGS.xml' path='doc/member[@name="CWMO_FLAGS"]/*'/>
 [Flags]
 public enum CWMO_FLAGS

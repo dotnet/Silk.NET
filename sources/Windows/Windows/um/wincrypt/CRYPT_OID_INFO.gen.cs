@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO"]/*'/>
 public unsafe partial struct CRYPT_OID_INFO
 {

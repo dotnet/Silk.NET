@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DispSVGGradientElement.xml' path='doc/member[@name="DispSVGGradientElement"]/*'/>
 [Guid("3059002E-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispSVGGradientElement : IDispatch")]

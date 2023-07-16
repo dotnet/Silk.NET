@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SAFEARR_HAVEIID.xml' path='doc/member[@name="SAFEARR_HAVEIID"]/*'/>
 public unsafe partial struct SAFEARR_HAVEIID
 {

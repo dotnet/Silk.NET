@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WIN32_STREAM_ID"/> struct.</summary>
 public static unsafe partial class WIN32_STREAM_IDTests
 {

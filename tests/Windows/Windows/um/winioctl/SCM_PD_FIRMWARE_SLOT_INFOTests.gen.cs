@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SCM_PD_FIRMWARE_SLOT_INFO"/> struct.</summary>
 public static unsafe partial class SCM_PD_FIRMWARE_SLOT_INFOTests
 {

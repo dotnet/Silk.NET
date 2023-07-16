@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='FXEQ_PARAMETERS.xml' path='doc/member[@name="FXEQ_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXEQ_PARAMETERS

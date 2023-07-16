@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MF_LEAKY_BUCKET_PAIR"/> struct.</summary>
 public static unsafe partial class MF_LEAKY_BUCKET_PAIRTests
 {

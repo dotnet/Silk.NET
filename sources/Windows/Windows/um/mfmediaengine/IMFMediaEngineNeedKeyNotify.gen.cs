@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaEngineNeedKeyNotify.xml' path='doc/member[@name="IMFMediaEngineNeedKeyNotify"]/*'/>
 [Guid("46A30204-A696-4B18-8804-246B8F031BB1")]
 [NativeTypeName("struct IMFMediaEngineNeedKeyNotify : IUnknown")]

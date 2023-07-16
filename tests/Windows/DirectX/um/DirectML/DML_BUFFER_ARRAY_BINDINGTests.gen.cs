@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DML_BUFFER_ARRAY_BINDING"/> struct.</summary>
 public static unsafe partial class DML_BUFFER_ARRAY_BINDINGTests
 {

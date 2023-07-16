@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION"]/*'/>
 public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 {

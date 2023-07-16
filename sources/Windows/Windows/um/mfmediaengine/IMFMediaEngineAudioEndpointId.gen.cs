@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaEngineAudioEndpointId.xml' path='doc/member[@name="IMFMediaEngineAudioEndpointId"]/*'/>
 [Guid("7A3BAC98-0E76-49FB-8C20-8A86FD98EAF2")]
 [NativeTypeName("struct IMFMediaEngineAudioEndpointId : IUnknown")]

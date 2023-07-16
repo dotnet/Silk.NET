@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ShellBrowserWindow.xml' path='doc/member[@name="ShellBrowserWindow"]/*'/>
 [Guid("C08AFD90-F2A1-11D1-8455-00A0C91F3880")]
 public unsafe partial struct ShellBrowserWindow : INativeGuid

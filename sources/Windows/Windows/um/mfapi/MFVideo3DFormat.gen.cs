@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MFVideo3DFormat

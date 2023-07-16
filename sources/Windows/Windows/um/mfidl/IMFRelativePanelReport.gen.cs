@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFRelativePanelReport.xml' path='doc/member[@name="IMFRelativePanelReport"]/*'/>
 [Guid("F25362EA-2C0E-447F-81E2-755914CDC0C3")]
 [NativeTypeName("struct IMFRelativePanelReport : IUnknown")]

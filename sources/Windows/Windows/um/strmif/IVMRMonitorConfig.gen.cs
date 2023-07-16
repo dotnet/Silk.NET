@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig"]/*'/>
 [Guid("9CF0B1B6-FBAA-4B7F-88CF-CF1F130A0DCE")]
 [NativeTypeName("struct IVMRMonitorConfig : IUnknown")]

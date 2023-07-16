@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTopoLoader.xml' path='doc/member[@name="IMFTopoLoader"]/*'/>
 [Guid("DE9A6157-F660-4643-B56A-DF9F7998C7CD")]
 [NativeTypeName("struct IMFTopoLoader : IUnknown")]

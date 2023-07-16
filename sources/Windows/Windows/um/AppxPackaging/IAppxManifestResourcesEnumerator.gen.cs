@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator"]/*'/>
 [Guid("DE4DFBBD-881A-48BB-858C-D6F2BAEAE6ED")]
 [NativeTypeName("struct IAppxManifestResourcesEnumerator : IUnknown")]

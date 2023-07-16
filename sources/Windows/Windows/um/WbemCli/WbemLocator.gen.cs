@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WbemLocator.xml' path='doc/member[@name="WbemLocator"]/*'/>
 [Guid("4590F811-1D3A-11D0-891F-00AA004B2E24")]
 public unsafe partial struct WbemLocator : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='MLOperatorKernelOptions.xml' path='doc/member[@name="MLOperatorKernelOptions"]/*'/>
 [NativeTypeName("uint32_t")]
 [Flags]

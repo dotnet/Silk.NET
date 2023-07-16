@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRMixerBitmap.xml' path='doc/member[@name="IVMRMixerBitmap"]/*'/>
 [Guid("1E673275-0257-40AA-AF20-7C608D4A0428")]
 [NativeTypeName("struct IVMRMixerBitmap : IUnknown")]

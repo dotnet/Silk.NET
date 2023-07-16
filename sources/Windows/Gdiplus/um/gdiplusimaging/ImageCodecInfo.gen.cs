@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo"]/*'/>
 public unsafe partial struct ImageCodecInfo
 {

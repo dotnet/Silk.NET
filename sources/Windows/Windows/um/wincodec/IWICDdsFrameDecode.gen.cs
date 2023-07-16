@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICDdsFrameDecode.xml' path='doc/member[@name="IWICDdsFrameDecode"]/*'/>
 [Guid("3D4C0C61-18A4-41E4-BD80-481A4FC9F464")]
 [NativeTypeName("struct IWICDdsFrameDecode : IUnknown")]

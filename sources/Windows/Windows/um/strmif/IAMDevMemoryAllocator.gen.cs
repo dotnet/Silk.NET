@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator"]/*'/>
 [Guid("C6545BF0-E76B-11D0-BD52-00A0C911CE86")]
 [NativeTypeName("struct IAMDevMemoryAllocator : IUnknown")]

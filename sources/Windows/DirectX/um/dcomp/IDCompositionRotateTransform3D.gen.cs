@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/dcomp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D"]/*'/>
 [Guid("D8F5B23F-D429-4A91-B55A-D2F45FD75B18")]
 [NativeTypeName("struct IDCompositionRotateTransform3D : IDCompositionTransform3D")]

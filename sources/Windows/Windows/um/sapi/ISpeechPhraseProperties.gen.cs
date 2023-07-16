@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechPhraseProperties.xml' path='doc/member[@name="ISpeechPhraseProperties"]/*'/>
 [Guid("08166B47-102E-4B23-A599-BDB98DBFD1F4")]
 [NativeTypeName("struct ISpeechPhraseProperties : IDispatch")]

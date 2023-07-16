@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct POINTER_TYPE_INFO

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DRIVER_VER_MAJORMINOR"/> struct.</summary>
 public static unsafe partial class DRIVER_VER_MAJORMINORTests
 {

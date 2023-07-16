@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct RATE_QUOTA_LIMIT

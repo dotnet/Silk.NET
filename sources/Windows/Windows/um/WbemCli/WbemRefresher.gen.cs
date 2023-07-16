@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WbemRefresher.xml' path='doc/member[@name="WbemRefresher"]/*'/>
 [Guid("C71566F2-561E-11D1-AD87-00C04FD8FDFF")]
 public unsafe partial struct WbemRefresher : INativeGuid

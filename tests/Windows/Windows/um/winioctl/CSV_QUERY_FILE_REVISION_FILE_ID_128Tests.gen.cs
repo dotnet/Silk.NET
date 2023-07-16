@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CSV_QUERY_FILE_REVISION_FILE_ID_128"/> struct.</summary>
 public static unsafe partial class CSV_QUERY_FILE_REVISION_FILE_ID_128Tests
 {

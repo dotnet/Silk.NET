@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMonikerProp.xml' path='doc/member[@name="IMonikerProp"]/*'/>
 [Guid("A5CA5F7F-1847-4D87-9C5B-918509F7511D")]
 [NativeTypeName("struct IMonikerProp : IUnknown")]

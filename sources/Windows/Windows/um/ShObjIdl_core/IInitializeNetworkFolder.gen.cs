@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInitializeNetworkFolder.xml' path='doc/member[@name="IInitializeNetworkFolder"]/*'/>
 [Guid("6E0F9881-42A8-4F2A-97F8-8AF4E026D92D")]
 [NativeTypeName("struct IInitializeNetworkFolder : IUnknown")]

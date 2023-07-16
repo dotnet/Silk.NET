@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AppVisibility.xml' path='doc/member[@name="AppVisibility"]/*'/>
 [Guid("7E5FE3D9-985F-4908-91F9-EE19F9FD1514")]
 public unsafe partial struct AppVisibility : INativeGuid

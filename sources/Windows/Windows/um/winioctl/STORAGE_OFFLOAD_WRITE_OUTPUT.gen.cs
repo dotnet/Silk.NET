@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_OFFLOAD_WRITE_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_WRITE_OUTPUT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct STORAGE_OFFLOAD_WRITE_OUTPUT

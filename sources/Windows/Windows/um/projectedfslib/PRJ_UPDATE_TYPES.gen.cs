@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_UPDATE_TYPES.xml' path='doc/member[@name="PRJ_UPDATE_TYPES"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.17763.0")]

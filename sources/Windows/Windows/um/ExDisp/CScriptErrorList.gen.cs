@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CScriptErrorList.xml' path='doc/member[@name="CScriptErrorList"]/*'/>
 [Guid("EFD01300-160F-11D2-BB2E-00805FF7EFCA")]
 public unsafe partial struct CScriptErrorList : INativeGuid

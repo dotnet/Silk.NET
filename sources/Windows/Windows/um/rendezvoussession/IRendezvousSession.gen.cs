@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession"]/*'/>
 [Guid("9BA4B1DD-8B0C-48B7-9E7C-2F25857C8DF5")]
 [NativeTypeName("struct IRendezvousSession : IUnknown")]

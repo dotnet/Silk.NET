@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "ID3D10EffectBlendVariable"/> struct.</summary>
 public static unsafe partial class ID3D10EffectBlendVariableTests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MANDATORY_LEVEL

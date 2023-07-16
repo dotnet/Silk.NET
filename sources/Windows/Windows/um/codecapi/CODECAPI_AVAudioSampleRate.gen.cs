@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVAudioSampleRate.xml' path='doc/member[@name="CODECAPI_AVAudioSampleRate"]/*'/>
 [Guid("971D2723-1ACB-42E7-855C-520A4B70A5F2")]
 public unsafe partial struct CODECAPI_AVAudioSampleRate : INativeGuid

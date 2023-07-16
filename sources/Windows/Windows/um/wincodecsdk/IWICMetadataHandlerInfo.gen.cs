@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICMetadataHandlerInfo.xml' path='doc/member[@name="IWICMetadataHandlerInfo"]/*'/>
 [Guid("ABA958BF-C672-44D1-8D61-CE6DF2E682C2")]
 [NativeTypeName("struct IWICMetadataHandlerInfo : IWICComponentInfo")]

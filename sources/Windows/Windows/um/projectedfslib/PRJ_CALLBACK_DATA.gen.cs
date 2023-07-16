@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_CALLBACK_DATA.xml' path='doc/member[@name="PRJ_CALLBACK_DATA"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public unsafe partial struct PRJ_CALLBACK_DATA

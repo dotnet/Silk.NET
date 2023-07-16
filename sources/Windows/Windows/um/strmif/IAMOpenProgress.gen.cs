@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMOpenProgress.xml' path='doc/member[@name="IAMOpenProgress"]/*'/>
 [Guid("8E1C39A1-DE53-11CF-AA63-0080C744528D")]
 [NativeTypeName("struct IAMOpenProgress : IUnknown")]

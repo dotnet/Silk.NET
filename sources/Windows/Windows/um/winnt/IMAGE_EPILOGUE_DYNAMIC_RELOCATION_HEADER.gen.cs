@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER.xml' path='doc/member[@name="IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER

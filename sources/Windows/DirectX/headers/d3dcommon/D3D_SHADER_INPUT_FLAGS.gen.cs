@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D_SHADER_INPUT_FLAGS.xml' path='doc/member[@name="D3D_SHADER_INPUT_FLAGS"]/*'/>
 [Flags]
 public enum D3D_SHADER_INPUT_FLAGS

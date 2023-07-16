@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3"/> struct.</summary>
 public static unsafe partial class MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3Tests
 {

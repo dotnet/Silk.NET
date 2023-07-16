@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2"]/*'/>
 [Guid("BEAD311C-52FF-437F-9464-6B21054CA73D")]
 [NativeTypeName("struct ISpRecoContext2 : IUnknown")]

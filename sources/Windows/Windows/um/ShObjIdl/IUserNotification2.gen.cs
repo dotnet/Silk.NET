@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUserNotification2.xml' path='doc/member[@name="IUserNotification2"]/*'/>
 [Guid("215913CC-57EB-4FAB-AB5A-E5FA7BEA2A6C")]
 [NativeTypeName("struct IUserNotification2 : IUnknown")]

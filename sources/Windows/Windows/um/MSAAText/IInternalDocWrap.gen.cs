@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInternalDocWrap.xml' path='doc/member[@name="IInternalDocWrap"]/*'/>
 [Guid("E1AA6466-9DB4-40BA-BE03-77C38E8E60B2")]
 [NativeTypeName("struct IInternalDocWrap : IUnknown")]

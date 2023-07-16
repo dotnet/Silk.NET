@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRUECOLORINFO.xml' path='doc/member[@name="TRUECOLORINFO"]/*'/>
 public unsafe partial struct TRUECOLORINFO
 {

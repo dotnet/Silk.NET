@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFRateSupport.xml' path='doc/member[@name="IMFRateSupport"]/*'/>
 [Guid("0A9CCDBC-D797-4563-9667-94EC5D79292D")]
 [NativeTypeName("struct IMFRateSupport : IUnknown")]

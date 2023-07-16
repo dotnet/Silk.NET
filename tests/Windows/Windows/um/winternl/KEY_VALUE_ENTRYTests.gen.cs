@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "KEY_VALUE_ENTRY"/> struct.</summary>
 public static unsafe partial class KEY_VALUE_ENTRYTests
 {

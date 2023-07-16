@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DML_SCALAR_UNION"/> struct.</summary>
 public static unsafe partial class DML_SCALAR_UNIONTests
 {

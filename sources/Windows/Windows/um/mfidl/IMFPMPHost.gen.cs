@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFPMPHost.xml' path='doc/member[@name="IMFPMPHost"]/*'/>
 [Guid("F70CA1A9-FDC7-4782-B994-ADFFB1C98606")]
 [NativeTypeName("struct IMFPMPHost : IUnknown")]

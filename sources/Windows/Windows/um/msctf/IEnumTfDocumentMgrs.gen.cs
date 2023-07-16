@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs"]/*'/>
 [Guid("AA80E808-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct IEnumTfDocumentMgrs : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder"]/*'/>
 [Guid("3AA7AF7E-9B36-420C-A8E3-F77D4674A488")]
 [NativeTypeName("struct IKnownFolder : IUnknown")]

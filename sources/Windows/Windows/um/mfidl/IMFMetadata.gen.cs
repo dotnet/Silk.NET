@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata"]/*'/>
 [Guid("F88CFB8C-EF16-4991-B450-CB8C69E51704")]
 [NativeTypeName("struct IMFMetadata : IUnknown")]

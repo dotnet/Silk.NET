@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl"]/*'/>
 [Guid("0EB1088C-4DCD-46F0-878F-39DAE86A51B7")]
 [NativeTypeName("struct IVMRWindowlessControl : IUnknown")]

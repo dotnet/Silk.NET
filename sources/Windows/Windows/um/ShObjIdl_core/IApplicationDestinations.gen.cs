@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations"]/*'/>
 [Guid("12337D35-94C6-48A0-BCE7-6A9C69D4D600")]
 [NativeTypeName("struct IApplicationDestinations : IUnknown")]

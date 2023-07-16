@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_COMPRESSION_OPTION.xml' path='doc/member[@name="APPX_COMPRESSION_OPTION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum APPX_COMPRESSION_OPTION

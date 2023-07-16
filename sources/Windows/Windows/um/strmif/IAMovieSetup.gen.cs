@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMovieSetup.xml' path='doc/member[@name="IAMovieSetup"]/*'/>
 [Guid("A3D8CEC0-7E5A-11CF-BBC5-00805F6CEF20")]
 [NativeTypeName("struct IAMovieSetup : IUnknown")]

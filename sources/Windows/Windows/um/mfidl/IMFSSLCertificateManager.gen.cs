@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager"]/*'/>
 [Guid("61F7D887-1230-4A8B-AEBA-8AD434D1A64D")]
 [NativeTypeName("struct IMFSSLCertificateManager : IUnknown")]

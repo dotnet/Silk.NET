@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM"]/*'/>
 public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM
 {

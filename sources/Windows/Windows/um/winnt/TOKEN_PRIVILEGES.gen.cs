@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TOKEN_PRIVILEGES.xml' path='doc/member[@name="TOKEN_PRIVILEGES"]/*'/>
 public partial struct TOKEN_PRIVILEGES
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CERT_CHAIN_CONTEXT.xml' path='doc/member[@name="CERT_CHAIN_CONTEXT"]/*'/>
 public unsafe partial struct CERT_CHAIN_CONTEXT
 {

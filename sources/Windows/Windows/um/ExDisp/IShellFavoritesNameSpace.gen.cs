@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace"]/*'/>
 [Guid("55136804-B2DE-11D1-B9F2-00A0C98BC547")]
 [NativeTypeName("struct IShellFavoritesNameSpace : IDispatch")]

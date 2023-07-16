@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_FLOAT3.xml' path='doc/member[@name="MF_FLOAT3"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct MF_FLOAT3

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInternetProtocolEx.xml' path='doc/member[@name="IInternetProtocolEx"]/*'/>
 [Guid("C7A98E66-1010-492C-A1C8-C809E1F75905")]
 [NativeTypeName("struct IInternetProtocolEx : IInternetProtocol")]

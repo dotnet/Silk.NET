@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='COPYFILE2_COPY_PHASE.xml' path='doc/member[@name="COPYFILE2_COPY_PHASE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum COPYFILE2_COPY_PHASE

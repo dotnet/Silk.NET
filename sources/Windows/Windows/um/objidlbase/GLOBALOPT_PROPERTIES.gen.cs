@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum GLOBALOPT_PROPERTIES

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "AUDIO_EFFECT"/> struct.</summary>
 [SupportedOSPlatform("windows10.0.22621.0")]
 public static unsafe partial class AUDIO_EFFECTTests

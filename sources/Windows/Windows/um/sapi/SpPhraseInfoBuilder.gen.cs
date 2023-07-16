@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpPhraseInfoBuilder.xml' path='doc/member[@name="SpPhraseInfoBuilder"]/*'/>
 [Guid("C23FC28D-C55F-4720-8B32-91F73C2BD5D1")]
 public unsafe partial struct SpPhraseInfoBuilder : INativeGuid

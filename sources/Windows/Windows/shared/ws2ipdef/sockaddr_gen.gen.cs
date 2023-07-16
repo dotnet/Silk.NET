@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='sockaddr_gen.xml' path='doc/member[@name="sockaddr_gen"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct sockaddr_gen

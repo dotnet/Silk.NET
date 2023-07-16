@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct D3D11_TRACE_REGISTER

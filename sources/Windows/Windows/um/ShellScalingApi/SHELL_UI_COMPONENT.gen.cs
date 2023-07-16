@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum SHELL_UI_COMPONENT

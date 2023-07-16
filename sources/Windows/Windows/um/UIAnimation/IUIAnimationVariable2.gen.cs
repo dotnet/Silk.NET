@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/UIAnimation.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.DirectX;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.DirectX;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2"]/*'/>
 [Guid("4914B304-96AB-44D9-9E77-D5109B7E7466")]
 [NativeTypeName("struct IUIAnimationVariable2 : IUnknown")]

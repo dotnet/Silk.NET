@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AccStore.xml' path='doc/member[@name="AccStore"]/*'/>
 [Guid("5440837F-4BFF-4AE5-A1B1-7722ECC6332A")]
 public unsafe partial struct AccStore : INativeGuid

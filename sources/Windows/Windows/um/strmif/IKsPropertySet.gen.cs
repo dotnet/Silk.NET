@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IKsPropertySet.xml' path='doc/member[@name="IKsPropertySet"]/*'/>
 [Guid("31EFAC30-515C-11D0-A9AA-00AA0061BE93")]
 [NativeTypeName("struct IKsPropertySet : IUnknown")]

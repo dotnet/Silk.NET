@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncAudioMapDestChannel1.xml' path='doc/member[@name="CODECAPI_AVEncAudioMapDestChannel1"]/*'/>
 [Guid("BC5D0B61-DF6A-4E16-9803-B82007A30C8D")]
 public unsafe partial struct CODECAPI_AVEncAudioMapDestChannel1 : INativeGuid

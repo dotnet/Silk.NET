@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppVisibility.xml' path='doc/member[@name="IAppVisibility"]/*'/>
 [Guid("2246EA2D-CAEA-4444-A3C4-6DE827E44313")]
 [NativeTypeName("struct IAppVisibility : IUnknown")]

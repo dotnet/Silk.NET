@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2"]/*'/>
 [Guid("93E5A4E0-2D50-11D2-ABFA-00A0C9C6E38D")]
 [NativeTypeName("struct ICaptureGraphBuilder2 : IUnknown")]

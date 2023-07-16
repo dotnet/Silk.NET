@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CRYPT_SMART_CARD_ROOT_INFO"/> struct.</summary>
 public static unsafe partial class CRYPT_SMART_CARD_ROOT_INFOTests
 {

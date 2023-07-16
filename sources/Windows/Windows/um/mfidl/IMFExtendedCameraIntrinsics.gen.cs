@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFExtendedCameraIntrinsics.xml' path='doc/member[@name="IMFExtendedCameraIntrinsics"]/*'/>
 [Guid("687F6DAC-6987-4750-A16A-734D1E7A10FE")]
 [NativeTypeName("struct IMFExtendedCameraIntrinsics : IUnknown")]

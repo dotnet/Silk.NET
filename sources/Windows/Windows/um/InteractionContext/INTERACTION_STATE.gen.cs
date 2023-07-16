@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INTERACTION_STATE.xml' path='doc/member[@name="INTERACTION_STATE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum INTERACTION_STATE

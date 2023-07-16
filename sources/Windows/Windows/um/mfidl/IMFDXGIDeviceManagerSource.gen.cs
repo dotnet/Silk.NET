@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFDXGIDeviceManagerSource.xml' path='doc/member[@name="IMFDXGIDeviceManagerSource"]/*'/>
 [Guid("20BC074B-7A8D-4609-8C3B-64A0A3B5D7CE")]
 [NativeTypeName("struct IMFDXGIDeviceManagerSource : IUnknown")]

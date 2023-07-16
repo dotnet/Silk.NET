@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncStatAudioPeakPCMValue.xml' path='doc/member[@name="CODECAPI_AVEncStatAudioPeakPCMValue"]/*'/>
 [Guid("DCE7FD34-DC00-4C16-821B-35D9EB00FB1A")]
 public unsafe partial struct CODECAPI_AVEncStatAudioPeakPCMValue : INativeGuid

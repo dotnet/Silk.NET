@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION

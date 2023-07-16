@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_UNIQUE_ID.xml' path='doc/member[@name="WS_UNIQUE_ID"]/*'/>
 public partial struct WS_UNIQUE_ID
 {

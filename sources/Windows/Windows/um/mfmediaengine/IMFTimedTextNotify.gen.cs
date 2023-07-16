@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextNotify.xml' path='doc/member[@name="IMFTimedTextNotify"]/*'/>
 [Guid("DF6B87B6-CE12-45DB-ABA7-432FE054E57D")]
 [NativeTypeName("struct IMFTimedTextNotify : IUnknown")]

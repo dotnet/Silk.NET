@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FileOperation.xml' path='doc/member[@name="FileOperation"]/*'/>
 [Guid("3AD05575-8857-4850-9277-11B85BDB8E09")]
 public unsafe partial struct FileOperation : INativeGuid

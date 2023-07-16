@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "RETRIEVAL_POINTER_COUNT"/> struct.</summary>
 public static unsafe partial class RETRIEVAL_POINTER_COUNTTests
 {

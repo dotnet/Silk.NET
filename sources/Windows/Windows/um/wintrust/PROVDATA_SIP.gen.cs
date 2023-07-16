@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROVDATA_SIP.xml' path='doc/member[@name="PROVDATA_SIP"]/*'/>
 public unsafe partial struct PROVDATA_SIP
 {

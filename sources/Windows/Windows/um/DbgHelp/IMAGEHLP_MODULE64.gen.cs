@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGEHLP_MODULE64.xml' path='doc/member[@name="IMAGEHLP_MODULE64"]/*'/>
 public unsafe partial struct IMAGEHLP_MODULE64
 {

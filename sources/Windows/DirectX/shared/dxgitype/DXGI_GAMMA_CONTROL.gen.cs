@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_GAMMA_CONTROL.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL"]/*'/>
 public partial struct DXGI_GAMMA_CONTROL
 {

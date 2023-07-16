@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class CERT
 {
     [NativeTypeName("#define CERT_RDN_ANY_TYPE 0")]

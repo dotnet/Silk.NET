@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FreeSpaceCategorizer.xml' path='doc/member[@name="FreeSpaceCategorizer"]/*'/>
 [Guid("B5607793-24AC-44C7-82E2-831726AA6CB7")]
 public unsafe partial struct FreeSpaceCategorizer : INativeGuid

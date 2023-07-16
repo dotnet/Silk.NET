@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMAudioRendererStats.xml' path='doc/member[@name="IAMAudioRendererStats"]/*'/>
 [Guid("22320CB2-D41A-11D2-BF7C-D7CB9DF0BF93")]
 [NativeTypeName("struct IAMAudioRendererStats : IUnknown")]

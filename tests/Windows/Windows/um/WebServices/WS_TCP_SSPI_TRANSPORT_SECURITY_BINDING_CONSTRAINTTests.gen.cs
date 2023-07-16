@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT"/> struct.</summary>
 public static unsafe partial class WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINTTests
 {

@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.FOLDERTYPEID;
+using static Silk.NET.Windows.FOLDERTYPEID;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "FOLDERTYPEID"/> class.</summary>
 public static partial class FOLDERTYPEIDTests
 {

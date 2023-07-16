@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileSinkFilter.xml' path='doc/member[@name="IFileSinkFilter"]/*'/>
 [Guid("A2104830-7C70-11CF-8BCE-00AA00A3F1A6")]
 [NativeTypeName("struct IFileSinkFilter : IUnknown")]

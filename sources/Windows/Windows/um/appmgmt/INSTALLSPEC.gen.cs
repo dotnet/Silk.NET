@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct INSTALLSPEC

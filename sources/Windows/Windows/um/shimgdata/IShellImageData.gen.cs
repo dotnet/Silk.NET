@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData"]/*'/>
 [Guid("BFDEEC12-8040-4403-A5EA-9E07DAFCF530")]
 [NativeTypeName("struct IShellImageData : IUnknown")]

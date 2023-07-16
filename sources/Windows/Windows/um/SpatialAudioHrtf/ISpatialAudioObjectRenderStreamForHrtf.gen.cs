@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpatialAudioObjectRenderStreamForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamForHrtf"]/*'/>
 [Guid("E08DEEF9-5363-406E-9FDC-080EE247BBE0")]
 [NativeTypeName("struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamBase")]

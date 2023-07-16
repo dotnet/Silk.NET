@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpDisplayAlternates.xml' path='doc/member[@name="ISpDisplayAlternates"]/*'/>
 [Guid("C8D7C7E2-0DDE-44B7-AFE3-B0C991FBEB5E")]
 [NativeTypeName("struct ISpDisplayAlternates : IUnknown")]

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT"]/*'/>
 public unsafe partial struct XSAVE_FORMAT
 {

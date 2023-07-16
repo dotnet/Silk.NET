@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation"]/*'/>
 [Guid("163BB1E0-6E00-11CF-837A-48DC04C10000")]
 [NativeTypeName("struct IHTMLLocation : IDispatch")]

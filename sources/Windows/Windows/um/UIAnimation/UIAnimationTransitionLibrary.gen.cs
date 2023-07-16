@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='UIAnimationTransitionLibrary.xml' path='doc/member[@name="UIAnimationTransitionLibrary"]/*'/>
 [Guid("1D6322AD-AA85-4EF5-A828-86D71067D145")]
 public unsafe partial struct UIAnimationTransitionLibrary : INativeGuid

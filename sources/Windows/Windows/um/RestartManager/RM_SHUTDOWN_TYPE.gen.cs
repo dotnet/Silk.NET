@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RM_SHUTDOWN_TYPE.xml' path='doc/member[@name="RM_SHUTDOWN_TYPE"]/*'/>
 [Flags]
 public enum RM_SHUTDOWN_TYPE

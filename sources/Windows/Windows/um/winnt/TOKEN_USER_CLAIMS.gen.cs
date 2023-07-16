@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TOKEN_USER_CLAIMS.xml' path='doc/member[@name="TOKEN_USER_CLAIMS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct TOKEN_USER_CLAIMS

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent"]/*'/>
 [Guid("9F8021E8-9C8C-487E-BB5C-79AA4779938C")]
 [NativeTypeName("struct IMFMediaEngineProtectedContent : IUnknown")]

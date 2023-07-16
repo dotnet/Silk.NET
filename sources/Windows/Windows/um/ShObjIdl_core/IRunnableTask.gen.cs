@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRunnableTask.xml' path='doc/member[@name="IRunnableTask"]/*'/>
 [Guid("85788D00-6807-11D0-B810-00C04FD706EC")]
 [NativeTypeName("struct IRunnableTask : IUnknown")]

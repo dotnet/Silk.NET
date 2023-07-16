@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaSourceExtensionNotify.xml' path='doc/member[@name="IMFMediaSourceExtensionNotify"]/*'/>
 [Guid("A7901327-05DD-4469-A7B7-0E01979E361D")]
 [NativeTypeName("struct IMFMediaSourceExtensionNotify : IUnknown")]

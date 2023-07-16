@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION"]/*'/>
 public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
 {

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaEngineSupportsSourceTransfer.xml' path='doc/member[@name="IMFMediaEngineSupportsSourceTransfer"]/*'/>
 [Guid("A724B056-1B2E-4642-A6F3-DB9420C52908")]
 [NativeTypeName("struct IMFMediaEngineSupportsSourceTransfer : IUnknown")]

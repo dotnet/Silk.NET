@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2"]/*'/>
 [Guid("1AF3A467-214F-4298-908E-06B03E0B39F9")]
 [NativeTypeName("struct IFolderView2 : IFolderView")]

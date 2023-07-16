@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents"]/*'/>
 [Guid("361BBDC7-E6EE-4E13-BE58-58E2240C810F")]
 [NativeTypeName("struct IExplorerBrowserEvents : IUnknown")]

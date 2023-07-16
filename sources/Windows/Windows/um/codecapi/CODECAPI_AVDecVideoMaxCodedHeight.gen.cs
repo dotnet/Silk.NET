@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoMaxCodedHeight.xml' path='doc/member[@name="CODECAPI_AVDecVideoMaxCodedHeight"]/*'/>
 [Guid("7262A16A-D2DC-4E75-9BA8-65C0C6D32B13")]
 public unsafe partial struct CODECAPI_AVDecVideoMaxCodedHeight : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDynamicHWHandler.xml' path='doc/member[@name="IDynamicHWHandler"]/*'/>
 [Guid("DC2601D7-059E-42FC-A09D-2AFD21B6D5F7")]
 [NativeTypeName("struct IDynamicHWHandler : IUnknown")]

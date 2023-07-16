@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROPDESC_TYPE_FLAGS.xml' path='doc/member[@name="PROPDESC_TYPE_FLAGS"]/*'/>
 [Flags]
 public enum PROPDESC_TYPE_FLAGS

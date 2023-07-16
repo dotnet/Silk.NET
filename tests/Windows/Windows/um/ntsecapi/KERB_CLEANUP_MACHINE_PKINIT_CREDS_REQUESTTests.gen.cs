@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST"/> struct.</summary>
 public static unsafe partial class KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUESTTests
 {

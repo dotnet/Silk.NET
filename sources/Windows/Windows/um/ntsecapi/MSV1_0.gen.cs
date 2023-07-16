@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class MSV1_0
 {
     [NativeTypeName("#define MSV1_0_PACKAGE_NAME \"MICROSOFT_AUTHENTICATION_PACKAGE_V1_0\"")]

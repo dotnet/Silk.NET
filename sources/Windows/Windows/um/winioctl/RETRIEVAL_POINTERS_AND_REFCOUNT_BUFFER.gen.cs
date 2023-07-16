@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER.xml' path='doc/member[@name="RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER"]/*'/>
 public partial struct RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER
 {

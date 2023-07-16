@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestQualifiedResource.xml' path='doc/member[@name="IAppxManifestQualifiedResource"]/*'/>
 [Guid("3B53A497-3C5C-48D1-9EA3-BB7EAC8CD7D4")]
 [NativeTypeName("struct IAppxManifestQualifiedResource : IUnknown")]

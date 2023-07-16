@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IP_INTERFACE_NAME_INFO_W2KSP1.xml' path='doc/member[@name="IP_INTERFACE_NAME_INFO_W2KSP1"]/*'/>
 public partial struct IP_INTERFACE_NAME_INFO_W2KSP1
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncStatWMVDecoderComplexityProfile.xml' path='doc/member[@name="CODECAPI_AVEncStatWMVDecoderComplexityProfile"]/*'/>
 [Guid("89E69FC3-0F9B-436C-974A-DF821227C90D")]
 public unsafe partial struct CODECAPI_AVEncStatWMVDecoderComplexityProfile : INativeGuid

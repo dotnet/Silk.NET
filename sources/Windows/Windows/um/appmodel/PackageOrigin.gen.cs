@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PackageOrigin.xml' path='doc/member[@name="PackageOrigin"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum PackageOrigin

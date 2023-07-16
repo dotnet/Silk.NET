@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation"]/*'/>
 [Guid("19F68549-CA8A-4706-A4EF-481DBC95E12C")]
 [NativeTypeName("struct IMFCapturePhotoConfirmation : IUnknown")]

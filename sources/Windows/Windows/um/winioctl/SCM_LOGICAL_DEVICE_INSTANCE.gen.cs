@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_LOGICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_LOGICAL_DEVICE_INSTANCE"]/*'/>
 public unsafe partial struct SCM_LOGICAL_DEVICE_INSTANCE
 {

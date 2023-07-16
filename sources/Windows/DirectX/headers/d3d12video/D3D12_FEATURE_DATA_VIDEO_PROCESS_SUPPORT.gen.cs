@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT"]/*'/>
 public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT
 {

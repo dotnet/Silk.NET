@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFCameraExtrinsics.xml' path='doc/member[@name="MFCameraExtrinsics"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraExtrinsics

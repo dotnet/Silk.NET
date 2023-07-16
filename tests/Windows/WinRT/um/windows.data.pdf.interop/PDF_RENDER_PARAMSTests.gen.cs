@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT.UnitTests;
+namespace Silk.NET.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref = "PDF_RENDER_PARAMS"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PDF_RENDER_PARAMSTests

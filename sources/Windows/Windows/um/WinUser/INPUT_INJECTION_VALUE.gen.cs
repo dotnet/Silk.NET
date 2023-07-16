@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INPUT_INJECTION_VALUE.xml' path='doc/member[@name="INPUT_INJECTION_VALUE"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct INPUT_INJECTION_VALUE

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnLMInternal.xml' path='doc/member[@name="ITfFnLMInternal"]/*'/>
 [Guid("04B825B1-AC9A-4F7B-B5AD-C7168F1EE445")]
 [NativeTypeName("struct ITfFnLMInternal : ITfFnLMProcessor")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct PSAPI_WORKING_SET_EX_BLOCK

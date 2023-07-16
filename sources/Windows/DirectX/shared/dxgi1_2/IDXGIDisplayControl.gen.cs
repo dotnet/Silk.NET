@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from shared/dxgi1_2.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDXGIDisplayControl.xml' path='doc/member[@name="IDXGIDisplayControl"]/*'/>
 [Guid("EA9DBF1A-C88E-4486-854A-98AA0138F30C")]
 [NativeTypeName("struct IDXGIDisplayControl : IUnknown")]

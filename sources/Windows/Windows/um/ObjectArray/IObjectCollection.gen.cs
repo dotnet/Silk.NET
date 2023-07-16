@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection"]/*'/>
 [Guid("5632B1A4-E38A-400A-928A-D4CD63230295")]
 [NativeTypeName("struct IObjectCollection : IObjectArray")]

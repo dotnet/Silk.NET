@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='HANDLE_SHARING_OPTIONS.xml' path='doc/member[@name="HANDLE_SHARING_OPTIONS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

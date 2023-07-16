@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFMediaKeyStatus.xml' path='doc/member[@name="MFMediaKeyStatus"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct MFMediaKeyStatus

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT"]/*'/>
 public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {

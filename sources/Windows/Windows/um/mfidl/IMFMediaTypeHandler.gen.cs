@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler"]/*'/>
 [Guid("E93DCF6C-4B07-4E1E-8123-AA16ED6EADF5")]
 [NativeTypeName("struct IMFMediaTypeHandler : IUnknown")]

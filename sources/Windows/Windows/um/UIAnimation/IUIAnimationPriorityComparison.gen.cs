@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUIAnimationPriorityComparison.xml' path='doc/member[@name="IUIAnimationPriorityComparison"]/*'/>
 [Guid("83FA9B74-5F86-4618-BC6A-A2FAC19B3F44")]
 [NativeTypeName("struct IUIAnimationPriorityComparison : IUnknown")]

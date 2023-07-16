@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='POWERBROADCAST_SETTING.xml' path='doc/member[@name="POWERBROADCAST_SETTING"]/*'/>
 public unsafe partial struct POWERBROADCAST_SETTING
 {

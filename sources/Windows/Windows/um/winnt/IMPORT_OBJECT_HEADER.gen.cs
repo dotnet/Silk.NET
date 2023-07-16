@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER"]/*'/>
 public partial struct IMPORT_OBJECT_HEADER
 {

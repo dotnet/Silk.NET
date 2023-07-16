@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIACTIONA.xml' path='doc/member[@name="DIACTIONA"]/*'/>
 public unsafe partial struct DIACTIONA
 {

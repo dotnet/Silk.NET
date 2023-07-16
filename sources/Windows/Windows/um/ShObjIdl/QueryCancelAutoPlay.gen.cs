@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='QueryCancelAutoPlay.xml' path='doc/member[@name="QueryCancelAutoPlay"]/*'/>
 [Guid("331F1768-05A9-4DDD-B86E-DAE34DDC998A")]
 public unsafe partial struct QueryCancelAutoPlay : INativeGuid

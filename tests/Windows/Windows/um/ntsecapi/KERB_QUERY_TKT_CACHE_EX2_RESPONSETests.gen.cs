@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "KERB_QUERY_TKT_CACHE_EX2_RESPONSE"/> struct.</summary>
 public static unsafe partial class KERB_QUERY_TKT_CACHE_EX2_RESPONSETests
 {

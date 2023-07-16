@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MF_MEDIA_ENGINE_EVENT

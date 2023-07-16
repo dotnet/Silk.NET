@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader"]/*'/>
 [Guid("56A868AA-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IAsyncReader : IUnknown")]

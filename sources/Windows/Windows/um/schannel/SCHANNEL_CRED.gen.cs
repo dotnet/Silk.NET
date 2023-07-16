@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCHANNEL_CRED.xml' path='doc/member[@name="SCHANNEL_CRED"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct SCHANNEL_CRED

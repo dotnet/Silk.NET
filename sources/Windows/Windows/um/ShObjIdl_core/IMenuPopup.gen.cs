@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMenuPopup.xml' path='doc/member[@name="IMenuPopup"]/*'/>
 [Guid("D1E7AFEB-6A2E-11D0-8C78-00C04FD918B4")]
 [NativeTypeName("struct IMenuPopup : IDeskBar")]

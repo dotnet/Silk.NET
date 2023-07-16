@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SE_ADT_OBJECT_TYPE.xml' path='doc/member[@name="SE_ADT_OBJECT_TYPE"]/*'/>
 public partial struct SE_ADT_OBJECT_TYPE
 {

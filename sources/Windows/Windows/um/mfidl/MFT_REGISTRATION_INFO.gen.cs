@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFT_REGISTRATION_INFO.xml' path='doc/member[@name="MFT_REGISTRATION_INFO"]/*'/>
 public unsafe partial struct MFT_REGISTRATION_INFO
 {

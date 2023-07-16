@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpMMSysAudio.xml' path='doc/member[@name="ISpMMSysAudio"]/*'/>
 [Guid("15806F6E-1D70-4B48-98E6-3B1A007509AB")]
 [NativeTypeName("struct ISpMMSysAudio : ISpAudio")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfCandidateListUIElementBehavior.xml' path='doc/member[@name="ITfCandidateListUIElementBehavior"]/*'/>
 [Guid("85FAD185-58CE-497A-9460-355366B64B9A")]
 [NativeTypeName("struct ITfCandidateListUIElementBehavior : ITfCandidateListUIElement")]

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "FILE_QUERY_ON_DISK_VOL_INFO_BUFFER"/> struct.</summary>
 public static unsafe partial class FILE_QUERY_ON_DISK_VOL_INFO_BUFFERTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IViewStateIdentityItem.xml' path='doc/member[@name="IViewStateIdentityItem"]/*'/>
 [Guid("9D264146-A94F-4195-9F9F-3BB12CE0C955")]
 [NativeTypeName("struct IViewStateIdentityItem : IRelatedItem")]

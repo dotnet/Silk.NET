@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore"]/*'/>
 [Guid("302AE7F9-D7E0-43E4-971B-1F8293613D2A")]
 [NativeTypeName("struct IAudioSystemEffectsPropertyStore : IUnknown")]

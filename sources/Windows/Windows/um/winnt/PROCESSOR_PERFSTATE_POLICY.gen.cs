@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESSOR_PERFSTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_PERFSTATE_POLICY"]/*'/>
 public partial struct PROCESSOR_PERFSTATE_POLICY
 {

@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY"]/*'/>
 public partial struct LDT_ENTRY
 {

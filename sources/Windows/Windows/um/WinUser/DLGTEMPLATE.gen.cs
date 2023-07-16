@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DLGTEMPLATE.xml' path='doc/member[@name="DLGTEMPLATE"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct DLGTEMPLATE

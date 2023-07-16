@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3D11DepthStencilView.xml' path='doc/member[@name="ID3D11DepthStencilView"]/*'/>
 [Guid("9FDAC92A-1876-48C3-AFAD-25B94F84A9B6")]
 [NativeTypeName("struct ID3D11DepthStencilView : ID3D11View")]

@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CERT_STRONG_SIGN_SERIALIZED_INFO"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CERT_STRONG_SIGN_SERIALIZED_INFOTests

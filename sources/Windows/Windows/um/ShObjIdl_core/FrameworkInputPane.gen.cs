@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FrameworkInputPane.xml' path='doc/member[@name="FrameworkInputPane"]/*'/>
 [Guid("D5120AA3-46BA-44C5-822D-CA8092C1FC72")]
 public unsafe partial struct FrameworkInputPane : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAdviseSinkEx.xml' path='doc/member[@name="IAdviseSinkEx"]/*'/>
 [Guid("3AF24290-0C96-11CE-A0CF-00AA00600AB8")]
 [NativeTypeName("struct IAdviseSinkEx : IAdviseSink")]

@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public readonly unsafe partial struct PHIDP_PREPARSED_DATA : IComparable, IComparable<PHIDP_PREPARSED_DATA>, IEquatable<PHIDP_PREPARSED_DATA>, IFormattable
 {
     public readonly void* Value;

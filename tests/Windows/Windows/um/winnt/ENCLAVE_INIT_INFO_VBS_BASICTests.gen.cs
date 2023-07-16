@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "ENCLAVE_INIT_INFO_VBS_BASIC"/> struct.</summary>
 public static unsafe partial class ENCLAVE_INIT_INFO_VBS_BASICTests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYMSRV_INDEX_INFOW.xml' path='doc/member[@name="SYMSRV_INDEX_INFOW"]/*'/>
 public unsafe partial struct SYMSRV_INDEX_INFOW
 {

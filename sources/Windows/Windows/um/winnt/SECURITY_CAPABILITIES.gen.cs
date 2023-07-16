@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SECURITY_CAPABILITIES.xml' path='doc/member[@name="SECURITY_CAPABILITIES"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct SECURITY_CAPABILITIES

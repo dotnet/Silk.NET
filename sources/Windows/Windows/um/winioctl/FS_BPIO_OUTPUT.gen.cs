@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FS_BPIO_OUTPUT.xml' path='doc/member[@name="FS_BPIO_OUTPUT"]/*'/>
 public partial struct FS_BPIO_OUTPUT
 {

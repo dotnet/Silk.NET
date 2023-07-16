@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProcessInitControl.xml' path='doc/member[@name="IProcessInitControl"]/*'/>
 [Guid("72380D55-8D2B-43A3-8513-2B6EF31434E9")]
 [NativeTypeName("struct IProcessInitControl : IUnknown")]

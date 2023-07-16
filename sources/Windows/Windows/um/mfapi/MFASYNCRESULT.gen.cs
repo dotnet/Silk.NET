@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT"]/*'/>
 [Guid("00000000-0000-0000-0000-000000000000")]
 [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='POINTER_DEVICE_CURSOR_INFO.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_INFO"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct POINTER_DEVICE_CURSOR_INFO

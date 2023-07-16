@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT"]/*'/>
 public unsafe partial struct KERNEL_CET_CONTEXT
 {

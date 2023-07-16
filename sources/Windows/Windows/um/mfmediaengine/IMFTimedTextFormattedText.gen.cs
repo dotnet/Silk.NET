@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextFormattedText.xml' path='doc/member[@name="IMFTimedTextFormattedText"]/*'/>
 [Guid("E13AF3C1-4D47-4354-B1F5-E83AE0ECAE60")]
 [NativeTypeName("struct IMFTimedTextFormattedText : IUnknown")]

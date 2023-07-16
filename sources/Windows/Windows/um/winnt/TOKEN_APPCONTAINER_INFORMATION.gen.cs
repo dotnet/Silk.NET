@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TOKEN_APPCONTAINER_INFORMATION.xml' path='doc/member[@name="TOKEN_APPCONTAINER_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct TOKEN_APPCONTAINER_INFORMATION

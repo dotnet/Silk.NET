@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProgressNotify.xml' path='doc/member[@name="IProgressNotify"]/*'/>
 [Guid("A9D758A0-4617-11CF-95FC-00AA00680DB4")]
 [NativeTypeName("struct IProgressNotify : IUnknown")]

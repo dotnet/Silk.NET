@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "VOLUME_GET_GPT_ATTRIBUTES_INFORMATION"/> struct.</summary>
 public static unsafe partial class VOLUME_GET_GPT_ATTRIBUTES_INFORMATIONTests
 {

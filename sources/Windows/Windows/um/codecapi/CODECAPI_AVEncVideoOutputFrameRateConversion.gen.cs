@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputFrameRateConversion"]/*'/>
 [Guid("8C068BF4-369A-4BA3-82FD-B2518FB3396E")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputFrameRateConversion : INativeGuid

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxBlockMapReader.xml' path='doc/member[@name="IAppxBlockMapReader"]/*'/>
 [Guid("5EFEC991-BCA3-42D1-9EC2-E92D609EC22A")]
 [NativeTypeName("struct IAppxBlockMapReader : IUnknown")]

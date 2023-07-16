@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDIO_STREAM_CATEGORY.xml' path='doc/member[@name="AUDIO_STREAM_CATEGORY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum AUDIO_STREAM_CATEGORY

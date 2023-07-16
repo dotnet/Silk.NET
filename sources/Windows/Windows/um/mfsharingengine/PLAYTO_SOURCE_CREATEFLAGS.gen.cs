@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PLAYTO_SOURCE_CREATEFLAGS.xml' path='doc/member[@name="PLAYTO_SOURCE_CREATEFLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

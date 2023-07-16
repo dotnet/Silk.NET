@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFDXGIBuffer.xml' path='doc/member[@name="IMFDXGIBuffer"]/*'/>
 [Guid("E7174CFA-1C9E-48B1-8866-626226BFC258")]
 [NativeTypeName("struct IMFDXGIBuffer : IUnknown")]

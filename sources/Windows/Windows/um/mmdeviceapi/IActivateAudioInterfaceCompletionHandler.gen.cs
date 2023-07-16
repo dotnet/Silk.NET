@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IActivateAudioInterfaceCompletionHandler.xml' path='doc/member[@name="IActivateAudioInterfaceCompletionHandler"]/*'/>
 [Guid("41D949AB-9862-444A-80F6-C261334DA5EB")]
 [NativeTypeName("struct IActivateAudioInterfaceCompletionHandler : IUnknown")]

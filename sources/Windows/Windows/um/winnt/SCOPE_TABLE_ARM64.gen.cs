@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCOPE_TABLE_ARM64.xml' path='doc/member[@name="SCOPE_TABLE_ARM64"]/*'/>
 public partial struct SCOPE_TABLE_ARM64
 {

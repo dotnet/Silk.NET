@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICallFactory.xml' path='doc/member[@name="ICallFactory"]/*'/>
 [Guid("1C733A30-2A1C-11CE-ADE5-00AA0044773D")]
 [NativeTypeName("struct ICallFactory : IUnknown")]

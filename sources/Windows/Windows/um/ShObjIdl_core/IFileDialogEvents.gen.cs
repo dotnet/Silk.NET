@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileDialogEvents.xml' path='doc/member[@name="IFileDialogEvents"]/*'/>
 [Guid("973510DB-7D7F-452B-8975-74A85828D354")]
 [NativeTypeName("struct IFileDialogEvents : IUnknown")]

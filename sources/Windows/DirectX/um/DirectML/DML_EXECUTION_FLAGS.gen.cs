@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DML_EXECUTION_FLAGS.xml' path='doc/member[@name="DML_EXECUTION_FLAGS"]/*'/>
 [Flags]
 public enum DML_EXECUTION_FLAGS

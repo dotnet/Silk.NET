@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WTS_CONTEXTFLAGS.xml' path='doc/member[@name="WTS_CONTEXTFLAGS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum WTS_CONTEXTFLAGS

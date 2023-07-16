@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum PROCESS_MITIGATION_POLICY

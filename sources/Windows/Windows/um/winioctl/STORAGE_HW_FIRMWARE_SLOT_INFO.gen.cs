@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO"]/*'/>
 public unsafe partial struct STORAGE_HW_FIRMWARE_SLOT_INFO
 {

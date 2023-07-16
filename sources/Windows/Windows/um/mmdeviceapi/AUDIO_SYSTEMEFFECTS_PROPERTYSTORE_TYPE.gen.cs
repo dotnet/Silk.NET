@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE.xml' path='doc/member[@name="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE"]/*'/>
 [SupportedOSPlatform("windows10.0.22621.0")]
 public enum AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE

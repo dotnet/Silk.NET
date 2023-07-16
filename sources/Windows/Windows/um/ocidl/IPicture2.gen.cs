@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPicture2.xml' path='doc/member[@name="IPicture2"]/*'/>
 [Guid("F5185DD8-2012-4B0B-AAD9-F052C6BD482B")]
 [NativeTypeName("struct IPicture2 : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='StorageProviderBanners.xml' path='doc/member[@name="StorageProviderBanners"]/*'/>
 [Guid("7CCDF9F4-E576-455A-8BC7-F6EC68D6F063")]
 public unsafe partial struct StorageProviderBanners : INativeGuid

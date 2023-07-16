@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class XINPUT
 {
     [NativeTypeName("#define XINPUT_DLL_A \"xinput1_4.dll\"")]

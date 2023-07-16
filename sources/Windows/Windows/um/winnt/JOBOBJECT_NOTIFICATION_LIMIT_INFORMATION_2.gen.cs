@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2

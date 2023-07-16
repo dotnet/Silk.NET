@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHandlerInfo2.xml' path='doc/member[@name="IHandlerInfo2"]/*'/>
 [Guid("31CCA04C-04D3-4EA9-90DE-97B15E87A532")]
 [NativeTypeName("struct IHandlerInfo2 : IHandlerInfo")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TS_ATTRVAL.xml' path='doc/member[@name="TS_ATTRVAL"]/*'/>
 public partial struct TS_ATTRVAL
 {

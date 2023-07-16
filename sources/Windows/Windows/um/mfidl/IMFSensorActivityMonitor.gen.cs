@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSensorActivityMonitor.xml' path='doc/member[@name="IMFSensorActivityMonitor"]/*'/>
 [Guid("D0CEF145-B3F4-4340-A2E5-7A5080CA05CB")]
 [NativeTypeName("struct IMFSensorActivityMonitor : IUnknown")]

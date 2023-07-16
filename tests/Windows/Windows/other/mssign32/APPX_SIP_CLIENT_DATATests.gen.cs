@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "APPX_SIP_CLIENT_DATA"/> struct.</summary>
 public static unsafe partial class APPX_SIP_CLIENT_DATATests
 {

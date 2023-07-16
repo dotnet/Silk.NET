@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioClock2.xml' path='doc/member[@name="IAudioClock2"]/*'/>
 [Guid("6F49FF73-6727-49AC-A008-D98CF5E70048")]
 [NativeTypeName("struct IAudioClock2 : IUnknown")]

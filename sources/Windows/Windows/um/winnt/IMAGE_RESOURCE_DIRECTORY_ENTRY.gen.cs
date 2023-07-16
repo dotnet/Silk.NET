@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY"]/*'/>
 public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 {

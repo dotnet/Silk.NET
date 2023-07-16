@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WIN_TRUST_SUBJECT_FILE_AND_DISPLAY"/> struct.</summary>
 public static unsafe partial class WIN_TRUST_SUBJECT_FILE_AND_DISPLAYTests
 {

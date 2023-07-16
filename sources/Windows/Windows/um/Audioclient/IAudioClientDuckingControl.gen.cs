@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioClientDuckingControl.xml' path='doc/member[@name="IAudioClientDuckingControl"]/*'/>
 [Guid("C789D381-A28C-4168-B28F-D3A837924DC3")]
 [NativeTypeName("struct IAudioClientDuckingControl : IUnknown")]

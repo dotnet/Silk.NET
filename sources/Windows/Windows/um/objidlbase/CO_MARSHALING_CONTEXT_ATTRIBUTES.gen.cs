@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CO_MARSHALING_CONTEXT_ATTRIBUTES.xml' path='doc/member[@name="CO_MARSHALING_CONTEXT_ATTRIBUTES"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum CO_MARSHALING_CONTEXT_ATTRIBUTES

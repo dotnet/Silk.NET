@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3D12GraphicsCommandList1.xml' path='doc/member[@name="ID3D12GraphicsCommandList1"]/*'/>
 [Guid("553103FB-1FE7-4557-BB38-946D7D0E7CA7")]
 [NativeTypeName("struct ID3D12GraphicsCommandList1 : ID3D12GraphicsCommandList")]

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SAFEARRAY.xml' path='doc/member[@name="SAFEARRAY"]/*'/>
 public unsafe partial struct SAFEARRAY
 {

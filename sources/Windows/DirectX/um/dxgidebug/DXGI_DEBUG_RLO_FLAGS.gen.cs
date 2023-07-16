@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_DEBUG_RLO_FLAGS.xml' path='doc/member[@name="DXGI_DEBUG_RLO_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

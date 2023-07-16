@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICredentialProviderFilter.xml' path='doc/member[@name="ICredentialProviderFilter"]/*'/>
 [Guid("A5DA53F9-D475-4080-A120-910C4A739880")]
 [NativeTypeName("struct ICredentialProviderFilter : IUnknown")]

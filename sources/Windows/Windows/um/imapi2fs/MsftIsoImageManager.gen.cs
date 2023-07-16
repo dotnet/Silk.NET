@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MsftIsoImageManager.xml' path='doc/member[@name="MsftIsoImageManager"]/*'/>
 [Guid("CEEE3B62-8F56-4056-869B-EF16917E3EFC")]
 public unsafe partial struct MsftIsoImageManager : INativeGuid

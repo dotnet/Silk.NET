@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook"]/*'/>
 [Guid("1008C4A0-7613-11CF-9AF1-0020AF6E72F4")]
 [NativeTypeName("struct IChannelHook : IUnknown")]

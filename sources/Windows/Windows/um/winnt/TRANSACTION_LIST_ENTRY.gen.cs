@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSACTION_LIST_ENTRY.xml' path='doc/member[@name="TRANSACTION_LIST_ENTRY"]/*'/>
 public partial struct TRANSACTION_LIST_ENTRY
 {

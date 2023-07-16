@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CMC_TAGGED_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_REQUEST"]/*'/>
 public unsafe partial struct CMC_TAGGED_REQUEST
 {

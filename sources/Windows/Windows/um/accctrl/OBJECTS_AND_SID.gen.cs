@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OBJECTS_AND_SID.xml' path='doc/member[@name="OBJECTS_AND_SID"]/*'/>
 public unsafe partial struct OBJECTS_AND_SID
 {

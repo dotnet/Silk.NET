@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs"]/*'/>
 [Guid("D8D715A3-6E5E-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMVfwCompressDialogs : IUnknown")]

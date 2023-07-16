@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAssocHandlerInvoker.xml' path='doc/member[@name="IAssocHandlerInvoker"]/*'/>
 [Guid("92218CAB-ECAA-4335-8133-807FD234C2EE")]
 [NativeTypeName("struct IAssocHandlerInvoker : IUnknown")]

@@ -2,9 +2,9 @@
 // Ported from um/DocObj.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public partial struct SID
 {
     [NativeTypeName("#define SID_SProtectFocus IID_IProtectFocus")]

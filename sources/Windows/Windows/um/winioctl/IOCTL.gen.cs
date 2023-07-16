@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class IOCTL
 {
     [NativeTypeName("#define IOCTL_STORAGE_BASE FILE_DEVICE_MASS_STORAGE")]

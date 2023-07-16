@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection"]/*'/>
 [Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
 [NativeTypeName("struct IMFCollection : IUnknown")]

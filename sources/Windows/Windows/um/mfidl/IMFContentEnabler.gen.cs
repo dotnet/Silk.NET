@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler"]/*'/>
 [Guid("D3C4EF59-49CE-4381-9071-D5BCD044C770")]
 [NativeTypeName("struct IMFContentEnabler : IUnknown")]

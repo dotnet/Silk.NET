@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus"]/*'/>
 [Guid("2338AC6E-2B9D-44C0-A75E-EE64F256B3BD")]
 [NativeTypeName("struct ITfFnPropertyUIStatus : ITfFunction")]

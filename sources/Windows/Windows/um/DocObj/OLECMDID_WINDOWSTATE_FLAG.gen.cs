@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OLECMDID_WINDOWSTATE_FLAG.xml' path='doc/member[@name="OLECMDID_WINDOWSTATE_FLAG"]/*'/>
 [Flags]
 public enum OLECMDID_WINDOWSTATE_FLAG

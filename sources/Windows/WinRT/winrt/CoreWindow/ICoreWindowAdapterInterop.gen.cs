@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from winrt/CoreWindow.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop"]/*'/>
 [Guid("7A5B6FD1-CD73-4B6C-9CF4-2E869EAF470A")]
 [NativeTypeName("struct ICoreWindowAdapterInterop : IInspectable")]

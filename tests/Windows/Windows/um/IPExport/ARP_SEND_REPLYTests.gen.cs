@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "ARP_SEND_REPLY"/> struct.</summary>
 public static unsafe partial class ARP_SEND_REPLYTests
 {

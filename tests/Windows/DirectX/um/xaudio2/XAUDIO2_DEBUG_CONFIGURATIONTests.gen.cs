@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "XAUDIO2_DEBUG_CONFIGURATION"/> struct.</summary>
 public static unsafe partial class XAUDIO2_DEBUG_CONFIGURATIONTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IObjectWithBackReferences.xml' path='doc/member[@name="IObjectWithBackReferences"]/*'/>
 [Guid("321A6A6A-D61F-4BF3-97AE-14BE2986BB36")]
 [NativeTypeName("struct IObjectWithBackReferences : IUnknown")]

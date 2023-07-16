@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='DriverStringOptions.xml' path='doc/member[@name="DriverStringOptions"]/*'/>
 [Flags]
 public enum DriverStringOptions

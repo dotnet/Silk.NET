@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICondition2.xml' path='doc/member[@name="ICondition2"]/*'/>
 [Guid("0DB8851D-2E5B-47EB-9208-D28C325A01D7")]
 [NativeTypeName("struct ICondition2 : ICondition")]

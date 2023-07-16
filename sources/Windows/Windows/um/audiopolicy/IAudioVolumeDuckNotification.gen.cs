@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioVolumeDuckNotification.xml' path='doc/member[@name="IAudioVolumeDuckNotification"]/*'/>
 [Guid("C3B284D4-6D39-4359-B3CF-B56DDB3BB39C")]
 [NativeTypeName("struct IAudioVolumeDuckNotification : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncAACEnableVBR.xml' path='doc/member[@name="CODECAPI_AVEncAACEnableVBR"]/*'/>
 [Guid("E836BB98-FCA3-44B6-9A39-24786BE41BE1")]
 public unsafe partial struct CODECAPI_AVEncAACEnableVBR : INativeGuid

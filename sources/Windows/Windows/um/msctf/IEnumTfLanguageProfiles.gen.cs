@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumTfLanguageProfiles.xml' path='doc/member[@name="IEnumTfLanguageProfiles"]/*'/>
 [Guid("3D61BF11-AC5F-42C8-A4CB-931BCC28C744")]
 [NativeTypeName("struct IEnumTfLanguageProfiles : IUnknown")]

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY"/> struct.</summary>
 public static unsafe partial class PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICYTests
 {

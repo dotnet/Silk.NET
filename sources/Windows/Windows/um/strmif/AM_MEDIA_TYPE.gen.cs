@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AM_MEDIA_TYPE.xml' path='doc/member[@name="AM_MEDIA_TYPE"]/*'/>
 public unsafe partial struct AM_MEDIA_TYPE
 {

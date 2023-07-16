@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_ENCLAVE_CONFIG64.xml' path='doc/member[@name="IMAGE_ENCLAVE_CONFIG64"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public unsafe partial struct IMAGE_ENCLAVE_CONFIG64

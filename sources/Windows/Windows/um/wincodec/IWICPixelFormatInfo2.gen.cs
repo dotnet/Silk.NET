@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICPixelFormatInfo2.xml' path='doc/member[@name="IWICPixelFormatInfo2"]/*'/>
 [Guid("A9DB33A2-AF5F-43C7-B679-74F5984B5AA4")]
 [NativeTypeName("struct IWICPixelFormatInfo2 : IWICPixelFormatInfo")]

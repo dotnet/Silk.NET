@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FSCTL_SET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER

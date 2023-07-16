@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ApplicationActivationManager.xml' path='doc/member[@name="ApplicationActivationManager"]/*'/>
 [Guid("45BA127D-10A8-46EA-8AB7-56EA9078943C")]
 public unsafe partial struct ApplicationActivationManager : INativeGuid

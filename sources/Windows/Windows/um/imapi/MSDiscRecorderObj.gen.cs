@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MSDiscRecorderObj.xml' path='doc/member[@name="MSDiscRecorderObj"]/*'/>
 [Guid("520CCA61-51A5-11D3-9144-00104BA11C5E")]
 public unsafe partial struct MSDiscRecorderObj : INativeGuid

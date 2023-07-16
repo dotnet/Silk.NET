@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='BASEBROWSERDATA.xml' path='doc/member[@name="BASEBROWSERDATA"]/*'/>
 public unsafe partial struct BASEBROWSERDATA
 {

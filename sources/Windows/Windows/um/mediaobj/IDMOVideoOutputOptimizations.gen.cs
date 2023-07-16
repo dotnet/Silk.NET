@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations"]/*'/>
 [Guid("BE8F4F4E-5B16-4D29-B350-7F6B5D9298AC")]
 [NativeTypeName("struct IDMOVideoOutputOptimizations : IUnknown")]

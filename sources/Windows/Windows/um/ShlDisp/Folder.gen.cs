@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='Folder.xml' path='doc/member[@name="Folder"]/*'/>
 [Guid("BBCBDE60-C3FF-11CE-8350-444553540000")]
 [NativeTypeName("struct Folder : IDispatch")]

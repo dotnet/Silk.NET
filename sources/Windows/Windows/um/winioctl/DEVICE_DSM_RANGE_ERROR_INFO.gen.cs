@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO"]/*'/>
 public partial struct DEVICE_DSM_RANGE_ERROR_INFO
 {

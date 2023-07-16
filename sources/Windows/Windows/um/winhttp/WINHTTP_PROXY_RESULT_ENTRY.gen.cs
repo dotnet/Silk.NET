@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINHTTP_PROXY_RESULT_ENTRY.xml' path='doc/member[@name="WINHTTP_PROXY_RESULT_ENTRY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct WINHTTP_PROXY_RESULT_ENTRY

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WTD_GENERIC_CHAIN_POLICY_CREATE_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_CREATE_INFO"]/*'/>
 public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_CREATE_INFO
 {

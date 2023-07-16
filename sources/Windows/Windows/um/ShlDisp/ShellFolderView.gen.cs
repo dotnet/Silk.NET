@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ShellFolderView.xml' path='doc/member[@name="ShellFolderView"]/*'/>
 [Guid("62112AA1-EBE4-11CF-A5FB-0020AFE7292D")]
 public unsafe partial struct ShellFolderView : INativeGuid

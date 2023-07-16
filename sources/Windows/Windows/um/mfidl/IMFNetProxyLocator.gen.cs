@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator"]/*'/>
 [Guid("E9CD0383-A268-4BB4-82DE-658D53574D41")]
 [NativeTypeName("struct IMFNetProxyLocator : IUnknown")]

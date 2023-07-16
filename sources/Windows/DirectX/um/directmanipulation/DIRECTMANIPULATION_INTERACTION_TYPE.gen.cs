@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIRECTMANIPULATION_INTERACTION_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_INTERACTION_TYPE"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum DIRECTMANIPULATION_INTERACTION_TYPE

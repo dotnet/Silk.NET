@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "TA_TRANSFORM_2D"/> struct.</summary>
 public static unsafe partial class TA_TRANSFORM_2DTests
 {

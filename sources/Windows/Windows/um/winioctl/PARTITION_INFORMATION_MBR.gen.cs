@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PARTITION_INFORMATION_MBR.xml' path='doc/member[@name="PARTITION_INFORMATION_MBR"]/*'/>
 public partial struct PARTITION_INFORMATION_MBR
 {

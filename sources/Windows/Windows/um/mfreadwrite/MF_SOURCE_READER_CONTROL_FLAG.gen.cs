@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_SOURCE_READER_CONTROL_FLAG.xml' path='doc/member[@name="MF_SOURCE_READER_CONTROL_FLAG"]/*'/>
 [Flags]
 public enum MF_SOURCE_READER_CONTROL_FLAG

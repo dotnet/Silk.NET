@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioClient2.xml' path='doc/member[@name="IAudioClient2"]/*'/>
 [Guid("726778CD-F60A-4EDA-82DE-E47610CD78AA")]
 [NativeTypeName("struct IAudioClient2 : IAudioClient")]

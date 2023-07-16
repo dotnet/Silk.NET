@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='XAPO_PROCESS_BUFFER_PARAMETERS.xml' path='doc/member[@name="XAPO_PROCESS_BUFFER_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAPO_PROCESS_BUFFER_PARAMETERS

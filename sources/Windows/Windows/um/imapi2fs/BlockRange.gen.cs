@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='BlockRange.xml' path='doc/member[@name="BlockRange"]/*'/>
 [Guid("B507CA27-2204-11DD-966A-001AA01BBC58")]
 public unsafe partial struct BlockRange : INativeGuid

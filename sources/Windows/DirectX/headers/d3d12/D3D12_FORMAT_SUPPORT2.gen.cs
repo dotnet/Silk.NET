@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_FORMAT_SUPPORT2.xml' path='doc/member[@name="D3D12_FORMAT_SUPPORT2"]/*'/>
 [Flags]
 public enum D3D12_FORMAT_SUPPORT2

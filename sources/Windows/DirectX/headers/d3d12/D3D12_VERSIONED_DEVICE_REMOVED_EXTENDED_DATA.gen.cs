@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.xml' path='doc/member[@name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA"]/*'/>
 public partial struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA
 {

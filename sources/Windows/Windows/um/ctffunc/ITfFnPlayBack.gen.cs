@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnPlayBack.xml' path='doc/member[@name="ITfFnPlayBack"]/*'/>
 [Guid("A3A416A4-0F64-11D3-B5B7-00C04FC324A1")]
 [NativeTypeName("struct ITfFnPlayBack : ITfFunction")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2"]/*'/>
 [Guid("79D16DE4-ABEE-4021-8D9D-9169B261D657")]
 [NativeTypeName("struct IDeskBand2 : IDeskBand")]

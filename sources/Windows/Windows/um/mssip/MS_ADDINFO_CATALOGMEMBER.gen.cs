@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER"]/*'/>
 public partial struct MS_ADDINFO_CATALOGMEMBER
 {

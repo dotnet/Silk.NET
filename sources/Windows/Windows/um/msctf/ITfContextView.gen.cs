@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView"]/*'/>
 [Guid("2433BF8E-0F9B-435C-BA2C-180611978C30")]
 [NativeTypeName("struct ITfContextView : IUnknown")]

@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.DirectX;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.DirectX;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRSurfaceAllocatorNotify.xml' path='doc/member[@name="IVMRSurfaceAllocatorNotify"]/*'/>
 [Guid("AADA05A8-5A4E-4729-AF0B-CEA27AED51E2")]
 [NativeTypeName("struct IVMRSurfaceAllocatorNotify : IUnknown")]

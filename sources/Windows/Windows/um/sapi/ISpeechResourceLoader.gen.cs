@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechResourceLoader.xml' path='doc/member[@name="ISpeechResourceLoader"]/*'/>
 [Guid("B9AC5783-FCD0-4B21-B119-B4F8DA8FD2C3")]
 [NativeTypeName("struct ISpeechResourceLoader : IDispatch")]

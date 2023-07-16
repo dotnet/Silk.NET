@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability"]/*'/>
 [Guid("3D8B0590-F691-11D2-8EA9-006097DF5BD4")]
 [NativeTypeName("struct IDataObjectAsyncCapability : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IActiveIMMApp.xml' path='doc/member[@name="IActiveIMMApp"]/*'/>
 [Guid("08C0E040-62D1-11D1-9326-0060B067B86E")]
 [NativeTypeName("struct IActiveIMMApp : IUnknown")]

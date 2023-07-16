@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_SECURE_PROTOCOL.xml' path='doc/member[@name="WS_SECURE_PROTOCOL"]/*'/>
 [Flags]
 public enum WS_SECURE_PROTOCOL

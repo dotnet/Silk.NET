@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFByteStreamProxyClassFactory.xml' path='doc/member[@name="IMFByteStreamProxyClassFactory"]/*'/>
 [Guid("A6B43F84-5C0A-42E8-A44D-B1857A76992F")]
 [NativeTypeName("struct IMFByteStreamProxyClassFactory : IUnknown")]

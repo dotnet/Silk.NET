@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/SpatialInteractionManagerInterop.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='ISpatialInteractionManagerInterop.xml' path='doc/member[@name="ISpatialInteractionManagerInterop"]/*'/>
 [Guid("5C4EE536-6A98-4B86-A170-587013D6FD4B")]
 [NativeTypeName("struct ISpatialInteractionManagerInterop : IInspectable")]

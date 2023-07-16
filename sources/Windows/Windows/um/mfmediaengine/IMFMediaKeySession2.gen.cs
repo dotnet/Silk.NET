@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2"]/*'/>
 [Guid("E9707E05-6D55-4636-B185-3DE21210BD75")]
 [NativeTypeName("struct IMFMediaKeySession2 : IMFMediaKeySession")]

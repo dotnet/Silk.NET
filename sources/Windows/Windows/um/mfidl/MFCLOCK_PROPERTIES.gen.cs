@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFCLOCK_PROPERTIES.xml' path='doc/member[@name="MFCLOCK_PROPERTIES"]/*'/>
 public partial struct MFCLOCK_PROPERTIES
 {

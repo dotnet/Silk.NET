@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator"]/*'/>
 [Guid("9B496CE0-811B-11CF-8C77-00AA006B6814")]
 [NativeTypeName("struct IAMTimecodeGenerator : IUnknown")]

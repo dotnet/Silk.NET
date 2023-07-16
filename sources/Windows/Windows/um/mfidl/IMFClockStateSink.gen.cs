@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink"]/*'/>
 [Guid("F6696E82-74F7-4F3D-A178-8A5E09C3659F")]
 [NativeTypeName("struct IMFClockStateSink : IUnknown")]

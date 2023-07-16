@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioFormatEnumerator.xml' path='doc/member[@name="IAudioFormatEnumerator"]/*'/>
 [Guid("DCDAA858-895A-4A22-A5EB-67BDA506096D")]
 [NativeTypeName("struct IAudioFormatEnumerator : IUnknown")]

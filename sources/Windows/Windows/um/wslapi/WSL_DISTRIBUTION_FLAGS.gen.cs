@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WSL_DISTRIBUTION_FLAGS.xml' path='doc/member[@name="WSL_DISTRIBUTION_FLAGS"]/*'/>
 [Flags]
 public enum WSL_DISTRIBUTION_FLAGS

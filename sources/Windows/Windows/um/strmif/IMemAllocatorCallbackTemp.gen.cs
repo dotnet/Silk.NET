@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMemAllocatorCallbackTemp.xml' path='doc/member[@name="IMemAllocatorCallbackTemp"]/*'/>
 [Guid("379A0CF0-C1DE-11D2-ABF5-00A0C905F375")]
 [NativeTypeName("struct IMemAllocatorCallbackTemp : IMemAllocator")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public unsafe partial struct IMAGE_DOS_HEADER

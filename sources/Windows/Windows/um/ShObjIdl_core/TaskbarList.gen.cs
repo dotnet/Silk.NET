@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TaskbarList.xml' path='doc/member[@name="TaskbarList"]/*'/>
 [Guid("56FDF344-FD6D-11D0-958A-006097C9A090")]
 public unsafe partial struct TaskbarList : INativeGuid

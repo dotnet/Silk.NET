@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData"]/*'/>
 [Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")]
 [NativeTypeName("struct ID2D1SvgPathData : ID2D1SvgAttribute")]

@@ -13,7 +13,7 @@
       ],
       "ChangeNamespace": {
         "Mappings": {
-          "hello": "hello"
+          "TerraFX.Interop.(.*)": "Silk.NET.$1"
         }
       }
     }

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CHAR_INFO.xml' path='doc/member[@name="CHAR_INFO"]/*'/>
 public partial struct CHAR_INFO
 {

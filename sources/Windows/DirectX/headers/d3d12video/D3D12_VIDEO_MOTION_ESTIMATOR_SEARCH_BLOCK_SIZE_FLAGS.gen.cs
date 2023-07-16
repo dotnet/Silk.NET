@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.DirectX.D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE;
+using static Silk.NET.DirectX.D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.19041.0")]

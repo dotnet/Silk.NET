@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT"/> struct.</summary>
 public static unsafe partial class WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECTTests
 {

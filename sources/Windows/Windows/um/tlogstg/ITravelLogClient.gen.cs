@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITravelLogClient.xml' path='doc/member[@name="ITravelLogClient"]/*'/>
 [Guid("241C033E-E659-43DA-AA4D-4086DBC4758D")]
 [NativeTypeName("struct ITravelLogClient : IUnknown")]

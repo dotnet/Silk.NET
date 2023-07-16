@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX"]/*'/>
 public unsafe partial struct DDOVERLAYFX
 {

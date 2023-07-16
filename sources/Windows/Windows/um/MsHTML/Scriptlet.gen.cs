@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='Scriptlet.xml' path='doc/member[@name="Scriptlet"]/*'/>
 [Guid("AE24FDAE-03C6-11D1-8B76-0080C744F389")]
 public unsafe partial struct Scriptlet : INativeGuid

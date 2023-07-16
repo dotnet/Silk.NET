@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DCompManipulationCompositor.xml' path='doc/member[@name="DCompManipulationCompositor"]/*'/>
 [Guid("79DEA627-A08A-43AC-8EF5-6900B9299126")]
 public unsafe partial struct DCompManipulationCompositor : INativeGuid

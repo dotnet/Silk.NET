@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2"]/*'/>
 public partial struct VIDEOINFOHEADER2
 {

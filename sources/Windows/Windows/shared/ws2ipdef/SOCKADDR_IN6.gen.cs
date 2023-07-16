@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SOCKADDR_IN6.xml' path='doc/member[@name="SOCKADDR_IN6"]/*'/>
 public partial struct SOCKADDR_IN6
 {

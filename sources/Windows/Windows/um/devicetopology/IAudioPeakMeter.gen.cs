@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioPeakMeter.xml' path='doc/member[@name="IAudioPeakMeter"]/*'/>
 [Guid("DD79923C-0599-45E0-B8B6-C8DF7DB6E796")]
 [NativeTypeName("struct IAudioPeakMeter : IUnknown")]

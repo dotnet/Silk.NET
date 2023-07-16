@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EnumProgressItems.xml' path='doc/member[@name="EnumProgressItems"]/*'/>
 [Guid("2C941FCA-975B-59BE-A960-9A2A262853A5")]
 public unsafe partial struct EnumProgressItems : INativeGuid

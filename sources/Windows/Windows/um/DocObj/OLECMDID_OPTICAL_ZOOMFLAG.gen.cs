@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OLECMDID_OPTICAL_ZOOMFLAG.xml' path='doc/member[@name="OLECMDID_OPTICAL_ZOOMFLAG"]/*'/>
 [Flags]
 public enum OLECMDID_OPTICAL_ZOOMFLAG

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3DX12_MESH_SHADER_PIPELINE_STATE_DESC"/> struct.</summary>
 public static unsafe partial class D3DX12_MESH_SHADER_PIPELINE_STATE_DESCTests
 {

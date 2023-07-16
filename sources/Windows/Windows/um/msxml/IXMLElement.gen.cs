@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement"]/*'/>
 [Guid("3F7F31AC-E15F-11D0-9C25-00C04FC99C8E")]
 [NativeTypeName("struct IXMLElement : IDispatch")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IParseAndCreateItem.xml' path='doc/member[@name="IParseAndCreateItem"]/*'/>
 [Guid("67EFED0E-E827-4408-B493-78F3982B685C")]
 [NativeTypeName("struct IParseAndCreateItem : IUnknown")]

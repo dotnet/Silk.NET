@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellItemImageFactory.xml' path='doc/member[@name="IShellItemImageFactory"]/*'/>
 [Guid("BCC18B79-BA16-442F-80C4-8A59C30C463B")]
 [NativeTypeName("struct IShellItemImageFactory : IUnknown")]

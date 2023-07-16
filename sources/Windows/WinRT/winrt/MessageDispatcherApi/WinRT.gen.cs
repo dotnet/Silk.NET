@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 public static unsafe partial class WinRT
 {
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CoSetMessageDispatcher"]/*'/>

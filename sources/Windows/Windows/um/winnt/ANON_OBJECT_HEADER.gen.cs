@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ANON_OBJECT_HEADER.xml' path='doc/member[@name="ANON_OBJECT_HEADER"]/*'/>
 public partial struct ANON_OBJECT_HEADER
 {

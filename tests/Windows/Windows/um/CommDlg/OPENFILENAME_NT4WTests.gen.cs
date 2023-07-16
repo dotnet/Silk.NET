@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "OPENFILENAME_NT4W"/> struct.</summary>
 public static unsafe partial class OPENFILENAME_NT4WTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVRealtimeControl.xml' path='doc/member[@name="CODECAPI_AVRealtimeControl"]/*'/>
 [Guid("6F440632-C4AD-4BF7-9E52-456942B454B0")]
 public unsafe partial struct CODECAPI_AVRealtimeControl : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_MACHINE_INFORMATION.xml' path='doc/member[@name="PROCESS_MACHINE_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows10.0.22621.0")]
 public partial struct PROCESS_MACHINE_INFORMATION

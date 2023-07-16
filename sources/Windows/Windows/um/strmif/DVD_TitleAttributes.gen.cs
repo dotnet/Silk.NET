@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes"]/*'/>
 public partial struct DVD_TitleAttributes
 {

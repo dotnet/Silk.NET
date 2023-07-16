@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_CERT_SIGNED_SAML_AUTHENTICATOR.xml' path='doc/member[@name="WS_CERT_SIGNED_SAML_AUTHENTICATOR"]/*'/>
 public unsafe partial struct WS_CERT_SIGNED_SAML_AUTHENTICATOR
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_CAPTURE_ENGINE_STREAM_CATEGORY.xml' path='doc/member[@name="MF_CAPTURE_ENGINE_STREAM_CATEGORY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MF_CAPTURE_ENGINE_STREAM_CATEGORY

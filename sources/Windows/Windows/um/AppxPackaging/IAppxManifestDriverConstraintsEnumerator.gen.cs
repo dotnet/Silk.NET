@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestDriverConstraintsEnumerator.xml' path='doc/member[@name="IAppxManifestDriverConstraintsEnumerator"]/*'/>
 [Guid("D402B2D1-F600-49E0-95E6-975D8DA13D89")]
 [NativeTypeName("struct IAppxManifestDriverConstraintsEnumerator : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AppxEncryptionFactory.xml' path='doc/member[@name="AppxEncryptionFactory"]/*'/>
 [Guid("DC664FDD-D868-46EE-8780-8D196CB739F7")]
 public unsafe partial struct AppxEncryptionFactory : INativeGuid

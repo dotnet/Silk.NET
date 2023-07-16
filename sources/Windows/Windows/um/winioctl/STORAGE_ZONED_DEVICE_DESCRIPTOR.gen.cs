@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR"]/*'/>
 public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
 {

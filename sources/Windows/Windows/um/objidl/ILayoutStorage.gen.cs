@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage"]/*'/>
 [Guid("0E6D4D90-6738-11CF-9608-00AA00680DB4")]
 [NativeTypeName("struct ILayoutStorage : IUnknown")]

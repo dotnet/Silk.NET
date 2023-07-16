@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore"]/*'/>
 [Guid("E2CD4A63-2B72-4D48-B739-95E4765195BA")]
 [NativeTypeName("struct IAccStore : IUnknown")]

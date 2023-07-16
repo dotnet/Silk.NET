@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellLinkDual2.xml' path='doc/member[@name="IShellLinkDual2"]/*'/>
 [Guid("317EE249-F12E-11D2-B1E4-00C04F8EEB3E")]
 [NativeTypeName("struct IShellLinkDual2 : IShellLinkDual")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_XML_DICTIONARY.xml' path='doc/member[@name="WS_XML_DICTIONARY"]/*'/>
 public unsafe partial struct WS_XML_DICTIONARY
 {

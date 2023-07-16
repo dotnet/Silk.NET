@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily"]/*'/>
 [Guid("9091B09B-C8D5-4F31-8687-A338259FAEFB")]
 [NativeTypeName("struct IAppxManifestTargetDeviceFamily : IUnknown")]

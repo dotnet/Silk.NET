@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IReleaseMarshalBuffers.xml' path='doc/member[@name="IReleaseMarshalBuffers"]/*'/>
 [Guid("EB0CB9E8-7996-11D2-872E-0000F8080859")]
 [NativeTypeName("struct IReleaseMarshalBuffers : IUnknown")]

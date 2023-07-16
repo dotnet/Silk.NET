@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PLACEHOLDER_STATES.xml' path='doc/member[@name="PLACEHOLDER_STATES"]/*'/>
 [Flags]
 public enum PLACEHOLDER_STATES

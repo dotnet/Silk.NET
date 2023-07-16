@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoThumbnailGenerationMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoThumbnailGenerationMode"]/*'/>
 [Guid("2EFD8EEE-1150-4328-9CF5-66DCE933FCF4")]
 public unsafe partial struct CODECAPI_AVDecVideoThumbnailGenerationMode : INativeGuid

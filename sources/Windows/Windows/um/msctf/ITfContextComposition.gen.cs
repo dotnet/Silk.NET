@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfContextComposition.xml' path='doc/member[@name="ITfContextComposition"]/*'/>
 [Guid("D40C8AAE-AC92-4FC7-9A11-0EE0E23AA39B")]
 [NativeTypeName("struct ITfContextComposition : IUnknown")]

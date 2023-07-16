@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD"]/*'/>
 public partial struct NL_INTERFACE_OFFLOAD_ROD
 {

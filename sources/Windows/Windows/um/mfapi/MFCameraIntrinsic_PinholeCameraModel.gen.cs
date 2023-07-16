@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFCameraIntrinsic_PinholeCameraModel.xml' path='doc/member[@name="MFCameraIntrinsic_PinholeCameraModel"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraIntrinsic_PinholeCameraModel

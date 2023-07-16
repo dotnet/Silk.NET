@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICreatingProcess.xml' path='doc/member[@name="ICreatingProcess"]/*'/>
 [Guid("C2B937A9-3110-4398-8A56-F34C6342D244")]
 [NativeTypeName("struct ICreatingProcess : IUnknown")]

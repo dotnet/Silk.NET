@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPreviewItem.xml' path='doc/member[@name="IPreviewItem"]/*'/>
 [Guid("36149969-0A8F-49C8-8B00-4AECB20222FB")]
 [NativeTypeName("struct IPreviewItem : IRelatedItem")]

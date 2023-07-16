@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoFastDecodeMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoFastDecodeMode"]/*'/>
 [Guid("6B529F7D-D3B1-49C6-A999-9EC6911BEDBF")]
 public unsafe partial struct CODECAPI_AVDecVideoFastDecodeMode : INativeGuid

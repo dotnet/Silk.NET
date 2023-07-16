@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL"]/*'/>
 public unsafe partial struct WS_CUSTOM_CERT_CREDENTIAL
 {

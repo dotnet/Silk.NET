@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICurrentItem.xml' path='doc/member[@name="ICurrentItem"]/*'/>
 [Guid("240A7174-D653-4A1D-A6D3-D4943CFBFE3D")]
 [NativeTypeName("struct ICurrentItem : IRelatedItem")]

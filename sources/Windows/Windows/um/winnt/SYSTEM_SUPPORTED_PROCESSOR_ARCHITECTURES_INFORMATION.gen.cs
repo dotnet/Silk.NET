@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION"]/*'/>
 public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
 {

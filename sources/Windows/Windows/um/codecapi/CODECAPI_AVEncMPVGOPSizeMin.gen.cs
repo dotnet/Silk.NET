@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMPVGOPSizeMin.xml' path='doc/member[@name="CODECAPI_AVEncMPVGOPSizeMin"]/*'/>
 [Guid("7155CF20-D440-4852-AD0F-9C4ABFE37A6A")]
 public unsafe partial struct CODECAPI_AVEncMPVGOPSizeMin : INativeGuid

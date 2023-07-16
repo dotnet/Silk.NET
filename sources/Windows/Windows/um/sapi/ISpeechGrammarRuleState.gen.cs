@@ -4,10 +4,10 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
-using static TerraFX.Interop.Windows.SpeechGrammarWordType;
+using static Silk.NET.Windows.IID;
+using static Silk.NET.Windows.SpeechGrammarWordType;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechGrammarRuleState.xml' path='doc/member[@name="ISpeechGrammarRuleState"]/*'/>
 [Guid("D4286F2C-EE67-45AE-B928-28D695362EDA")]
 [NativeTypeName("struct ISpeechGrammarRuleState : IDispatch")]

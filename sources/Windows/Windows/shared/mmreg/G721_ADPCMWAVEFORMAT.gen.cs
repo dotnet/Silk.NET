@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='G721_ADPCMWAVEFORMAT.xml' path='doc/member[@name="G721_ADPCMWAVEFORMAT"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct G721_ADPCMWAVEFORMAT

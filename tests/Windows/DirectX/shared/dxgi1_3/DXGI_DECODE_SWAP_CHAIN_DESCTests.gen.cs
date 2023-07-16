@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DXGI_DECODE_SWAP_CHAIN_DESC"/> struct.</summary>
 public static unsafe partial class DXGI_DECODE_SWAP_CHAIN_DESCTests
 {

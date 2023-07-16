@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "FOCUS_EVENT_RECORD"/> struct.</summary>
 public static unsafe partial class FOCUS_EVENT_RECORDTests
 {

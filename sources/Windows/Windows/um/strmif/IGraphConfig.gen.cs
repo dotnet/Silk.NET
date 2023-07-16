@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig"]/*'/>
 [Guid("03A1EB8E-32BF-4245-8502-114D08A9CB88")]
 [NativeTypeName("struct IGraphConfig : IUnknown")]

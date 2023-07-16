@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 [Guid("7D9ACA56-CB68-4807-B632-B137352E8596")]
 public unsafe partial struct FXReverb : INativeGuid
 {

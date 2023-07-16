@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='InkDesktopHost.xml' path='doc/member[@name="InkDesktopHost"]/*'/>
 [Guid("062584A6-F830-4BDC-A4D2-0A10AB062B1D")]
 public unsafe partial struct InkDesktopHost : INativeGuid

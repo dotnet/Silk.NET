@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NOTIFICATION_USER_INPUT_DATA.xml' path='doc/member[@name="NOTIFICATION_USER_INPUT_DATA"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct NOTIFICATION_USER_INPUT_DATA

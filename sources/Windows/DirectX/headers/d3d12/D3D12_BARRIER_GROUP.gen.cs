@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_BARRIER_GROUP.xml' path='doc/member[@name="D3D12_BARRIER_GROUP"]/*'/>
 public unsafe partial struct D3D12_BARRIER_GROUP
 {

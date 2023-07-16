@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISupportErrorInfo.xml' path='doc/member[@name="ISupportErrorInfo"]/*'/>
 [Guid("DF0B3D60-548F-101B-8E65-08002B2BD119")]
 [NativeTypeName("struct ISupportErrorInfo : IUnknown")]

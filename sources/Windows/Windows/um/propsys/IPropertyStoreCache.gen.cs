@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache"]/*'/>
 [Guid("3017056D-9A91-4E90-937D-746C72ABBF4F")]
 [NativeTypeName("struct IPropertyStoreCache : IPropertyStore")]

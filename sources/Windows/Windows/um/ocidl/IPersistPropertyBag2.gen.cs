@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPersistPropertyBag2.xml' path='doc/member[@name="IPersistPropertyBag2"]/*'/>
 [Guid("22F55881-280B-11D0-A8A9-00A0C90C2004")]
 [NativeTypeName("struct IPersistPropertyBag2 : IPersist")]

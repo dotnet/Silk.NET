@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='AudioReverb.xml' path='doc/member[@name="AudioReverb"]/*'/>
 [Guid("C2633B16-471B-4498-B8C5-4F0959E2EC09")]
 public unsafe partial struct AudioReverb : INativeGuid

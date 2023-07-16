@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_ALIGNMENT_INFO.xml' path='doc/member[@name="FILE_ALIGNMENT_INFO"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct FILE_ALIGNMENT_INFO

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISyncMgrEventLinkUIOperation.xml' path='doc/member[@name="ISyncMgrEventLinkUIOperation"]/*'/>
 [Guid("64522E52-848B-4015-89CE-5A36F00B94FF")]
 [NativeTypeName("struct ISyncMgrEventLinkUIOperation : ISyncMgrUIOperation")]

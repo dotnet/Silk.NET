@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_COMPONENT_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_COMPONENT_HEALTH_STATUS"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum STORAGE_COMPONENT_HEALTH_STATUS

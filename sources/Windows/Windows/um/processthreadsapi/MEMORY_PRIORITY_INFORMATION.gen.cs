@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MEMORY_PRIORITY_INFORMATION.xml' path='doc/member[@name="MEMORY_PRIORITY_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct MEMORY_PRIORITY_INFORMATION

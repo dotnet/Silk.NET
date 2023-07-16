@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVPriorityControl.xml' path='doc/member[@name="CODECAPI_AVPriorityControl"]/*'/>
 [Guid("54BA3DC8-BDDE-4329-B187-2018BC5C2BA1")]
 public unsafe partial struct CODECAPI_AVPriorityControl : INativeGuid

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SCRUB_DATA_OUTPUT"/> struct.</summary>
 public static unsafe partial class SCRUB_DATA_OUTPUTTests
 {

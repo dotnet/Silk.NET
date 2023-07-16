@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HTMLLocation.xml' path='doc/member[@name="HTMLLocation"]/*'/>
 [Guid("163BB1E1-6E00-11CF-837A-48DC04C10000")]
 public unsafe partial struct HTMLLocation : INativeGuid

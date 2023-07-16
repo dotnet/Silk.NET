@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_ALARM_OBJECT_ACE.xml' path='doc/member[@name="SYSTEM_ALARM_OBJECT_ACE"]/*'/>
 public partial struct SYSTEM_ALARM_OBJECT_ACE
 {

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_TYPE_NOTIFICATION_INPUT.xml' path='doc/member[@name="FILE_TYPE_NOTIFICATION_INPUT"]/*'/>
 public partial struct FILE_TYPE_NOTIFICATION_INPUT
 {

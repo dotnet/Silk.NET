@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_IPSTATS_LH.xml' path='doc/member[@name="MIB_IPSTATS_LH"]/*'/>
 public partial struct MIB_IPSTATS_LH
 {

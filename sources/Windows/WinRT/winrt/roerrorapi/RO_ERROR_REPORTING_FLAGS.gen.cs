@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='RO_ERROR_REPORTING_FLAGS.xml' path='doc/member[@name="RO_ERROR_REPORTING_FLAGS"]/*'/>
 [Flags]
 public enum RO_ERROR_REPORTING_FLAGS

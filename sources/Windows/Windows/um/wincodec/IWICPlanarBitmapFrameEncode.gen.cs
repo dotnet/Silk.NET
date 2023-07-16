@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICPlanarBitmapFrameEncode.xml' path='doc/member[@name="IWICPlanarBitmapFrameEncode"]/*'/>
 [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
 [NativeTypeName("struct IWICPlanarBitmapFrameEncode : IUnknown")]

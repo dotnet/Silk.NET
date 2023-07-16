@@ -1,10 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
-using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IXAudio2Voice.xml' path='doc/member[@name="IXAudio2Voice"]/*'/>
 public unsafe partial struct IXAudio2Voice : IXAudio2Voice.Interface
 {

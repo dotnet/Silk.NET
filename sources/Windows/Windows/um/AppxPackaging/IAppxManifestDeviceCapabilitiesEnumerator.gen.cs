@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestDeviceCapabilitiesEnumerator.xml' path='doc/member[@name="IAppxManifestDeviceCapabilitiesEnumerator"]/*'/>
 [Guid("30204541-427B-4A1C-BACF-655BF463A540")]
 [NativeTypeName("struct IAppxManifestDeviceCapabilitiesEnumerator : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumSyncMgrConflict.xml' path='doc/member[@name="IEnumSyncMgrConflict"]/*'/>
 [Guid("82705914-DDA3-4893-BA99-49DE6C8C8036")]
 [NativeTypeName("struct IEnumSyncMgrConflict : IUnknown")]

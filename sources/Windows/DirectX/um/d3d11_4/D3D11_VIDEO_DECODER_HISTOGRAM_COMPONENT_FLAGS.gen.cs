@@ -2,9 +2,9 @@
 // Ported from um/d3d11_4.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
-using static TerraFX.Interop.DirectX.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT;
+using static Silk.NET.DirectX.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS"]/*'/>
 [Flags]
 public enum D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS

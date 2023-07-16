@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct EXBMINFOHEADER

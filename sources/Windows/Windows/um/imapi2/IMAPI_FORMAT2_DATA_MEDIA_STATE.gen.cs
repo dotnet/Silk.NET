@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAPI_FORMAT2_DATA_MEDIA_STATE.xml' path='doc/member[@name="IMAPI_FORMAT2_DATA_MEDIA_STATE"]/*'/>
 [Flags]
 public enum IMAPI_FORMAT2_DATA_MEDIA_STATE

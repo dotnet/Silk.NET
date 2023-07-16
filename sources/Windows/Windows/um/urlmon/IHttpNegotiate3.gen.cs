@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHttpNegotiate3.xml' path='doc/member[@name="IHttpNegotiate3"]/*'/>
 [Guid("57B6C80A-34C2-4602-BC26-66A02FC57153")]
 [NativeTypeName("struct IHttpNegotiate3 : IHttpNegotiate2")]

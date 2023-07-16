@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile"]/*'/>
 [Guid("4ADFDBA3-7AB0-4953-A62B-461E7FF3DA1E")]
 [NativeTypeName("struct IMFTranscodeProfile : IUnknown")]

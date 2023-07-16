@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoTemporalLayerCount.xml' path='doc/member[@name="CODECAPI_AVEncVideoTemporalLayerCount"]/*'/>
 [Guid("19CAEBFF-B74D-4CFD-8C27-C2F9D97D5F52")]
 public unsafe partial struct CODECAPI_AVEncVideoTemporalLayerCount : INativeGuid

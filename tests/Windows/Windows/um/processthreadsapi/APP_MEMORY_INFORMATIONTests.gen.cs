@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "APP_MEMORY_INFORMATION"/> struct.</summary>
 [SupportedOSPlatform("windows10.0.10586.0")]
 public static unsafe partial class APP_MEMORY_INFORMATIONTests

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpCompressedLexicon.xml' path='doc/member[@name="SpCompressedLexicon"]/*'/>
 [Guid("90903716-2F42-11D3-9C26-00C04F8EF87C")]
 public unsafe partial struct SpCompressedLexicon : INativeGuid

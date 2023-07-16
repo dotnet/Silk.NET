@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IP_MSFILTER.xml' path='doc/member[@name="IP_MSFILTER"]/*'/>
 public partial struct IP_MSFILTER
 {

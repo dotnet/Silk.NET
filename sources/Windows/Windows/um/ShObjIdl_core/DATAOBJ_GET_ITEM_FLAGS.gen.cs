@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS"]/*'/>
 [Flags]
 public enum DATAOBJ_GET_ITEM_FLAGS

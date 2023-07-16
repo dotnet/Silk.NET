@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='FXECHO_PARAMETERS.xml' path='doc/member[@name="FXECHO_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXECHO_PARAMETERS

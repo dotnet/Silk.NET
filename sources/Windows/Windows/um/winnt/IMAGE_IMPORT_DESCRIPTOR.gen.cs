@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR"]/*'/>
 public partial struct IMAGE_IMPORT_DESCRIPTOR
 {

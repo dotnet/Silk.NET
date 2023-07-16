@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFPluginControl2.xml' path='doc/member[@name="IMFPluginControl2"]/*'/>
 [Guid("C6982083-3DDC-45CB-AF5E-0F7A8CE4DE77")]
 [NativeTypeName("struct IMFPluginControl2 : IMFPluginControl")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='MLOperatorEdgeDescription.xml' path='doc/member[@name="MLOperatorEdgeDescription"]/*'/>
 public partial struct MLOperatorEdgeDescription
 {

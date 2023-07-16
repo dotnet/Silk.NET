@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO"]/*'/>
 public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
 {

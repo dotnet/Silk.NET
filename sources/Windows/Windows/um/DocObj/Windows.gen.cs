@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/DocObj.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using static TerraFX.Interop.Windows.OLECMDEXECOPT;
-using static TerraFX.Interop.Windows.OLECMDF;
-using static TerraFX.Interop.Windows.OLECMDTEXTF;
+using static Silk.NET.Windows.OLECMDEXECOPT;
+using static Silk.NET.Windows.OLECMDF;
+using static Silk.NET.Windows.OLECMDTEXTF;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class Windows
 {
     [NativeTypeName("#define PAGESET_TOLASTPAGE ((WORD)(-1L))")]

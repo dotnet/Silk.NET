@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ApplicationDesignModeSettings.xml' path='doc/member[@name="ApplicationDesignModeSettings"]/*'/>
 [Guid("958A6FB5-DCB2-4FAF-AAFD-7FB054AD1A3B")]
 public unsafe partial struct ApplicationDesignModeSettings : INativeGuid

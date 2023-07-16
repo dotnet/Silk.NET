@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAPO_REGISTRATION_PROPERTIES

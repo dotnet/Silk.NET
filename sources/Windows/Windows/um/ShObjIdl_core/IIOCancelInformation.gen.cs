@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IIOCancelInformation.xml' path='doc/member[@name="IIOCancelInformation"]/*'/>
 [Guid("F5B0BF81-8CB5-4B1B-9449-1A159E0C733C")]
 [NativeTypeName("struct IIOCancelInformation : IUnknown")]

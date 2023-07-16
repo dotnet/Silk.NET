@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO"]/*'/>
 public unsafe partial struct RM_FILTER_INFO
 {

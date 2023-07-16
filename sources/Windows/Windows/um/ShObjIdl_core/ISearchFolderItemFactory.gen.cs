@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory"]/*'/>
 [Guid("A0FFBC28-5482-4366-BE27-3E81E78E06C2")]
 [NativeTypeName("struct ISearchFolderItemFactory : IUnknown")]

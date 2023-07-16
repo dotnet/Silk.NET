@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='USN_RECORD_V3.xml' path='doc/member[@name="USN_RECORD_V3"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct USN_RECORD_V3

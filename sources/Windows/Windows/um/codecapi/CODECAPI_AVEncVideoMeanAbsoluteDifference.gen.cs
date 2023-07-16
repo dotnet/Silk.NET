@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoMeanAbsoluteDifference.xml' path='doc/member[@name="CODECAPI_AVEncVideoMeanAbsoluteDifference"]/*'/>
 [Guid("E5C0C10F-81A4-422D-8C3F-B474A4581336")]
 public unsafe partial struct CODECAPI_AVEncVideoMeanAbsoluteDifference : INativeGuid

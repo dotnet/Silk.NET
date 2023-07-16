@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FMTOWNS_SND_WAVEFORMAT.xml' path='doc/member[@name="FMTOWNS_SND_WAVEFORMAT"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FMTOWNS_SND_WAVEFORMAT

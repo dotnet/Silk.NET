@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaSourceExtensionLiveSeekableRange.xml' path='doc/member[@name="IMFMediaSourceExtensionLiveSeekableRange"]/*'/>
 [Guid("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")]
 [NativeTypeName("struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown")]

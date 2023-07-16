@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "RID_DEVICE_INFO_HID"/> struct.</summary>
 public static unsafe partial class RID_DEVICE_INFO_HIDTests
 {

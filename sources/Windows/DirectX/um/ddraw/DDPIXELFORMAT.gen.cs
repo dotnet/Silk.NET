@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DDPIXELFORMAT.xml' path='doc/member[@name="DDPIXELFORMAT"]/*'/>
 public partial struct DDPIXELFORMAT
 {

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFImageSharingEngineClassFactory.xml' path='doc/member[@name="IMFImageSharingEngineClassFactory"]/*'/>
 [Guid("1FC55727-A7FB-4FC8-83AE-8AF024990AF1")]
 [NativeTypeName("struct IMFImageSharingEngineClassFactory : IUnknown")]

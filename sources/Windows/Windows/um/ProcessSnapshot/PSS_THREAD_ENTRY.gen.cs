@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PSS_THREAD_ENTRY.xml' path='doc/member[@name="PSS_THREAD_ENTRY"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct PSS_THREAD_ENTRY

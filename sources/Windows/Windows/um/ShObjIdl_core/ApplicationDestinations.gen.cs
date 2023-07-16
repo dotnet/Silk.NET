@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ApplicationDestinations.xml' path='doc/member[@name="ApplicationDestinations"]/*'/>
 [Guid("86C14003-4D6B-4EF3-A7B4-0506663B2E68")]
 public unsafe partial struct ApplicationDestinations : INativeGuid

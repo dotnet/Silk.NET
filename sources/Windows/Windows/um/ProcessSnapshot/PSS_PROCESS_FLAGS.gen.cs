@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PSS_PROCESS_FLAGS.xml' path='doc/member[@name="PSS_PROCESS_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.3")]

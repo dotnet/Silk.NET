@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSourceResolver.xml' path='doc/member[@name="IMFSourceResolver"]/*'/>
 [Guid("FBE5A32D-A497-4B61-BB85-97B1A848A6E3")]
 [NativeTypeName("struct IMFSourceResolver : IUnknown")]

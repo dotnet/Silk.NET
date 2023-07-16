@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider"]/*'/>
 [Guid("9AF64809-5864-4C26-A720-C1F78C086EE3")]
 [NativeTypeName("struct ICategoryProvider : IUnknown")]

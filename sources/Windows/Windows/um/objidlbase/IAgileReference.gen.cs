@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAgileReference.xml' path='doc/member[@name="IAgileReference"]/*'/>
 [Guid("C03F6A43-65A4-9818-987E-E0B810D2A6F2")]
 [NativeTypeName("struct IAgileReference : IUnknown")]

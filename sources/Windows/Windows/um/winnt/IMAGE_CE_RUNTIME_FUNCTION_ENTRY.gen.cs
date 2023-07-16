@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY"]/*'/>
 public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
 {

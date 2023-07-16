@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_VIDEO_DECODER_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_CAPS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

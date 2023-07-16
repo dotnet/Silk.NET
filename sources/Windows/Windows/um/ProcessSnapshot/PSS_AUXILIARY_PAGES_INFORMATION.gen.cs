@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PSS_AUXILIARY_PAGES_INFORMATION.xml' path='doc/member[@name="PSS_AUXILIARY_PAGES_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct PSS_AUXILIARY_PAGES_INFORMATION

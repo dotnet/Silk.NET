@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnConfigure.xml' path='doc/member[@name="ITfFnConfigure"]/*'/>
 [Guid("88F567C6-1757-49F8-A1B2-89234C1EEFF9")]
 [NativeTypeName("struct ITfFnConfigure : ITfFunction")]

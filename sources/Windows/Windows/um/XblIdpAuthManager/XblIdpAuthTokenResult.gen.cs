@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='XblIdpAuthTokenResult.xml' path='doc/member[@name="XblIdpAuthTokenResult"]/*'/>
 [Guid("9F493441-744A-410C-AE2B-9A22F7C7731F")]
 public unsafe partial struct XblIdpAuthTokenResult : INativeGuid

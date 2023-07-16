@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumTfRanges.xml' path='doc/member[@name="IEnumTfRanges"]/*'/>
 [Guid("F99D3F40-8E32-11D2-BF46-00105A2799B5")]
 [NativeTypeName("struct IEnumTfRanges : IUnknown")]

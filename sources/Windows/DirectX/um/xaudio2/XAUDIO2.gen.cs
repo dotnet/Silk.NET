@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.DirectX.XAUDIO2_FILTER_TYPE;
+using static Silk.NET.DirectX.XAUDIO2_FILTER_TYPE;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class XAUDIO2
 {
     [NativeTypeName("#define XAUDIO2_DLL_A \"xaudio2_9.dll\"")]

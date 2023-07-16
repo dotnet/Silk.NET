@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IConnector.xml' path='doc/member[@name="IConnector"]/*'/>
 [Guid("9C2C4058-23F5-41DE-877A-DF3AF236A09E")]
 [NativeTypeName("struct IConnector : IUnknown")]

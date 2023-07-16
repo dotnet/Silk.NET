@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.DirectX.D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION;
+using static Silk.NET.DirectX.D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.19041.0")]

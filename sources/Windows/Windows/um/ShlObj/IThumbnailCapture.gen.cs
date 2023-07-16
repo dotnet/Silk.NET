@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IThumbnailCapture.xml' path='doc/member[@name="IThumbnailCapture"]/*'/>
 [Guid("4EA39266-7211-409F-B622-F63DBD16C533")]
 [NativeTypeName("struct IThumbnailCapture : IUnknown")]

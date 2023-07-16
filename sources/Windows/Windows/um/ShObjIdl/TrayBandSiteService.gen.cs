@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TrayBandSiteService.xml' path='doc/member[@name="TrayBandSiteService"]/*'/>
 [Guid("F60AD0A0-E5E1-45CB-B51A-E15B9F8B2934")]
 public unsafe partial struct TrayBandSiteService : INativeGuid

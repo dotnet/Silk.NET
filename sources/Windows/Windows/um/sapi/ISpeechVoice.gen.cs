@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechVoice.xml' path='doc/member[@name="ISpeechVoice"]/*'/>
 [Guid("269316D8-57BD-11D2-9EEE-00C04F797396")]
 [NativeTypeName("struct ISpeechVoice : IDispatch")]

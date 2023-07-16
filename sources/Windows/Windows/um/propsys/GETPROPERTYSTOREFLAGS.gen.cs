@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='GETPROPERTYSTOREFLAGS.xml' path='doc/member[@name="GETPROPERTYSTOREFLAGS"]/*'/>
 [Flags]
 public enum GETPROPERTYSTOREFLAGS

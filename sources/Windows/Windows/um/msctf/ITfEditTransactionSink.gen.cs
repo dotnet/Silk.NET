@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfEditTransactionSink.xml' path='doc/member[@name="ITfEditTransactionSink"]/*'/>
 [Guid("708FBF70-B520-416B-B06C-2C41AB44F8BA")]
 [NativeTypeName("struct ITfEditTransactionSink : IUnknown")]

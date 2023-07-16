@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IsolatedAppLauncher.xml' path='doc/member[@name="IsolatedAppLauncher"]/*'/>
 [Guid("BC812430-E75E-4FD1-9641-1F9F1E2D9A1F")]
 public unsafe partial struct IsolatedAppLauncher : INativeGuid

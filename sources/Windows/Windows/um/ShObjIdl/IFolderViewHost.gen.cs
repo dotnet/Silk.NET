@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFolderViewHost.xml' path='doc/member[@name="IFolderViewHost"]/*'/>
 [Guid("1EA58F02-D55A-411D-B09E-9E65AC21605B")]
 [NativeTypeName("struct IFolderViewHost : IUnknown")]

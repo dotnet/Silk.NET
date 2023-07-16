@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DefFolderMenu.xml' path='doc/member[@name="DefFolderMenu"]/*'/>
 [Guid("C63382BE-7933-48D0-9AC8-85FB46BE2FDD")]
 public unsafe partial struct DefFolderMenu : INativeGuid

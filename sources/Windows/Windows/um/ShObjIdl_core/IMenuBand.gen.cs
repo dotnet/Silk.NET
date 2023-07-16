@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMenuBand.xml' path='doc/member[@name="IMenuBand"]/*'/>
 [Guid("568804CD-CBD7-11D0-9816-00C04FD91972")]
 [NativeTypeName("struct IMenuBand : IUnknown")]

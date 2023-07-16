@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDedupBackupSupport.xml' path='doc/member[@name="IDedupBackupSupport"]/*'/>
 [Guid("C719D963-2B2D-415E-ACF7-7EB7CA596FF4")]
 [NativeTypeName("struct IDedupBackupSupport : IUnknown")]

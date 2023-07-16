@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMofCompiler.xml' path='doc/member[@name="IMofCompiler"]/*'/>
 [Guid("6DAF974E-2E37-11D2-AEC9-00C04FB68820")]
 [NativeTypeName("struct IMofCompiler : IUnknown")]

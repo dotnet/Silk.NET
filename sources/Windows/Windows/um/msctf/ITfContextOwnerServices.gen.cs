@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices"]/*'/>
 [Guid("B23EB630-3E1C-11D3-A745-0050040AB407")]
 [NativeTypeName("struct ITfContextOwnerServices : IUnknown")]

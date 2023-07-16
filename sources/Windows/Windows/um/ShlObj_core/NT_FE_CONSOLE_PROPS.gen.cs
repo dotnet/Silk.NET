@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NT_FE_CONSOLE_PROPS.xml' path='doc/member[@name="NT_FE_CONSOLE_PROPS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct NT_FE_CONSOLE_PROPS

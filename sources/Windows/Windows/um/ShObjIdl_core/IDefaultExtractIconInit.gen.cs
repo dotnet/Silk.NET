@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit"]/*'/>
 [Guid("41DED17D-D6B3-4261-997D-88C60E4B1D58")]
 [NativeTypeName("struct IDefaultExtractIconInit : IUnknown")]

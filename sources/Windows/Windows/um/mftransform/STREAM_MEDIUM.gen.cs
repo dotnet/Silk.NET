@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STREAM_MEDIUM.xml' path='doc/member[@name="STREAM_MEDIUM"]/*'/>
 public partial struct STREAM_MEDIUM
 {

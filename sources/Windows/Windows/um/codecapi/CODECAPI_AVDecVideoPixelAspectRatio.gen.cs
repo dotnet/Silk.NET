@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoPixelAspectRatio.xml' path='doc/member[@name="CODECAPI_AVDecVideoPixelAspectRatio"]/*'/>
 [Guid("B0CF8245-F32D-41DF-B02C-87BD304D12AB")]
 public unsafe partial struct CODECAPI_AVDecVideoPixelAspectRatio : INativeGuid

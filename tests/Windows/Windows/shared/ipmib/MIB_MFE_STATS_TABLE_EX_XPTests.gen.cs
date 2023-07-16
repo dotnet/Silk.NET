@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MIB_MFE_STATS_TABLE_EX_XP"/> struct.</summary>
 public static unsafe partial class MIB_MFE_STATS_TABLE_EX_XPTests
 {

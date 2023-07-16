@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRpcChannelBuffer3.xml' path='doc/member[@name="IRpcChannelBuffer3"]/*'/>
 [Guid("25B15600-0115-11D0-BF0D-00AA00B8DFD2")]
 [NativeTypeName("struct IRpcChannelBuffer3 : IRpcChannelBuffer2")]

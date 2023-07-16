@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxBundleFactory2.xml' path='doc/member[@name="IAppxBundleFactory2"]/*'/>
 [Guid("7325B83D-0185-42C4-82AC-BE34AB1A2A8A")]
 [NativeTypeName("struct IAppxBundleFactory2 : IUnknown")]

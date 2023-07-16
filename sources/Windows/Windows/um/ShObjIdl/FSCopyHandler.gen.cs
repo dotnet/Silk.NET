@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FSCopyHandler.xml' path='doc/member[@name="FSCopyHandler"]/*'/>
 [Guid("D197380A-0A79-4DC8-A033-ED882C2FA14B")]
 public unsafe partial struct FSCopyHandler : INativeGuid

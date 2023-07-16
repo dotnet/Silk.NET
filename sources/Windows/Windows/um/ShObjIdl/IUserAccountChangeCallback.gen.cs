@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUserAccountChangeCallback.xml' path='doc/member[@name="IUserAccountChangeCallback"]/*'/>
 [Guid("A561E69A-B4B8-4113-91A5-64C6BCCA3430")]
 [NativeTypeName("struct IUserAccountChangeCallback : IUnknown")]

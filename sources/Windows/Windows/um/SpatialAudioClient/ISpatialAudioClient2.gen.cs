@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpatialAudioClient2.xml' path='doc/member[@name="ISpatialAudioClient2"]/*'/>
 [Guid("CAABE452-A66A-4BEE-A93E-E320463F6A53")]
 [NativeTypeName("struct ISpatialAudioClient2 : ISpatialAudioClient")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRImagePresenter.xml' path='doc/member[@name="IVMRImagePresenter"]/*'/>
 [Guid("CE704FE7-E71E-41FB-BAA2-C4403E1182F5")]
 [NativeTypeName("struct IVMRImagePresenter : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpSerializeState.xml' path='doc/member[@name="ISpSerializeState"]/*'/>
 [Guid("21B501A0-0EC7-46C9-92C3-A2BC784C54B9")]
 [NativeTypeName("struct ISpSerializeState : IUnknown")]

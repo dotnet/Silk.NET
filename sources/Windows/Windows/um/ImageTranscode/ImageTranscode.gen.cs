@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ImageTranscode.xml' path='doc/member[@name="ImageTranscode"]/*'/>
 [Guid("17B75166-928F-417D-9685-64AA135565C1")]
 public unsafe partial struct ImageTranscode : INativeGuid

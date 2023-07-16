@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DedupBackupSupport.xml' path='doc/member[@name="DedupBackupSupport"]/*'/>
 [Guid("73D6B2AD-2984-4715-B2E3-924C149744DD")]
 public unsafe partial struct DedupBackupSupport : INativeGuid

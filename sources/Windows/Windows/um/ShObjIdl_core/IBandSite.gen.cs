@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite"]/*'/>
 [Guid("4CF504B0-DE96-11D0-8B3F-00A0C911E8E5")]
 [NativeTypeName("struct IBandSite : IUnknown")]

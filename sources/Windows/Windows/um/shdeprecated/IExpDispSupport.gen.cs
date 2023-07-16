@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport"]/*'/>
 [Guid("0D7D1D00-6FC0-11D0-A974-00C04FD705A2")]
 [NativeTypeName("struct IExpDispSupport : IUnknown")]

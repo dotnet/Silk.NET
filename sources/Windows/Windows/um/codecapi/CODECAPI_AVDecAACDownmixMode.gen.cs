@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecAACDownmixMode.xml' path='doc/member[@name="CODECAPI_AVDecAACDownmixMode"]/*'/>
 [Guid("01274475-F6BB-4017-B084-81A763C942D4")]
 public unsafe partial struct CODECAPI_AVDecAACDownmixMode : INativeGuid

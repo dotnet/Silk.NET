@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MsftMultisessionRandomWrite.xml' path='doc/member[@name="MsftMultisessionRandomWrite"]/*'/>
 [Guid("B507CA24-2204-11DD-966A-001AA01BBC58")]
 public unsafe partial struct MsftMultisessionRandomWrite : INativeGuid

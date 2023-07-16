@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncAudioIntervalToEncode.xml' path='doc/member[@name="CODECAPI_AVEncAudioIntervalToEncode"]/*'/>
 [Guid("866E4B4D-725A-467C-BB01-B496B23B25F9")]
 public unsafe partial struct CODECAPI_AVEncAudioIntervalToEncode : INativeGuid

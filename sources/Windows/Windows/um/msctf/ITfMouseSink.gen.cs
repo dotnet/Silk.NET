@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfMouseSink.xml' path='doc/member[@name="ITfMouseSink"]/*'/>
 [Guid("A1ADAAA2-3A24-449D-AC96-5183E7F5C217")]
 [NativeTypeName("struct ITfMouseSink : IUnknown")]

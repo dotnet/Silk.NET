@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO.xml' path='doc/member[@name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO

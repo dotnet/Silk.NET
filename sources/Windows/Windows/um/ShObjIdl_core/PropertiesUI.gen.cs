@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PropertiesUI.xml' path='doc/member[@name="PropertiesUI"]/*'/>
 [Guid("D912F8CF-0396-4915-884E-FB425D32943B")]
 public unsafe partial struct PropertiesUI : INativeGuid

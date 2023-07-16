@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDWriteTextAnalyzer1.xml' path='doc/member[@name="IDWriteTextAnalyzer1"]/*'/>
 [Guid("80DAD800-E21F-4E83-96CE-BFCCE500DB7C")]
 [NativeTypeName("struct IDWriteTextAnalyzer1 : IDWriteTextAnalyzer")]

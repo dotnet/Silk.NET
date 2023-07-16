@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate"]/*'/>
 [Guid("AB9D8661-F7E8-4EF4-9861-89F334F94E74")]
 [NativeTypeName("struct IMFTimecodeTranslate : IUnknown")]

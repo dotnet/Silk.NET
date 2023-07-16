@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='GET_MEDIA_TYPES.xml' path='doc/member[@name="GET_MEDIA_TYPES"]/*'/>
 public partial struct GET_MEDIA_TYPES
 {

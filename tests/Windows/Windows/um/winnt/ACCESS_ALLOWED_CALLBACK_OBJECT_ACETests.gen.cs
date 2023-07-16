@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "ACCESS_ALLOWED_CALLBACK_OBJECT_ACE"/> struct.</summary>
 public static unsafe partial class ACCESS_ALLOWED_CALLBACK_OBJECT_ACETests
 {

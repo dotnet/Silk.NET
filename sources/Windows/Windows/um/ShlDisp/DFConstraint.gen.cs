@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DFConstraint.xml' path='doc/member[@name="DFConstraint"]/*'/>
 [Guid("4A3DF050-23BD-11D2-939F-00A0C91EEDBA")]
 [NativeTypeName("struct DFConstraint : IDispatch")]

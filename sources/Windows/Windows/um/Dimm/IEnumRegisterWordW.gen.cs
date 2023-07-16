@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW"]/*'/>
 [Guid("4955DD31-B159-11D0-8FCF-00AA006BCC59")]
 [NativeTypeName("struct IEnumRegisterWordW : IUnknown")]

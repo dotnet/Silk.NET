@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IErrorLog.xml' path='doc/member[@name="IErrorLog"]/*'/>
 [Guid("3127CA40-446E-11CE-8135-00AA004BB851")]
 [NativeTypeName("struct IErrorLog : IUnknown")]

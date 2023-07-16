@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION"]/*'/>
 public partial struct DEVICE_LOCATION
 {

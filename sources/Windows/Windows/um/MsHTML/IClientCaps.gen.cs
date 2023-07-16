@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps"]/*'/>
 [Guid("7E8BC44D-AEFF-11D1-89C2-00C04FB6BFC4")]
 [NativeTypeName("struct IClientCaps : IDispatch")]

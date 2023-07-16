@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpVoice.xml' path='doc/member[@name="SpVoice"]/*'/>
 [Guid("96749377-3391-11D2-9EE3-00C04F797396")]
 public unsafe partial struct SpVoice : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoImageSize.xml' path='doc/member[@name="CODECAPI_AVDecVideoImageSize"]/*'/>
 [Guid("5EE5747C-6801-4CAB-AAF1-6248FA841BA4")]
 public unsafe partial struct CODECAPI_AVDecVideoImageSize : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT"]/*'/>
 public partial struct TXFS_GET_METADATA_INFO_OUT
 {

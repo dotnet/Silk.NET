@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving"]/*'/>
 [Guid("BEE3D220-157B-11D0-BD23-00A0C911CE86")]
 [NativeTypeName("struct IConfigInterleaving : IUnknown")]

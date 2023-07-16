@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInkD2DRenderer.xml' path='doc/member[@name="IInkD2DRenderer"]/*'/>
 [Guid("407FB1DE-F85A-4150-97CF-B7FB274FB4F8")]
 [NativeTypeName("struct IInkD2DRenderer : IUnknown")]

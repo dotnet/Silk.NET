@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport"]/*'/>
 [Guid("BA2743A1-07E0-48EF-84B6-9A2ED023CA6C")]
 [NativeTypeName("struct IMFMediaEngineWebSupport : IUnknown")]

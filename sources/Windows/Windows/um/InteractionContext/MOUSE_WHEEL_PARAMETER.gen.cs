@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MOUSE_WHEEL_PARAMETER.xml' path='doc/member[@name="MOUSE_WHEEL_PARAMETER"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MOUSE_WHEEL_PARAMETER

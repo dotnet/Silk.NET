@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWriteEngine2EventArgs.xml' path='doc/member[@name="IWriteEngine2EventArgs"]/*'/>
 [Guid("27354136-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IWriteEngine2EventArgs : IDispatch")]

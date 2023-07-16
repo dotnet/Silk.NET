@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct PSS_HANDLE_ENTRY

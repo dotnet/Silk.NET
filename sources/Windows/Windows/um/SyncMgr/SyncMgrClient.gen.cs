@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SyncMgrClient.xml' path='doc/member[@name="SyncMgrClient"]/*'/>
 [Guid("1202DB60-1DAC-42C5-AED5-1ABDD432248E")]
 public unsafe partial struct SyncMgrClient : INativeGuid

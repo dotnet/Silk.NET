@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAutoComplete2.xml' path='doc/member[@name="IAutoComplete2"]/*'/>
 [Guid("EAC04BC0-3791-11D2-BB95-0060977B464C")]
 [NativeTypeName("struct IAutoComplete2 : IAutoComplete")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDockingWindow.xml' path='doc/member[@name="IDockingWindow"]/*'/>
 [Guid("012DD920-7B26-11D0-8CA9-00A0C92DBFE8")]
 [NativeTypeName("struct IDockingWindow : IOleWindow")]

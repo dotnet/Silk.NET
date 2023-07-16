@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder"]/*'/>
 [Guid("96E5AE6D-6AE1-4B1C-900C-C6480EAA8828")]
 [NativeTypeName("struct IResultsFolder : IUnknown")]

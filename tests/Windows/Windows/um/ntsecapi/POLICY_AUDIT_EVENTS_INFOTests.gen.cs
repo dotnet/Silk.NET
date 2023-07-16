@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "POLICY_AUDIT_EVENTS_INFO"/> struct.</summary>
 public static unsafe partial class POLICY_AUDIT_EVENTS_INFOTests
 {

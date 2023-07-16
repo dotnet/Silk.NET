@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings"]/*'/>
 [Guid("2A3DEE9A-E31D-46D6-8508-BCC597DB3557")]
 [NativeTypeName("struct IApplicationDesignModeSettings : IUnknown")]

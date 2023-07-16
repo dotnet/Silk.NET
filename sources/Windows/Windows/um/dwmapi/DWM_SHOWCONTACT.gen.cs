@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DWM_SHOWCONTACT.xml' path='doc/member[@name="DWM_SHOWCONTACT"]/*'/>
 [Flags]
 public enum DWM_SHOWCONTACT

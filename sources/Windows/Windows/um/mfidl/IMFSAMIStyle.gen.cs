@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle"]/*'/>
 [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
 [NativeTypeName("struct IMFSAMIStyle : IUnknown")]

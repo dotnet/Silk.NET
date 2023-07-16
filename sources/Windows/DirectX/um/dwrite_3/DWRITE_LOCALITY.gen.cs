@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_LOCALITY.xml' path='doc/member[@name="DWRITE_LOCALITY"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum DWRITE_LOCALITY

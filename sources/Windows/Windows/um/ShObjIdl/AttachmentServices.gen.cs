@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AttachmentServices.xml' path='doc/member[@name="AttachmentServices"]/*'/>
 [Guid("4125DD96-E03A-4103-8F70-E0597D803B9C")]
 public unsafe partial struct AttachmentServices : INativeGuid

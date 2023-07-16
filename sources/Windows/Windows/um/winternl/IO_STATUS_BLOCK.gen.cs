@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IO_STATUS_BLOCK.xml' path='doc/member[@name="IO_STATUS_BLOCK"]/*'/>
 public unsafe partial struct IO_STATUS_BLOCK
 {

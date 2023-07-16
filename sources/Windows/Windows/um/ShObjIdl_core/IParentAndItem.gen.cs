@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IParentAndItem.xml' path='doc/member[@name="IParentAndItem"]/*'/>
 [Guid("B3A4B685-B685-4805-99D9-5DEAD2873236")]
 [NativeTypeName("struct IParentAndItem : IUnknown")]

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE"/> struct.</summary>
 public static unsafe partial class MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTETests
 {

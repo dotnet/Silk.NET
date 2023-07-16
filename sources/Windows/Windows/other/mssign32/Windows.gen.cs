@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SignerSignEx2"]/*'/>

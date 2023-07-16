@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.xml' path='doc/member[@name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION

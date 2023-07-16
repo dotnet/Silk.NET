@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDvdControl2.xml' path='doc/member[@name="IDvdControl2"]/*'/>
 [Guid("33BC7430-EEC0-11D2-8201-00A0C9D74842")]
 [NativeTypeName("struct IDvdControl2 : IUnknown")]

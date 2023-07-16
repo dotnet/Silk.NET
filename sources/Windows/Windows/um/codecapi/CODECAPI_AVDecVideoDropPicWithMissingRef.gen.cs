@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoDropPicWithMissingRef.xml' path='doc/member[@name="CODECAPI_AVDecVideoDropPicWithMissingRef"]/*'/>
 [Guid("F8226383-14C2-4567-9734-5004E96FF887")]
 public unsafe partial struct CODECAPI_AVDecVideoDropPicWithMissingRef : INativeGuid

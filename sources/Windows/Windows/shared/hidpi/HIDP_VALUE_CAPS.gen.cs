@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS"]/*'/>
 public unsafe partial struct HIDP_VALUE_CAPS
 {

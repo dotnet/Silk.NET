@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpMMAudioOut.xml' path='doc/member[@name="SpMMAudioOut"]/*'/>
 [Guid("A8C680EB-3D32-11D2-9EE7-00C04F797396")]
 public unsafe partial struct SpMMAudioOut : INativeGuid

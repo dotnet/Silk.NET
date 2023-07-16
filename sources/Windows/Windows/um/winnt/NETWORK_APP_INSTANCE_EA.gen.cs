@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NETWORK_APP_INSTANCE_EA.xml' path='doc/member[@name="NETWORK_APP_INSTANCE_EA"]/*'/>
 public partial struct NETWORK_APP_INSTANCE_EA
 {

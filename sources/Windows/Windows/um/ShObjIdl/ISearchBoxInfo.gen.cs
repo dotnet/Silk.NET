@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISearchBoxInfo.xml' path='doc/member[@name="ISearchBoxInfo"]/*'/>
 [Guid("6AF6E03F-D664-4EF4-9626-F7E0ED36755E")]
 [NativeTypeName("struct ISearchBoxInfo : IUnknown")]

@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS.xml' path='doc/member[@name="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS

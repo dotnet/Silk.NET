@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_COPY_OFFLOAD_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_COPY_OFFLOAD_DESCRIPTOR"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_COPY_OFFLOAD_DESCRIPTOR

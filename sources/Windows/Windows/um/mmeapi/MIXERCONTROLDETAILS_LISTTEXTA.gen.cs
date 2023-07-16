@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIXERCONTROLDETAILS_LISTTEXTA.xml' path='doc/member[@name="MIXERCONTROLDETAILS_LISTTEXTA"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct MIXERCONTROLDETAILS_LISTTEXTA

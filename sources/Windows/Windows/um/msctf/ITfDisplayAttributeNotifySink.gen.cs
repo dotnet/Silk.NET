@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfDisplayAttributeNotifySink.xml' path='doc/member[@name="ITfDisplayAttributeNotifySink"]/*'/>
 [Guid("AD56F402-E162-4F25-908F-7D577CF9BDA9")]
 [NativeTypeName("struct ITfDisplayAttributeNotifySink : IUnknown")]

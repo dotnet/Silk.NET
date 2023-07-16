@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='GpPathData.xml' path='doc/member[@name="GpPathData"]/*'/>
 public unsafe partial struct GpPathData
 {
@@ -21,6 +21,5 @@ public unsafe partial struct GpPathData
         Types = null;
     }
 
-    [DllImport("", EntryPoint = "??0PathData@Gdiplus@@AEAA@AEBV01@@Z", ExactSpelling = true)]
-    private static extern GpPathData(GpPathData* pThis, [NativeTypeName("const PathData &")] GpPathData* param0);
+    [DllImport("""", EntryPoint = "??0PathData@Gdiplus@@AEAA@AEBV01@@Z", ExactSpelling = true)]private static extern GpPathData(GpPathData* pThis, [NativeTypeName("const PathData &")] GpPathData* param0);
 }

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='XAPO_BUFFER_FLAGS.xml' path='doc/member[@name="XAPO_BUFFER_FLAGS"]/*'/>
 [Flags]
 public enum XAPO_BUFFER_FLAGS

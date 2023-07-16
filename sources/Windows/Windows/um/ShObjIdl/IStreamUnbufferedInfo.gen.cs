@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IStreamUnbufferedInfo.xml' path='doc/member[@name="IStreamUnbufferedInfo"]/*'/>
 [Guid("8A68FDDA-1FDC-4C20-8CEB-416643B5A625")]
 [NativeTypeName("struct IStreamUnbufferedInfo : IUnknown")]

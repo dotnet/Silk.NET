@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncH264PPSID.xml' path='doc/member[@name="CODECAPI_AVEncH264PPSID"]/*'/>
 [Guid("BFE29EC2-056C-4D68-A38D-AE5944C8582E")]
 public unsafe partial struct CODECAPI_AVEncH264PPSID : INativeGuid

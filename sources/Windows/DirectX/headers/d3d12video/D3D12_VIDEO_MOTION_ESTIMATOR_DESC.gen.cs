@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_MOTION_ESTIMATOR_DESC.xml' path='doc/member[@name="D3D12_VIDEO_MOTION_ESTIMATOR_DESC"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct D3D12_VIDEO_MOTION_ESTIMATOR_DESC

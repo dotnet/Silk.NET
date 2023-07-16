@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestReader5.xml' path='doc/member[@name="IAppxManifestReader5"]/*'/>
 [Guid("8D7AE132-A690-4C00-B75A-6AAE1FEAAC80")]
 [NativeTypeName("struct IAppxManifestReader5 : IUnknown")]

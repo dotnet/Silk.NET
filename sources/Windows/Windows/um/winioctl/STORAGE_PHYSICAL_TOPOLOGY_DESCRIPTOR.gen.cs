@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR

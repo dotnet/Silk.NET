@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='QUERY_BAD_RANGES_INPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT"]/*'/>
 public partial struct QUERY_BAD_RANGES_INPUT
 {

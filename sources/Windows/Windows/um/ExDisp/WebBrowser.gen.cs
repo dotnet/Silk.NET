@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WebBrowser.xml' path='doc/member[@name="WebBrowser"]/*'/>
 [Guid("8856F961-340A-11D0-A96B-00C04FD705A2")]
 public unsafe partial struct WebBrowser : INativeGuid

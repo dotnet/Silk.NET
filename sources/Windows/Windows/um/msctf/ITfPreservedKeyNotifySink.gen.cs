@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfPreservedKeyNotifySink.xml' path='doc/member[@name="ITfPreservedKeyNotifySink"]/*'/>
 [Guid("6F77C993-D2B1-446E-853E-5912EFC8A286")]
 [NativeTypeName("struct ITfPreservedKeyNotifySink : IUnknown")]

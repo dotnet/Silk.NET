@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='HANDLE_CREATION_OPTIONS.xml' path='doc/member[@name="HANDLE_CREATION_OPTIONS"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum HANDLE_CREATION_OPTIONS

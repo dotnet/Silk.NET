@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SOCKADDR_INET.xml' path='doc/member[@name="SOCKADDR_INET"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct SOCKADDR_INET

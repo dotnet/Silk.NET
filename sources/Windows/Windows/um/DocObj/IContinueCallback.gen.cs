@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IContinueCallback.xml' path='doc/member[@name="IContinueCallback"]/*'/>
 [Guid("B722BCCA-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IContinueCallback : IUnknown")]

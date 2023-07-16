@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_SEGMENT_ELEMENT.xml' path='doc/member[@name="FILE_SEGMENT_ELEMENT"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct FILE_SEGMENT_ELEMENT

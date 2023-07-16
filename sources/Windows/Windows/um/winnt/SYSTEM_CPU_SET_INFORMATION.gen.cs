@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct SYSTEM_CPU_SET_INFORMATION

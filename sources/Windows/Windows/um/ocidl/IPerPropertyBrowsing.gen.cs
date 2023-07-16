@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing"]/*'/>
 [Guid("376BD3AA-3845-101B-84ED-08002B2EC713")]
 [NativeTypeName("struct IPerPropertyBrowsing : IUnknown")]

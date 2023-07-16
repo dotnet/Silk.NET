@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult"]/*'/>
 [Guid("20B053BE-E235-43CD-9A2A-8D17A48B7842")]
 [NativeTypeName("struct ISpRecoResult : ISpPhrase")]

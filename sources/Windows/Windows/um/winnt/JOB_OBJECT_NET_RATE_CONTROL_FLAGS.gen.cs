@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='JOB_OBJECT_NET_RATE_CONTROL_FLAGS.xml' path='doc/member[@name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

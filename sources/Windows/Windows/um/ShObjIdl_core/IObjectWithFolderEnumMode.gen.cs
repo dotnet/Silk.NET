@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode"]/*'/>
 [Guid("6A9D9026-0E6E-464C-B000-42ECC07DE673")]
 [NativeTypeName("struct IObjectWithFolderEnumMode : IUnknown")]

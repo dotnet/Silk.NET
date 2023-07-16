@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.VARENUM;
+using static Silk.NET.Windows.VARENUM;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysAllocString"]/*'/>

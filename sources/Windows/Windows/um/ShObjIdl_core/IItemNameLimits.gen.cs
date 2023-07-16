@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits"]/*'/>
 [Guid("1DF0D7F1-B267-4D28-8B10-12E23202A5C4")]
 [NativeTypeName("struct IItemNameLimits : IUnknown")]

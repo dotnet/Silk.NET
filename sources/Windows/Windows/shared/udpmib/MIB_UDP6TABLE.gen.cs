@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_UDP6TABLE.xml' path='doc/member[@name="MIB_UDP6TABLE"]/*'/>
 public partial struct MIB_UDP6TABLE
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfTextInputProcessorEx.xml' path='doc/member[@name="ITfTextInputProcessorEx"]/*'/>
 [Guid("6E4E2102-F9CD-433D-B496-303CE03A6507")]
 [NativeTypeName("struct ITfTextInputProcessorEx : ITfTextInputProcessor")]

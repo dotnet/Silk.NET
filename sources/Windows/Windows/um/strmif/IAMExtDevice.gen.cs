@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice"]/*'/>
 [Guid("B5730A90-1A2C-11CF-8C23-00AA006B6814")]
 [NativeTypeName("struct IAMExtDevice : IUnknown")]

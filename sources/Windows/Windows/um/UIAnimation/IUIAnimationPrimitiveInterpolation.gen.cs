@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation"]/*'/>
 [Guid("BAB20D63-4361-45DA-A24F-AB8508846B5B")]
 [NativeTypeName("struct IUIAnimationPrimitiveInterpolation : IUnknown")]

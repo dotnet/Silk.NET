@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyChange.xml' path='doc/member[@name="IPropertyChange"]/*'/>
 [Guid("F917BC8A-1BBA-4478-A245-1BDE03EB9431")]
 [NativeTypeName("struct IPropertyChange : IObjectWithPropertyKey")]

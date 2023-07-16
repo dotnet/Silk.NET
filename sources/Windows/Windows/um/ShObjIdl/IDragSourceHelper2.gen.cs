@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDragSourceHelper2.xml' path='doc/member[@name="IDragSourceHelper2"]/*'/>
 [Guid("83E07D0D-0C5F-4163-BF1A-60B274051E40")]
 [NativeTypeName("struct IDragSourceHelper2 : IDragSourceHelper")]

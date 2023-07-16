@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SE_ADT_PARAMETER_ARRAY_ENTRY.xml' path='doc/member[@name="SE_ADT_PARAMETER_ARRAY_ENTRY"]/*'/>
 public unsafe partial struct SE_ADT_PARAMETER_ARRAY_ENTRY
 {

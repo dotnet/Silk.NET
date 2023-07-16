@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioMute.xml' path='doc/member[@name="IAudioMute"]/*'/>
 [Guid("DF45AEEA-B74A-4B6B-AFAD-2366B6AA012E")]
 [NativeTypeName("struct IAudioMute : IUnknown")]

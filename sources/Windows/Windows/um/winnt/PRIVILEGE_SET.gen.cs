@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRIVILEGE_SET.xml' path='doc/member[@name="PRIVILEGE_SET"]/*'/>
 public partial struct PRIVILEGE_SET
 {

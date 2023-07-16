@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='JOBOBJECT_NET_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NET_RATE_CONTROL_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct JOBOBJECT_NET_RATE_CONTROL_INFORMATION

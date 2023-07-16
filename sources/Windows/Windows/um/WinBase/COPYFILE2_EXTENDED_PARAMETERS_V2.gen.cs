@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='COPYFILE2_EXTENDED_PARAMETERS_V2.xml' path='doc/member[@name="COPYFILE2_EXTENDED_PARAMETERS_V2"]/*'/>
 public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS_V2
 {

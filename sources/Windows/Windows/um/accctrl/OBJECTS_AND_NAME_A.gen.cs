@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/accctrl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OBJECTS_AND_NAME_A.xml' path='doc/member[@name="OBJECTS_AND_NAME_A"]/*'/>
 public unsafe partial struct OBJECTS_AND_NAME_A
 {

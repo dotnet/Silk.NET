@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE"]/*'/>
 public partial struct UNWIND_HISTORY_TABLE
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString"]/*'/>
 [Guid("8E74C210-CF9D-4EAF-A403-7356428F0A5A")]
 [NativeTypeName("struct IEnumACString : IEnumString")]

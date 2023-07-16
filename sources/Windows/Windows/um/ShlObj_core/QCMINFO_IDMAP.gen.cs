@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='QCMINFO_IDMAP.xml' path='doc/member[@name="QCMINFO_IDMAP"]/*'/>
 public partial struct QCMINFO_IDMAP
 {

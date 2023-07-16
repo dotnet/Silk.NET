@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFilterMapper2.xml' path='doc/member[@name="IFilterMapper2"]/*'/>
 [Guid("B79BB0B0-33C1-11D1-ABE1-00A0C905F375")]
 [NativeTypeName("struct IFilterMapper2 : IUnknown")]

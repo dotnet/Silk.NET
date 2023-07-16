@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider"]/*'/>
 [Guid("8CFFCD2E-5A03-4A3A-AFF7-EDCD107C620E")]
 [NativeTypeName("struct IMFTranscodeSinkInfoProvider : IUnknown")]

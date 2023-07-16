@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpGrammarBuilder2.xml' path='doc/member[@name="ISpGrammarBuilder2"]/*'/>
 [Guid("8AB10026-20CC-4B20-8C22-A49C9BA78F60")]
 [NativeTypeName("struct ISpGrammarBuilder2 : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfCleanupContextSink.xml' path='doc/member[@name="ITfCleanupContextSink"]/*'/>
 [Guid("01689689-7ACB-4E9B-AB7C-7EA46B12B522")]
 [NativeTypeName("struct ITfCleanupContextSink : IUnknown")]

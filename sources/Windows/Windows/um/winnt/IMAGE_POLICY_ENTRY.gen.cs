@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_POLICY_ENTRY.xml' path='doc/member[@name="IMAGE_POLICY_ENTRY"]/*'/>
 public partial struct IMAGE_POLICY_ENTRY
 {

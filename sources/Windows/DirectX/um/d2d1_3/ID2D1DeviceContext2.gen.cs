@@ -1,24 +1,24 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/d2d1_3.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.DirectX.D2D1_ALPHA_MODE;
-using static TerraFX.Interop.DirectX.D2D1_BITMAP_INTERPOLATION_MODE;
-using static TerraFX.Interop.DirectX.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS;
-using static TerraFX.Interop.DirectX.D2D1_COMPOSITE_MODE;
-using static TerraFX.Interop.DirectX.D2D1_DRAW_TEXT_OPTIONS;
-using static TerraFX.Interop.DirectX.D2D1_EXTEND_MODE;
-using static TerraFX.Interop.DirectX.D2D1_GAMMA;
-using static TerraFX.Interop.DirectX.D2D1_IMAGE_SOURCE_LOADING_OPTIONS;
-using static TerraFX.Interop.DirectX.D2D1_INTERPOLATION_MODE;
-using static TerraFX.Interop.DirectX.DWRITE_MEASURING_MODE;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.DirectX.D2D1_ALPHA_MODE;
+using static Silk.NET.DirectX.D2D1_BITMAP_INTERPOLATION_MODE;
+using static Silk.NET.DirectX.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS;
+using static Silk.NET.DirectX.D2D1_COMPOSITE_MODE;
+using static Silk.NET.DirectX.D2D1_DRAW_TEXT_OPTIONS;
+using static Silk.NET.DirectX.D2D1_EXTEND_MODE;
+using static Silk.NET.DirectX.D2D1_GAMMA;
+using static Silk.NET.DirectX.D2D1_IMAGE_SOURCE_LOADING_OPTIONS;
+using static Silk.NET.DirectX.D2D1_INTERPOLATION_MODE;
+using static Silk.NET.DirectX.DWRITE_MEASURING_MODE;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID2D1DeviceContext2.xml' path='doc/member[@name="ID2D1DeviceContext2"]/*'/>
 [Guid("394EA6A3-0C34-4321-950B-6CA20F0BE6C7")]
 [NativeTypeName("struct ID2D1DeviceContext2 : ID2D1DeviceContext1")]

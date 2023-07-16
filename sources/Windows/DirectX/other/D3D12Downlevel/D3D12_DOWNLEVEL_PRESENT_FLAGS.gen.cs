@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. License details can be found here: https://www.nuget.org/packages/Microsoft.Direct3D.D3D12On7/1.1.0/License
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_DOWNLEVEL_PRESENT_FLAGS.xml' path='doc/member[@name="D3D12_DOWNLEVEL_PRESENT_FLAGS"]/*'/>
 [Flags]
 public enum D3D12_DOWNLEVEL_PRESENT_FLAGS

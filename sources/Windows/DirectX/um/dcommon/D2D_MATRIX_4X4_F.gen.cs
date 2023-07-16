@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D_MATRIX_4X4_F.xml' path='doc/member[@name="D2D_MATRIX_4X4_F"]/*'/>
 public unsafe partial struct D2D_MATRIX_4X4_F
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHTMLDocument2.xml' path='doc/member[@name="IHTMLDocument2"]/*'/>
 [Guid("332C4425-26CB-11D0-B483-00C04FD90119")]
 [NativeTypeName("struct IHTMLDocument2 : IHTMLDocument")]

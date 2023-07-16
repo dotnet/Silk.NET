@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFActivate.xml' path='doc/member[@name="IMFActivate"]/*'/>
 [Guid("7FEE9E9A-4A89-47A6-899C-B6A53A70FB67")]
 [NativeTypeName("struct IMFActivate : IMFAttributes")]

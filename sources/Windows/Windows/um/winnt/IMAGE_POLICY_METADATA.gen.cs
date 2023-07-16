@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA"]/*'/>
 public unsafe partial struct IMAGE_POLICY_METADATA
 {

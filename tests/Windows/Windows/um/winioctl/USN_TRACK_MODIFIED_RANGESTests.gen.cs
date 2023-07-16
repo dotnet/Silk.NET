@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "USN_TRACK_MODIFIED_RANGES"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class USN_TRACK_MODIFIED_RANGESTests

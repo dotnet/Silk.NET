@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct IMAGE_RELOCATION

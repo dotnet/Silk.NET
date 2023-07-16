@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT.xml' path='doc/member[@name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT

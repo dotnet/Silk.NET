@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyPage2.xml' path='doc/member[@name="IPropertyPage2"]/*'/>
 [Guid("01E44665-24AC-101B-84ED-08002B2EC713")]
 [NativeTypeName("struct IPropertyPage2 : IPropertyPage")]

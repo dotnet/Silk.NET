@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechRecoResult2.xml' path='doc/member[@name="ISpeechRecoResult2"]/*'/>
 [Guid("8E0A246D-D3C8-45DE-8657-04290C458C3C")]
 [NativeTypeName("struct ISpeechRecoResult2 : ISpeechRecoResult")]

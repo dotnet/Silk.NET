@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFGetService.xml' path='doc/member[@name="IMFGetService"]/*'/>
 [Guid("FA993888-4383-415A-A930-DD472A8CF6F7")]
 [NativeTypeName("struct IMFGetService : IUnknown")]

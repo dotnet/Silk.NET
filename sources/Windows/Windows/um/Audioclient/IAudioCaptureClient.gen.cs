@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioCaptureClient.xml' path='doc/member[@name="IAudioCaptureClient"]/*'/>
 [Guid("C8ADBD64-E71E-48A0-A4DE-185C395CD317")]
 [NativeTypeName("struct IAudioCaptureClient : IUnknown")]

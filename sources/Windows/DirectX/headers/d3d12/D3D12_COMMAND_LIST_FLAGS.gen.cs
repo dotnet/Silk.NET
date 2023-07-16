@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_COMMAND_LIST_FLAGS.xml' path='doc/member[@name="D3D12_COMMAND_LIST_FLAGS"]/*'/>
 [Flags]
 public enum D3D12_COMMAND_LIST_FLAGS

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISK_CACHE_INFORMATION.xml' path='doc/member[@name="DISK_CACHE_INFORMATION"]/*'/>
 public partial struct DISK_CACHE_INFORMATION
 {

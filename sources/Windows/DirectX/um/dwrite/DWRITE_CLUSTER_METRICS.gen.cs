@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS"]/*'/>
 public partial struct DWRITE_CLUSTER_METRICS
 {

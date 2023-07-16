@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class GUID
 {
     [NativeTypeName("#define GUID_CLASS_COMPORT GUID_DEVINTERFACE_COMPORT")]

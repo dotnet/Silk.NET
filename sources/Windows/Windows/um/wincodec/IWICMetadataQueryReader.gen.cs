@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICMetadataQueryReader.xml' path='doc/member[@name="IWICMetadataQueryReader"]/*'/>
 [Guid("30989668-E1C9-4597-B395-458EEDB808DF")]
 [NativeTypeName("struct IWICMetadataQueryReader : IUnknown")]

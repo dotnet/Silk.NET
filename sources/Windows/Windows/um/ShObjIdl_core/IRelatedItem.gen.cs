@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRelatedItem.xml' path='doc/member[@name="IRelatedItem"]/*'/>
 [Guid("A73CE67A-8AB1-44F1-8D43-D2FCBF6B1CD0")]
 [NativeTypeName("struct IRelatedItem : IUnknown")]

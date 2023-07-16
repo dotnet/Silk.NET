@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NMCSAEI_FLAGS.xml' path='doc/member[@name="NMCSAEI_FLAGS"]/*'/>
 [Flags]
 public enum NMCSAEI_FLAGS

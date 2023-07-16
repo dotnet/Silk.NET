@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProvideMultipleClassInfo.xml' path='doc/member[@name="IProvideMultipleClassInfo"]/*'/>
 [Guid("A7ABA9C1-8983-11CF-8F20-00805F2CD064")]
 [NativeTypeName("struct IProvideMultipleClassInfo : IProvideClassInfo2")]

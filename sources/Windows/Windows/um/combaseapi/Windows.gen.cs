@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.CLSCTX;
+using static Silk.NET.Windows.CLSCTX;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoGetMalloc"]/*'/>

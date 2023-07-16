@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WAVEFORMATEXTENSIBLE.xml' path='doc/member[@name="WAVEFORMATEXTENSIBLE"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct WAVEFORMATEXTENSIBLE

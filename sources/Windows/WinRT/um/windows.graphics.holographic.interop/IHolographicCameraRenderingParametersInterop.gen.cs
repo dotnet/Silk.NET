@@ -1,15 +1,15 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/windows.graphics.holographic.interop.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.DirectX;
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.DirectX;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='IHolographicCameraRenderingParametersInterop.xml' path='doc/member[@name="IHolographicCameraRenderingParametersInterop"]/*'/>
 [Guid("F75B68D6-D1FD-4707-AAFD-FA6F4C0E3BF4")]
 [NativeTypeName("struct IHolographicCameraRenderingParametersInterop : IInspectable")]

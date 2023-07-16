@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RulesAppliedCollection.xml' path='doc/member[@name="RulesAppliedCollection"]/*'/>
 [Guid("671926EE-C3CF-40AF-BE8F-1CBAEE6486E8")]
 public unsafe partial struct RulesAppliedCollection : INativeGuid

@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDWriteNumberSubstitution.xml' path='doc/member[@name="IDWriteNumberSubstitution"]/*'/>
 [Guid("14885CC9-BAB0-4F90-B6ED-5C366A2CD03D")]
 [NativeTypeName("struct IDWriteNumberSubstitution : IUnknown")]

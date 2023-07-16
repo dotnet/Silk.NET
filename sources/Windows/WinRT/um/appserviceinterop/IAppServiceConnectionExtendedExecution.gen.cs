@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/appserviceinterop.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='IAppServiceConnectionExtendedExecution.xml' path='doc/member[@name="IAppServiceConnectionExtendedExecution"]/*'/>
 [Guid("65219584-F9CB-4AE3-81F9-A28A6CA450D9")]
 [NativeTypeName("struct IAppServiceConnectionExtendedExecution : IUnknown")]

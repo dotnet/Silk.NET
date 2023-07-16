@@ -5,9 +5,9 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "ISpatialAudioObjectForMetadataCommands"/> struct.</summary>
 [SupportedOSPlatform("windows10.0.15063.0")]
 public static unsafe partial class ISpatialAudioObjectForMetadataCommandsTests

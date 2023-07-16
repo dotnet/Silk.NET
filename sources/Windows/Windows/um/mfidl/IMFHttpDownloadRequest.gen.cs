@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest"]/*'/>
 [Guid("F779FDDF-26E7-4270-8A8B-B983D1859DE0")]
 [NativeTypeName("struct IMFHttpDownloadRequest : IUnknown")]

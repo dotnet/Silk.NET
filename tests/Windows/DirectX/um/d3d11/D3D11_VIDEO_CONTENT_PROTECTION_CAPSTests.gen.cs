@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D11_VIDEO_CONTENT_PROTECTION_CAPS"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_VIDEO_CONTENT_PROTECTION_CAPSTests

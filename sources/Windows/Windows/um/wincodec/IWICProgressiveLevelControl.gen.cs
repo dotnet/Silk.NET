@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl"]/*'/>
 [Guid("DAAC296F-7AA5-4DBF-8D15-225C5976F891")]
 [NativeTypeName("struct IWICProgressiveLevelControl : IUnknown")]

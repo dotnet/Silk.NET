@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecVideoDXVAMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoDXVAMode"]/*'/>
 [Guid("F758F09E-7337-4AE7-8387-73DC2D54E67D")]
 public unsafe partial struct CODECAPI_AVDecVideoDXVAMode : INativeGuid

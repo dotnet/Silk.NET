@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFProtectedEnvironmentAccess.xml' path='doc/member[@name="IMFProtectedEnvironmentAccess"]/*'/>
 [Guid("EF5DC845-F0D9-4EC9-B00C-CB5183D38434")]
 [NativeTypeName("struct IMFProtectedEnvironmentAccess : IUnknown")]

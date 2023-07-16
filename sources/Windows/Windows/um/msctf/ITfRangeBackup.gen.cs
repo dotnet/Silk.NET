@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfRangeBackup.xml' path='doc/member[@name="ITfRangeBackup"]/*'/>
 [Guid("463A506D-6992-49D2-9B88-93D55E70BB16")]
 [NativeTypeName("struct ITfRangeBackup : IUnknown")]

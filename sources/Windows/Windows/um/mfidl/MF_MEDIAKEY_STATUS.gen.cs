@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_MEDIAKEY_STATUS.xml' path='doc/member[@name="MF_MEDIAKEY_STATUS"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public enum MF_MEDIAKEY_STATUS

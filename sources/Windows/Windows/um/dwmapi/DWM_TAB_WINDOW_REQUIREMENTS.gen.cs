@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DWM_TAB_WINDOW_REQUIREMENTS.xml' path='doc/member[@name="DWM_TAB_WINDOW_REQUIREMENTS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.17134.0")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes"]/*'/>
 [Guid("89C31040-846B-11CE-97D3-00AA0055595A")]
 [NativeTypeName("struct IEnumMediaTypes : IUnknown")]

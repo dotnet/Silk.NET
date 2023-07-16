@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D12_VIEW_INSTANCING_DESC"/> struct.</summary>
 public static unsafe partial class D3D12_VIEW_INSTANCING_DESCTests
 {

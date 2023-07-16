@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFStreamDescriptor.xml' path='doc/member[@name="IMFStreamDescriptor"]/*'/>
 [Guid("56C03D9C-9DBB-45F5-AB4B-D80F47C05938")]
 [NativeTypeName("struct IMFStreamDescriptor : IMFAttributes")]

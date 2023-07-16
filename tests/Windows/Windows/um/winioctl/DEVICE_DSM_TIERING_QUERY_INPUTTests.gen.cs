@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DEVICE_DSM_TIERING_QUERY_INPUT"/> struct.</summary>
 public static unsafe partial class DEVICE_DSM_TIERING_QUERY_INPUTTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAccessibleObject.xml' path='doc/member[@name="IAccessibleObject"]/*'/>
 [Guid("95A391C5-9ED4-4C28-8401-AB9E06719E11")]
 [NativeTypeName("struct IAccessibleObject : IUnknown")]

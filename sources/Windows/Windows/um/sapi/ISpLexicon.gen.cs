@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon"]/*'/>
 [Guid("DA41A7C2-5383-4DB2-916B-6C1719E3DB58")]
 [NativeTypeName("struct ISpLexicon : IUnknown")]

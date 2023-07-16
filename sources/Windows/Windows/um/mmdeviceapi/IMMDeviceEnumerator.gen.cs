@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator"]/*'/>
 [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6")]
 [NativeTypeName("struct IMMDeviceEnumerator : IUnknown")]

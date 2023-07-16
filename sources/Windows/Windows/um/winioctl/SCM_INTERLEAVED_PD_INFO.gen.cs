@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_INTERLEAVED_PD_INFO.xml' path='doc/member[@name="SCM_INTERLEAVED_PD_INFO"]/*'/>
 public partial struct SCM_INTERLEAVED_PD_INFO
 {

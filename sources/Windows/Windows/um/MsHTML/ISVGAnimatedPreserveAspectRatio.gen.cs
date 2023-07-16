@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISVGAnimatedPreserveAspectRatio.xml' path='doc/member[@name="ISVGAnimatedPreserveAspectRatio"]/*'/>
 [Guid("305104FB-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGAnimatedPreserveAspectRatio : IDispatch")]

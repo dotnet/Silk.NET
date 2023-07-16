@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IIsolatedAppLauncher.xml' path='doc/member[@name="IIsolatedAppLauncher"]/*'/>
 [Guid("F686878F-7B42-4CC4-96FB-F4F3B6E3D24D")]
 [NativeTypeName("struct IIsolatedAppLauncher : IUnknown")]

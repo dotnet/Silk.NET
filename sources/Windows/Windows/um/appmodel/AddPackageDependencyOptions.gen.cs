@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AddPackageDependencyOptions.xml' path='doc/member[@name="AddPackageDependencyOptions"]/*'/>
 [SupportedOSPlatform("windows10.0.22621.0")]
 public enum AddPackageDependencyOptions

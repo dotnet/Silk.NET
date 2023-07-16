@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFObjectReferenceStream.xml' path='doc/member[@name="IMFObjectReferenceStream"]/*'/>
 [Guid("09EF5BE3-C8A7-469E-8B70-73BF25BB193F")]
 [NativeTypeName("struct IMFObjectReferenceStream : IUnknown")]

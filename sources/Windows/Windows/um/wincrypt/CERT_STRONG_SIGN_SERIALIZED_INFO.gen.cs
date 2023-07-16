@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CERT_STRONG_SIGN_SERIALIZED_INFO

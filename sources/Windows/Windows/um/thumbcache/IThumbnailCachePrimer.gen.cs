@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IThumbnailCachePrimer.xml' path='doc/member[@name="IThumbnailCachePrimer"]/*'/>
 [Guid("0F03F8FE-2B26-46F0-965A-212AA8D66B76")]
 [NativeTypeName("struct IThumbnailCachePrimer : IUnknown")]

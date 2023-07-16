@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIRECTMANIPULATION_INPUT_MODE.xml' path='doc/member[@name="DIRECTMANIPULATION_INPUT_MODE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_INPUT_MODE

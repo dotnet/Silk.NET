@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_LOGICAL_DEVICES.xml' path='doc/member[@name="SCM_LOGICAL_DEVICES"]/*'/>
 public partial struct SCM_LOGICAL_DEVICES
 {

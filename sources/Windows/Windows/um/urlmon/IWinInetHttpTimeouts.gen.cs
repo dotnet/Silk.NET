@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWinInetHttpTimeouts.xml' path='doc/member[@name="IWinInetHttpTimeouts"]/*'/>
 [Guid("F286FA56-C1FD-4270-8E67-B3EB790A81E8")]
 [NativeTypeName("struct IWinInetHttpTimeouts : IUnknown")]

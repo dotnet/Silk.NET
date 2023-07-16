@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct DWRITE_PANOSE

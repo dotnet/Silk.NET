@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct IMAGE_AUX_SYMBOL

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore"]/*'/>
 [Guid("75BD59AA-F23B-4963-ABA4-0B355752A91B")]
 [NativeTypeName("struct IPropertyKeyStore : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands"]/*'/>
 [Guid("8C5DAC4F-083C-4B85-A4C9-71746048ADCA")]
 [NativeTypeName("struct IEnumSpeechCommands : IUnknown")]

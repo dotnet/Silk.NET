@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpStreamFormatConverter.xml' path='doc/member[@name="SpStreamFormatConverter"]/*'/>
 [Guid("7013943A-E2EC-11D2-A086-00C04F8EF9B5")]
 public unsafe partial struct SpStreamFormatConverter : INativeGuid

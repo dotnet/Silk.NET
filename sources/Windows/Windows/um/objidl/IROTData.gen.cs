@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IROTData.xml' path='doc/member[@name="IROTData"]/*'/>
 [Guid("F29F6BC0-5021-11CE-AA15-00006901293F")]
 [NativeTypeName("struct IROTData : IUnknown")]

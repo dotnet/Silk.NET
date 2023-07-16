@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISPLAYCONFIG_DESKTOP_IMAGE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_DESKTOP_IMAGE_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct DISPLAYCONFIG_DESKTOP_IMAGE_INFO

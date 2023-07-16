@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITextStoreACPEx.xml' path='doc/member[@name="ITextStoreACPEx"]/*'/>
 [Guid("A2DE3BC2-3D8E-11D3-81A9-F753FBE61A00")]
 [NativeTypeName("struct ITextStoreACPEx : IUnknown")]

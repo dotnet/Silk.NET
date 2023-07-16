@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/xapobase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class XAPOBASE
 {
     [NativeTypeName("#define XAPOBASE_DEFAULT_FORMAT_TAG WAVE_FORMAT_IEEE_FLOAT")]

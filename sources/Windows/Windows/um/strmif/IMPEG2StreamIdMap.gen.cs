@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap"]/*'/>
 [Guid("D0E04C47-25B8-4369-925A-362A01D95444")]
 [NativeTypeName("struct IMPEG2StreamIdMap : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator"]/*'/>
 [Guid("7815CBBA-DDF7-478C-A46C-7B6C738B7978")]
 [NativeTypeName("struct IUIAnimationInterpolator : IUnknown")]

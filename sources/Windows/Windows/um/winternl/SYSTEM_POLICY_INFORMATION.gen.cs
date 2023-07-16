@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_POLICY_INFORMATION.xml' path='doc/member[@name="SYSTEM_POLICY_INFORMATION"]/*'/>
 public unsafe partial struct SYSTEM_POLICY_INFORMATION
 {

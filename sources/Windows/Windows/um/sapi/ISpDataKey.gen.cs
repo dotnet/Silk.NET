@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpDataKey.xml' path='doc/member[@name="ISpDataKey"]/*'/>
 [Guid("14056581-E16C-11D2-BB90-00C04F8EE6C0")]
 [NativeTypeName("struct ISpDataKey : IUnknown")]

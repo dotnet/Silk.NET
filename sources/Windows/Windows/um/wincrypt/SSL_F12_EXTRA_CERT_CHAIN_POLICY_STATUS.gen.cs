@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS

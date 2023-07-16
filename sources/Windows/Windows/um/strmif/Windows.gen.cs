@@ -1,9 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using static TerraFX.Interop.Windows.Windows;
+using static Silk.NET.Windows.Windows;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class Windows
 {
     [NativeTypeName("#define CDEF_CLASS_DEFAULT 0x0001")]

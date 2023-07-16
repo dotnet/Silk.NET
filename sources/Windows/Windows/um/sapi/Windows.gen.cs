@@ -5,10 +5,10 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.SPEVENTENUM;
-using static TerraFX.Interop.Windows.SPPHRASERNG;
+using static Silk.NET.Windows.SPEVENTENUM;
+using static Silk.NET.Windows.SPPHRASERNG;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class Windows
 {
     [NativeTypeName("const float")]

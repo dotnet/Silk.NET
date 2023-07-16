@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumProgressItems.xml' path='doc/member[@name="IEnumProgressItems"]/*'/>
 [Guid("2C941FD6-975B-59BE-A960-9A2A262853A5")]
 [NativeTypeName("struct IEnumProgressItems : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='eAVEncH264PictureType.xml' path='doc/member[@name="eAVEncH264PictureType"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum eAVEncH264PictureType

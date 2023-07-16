@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager"]/*'/>
 [Guid("B4CD448A-9C86-4466-9201-2E62105B87AE")]
 [NativeTypeName("struct ISharingConfigurationManager : IUnknown")]

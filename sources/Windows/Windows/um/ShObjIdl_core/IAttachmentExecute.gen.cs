@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAttachmentExecute.xml' path='doc/member[@name="IAttachmentExecute"]/*'/>
 [Guid("73DB1241-1E85-4581-8E4F-A81E1D0F8C57")]
 [NativeTypeName("struct IAttachmentExecute : IUnknown")]

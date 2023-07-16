@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_FONT_AXIS_ATTRIBUTES.xml' path='doc/member[@name="DWRITE_FONT_AXIS_ATTRIBUTES"]/*'/>
 [Flags]
 public enum DWRITE_FONT_AXIS_ATTRIBUTES

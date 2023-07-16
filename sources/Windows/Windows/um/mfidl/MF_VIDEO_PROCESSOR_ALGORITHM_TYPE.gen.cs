@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum MF_VIDEO_PROCESSOR_ALGORITHM_TYPE

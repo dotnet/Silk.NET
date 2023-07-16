@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ADDRINFO_DNS_SERVER.xml' path='doc/member[@name="ADDRINFO_DNS_SERVER"]/*'/>
 public unsafe partial struct ADDRINFO_DNS_SERVER
 {

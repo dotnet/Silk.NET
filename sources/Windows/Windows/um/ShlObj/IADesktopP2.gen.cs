@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2"]/*'/>
 [Guid("B22754E2-4574-11D1-9888-006097DEACF9")]
 [NativeTypeName("struct IADesktopP2 : IUnknown")]

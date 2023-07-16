@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfCompartment.xml' path='doc/member[@name="ITfCompartment"]/*'/>
 [Guid("BB08F7A9-607A-4384-8623-056892B64371")]
 [NativeTypeName("struct ITfCompartment : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IObjectWithCancelEvent.xml' path='doc/member[@name="IObjectWithCancelEvent"]/*'/>
 [Guid("F279B885-0AE9-4B85-AC06-DDECF9408941")]
 [NativeTypeName("struct IObjectWithCancelEvent : IUnknown")]

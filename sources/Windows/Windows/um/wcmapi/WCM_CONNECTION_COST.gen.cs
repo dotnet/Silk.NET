@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WCM_CONNECTION_COST.xml' path='doc/member[@name="WCM_CONNECTION_COST"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

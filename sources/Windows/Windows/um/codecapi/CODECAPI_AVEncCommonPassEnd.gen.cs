@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncCommonPassEnd.xml' path='doc/member[@name="CODECAPI_AVEncCommonPassEnd"]/*'/>
 [Guid("0E3D01BC-C85C-467D-8B60-C41012EE3BF6")]
 public unsafe partial struct CODECAPI_AVEncCommonPassEnd : INativeGuid

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSampleAllocatorControl.xml' path='doc/member[@name="IMFSampleAllocatorControl"]/*'/>
 [Guid("DA62B958-3A38-4A97-BD27-149C640C0771")]
 [NativeTypeName("struct IMFSampleAllocatorControl : IUnknown")]

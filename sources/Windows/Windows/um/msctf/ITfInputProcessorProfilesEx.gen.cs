@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfInputProcessorProfilesEx.xml' path='doc/member[@name="ITfInputProcessorProfilesEx"]/*'/>
 [Guid("892F230F-FE00-4A41-A98E-FCD6DE0D35EF")]
 [NativeTypeName("struct ITfInputProcessorProfilesEx : ITfInputProcessorProfiles")]

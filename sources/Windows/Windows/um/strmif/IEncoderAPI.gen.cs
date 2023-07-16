@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEncoderAPI.xml' path='doc/member[@name="IEncoderAPI"]/*'/>
 [Guid("70423839-6ACC-4B23-B079-21DBF08156A5")]
 [NativeTypeName("struct IEncoderAPI : IUnknown")]

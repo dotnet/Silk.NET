@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFNetCredentialCache.xml' path='doc/member[@name="IMFNetCredentialCache"]/*'/>
 [Guid("5B87EF6C-7ED8-434F-BA0E-184FAC1628D1")]
 [NativeTypeName("struct IMFNetCredentialCache : IUnknown")]

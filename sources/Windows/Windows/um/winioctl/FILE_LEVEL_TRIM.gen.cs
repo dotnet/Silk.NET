@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct FILE_LEVEL_TRIM

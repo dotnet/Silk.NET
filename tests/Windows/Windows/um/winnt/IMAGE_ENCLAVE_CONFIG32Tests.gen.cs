@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "IMAGE_ENCLAVE_CONFIG32"/> struct.</summary>
 [SupportedOSPlatform("windows10.0.16299.0")]
 public static unsafe partial class IMAGE_ENCLAVE_CONFIG32Tests

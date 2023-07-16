@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess"]/*'/>
 [Guid("AEC63FDA-7A97-4944-B35C-6C6DF8085CC3")]
 [NativeTypeName("struct IMFMediaKeySystemAccess : IUnknown")]

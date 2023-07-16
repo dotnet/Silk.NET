@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICMP_ERROR_INFO.xml' path='doc/member[@name="ICMP_ERROR_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct ICMP_ERROR_INFO

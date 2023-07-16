@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO"]/*'/>
 public unsafe partial struct VIDEOINFO
 {

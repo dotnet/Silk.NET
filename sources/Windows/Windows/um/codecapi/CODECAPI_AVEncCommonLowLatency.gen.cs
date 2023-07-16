@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncCommonLowLatency.xml' path='doc/member[@name="CODECAPI_AVEncCommonLowLatency"]/*'/>
 [Guid("9D3ECD55-89E8-490A-970A-0C9548D5A56E")]
 public unsafe partial struct CODECAPI_AVEncCommonLowLatency : INativeGuid

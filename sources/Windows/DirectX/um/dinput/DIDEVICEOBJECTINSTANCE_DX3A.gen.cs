@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIDEVICEOBJECTINSTANCE_DX3A.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE_DX3A"]/*'/>
 public unsafe partial struct DIDEVICEOBJECTINSTANCE_DX3A
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum"]/*'/>
 [Guid("2705C288-79AE-11D2-B348-00105A1F8177")]
 [NativeTypeName("struct IWbemHiPerfEnum : IUnknown")]

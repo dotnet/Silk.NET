@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink"]/*'/>
 [Guid("D594D0D8-8DA7-457B-B3B4-CE5DBAAC0B88")]
 [NativeTypeName("struct ITransferAdviseSink : IUnknown")]

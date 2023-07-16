@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestHostRuntimeDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestHostRuntimeDependenciesEnumerator"]/*'/>
 [Guid("6427A646-7F49-433E-B1A6-0DA309F6885A")]
 [NativeTypeName("struct IAppxManifestHostRuntimeDependenciesEnumerator : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecSoftwareDynamicFormatChange.xml' path='doc/member[@name="CODECAPI_AVDecSoftwareDynamicFormatChange"]/*'/>
 [Guid("862E2F0A-507B-47FF-AF47-01E2624298B7")]
 public unsafe partial struct CODECAPI_AVDecSoftwareDynamicFormatChange : INativeGuid

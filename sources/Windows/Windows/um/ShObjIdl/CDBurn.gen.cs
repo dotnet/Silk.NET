@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CDBurn.xml' path='doc/member[@name="CDBurn"]/*'/>
 [Guid("FBEB8A05-BEEE-4442-804E-409D6C4515E9")]
 public unsafe partial struct CDBurn : INativeGuid

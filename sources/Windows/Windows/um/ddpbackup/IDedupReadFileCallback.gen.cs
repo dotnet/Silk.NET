@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDedupReadFileCallback.xml' path='doc/member[@name="IDedupReadFileCallback"]/*'/>
 [Guid("7BACC67A-2F1D-42D0-897E-6FF62DD533BB")]
 [NativeTypeName("struct IDedupReadFileCallback : IUnknown")]

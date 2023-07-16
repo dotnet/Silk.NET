@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfInsertAtSelection.xml' path='doc/member[@name="ITfInsertAtSelection"]/*'/>
 [Guid("55CE16BA-3014-41C1-9CEB-FADE1446AC6C")]
 [NativeTypeName("struct ITfInsertAtSelection : IUnknown")]

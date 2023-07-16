@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct JOBOBJECT_LIMIT_VIOLATION_INFORMATION

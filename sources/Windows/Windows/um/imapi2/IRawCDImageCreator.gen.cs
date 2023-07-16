@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator"]/*'/>
 [Guid("25983550-9D65-49CE-B335-40630D901227")]
 [NativeTypeName("struct IRawCDImageCreator : IDispatch")]

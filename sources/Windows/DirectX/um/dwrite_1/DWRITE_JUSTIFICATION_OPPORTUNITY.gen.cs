@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY"]/*'/>
 public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
 {

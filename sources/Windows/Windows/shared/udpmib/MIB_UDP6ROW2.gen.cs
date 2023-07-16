@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2"]/*'/>
 public unsafe partial struct MIB_UDP6ROW2
 {

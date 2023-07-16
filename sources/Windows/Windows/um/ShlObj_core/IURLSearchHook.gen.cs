@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IURLSearchHook.xml' path='doc/member[@name="IURLSearchHook"]/*'/>
 [Guid("AC60F6A0-0FD9-11D0-99CB-00C04FD64497")]
 [NativeTypeName("struct IURLSearchHook : IUnknown")]

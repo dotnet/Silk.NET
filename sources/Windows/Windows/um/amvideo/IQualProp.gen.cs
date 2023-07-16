@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp"]/*'/>
 [Guid("1BD0ECB0-F8E2-11CE-AAC6-0020AF0B99A3")]
 [NativeTypeName("struct IQualProp : IUnknown")]

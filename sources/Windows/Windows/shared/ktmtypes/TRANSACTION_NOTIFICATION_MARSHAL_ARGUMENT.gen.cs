@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT"]/*'/>
 public partial struct TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT
 {

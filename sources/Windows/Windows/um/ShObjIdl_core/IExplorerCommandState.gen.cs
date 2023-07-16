@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IExplorerCommandState.xml' path='doc/member[@name="IExplorerCommandState"]/*'/>
 [Guid("BDDACB60-7657-47AE-8445-D23E1ACF82AE")]
 [NativeTypeName("struct IExplorerCommandState : IUnknown")]

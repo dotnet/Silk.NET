@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl"]/*'/>
 [Guid("65ABEA96-CF36-453F-AF8A-705E98F16260")]
 [NativeTypeName("struct IDMOQualityControl : IUnknown")]

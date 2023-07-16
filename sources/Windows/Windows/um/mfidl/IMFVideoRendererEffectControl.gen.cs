@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFVideoRendererEffectControl.xml' path='doc/member[@name="IMFVideoRendererEffectControl"]/*'/>
 [Guid("604D33D7-CF23-41D5-8224-5BBBB1A87475")]
 [NativeTypeName("struct IMFVideoRendererEffectControl : IUnknown")]

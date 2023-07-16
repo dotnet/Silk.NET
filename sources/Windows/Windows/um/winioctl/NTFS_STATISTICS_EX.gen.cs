@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct NTFS_STATISTICS_EX

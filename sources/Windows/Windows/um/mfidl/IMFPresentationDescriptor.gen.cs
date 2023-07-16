@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFPresentationDescriptor.xml' path='doc/member[@name="IMFPresentationDescriptor"]/*'/>
 [Guid("03CB2711-24D7-4DB6-A17F-F3A7A479A536")]
 [NativeTypeName("struct IMFPresentationDescriptor : IMFAttributes")]

@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenColorProfileA"]/*'/>
@@ -386,8 +386,7 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT ColorProfileGetDisplayUserScope(LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, WCS_PROFILE_MANAGEMENT_SCOPE* scope);
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileGetDeviceCapabilities"]/*'/>
-    [DllImport("", ExactSpelling = true)]
-    public static extern HRESULT ColorProfileGetDeviceCapabilities(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, WCS_DEVICE_CAPABILITIES_TYPE capsType, [NativeTypeName("PVOID")] void* outputCapabilities);
+    [DllImport("""", ExactSpelling = true)]public static extern HRESULT ColorProfileGetDeviceCapabilities(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, WCS_DEVICE_CAPABILITIES_TYPE capsType, [NativeTypeName("PVOID")] void* outputCapabilities);
     [NativeTypeName("#define INTENT_PERCEPTUAL 0")]
     public const int INTENT_PERCEPTUAL = 0;
     [NativeTypeName("#define INTENT_RELATIVE_COLORIMETRIC 1")]

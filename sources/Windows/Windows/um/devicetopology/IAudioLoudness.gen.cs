@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioLoudness.xml' path='doc/member[@name="IAudioLoudness"]/*'/>
 [Guid("7D8B1437-DD53-4350-9C1B-1EE2890BD938")]
 [NativeTypeName("struct IAudioLoudness : IUnknown")]

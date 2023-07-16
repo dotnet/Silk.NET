@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct XAUDIO2FX_REVERB_I3DL2_PARAMETERS

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary"]/*'/>
 [Guid("1DC4CB5F-D737-474D-ADE9-5CCFC9BC1CC9")]
 [NativeTypeName("struct IAccDictionary : IUnknown")]

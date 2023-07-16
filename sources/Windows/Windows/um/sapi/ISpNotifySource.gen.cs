@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpNotifySource.xml' path='doc/member[@name="ISpNotifySource"]/*'/>
 [Guid("5EFF4AEF-8487-11D2-961C-00C04F8EE628")]
 [NativeTypeName("struct ISpNotifySource : IUnknown")]

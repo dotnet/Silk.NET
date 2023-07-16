@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AppxPackageEditor.xml' path='doc/member[@name="AppxPackageEditor"]/*'/>
 [Guid("F004F2CA-AEBC-4B0D-BF58-E516D5BCC0AB")]
 public unsafe partial struct AppxPackageEditor : INativeGuid

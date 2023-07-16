@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink"]/*'/>
 [Guid("43C9FE15-F494-4C17-9DE2-B8A4AC350AA8")]
 [NativeTypeName("struct ITfLanguageProfileNotifySink : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DWM_BLURBEHIND.xml' path='doc/member[@name="DWM_BLURBEHIND"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DWM_BLURBEHIND

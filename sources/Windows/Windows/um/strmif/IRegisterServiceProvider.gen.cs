@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRegisterServiceProvider.xml' path='doc/member[@name="IRegisterServiceProvider"]/*'/>
 [Guid("7B3A2F01-0751-48DD-B556-004785171C54")]
 [NativeTypeName("struct IRegisterServiceProvider : IUnknown")]

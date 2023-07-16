@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='AudioVolumeMeter.xml' path='doc/member[@name="AudioVolumeMeter"]/*'/>
 [Guid("4FC3B166-972A-40CF-BC37-7DB03DB2FBA3")]
 public unsafe partial struct AudioVolumeMeter : INativeGuid

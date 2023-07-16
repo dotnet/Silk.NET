@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_EXT_INFO_TYPE.xml' path='doc/member[@name="PRJ_EXT_INFO_TYPE"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public enum PRJ_EXT_INFO_TYPE

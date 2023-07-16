@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimer.xml' path='doc/member[@name="IMFTimer"]/*'/>
 [Guid("E56E4CBD-8F70-49D8-A0F8-EDB3D6AB9BF2")]
 [NativeTypeName("struct IMFTimer : IUnknown")]

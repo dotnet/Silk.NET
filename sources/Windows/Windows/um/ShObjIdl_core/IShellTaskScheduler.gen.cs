@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellTaskScheduler.xml' path='doc/member[@name="IShellTaskScheduler"]/*'/>
 [Guid("6CCB7BE0-6807-11D0-B810-00C04FD706EC")]
 [NativeTypeName("struct IShellTaskScheduler : IUnknown")]

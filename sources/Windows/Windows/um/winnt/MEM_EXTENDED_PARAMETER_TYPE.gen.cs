@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum MEM_EXTENDED_PARAMETER_TYPE

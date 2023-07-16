@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING.xml' path='doc/member[@name="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING

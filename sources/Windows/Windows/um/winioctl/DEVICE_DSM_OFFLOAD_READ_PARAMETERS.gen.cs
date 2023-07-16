@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICE_DSM_OFFLOAD_READ_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_READ_PARAMETERS"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_DSM_OFFLOAD_READ_PARAMETERS

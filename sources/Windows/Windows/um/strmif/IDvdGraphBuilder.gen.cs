@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder"]/*'/>
 [Guid("FCC152B6-F372-11D0-8E00-00C04FD7C08B")]
 [NativeTypeName("struct IDvdGraphBuilder : IUnknown")]

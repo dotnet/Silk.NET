@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechCustomStream.xml' path='doc/member[@name="ISpeechCustomStream"]/*'/>
 [Guid("1A9E9F4F-104F-4DB8-A115-EFD7FD0C97AE")]
 [NativeTypeName("struct ISpeechCustomStream : ISpeechBaseStream")]

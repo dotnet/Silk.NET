@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "MOVE_FILE_DATA32"/> struct.</summary>
 public static unsafe partial class MOVE_FILE_DATA32Tests
 {

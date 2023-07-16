@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError"]/*'/>
 [Guid("FC0E10D2-AB2A-4501-A951-06BB1075184C")]
 [NativeTypeName("struct IMFMediaError : IUnknown")]

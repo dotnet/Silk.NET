@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TimeCategorizer.xml' path='doc/member[@name="TimeCategorizer"]/*'/>
 [Guid("3BB4118F-DDFD-4D30-A348-9FB5D6BF1AFE")]
 public unsafe partial struct TimeCategorizer : INativeGuid

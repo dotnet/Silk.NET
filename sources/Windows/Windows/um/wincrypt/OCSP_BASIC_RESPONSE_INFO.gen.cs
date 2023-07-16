@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO"]/*'/>
 public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
 {

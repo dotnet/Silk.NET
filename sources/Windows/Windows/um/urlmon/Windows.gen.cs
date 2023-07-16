@@ -3,11 +3,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.BINDF;
-using static TerraFX.Interop.Windows.PARSEACTION;
-using static TerraFX.Interop.Windows.PI_FLAGS;
+using static Silk.NET.Windows.BINDF;
+using static Silk.NET.Windows.PARSEACTION;
+using static Silk.NET.Windows.PI_FLAGS;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateURLMoniker"]/*'/>

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO.xml' path='doc/member[@name="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WS_SERVICE_ENDPOINT_METADATA"/> struct.</summary>
 public static unsafe partial class WS_SERVICE_ENDPOINT_METADATATests
 {

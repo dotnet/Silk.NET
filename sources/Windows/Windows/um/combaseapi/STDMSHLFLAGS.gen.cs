@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STDMSHLFLAGS.xml' path='doc/member[@name="STDMSHLFLAGS"]/*'/>
 [Flags]
 public enum STDMSHLFLAGS

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class CAT
 {
     [NativeTypeName("#define CAT_NAMEVALUE_OBJID \"1.3.6.1.4.1.311.12.2.1\"")]

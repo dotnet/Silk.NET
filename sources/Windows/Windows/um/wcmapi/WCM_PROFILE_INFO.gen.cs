@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct WCM_PROFILE_INFO

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITaskbarList2.xml' path='doc/member[@name="ITaskbarList2"]/*'/>
 [Guid("602D4995-B13A-429B-A66E-1935E44F4317")]
 [NativeTypeName("struct ITaskbarList2 : ITaskbarList")]

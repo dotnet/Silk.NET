@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WICBitmapPlaneDescription.xml' path='doc/member[@name="WICBitmapPlaneDescription"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct WICBitmapPlaneDescription

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBindCallbackRedirect.xml' path='doc/member[@name="IBindCallbackRedirect"]/*'/>
 [Guid("11C81BC2-121E-4ED5-B9C4-B430BD54F2C0")]
 [NativeTypeName("struct IBindCallbackRedirect : IUnknown")]

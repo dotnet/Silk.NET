@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class DIPROP
 {
     [NativeTypeName("#define DIPROP_BUFFERSIZE MAKEDIPROP(1)")]

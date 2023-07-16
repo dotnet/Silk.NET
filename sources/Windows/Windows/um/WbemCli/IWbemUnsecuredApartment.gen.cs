@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWbemUnsecuredApartment.xml' path='doc/member[@name="IWbemUnsecuredApartment"]/*'/>
 [Guid("31739D04-3471-4CF4-9A7C-57A44AE71956")]
 [NativeTypeName("struct IWbemUnsecuredApartment : IUnsecuredApartment")]

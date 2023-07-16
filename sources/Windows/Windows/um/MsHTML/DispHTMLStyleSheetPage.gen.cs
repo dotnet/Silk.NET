@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DispHTMLStyleSheetPage.xml' path='doc/member[@name="DispHTMLStyleSheetPage"]/*'/>
 [Guid("3050F540-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispHTMLStyleSheetPage : IDispatch")]

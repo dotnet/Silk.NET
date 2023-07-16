@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DriveTypeCategorizer.xml' path='doc/member[@name="DriveTypeCategorizer"]/*'/>
 [Guid("B0A8F3CF-4333-4BAB-8873-1CCB1CADA48B")]
 public unsafe partial struct DriveTypeCategorizer : INativeGuid

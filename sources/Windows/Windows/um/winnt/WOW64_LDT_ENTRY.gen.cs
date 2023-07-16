@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WOW64_LDT_ENTRY.xml' path='doc/member[@name="WOW64_LDT_ENTRY"]/*'/>
 public partial struct WOW64_LDT_ENTRY
 {

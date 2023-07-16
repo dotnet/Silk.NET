@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct ULARGE_INTEGER

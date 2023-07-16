@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINHTTP_MATCH_CONNECTION_GUID.xml' path='doc/member[@name="WINHTTP_MATCH_CONNECTION_GUID"]/*'/>
 public partial struct WINHTTP_MATCH_CONNECTION_GUID
 {

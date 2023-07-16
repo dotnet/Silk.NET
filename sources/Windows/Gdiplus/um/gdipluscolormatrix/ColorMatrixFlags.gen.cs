@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='ColorMatrixFlags.xml' path='doc/member[@name="ColorMatrixFlags"]/*'/>
 [Flags]
 public enum ColorMatrixFlags

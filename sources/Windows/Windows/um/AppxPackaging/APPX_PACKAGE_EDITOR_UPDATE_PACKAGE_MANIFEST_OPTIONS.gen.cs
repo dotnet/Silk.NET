@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS.xml' path='doc/member[@name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

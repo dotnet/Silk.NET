@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SPPHRASE_50.xml' path='doc/member[@name="SPPHRASE_50"]/*'/>
 public unsafe partial struct SPPHRASE_50
 {

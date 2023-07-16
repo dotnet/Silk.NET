@@ -4,9 +4,9 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests;
+namespace Silk.NET.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref = "IMLOperatorTensorShapeDescription"/> struct.</summary>
 public static unsafe partial class IMLOperatorTensorShapeDescriptionTests
 {

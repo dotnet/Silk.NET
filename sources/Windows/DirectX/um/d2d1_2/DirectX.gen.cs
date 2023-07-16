@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static unsafe partial class DirectX
 {
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1ComputeMaximumScaleFactor"]/*'/>

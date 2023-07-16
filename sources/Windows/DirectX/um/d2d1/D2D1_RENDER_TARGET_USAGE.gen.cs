@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D1_RENDER_TARGET_USAGE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_USAGE"]/*'/>
 [Flags]
 public enum D2D1_RENDER_TARGET_USAGE

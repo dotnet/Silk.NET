@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSinkWriterCallback2.xml' path='doc/member[@name="IMFSinkWriterCallback2"]/*'/>
 [Guid("2456BD58-C067-4513-84FE-8D0C88FFDC61")]
 [NativeTypeName("struct IMFSinkWriterCallback2 : IMFSinkWriterCallback")]

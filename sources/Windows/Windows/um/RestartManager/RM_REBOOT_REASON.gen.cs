@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RM_REBOOT_REASON.xml' path='doc/member[@name="RM_REBOOT_REASON"]/*'/>
 [Flags]
 public enum RM_REBOOT_REASON

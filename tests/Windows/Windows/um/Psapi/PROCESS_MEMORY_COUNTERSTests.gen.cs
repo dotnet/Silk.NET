@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PROCESS_MEMORY_COUNTERS"/> struct.</summary>
 public static unsafe partial class PROCESS_MEMORY_COUNTERSTests
 {

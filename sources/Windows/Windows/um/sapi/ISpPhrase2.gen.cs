@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpPhrase2.xml' path='doc/member[@name="ISpPhrase2"]/*'/>
 [Guid("F264DA52-E457-4696-B856-A737B717AF79")]
 [NativeTypeName("struct ISpPhrase2 : ISpPhrase")]

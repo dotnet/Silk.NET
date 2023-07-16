@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IExecuteCommandHost.xml' path='doc/member[@name="IExecuteCommandHost"]/*'/>
 [Guid("4B6832A2-5F04-4C9D-B89D-727A15D103E7")]
 [NativeTypeName("struct IExecuteCommandHost : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_SCOPED_POLICY_ID_ACE.xml' path='doc/member[@name="SYSTEM_SCOPED_POLICY_ID_ACE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct SYSTEM_SCOPED_POLICY_ID_ACE

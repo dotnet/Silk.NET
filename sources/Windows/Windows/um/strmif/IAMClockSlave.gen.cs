@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave"]/*'/>
 [Guid("9FD52741-176D-4B36-8F51-CA8F933223BE")]
 [NativeTypeName("struct IAMClockSlave : IUnknown")]

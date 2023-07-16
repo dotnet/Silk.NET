@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VOLUME_DISK_EXTENTS.xml' path='doc/member[@name="VOLUME_DISK_EXTENTS"]/*'/>
 public partial struct VOLUME_DISK_EXTENTS
 {

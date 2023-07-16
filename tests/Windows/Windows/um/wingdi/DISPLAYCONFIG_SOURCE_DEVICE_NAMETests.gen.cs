@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DISPLAYCONFIG_SOURCE_DEVICE_NAME"/> struct.</summary>
 public static unsafe partial class DISPLAYCONFIG_SOURCE_DEVICE_NAMETests
 {

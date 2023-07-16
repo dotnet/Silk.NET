@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMOverlayFX.xml' path='doc/member[@name="IAMOverlayFX"]/*'/>
 [Guid("62FAE250-7E65-4460-BFC9-6398B322073C")]
 [NativeTypeName("struct IAMOverlayFX : IUnknown")]

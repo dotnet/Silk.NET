@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_TCP6TABLE_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCP6TABLE_OWNER_MODULE"]/*'/>
 public partial struct MIB_TCP6TABLE_OWNER_MODULE
 {

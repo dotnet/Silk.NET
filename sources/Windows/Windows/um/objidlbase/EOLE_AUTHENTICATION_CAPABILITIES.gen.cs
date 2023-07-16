@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EOLE_AUTHENTICATION_CAPABILITIES.xml' path='doc/member[@name="EOLE_AUTHENTICATION_CAPABILITIES"]/*'/>
 [Flags]
 public enum EOLE_AUTHENTICATION_CAPABILITIES

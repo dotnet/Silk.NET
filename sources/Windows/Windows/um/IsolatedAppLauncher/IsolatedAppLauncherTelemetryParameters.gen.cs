@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IsolatedAppLauncherTelemetryParameters.xml' path='doc/member[@name="IsolatedAppLauncherTelemetryParameters"]/*'/>
 public partial struct IsolatedAppLauncherTelemetryParameters
 {

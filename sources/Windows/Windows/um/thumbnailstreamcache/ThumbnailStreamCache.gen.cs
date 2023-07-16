@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ThumbnailStreamCache.xml' path='doc/member[@name="ThumbnailStreamCache"]/*'/>
 [Guid("CBE0FED3-4B91-4E90-8354-8A8C84EC6872")]
 public unsafe partial struct ThumbnailStreamCache : INativeGuid

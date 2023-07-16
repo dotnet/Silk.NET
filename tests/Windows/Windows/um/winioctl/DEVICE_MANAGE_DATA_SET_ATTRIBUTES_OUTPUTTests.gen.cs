@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUTTests

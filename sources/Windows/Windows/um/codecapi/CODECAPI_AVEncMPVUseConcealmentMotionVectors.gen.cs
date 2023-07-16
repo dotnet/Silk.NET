@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMPVUseConcealmentMotionVectors.xml' path='doc/member[@name="CODECAPI_AVEncMPVUseConcealmentMotionVectors"]/*'/>
 [Guid("EC770CF3-6908-4B4B-AA30-7FB986214FEA")]
 public unsafe partial struct CODECAPI_AVEncMPVUseConcealmentMotionVectors : INativeGuid

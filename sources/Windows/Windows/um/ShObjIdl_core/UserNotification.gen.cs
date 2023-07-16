@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='UserNotification.xml' path='doc/member[@name="UserNotification"]/*'/>
 [Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
 public unsafe partial struct UserNotification : INativeGuid

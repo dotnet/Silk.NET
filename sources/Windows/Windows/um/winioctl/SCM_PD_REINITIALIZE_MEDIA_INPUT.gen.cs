@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_PD_REINITIALIZE_MEDIA_INPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_INPUT"]/*'/>
 public partial struct SCM_PD_REINITIALIZE_MEDIA_INPUT
 {

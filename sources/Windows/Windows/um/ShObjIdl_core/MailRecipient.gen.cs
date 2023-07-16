@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MailRecipient.xml' path='doc/member[@name="MailRecipient"]/*'/>
 [Guid("9E56BE60-C50F-11CF-9A2C-00A0C90A90CE")]
 public unsafe partial struct MailRecipient : INativeGuid

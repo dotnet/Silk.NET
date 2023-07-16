@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMLatency.xml' path='doc/member[@name="IAMLatency"]/*'/>
 [Guid("62EA93BA-EC62-11D2-B770-00C04FB6BD3D")]
 [NativeTypeName("struct IAMLatency : IUnknown")]

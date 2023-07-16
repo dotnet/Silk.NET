@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory"]/*'/>
 [Guid("CA7EAC50-2D01-4145-86D4-5AE7D70F4469")]
 [NativeTypeName("struct ISpeechObjectTokenCategory : IDispatch")]

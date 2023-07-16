@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SLR_FLAGS.xml' path='doc/member[@name="SLR_FLAGS"]/*'/>
 [Flags]
 public enum SLR_FLAGS

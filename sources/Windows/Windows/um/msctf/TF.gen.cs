@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class TF
 {
     /// <include file='TF.xml' path='doc/member[@name="TF.TF_CreateThreadMgr"]/*'/>

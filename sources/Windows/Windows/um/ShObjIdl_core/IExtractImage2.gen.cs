@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IExtractImage2.xml' path='doc/member[@name="IExtractImage2"]/*'/>
 [Guid("953BB1EE-93B4-11D1-98A3-00C04FB687DA")]
 [NativeTypeName("struct IExtractImage2 : IExtractImage")]

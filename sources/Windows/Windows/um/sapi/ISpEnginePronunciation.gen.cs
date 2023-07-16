@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpEnginePronunciation.xml' path='doc/member[@name="ISpEnginePronunciation"]/*'/>
 [Guid("C360CE4B-76D1-4214-AD68-52657D5083DA")]
 [NativeTypeName("struct ISpEnginePronunciation : IUnknown")]

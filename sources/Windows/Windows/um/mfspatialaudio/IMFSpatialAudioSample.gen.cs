@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSpatialAudioSample.xml' path='doc/member[@name="IMFSpatialAudioSample"]/*'/>
 [Guid("ABF28A9B-3393-4290-BA79-5FFC46D986B2")]
 [NativeTypeName("struct IMFSpatialAudioSample : IMFSample")]

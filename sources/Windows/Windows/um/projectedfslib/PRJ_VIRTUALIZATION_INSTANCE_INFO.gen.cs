@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_VIRTUALIZATION_INSTANCE_INFO.xml' path='doc/member[@name="PRJ_VIRTUALIZATION_INSTANCE_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct PRJ_VIRTUALIZATION_INSTANCE_INFO

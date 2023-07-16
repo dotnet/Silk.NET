@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public unsafe partial struct IMAGE_AUX_SYMBOL_TOKEN_DEF

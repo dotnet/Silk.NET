@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite"]/*'/>
 [Guid("88960F5B-422F-4E7B-8013-73415381C3C3")]
 [NativeTypeName("struct IWizardSite : IUnknown")]

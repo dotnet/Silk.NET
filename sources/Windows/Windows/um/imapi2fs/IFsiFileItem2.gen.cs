@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2"]/*'/>
 [Guid("199D0C19-11E1-40EB-8EC2-C8C822A07792")]
 [NativeTypeName("struct IFsiFileItem2 : IFsiFileItem")]

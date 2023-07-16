@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING"]/*'/>
 public unsafe partial struct D2D1_PROPERTY_BINDING
 {

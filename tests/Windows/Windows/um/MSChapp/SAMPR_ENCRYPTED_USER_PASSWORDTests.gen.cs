@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SAMPR_ENCRYPTED_USER_PASSWORD"/> struct.</summary>
 public static unsafe partial class SAMPR_ENCRYPTED_USER_PASSWORDTests
 {

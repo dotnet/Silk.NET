@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KEY_TYPE_SUBTYPE.xml' path='doc/member[@name="KEY_TYPE_SUBTYPE"]/*'/>
 public partial struct KEY_TYPE_SUBTYPE
 {

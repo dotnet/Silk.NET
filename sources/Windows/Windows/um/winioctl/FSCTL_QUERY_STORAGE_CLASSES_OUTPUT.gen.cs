@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT"]/*'/>
 public partial struct FSCTL_QUERY_STORAGE_CLASSES_OUTPUT
 {

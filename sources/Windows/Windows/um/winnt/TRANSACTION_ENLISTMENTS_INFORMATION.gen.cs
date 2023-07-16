@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSACTION_ENLISTMENTS_INFORMATION.xml' path='doc/member[@name="TRANSACTION_ENLISTMENTS_INFORMATION"]/*'/>
 public partial struct TRANSACTION_ENLISTMENTS_INFORMATION
 {

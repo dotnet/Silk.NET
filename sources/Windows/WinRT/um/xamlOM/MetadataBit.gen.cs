@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='MetadataBit.xml' path='doc/member[@name="MetadataBit"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

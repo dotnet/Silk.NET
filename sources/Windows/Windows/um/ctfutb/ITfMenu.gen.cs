@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfMenu.xml' path='doc/member[@name="ITfMenu"]/*'/>
 [Guid("6F8A98E4-AAA0-4F15-8C5B-07E0DF0A3DD8")]
 [NativeTypeName("struct ITfMenu : IUnknown")]

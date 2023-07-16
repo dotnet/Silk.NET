@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpStreamFormat.xml' path='doc/member[@name="ISpStreamFormat"]/*'/>
 [Guid("BED530BE-2606-4F4D-A1C0-54C5CDA5566F")]
 [NativeTypeName("struct ISpStreamFormat : IStream")]

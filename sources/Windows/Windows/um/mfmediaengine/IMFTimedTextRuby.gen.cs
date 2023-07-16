@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby"]/*'/>
 [Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
 [NativeTypeName("struct IMFTimedTextRuby : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_GUID_AVDecAudioInputWMA.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioInputWMA"]/*'/>
 [Guid("C95E8DCF-4058-4204-8C42-CB24D91E4B9B")]
 public unsafe partial struct CODECAPI_GUID_AVDecAudioInputWMA : INativeGuid

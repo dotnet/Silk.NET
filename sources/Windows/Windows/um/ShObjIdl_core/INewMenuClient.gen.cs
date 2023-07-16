@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INewMenuClient.xml' path='doc/member[@name="INewMenuClient"]/*'/>
 [Guid("DCB07FDC-3BB5-451C-90BE-966644FED7B0")]
 [NativeTypeName("struct INewMenuClient : IUnknown")]

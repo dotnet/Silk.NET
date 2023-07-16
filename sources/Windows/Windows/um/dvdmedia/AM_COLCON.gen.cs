@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AM_COLCON.xml' path='doc/member[@name="AM_COLCON"]/*'/>
 public partial struct AM_COLCON
 {

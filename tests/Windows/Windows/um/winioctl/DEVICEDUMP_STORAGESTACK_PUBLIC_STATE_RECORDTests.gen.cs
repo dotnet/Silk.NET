@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD"/> struct.</summary>
 public static unsafe partial class DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORDTests
 {

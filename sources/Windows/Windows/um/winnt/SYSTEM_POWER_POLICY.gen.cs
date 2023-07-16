@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY"]/*'/>
 public unsafe partial struct SYSTEM_POWER_POLICY
 {

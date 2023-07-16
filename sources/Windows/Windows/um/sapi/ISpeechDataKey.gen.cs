@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey"]/*'/>
 [Guid("CE17C09B-4EFA-44D5-A4C9-59D9585AB0CD")]
 [NativeTypeName("struct ISpeechDataKey : IDispatch")]

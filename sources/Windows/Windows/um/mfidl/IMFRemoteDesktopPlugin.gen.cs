@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFRemoteDesktopPlugin.xml' path='doc/member[@name="IMFRemoteDesktopPlugin"]/*'/>
 [Guid("1CDE6309-CAE0-4940-907E-C1EC9C3D1D4A")]
 [NativeTypeName("struct IMFRemoteDesktopPlugin : IUnknown")]

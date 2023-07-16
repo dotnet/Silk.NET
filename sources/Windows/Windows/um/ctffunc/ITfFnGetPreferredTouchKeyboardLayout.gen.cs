@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnGetPreferredTouchKeyboardLayout.xml' path='doc/member[@name="ITfFnGetPreferredTouchKeyboardLayout"]/*'/>
 [Guid("5F309A41-590A-4ACC-A97F-D8EFFF13FDFC")]
 [NativeTypeName("struct ITfFnGetPreferredTouchKeyboardLayout : ITfFunction")]

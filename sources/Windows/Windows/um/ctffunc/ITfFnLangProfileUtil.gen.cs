@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil"]/*'/>
 [Guid("A87A8574-A6C1-4E15-99F0-3D3965F548EB")]
 [NativeTypeName("struct ITfFnLangProfileUtil : ITfFunction")]

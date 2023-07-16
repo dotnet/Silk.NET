@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Gdiplus.UnitTests;
+namespace Silk.NET.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref = "ColorPalette"/> struct.</summary>
 public static unsafe partial class ColorPaletteTests
 {

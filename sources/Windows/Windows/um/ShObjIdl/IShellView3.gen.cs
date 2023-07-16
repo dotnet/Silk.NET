@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellView3.xml' path='doc/member[@name="IShellView3"]/*'/>
 [Guid("EC39FA88-F8AF-41C5-8421-38BED28F4673")]
 [NativeTypeName("struct IShellView3 : IShellView2")]

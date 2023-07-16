@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRYPT_PROVIDER_DATA.xml' path='doc/member[@name="CRYPT_PROVIDER_DATA"]/*'/>
 public unsafe partial struct CRYPT_PROVIDER_DATA
 {

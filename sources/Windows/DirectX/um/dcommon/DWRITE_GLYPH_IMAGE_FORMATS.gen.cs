@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_GLYPH_IMAGE_FORMATS.xml' path='doc/member[@name="DWRITE_GLYPH_IMAGE_FORMATS"]/*'/>
 [Flags]
 public enum DWRITE_GLYPH_IMAGE_FORMATS

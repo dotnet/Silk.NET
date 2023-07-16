@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT

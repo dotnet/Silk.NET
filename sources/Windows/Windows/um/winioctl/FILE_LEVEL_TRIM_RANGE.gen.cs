@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_LEVEL_TRIM_RANGE.xml' path='doc/member[@name="FILE_LEVEL_TRIM_RANGE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct FILE_LEVEL_TRIM_RANGE

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPersistSerializedPropStorage2.xml' path='doc/member[@name="IPersistSerializedPropStorage2"]/*'/>
 [Guid("77EFFA68-4F98-4366-BA72-573B3D880571")]
 [NativeTypeName("struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage")]

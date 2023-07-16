@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_MITIGATION_CHILD_PROCESS_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_CHILD_PROCESS_POLICY"]/*'/>
 public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
 {

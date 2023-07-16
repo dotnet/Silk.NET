@@ -1,9 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using static TerraFX.Interop.Windows.STREAM_SEEK;
+using static Silk.NET.Windows.STREAM_SEEK;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpeechStreamSeekPositionType.xml' path='doc/member[@name="SpeechStreamSeekPositionType"]/*'/>
 public enum SpeechStreamSeekPositionType
 {

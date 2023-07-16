@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_TIER_REGION.xml' path='doc/member[@name="STORAGE_TIER_REGION"]/*'/>
 public partial struct STORAGE_TIER_REGION
 {

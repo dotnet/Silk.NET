@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY"]/*'/>
 public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
 {

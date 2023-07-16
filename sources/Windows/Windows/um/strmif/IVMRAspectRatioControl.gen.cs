@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl"]/*'/>
 [Guid("EDE80B5C-BAD6-4623-B537-65586C9F8DFD")]
 [NativeTypeName("struct IVMRAspectRatioControl : IUnknown")]

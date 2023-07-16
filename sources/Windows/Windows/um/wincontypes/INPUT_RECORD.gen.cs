@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INPUT_RECORD.xml' path='doc/member[@name="INPUT_RECORD"]/*'/>
 public partial struct INPUT_RECORD
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ShellImageDataFactory.xml' path='doc/member[@name="ShellImageDataFactory"]/*'/>
 [Guid("66E4E4FB-F385-4DD0-8D74-A2EFD1BC6178")]
 public unsafe partial struct ShellImageDataFactory : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DShellFolderViewEvents.xml' path='doc/member[@name="DShellFolderViewEvents"]/*'/>
 [Guid("62112AA2-EBE4-11CF-A5FB-0020AFE7292D")]
 [NativeTypeName("struct DShellFolderViewEvents : IDispatch")]

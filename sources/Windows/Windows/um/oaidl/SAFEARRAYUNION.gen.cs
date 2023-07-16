@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SAFEARRAYUNION.xml' path='doc/member[@name="SAFEARRAYUNION"]/*'/>
 public partial struct SAFEARRAYUNION
 {

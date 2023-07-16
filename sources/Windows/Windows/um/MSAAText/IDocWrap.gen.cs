@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDocWrap.xml' path='doc/member[@name="IDocWrap"]/*'/>
 [Guid("DCD285FE-0BE0-43BD-99C9-AAAEC513C555")]
 [NativeTypeName("struct IDocWrap : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINHTTP_WEB_SOCKET_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_ASYNC_RESULT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct WINHTTP_WEB_SOCKET_ASYNC_RESULT

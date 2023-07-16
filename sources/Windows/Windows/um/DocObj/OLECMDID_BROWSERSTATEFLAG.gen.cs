@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OLECMDID_BROWSERSTATEFLAG.xml' path='doc/member[@name="OLECMDID_BROWSERSTATEFLAG"]/*'/>
 [Flags]
 public enum OLECMDID_BROWSERSTATEFLAG

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class CMSG
 {
     [NativeTypeName("#define CMSG_ENCODING_TYPE_MASK 0xFFFF0000")]

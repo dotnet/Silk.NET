@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA

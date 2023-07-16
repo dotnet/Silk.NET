@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFillLockBytes.xml' path='doc/member[@name="IFillLockBytes"]/*'/>
 [Guid("99CAF010-415E-11CF-8814-00AA00B569F5")]
 [NativeTypeName("struct IFillLockBytes : IUnknown")]

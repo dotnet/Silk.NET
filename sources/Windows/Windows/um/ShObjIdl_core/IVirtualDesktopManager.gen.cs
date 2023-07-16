@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVirtualDesktopManager.xml' path='doc/member[@name="IVirtualDesktopManager"]/*'/>
 [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
 [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_ENCODER_LEVEL_SETTING.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_LEVEL_SETTING"]/*'/>
 public unsafe partial struct D3D12_VIDEO_ENCODER_LEVEL_SETTING
 {

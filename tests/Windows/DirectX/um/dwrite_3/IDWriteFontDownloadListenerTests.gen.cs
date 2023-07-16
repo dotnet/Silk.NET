@@ -5,9 +5,9 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "IDWriteFontDownloadListener"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IDWriteFontDownloadListenerTests

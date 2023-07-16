@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_VIDEO_DECODER_DESC.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_DESC"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_VIDEO_DECODER_DESC

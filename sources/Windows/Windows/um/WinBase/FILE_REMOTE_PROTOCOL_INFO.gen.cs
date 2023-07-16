@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO"]/*'/>
 public partial struct FILE_REMOTE_PROTOCOL_INFO
 {

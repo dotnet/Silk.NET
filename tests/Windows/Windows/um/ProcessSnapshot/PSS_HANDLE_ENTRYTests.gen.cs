@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PSS_HANDLE_ENTRY"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_HANDLE_ENTRYTests

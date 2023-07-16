@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROPSHEETPAGEA_V1.xml' path='doc/member[@name="PROPSHEETPAGEA_V1"]/*'/>
 public unsafe partial struct PROPSHEETPAGEA_V1
 {

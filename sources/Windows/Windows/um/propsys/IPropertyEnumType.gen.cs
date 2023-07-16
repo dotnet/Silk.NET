@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType"]/*'/>
 [Guid("11E1FBF9-2D56-4A6B-8DB3-7CD193A471F2")]
 [NativeTypeName("struct IPropertyEnumType : IUnknown")]

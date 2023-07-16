@@ -4,9 +4,9 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "KSDATAFORMAT_SUBTYPE_PCM"/> struct.</summary>
 public static unsafe partial class KSDATAFORMAT_SUBTYPE_PCMTests
 {

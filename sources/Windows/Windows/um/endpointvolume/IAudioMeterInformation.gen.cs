@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation"]/*'/>
 [Guid("C02216F6-8C67-4B5B-9D00-D008E73E0064")]
 [NativeTypeName("struct IAudioMeterInformation : IUnknown")]

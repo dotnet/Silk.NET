@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "ADDRINFO_DNS_SERVER"/> struct.</summary>
 public static unsafe partial class ADDRINFO_DNS_SERVERTests
 {

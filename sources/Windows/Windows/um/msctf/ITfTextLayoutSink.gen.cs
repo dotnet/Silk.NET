@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfTextLayoutSink.xml' path='doc/member[@name="ITfTextLayoutSink"]/*'/>
 [Guid("2AF2D06A-DD5B-4927-A0B4-54F19C91FADE")]
 [NativeTypeName("struct ITfTextLayoutSink : IUnknown")]

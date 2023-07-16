@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFsiNamedStreams.xml' path='doc/member[@name="IFsiNamedStreams"]/*'/>
 [Guid("ED79BA56-5294-4250-8D46-F9AECEE23459")]
 [NativeTypeName("struct IFsiNamedStreams : IDispatch")]

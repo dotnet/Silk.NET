@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INewWindowManager.xml' path='doc/member[@name="INewWindowManager"]/*'/>
 [Guid("D2BC4C84-3F72-4A52-A604-7BCBF3982CBB")]
 [NativeTypeName("struct INewWindowManager : IUnknown")]

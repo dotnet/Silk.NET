@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT"/> struct.</summary>
 public static unsafe partial class STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXTTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DesktopGadget.xml' path='doc/member[@name="DesktopGadget"]/*'/>
 [Guid("924CCC1B-6562-4C85-8657-D177925222B6")]
 public unsafe partial struct DesktopGadget : INativeGuid

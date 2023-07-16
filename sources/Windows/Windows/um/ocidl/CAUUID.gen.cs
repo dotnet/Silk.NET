@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CAUUID.xml' path='doc/member[@name="CAUUID"]/*'/>
 public unsafe partial struct CAUUID
 {

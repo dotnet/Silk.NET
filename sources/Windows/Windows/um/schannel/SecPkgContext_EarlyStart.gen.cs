@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SecPkgContext_EarlyStart.xml' path='doc/member[@name="SecPkgContext_EarlyStart"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct SecPkgContext_EarlyStart

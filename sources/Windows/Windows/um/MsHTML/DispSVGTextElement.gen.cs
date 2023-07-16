@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DispSVGTextElement.xml' path='doc/member[@name="DispSVGTextElement"]/*'/>
 [Guid("30590037-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispSVGTextElement : IDispatch")]

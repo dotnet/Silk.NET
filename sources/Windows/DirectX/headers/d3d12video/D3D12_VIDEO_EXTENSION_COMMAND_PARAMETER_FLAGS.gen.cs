@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.19041.0")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBasicAudio.xml' path='doc/member[@name="IBasicAudio"]/*'/>
 [Guid("56A868B3-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IBasicAudio : IDispatch")]

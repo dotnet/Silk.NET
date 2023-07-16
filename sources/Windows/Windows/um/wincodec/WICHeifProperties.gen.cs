@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum WICHeifProperties

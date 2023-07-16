@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='ColorChannelFlags.xml' path='doc/member[@name="ColorChannelFlags"]/*'/>
 [Flags]
 public enum ColorChannelFlags

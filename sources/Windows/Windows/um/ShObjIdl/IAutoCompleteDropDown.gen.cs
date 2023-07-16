@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAutoCompleteDropDown.xml' path='doc/member[@name="IAutoCompleteDropDown"]/*'/>
 [Guid("3CD141F4-3C6A-11D2-BCAA-00C04FD929DB")]
 [NativeTypeName("struct IAutoCompleteDropDown : IUnknown")]

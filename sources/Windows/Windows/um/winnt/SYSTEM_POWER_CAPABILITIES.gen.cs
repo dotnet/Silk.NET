@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES"]/*'/>
 public unsafe partial struct SYSTEM_POWER_CAPABILITIES
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_PD_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="SCM_PD_FIRMWARE_SLOT_INFO"]/*'/>
 public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
 {

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AM_PROPERTY_SPPAL.xml' path='doc/member[@name="AM_PROPERTY_SPPAL"]/*'/>
 public partial struct AM_PROPERTY_SPPAL
 {

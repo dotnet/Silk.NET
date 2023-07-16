@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D12_DEVICE_REMOVED_EXTENDED_DATA2"/> struct.</summary>
 public static unsafe partial class D3D12_DEVICE_REMOVED_EXTENDED_DATA2Tests
 {

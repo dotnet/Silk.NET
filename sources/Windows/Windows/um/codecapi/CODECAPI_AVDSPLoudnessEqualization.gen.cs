@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDSPLoudnessEqualization.xml' path='doc/member[@name="CODECAPI_AVDSPLoudnessEqualization"]/*'/>
 [Guid("8AFD1A15-1812-4CBF-9319-433A5B2A3B27")]
 public unsafe partial struct CODECAPI_AVDSPLoudnessEqualization : INativeGuid

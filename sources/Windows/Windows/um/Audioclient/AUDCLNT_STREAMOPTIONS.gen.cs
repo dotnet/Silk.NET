@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDCLNT_STREAMOPTIONS.xml' path='doc/member[@name="AUDCLNT_STREAMOPTIONS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.3")]

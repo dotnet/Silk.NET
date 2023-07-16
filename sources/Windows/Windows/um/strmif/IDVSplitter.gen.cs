@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDVSplitter.xml' path='doc/member[@name="IDVSplitter"]/*'/>
 [Guid("92A3A302-DA7C-4A1F-BA7E-1802BB5D2D02")]
 [NativeTypeName("struct IDVSplitter : IUnknown")]

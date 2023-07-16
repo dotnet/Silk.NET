@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellUIHelper8.xml' path='doc/member[@name="IShellUIHelper8"]/*'/>
 [Guid("66DEBCF2-05B0-4F07-B49B-B96241A65DB2")]
 [NativeTypeName("struct IShellUIHelper8 : IShellUIHelper7")]

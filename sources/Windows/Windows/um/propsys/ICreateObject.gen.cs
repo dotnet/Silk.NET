@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICreateObject.xml' path='doc/member[@name="ICreateObject"]/*'/>
 [Guid("75121952-E0D0-43E5-9380-1D80483ACF72")]
 [NativeTypeName("struct ICreateObject : IUnknown")]

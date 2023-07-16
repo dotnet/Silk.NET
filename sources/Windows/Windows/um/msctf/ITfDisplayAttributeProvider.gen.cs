@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfDisplayAttributeProvider.xml' path='doc/member[@name="ITfDisplayAttributeProvider"]/*'/>
 [Guid("FEE47777-163C-4769-996A-6E9C50AD8F54")]
 [NativeTypeName("struct ITfDisplayAttributeProvider : IUnknown")]

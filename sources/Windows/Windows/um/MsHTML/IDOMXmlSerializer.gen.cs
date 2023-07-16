@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDOMXmlSerializer.xml' path='doc/member[@name="IDOMXmlSerializer"]/*'/>
 [Guid("3051077D-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMXmlSerializer : IDispatch")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public unsafe partial struct DDBLTFX
 {
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.dwSize"]/*'/>

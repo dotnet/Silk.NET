@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInputPanelInvocationConfiguration.xml' path='doc/member[@name="IInputPanelInvocationConfiguration"]/*'/>
 [Guid("A213F136-3B45-4362-A332-EFB6547CD432")]
 [NativeTypeName("struct IInputPanelInvocationConfiguration : IUnknown")]

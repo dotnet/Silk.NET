@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SV2CVW2_PARAMS"/> struct.</summary>
 public static unsafe partial class SV2CVW2_PARAMSTests
 {

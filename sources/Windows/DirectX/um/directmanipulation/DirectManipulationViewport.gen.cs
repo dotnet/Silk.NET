@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DirectManipulationViewport.xml' path='doc/member[@name="DirectManipulationViewport"]/*'/>
 [Guid("34E211B6-3650-4F75-8334-FA359598E1C5")]
 public unsafe partial struct DirectManipulationViewport : INativeGuid

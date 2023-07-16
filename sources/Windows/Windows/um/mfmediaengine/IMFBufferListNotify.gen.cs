@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFBufferListNotify.xml' path='doc/member[@name="IMFBufferListNotify"]/*'/>
 [Guid("24CD47F7-81D8-4785-ADB2-AF697A963CD2")]
 [NativeTypeName("struct IMFBufferListNotify : IUnknown")]

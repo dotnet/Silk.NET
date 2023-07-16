@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD

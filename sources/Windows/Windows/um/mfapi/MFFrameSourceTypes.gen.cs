@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFFrameSourceTypes.xml' path='doc/member[@name="MFFrameSourceTypes"]/*'/>
 [SupportedOSPlatform("windows10.0.14393.0")]
 public enum MFFrameSourceTypes

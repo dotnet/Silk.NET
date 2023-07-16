@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISyncMgrConflictItems.xml' path='doc/member[@name="ISyncMgrConflictItems"]/*'/>
 [Guid("9C7EAD52-8023-4936-A4DB-D2A9A99E436A")]
 [NativeTypeName("struct ISyncMgrConflictItems : IUnknown")]

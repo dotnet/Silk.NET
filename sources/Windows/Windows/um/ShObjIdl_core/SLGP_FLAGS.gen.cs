@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SLGP_FLAGS.xml' path='doc/member[@name="SLGP_FLAGS"]/*'/>
 [Flags]
 public enum SLGP_FLAGS

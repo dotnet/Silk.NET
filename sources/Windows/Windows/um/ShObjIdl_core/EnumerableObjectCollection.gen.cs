@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EnumerableObjectCollection.xml' path='doc/member[@name="EnumerableObjectCollection"]/*'/>
 [Guid("2D3468C1-36A7-43B6-AC24-D3F02FD9607A")]
 public unsafe partial struct EnumerableObjectCollection : INativeGuid

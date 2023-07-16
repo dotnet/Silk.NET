@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='GLOBALOPT_RO_FLAGS.xml' path='doc/member[@name="GLOBALOPT_RO_FLAGS"]/*'/>
 [Flags]
 public enum GLOBALOPT_RO_FLAGS

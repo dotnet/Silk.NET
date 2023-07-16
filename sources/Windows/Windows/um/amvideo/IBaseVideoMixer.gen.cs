@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer"]/*'/>
 [Guid("61DED640-E912-11CE-A099-00AA00479A58")]
 [NativeTypeName("struct IBaseVideoMixer : IUnknown")]

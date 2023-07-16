@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SCM_BUS_PROPERTY_QUERY"/> struct.</summary>
 public static unsafe partial class SCM_BUS_PROPERTY_QUERYTests
 {

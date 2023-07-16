@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER"]/*'/>
 public unsafe partial struct FILE_OBJECTID_BUFFER
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VIDEO_STREAM_CONFIG_CAPS.xml' path='doc/member[@name="VIDEO_STREAM_CONFIG_CAPS"]/*'/>
 public partial struct VIDEO_STREAM_CONFIG_CAPS
 {

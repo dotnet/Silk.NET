@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VaultProvider.xml' path='doc/member[@name="VaultProvider"]/*'/>
 [Guid("503739D0-4C5E-4CFD-B3BA-D881334F0DF2")]
 public unsafe partial struct VaultProvider : INativeGuid

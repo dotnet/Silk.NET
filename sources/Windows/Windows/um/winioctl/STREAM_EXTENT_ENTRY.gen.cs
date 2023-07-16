@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STREAM_EXTENT_ENTRY.xml' path='doc/member[@name="STREAM_EXTENT_ENTRY"]/*'/>
 public partial struct STREAM_EXTENT_ENTRY
 {

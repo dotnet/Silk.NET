@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICColorTransform.xml' path='doc/member[@name="IWICColorTransform"]/*'/>
 [Guid("B66F034F-D0E2-40AB-B436-6DE39E321A94")]
 [NativeTypeName("struct IWICColorTransform : IWICBitmapSource")]

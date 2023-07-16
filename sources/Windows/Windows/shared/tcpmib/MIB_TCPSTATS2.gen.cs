@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_TCPSTATS2.xml' path='doc/member[@name="MIB_TCPSTATS2"]/*'/>
 [SupportedOSPlatform("windows10.0.16299.0")]
 public partial struct MIB_TCPSTATS2

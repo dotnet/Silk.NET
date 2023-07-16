@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext"]/*'/>
 [Guid("79EAC9C7-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IHlinkBrowseContext : IUnknown")]

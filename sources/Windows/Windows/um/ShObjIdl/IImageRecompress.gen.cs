@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IImageRecompress.xml' path='doc/member[@name="IImageRecompress"]/*'/>
 [Guid("505F1513-6B3E-4892-A272-59F8889A4D3E")]
 [NativeTypeName("struct IImageRecompress : IUnknown")]

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "READ_USN_JOURNAL_DATA_V1"/> struct.</summary>
 public static unsafe partial class READ_USN_JOURNAL_DATA_V1Tests
 {

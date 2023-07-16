@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInitializeObject.xml' path='doc/member[@name="IInitializeObject"]/*'/>
 [Guid("4622AD16-FF23-11D0-8D34-00A0C90F2719")]
 [NativeTypeName("struct IInitializeObject : IUnknown")]

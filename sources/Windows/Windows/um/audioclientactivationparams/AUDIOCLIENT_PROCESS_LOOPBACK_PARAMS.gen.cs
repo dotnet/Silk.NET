@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS"]/*'/>
 [SupportedOSPlatform("windows10.0.19043.0")]
 public partial struct AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS

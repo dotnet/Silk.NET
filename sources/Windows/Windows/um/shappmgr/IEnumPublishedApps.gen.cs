@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumPublishedApps.xml' path='doc/member[@name="IEnumPublishedApps"]/*'/>
 [Guid("0B124F8C-91F0-11D1-B8B5-006008059382")]
 [NativeTypeName("struct IEnumPublishedApps : IUnknown")]

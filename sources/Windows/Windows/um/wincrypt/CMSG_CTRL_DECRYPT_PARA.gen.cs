@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CMSG_CTRL_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_DECRYPT_PARA"]/*'/>
 public partial struct CMSG_CTRL_DECRYPT_PARA
 {

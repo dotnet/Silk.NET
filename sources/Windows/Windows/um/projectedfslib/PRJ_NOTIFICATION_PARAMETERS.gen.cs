@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="PRJ_NOTIFICATION_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 [SupportedOSPlatform("windows10.0.17763.0")]

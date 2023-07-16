@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "TRUSTED_POSIX_OFFSET_INFO"/> struct.</summary>
 public static unsafe partial class TRUSTED_POSIX_OFFSET_INFOTests
 {

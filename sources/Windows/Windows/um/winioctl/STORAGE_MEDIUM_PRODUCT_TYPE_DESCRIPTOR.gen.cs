@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR

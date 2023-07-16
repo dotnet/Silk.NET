@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPinFlowControl.xml' path='doc/member[@name="IPinFlowControl"]/*'/>
 [Guid("C56E9858-DBF3-4F6B-8119-384AF2060DEB")]
 [NativeTypeName("struct IPinFlowControl : IUnknown")]

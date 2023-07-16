@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICBitmapEncoderInfo.xml' path='doc/member[@name="IWICBitmapEncoderInfo"]/*'/>
 [Guid("94C9B4EE-A09F-4F92-8A1E-4A9BCE7E76FB")]
 [NativeTypeName("struct IWICBitmapEncoderInfo : IWICBitmapCodecInfo")]

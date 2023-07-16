@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='XMLHTTPRequest.xml' path='doc/member[@name="XMLHTTPRequest"]/*'/>
 [Guid("ED8C108E-4349-11D2-91A4-00C04F7969E8")]
 public unsafe partial struct XMLHTTPRequest : INativeGuid

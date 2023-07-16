@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpatialAudioHrtfDirectivityCone.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityCone"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SpatialAudioHrtfDirectivityCone

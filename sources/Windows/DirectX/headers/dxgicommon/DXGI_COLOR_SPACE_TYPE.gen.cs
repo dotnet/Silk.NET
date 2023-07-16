@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_COLOR_SPACE_TYPE.xml' path='doc/member[@name="DXGI_COLOR_SPACE_TYPE"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum DXGI_COLOR_SPACE_TYPE

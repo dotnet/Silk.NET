@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 [Guid("F5E01117-D6C4-485A-A3F5-695196F3DBFA")]
 public unsafe partial struct FXEQ : INativeGuid
 {

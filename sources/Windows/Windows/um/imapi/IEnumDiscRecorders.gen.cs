@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders"]/*'/>
 [Guid("9B1921E1-54AC-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IEnumDiscRecorders : IUnknown")]

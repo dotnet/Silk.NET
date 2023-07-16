@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PEB_LDR_DATA.xml' path='doc/member[@name="PEB_LDR_DATA"]/*'/>
 public unsafe partial struct PEB_LDR_DATA
 {

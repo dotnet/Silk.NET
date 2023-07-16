@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoHeaderHours.xml' path='doc/member[@name="CODECAPI_AVEncVideoHeaderHours"]/*'/>
 [Guid("2ACC7702-E2DA-4158-BF9B-88880129D740")]
 public unsafe partial struct CODECAPI_AVEncVideoHeaderHours : INativeGuid

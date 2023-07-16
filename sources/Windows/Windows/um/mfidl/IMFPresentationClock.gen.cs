@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock"]/*'/>
 [Guid("868CE85C-8EA9-4F55-AB82-B009A910A805")]
 [NativeTypeName("struct IMFPresentationClock : IMFClock")]

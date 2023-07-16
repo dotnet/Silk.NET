@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWbemBackupRestoreEx.xml' path='doc/member[@name="IWbemBackupRestoreEx"]/*'/>
 [Guid("A359DEC5-E813-4834-8A2A-BA7F1D777D76")]
 [NativeTypeName("struct IWbemBackupRestoreEx : IWbemBackupRestore")]

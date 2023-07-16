@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IContextMenu3.xml' path='doc/member[@name="IContextMenu3"]/*'/>
 [Guid("BCFCE0A0-EC17-11D0-8D10-00A0C90F2719")]
 [NativeTypeName("struct IContextMenu3 : IContextMenu2")]

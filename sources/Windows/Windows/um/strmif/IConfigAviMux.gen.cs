@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux"]/*'/>
 [Guid("5ACD6AA0-F482-11CE-8B67-00AA00A3F1A6")]
 [NativeTypeName("struct IConfigAviMux : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfQueryEmbedded.xml' path='doc/member[@name="ITfQueryEmbedded"]/*'/>
 [Guid("0FAB9BDB-D250-4169-84E5-6BE118FDD7A8")]
 [NativeTypeName("struct ITfQueryEmbedded : IUnknown")]

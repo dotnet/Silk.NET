@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "IP_ADAPTER_ADDRESSES_XP"/> struct.</summary>
 public static unsafe partial class IP_ADAPTER_ADDRESSES_XPTests
 {

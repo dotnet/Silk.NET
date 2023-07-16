@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "REPAIR_COPIES_OUTPUT"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class REPAIR_COPIES_OUTPUTTests

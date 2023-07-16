@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MANIPULATION_PROCESSOR_MANIPULATIONS.xml' path='doc/member[@name="MANIPULATION_PROCESSOR_MANIPULATIONS"]/*'/>
 [Flags]
 public enum MANIPULATION_PROCESSOR_MANIPULATIONS

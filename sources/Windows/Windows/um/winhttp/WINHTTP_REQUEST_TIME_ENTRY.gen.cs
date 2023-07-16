@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINHTTP_REQUEST_TIME_ENTRY.xml' path='doc/member[@name="WINHTTP_REQUEST_TIME_ENTRY"]/*'/>
 [SupportedOSPlatform("windows10.0.18362.0")]
 public enum WINHTTP_REQUEST_TIME_ENTRY

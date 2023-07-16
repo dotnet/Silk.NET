@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFDeviceTransformCallback.xml' path='doc/member[@name="IMFDeviceTransformCallback"]/*'/>
 [Guid("6D5CB646-29EC-41FB-8179-8C4C6D750811")]
 [NativeTypeName("struct IMFDeviceTransformCallback : IUnknown")]

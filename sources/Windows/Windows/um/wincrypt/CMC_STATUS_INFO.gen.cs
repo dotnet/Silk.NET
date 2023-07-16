@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO"]/*'/>
 public unsafe partial struct CMC_STATUS_INFO
 {

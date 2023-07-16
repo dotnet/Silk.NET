@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUseToBrowseItem.xml' path='doc/member[@name="IUseToBrowseItem"]/*'/>
 [Guid("05EDDA5C-98A3-4717-8ADB-C5E7DA991EB1")]
 [NativeTypeName("struct IUseToBrowseItem : IRelatedItem")]

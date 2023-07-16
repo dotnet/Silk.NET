@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DWRITE_TYPOGRAPHIC_FEATURES"/> struct.</summary>
 public static unsafe partial class DWRITE_TYPOGRAPHIC_FEATURESTests
 {

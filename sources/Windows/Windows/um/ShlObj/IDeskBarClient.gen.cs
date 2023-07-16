@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient"]/*'/>
 [Guid("EB0FE175-1A3A-11D0-89B3-00A0C90A90AC")]
 [NativeTypeName("struct IDeskBarClient : IOleWindow")]

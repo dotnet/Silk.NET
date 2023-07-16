@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSFER_SOURCE_FLAGS.xml' path='doc/member[@name="TRANSFER_SOURCE_FLAGS"]/*'/>
 [Flags]
 public enum TRANSFER_SOURCE_FLAGS

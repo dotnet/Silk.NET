@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D1_IMAGE_SOURCE_LOADING_OPTIONS.xml' path='doc/member[@name="D2D1_IMAGE_SOURCE_LOADING_OPTIONS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0")]

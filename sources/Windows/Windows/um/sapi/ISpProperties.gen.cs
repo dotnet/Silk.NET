@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties"]/*'/>
 [Guid("5B4FB971-B115-4DE1-AD97-E482E3BF6EE4")]
 [NativeTypeName("struct ISpProperties : IUnknown")]

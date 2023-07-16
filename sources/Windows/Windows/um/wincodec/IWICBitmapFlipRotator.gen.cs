@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICBitmapFlipRotator.xml' path='doc/member[@name="IWICBitmapFlipRotator"]/*'/>
 [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
 [NativeTypeName("struct IWICBitmapFlipRotator : IWICBitmapSource")]

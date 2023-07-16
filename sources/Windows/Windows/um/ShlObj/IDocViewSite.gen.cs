@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDocViewSite.xml' path='doc/member[@name="IDocViewSite"]/*'/>
 [Guid("87D605E0-C511-11CF-89A9-00A0C9054129")]
 [NativeTypeName("struct IDocViewSite : IUnknown")]

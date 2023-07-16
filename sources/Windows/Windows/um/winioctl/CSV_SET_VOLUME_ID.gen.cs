@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CSV_SET_VOLUME_ID.xml' path='doc/member[@name="CSV_SET_VOLUME_ID"]/*'/>
 public partial struct CSV_SET_VOLUME_ID
 {

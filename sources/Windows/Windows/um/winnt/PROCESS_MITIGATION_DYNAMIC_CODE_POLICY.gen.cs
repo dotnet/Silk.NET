@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY

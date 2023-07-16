@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_INFO_QUEUE_FILTER.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct DXGI_INFO_QUEUE_FILTER

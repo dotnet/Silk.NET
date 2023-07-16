@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTopology.xml' path='doc/member[@name="IMFTopology"]/*'/>
 [Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC433")]
 [NativeTypeName("struct IMFTopology : IMFAttributes")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public partial struct INPUT
 {
     /// <include file='INPUT.xml' path='doc/member[@name="INPUT.type"]/*'/>

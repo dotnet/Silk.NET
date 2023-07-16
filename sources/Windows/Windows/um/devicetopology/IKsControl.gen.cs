@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl"]/*'/>
 [Guid("28F54685-06FD-11D2-B27A-00A0C9223196")]
 [NativeTypeName("struct IKsControl : IUnknown")]

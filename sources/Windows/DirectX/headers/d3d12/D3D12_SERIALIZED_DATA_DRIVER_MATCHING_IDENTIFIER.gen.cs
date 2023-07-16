@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER.xml' path='doc/member[@name="D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER"]/*'/>
 public unsafe partial struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
 {

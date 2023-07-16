@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncDDSurround3dBAttenuation.xml' path='doc/member[@name="CODECAPI_AVEncDDSurround3dBAttenuation"]/*'/>
 [Guid("4D43B99D-31E2-48B9-BF2E-5CBF1A572784")]
 public unsafe partial struct CODECAPI_AVEncDDSurround3dBAttenuation : INativeGuid

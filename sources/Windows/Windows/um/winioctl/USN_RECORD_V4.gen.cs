@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct USN_RECORD_V4

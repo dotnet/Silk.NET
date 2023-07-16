@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHomeGroup.xml' path='doc/member[@name="IHomeGroup"]/*'/>
 [Guid("7A3BD1D9-35A9-4FB3-A467-F48CAC35E2D0")]
 [NativeTypeName("struct IHomeGroup : IUnknown")]

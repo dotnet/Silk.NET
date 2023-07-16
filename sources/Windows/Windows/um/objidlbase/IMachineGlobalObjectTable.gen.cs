@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable"]/*'/>
 [Guid("26D709AC-F70B-4421-A96F-D2878FAFB00D")]
 [NativeTypeName("struct IMachineGlobalObjectTable : IUnknown")]

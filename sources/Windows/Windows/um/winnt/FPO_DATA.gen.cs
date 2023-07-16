@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA"]/*'/>
 public partial struct FPO_DATA
 {

@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public readonly unsafe partial struct HWINSTA : IComparable, IComparable<HWINSTA>, IEquatable<HWINSTA>, IFormattable
 {
     public readonly void* Value;

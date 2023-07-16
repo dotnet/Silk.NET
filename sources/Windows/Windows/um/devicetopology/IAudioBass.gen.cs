@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioBass.xml' path='doc/member[@name="IAudioBass"]/*'/>
 [Guid("A2B1A1D9-4DB3-425D-A2B2-BD335CB3E2E5")]
 [NativeTypeName("struct IAudioBass : IPerChannelDbLevel")]

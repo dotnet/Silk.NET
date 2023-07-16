@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SOCKET_PROCESSOR_AFFINITY.xml' path='doc/member[@name="SOCKET_PROCESSOR_AFFINITY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct SOCKET_PROCESSOR_AFFINITY

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProtectFocus.xml' path='doc/member[@name="IProtectFocus"]/*'/>
 [Guid("D81F90A3-8156-44F7-AD28-5ABB87003274")]
 [NativeTypeName("struct IProtectFocus : IUnknown")]

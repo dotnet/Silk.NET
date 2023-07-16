@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes"]/*'/>
 [Guid("2CD2D921-C447-44A7-A13C-4ADABFC247E3")]
 [NativeTypeName("struct IMFAttributes : IUnknown")]

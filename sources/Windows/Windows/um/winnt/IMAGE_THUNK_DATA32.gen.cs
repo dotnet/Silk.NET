@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_THUNK_DATA32.xml' path='doc/member[@name="IMAGE_THUNK_DATA32"]/*'/>
 public partial struct IMAGE_THUNK_DATA32
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='POLICY_DNS_DOMAIN_INFO.xml' path='doc/member[@name="POLICY_DNS_DOMAIN_INFO"]/*'/>
 public unsafe partial struct POLICY_DNS_DOMAIN_INFO
 {

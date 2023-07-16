@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INTERACTION_CONTEXT_OUTPUT.xml' path='doc/member[@name="INTERACTION_CONTEXT_OUTPUT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct INTERACTION_CONTEXT_OUTPUT

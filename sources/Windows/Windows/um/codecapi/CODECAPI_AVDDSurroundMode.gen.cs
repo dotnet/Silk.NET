@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDDSurroundMode.xml' path='doc/member[@name="CODECAPI_AVDDSurroundMode"]/*'/>
 [Guid("99F2F386-98D1-4452-A163-ABC78A6EB770")]
 public unsafe partial struct CODECAPI_AVDDSurroundMode : INativeGuid

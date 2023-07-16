@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVScenarioInfo.xml' path='doc/member[@name="CODECAPI_AVScenarioInfo"]/*'/>
 [Guid("B28A6E64-3FF9-446A-8A4B-0D7A53413236")]
 public unsafe partial struct CODECAPI_AVScenarioInfo : INativeGuid

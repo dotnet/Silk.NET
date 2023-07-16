@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D10_BUFFER_SRV.xml' path='doc/member[@name="D3D10_BUFFER_SRV"]/*'/>
 public partial struct D3D10_BUFFER_SRV
 {

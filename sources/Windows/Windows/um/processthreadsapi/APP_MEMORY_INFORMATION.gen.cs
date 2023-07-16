@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APP_MEMORY_INFORMATION.xml' path='doc/member[@name="APP_MEMORY_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows10.0.10586.0")]
 public partial struct APP_MEMORY_INFORMATION

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession"]/*'/>
 [Guid("90377834-21D0-4DEE-8214-BA2E3E6C1127")]
 [NativeTypeName("struct IMFMediaSession : IMFMediaEventGenerator")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXCoreNotificationType.xml' path='doc/member[@name="DXCoreNotificationType"]/*'/>
 [NativeTypeName("uint32_t")]
 [SupportedOSPlatform("windows10.0.19041.0")]

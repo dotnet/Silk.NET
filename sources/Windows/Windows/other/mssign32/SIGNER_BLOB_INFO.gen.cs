@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SIGNER_BLOB_INFO.xml' path='doc/member[@name="SIGNER_BLOB_INFO"]/*'/>
 public unsafe partial struct SIGNER_BLOB_INFO
 {

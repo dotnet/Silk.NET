@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='COPYFILE2_MESSAGE.xml' path='doc/member[@name="COPYFILE2_MESSAGE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct COPYFILE2_MESSAGE

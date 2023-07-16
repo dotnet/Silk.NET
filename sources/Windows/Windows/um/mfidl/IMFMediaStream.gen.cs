@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaStream.xml' path='doc/member[@name="IMFMediaStream"]/*'/>
 [Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
 [NativeTypeName("struct IMFMediaStream : IMFMediaEventGenerator")]

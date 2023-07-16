@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestHostRuntimeDependency.xml' path='doc/member[@name="IAppxManifestHostRuntimeDependency"]/*'/>
 [Guid("3455D234-8414-410D-95C7-7B35255B8391")]
 [NativeTypeName("struct IAppxManifestHostRuntimeDependency : IUnknown")]

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SYNCMGR_CONFLICT_ID_INFO"/> struct.</summary>
 public static unsafe partial class SYNCMGR_CONFLICT_ID_INFOTests
 {

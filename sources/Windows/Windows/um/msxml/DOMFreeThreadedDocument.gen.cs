@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DOMFreeThreadedDocument.xml' path='doc/member[@name="DOMFreeThreadedDocument"]/*'/>
 [Guid("2933BF91-7B36-11D2-B20E-00C04F983E60")]
 public unsafe partial struct DOMFreeThreadedDocument : INativeGuid

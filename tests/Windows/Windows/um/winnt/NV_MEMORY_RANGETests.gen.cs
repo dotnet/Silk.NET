@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "NV_MEMORY_RANGE"/> struct.</summary>
 public static unsafe partial class NV_MEMORY_RANGETests
 {

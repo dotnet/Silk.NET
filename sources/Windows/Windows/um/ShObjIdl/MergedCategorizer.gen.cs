@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MergedCategorizer.xml' path='doc/member[@name="MergedCategorizer"]/*'/>
 [Guid("8E827C11-33E7-4BC1-B242-8CD9A1C2B304")]
 public unsafe partial struct MergedCategorizer : INativeGuid

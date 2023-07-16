@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ShellLibrary.xml' path='doc/member[@name="ShellLibrary"]/*'/>
 [Guid("D9B3211D-E57F-4426-AAEF-30A806ADD397")]
 public unsafe partial struct ShellLibrary : INativeGuid

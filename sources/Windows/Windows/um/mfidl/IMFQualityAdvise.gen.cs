@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise"]/*'/>
 [Guid("EC15E2E9-E36B-4F7C-8758-77D452EF4CE7")]
 [NativeTypeName("struct IMFQualityAdvise : IUnknown")]

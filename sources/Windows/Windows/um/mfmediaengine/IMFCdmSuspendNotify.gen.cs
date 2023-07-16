@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify"]/*'/>
 [Guid("7A5645D2-43BD-47FD-87B7-DCD24CC7D692")]
 [NativeTypeName("struct IMFCdmSuspendNotify : IUnknown")]

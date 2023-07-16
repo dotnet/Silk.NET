@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IACList2.xml' path='doc/member[@name="IACList2"]/*'/>
 [Guid("470141A0-5186-11D2-BBB6-0060977B464C")]
 [NativeTypeName("struct IACList2 : IACList")]

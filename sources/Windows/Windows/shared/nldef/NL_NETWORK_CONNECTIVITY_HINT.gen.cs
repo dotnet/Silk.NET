@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NL_NETWORK_CONNECTIVITY_HINT.xml' path='doc/member[@name="NL_NETWORK_CONNECTIVITY_HINT"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct NL_NETWORK_CONNECTIVITY_HINT

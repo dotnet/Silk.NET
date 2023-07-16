@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SIGNER_CERT.xml' path='doc/member[@name="SIGNER_CERT"]/*'/>
 public unsafe partial struct SIGNER_CERT
 {

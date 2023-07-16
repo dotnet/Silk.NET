@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDataObjectProvider.xml' path='doc/member[@name="IDataObjectProvider"]/*'/>
 [Guid("3D25F6D6-4B2A-433C-9184-7C33AD35D001")]
 [NativeTypeName("struct IDataObjectProvider : IUnknown")]

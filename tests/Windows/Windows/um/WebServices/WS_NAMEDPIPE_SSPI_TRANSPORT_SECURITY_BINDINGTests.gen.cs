@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDINGTests

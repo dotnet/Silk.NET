@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIPROPGUIDANDPATH.xml' path='doc/member[@name="DIPROPGUIDANDPATH"]/*'/>
 public unsafe partial struct DIPROPGUIDANDPATH
 {

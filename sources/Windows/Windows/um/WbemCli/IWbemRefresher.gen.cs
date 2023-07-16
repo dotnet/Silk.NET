@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWbemRefresher.xml' path='doc/member[@name="IWbemRefresher"]/*'/>
 [Guid("49353C99-516B-11D1-AEA6-00C04FB68820")]
 [NativeTypeName("struct IWbemRefresher : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION"]/*'/>
 public unsafe partial struct KNOWNFOLDER_DEFINITION
 {

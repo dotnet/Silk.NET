@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROCESS_POWER_THROTTLING_STATE.xml' path='doc/member[@name="PROCESS_POWER_THROTTLING_STATE"]/*'/>
 public partial struct PROCESS_POWER_THROTTLING_STATE
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager"]/*'/>
 [Guid("52B83A42-2543-416A-81D9-C0DE7969C8B3")]
 [NativeTypeName("struct ISuspensionDependencyManager : IUnknown")]

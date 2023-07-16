@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SERVICE_NODE_TYPE.xml' path='doc/member[@name="SERVICE_NODE_TYPE"]/*'/>
 [Flags]
 public enum SERVICE_NODE_TYPE

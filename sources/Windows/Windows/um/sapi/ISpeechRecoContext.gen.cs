@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext"]/*'/>
 [Guid("580AA49D-7E1E-4809-B8E2-57DA806104B8")]
 [NativeTypeName("struct ISpeechRecoContext : IDispatch")]

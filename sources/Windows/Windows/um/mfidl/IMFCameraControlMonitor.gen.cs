@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor"]/*'/>
 [Guid("4D46F2C9-28BA-4970-8C7B-1F0C9D80AF69")]
 [NativeTypeName("struct IMFCameraControlMonitor : IUnknown")]

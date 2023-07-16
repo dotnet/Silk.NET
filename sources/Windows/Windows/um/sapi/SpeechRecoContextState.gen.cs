@@ -1,9 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using static TerraFX.Interop.Windows.SPCONTEXTSTATE;
+using static Silk.NET.Windows.SPCONTEXTSTATE;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpeechRecoContextState.xml' path='doc/member[@name="SpeechRecoContextState"]/*'/>
 public enum SpeechRecoContextState
 {

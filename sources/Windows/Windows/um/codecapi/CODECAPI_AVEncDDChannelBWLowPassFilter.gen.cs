@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncDDChannelBWLowPassFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDChannelBWLowPassFilter"]/*'/>
 [Guid("E197821D-D2E7-43E2-AD2C-00582F518545")]
 public unsafe partial struct CODECAPI_AVEncDDChannelBWLowPassFilter : INativeGuid

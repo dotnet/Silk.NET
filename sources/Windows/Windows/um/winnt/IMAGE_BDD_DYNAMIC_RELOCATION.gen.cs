@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMAGE_BDD_DYNAMIC_RELOCATION.xml' path='doc/member[@name="IMAGE_BDD_DYNAMIC_RELOCATION"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_BDD_DYNAMIC_RELOCATION

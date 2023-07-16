@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_GUID_AVEncPCM.xml' path='doc/member[@name="CODECAPI_GUID_AVEncPCM"]/*'/>
 [Guid("844BE7F4-26CF-4779-B386-CC05D187990C")]
 public unsafe partial struct CODECAPI_GUID_AVEncPCM : INativeGuid

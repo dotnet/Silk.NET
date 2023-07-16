@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPointerInactive.xml' path='doc/member[@name="IPointerInactive"]/*'/>
 [Guid("55980BA0-35AA-11CF-B671-00AA004CD6D8")]
 [NativeTypeName("struct IPointerInactive : IUnknown")]

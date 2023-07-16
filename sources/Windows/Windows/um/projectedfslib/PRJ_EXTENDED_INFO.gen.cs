@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_EXTENDED_INFO.xml' path='doc/member[@name="PRJ_EXTENDED_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct PRJ_EXTENDED_INFO

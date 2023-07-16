@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXMLDOMDocumentFragment.xml' path='doc/member[@name="IXMLDOMDocumentFragment"]/*'/>
 [Guid("3EFAA413-272F-11D2-836F-0000F87A7782")]
 [NativeTypeName("struct IXMLDOMDocumentFragment : IXMLDOMNode")]

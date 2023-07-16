@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_NETPIPE_URL.xml' path='doc/member[@name="WS_NETPIPE_URL"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct WS_NETPIPE_URL

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnCustomSpeechCommand.xml' path='doc/member[@name="ITfFnCustomSpeechCommand"]/*'/>
 [Guid("FCA6C349-A12F-43A3-8DD6-5A5A4282577B")]
 [NativeTypeName("struct ITfFnCustomSpeechCommand : ITfFunction")]

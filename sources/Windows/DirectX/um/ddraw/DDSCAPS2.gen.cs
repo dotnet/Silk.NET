@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public partial struct DDSCAPS2
 {
     /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.dwCaps"]/*'/>

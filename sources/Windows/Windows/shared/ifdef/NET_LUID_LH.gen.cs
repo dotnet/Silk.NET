@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NET_LUID_LH.xml' path='doc/member[@name="NET_LUID_LH"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public partial struct NET_LUID_LH

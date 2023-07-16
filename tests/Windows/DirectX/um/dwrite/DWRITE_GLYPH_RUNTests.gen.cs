@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DWRITE_GLYPH_RUN"/> struct.</summary>
 public static unsafe partial class DWRITE_GLYPH_RUNTests
 {

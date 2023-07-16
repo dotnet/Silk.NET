@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX"]/*'/>
 public unsafe partial struct TITLEBARINFOEX
 {

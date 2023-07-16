@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPrintDialogCallback.xml' path='doc/member[@name="IPrintDialogCallback"]/*'/>
 [Guid("5852A2C3-6530-11D1-B6A3-0000F8757BF9")]
 [NativeTypeName("struct IPrintDialogCallback : IUnknown")]

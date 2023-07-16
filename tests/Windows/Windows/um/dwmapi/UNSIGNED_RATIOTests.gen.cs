@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "UNSIGNED_RATIO"/> struct.</summary>
 public static unsafe partial class UNSIGNED_RATIOTests
 {

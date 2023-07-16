@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSourceBufferList.xml' path='doc/member[@name="IMFSourceBufferList"]/*'/>
 [Guid("249981F8-8325-41F3-B80C-3B9E3AAD0CBE")]
 [NativeTypeName("struct IMFSourceBufferList : IUnknown")]

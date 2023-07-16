@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpObjectTokenInit.xml' path='doc/member[@name="ISpObjectTokenInit"]/*'/>
 [Guid("B8AAB0CF-346F-49D8-9499-C8B03F161D51")]
 [NativeTypeName("struct ISpObjectTokenInit : ISpObjectToken")]

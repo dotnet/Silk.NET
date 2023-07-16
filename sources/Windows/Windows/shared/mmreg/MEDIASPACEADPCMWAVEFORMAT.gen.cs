@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MEDIASPACEADPCMWAVEFORMAT.xml' path='doc/member[@name="MEDIASPACEADPCMWAVEFORMAT"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MEDIASPACEADPCMWAVEFORMAT

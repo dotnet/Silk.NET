@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HIDP_DATA.xml' path='doc/member[@name="HIDP_DATA"]/*'/>
 public partial struct HIDP_DATA
 {

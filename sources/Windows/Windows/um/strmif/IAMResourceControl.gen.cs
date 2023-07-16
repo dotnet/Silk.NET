@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMResourceControl.xml' path='doc/member[@name="IAMResourceControl"]/*'/>
 [Guid("8389D2D0-77D7-11D1-ABE6-00A0C905F375")]
 [NativeTypeName("struct IAMResourceControl : IUnknown")]

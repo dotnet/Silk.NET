@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "KERB_QUERY_S4U2PROXY_CACHE_REQUEST"/> struct.</summary>
 public static unsafe partial class KERB_QUERY_S4U2PROXY_CACHE_REQUESTTests
 {

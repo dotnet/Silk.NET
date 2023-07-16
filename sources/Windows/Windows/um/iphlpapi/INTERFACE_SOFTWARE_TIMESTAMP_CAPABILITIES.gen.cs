@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES.xml' path='doc/member[@name="INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES"]/*'/>
 [SupportedOSPlatform("windows10.0.22621.0")]
 public partial struct INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES

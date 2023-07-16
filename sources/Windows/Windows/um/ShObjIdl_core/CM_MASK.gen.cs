@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CM_MASK.xml' path='doc/member[@name="CM_MASK"]/*'/>
 [Flags]
 public enum CM_MASK

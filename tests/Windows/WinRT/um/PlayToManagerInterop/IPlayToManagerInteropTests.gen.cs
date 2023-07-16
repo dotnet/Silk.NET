@@ -5,9 +5,9 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests;
+namespace Silk.NET.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref = "IPlayToManagerInterop"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class IPlayToManagerInteropTests

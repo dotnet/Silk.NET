@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CERT_REVOCATION_STATUS"/> struct.</summary>
 public static unsafe partial class CERT_REVOCATION_STATUSTests
 {

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaStreamSourceSampleRequest.xml' path='doc/member[@name="IMFMediaStreamSourceSampleRequest"]/*'/>
 [Guid("380B9AF9-A85B-4E78-A2AF-EA5CE645C6B4")]
 [NativeTypeName("struct IMFMediaStreamSourceSampleRequest : IUnknown")]

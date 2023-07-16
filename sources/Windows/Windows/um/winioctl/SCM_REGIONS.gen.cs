@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS"]/*'/>
 public partial struct SCM_REGIONS
 {

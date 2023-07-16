@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter"]/*'/>
 [Guid("3137F1CD-FE5E-4805-A5D8-FB477448CB3D")]
 [NativeTypeName("struct IMFSinkWriter : IUnknown")]

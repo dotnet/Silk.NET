@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncCommonBufferSize.xml' path='doc/member[@name="CODECAPI_AVEncCommonBufferSize"]/*'/>
 [Guid("0DB96574-B6A4-4C8B-8106-3773DE0310CD")]
 public unsafe partial struct CODECAPI_AVEncCommonBufferSize : INativeGuid

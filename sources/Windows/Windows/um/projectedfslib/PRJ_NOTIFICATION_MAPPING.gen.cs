@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PRJ_NOTIFICATION_MAPPING.xml' path='doc/member[@name="PRJ_NOTIFICATION_MAPPING"]/*'/>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public unsafe partial struct PRJ_NOTIFICATION_MAPPING

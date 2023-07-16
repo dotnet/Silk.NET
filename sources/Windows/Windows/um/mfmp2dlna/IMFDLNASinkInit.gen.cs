@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFDLNASinkInit.xml' path='doc/member[@name="IMFDLNASinkInit"]/*'/>
 [Guid("0C012799-1B61-4C10-BDA9-04445BE5F561")]
 [NativeTypeName("struct IMFDLNASinkInit : IUnknown")]

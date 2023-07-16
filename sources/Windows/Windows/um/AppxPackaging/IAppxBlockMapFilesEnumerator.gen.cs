@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxBlockMapFilesEnumerator.xml' path='doc/member[@name="IAppxBlockMapFilesEnumerator"]/*'/>
 [Guid("02B856A2-4262-4070-BACB-1A8CBBC42305")]
 [NativeTypeName("struct IAppxBlockMapFilesEnumerator : IUnknown")]

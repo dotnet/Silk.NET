@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='X3DAUDIO_DISTANCE_CURVE.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct X3DAUDIO_DISTANCE_CURVE

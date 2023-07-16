@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WCM_USAGE_DATA.xml' path='doc/member[@name="WCM_USAGE_DATA"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct WCM_USAGE_DATA

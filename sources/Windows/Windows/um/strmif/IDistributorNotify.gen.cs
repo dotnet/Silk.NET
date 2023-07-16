@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify"]/*'/>
 [Guid("56A868AF-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IDistributorNotify : IUnknown")]

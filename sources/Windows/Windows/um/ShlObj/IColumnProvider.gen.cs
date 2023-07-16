@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IColumnProvider.xml' path='doc/member[@name="IColumnProvider"]/*'/>
 [Guid("E8025004-1C42-11D2-BE2C-00A0C9A83DA1")]
 [NativeTypeName("struct IColumnProvider : IUnknown")]

@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter"]/*'/>
 [Guid("F43D0B0B-1379-40E2-9B29-682EA2BF42AF")]
 [NativeTypeName("struct IAppxEncryptedPackageWriter : IUnknown")]

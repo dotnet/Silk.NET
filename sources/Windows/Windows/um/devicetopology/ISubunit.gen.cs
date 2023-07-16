@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISubunit.xml' path='doc/member[@name="ISubunit"]/*'/>
 [Guid("82149A85-DBA6-4487-86BB-EA8F7FEFCC71")]
 [NativeTypeName("struct ISubunit : IUnknown")]

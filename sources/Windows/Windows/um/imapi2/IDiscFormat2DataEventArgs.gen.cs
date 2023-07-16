@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDiscFormat2DataEventArgs.xml' path='doc/member[@name="IDiscFormat2DataEventArgs"]/*'/>
 [Guid("2735413D-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2DataEventArgs : IWriteEngine2EventArgs")]

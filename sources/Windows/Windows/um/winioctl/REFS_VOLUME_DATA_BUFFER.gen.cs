@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER"]/*'/>
 public partial struct REFS_VOLUME_DATA_BUFFER
 {

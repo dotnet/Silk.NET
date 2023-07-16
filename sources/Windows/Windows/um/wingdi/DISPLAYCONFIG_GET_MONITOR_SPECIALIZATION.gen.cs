@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION"]/*'/>
 public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
 {

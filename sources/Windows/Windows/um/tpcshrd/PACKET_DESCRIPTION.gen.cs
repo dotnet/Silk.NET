@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION"]/*'/>
 public unsafe partial struct PACKET_DESCRIPTION
 {

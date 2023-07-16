@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoConsecutiveFramesForLayer.xml' path='doc/member[@name="CODECAPI_AVEncVideoConsecutiveFramesForLayer"]/*'/>
 [Guid("0AF35522-D984-45AE-BBB8-53933E0AB1B5")]
 public unsafe partial struct CODECAPI_AVEncVideoConsecutiveFramesForLayer : INativeGuid

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "REMOTE_NAME_INFOA"/> struct.</summary>
 public static unsafe partial class REMOTE_NAME_INFOATests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE

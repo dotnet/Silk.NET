@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "COMPOSITION_TARGET_STATS"/> struct.</summary>
 public static unsafe partial class COMPOSITION_TARGET_STATSTests
 {

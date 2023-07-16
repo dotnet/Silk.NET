@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRL_DIST_POINT_NAME.xml' path='doc/member[@name="CRL_DIST_POINT_NAME"]/*'/>
 public partial struct CRL_DIST_POINT_NAME
 {

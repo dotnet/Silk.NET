@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMediaSample2Config.xml' path='doc/member[@name="IMediaSample2Config"]/*'/>
 [Guid("68961E68-832B-41EA-BC91-63593F3E70E3")]
 [NativeTypeName("struct IMediaSample2Config : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2"]/*'/>
 [Guid("EB5E760C-09EF-45C0-B510-70830CE31E6A")]
 [NativeTypeName("struct IZoneIdentifier2 : IZoneIdentifier")]

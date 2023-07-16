@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFCameraExtrinsic_CalibratedTransform.xml' path='doc/member[@name="MFCameraExtrinsic_CalibratedTransform"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraExtrinsic_CalibratedTransform

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TRANSACTION_ENLISTMENT_PAIR.xml' path='doc/member[@name="TRANSACTION_ENLISTMENT_PAIR"]/*'/>
 public partial struct TRANSACTION_ENLISTMENT_PAIR
 {

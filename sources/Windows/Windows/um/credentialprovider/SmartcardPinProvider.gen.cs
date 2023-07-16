@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SmartcardPinProvider.xml' path='doc/member[@name="SmartcardPinProvider"]/*'/>
 [Guid("94596C7E-3744-41CE-893E-BBF09122F76A")]
 public unsafe partial struct SmartcardPinProvider : INativeGuid

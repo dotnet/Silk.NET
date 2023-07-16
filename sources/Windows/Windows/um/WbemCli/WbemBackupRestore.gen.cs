@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WbemBackupRestore.xml' path='doc/member[@name="WbemBackupRestore"]/*'/>
 [Guid("C49E32C6-BC8B-11D2-85D4-00105A1F8304")]
 public unsafe partial struct WbemBackupRestore : INativeGuid

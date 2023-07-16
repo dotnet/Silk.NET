@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct COMPRESS_ALLOCATION_ROUTINES

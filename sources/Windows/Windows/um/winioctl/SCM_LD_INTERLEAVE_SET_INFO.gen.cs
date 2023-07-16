@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_LD_INTERLEAVE_SET_INFO.xml' path='doc/member[@name="SCM_LD_INTERLEAVE_SET_INFO"]/*'/>
 public partial struct SCM_LD_INTERLEAVE_SET_INFO
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITextStoreSinkAnchorEx.xml' path='doc/member[@name="ITextStoreSinkAnchorEx"]/*'/>
 [Guid("25642426-028D-4474-977B-111BB114FE3E")]
 [NativeTypeName("struct ITextStoreSinkAnchorEx : ITextStoreAnchorSink")]

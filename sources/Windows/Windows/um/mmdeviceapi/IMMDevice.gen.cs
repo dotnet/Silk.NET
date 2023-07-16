@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice"]/*'/>
 [Guid("D666063F-1587-4E43-81F1-B948E807363F")]
 [NativeTypeName("struct IMMDevice : IUnknown")]

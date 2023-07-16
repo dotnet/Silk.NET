@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWrappedProtocol.xml' path='doc/member[@name="IWrappedProtocol"]/*'/>
 [Guid("53C84785-8425-4DC5-971B-E58D9C19F9B6")]
 [NativeTypeName("struct IWrappedProtocol : IUnknown")]

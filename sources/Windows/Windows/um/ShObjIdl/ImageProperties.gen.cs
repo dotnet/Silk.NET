@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ImageProperties.xml' path='doc/member[@name="ImageProperties"]/*'/>
 [Guid("7AB770C7-0E23-4D7A-8AA2-19BFAD479829")]
 public unsafe partial struct ImageProperties : INativeGuid

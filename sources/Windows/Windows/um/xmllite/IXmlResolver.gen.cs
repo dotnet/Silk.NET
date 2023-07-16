@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXmlResolver.xml' path='doc/member[@name="IXmlResolver"]/*'/>
 [Guid("7279FC82-709D-4095-B63D-69FE4B0D9030")]
 [NativeTypeName("struct IXmlResolver : IUnknown")]

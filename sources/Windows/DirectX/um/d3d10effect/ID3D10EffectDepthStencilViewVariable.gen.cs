@@ -1,10 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/d3d10effect.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
-using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3D10EffectDepthStencilViewVariable.xml' path='doc/member[@name="ID3D10EffectDepthStencilViewVariable"]/*'/>
 [NativeTypeName("struct ID3D10EffectDepthStencilViewVariable : ID3D10EffectVariable")]
 [NativeInheritance("ID3D10EffectVariable")]

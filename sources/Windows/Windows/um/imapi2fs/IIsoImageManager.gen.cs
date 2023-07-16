@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IIsoImageManager.xml' path='doc/member[@name="IIsoImageManager"]/*'/>
 [Guid("6CA38BE5-FBBB-4800-95A1-A438865EB0D4")]
 [NativeTypeName("struct IIsoImageManager : IDispatch")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INameSpaceTreeControlFolderCapabilities.xml' path='doc/member[@name="INameSpaceTreeControlFolderCapabilities"]/*'/>
 [Guid("E9701183-E6B3-4FF2-8568-813615FEC7BE")]
 [NativeTypeName("struct INameSpaceTreeControlFolderCapabilities : IUnknown")]

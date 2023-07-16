@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICImagingFactory.xml' path='doc/member[@name="IWICImagingFactory"]/*'/>
 [Guid("EC5EC8A9-C395-4314-9C77-54D7A935FF70")]
 [NativeTypeName("struct IWICImagingFactory : IUnknown")]

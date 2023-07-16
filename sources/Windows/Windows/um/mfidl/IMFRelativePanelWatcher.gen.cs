@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher"]/*'/>
 [Guid("421AF7F6-573E-4AD0-8FDA-2E57CEDB18C6")]
 [NativeTypeName("struct IMFRelativePanelWatcher : IMFShutdown")]

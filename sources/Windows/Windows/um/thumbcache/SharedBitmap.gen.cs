@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SharedBitmap.xml' path='doc/member[@name="SharedBitmap"]/*'/>
 [Guid("4DB26476-6787-4046-B836-E8412A9E8A27")]
 public unsafe partial struct SharedBitmap : INativeGuid

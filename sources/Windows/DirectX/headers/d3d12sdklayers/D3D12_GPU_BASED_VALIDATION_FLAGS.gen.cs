@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_GPU_BASED_VALIDATION_FLAGS.xml' path='doc/member[@name="D3D12_GPU_BASED_VALIDATION_FLAGS"]/*'/>
 [Flags]
 public enum D3D12_GPU_BASED_VALIDATION_FLAGS

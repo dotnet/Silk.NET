@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoOutputColorPrimaries.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputColorPrimaries"]/*'/>
 [Guid("BE95907C-9D04-4921-8985-A6D6D87D1A6C")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputColorPrimaries : INativeGuid

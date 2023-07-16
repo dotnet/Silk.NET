@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA"]/*'/>
 public unsafe partial struct CERT_BIOMETRIC_DATA
 {

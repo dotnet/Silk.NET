@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpPhoneticAlphabetConverter.xml' path='doc/member[@name="SpPhoneticAlphabetConverter"]/*'/>
 [Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
 public unsafe partial struct SpPhoneticAlphabetConverter : INativeGuid

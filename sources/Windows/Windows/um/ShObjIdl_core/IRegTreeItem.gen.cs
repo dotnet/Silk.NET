@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IRegTreeItem.xml' path='doc/member[@name="IRegTreeItem"]/*'/>
 [Guid("A9521922-0812-4D44-9EC3-7FD38C726F3D")]
 [NativeTypeName("struct IRegTreeItem : IUnknown")]

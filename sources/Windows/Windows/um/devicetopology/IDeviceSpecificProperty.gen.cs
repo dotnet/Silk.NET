@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty"]/*'/>
 [Guid("3B22BCBF-2586-4AF0-8583-205D391B807C")]
 [NativeTypeName("struct IDeviceSpecificProperty : IUnknown")]

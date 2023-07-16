@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioOutputSelector.xml' path='doc/member[@name="IAudioOutputSelector"]/*'/>
 [Guid("BB515F69-94A7-429E-8B9C-271B3F11A3AB")]
 [NativeTypeName("struct IAudioOutputSelector : IUnknown")]

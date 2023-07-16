@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITranscodeImage.xml' path='doc/member[@name="ITranscodeImage"]/*'/>
 [Guid("BAE86DDD-DC11-421C-B7AB-CC55D1D65C44")]
 [NativeTypeName("struct ITranscodeImage : IUnknown")]

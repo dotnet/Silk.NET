@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfFnGetLinguisticAlternates.xml' path='doc/member[@name="ITfFnGetLinguisticAlternates"]/*'/>
 [Guid("EA163CE2-7A65-4506-82A3-C528215DA64E")]
 [NativeTypeName("struct ITfFnGetLinguisticAlternates : ITfFunction")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SIP_CAP_SET_V3.xml' path='doc/member[@name="SIP_CAP_SET_V3"]/*'/>
 public partial struct SIP_CAP_SET_V3
 {

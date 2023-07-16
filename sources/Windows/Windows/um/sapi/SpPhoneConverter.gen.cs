@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpPhoneConverter.xml' path='doc/member[@name="SpPhoneConverter"]/*'/>
 [Guid("9185F743-1143-4C28-86B5-BFF14F20E5C8")]
 public unsafe partial struct SpPhoneConverter : INativeGuid

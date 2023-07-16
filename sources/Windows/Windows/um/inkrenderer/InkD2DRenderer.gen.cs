@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='InkD2DRenderer.xml' path='doc/member[@name="InkD2DRenderer"]/*'/>
 [Guid("4044E60C-7B01-4671-A97C-04E0210A07A5")]
 public unsafe partial struct InkD2DRenderer : INativeGuid

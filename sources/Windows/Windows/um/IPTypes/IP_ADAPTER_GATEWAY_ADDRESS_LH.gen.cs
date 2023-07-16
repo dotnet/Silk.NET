@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IP_ADAPTER_GATEWAY_ADDRESS_LH.xml' path='doc/member[@name="IP_ADAPTER_GATEWAY_ADDRESS_LH"]/*'/>
 public unsafe partial struct IP_ADAPTER_GATEWAY_ADDRESS_LH
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestDriverDependency.xml' path='doc/member[@name="IAppxManifestDriverDependency"]/*'/>
 [Guid("1210CB94-5A92-4602-BE24-79F318AF4AF9")]
 [NativeTypeName("struct IAppxManifestDriverDependency : IUnknown")]

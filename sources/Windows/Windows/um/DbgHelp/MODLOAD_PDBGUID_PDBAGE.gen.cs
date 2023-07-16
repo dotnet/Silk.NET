@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MODLOAD_PDBGUID_PDBAGE.xml' path='doc/member[@name="MODLOAD_PDBGUID_PDBAGE"]/*'/>
 public partial struct MODLOAD_PDBGUID_PDBAGE
 {

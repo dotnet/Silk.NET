@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInternetBindInfoEx.xml' path='doc/member[@name="IInternetBindInfoEx"]/*'/>
 [Guid("A3E015B7-A82C-4DCD-A150-569AEEED36AB")]
 [NativeTypeName("struct IInternetBindInfoEx : IInternetBindInfo")]

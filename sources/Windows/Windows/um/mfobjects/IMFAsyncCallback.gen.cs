@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFAsyncCallback.xml' path='doc/member[@name="IMFAsyncCallback"]/*'/>
 [Guid("A27003CF-2354-4F2A-8D6A-AB7CFF15437E")]
 [NativeTypeName("struct IMFAsyncCallback : IUnknown")]

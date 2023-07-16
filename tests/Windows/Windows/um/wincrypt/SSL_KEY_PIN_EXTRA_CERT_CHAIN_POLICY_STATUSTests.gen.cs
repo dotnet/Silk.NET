@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS"/> struct.</summary>
 public static unsafe partial class SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUSTests
 {

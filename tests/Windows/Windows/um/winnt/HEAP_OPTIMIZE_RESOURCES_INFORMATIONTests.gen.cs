@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "HEAP_OPTIMIZE_RESOURCES_INFORMATION"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class HEAP_OPTIMIZE_RESOURCES_INFORMATIONTests

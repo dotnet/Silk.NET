@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PROPERTYUI_NAME_FLAGS.xml' path='doc/member[@name="PROPERTYUI_NAME_FLAGS"]/*'/>
 [Flags]
 public enum PROPERTYUI_NAME_FLAGS

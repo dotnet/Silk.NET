@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_INFO_QUEUE_MESSAGE_SEVERITY.xml' path='doc/member[@name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum DXGI_INFO_QUEUE_MESSAGE_SEVERITY

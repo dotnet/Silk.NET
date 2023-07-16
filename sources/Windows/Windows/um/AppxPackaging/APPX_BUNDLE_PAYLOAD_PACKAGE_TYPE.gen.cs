@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.xml' path='doc/member[@name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE

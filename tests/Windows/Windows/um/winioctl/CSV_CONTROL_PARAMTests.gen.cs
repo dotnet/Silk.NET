@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CSV_CONTROL_PARAM"/> struct.</summary>
 public static unsafe partial class CSV_CONTROL_PARAMTests
 {

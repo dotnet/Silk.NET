@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='BINDPTR.xml' path='doc/member[@name="BINDPTR"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct BINDPTR

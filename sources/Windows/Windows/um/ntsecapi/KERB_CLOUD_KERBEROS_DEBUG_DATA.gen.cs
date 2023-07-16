@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA"]/*'/>
 public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
 {

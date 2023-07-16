@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DWRITE_TEXT_METRICS1"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class DWRITE_TEXT_METRICS1Tests

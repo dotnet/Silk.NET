@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "RESOURCEMANAGER_BASIC_INFORMATION"/> struct.</summary>
 public static unsafe partial class RESOURCEMANAGER_BASIC_INFORMATIONTests
 {

@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "STORAGE_DESCRIPTOR_HEADER"/> struct.</summary>
 public static unsafe partial class STORAGE_DESCRIPTOR_HEADERTests
 {

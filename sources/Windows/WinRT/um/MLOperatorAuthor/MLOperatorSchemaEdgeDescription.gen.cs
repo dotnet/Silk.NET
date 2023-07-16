@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='MLOperatorSchemaEdgeDescription.xml' path='doc/member[@name="MLOperatorSchemaEdgeDescription"]/*'/>
 public unsafe partial struct MLOperatorSchemaEdgeDescription
 {

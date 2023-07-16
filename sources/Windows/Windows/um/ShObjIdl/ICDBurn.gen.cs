@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICDBurn.xml' path='doc/member[@name="ICDBurn"]/*'/>
 [Guid("3D73A659-E5D0-4D42-AFC0-5121BA425C8D")]
 [NativeTypeName("struct ICDBurn : IUnknown")]

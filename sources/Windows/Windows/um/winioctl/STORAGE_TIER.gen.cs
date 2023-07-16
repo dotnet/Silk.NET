@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER"]/*'/>
 public unsafe partial struct STORAGE_TIER
 {

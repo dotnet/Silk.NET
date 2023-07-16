@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NET_ADDRESS_INFO.xml' path='doc/member[@name="NET_ADDRESS_INFO"]/*'/>
 public partial struct NET_ADDRESS_INFO
 {

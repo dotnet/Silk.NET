@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut"]/*'/>
 [Guid("3DF681E2-EA56-11D9-8BDE-F66BAD1E3F3A")]
 [NativeTypeName("struct ISpShortcut : IUnknown")]

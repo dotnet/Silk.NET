@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/d2d1_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.DirectX.D2D1_PROPERTY_TYPE;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.DirectX.D2D1_PROPERTY_TYPE;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID2D1Properties.xml' path='doc/member[@name="ID2D1Properties"]/*'/>
 [Guid("483473D7-CD46-4F9D-9D3A-3112AA80159D")]
 [NativeTypeName("struct ID2D1Properties : IUnknown")]

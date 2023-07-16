@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINHTTP_HEADER_NAME.xml' path='doc/member[@name="WINHTTP_HEADER_NAME"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct WINHTTP_HEADER_NAME

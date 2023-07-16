@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_KEY_INFO.xml' path='doc/member[@name="APPX_KEY_INFO"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct APPX_KEY_INFO

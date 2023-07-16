@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PPM_IDLE_ACCOUNTING_EX"/> struct.</summary>
 public static unsafe partial class PPM_IDLE_ACCOUNTING_EXTests
 {

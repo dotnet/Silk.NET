@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SOCKET_ADDRESS_LIST.xml' path='doc/member[@name="SOCKET_ADDRESS_LIST"]/*'/>
 public partial struct SOCKET_ADDRESS_LIST
 {

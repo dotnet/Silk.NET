@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter"]/*'/>
 [Guid("133ADCD4-19B4-4020-9FDC-842E78253B17")]
 [NativeTypeName("struct ISpPhoneticAlphabetConverter : IUnknown")]

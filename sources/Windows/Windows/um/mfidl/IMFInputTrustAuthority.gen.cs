@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority"]/*'/>
 [Guid("D19F8E98-B126-4446-890C-5DCB7AD71453")]
 [NativeTypeName("struct IMFInputTrustAuthority : IUnknown")]

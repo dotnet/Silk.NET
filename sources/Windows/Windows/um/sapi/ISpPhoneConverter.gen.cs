@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpPhoneConverter.xml' path='doc/member[@name="ISpPhoneConverter"]/*'/>
 [Guid("8445C581-0CAC-4A38-ABFE-9B2CE2826455")]
 [NativeTypeName("struct ISpPhoneConverter : ISpObjectWithToken")]

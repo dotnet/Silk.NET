@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CLAIM_SECURITY_ATTRIBUTE_V1"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CLAIM_SECURITY_ATTRIBUTE_V1Tests

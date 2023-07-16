@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='XAUDIO2_PERFORMANCE_DATA.xml' path='doc/member[@name="XAUDIO2_PERFORMANCE_DATA"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct XAUDIO2_PERFORMANCE_DATA

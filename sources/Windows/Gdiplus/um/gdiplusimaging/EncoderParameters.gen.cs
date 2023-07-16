@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='EncoderParameters.xml' path='doc/member[@name="EncoderParameters"]/*'/>
 public partial struct EncoderParameters
 {

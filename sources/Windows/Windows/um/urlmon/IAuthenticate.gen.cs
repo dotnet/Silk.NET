@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAuthenticate.xml' path='doc/member[@name="IAuthenticate"]/*'/>
 [Guid("79EAC9D0-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IAuthenticate : IUnknown")]

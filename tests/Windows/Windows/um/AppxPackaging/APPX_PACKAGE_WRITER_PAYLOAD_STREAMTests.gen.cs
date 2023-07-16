@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "APPX_PACKAGE_WRITER_PAYLOAD_STREAM"/> struct.</summary>
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class APPX_PACKAGE_WRITER_PAYLOAD_STREAMTests

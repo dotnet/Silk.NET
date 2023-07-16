@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IBPCSatelliteTuner.xml' path='doc/member[@name="IBPCSatelliteTuner"]/*'/>
 [Guid("211A8765-03AC-11D1-8D13-00AA00BD8339")]
 [NativeTypeName("struct IBPCSatelliteTuner : IAMTuner")]

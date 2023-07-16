@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator"]/*'/>
 [Guid("1A09A2FD-7440-44EB-8C84-848205A6A1CC")]
 [NativeTypeName("struct IAppxContentGroupFilesEnumerator : IUnknown")]

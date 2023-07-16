@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFont.xml' path='doc/member[@name="IFont"]/*'/>
 [Guid("BEF6E002-A874-101A-8BBA-00AA00300CAB")]
 [NativeTypeName("struct IFont : IUnknown")]

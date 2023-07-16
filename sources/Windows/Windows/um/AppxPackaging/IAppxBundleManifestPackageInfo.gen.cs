@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo"]/*'/>
 [Guid("54CD06C1-268F-40BB-8ED2-757A9EBAEC8D")]
 [NativeTypeName("struct IAppxBundleManifestPackageInfo : IUnknown")]

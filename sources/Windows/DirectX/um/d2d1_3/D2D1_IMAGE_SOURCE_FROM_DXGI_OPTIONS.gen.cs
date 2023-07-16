@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS.xml' path='doc/member[@name="D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS"]/*'/>
 [Flags]
 public enum D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS

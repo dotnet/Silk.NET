@@ -2,9 +2,9 @@
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
-using static TerraFX.Interop.DirectX.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT;
+using static Silk.NET.DirectX.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_FLAGS"]/*'/>
 [Flags]
 public enum D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_FLAGS

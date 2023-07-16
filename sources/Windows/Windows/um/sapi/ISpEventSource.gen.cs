@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpEventSource.xml' path='doc/member[@name="ISpEventSource"]/*'/>
 [Guid("BE7A9CCE-5F9E-11D2-960F-00C04F8EE628")]
 [NativeTypeName("struct ISpEventSource : ISpNotifySource")]

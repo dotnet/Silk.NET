@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFAsyncCallbackLogging.xml' path='doc/member[@name="IMFAsyncCallbackLogging"]/*'/>
 [Guid("C7A4DCA1-F5F0-47B6-B92B-BF0106D25791")]
 [NativeTypeName("struct IMFAsyncCallbackLogging : IMFAsyncCallback")]

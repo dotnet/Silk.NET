@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct DML_SCALAR_UNION

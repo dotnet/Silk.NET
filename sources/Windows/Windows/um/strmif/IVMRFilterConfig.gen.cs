@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig"]/*'/>
 [Guid("9E5530C5-7034-48B4-BB46-0B8A6EFC8E36")]
 [NativeTypeName("struct IVMRFilterConfig : IUnknown")]

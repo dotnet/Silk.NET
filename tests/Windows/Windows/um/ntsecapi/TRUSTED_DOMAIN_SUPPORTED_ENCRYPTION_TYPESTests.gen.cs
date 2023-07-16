@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES"/> struct.</summary>
 public static unsafe partial class TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPESTests
 {

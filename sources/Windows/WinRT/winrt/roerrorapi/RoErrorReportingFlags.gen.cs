@@ -2,9 +2,9 @@
 // Ported from winrt/roerrorapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
-using static TerraFX.Interop.WinRT.RO_ERROR_REPORTING_FLAGS;
+using static Silk.NET.WinRT.RO_ERROR_REPORTING_FLAGS;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags"]/*'/>
 [Flags]
 public enum RoErrorReportingFlags

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='REASON_CONTEXT.xml' path='doc/member[@name="REASON_CONTEXT"]/*'/>
 public partial struct REASON_CONTEXT
 {

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1"/> struct.</summary>
 public static unsafe partial class JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1Tests
 {

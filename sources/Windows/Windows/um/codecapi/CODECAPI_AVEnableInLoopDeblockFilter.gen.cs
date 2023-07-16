@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEnableInLoopDeblockFilter.xml' path='doc/member[@name="CODECAPI_AVEnableInLoopDeblockFilter"]/*'/>
 [Guid("D2E8E399-0623-4BF3-92A8-4D1818529DED")]
 public unsafe partial struct CODECAPI_AVEnableInLoopDeblockFilter : INativeGuid

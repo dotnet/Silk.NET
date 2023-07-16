@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSecureBuffer.xml' path='doc/member[@name="IMFSecureBuffer"]/*'/>
 [Guid("C1209904-E584-4752-A2D6-7F21693F8B21")]
 [NativeTypeName("struct IMFSecureBuffer : IUnknown")]

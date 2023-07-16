@@ -1,15 +1,15 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.AUDIO_STREAM_CATEGORY;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.AUDIO_STREAM_CATEGORY;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2"]/*'/>
 [Guid("2B02E3CF-2E0B-4EC3-BE45-1B2A3FE7210D")]
 [NativeTypeName("struct IXAudio2 : IUnknown")]

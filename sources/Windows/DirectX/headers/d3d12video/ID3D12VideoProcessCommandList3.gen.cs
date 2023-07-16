@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3D12VideoProcessCommandList3.xml' path='doc/member[@name="ID3D12VideoProcessCommandList3"]/*'/>
 [Guid("1A0A4CA4-9F08-40CE-9558-B411FD2666FF")]
 [NativeTypeName("struct ID3D12VideoProcessCommandList3 : ID3D12VideoProcessCommandList2")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList"]/*'/>
 [Guid("151D69F0-86F4-4674-B721-56911E797F47")]
 [NativeTypeName("struct ITfReverseConversionList : IUnknown")]

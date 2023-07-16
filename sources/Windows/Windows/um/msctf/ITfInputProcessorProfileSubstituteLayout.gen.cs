@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfInputProcessorProfileSubstituteLayout.xml' path='doc/member[@name="ITfInputProcessorProfileSubstituteLayout"]/*'/>
 [Guid("4FD67194-1002-4513-BFF2-C0DDF6258552")]
 [NativeTypeName("struct ITfInputProcessorProfileSubstituteLayout : IUnknown")]

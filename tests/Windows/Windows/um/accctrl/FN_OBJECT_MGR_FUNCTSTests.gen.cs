@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "FN_OBJECT_MGR_FUNCTS"/> struct.</summary>
 public static unsafe partial class FN_OBJECT_MGR_FUNCTSTests
 {

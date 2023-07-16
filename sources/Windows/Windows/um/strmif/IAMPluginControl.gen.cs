@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl"]/*'/>
 [Guid("0E26A181-F40C-4635-8786-976284B52981")]
 [NativeTypeName("struct IAMPluginControl : IUnknown")]

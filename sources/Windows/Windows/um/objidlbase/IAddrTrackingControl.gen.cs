@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAddrTrackingControl.xml' path='doc/member[@name="IAddrTrackingControl"]/*'/>
 [Guid("00000147-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IAddrTrackingControl : IUnknown")]

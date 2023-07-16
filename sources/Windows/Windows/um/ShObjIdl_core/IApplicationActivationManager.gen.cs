@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager"]/*'/>
 [Guid("2E941141-7F97-4756-BA1D-9DECDE894A3D")]
 [NativeTypeName("struct IApplicationActivationManager : IUnknown")]

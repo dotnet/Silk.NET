@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPrintDocumentPackageTarget2.xml' path='doc/member[@name="IPrintDocumentPackageTarget2"]/*'/>
 [Guid("C560298A-535C-48F9-866A-632540660CB4")]
 [NativeTypeName("struct IPrintDocumentPackageTarget2 : IUnknown")]

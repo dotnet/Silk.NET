@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_OPERATIONAL_REASON.xml' path='doc/member[@name="STORAGE_OPERATIONAL_REASON"]/*'/>
 public partial struct STORAGE_OPERATIONAL_REASON
 {

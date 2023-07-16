@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DIRECTX_AUDIO_ACTIVATION_PARAMS.xml' path='doc/member[@name="DIRECTX_AUDIO_ACTIVATION_PARAMS"]/*'/>
 public partial struct DIRECTX_AUDIO_ACTIVATION_PARAMS
 {

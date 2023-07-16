@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_ENDPOINT_POLICY_EXTENSION.xml' path='doc/member[@name="WS_ENDPOINT_POLICY_EXTENSION"]/*'/>
 public unsafe partial struct WS_ENDPOINT_POLICY_EXTENSION
 {

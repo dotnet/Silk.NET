@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES"]/*'/>
 public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
 {

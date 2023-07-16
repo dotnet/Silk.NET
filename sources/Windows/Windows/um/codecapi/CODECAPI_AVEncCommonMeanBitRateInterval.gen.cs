@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncCommonMeanBitRateInterval.xml' path='doc/member[@name="CODECAPI_AVEncCommonMeanBitRateInterval"]/*'/>
 [Guid("BFAA2F0C-CB82-4BC0-8474-F06A8A0D0258")]
 public unsafe partial struct CODECAPI_AVEncCommonMeanBitRateInterval : INativeGuid

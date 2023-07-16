@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFCameraIntrinsic_DistortionModel.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModel"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFCameraIntrinsic_DistortionModel

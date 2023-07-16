@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS"]/*'/>
 public unsafe partial struct RTL_USER_PROCESS_PARAMETERS
 {

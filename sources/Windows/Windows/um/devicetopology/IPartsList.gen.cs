@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPartsList.xml' path='doc/member[@name="IPartsList"]/*'/>
 [Guid("6DAA848C-5EB0-45CC-AEA5-998A2CDA1FFB")]
 [NativeTypeName("struct IPartsList : IUnknown")]

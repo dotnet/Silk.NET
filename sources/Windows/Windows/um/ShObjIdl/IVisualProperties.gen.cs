@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties"]/*'/>
 [Guid("E693CF68-D967-4112-8763-99172AEE5E5A")]
 [NativeTypeName("struct IVisualProperties : IUnknown")]

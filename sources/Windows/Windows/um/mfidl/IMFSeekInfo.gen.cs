@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSeekInfo.xml' path='doc/member[@name="IMFSeekInfo"]/*'/>
 [Guid("26AFEA53-D9ED-42B5-AB80-E64F9EE34779")]
 [NativeTypeName("struct IMFSeekInfo : IUnknown")]

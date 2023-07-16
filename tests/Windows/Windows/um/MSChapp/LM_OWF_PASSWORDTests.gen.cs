@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "LM_OWF_PASSWORD"/> struct.</summary>
 public static unsafe partial class LM_OWF_PASSWORDTests
 {

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='_wireVARIANT.xml' path='doc/member[@name="_wireVARIANT"]/*'/>
 public unsafe partial struct _wireVARIANT
 {

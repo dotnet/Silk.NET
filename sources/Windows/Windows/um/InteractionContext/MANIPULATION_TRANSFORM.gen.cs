@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct MANIPULATION_TRANSFORM

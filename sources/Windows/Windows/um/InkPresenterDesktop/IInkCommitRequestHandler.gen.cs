@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInkCommitRequestHandler.xml' path='doc/member[@name="IInkCommitRequestHandler"]/*'/>
 [Guid("FABEA3FC-B108-45B6-A9FC-8D08FA9F85CF")]
 [NativeTypeName("struct IInkCommitRequestHandler : IUnknown")]

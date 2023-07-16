@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfLangBarItemBitmapButton.xml' path='doc/member[@name="ITfLangBarItemBitmapButton"]/*'/>
 [Guid("A26A0525-3FAE-4FA0-89EE-88A964F9F1B5")]
 [NativeTypeName("struct ITfLangBarItemBitmapButton : ITfLangBarItem")]

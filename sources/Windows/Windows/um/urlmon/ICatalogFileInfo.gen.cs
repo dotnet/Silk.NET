@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICatalogFileInfo.xml' path='doc/member[@name="ICatalogFileInfo"]/*'/>
 [Guid("711C7600-6B48-11D1-B403-00AA00B92AF1")]
 [NativeTypeName("struct ICatalogFileInfo : IUnknown")]

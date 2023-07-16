@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumAssocHandlers.xml' path='doc/member[@name="IEnumAssocHandlers"]/*'/>
 [Guid("973810AE-9599-4B88-9E4D-6EE98C9552DA")]
 [NativeTypeName("struct IEnumAssocHandlers : IUnknown")]

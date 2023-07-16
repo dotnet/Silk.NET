@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoOutputChromaResolution.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputChromaResolution"]/*'/>
 [Guid("6097B4C9-7C1D-4E64-BFCC-9E9765318AE7")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputChromaResolution : INativeGuid

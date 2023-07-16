@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncCommonQualityVsSpeed.xml' path='doc/member[@name="CODECAPI_AVEncCommonQualityVsSpeed"]/*'/>
 [Guid("98332DF8-03CD-476B-89FA-3F9E442DEC9F")]
 public unsafe partial struct CODECAPI_AVEncCommonQualityVsSpeed : INativeGuid

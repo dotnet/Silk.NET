@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3"]/*'/>
 public unsafe partial struct TP_CALLBACK_ENVIRON_V3
 {

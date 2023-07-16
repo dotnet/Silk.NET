@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource"]/*'/>
 [Guid("F185FE76-E64E-11D2-B76E-00C04FB6BD3D")]
 [NativeTypeName("struct IAMPushSource : IAMLatency")]

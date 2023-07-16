@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices"]/*'/>
 [Guid("73C105EE-9DFF-4A07-B83C-7EFF290C266E")]
 [NativeTypeName("struct IProtectedModeMenuServices : IUnknown")]

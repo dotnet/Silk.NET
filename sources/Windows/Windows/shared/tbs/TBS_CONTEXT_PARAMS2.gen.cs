@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct TBS_CONTEXT_PARAMS2

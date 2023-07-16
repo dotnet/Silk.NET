@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "FSCTL_OFFLOAD_READ_OUTPUT"/> struct.</summary>
 public static unsafe partial class FSCTL_OFFLOAD_READ_OUTPUTTests
 {

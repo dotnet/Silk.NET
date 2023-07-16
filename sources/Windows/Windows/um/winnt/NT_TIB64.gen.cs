@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64"]/*'/>
 public partial struct NT_TIB64
 {

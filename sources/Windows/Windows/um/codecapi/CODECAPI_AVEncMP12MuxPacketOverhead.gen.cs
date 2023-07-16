@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMP12MuxPacketOverhead.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxPacketOverhead"]/*'/>
 [Guid("E40BD720-3955-4453-ACF9-B79132A38FA0")]
 public unsafe partial struct CODECAPI_AVEncMP12MuxPacketOverhead : INativeGuid

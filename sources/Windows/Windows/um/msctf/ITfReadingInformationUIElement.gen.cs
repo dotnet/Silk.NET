@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement"]/*'/>
 [Guid("EA1EA139-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfReadingInformationUIElement : ITfUIElement")]

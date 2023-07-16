@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS"]/*'/>
 public partial struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
 {

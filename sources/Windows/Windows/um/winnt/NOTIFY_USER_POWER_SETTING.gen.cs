@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NOTIFY_USER_POWER_SETTING.xml' path='doc/member[@name="NOTIFY_USER_POWER_SETTING"]/*'/>
 public partial struct NOTIFY_USER_POWER_SETTING
 {

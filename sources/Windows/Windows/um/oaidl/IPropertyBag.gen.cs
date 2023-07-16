@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPropertyBag.xml' path='doc/member[@name="IPropertyBag"]/*'/>
 [Guid("55272A00-42CB-11CE-8135-00AA004BB851")]
 [NativeTypeName("struct IPropertyBag : IUnknown")]

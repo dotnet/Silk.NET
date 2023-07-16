@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PackageDebugSettings.xml' path='doc/member[@name="PackageDebugSettings"]/*'/>
 [Guid("B1AEC16F-2383-4852-B0E9-8F0B1DC66B4D")]
 public unsafe partial struct PackageDebugSettings : INativeGuid

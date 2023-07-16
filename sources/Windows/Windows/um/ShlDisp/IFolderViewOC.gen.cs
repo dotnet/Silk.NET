@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFolderViewOC.xml' path='doc/member[@name="IFolderViewOC"]/*'/>
 [Guid("9BA05970-F6A8-11CF-A442-00A0C90A8F39")]
 [NativeTypeName("struct IFolderViewOC : IDispatch")]

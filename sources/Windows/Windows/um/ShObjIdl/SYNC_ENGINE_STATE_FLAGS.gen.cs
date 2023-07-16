@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYNC_ENGINE_STATE_FLAGS.xml' path='doc/member[@name="SYNC_ENGINE_STATE_FLAGS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.3")]

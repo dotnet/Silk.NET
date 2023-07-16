@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICEnumMetadataItem.xml' path='doc/member[@name="IWICEnumMetadataItem"]/*'/>
 [Guid("DC2BB46D-3F07-481E-8625-220C4AEDBB33")]
 [NativeTypeName("struct IWICEnumMetadataItem : IUnknown")]

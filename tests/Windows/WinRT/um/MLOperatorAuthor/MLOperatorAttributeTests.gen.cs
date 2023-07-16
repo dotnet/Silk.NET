@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT.UnitTests;
+namespace Silk.NET.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref = "MLOperatorAttribute"/> struct.</summary>
 public static unsafe partial class MLOperatorAttributeTests
 {

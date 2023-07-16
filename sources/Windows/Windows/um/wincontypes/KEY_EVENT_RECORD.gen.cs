@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KEY_EVENT_RECORD.xml' path='doc/member[@name="KEY_EVENT_RECORD"]/*'/>
 public partial struct KEY_EVENT_RECORD
 {

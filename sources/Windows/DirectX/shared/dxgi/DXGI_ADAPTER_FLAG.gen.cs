@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_ADAPTER_FLAG.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG"]/*'/>
 [Flags]
 public enum DXGI_ADAPTER_FLAG

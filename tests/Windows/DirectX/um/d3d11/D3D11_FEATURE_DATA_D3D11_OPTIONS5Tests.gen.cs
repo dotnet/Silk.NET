@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D11_FEATURE_DATA_D3D11_OPTIONS5"/> struct.</summary>
 public static unsafe partial class D3D11_FEATURE_DATA_D3D11_OPTIONS5Tests
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_ADAPTER_SERIAL_NUMBER.xml' path='doc/member[@name="STORAGE_ADAPTER_SERIAL_NUMBER"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct STORAGE_ADAPTER_SERIAL_NUMBER

@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KERB_ADD_CREDENTIALS_REQUEST_EX.xml' path='doc/member[@name="KERB_ADD_CREDENTIALS_REQUEST_EX"]/*'/>
 public partial struct KERB_ADD_CREDENTIALS_REQUEST_EX
 {

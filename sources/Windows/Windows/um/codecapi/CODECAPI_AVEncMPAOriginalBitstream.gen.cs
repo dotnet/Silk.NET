@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMPAOriginalBitstream.xml' path='doc/member[@name="CODECAPI_AVEncMPAOriginalBitstream"]/*'/>
 [Guid("3CFB7855-9CC9-47FF-B829-B36786C92346")]
 public unsafe partial struct CODECAPI_AVEncMPAOriginalBitstream : INativeGuid

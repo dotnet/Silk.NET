@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DISPLAYCONFIG_DESKTOP_IMAGE_INFO"/> struct.</summary>
 [SupportedOSPlatform("windows10.0.17763.0")]
 public static unsafe partial class DISPLAYCONFIG_DESKTOP_IMAGE_INFOTests

@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3dx12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.DirectX.D3D12_FEATURE;
-using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
-using static TerraFX.Interop.DirectX.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.DirectX.D3D12_FEATURE;
+using static Silk.NET.DirectX.D3D12_RESOURCE_DIMENSION;
+using static Silk.NET.DirectX.D3D12_TEXTURE_LAYOUT;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static unsafe partial class DirectX
 {
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CalcSubresource"]/*'/>

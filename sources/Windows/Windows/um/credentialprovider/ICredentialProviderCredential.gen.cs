@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICredentialProviderCredential.xml' path='doc/member[@name="ICredentialProviderCredential"]/*'/>
 [Guid("63913A93-40C1-481A-818D-4072FF8C70CC")]
 [NativeTypeName("struct ICredentialProviderCredential : IUnknown")]

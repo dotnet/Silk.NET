@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXMLDSOControl.xml' path='doc/member[@name="IXMLDSOControl"]/*'/>
 [Guid("310AFA62-0575-11D2-9CA9-0060B0EC3D39")]
 [NativeTypeName("struct IXMLDSOControl : IDispatch")]

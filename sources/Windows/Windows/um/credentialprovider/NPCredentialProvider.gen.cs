@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NPCredentialProvider.xml' path='doc/member[@name="NPCredentialProvider"]/*'/>
 [Guid("3DD6BEC0-8193-4FFE-AE25-E08E39EA4063")]
 public unsafe partial struct NPCredentialProvider : INativeGuid

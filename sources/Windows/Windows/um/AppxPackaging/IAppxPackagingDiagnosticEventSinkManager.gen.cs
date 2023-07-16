@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxPackagingDiagnosticEventSinkManager.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSinkManager"]/*'/>
 [Guid("369648FA-A7EB-4909-A15D-6954A078F18A")]
 [NativeTypeName("struct IAppxPackagingDiagnosticEventSinkManager : IUnknown")]

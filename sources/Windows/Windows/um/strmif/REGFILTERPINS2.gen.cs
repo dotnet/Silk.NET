@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='REGFILTERPINS2.xml' path='doc/member[@name="REGFILTERPINS2"]/*'/>
 public unsafe partial struct REGFILTERPINS2
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS"]/*'/>
 [SupportedOSPlatform("windows10.0.16299.0")]
 public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS

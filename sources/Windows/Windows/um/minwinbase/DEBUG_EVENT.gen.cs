@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEBUG_EVENT.xml' path='doc/member[@name="DEBUG_EVENT"]/*'/>
 public partial struct DEBUG_EVENT
 {

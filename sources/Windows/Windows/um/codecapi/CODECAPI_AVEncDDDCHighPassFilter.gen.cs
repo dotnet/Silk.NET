@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncDDDCHighPassFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDDCHighPassFilter"]/*'/>
 [Guid("9565239F-861C-4AC8-BFDA-E00CB4DB8548")]
 public unsafe partial struct CODECAPI_AVEncDDDCHighPassFilter : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual"]/*'/>
 [Guid("E7A1AF80-4D96-11CF-960C-0080C7F4EE85")]
 [NativeTypeName("struct IShellFolderViewDual : IDispatch")]

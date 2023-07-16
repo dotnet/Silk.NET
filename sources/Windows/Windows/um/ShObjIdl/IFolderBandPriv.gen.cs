@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv"]/*'/>
 [Guid("47C01F95-E185-412C-B5C5-4F27DF965AEA")]
 [NativeTypeName("struct IFolderBandPriv : IUnknown")]

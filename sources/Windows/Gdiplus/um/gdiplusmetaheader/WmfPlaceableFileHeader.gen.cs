@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 /// <include file='WmfPlaceableFileHeader.xml' path='doc/member[@name="WmfPlaceableFileHeader"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct WmfPlaceableFileHeader

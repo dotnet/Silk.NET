@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioTreble.xml' path='doc/member[@name="IAudioTreble"]/*'/>
 [Guid("0A717812-694E-4907-B74B-BAFA5CFDCA7B")]
 [NativeTypeName("struct IAudioTreble : IPerChannelDbLevel")]

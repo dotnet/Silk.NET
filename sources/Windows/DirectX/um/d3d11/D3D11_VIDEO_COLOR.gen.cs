@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_VIDEO_COLOR.xml' path='doc/member[@name="D3D11_VIDEO_COLOR"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_VIDEO_COLOR

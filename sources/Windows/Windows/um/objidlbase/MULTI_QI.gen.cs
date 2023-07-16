@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MULTI_QI.xml' path='doc/member[@name="MULTI_QI"]/*'/>
 public unsafe partial struct MULTI_QI
 {

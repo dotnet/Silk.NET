@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SHELL_ITEM_RESOURCE.xml' path='doc/member[@name="SHELL_ITEM_RESOURCE"]/*'/>
 public unsafe partial struct SHELL_ITEM_RESOURCE
 {

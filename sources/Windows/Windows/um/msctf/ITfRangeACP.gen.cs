@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfRangeACP.xml' path='doc/member[@name="ITfRangeACP"]/*'/>
 [Guid("057A6296-029B-4154-B79A-0D461D4EA94C")]
 [NativeTypeName("struct ITfRangeACP : ITfRange")]

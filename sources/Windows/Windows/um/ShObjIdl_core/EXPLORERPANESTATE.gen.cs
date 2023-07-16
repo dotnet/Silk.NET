@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EXPLORERPANESTATE.xml' path='doc/member[@name="EXPLORERPANESTATE"]/*'/>
 [Flags]
 public enum EXPLORERPANESTATE

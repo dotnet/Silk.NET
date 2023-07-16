@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICPlanarBitmapSourceTransform.xml' path='doc/member[@name="IWICPlanarBitmapSourceTransform"]/*'/>
 [Guid("3AFF9CCE-BE95-4303-B927-E7D16FF4A613")]
 [NativeTypeName("struct IWICPlanarBitmapSourceTransform : IUnknown")]

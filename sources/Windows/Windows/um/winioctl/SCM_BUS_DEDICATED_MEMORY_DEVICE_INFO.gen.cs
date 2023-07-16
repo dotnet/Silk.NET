@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO"]/*'/>
 public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
 {

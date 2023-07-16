@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RM_APP_STATUS.xml' path='doc/member[@name="RM_APP_STATUS"]/*'/>
 [Flags]
 public enum RM_APP_STATUS

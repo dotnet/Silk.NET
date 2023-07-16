@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WINHTTP_CREDS_EX"/> struct.</summary>
 public static unsafe partial class WINHTTP_CREDS_EXTests
 {

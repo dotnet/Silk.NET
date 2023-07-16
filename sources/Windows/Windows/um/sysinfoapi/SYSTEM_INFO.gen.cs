@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SYSTEM_INFO.xml' path='doc/member[@name="SYSTEM_INFO"]/*'/>
 public unsafe partial struct SYSTEM_INFO
 {

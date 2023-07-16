@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AppxBundleFactory.xml' path='doc/member[@name="AppxBundleFactory"]/*'/>
 [Guid("378E0446-5384-43B7-8877-E7DBDD883446")]
 public unsafe partial struct AppxBundleFactory : INativeGuid

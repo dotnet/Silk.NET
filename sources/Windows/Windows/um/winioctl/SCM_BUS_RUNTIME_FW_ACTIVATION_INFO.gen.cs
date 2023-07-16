@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO"]/*'/>
 public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
 {

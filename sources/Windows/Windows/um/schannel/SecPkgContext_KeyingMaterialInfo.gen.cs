@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SecPkgContext_KeyingMaterialInfo.xml' path='doc/member[@name="SecPkgContext_KeyingMaterialInfo"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct SecPkgContext_KeyingMaterialInfo

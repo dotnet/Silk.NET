@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IFileSyncMergeHandler.xml' path='doc/member[@name="IFileSyncMergeHandler"]/*'/>
 [Guid("D97B5AAC-C792-433C-975D-35C4EADC7A9D")]
 [NativeTypeName("struct IFileSyncMergeHandler : IUnknown")]

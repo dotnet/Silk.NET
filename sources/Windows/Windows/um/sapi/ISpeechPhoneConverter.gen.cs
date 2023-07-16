@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechPhoneConverter.xml' path='doc/member[@name="ISpeechPhoneConverter"]/*'/>
 [Guid("C3E4F353-433F-43D6-89A1-6A62A7054C3D")]
 [NativeTypeName("struct ISpeechPhoneConverter : IDispatch")]

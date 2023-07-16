@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_MATRIX_3X2_F.xml' path='doc/member[@name="DXGI_MATRIX_3X2_F"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public partial struct DXGI_MATRIX_3X2_F

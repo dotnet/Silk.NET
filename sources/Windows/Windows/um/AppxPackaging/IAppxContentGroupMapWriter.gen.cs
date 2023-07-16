@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter"]/*'/>
 [Guid("D07AB776-A9DE-4798-8C14-3DB31E687C78")]
 [NativeTypeName("struct IAppxContentGroupMapWriter : IUnknown")]

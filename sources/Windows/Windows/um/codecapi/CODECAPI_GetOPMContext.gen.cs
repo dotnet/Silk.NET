@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_GetOPMContext.xml' path='doc/member[@name="CODECAPI_GetOPMContext"]/*'/>
 [Guid("2F036C05-4C14-4689-8839-294C6D73E053")]
 public unsafe partial struct CODECAPI_GetOPMContext : INativeGuid

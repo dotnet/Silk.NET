@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ORIENTATION_PREFERENCE.xml' path='doc/member[@name="ORIENTATION_PREFERENCE"]/*'/>
 [Flags]
 public enum ORIENTATION_PREFERENCE

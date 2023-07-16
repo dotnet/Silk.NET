@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OpenControlPanel.xml' path='doc/member[@name="OpenControlPanel"]/*'/>
 [Guid("06622D85-6856-4460-8DE1-A81921B41C4B")]
 public unsafe partial struct OpenControlPanel : INativeGuid

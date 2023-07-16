@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='XMLDocument.xml' path='doc/member[@name="XMLDocument"]/*'/>
 [Guid("CFC399AF-D876-11D0-9C10-00C04FC99C8E")]
 public unsafe partial struct XMLDocument : INativeGuid

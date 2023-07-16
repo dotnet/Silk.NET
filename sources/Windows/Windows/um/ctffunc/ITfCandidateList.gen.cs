@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfCandidateList.xml' path='doc/member[@name="ITfCandidateList"]/*'/>
 [Guid("A3AD50FB-9BDB-49E3-A843-6C76520FBF5D")]
 [NativeTypeName("struct ITfCandidateList : IUnknown")]

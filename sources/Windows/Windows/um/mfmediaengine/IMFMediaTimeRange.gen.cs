@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange"]/*'/>
 [Guid("DB71A2FC-078A-414E-9DF9-8C2531B0AA6C")]
 [NativeTypeName("struct IMFMediaTimeRange : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICProgressCallback.xml' path='doc/member[@name="IWICProgressCallback"]/*'/>
 [Guid("4776F9CD-9517-45FA-BF24-E89C5EC5C60C")]
 [NativeTypeName("struct IWICProgressCallback : IUnknown")]

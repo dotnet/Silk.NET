@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL

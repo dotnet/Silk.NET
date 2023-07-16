@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='UIAnimationTimer.xml' path='doc/member[@name="UIAnimationTimer"]/*'/>
 [Guid("BFCD4A0C-06B6-4384-B768-0DAA792C380E")]
 public unsafe partial struct UIAnimationTimer : INativeGuid

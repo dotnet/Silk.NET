@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AUDIO_DUCKING_OPTIONS.xml' path='doc/member[@name="AUDIO_DUCKING_OPTIONS"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows10.0.19043.0")]

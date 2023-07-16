@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VIDEOPARAMETERS.xml' path='doc/member[@name="VIDEOPARAMETERS"]/*'/>
 public unsafe partial struct VIDEOPARAMETERS
 {

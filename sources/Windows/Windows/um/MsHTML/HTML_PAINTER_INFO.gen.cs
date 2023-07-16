@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='HTML_PAINTER_INFO.xml' path='doc/member[@name="HTML_PAINTER_INFO"]/*'/>
 public partial struct HTML_PAINTER_INFO
 {

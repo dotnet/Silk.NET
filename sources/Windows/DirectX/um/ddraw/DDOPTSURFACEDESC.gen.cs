@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC"]/*'/>
 public partial struct DDOPTSURFACEDESC
 {

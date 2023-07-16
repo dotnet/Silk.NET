@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.3")]

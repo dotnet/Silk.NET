@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMPhysicalPinInfo.xml' path='doc/member[@name="IAMPhysicalPinInfo"]/*'/>
 [Guid("F938C991-3029-11CF-8C44-00AA006B6814")]
 [NativeTypeName("struct IAMPhysicalPinInfo : IUnknown")]

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='LSA_FOREST_TRUST_RECORD2.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD2"]/*'/>
 public partial struct LSA_FOREST_TRUST_RECORD2
 {

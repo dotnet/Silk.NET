@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WIN32_MEMORY_RANGE_ENTRY.xml' path='doc/member[@name="WIN32_MEMORY_RANGE_ENTRY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct WIN32_MEMORY_RANGE_ENTRY

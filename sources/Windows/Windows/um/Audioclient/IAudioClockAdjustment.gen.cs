@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioClockAdjustment.xml' path='doc/member[@name="IAudioClockAdjustment"]/*'/>
 [Guid("F6E4C0A0-46D9-4FB8-BE21-57A3EF2B626C")]
 [NativeTypeName("struct IAudioClockAdjustment : IUnknown")]

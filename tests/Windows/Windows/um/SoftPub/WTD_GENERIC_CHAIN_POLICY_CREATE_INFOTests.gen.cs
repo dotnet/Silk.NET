@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WTD_GENERIC_CHAIN_POLICY_CREATE_INFO"/> struct.</summary>
 public static unsafe partial class WTD_GENERIC_CHAIN_POLICY_CREATE_INFOTests
 {

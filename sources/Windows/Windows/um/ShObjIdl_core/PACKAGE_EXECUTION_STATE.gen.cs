@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PACKAGE_EXECUTION_STATE.xml' path='doc/member[@name="PACKAGE_EXECUTION_STATE"]/*'/>
 [Flags]
 public enum PACKAGE_EXECUTION_STATE

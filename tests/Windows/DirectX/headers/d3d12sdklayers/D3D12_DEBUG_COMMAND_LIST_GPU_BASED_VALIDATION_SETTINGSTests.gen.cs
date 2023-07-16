@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS"/> struct.</summary>
 public static unsafe partial class D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGSTests
 {

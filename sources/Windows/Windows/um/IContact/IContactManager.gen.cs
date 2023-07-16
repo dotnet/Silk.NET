@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IContactManager.xml' path='doc/member[@name="IContactManager"]/*'/>
 [Guid("AD553D98-DEB1-474A-8E17-FC0C2075B738")]
 [NativeTypeName("struct IContactManager : IUnknown")]

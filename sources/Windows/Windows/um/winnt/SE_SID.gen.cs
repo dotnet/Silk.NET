@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SE_SID.xml' path='doc/member[@name="SE_SID"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct SE_SID

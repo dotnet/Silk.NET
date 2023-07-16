@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration"]/*'/>
 [Guid("76A3E735-02DF-4A12-98EB-043AD3600AF3")]
 [NativeTypeName("struct ITypeLibRegistration : IUnknown")]

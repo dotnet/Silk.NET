@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PERFORMANCE_DATA.xml' path='doc/member[@name="PERFORMANCE_DATA"]/*'/>
 public partial struct PERFORMANCE_DATA
 {

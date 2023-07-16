@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference"]/*'/>
 [Guid("E5AA01F7-1FB8-4830-8720-4E6734CBD5F3")]
 [NativeTypeName("struct ILaunchSourceViewSizePreference : IUnknown")]

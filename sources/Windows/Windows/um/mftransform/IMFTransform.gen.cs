@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform"]/*'/>
 [Guid("BF94C121-5B05-4E6F-8000-BA598961414D")]
 [NativeTypeName("struct IMFTransform : IUnknown")]

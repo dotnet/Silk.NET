@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_CAPABILITIES.xml' path='doc/member[@name="APPX_CAPABILITIES"]/*'/>
 [Flags]
 [SupportedOSPlatform("windows6.2")]

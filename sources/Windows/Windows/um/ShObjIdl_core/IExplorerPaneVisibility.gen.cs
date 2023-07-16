@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IExplorerPaneVisibility.xml' path='doc/member[@name="IExplorerPaneVisibility"]/*'/>
 [Guid("E07010EC-BC17-44C0-97B0-46C7C95B9EDC")]
 [NativeTypeName("struct IExplorerPaneVisibility : IUnknown")]

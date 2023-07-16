@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static unsafe partial class Windows
 {
     public const int WS_MUST_UNDERSTAND_HEADER_ATTRIBUTE = 0x1;

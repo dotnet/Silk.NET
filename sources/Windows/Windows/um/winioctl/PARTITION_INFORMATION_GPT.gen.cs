@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT"]/*'/>
 public unsafe partial struct PARTITION_INFORMATION_GPT
 {

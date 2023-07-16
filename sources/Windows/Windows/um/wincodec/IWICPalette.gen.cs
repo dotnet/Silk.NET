@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette"]/*'/>
 [Guid("00000040-A8F2-4877-BA0A-FD2B6645FB94")]
 [NativeTypeName("struct IWICPalette : IUnknown")]

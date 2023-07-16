@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ASF_FLAT_SYNCHRONISED_LYRICS.xml' path='doc/member[@name="ASF_FLAT_SYNCHRONISED_LYRICS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct ASF_FLAT_SYNCHRONISED_LYRICS

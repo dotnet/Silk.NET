@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible"]/*'/>
 [Guid("71F312DE-43ED-4190-8477-E9536B82350B")]
 [NativeTypeName("struct INameSpaceTreeAccessible : IUnknown")]

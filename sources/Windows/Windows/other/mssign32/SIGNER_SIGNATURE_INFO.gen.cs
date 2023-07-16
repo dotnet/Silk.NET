@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SIGNER_SIGNATURE_INFO.xml' path='doc/member[@name="SIGNER_SIGNATURE_INFO"]/*'/>
 public unsafe partial struct SIGNER_SIGNATURE_INFO
 {

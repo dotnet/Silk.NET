@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/xamlOM.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='IVisualTreeServiceCallback2.xml' path='doc/member[@name="IVisualTreeServiceCallback2"]/*'/>
 [Guid("BAD9EB88-AE77-4397-B948-5FA2DB0A19EA")]
 [NativeTypeName("struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback")]

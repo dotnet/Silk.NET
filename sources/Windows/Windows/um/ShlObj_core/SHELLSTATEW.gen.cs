@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SHELLSTATEW.xml' path='doc/member[@name="SHELLSTATEW"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHELLSTATEW

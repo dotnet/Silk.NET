@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIRECTMANIPULATION_DRAG_DROP_STATUS.xml' path='doc/member[@name="DIRECTMANIPULATION_DRAG_DROP_STATUS"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum DIRECTMANIPULATION_DRAG_DROP_STATUS

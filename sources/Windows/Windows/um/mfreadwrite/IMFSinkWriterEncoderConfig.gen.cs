@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSinkWriterEncoderConfig.xml' path='doc/member[@name="IMFSinkWriterEncoderConfig"]/*'/>
 [Guid("17C3779E-3CDE-4EDE-8C60-3899F5F53AD6")]
 [NativeTypeName("struct IMFSinkWriterEncoderConfig : IUnknown")]

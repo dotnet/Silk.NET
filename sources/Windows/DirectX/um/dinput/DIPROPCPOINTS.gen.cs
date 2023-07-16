@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DIPROPCPOINTS.xml' path='doc/member[@name="DIPROPCPOINTS"]/*'/>
 public partial struct DIPROPCPOINTS
 {

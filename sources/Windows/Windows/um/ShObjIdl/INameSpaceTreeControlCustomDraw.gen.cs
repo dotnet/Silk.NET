@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw"]/*'/>
 [Guid("2D3BA758-33EE-42D5-BB7B-5F3431D86C78")]
 [NativeTypeName("struct INameSpaceTreeControlCustomDraw : IUnknown")]

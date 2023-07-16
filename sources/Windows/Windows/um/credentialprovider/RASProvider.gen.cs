@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='RASProvider.xml' path='doc/member[@name="RASProvider"]/*'/>
 [Guid("5537E283-B1E7-4EF8-9C6E-7AB0AFE5056D")]
 public unsafe partial struct RASProvider : INativeGuid

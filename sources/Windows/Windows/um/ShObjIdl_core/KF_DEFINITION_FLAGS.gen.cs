@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KF_DEFINITION_FLAGS.xml' path='doc/member[@name="KF_DEFINITION_FLAGS"]/*'/>
 [Flags]
 public enum KF_DEFINITION_FLAGS

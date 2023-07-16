@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellDispatch3.xml' path='doc/member[@name="IShellDispatch3"]/*'/>
 [Guid("177160CA-BB5A-411C-841D-BD38FACDEAA0")]
 [NativeTypeName("struct IShellDispatch3 : IShellDispatch2")]

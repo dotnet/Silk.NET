@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_SHADER_CACHE_SESSION_DESC.xml' path='doc/member[@name="D3D12_SHADER_CACHE_SESSION_DESC"]/*'/>
 public partial struct D3D12_SHADER_CACHE_SESSION_DESC
 {

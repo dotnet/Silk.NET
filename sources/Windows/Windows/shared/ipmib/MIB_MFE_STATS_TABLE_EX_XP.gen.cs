@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MIB_MFE_STATS_TABLE_EX_XP.xml' path='doc/member[@name="MIB_MFE_STATS_TABLE_EX_XP"]/*'/>
 public partial struct MIB_MFE_STATS_TABLE_EX_XP
 {

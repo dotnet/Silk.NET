@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumOleDocumentViews.xml' path='doc/member[@name="IEnumOleDocumentViews"]/*'/>
 [Guid("B722BCC8-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IEnumOleDocumentViews : IUnknown")]

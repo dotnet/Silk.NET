@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='NamespaceWalker.xml' path='doc/member[@name="NamespaceWalker"]/*'/>
 [Guid("72EB61E0-8672-4303-9175-F2E4C68B2E7C")]
 public unsafe partial struct NamespaceWalker : INativeGuid

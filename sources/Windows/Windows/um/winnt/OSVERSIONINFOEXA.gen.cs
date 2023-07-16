@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA"]/*'/>
 public unsafe partial struct OSVERSIONINFOEXA
 {

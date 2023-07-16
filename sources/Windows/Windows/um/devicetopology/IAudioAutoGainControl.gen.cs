@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioAutoGainControl.xml' path='doc/member[@name="IAudioAutoGainControl"]/*'/>
 [Guid("85401FD4-6DE4-4B9D-9869-2D6753A82F3C")]
 [NativeTypeName("struct IAudioAutoGainControl : IUnknown")]

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct DEVICEDUMP_SECTION_HEADER

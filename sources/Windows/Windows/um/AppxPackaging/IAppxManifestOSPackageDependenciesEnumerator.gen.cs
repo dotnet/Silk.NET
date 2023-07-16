@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestOSPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestOSPackageDependenciesEnumerator"]/*'/>
 [Guid("B84E2FC3-F8EC-4BC1-8AE2-156346F5FFEA")]
 [NativeTypeName("struct IAppxManifestOSPackageDependenciesEnumerator : IUnknown")]

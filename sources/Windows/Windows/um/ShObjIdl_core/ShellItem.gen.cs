@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ShellItem.xml' path='doc/member[@name="ShellItem"]/*'/>
 [Guid("9AC9FBE1-E0A2-4AD6-B4EE-E212013EA917")]
 public unsafe partial struct ShellItem : INativeGuid

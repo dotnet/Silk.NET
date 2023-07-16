@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu"]/*'/>
 [Guid("EE1F7637-E138-11D1-8379-00C04FD918D0")]
 [NativeTypeName("struct IShellMenu : IUnknown")]

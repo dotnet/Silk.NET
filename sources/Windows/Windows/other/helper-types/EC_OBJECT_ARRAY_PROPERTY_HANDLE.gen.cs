@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public readonly unsafe partial struct EC_OBJECT_ARRAY_PROPERTY_HANDLE : IComparable, IComparable<EC_OBJECT_ARRAY_PROPERTY_HANDLE>, IEquatable<EC_OBJECT_ARRAY_PROPERTY_HANDLE>, IFormattable
 {
     public readonly void* Value;

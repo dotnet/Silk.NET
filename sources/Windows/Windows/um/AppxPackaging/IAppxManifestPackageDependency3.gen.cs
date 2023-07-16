@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxManifestPackageDependency3.xml' path='doc/member[@name="IAppxManifestPackageDependency3"]/*'/>
 [Guid("1AC56374-6198-4D6B-92E4-749D5AB8A895")]
 [NativeTypeName("struct IAppxManifestPackageDependency3 : IUnknown")]

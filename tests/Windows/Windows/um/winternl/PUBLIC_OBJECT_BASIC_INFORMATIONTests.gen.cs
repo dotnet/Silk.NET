@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "PUBLIC_OBJECT_BASIC_INFORMATION"/> struct.</summary>
 public static unsafe partial class PUBLIC_OBJECT_BASIC_INFORMATIONTests
 {

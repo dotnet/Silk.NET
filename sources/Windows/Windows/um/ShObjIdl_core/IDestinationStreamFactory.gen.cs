@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDestinationStreamFactory.xml' path='doc/member[@name="IDestinationStreamFactory"]/*'/>
 [Guid("8A87781B-39A7-4A1F-AAB3-A39B9C34A7D9")]
 [NativeTypeName("struct IDestinationStreamFactory : IUnknown")]

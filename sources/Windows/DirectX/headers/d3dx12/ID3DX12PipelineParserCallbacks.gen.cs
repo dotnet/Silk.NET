@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks"]/*'/>
 public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelineParserCallbacks.Interface
 {

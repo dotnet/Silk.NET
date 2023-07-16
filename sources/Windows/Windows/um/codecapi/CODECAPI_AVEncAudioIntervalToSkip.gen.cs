@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncAudioIntervalToSkip.xml' path='doc/member[@name="CODECAPI_AVEncAudioIntervalToSkip"]/*'/>
 [Guid("88C15F94-C38C-4796-A9E8-96E967983F26")]
 public unsafe partial struct CODECAPI_AVEncAudioIntervalToSkip : INativeGuid

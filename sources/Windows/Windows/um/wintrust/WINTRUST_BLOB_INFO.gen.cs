@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WINTRUST_BLOB_INFO.xml' path='doc/member[@name="WINTRUST_BLOB_INFO"]/*'/>
 public unsafe partial struct WINTRUST_BLOB_INFO
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='APPX_ENCRYPTED_EXEMPTIONS.xml' path='doc/member[@name="APPX_ENCRYPTED_EXEMPTIONS"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct APPX_ENCRYPTED_EXEMPTIONS

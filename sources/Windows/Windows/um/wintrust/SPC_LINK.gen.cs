@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK"]/*'/>
 public unsafe partial struct SPC_LINK
 {

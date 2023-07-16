@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='MLOperatorAttributeNameValue.xml' path='doc/member[@name="MLOperatorAttributeNameValue"]/*'/>
 public unsafe partial struct MLOperatorAttributeNameValue
 {

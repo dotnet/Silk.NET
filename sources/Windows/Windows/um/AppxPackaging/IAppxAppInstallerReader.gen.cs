@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAppxAppInstallerReader.xml' path='doc/member[@name="IAppxAppInstallerReader"]/*'/>
 [Guid("F35BC38C-1D2F-43DB-A1F4-586430D1FED2")]
 [NativeTypeName("struct IAppxAppInstallerReader : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFOutputPolicy.xml' path='doc/member[@name="IMFOutputPolicy"]/*'/>
 [Guid("7F00F10A-DAED-41AF-AB26-5FDFA4DFBA3C")]
 [NativeTypeName("struct IMFOutputPolicy : IMFAttributes")]

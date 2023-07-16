@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CROSS_SLIDE_PARAMETER"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CROSS_SLIDE_PARAMETERTests

@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext"]/*'/>
 [Guid("EC893BB1-F938-427B-8488-C8DCF775F138")]
 [NativeTypeName("struct IMLOperatorTypeInferenceContext : IMLOperatorAttributes")]

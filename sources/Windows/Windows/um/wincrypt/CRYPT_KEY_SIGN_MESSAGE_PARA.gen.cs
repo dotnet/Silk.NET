@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA"]/*'/>
 public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
 {

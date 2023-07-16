@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DEVICEDUMP_RESTRICTED_SUBSECTION"/> struct.</summary>
 public static unsafe partial class DEVICEDUMP_RESTRICTED_SUBSECTIONTests
 {

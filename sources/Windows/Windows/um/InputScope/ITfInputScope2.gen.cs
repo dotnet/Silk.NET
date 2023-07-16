@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfInputScope2.xml' path='doc/member[@name="ITfInputScope2"]/*'/>
 [Guid("5731EAA0-6BC2-4681-A532-92FBB74D7C41")]
 [NativeTypeName("struct ITfInputScope2 : ITfInputScope")]

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS"]/*'/>
 public unsafe partial struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS
 {

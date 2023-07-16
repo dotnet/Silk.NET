@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IApplicationDocumentLists.xml' path='doc/member[@name="IApplicationDocumentLists"]/*'/>
 [Guid("3C594F9F-9F30-47A1-979A-C9E83D3D0A06")]
 [NativeTypeName("struct IApplicationDocumentLists : IUnknown")]

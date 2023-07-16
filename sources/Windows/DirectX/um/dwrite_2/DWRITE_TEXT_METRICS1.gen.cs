@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_TEXT_METRICS1.xml' path='doc/member[@name="DWRITE_TEXT_METRICS1"]/*'/>
 [NativeTypeName("struct DWRITE_TEXT_METRICS1 : DWRITE_TEXT_METRICS")]
 [NativeInheritance("DWRITE_TEXT_METRICS")]

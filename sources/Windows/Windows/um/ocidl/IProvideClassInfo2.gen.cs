@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProvideClassInfo2.xml' path='doc/member[@name="IProvideClassInfo2"]/*'/>
 [Guid("A6BC3AC0-DBAA-11CE-9DE3-00AA004BB851")]
 [NativeTypeName("struct IProvideClassInfo2 : IProvideClassInfo")]

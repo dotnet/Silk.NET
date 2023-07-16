@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient"]/*'/>
 [Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0")]
 [NativeTypeName("struct IMMNotificationClient : IUnknown")]

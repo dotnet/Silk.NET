@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class ACCESS
 {
     [NativeTypeName("#define ACCESS_SYSTEM_SECURITY (0x01000000L)")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling"]/*'/>
 [Guid("CF7B26FC-9A00-485B-8147-3E789D5E8F67")]
 [NativeTypeName("struct IAMAsyncReaderTimestampScaling : IUnknown")]

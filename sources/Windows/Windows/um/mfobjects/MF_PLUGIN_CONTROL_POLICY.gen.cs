@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_PLUGIN_CONTROL_POLICY.xml' path='doc/member[@name="MF_PLUGIN_CONTROL_POLICY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MF_PLUGIN_CONTROL_POLICY

@@ -4,9 +4,9 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.Windows;
+using static Silk.NET.Windows.Windows;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "DRendezvousSessionEvents"/> struct.</summary>
 public static unsafe partial class DRendezvousSessionEventsTests
 {

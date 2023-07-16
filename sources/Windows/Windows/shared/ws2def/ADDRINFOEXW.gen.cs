@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ADDRINFOEXW.xml' path='doc/member[@name="ADDRINFOEXW"]/*'/>
 public unsafe partial struct ADDRINFOEXW
 {

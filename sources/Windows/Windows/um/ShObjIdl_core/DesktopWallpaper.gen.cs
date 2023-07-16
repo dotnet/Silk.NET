@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DesktopWallpaper.xml' path='doc/member[@name="DesktopWallpaper"]/*'/>
 [Guid("C2CF3110-460E-4FC1-B9D0-8A1C0C9CC4BD")]
 public unsafe partial struct DesktopWallpaper : INativeGuid

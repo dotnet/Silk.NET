@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWinInetFileStream.xml' path='doc/member[@name="IWinInetFileStream"]/*'/>
 [Guid("F134C4B7-B1F8-4E75-B886-74B90943BECB")]
 [NativeTypeName("struct IWinInetFileStream : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource"]/*'/>
 [Guid("197CD219-19CB-4DE1-A64C-ACF2EDCBE59E")]
 [NativeTypeName("struct IMFSequencerSource : IUnknown")]

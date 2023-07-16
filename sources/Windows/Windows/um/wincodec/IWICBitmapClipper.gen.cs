@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICBitmapClipper.xml' path='doc/member[@name="IWICBitmapClipper"]/*'/>
 [Guid("E4FBCF03-223D-4E81-9333-D635556DD1B5")]
 [NativeTypeName("struct IWICBitmapClipper : IWICBitmapSource")]

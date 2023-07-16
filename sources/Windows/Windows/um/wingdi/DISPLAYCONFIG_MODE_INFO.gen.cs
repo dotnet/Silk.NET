@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO"]/*'/>
 public partial struct DISPLAYCONFIG_MODE_INFO
 {

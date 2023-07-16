@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.Windows;
+using static Silk.NET.Windows.Windows;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='_ISpeechVoiceEvents.xml' path='doc/member[@name="_ISpeechVoiceEvents"]/*'/>
 [Guid("A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8")]
 [NativeTypeName("struct _ISpeechVoiceEvents : IDispatch")]

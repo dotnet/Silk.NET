@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='EVENT_DATA_DESCRIPTOR.xml' path='doc/member[@name="EVENT_DATA_DESCRIPTOR"]/*'/>
 public partial struct EVENT_DATA_DESCRIPTOR
 {

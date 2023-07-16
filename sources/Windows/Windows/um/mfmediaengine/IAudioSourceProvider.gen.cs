@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioSourceProvider.xml' path='doc/member[@name="IAudioSourceProvider"]/*'/>
 [Guid("EBBAF249-AFC2-4582-91C6-B60DF2E84954")]
 [NativeTypeName("struct IAudioSourceProvider : IUnknown")]

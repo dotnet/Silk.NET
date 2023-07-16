@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpNotifyCallback.xml' path='doc/member[@name="ISpNotifyCallback"]/*'/>
 public unsafe partial struct ISpNotifyCallback : ISpNotifyCallback.Interface
 {

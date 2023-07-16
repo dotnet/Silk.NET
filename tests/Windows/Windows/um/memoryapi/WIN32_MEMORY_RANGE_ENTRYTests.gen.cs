@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "WIN32_MEMORY_RANGE_ENTRY"/> struct.</summary>
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class WIN32_MEMORY_RANGE_ENTRYTests

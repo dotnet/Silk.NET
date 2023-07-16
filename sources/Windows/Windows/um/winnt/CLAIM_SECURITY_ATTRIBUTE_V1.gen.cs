@@ -4,7 +4,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1

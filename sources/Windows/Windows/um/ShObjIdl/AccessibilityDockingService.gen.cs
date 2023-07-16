@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AccessibilityDockingService.xml' path='doc/member[@name="AccessibilityDockingService"]/*'/>
 [Guid("29CE1D46-B481-4AA0-A08A-D3EBC8ACA402")]
 public unsafe partial struct AccessibilityDockingService : INativeGuid

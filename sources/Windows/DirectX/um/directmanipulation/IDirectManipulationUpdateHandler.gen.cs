@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/directmanipulation.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='IDirectManipulationUpdateHandler.xml' path='doc/member[@name="IDirectManipulationUpdateHandler"]/*'/>
 [Guid("790B6337-64F8-4FF5-A269-B32BC2AF27A7")]
 [NativeTypeName("struct IDirectManipulationUpdateHandler : IUnknown")]

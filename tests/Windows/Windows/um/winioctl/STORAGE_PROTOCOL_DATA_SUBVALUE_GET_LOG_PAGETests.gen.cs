@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE"/> struct.</summary>
 public static unsafe partial class STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGETests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject"]/*'/>
 [Guid("68284FAA-6A48-11D0-8C78-00C04FD918B4")]
 [NativeTypeName("struct IInputObject : IUnknown")]

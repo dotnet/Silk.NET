@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IGetServiceIds.xml' path='doc/member[@name="IGetServiceIds"]/*'/>
 [Guid("4A073526-6103-4E21-B7BC-F519D1524E5D")]
 [NativeTypeName("struct IGetServiceIds : IUnknown")]

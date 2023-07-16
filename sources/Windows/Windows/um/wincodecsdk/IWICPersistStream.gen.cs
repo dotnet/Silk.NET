@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICPersistStream.xml' path='doc/member[@name="IWICPersistStream"]/*'/>
 [Guid("00675040-6908-45F8-86A3-49C7DFD6D9AD")]
 [NativeTypeName("struct IWICPersistStream : IPersistStream")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechLexiconPronunciation.xml' path='doc/member[@name="ISpeechLexiconPronunciation"]/*'/>
 [Guid("95252C5D-9E43-4F4A-9899-48EE73352F9F")]
 [NativeTypeName("struct ISpeechLexiconPronunciation : IDispatch")]

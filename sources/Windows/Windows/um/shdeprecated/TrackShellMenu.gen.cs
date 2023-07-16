@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TrackShellMenu.xml' path='doc/member[@name="TrackShellMenu"]/*'/>
 [Guid("8278F931-2A3E-11D2-838F-00C04FD918D0")]
 public unsafe partial struct TrackShellMenu : INativeGuid

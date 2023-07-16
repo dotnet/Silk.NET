@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS.xml' path='doc/member[@name="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS"]/*'/>
 [Flags]
 public enum DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS

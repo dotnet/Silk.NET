@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInitializeWithPropertyStore.xml' path='doc/member[@name="IInitializeWithPropertyStore"]/*'/>
 [Guid("C3E12EB5-7D8D-44F8-B6DD-0E77B34D6DE4")]
 [NativeTypeName("struct IInitializeWithPropertyStore : IUnknown")]

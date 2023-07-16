@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D12_RAYTRACING_PIPELINE_CONFIG1"/> struct.</summary>
 public static unsafe partial class D3D12_RAYTRACING_PIPELINE_CONFIG1Tests
 {

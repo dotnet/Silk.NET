@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT"]/*'/>
 public partial struct SPSERIALIZEDEVENT
 {

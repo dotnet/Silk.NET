@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSourceOpenMonitor.xml' path='doc/member[@name="IMFSourceOpenMonitor"]/*'/>
 [Guid("059054B3-027C-494C-A27D-9113291CF87F")]
 [NativeTypeName("struct IMFSourceOpenMonitor : IUnknown")]

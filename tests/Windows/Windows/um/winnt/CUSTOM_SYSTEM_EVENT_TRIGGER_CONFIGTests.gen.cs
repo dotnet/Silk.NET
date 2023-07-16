@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG"/> struct.</summary>
 public static unsafe partial class CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIGTests
 {

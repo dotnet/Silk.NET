@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio"]/*'/>
 [Guid("83EC1C30-23D1-11D1-99E6-00A0C9560266")]
 [NativeTypeName("struct IAMTVAudio : IUnknown")]

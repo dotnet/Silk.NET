@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='V1WinBioCredentialProvider.xml' path='doc/member[@name="V1WinBioCredentialProvider"]/*'/>
 [Guid("AC3AC249-E820-4343-A65B-377AC634DC09")]
 public unsafe partial struct V1WinBioCredentialProvider : INativeGuid

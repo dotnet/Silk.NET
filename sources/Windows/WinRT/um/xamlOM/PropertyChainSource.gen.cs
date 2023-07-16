@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT;
+namespace Silk.NET.WinRT;
 /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct PropertyChainSource

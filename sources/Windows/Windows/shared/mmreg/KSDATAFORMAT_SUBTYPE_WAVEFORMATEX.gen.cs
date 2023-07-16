@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KSDATAFORMAT_SUBTYPE_WAVEFORMATEX.xml' path='doc/member[@name="KSDATAFORMAT_SUBTYPE_WAVEFORMATEX"]/*'/>
 [Guid("00000000-0000-0010-8000-00AA00389B71")]
 public unsafe partial struct KSDATAFORMAT_SUBTYPE_WAVEFORMATEX : INativeGuid

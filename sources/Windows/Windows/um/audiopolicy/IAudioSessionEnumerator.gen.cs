@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioSessionEnumerator.xml' path='doc/member[@name="IAudioSessionEnumerator"]/*'/>
 [Guid("E2F5BB11-0570-40CA-ACDD-3AA01277DEE8")]
 [NativeTypeName("struct IAudioSessionEnumerator : IUnknown")]

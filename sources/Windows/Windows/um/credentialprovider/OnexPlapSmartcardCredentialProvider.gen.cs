@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='OnexPlapSmartcardCredentialProvider.xml' path='doc/member[@name="OnexPlapSmartcardCredentialProvider"]/*'/>
 [Guid("33C86CD6-705F-4BA1-9ADB-67070B837775")]
 public unsafe partial struct OnexPlapSmartcardCredentialProvider : INativeGuid

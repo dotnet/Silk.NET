@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITransferMediumItem.xml' path='doc/member[@name="ITransferMediumItem"]/*'/>
 [Guid("77F295D5-2D6F-4E19-B8AE-322F3E721AB5")]
 [NativeTypeName("struct ITransferMediumItem : IRelatedItem")]

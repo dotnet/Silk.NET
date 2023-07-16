@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection"]/*'/>
 [Guid("4A9A62D3-27D4-403D-91E9-89F540E55534")]
 [NativeTypeName("struct IPinConnection : IUnknown")]

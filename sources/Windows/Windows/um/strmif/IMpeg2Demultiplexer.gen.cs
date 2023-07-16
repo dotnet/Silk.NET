@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer"]/*'/>
 [Guid("436EEE9C-264F-4242-90E1-4E330C107512")]
 [NativeTypeName("struct IMpeg2Demultiplexer : IUnknown")]

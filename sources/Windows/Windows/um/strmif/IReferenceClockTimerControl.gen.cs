@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IReferenceClockTimerControl.xml' path='doc/member[@name="IReferenceClockTimerControl"]/*'/>
 [Guid("EBEC459C-2ECA-4D42-A8AF-30DF557614B8")]
 [NativeTypeName("struct IReferenceClockTimerControl : IUnknown")]

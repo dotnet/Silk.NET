@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPackageDebugSettings2.xml' path='doc/member[@name="IPackageDebugSettings2"]/*'/>
 [Guid("6E3194BB-AB82-4D22-93F5-FABDA40E7B16")]
 [NativeTypeName("struct IPackageDebugSettings2 : IPackageDebugSettings")]

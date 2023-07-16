@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "DML_ELEMENT_WISE_SIGN_OPERATOR_DESC"/> struct.</summary>
 [SupportedOSPlatform("windows10.0.19041.0")]
 public static unsafe partial class DML_ELEMENT_WISE_SIGN_OPERATOR_DESCTests

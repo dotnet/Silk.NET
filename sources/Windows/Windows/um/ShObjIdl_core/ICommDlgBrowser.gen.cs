@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ICommDlgBrowser.xml' path='doc/member[@name="ICommDlgBrowser"]/*'/>
 [Guid("000214F1-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ICommDlgBrowser : IUnknown")]

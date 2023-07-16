@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='ID3D12VideoEncoderHeap.xml' path='doc/member[@name="ID3D12VideoEncoderHeap"]/*'/>
 [Guid("22B35D96-876A-44C0-B25E-FB8C9C7F1C4A")]
 [NativeTypeName("struct ID3D12VideoEncoderHeap : ID3D12Pageable")]

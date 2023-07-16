@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128"]/*'/>
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct ARM64_NT_NEON128

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpeechGrammarRule.xml' path='doc/member[@name="ISpeechGrammarRule"]/*'/>
 [Guid("AFE719CF-5DD1-44F2-999C-7A399F1CFCCC")]
 [NativeTypeName("struct ISpeechGrammarRule : IDispatch")]

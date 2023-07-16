@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AppStartupLink.xml' path='doc/member[@name="AppStartupLink"]/*'/>
 [Guid("273EB5E7-88B0-4843-BFEF-E2C81D43AAE5")]
 public unsafe partial struct AppStartupLink : INativeGuid

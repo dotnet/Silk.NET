@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpRecognizer3.xml' path='doc/member[@name="ISpRecognizer3"]/*'/>
 [Guid("DF1B943C-5838-4AA2-8706-D7CD5B333499")]
 [NativeTypeName("struct ISpRecognizer3 : IUnknown")]

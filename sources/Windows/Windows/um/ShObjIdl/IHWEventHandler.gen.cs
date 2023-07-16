@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHWEventHandler.xml' path='doc/member[@name="IHWEventHandler"]/*'/>
 [Guid("C1FB73D0-EC3A-4BA2-B512-8CDB9187B6D1")]
 [NativeTypeName("struct IHWEventHandler : IUnknown")]

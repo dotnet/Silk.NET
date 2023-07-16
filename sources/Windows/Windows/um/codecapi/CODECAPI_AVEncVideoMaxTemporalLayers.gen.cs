@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncVideoMaxTemporalLayers.xml' path='doc/member[@name="CODECAPI_AVEncVideoMaxTemporalLayers"]/*'/>
 [Guid("9C668CFE-08E1-424A-934E-B764B064802A")]
 public unsafe partial struct CODECAPI_AVEncVideoMaxTemporalLayers : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='BINDINFO_OPTIONS.xml' path='doc/member[@name="BINDINFO_OPTIONS"]/*'/>
 [Flags]
 public enum BINDINFO_OPTIONS

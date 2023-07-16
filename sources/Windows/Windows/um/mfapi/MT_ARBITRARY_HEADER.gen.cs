@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MT_ARBITRARY_HEADER.xml' path='doc/member[@name="MT_ARBITRARY_HEADER"]/*'/>
 public partial struct MT_ARBITRARY_HEADER
 {

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MANIPULATION_RAILS_STATE.xml' path='doc/member[@name="MANIPULATION_RAILS_STATE"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum MANIPULATION_RAILS_STATE

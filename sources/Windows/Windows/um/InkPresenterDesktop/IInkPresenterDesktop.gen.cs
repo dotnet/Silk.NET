@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop"]/*'/>
 [Guid("73F3C0D9-2E8B-48F3-895E-20CBD27B723B")]
 [NativeTypeName("struct IInkPresenterDesktop : IUnknown")]

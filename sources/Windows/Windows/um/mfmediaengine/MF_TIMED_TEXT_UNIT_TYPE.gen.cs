@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='MF_TIMED_TEXT_UNIT_TYPE.xml' path='doc/member[@name="MF_TIMED_TEXT_UNIT_TYPE"]/*'/>
 [SupportedOSPlatform("windows10.0")]
 public enum MF_TIMED_TEXT_UNIT_TYPE

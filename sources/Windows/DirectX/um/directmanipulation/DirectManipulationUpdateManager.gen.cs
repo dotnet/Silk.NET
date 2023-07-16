@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DirectManipulationUpdateManager.xml' path='doc/member[@name="DirectManipulationUpdateManager"]/*'/>
 [Guid("9FC1BFD5-1835-441A-B3B1-B6CC74B727D0")]
 public unsafe partial struct DirectManipulationUpdateManager : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PSS_QUERY_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_QUERY_INFORMATION_CLASS"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum PSS_QUERY_INFORMATION_CLASS

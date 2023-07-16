@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "ARM64_NT_NEON128"/> struct.</summary>
 public static unsafe partial class ARM64_NT_NEON128Tests
 {

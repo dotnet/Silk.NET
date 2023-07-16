@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='XMLDSOControl.xml' path='doc/member[@name="XMLDSOControl"]/*'/>
 [Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
 public unsafe partial struct XMLDSOControl : INativeGuid

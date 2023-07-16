@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties"]/*'/>
 [Guid("70DD27DD-5CBD-46E8-BEF0-23B6B346288F")]
 [NativeTypeName("struct IContactProperties : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog"]/*'/>
 [Guid("EBBC7C04-315E-11D2-B62F-006097DF5BD4")]
 [NativeTypeName("struct IProgressDialog : IUnknown")]

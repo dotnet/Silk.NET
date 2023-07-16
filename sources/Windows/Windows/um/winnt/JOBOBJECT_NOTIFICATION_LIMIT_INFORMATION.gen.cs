@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION

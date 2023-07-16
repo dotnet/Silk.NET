@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SPC_SIGINFO.xml' path='doc/member[@name="SPC_SIGINFO"]/*'/>
 public partial struct SPC_SIGINFO
 {

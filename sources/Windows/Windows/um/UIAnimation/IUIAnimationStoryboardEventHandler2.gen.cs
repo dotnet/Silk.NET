@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUIAnimationStoryboardEventHandler2.xml' path='doc/member[@name="IUIAnimationStoryboardEventHandler2"]/*'/>
 [Guid("BAC5F55A-BA7C-414C-B599-FBF850F553C6")]
 [NativeTypeName("struct IUIAnimationStoryboardEventHandler2 : IUnknown")]

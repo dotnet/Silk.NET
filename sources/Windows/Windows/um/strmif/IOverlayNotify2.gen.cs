@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IOverlayNotify2.xml' path='doc/member[@name="IOverlayNotify2"]/*'/>
 [Guid("680EFA10-D535-11D1-87C8-00A0C9223196")]
 [NativeTypeName("struct IOverlayNotify2 : IOverlayNotify")]

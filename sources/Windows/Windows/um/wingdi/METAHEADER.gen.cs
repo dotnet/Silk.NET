@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='METAHEADER.xml' path='doc/member[@name="METAHEADER"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public partial struct METAHEADER

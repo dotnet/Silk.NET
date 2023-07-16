@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TF_LANGBARITEMINFO.xml' path='doc/member[@name="TF_LANGBARITEMINFO"]/*'/>
 public unsafe partial struct TF_LANGBARITEMINFO
 {

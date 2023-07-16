@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IObjectWithProgID.xml' path='doc/member[@name="IObjectWithProgID"]/*'/>
 [Guid("71E806FB-8DEE-46FC-BF8C-7748A8A1AE13")]
 [NativeTypeName("struct IObjectWithProgID : IUnknown")]

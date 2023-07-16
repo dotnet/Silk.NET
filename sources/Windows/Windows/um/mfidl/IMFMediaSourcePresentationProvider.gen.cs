@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFMediaSourcePresentationProvider.xml' path='doc/member[@name="IMFMediaSourcePresentationProvider"]/*'/>
 [Guid("0E1D600A-C9F3-442D-8C51-A42D2D49452F")]
 [NativeTypeName("struct IMFMediaSourcePresentationProvider : IUnknown")]

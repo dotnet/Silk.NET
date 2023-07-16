@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IHTMLSelectElement4.xml' path='doc/member[@name="IHTMLSelectElement4"]/*'/>
 [Guid("3050F838-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLSelectElement4 : IDispatch")]

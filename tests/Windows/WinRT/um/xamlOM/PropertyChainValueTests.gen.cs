@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT.UnitTests;
+namespace Silk.NET.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref = "PropertyChainValue"/> struct.</summary>
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class PropertyChainValueTests

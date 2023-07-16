@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='FXMASTERINGLIMITER_PARAMETERS.xml' path='doc/member[@name="FXMASTERINGLIMITER_PARAMETERS"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXMASTERINGLIMITER_PARAMETERS

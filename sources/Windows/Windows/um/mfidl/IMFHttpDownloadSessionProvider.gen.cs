@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFHttpDownloadSessionProvider.xml' path='doc/member[@name="IMFHttpDownloadSessionProvider"]/*'/>
 [Guid("1B4CF4B9-3A16-4115-839D-03CC5C99DF01")]
 [NativeTypeName("struct IMFHttpDownloadSessionProvider : IUnknown")]

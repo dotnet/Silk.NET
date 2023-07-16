@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PHYSICAL_ELEMENT_STATUS.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS"]/*'/>
 public partial struct PHYSICAL_ELEMENT_STATUS
 {

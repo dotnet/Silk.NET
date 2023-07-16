@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.SYNCMGR;
+using static Silk.NET.Windows.SYNCMGR;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SYNCMGR"/> class.</summary>
 public static partial class SYNCMGRTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfStatusSink.xml' path='doc/member[@name="ITfStatusSink"]/*'/>
 [Guid("6B7D8D73-B267-4F69-B32E-1CA321CE4F45")]
 [NativeTypeName("struct ITfStatusSink : IUnknown")]

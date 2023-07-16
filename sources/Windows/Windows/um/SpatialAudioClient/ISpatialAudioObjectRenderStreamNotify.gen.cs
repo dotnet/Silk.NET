@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISpatialAudioObjectRenderStreamNotify.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamNotify"]/*'/>
 [Guid("DDDF83E6-68D7-4C70-883F-A1836AFB4A50")]
 [NativeTypeName("struct ISpatialAudioObjectRenderStreamNotify : IUnknown")]

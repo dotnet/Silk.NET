@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport"]/*'/>
 [Guid("BC2B7D44-A72D-49D5-8376-1480DEE58B22")]
 [NativeTypeName("struct IMFNetCrossOriginSupport : IUnknown")]

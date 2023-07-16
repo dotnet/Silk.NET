@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE"/> struct.</summary>
 public static unsafe partial class D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDETests
 {

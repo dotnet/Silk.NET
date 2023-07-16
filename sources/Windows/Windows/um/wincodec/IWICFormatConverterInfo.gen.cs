@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWICFormatConverterInfo.xml' path='doc/member[@name="IWICFormatConverterInfo"]/*'/>
 [Guid("9F34FB65-13F4-4F15-BC57-3726B5E53D9F")]
 [NativeTypeName("struct IWICFormatConverterInfo : IWICComponentInfo")]

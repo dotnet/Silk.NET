@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand"]/*'/>
 [Guid("7FE80CC8-C247-11D0-B93A-00A0C90312E1")]
 [NativeTypeName("struct IShellFolderBand : IUnknown")]

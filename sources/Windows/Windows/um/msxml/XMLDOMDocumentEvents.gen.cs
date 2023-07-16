@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.Windows;
+using static Silk.NET.Windows.Windows;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='XMLDOMDocumentEvents.xml' path='doc/member[@name="XMLDOMDocumentEvents"]/*'/>
 [Guid("3EFAA427-272F-11D2-836F-0000F87A7782")]
 [NativeTypeName("struct XMLDOMDocumentEvents : IDispatch")]

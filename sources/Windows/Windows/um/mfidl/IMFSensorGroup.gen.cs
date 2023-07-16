@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup"]/*'/>
 [Guid("4110243A-9757-461F-89F1-F22345BCAB4E")]
 [NativeTypeName("struct IMFSensorGroup : IUnknown")]

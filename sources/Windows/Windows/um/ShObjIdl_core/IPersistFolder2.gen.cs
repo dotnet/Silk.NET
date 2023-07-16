@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IPersistFolder2.xml' path='doc/member[@name="IPersistFolder2"]/*'/>
 [Guid("1AC3D9F0-175C-11D1-95BE-00609797EA4F")]
 [NativeTypeName("struct IPersistFolder2 : IPersistFolder")]

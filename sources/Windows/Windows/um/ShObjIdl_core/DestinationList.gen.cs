@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DestinationList.xml' path='doc/member[@name="DestinationList"]/*'/>
 [Guid("77F10CF0-3DB5-4966-B520-B7C54FD35ED6")]
 public unsafe partial struct DestinationList : INativeGuid

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSourceReaderCallback2.xml' path='doc/member[@name="IMFSourceReaderCallback2"]/*'/>
 [Guid("CF839FE6-8C2A-4DD2-B6EA-C22D6961AF05")]
 [NativeTypeName("struct IMFSourceReaderCallback2 : IMFSourceReaderCallback")]

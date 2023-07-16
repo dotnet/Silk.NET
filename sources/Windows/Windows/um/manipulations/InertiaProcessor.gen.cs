@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='InertiaProcessor.xml' path='doc/member[@name="InertiaProcessor"]/*'/>
 [Guid("ABB27087-4CE0-4E58-A0CB-E24DF96814BE")]
 public unsafe partial struct InertiaProcessor : INativeGuid

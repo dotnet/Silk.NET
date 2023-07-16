@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DWebBrowserEvents.xml' path='doc/member[@name="DWebBrowserEvents"]/*'/>
 [Guid("EAB22AC2-30C1-11CF-A7EB-0000C05BAE0B")]
 [NativeTypeName("struct DWebBrowserEvents : IDispatch")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FileOpenDialog.xml' path='doc/member[@name="FileOpenDialog"]/*'/>
 [Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]
 public unsafe partial struct FileOpenDialog : INativeGuid

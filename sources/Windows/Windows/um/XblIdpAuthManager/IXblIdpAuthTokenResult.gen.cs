@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IXblIdpAuthTokenResult.xml' path='doc/member[@name="IXblIdpAuthTokenResult"]/*'/>
 [Guid("46CE0225-F267-4D68-B299-B2762552DEC1")]
 [NativeTypeName("struct IXblIdpAuthTokenResult : IUnknown")]

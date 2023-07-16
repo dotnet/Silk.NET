@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpMMAudioEnum.xml' path='doc/member[@name="SpMMAudioEnum"]/*'/>
 [Guid("AB1890A0-E91F-11D2-BB91-00C04F8EE6C0")]
 public unsafe partial struct SpMMAudioEnum : INativeGuid

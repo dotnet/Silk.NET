@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY"]/*'/>
 public unsafe partial struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
 {

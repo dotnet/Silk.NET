@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMVideoDecimationProperties.xml' path='doc/member[@name="IAMVideoDecimationProperties"]/*'/>
 [Guid("60D32930-13DA-11D3-9EC6-C4FCAEF5C7BE")]
 [NativeTypeName("struct IAMVideoDecimationProperties : IUnknown")]

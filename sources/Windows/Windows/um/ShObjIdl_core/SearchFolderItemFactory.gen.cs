@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SearchFolderItemFactory.xml' path='doc/member[@name="SearchFolderItemFactory"]/*'/>
 [Guid("14010E02-BBBD-41F0-88E3-EDA371216584")]
 public unsafe partial struct SearchFolderItemFactory : INativeGuid

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT"]/*'/>
 public unsafe partial struct TF_LMLATTELEMENT
 {

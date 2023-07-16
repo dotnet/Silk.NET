@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct TOUCH_HIT_TESTING_INPUT

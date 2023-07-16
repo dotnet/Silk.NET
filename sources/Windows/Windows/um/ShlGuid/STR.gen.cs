@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class STR
 {
     [NativeTypeName("#define STR_MYDOCS_CLSID \"{450D8FBA-AD25-11D0-98A8-0800361B1103}\"")]

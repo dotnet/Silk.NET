@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap"]/*'/>
 [Guid("091162A4-BC96-411F-AAE8-C5122CD03363")]
 [NativeTypeName("struct ISharedBitmap : IUnknown")]

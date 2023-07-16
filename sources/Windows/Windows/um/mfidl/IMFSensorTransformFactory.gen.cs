@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSensorTransformFactory.xml' path='doc/member[@name="IMFSensorTransformFactory"]/*'/>
 [Guid("EED9C2EE-66B4-4F18-A697-AC7D3960215C")]
 [NativeTypeName("struct IMFSensorTransformFactory : IUnknown")]

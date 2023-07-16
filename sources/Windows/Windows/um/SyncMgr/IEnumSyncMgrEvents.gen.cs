@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumSyncMgrEvents.xml' path='doc/member[@name="IEnumSyncMgrEvents"]/*'/>
 [Guid("C81A1D4E-8CF7-4683-80E0-BCAE88D677B6")]
 [NativeTypeName("struct IEnumSyncMgrEvents : IUnknown")]

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpInProcRecoContext.xml' path='doc/member[@name="SpInProcRecoContext"]/*'/>
 [Guid("73AD6842-ACE0-45E8-A4DD-8795881A2C2A")]
 public unsafe partial struct SpInProcRecoContext : INativeGuid

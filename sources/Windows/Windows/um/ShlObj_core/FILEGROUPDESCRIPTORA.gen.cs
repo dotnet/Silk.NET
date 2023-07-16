@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FILEGROUPDESCRIPTORA.xml' path='doc/member[@name="FILEGROUPDESCRIPTORA"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FILEGROUPDESCRIPTORA

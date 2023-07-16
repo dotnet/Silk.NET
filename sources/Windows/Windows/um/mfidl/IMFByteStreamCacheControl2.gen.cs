@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFByteStreamCacheControl2.xml' path='doc/member[@name="IMFByteStreamCacheControl2"]/*'/>
 [Guid("71CE469C-F34B-49EA-A56B-2D2A10E51149")]
 [NativeTypeName("struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl")]

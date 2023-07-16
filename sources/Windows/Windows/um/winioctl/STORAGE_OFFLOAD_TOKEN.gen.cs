@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct STORAGE_OFFLOAD_TOKEN

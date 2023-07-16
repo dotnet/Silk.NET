@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ScheduledTasks.xml' path='doc/member[@name="ScheduledTasks"]/*'/>
 [Guid("D6277990-4C6A-11CF-8D87-00AA0060F5BF")]
 public unsafe partial struct ScheduledTasks : INativeGuid

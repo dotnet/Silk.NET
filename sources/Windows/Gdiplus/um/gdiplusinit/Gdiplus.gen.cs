@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Gdiplus;
+namespace Silk.NET.Gdiplus;
 public static unsafe partial class Gdiplus
 {
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdiplusStartup"]/*'/>

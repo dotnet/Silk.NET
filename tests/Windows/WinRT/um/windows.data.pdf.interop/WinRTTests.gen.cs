@@ -2,11 +2,11 @@
 // Ported from um/windows.data.pdf.interop.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using NUnit.Framework;
+using Silk.NET.DirectX;
 using System;
-using TerraFX.Interop.DirectX;
-using static TerraFX.Interop.WinRT.WinRT;
+using static Silk.NET.WinRT.WinRT;
 
-namespace TerraFX.Interop.WinRT.UnitTests;
+namespace Silk.NET.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref = "WinRT"/> class.</summary>
 public static unsafe partial class WinRTTests
 {

@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMStreamSelect.xml' path='doc/member[@name="IAMStreamSelect"]/*'/>
 [Guid("C1960960-17F5-11D1-ABE1-00A0C905F375")]
 [NativeTypeName("struct IAMStreamSelect : IUnknown")]

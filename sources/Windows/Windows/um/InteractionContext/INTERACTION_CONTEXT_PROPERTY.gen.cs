@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='INTERACTION_CONTEXT_PROPERTY.xml' path='doc/member[@name="INTERACTION_CONTEXT_PROPERTY"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum INTERACTION_CONTEXT_PROPERTY

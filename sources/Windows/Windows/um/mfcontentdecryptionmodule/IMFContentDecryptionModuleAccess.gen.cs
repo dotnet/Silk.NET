@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFContentDecryptionModuleAccess.xml' path='doc/member[@name="IMFContentDecryptionModuleAccess"]/*'/>
 [Guid("A853D1F4-E2A0-4303-9EDC-F1A68EE43136")]
 [NativeTypeName("struct IMFContentDecryptionModuleAccess : IUnknown")]

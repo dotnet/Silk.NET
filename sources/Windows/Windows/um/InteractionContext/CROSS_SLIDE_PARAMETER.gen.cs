@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CROSS_SLIDE_PARAMETER.xml' path='doc/member[@name="CROSS_SLIDE_PARAMETER"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public partial struct CROSS_SLIDE_PARAMETER

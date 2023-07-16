@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SHELLFLAGSTATE.xml' path='doc/member[@name="SHELLFLAGSTATE"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHELLFLAGSTATE

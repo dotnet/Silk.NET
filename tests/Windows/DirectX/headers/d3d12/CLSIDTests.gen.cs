@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "CLSID"/> class.</summary>
 public static partial class CLSIDTests
 {

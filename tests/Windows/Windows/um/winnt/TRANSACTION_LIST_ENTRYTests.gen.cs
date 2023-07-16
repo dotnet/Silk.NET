@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "TRANSACTION_LIST_ENTRY"/> struct.</summary>
 public static unsafe partial class TRANSACTION_LIST_ENTRYTests
 {

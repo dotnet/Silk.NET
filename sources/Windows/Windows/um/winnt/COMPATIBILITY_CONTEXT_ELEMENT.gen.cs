@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='COMPATIBILITY_CONTEXT_ELEMENT.xml' path='doc/member[@name="COMPATIBILITY_CONTEXT_ELEMENT"]/*'/>
 public partial struct COMPATIBILITY_CONTEXT_ELEMENT
 {

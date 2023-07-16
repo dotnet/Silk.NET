@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT"]/*'/>
 public partial struct CERT_KEY_CONTEXT
 {

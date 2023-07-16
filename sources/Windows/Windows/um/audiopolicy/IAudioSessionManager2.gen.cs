@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2"]/*'/>
 [Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F")]
 [NativeTypeName("struct IAudioSessionManager2 : IAudioSessionManager")]

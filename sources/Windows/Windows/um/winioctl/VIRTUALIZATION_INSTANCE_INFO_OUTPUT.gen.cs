@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VIRTUALIZATION_INSTANCE_INFO_OUTPUT.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_OUTPUT"]/*'/>
 public partial struct VIRTUALIZATION_INSTANCE_INFO_OUTPUT
 {

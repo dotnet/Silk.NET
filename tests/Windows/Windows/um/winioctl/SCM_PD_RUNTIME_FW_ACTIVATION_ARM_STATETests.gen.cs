@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE"/> struct.</summary>
 public static unsafe partial class SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATETests
 {

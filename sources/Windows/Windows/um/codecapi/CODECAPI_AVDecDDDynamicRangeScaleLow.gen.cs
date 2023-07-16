@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVDecDDDynamicRangeScaleLow.xml' path='doc/member[@name="CODECAPI_AVDecDDDynamicRangeScaleLow"]/*'/>
 [Guid("044E62E4-11A5-42D5-A3B2-3BB2C7C2D7CF")]
 public unsafe partial struct CODECAPI_AVDecDDDynamicRangeScaleLow : INativeGuid

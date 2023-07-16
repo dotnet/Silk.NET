@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='FsiNamedStreams.xml' path='doc/member[@name="FsiNamedStreams"]/*'/>
 [Guid("C6B6F8ED-6D19-44B4-B539-B159B793A32D")]
 public unsafe partial struct FsiNamedStreams : INativeGuid

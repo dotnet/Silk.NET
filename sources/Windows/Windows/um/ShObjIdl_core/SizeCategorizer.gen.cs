@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SizeCategorizer.xml' path='doc/member[@name="SizeCategorizer"]/*'/>
 [Guid("55D7B852-F6D1-42F2-AA75-8728A1B2D264")]
 public unsafe partial struct SizeCategorizer : INativeGuid

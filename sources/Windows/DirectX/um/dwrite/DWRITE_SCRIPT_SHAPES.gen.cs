@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='DWRITE_SCRIPT_SHAPES.xml' path='doc/member[@name="DWRITE_SCRIPT_SHAPES"]/*'/>
 [Flags]
 public enum DWRITE_SCRIPT_SHAPES

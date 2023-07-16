@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KCRM_PROTOCOL_BLOB.xml' path='doc/member[@name="KCRM_PROTOCOL_BLOB"]/*'/>
 public partial struct KCRM_PROTOCOL_BLOB
 {

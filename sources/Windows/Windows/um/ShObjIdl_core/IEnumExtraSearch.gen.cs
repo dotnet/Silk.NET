@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IEnumExtraSearch.xml' path='doc/member[@name="IEnumExtraSearch"]/*'/>
 [Guid("0E700BE1-9DB6-11D1-A1CE-00C04FD75D13")]
 [NativeTypeName("struct IEnumExtraSearch : IUnknown")]

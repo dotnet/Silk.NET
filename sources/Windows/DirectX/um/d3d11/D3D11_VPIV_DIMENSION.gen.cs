@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D11_VPIV_DIMENSION.xml' path='doc/member[@name="D3D11_VPIV_DIMENSION"]/*'/>
 [SupportedOSPlatform("windows6.2")]
 public enum D3D11_VPIV_DIMENSION

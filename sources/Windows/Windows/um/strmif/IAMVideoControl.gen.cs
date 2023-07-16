@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl"]/*'/>
 [Guid("6A2E0670-28E4-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMVideoControl : IUnknown")]

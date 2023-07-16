@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SpatialAudioObjectRenderStreamActivationParams2.xml' path='doc/member[@name="SpatialAudioObjectRenderStreamActivationParams2"]/*'/>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SpatialAudioObjectRenderStreamActivationParams2

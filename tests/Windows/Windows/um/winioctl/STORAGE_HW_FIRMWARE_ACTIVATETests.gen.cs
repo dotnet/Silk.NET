@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "STORAGE_HW_FIRMWARE_ACTIVATE"/> struct.</summary>
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class STORAGE_HW_FIRMWARE_ACTIVATETests

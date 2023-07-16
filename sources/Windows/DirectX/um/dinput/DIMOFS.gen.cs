@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 public static partial class DIMOFS
 {
     [NativeTypeName("#define DIMOFS_X FIELD_OFFSET(DIMOUSESTATE, lX)")]

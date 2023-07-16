@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IUserDataPathsInterop.xml' path='doc/member[@name="IUserDataPathsInterop"]/*'/>
 [Guid("F12EF0B5-BEFB-46C9-9EE5-8A0681F13F8C")]
 [NativeTypeName("struct IUserDataPathsInterop : IUnknown")]

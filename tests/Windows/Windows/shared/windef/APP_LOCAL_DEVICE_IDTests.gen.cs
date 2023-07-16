@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests;
+namespace Silk.NET.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref = "APP_LOCAL_DEVICE_ID"/> struct.</summary>
 public static unsafe partial class APP_LOCAL_DEVICE_IDTests
 {

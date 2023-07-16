@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D2D1_RENDERING_PRIORITY.xml' path='doc/member[@name="D2D1_RENDERING_PRIORITY"]/*'/>
 [SupportedOSPlatform("windows6.3")]
 public enum D2D1_RENDERING_PRIORITY

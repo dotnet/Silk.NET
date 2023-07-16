@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVLowLatencyMode.xml' path='doc/member[@name="CODECAPI_AVLowLatencyMode"]/*'/>
 [Guid("9C27891A-ED7A-40E1-88E8-B22727A024EE")]
 public unsafe partial struct CODECAPI_AVLowLatencyMode : INativeGuid

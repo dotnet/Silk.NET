@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IActiveIME2.xml' path='doc/member[@name="IActiveIME2"]/*'/>
 [Guid("E1C4BF0E-2D53-11D2-93E1-0060B067B86E")]
 [NativeTypeName("struct IActiveIME2 : IActiveIME")]

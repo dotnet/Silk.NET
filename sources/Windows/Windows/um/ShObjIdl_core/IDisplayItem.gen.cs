@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDisplayItem.xml' path='doc/member[@name="IDisplayItem"]/*'/>
 [Guid("C6FD5997-9F6B-4888-8703-94E80E8CDE3F")]
 [NativeTypeName("struct IDisplayItem : IRelatedItem")]

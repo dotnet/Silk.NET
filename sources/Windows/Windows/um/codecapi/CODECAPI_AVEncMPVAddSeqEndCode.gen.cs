@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='CODECAPI_AVEncMPVAddSeqEndCode.xml' path='doc/member[@name="CODECAPI_AVEncMPVAddSeqEndCode"]/*'/>
 [Guid("A823178F-57DF-4C7A-B8FD-E5EC8887708D")]
 public unsafe partial struct CODECAPI_AVEncMPVAddSeqEndCode : INativeGuid

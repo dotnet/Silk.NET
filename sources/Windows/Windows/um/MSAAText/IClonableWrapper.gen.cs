@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IClonableWrapper.xml' path='doc/member[@name="IClonableWrapper"]/*'/>
 [Guid("B33E75FF-E84C-4DCA-A25C-33B8DC003374")]
 [NativeTypeName("struct IClonableWrapper : IUnknown")]

@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests;
+namespace Silk.NET.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref = "D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT"/> struct.</summary>
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORTTests

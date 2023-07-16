@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='KnownFolderManager.xml' path='doc/member[@name="KnownFolderManager"]/*'/>
 [Guid("4DF0C730-DF9D-4AE3-9153-AA6B82E9795A")]
 public unsafe partial struct KnownFolderManager : INativeGuid

@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='AMCOPPStatusInput.xml' path='doc/member[@name="AMCOPPStatusInput"]/*'/>
 public unsafe partial struct AMCOPPStatusInput
 {

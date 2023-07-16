@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFSignedLibrary.xml' path='doc/member[@name="IMFSignedLibrary"]/*'/>
 [Guid("4A724BCA-FF6A-4C07-8E0D-7A358421CF06")]
 [NativeTypeName("struct IMFSignedLibrary : IUnknown")]

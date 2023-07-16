@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX;
+namespace Silk.NET.DirectX;
 /// <include file='D3D10_SHADER_RESOURCE_VIEW_DESC1.xml' path='doc/member[@name="D3D10_SHADER_RESOURCE_VIEW_DESC1"]/*'/>
 public partial struct D3D10_SHADER_RESOURCE_VIEW_DESC1
 {

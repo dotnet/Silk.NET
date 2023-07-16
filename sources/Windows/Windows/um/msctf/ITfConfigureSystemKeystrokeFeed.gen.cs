@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed"]/*'/>
 [Guid("0D2C969A-BC9C-437C-84EE-951C49B1A764")]
 [NativeTypeName("struct ITfConfigureSystemKeystrokeFeed : IUnknown")]

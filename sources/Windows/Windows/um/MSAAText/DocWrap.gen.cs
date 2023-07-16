@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='DocWrap.xml' path='doc/member[@name="DocWrap"]/*'/>
 [Guid("BF426F7E-7A5E-44D6-830C-A390EA9462A3")]
 public unsafe partial struct DocWrap : INativeGuid

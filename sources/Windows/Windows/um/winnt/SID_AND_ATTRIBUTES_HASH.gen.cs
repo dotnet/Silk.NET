@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SID_AND_ATTRIBUTES_HASH.xml' path='doc/member[@name="SID_AND_ATTRIBUTES_HASH"]/*'/>
 public unsafe partial struct SID_AND_ATTRIBUTES_HASH
 {

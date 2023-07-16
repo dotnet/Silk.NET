@@ -5,9 +5,9 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue"]/*'/>
 [Guid("1E560447-9A2B-43E1-A94C-B0AAABFBFBC9")]
 [NativeTypeName("struct IMFTimedTextCue : IUnknown")]

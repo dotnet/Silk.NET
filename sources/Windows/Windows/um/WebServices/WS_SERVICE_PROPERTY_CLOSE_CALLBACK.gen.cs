@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='WS_SERVICE_PROPERTY_CLOSE_CALLBACK.xml' path='doc/member[@name="WS_SERVICE_PROPERTY_CLOSE_CALLBACK"]/*'/>
 public unsafe partial struct WS_SERVICE_PROPERTY_CLOSE_CALLBACK
 {

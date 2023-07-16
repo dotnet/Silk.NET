@@ -3,7 +3,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 public static partial class PKCS12
 {
     [NativeTypeName("#define PKCS12_IMPORT_SILENT 0x00000040")]

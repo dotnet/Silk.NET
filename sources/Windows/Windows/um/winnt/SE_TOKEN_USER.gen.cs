@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER"]/*'/>
 public unsafe partial struct SE_TOKEN_USER
 {

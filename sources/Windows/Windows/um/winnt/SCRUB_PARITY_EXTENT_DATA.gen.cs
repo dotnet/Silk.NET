@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='SCRUB_PARITY_EXTENT_DATA.xml' path='doc/member[@name="SCRUB_PARITY_EXTENT_DATA"]/*'/>
 public partial struct SCRUB_PARITY_EXTENT_DATA
 {

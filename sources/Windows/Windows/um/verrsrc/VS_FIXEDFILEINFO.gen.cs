@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/verrsrc.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO"]/*'/>
 public partial struct VS_FIXEDFILEINFO
 {

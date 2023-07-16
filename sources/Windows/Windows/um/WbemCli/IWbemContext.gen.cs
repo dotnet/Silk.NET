@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext"]/*'/>
 [Guid("44ACA674-E8FC-11D0-A07C-00C04FB68820")]
 [NativeTypeName("struct IWbemContext : IUnknown")]

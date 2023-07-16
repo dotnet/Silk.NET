@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static Silk.NET.Windows.IID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology"]/*'/>
 [Guid("2A07407E-6497-4A18-9787-32F79BD0D98F")]
 [NativeTypeName("struct IDeviceTopology : IUnknown")]

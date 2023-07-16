@@ -4,9 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.CLSID;
+using static Silk.NET.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows;
+namespace Silk.NET.Windows;
 /// <include file='PrintDocumentPackageTargetFactory.xml' path='doc/member[@name="PrintDocumentPackageTargetFactory"]/*'/>
 [Guid("348EF17D-6C81-4982-92B4-EE188A43867A")]
 public unsafe partial struct PrintDocumentPackageTargetFactory : INativeGuid
