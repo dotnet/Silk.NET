@@ -79,7 +79,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: temp_asm
-        path: "**/{bin,obj}/**/*"
+        path: "**/obj/**/*"
         if-no-files-found: warn
         retention-days: 30
       if: always()
