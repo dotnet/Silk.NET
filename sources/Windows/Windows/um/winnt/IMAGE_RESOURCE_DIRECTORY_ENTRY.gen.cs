@@ -1,21 +1,26 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY"]/*'/>
+
+/// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY"]/*' />
 public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 {
-    /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous1"]/*'/>
+    /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous1"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L19739_C5")]
     public _Anonymous1_e__Union Anonymous1;
-    /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous2"]/*'/>
+
+    /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous2"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L19747_C5")]
     public _Anonymous2_e__Union Anonymous2;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*' />
     public uint NameOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,7 +36,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameIsString"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameIsString"]/*' />
     public uint NameIsString
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,7 +52,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*'/>
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*' />
     [UnscopedRef]
     public ref uint Name
     {
@@ -58,7 +63,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Id"]/*'/>
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Id"]/*' />
     [UnscopedRef]
     public ref ushort Id
     {
@@ -69,7 +74,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.OffsetToData"]/*'/>
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.OffsetToData"]/*' />
     [UnscopedRef]
     public ref uint OffsetToData
     {
@@ -80,7 +85,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetToDirectory"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetToDirectory"]/*' />
     public uint OffsetToDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,7 +101,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DataIsDirectory"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DataIsDirectory"]/*' />
     public uint DataIsDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -112,27 +117,31 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*'/>
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous1_e__Union
     {
-        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*'/>
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L19740_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*'/>
+
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Name;
-        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Id"]/*'/>
+
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Id"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("WORD")]
         public ushort Id;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*' />
             [NativeTypeName("DWORD : 31")]
             public uint NameOffset
             {
@@ -149,7 +158,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameIsString"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameIsString"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint NameIsString
             {
@@ -168,23 +177,26 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
         }
     }
 
-    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*'/>
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous2_e__Union
     {
-        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.OffsetToData"]/*'/>
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.OffsetToData"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint OffsetToData;
-        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*'/>
+
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L19749_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetToDirectory"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetToDirectory"]/*' />
             [NativeTypeName("DWORD : 31")]
             public uint OffsetToDirectory
             {
@@ -201,7 +213,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DataIsDirectory"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DataIsDirectory"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint DataIsDirectory
             {

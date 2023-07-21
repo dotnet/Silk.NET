@@ -1,12 +1,15 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
+
 public static partial class MFVideoFormat
 {
     [NativeTypeName("const GUID")]
@@ -15,16 +18,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -34,6 +31,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -45,16 +43,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x16,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x16, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -64,6 +56,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -75,16 +68,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x15,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x15, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -94,6 +81,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -105,16 +93,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x14,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x14, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -124,6 +106,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -135,16 +118,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x18,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x18, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -154,6 +131,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -165,16 +143,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x17,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x17, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -184,6 +156,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -195,16 +168,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x29,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x29, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -214,6 +181,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -225,16 +193,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x32,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x32, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -244,6 +206,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -255,16 +218,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x51,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x51, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -274,6 +231,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -285,16 +243,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x50,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x50, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -304,6 +256,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -315,16 +268,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x41,
-                0x49,
-                0x34,
-                0x34,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x41, 0x49, 0x34, 0x34,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -334,6 +281,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -345,16 +293,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x41,
-                0x59,
-                0x55,
-                0x56,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x41, 0x59, 0x55, 0x56,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -364,6 +306,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -375,16 +318,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x55,
-                0x59,
-                0x32,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x55, 0x59, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -394,6 +331,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -405,16 +343,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x56,
-                0x59,
-                0x55,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x56, 0x59, 0x55,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -424,6 +356,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -435,16 +368,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x56,
-                0x55,
-                0x39,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x56, 0x55, 0x39,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -454,6 +381,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -465,16 +393,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x55,
-                0x59,
-                0x56,
-                0x59,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x55, 0x59, 0x56, 0x59,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -484,6 +406,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -495,16 +418,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4E,
-                0x56,
-                0x31,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4E, 0x56, 0x31, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -514,6 +431,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -525,16 +443,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4E,
-                0x56,
-                0x31,
-                0x32,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4E, 0x56, 0x31, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -544,6 +456,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -555,16 +468,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4E,
-                0x56,
-                0x32,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4E, 0x56, 0x32, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -574,6 +481,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -585,16 +493,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x56,
-                0x31,
-                0x32,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x56, 0x31, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -604,6 +506,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -615,16 +518,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x49,
-                0x34,
-                0x32,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x49, 0x34, 0x32, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -634,6 +531,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -645,16 +543,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x49,
-                0x59,
-                0x55,
-                0x56,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x49, 0x59, 0x55, 0x56,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -664,6 +556,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -675,16 +568,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x32,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x32, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -694,6 +581,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -705,16 +593,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x32,
-                0x31,
-                0x36,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x32, 0x31, 0x36,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -724,6 +606,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -735,16 +618,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x34,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x34, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -754,6 +631,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -765,16 +643,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x34,
-                0x31,
-                0x36,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x34, 0x31, 0x36,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -784,6 +656,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -795,16 +668,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x34,
-                0x31,
-                0x50,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x34, 0x31, 0x50,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -814,6 +681,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -825,16 +693,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x34,
-                0x31,
-                0x54,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x34, 0x31, 0x54,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -844,6 +706,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -855,16 +718,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x59,
-                0x34,
-                0x32,
-                0x54,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x59, 0x34, 0x32, 0x54,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -874,6 +731,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -885,16 +743,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x50,
-                0x32,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x50, 0x32, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -904,6 +756,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -915,16 +768,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x50,
-                0x32,
-                0x31,
-                0x36,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x50, 0x32, 0x31, 0x36,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -934,6 +781,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -945,16 +793,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x50,
-                0x30,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x50, 0x30, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -964,6 +806,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -975,16 +818,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x50,
-                0x30,
-                0x31,
-                0x36,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x50, 0x30, 0x31, 0x36,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -994,6 +831,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1005,16 +843,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x76,
-                0x32,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x76, 0x32, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1024,6 +856,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1035,16 +868,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x76,
-                0x32,
-                0x31,
-                0x36,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x76, 0x32, 0x31, 0x36,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1054,6 +881,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1065,16 +893,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x76,
-                0x34,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x76, 0x34, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1084,6 +906,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1095,16 +918,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x50,
-                0x34,
-                0x33,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x50, 0x34, 0x33,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1114,6 +931,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1125,16 +943,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x50,
-                0x34,
-                0x53,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x50, 0x34, 0x53,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1144,6 +956,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1155,16 +968,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x34,
-                0x53,
-                0x32,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x34, 0x53, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1174,6 +981,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1185,16 +993,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x50,
-                0x34,
-                0x56,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x50, 0x34, 0x56,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1204,6 +1006,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1215,16 +1018,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x57,
-                0x4D,
-                0x56,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x57, 0x4D, 0x56, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1234,6 +1031,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1245,16 +1043,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x57,
-                0x4D,
-                0x56,
-                0x32,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x57, 0x4D, 0x56, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1264,6 +1056,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1275,16 +1068,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x57,
-                0x4D,
-                0x56,
-                0x33,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x57, 0x4D, 0x56, 0x33,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1294,6 +1081,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1305,16 +1093,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x57,
-                0x56,
-                0x43,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x57, 0x56, 0x43, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1324,6 +1106,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1335,16 +1118,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x53,
-                0x53,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x53, 0x53, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1354,6 +1131,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1365,16 +1143,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x53,
-                0x53,
-                0x32,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x53, 0x53, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1384,6 +1156,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1395,16 +1168,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x50,
-                0x47,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x50, 0x47, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1414,6 +1181,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1425,16 +1193,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x73,
-                0x6C,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x73, 0x6C,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1444,6 +1206,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1455,16 +1218,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x73,
-                0x64,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x73, 0x64,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1474,6 +1231,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1485,16 +1243,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x68,
-                0x64,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x68, 0x64,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1504,6 +1256,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1515,16 +1268,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x32,
-                0x35,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x32, 0x35,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1534,6 +1281,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1545,16 +1293,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x35,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x35, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1564,6 +1306,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1575,16 +1318,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x68,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x68, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1594,6 +1331,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1605,16 +1343,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x64,
-                0x76,
-                0x63,
-                0x20,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x64, 0x76, 0x63, 0x20,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1624,6 +1356,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1635,16 +1368,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x48,
-                0x32,
-                0x36,
-                0x34,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x48, 0x32, 0x36, 0x34,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1654,6 +1381,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1665,16 +1393,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x48,
-                0x32,
-                0x36,
-                0x35,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x48, 0x32, 0x36, 0x35,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1684,6 +1406,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1695,16 +1418,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4D,
-                0x4A,
-                0x50,
-                0x47,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4D, 0x4A, 0x50, 0x47,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1714,6 +1431,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1725,16 +1443,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x34,
-                0x32,
-                0x30,
-                0x4F,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x34, 0x32, 0x30, 0x4F,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1744,6 +1456,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1755,16 +1468,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x48,
-                0x45,
-                0x56,
-                0x43,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x48, 0x45, 0x56, 0x43,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1774,6 +1481,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1785,16 +1493,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x48,
-                0x45,
-                0x56,
-                0x53,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x48, 0x45, 0x56, 0x53,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1804,6 +1506,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1815,16 +1518,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x56,
-                0x50,
-                0x38,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x56, 0x50, 0x38, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1834,6 +1531,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1845,16 +1543,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x56,
-                0x50,
-                0x39,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x56, 0x50, 0x39, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1864,6 +1556,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1875,16 +1568,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x4F,
-                0x52,
-                0x41,
-                0x57,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4F, 0x52, 0x41, 0x57,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1894,6 +1581,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1905,16 +1593,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x48,
-                0x32,
-                0x36,
-                0x33,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x48, 0x32, 0x36, 0x33,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1924,6 +1606,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1935,16 +1618,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x1F,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x1F, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1954,6 +1631,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1965,16 +1643,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x71,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x71, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -1984,6 +1656,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -1995,16 +1668,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x56,
-                0x50,
-                0x31,
-                0x30,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x56, 0x50, 0x31, 0x30,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -2014,6 +1681,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2025,16 +1693,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x41,
-                0x56,
-                0x30,
-                0x31,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x41, 0x56, 0x30, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -2044,6 +1706,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2055,16 +1718,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x74,
-                0x68,
-                0x65,
-                0x6F,
-                0x00,
-                0x00,
-                0x10,
-                0x00,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x74, 0x68, 0x65, 0x6F,
+                0x00, 0x00,
+                0x10, 0x00,
                 0x80,
                 0x00,
                 0x00,
@@ -2074,6 +1731,7 @@ public static partial class MFVideoFormat
                 0x9B,
                 0x71
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2085,16 +1743,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xF0,
-                0xF4,
-                0x40,
-                0x3F,
-                0x22,
-                0x56,
-                0xF8,
-                0x4F,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF0, 0xF4, 0x40, 0x3F,
+                0x22, 0x56,
+                0xF8, 0x4F,
                 0xB6,
                 0xD8,
                 0xA1,
@@ -2104,6 +1756,7 @@ public static partial class MFVideoFormat
                 0xEE,
                 0x5E
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2115,16 +1768,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x26,
-                0x80,
-                0x6D,
-                0xE0,
-                0x46,
-                0xDB,
-                0xCF,
-                0x11,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x26, 0x80, 0x6D, 0xE0,
+                0x46, 0xDB,
+                0xCF, 0x11,
                 0xB4,
                 0xD1,
                 0x00,
@@ -2134,6 +1781,7 @@ public static partial class MFVideoFormat
                 0xBB,
                 0xEA
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2145,16 +1793,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xDD,
-                0xE9,
-                0x0C,
-                0x5D,
-                0x17,
-                0x98,
-                0xDA,
-                0x49,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xDD, 0xE9, 0x0C, 0x5D,
+                0x17, 0x98,
+                0xDA, 0x49,
                 0xBD,
                 0xFD,
                 0xF5,
@@ -2164,6 +1806,7 @@ public static partial class MFVideoFormat
                 0x18,
                 0xA6
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2175,16 +1818,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xE6,
-                0x0F,
-                0xFE,
-                0x3C,
-                0xC4,
-                0x05,
-                0xDC,
-                0x47,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xE6, 0x0F, 0xFE, 0x3C,
+                0xC4, 0x05,
+                0xDC, 0x47,
                 0x9D,
                 0x70,
                 0x4B,
@@ -2194,6 +1831,7 @@ public static partial class MFVideoFormat
                 0x72,
                 0x0F
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -2205,16 +1843,10 @@ public static partial class MFVideoFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xD5,
-                0xB9,
-                0xC3,
-                0xEA,
-                0x14,
-                0xBD,
-                0x37,
-                0x42,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD5, 0xB9, 0xC3, 0xEA,
+                0x14, 0xBD,
+                0x37, 0x42,
                 0x8F,
                 0x1F,
                 0xBA,
@@ -2224,6 +1856,7 @@ public static partial class MFVideoFormat
                 0x93,
                 0x12
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

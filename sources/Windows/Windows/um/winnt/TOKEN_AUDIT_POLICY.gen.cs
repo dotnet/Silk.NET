@@ -1,11 +1,14 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='TOKEN_AUDIT_POLICY.xml' path='doc/member[@name="TOKEN_AUDIT_POLICY"]/*'/>
+
+/// <include file='TOKEN_AUDIT_POLICY.xml' path='doc/member[@name="TOKEN_AUDIT_POLICY"]/*' />
 public unsafe partial struct TOKEN_AUDIT_POLICY
 {
-    /// <include file='TOKEN_AUDIT_POLICY.xml' path='doc/member[@name="TOKEN_AUDIT_POLICY.PerUserPolicy"]/*'/>
+    /// <include file='TOKEN_AUDIT_POLICY.xml' path='doc/member[@name="TOKEN_AUDIT_POLICY.PerUserPolicy"]/*' />
     [NativeTypeName("BYTE[30]")]
     public fixed byte PerUserPolicy[30];
 }

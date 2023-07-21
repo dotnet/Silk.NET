@@ -1,26 +1,34 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA"]/*'/>
+
+/// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA"]/*' />
 public partial struct FPO_DATA
 {
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.ulOffStart"]/*'/>
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.ulOffStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulOffStart;
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbProcSize"]/*'/>
+
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbProcSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbProcSize;
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cdwLocals"]/*'/>
+
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cdwLocals"]/*' />
     [NativeTypeName("DWORD")]
     public uint cdwLocals;
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cdwParams"]/*'/>
+
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cdwParams"]/*' />
     [NativeTypeName("WORD")]
     public ushort cdwParams;
+
     public ushort _bitfield;
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbProlog"]/*'/>
+
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbProlog"]/*' />
     [NativeTypeName("WORD : 8")]
     public ushort cbProlog
     {
@@ -37,7 +45,7 @@ public partial struct FPO_DATA
         }
     }
 
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbRegs"]/*'/>
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbRegs"]/*' />
     [NativeTypeName("WORD : 3")]
     public ushort cbRegs
     {
@@ -54,7 +62,7 @@ public partial struct FPO_DATA
         }
     }
 
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.fHasSEH"]/*'/>
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.fHasSEH"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort fHasSEH
     {
@@ -71,7 +79,7 @@ public partial struct FPO_DATA
         }
     }
 
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.fUseBP"]/*'/>
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.fUseBP"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort fUseBP
     {
@@ -88,7 +96,7 @@ public partial struct FPO_DATA
         }
     }
 
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.reserved"]/*'/>
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.reserved"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort reserved
     {
@@ -105,7 +113,7 @@ public partial struct FPO_DATA
         }
     }
 
-    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbFrame"]/*'/>
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbFrame"]/*' />
     [NativeTypeName("WORD : 2")]
     public ushort cbFrame
     {

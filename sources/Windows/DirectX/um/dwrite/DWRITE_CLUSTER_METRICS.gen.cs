@@ -1,19 +1,25 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.DirectX;
-/// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS"]/*'/>
+
+/// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS"]/*' />
 public partial struct DWRITE_CLUSTER_METRICS
 {
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.width"]/*'/>
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.width"]/*' />
     public float width;
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.length"]/*'/>
+
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.length"]/*' />
     [NativeTypeName("UINT16")]
     public ushort length;
+
     public ushort _bitfield;
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.canWrapLineAfter"]/*'/>
+
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.canWrapLineAfter"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort canWrapLineAfter
     {
@@ -30,7 +36,7 @@ public partial struct DWRITE_CLUSTER_METRICS
         }
     }
 
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isWhitespace"]/*'/>
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isWhitespace"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isWhitespace
     {
@@ -47,7 +53,7 @@ public partial struct DWRITE_CLUSTER_METRICS
         }
     }
 
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isNewline"]/*'/>
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isNewline"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isNewline
     {
@@ -64,7 +70,7 @@ public partial struct DWRITE_CLUSTER_METRICS
         }
     }
 
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isSoftHyphen"]/*'/>
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isSoftHyphen"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isSoftHyphen
     {
@@ -81,7 +87,7 @@ public partial struct DWRITE_CLUSTER_METRICS
         }
     }
 
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isRightToLeft"]/*'/>
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.isRightToLeft"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isRightToLeft
     {
@@ -98,7 +104,7 @@ public partial struct DWRITE_CLUSTER_METRICS
         }
     }
 
-    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.padding"]/*'/>
+    /// <include file='DWRITE_CLUSTER_METRICS.xml' path='doc/member[@name="DWRITE_CLUSTER_METRICS.padding"]/*' />
     [NativeTypeName("UINT16 : 11")]
     public ushort padding
     {

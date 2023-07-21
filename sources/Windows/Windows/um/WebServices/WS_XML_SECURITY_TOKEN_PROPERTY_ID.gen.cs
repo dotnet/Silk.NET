@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID"]/*'/>
+
+/// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID"]/*' />
 public enum WS_XML_SECURITY_TOKEN_PROPERTY_ID
 {
-    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_ATTACHED_REFERENCE"]/*'/>
+    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_ATTACHED_REFERENCE"]/*' />
     WS_XML_SECURITY_TOKEN_PROPERTY_ATTACHED_REFERENCE = 1,
-    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_UNATTACHED_REFERENCE"]/*'/>
+
+    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_UNATTACHED_REFERENCE"]/*' />
     WS_XML_SECURITY_TOKEN_PROPERTY_UNATTACHED_REFERENCE = 2,
-    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_VALID_FROM_TIME"]/*'/>
+
+    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_VALID_FROM_TIME"]/*' />
     WS_XML_SECURITY_TOKEN_PROPERTY_VALID_FROM_TIME = 3,
-    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_VALID_TILL_TIME"]/*'/>
+
+    /// <include file='WS_XML_SECURITY_TOKEN_PROPERTY_ID.xml' path='doc/member[@name="WS_XML_SECURITY_TOKEN_PROPERTY_ID.WS_XML_SECURITY_TOKEN_PROPERTY_VALID_TILL_TIME"]/*' />
     WS_XML_SECURITY_TOKEN_PROPERTY_VALID_TILL_TIME = 4,
 }

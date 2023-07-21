@@ -1,14 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE"]/*'/>
+
+/// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE"]/*' />
 public enum SCM_PD_FIRMWARE_ACTIVATION_STATE
 {
-    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Idle"]/*'/>
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Idle"]/*' />
     ScmPdFirmwareActivationState_Idle = 0,
-    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Armed"]/*'/>
+
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Armed"]/*' />
     ScmPdFirmwareActivationState_Armed = 1,
-    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Busy"]/*'/>
+
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATION_STATE.ScmPdFirmwareActivationState_Busy"]/*' />
     ScmPdFirmwareActivationState_Busy = 2,
 }

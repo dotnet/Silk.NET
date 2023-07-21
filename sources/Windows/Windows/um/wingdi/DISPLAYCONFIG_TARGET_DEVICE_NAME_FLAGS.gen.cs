@@ -1,18 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS"]/*'/>
+
+/// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS"]/*' />
 public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
 {
-    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.Anonymous"]/*'/>
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_wingdi_L3079_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*' />
     public uint friendlyNameFromEdid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -28,7 +32,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameForced"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameForced"]/*' />
     public uint friendlyNameForced
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,7 +48,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.edidIdsValid"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.edidIdsValid"]/*' />
     public uint edidIdsValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,7 +64,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,7 +80,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
     [UnscopedRef]
     public ref uint value
     {
@@ -87,23 +91,26 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_wingdi_L3081_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT32")]
         public uint value;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*' />
             [NativeTypeName("UINT32 : 1")]
             public uint friendlyNameFromEdid
             {
@@ -120,7 +127,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameForced"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameForced"]/*' />
             [NativeTypeName("UINT32 : 1")]
             public uint friendlyNameForced
             {
@@ -137,7 +144,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.edidIdsValid"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.edidIdsValid"]/*' />
             [NativeTypeName("UINT32 : 1")]
             public uint edidIdsValid
             {
@@ -154,7 +161,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
             [NativeTypeName("UINT32 : 29")]
             public uint reserved
             {

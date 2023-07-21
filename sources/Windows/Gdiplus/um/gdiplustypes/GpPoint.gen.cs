@@ -1,16 +1,21 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='GpPoint.xml' path='doc/member[@name="GpPoint"]/*'/>
+
+/// <include file='GpPoint.xml' path='doc/member[@name="GpPoint"]/*' />
 public unsafe partial struct GpPoint
 {
-    /// <include file='GpPoint.xml' path='doc/member[@name="GpPoint.X"]/*'/>
+    /// <include file='GpPoint.xml' path='doc/member[@name="GpPoint.X"]/*' />
     public int X;
-    /// <include file='GpPoint.xml' path='doc/member[@name="GpPoint.Y"]/*'/>
+
+    /// <include file='GpPoint.xml' path='doc/member[@name="GpPoint.Y"]/*' />
     public int Y;
+
     public GpPoint()
     {
         X = Y = 0;

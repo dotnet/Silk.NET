@@ -1,26 +1,34 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.DirectX;
-/// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES"]/*'/>
+
+/// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES"]/*' />
 public partial struct DWRITE_SCRIPT_PROPERTIES
 {
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isoScriptCode"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isoScriptCode"]/*' />
     [NativeTypeName("UINT32")]
     public uint isoScriptCode;
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isoScriptNumber"]/*'/>
+
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isoScriptNumber"]/*' />
     [NativeTypeName("UINT32")]
     public uint isoScriptNumber;
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.clusterLookahead"]/*'/>
+
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.clusterLookahead"]/*' />
     [NativeTypeName("UINT32")]
     public uint clusterLookahead;
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.justificationCharacter"]/*'/>
+
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.justificationCharacter"]/*' />
     [NativeTypeName("UINT32")]
     public uint justificationCharacter;
+
     public uint _bitfield;
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters"]/*'/>
+
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint restrictCaretToClusters
     {
@@ -37,7 +45,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.usesWordDividers"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.usesWordDividers"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint usesWordDividers
     {
@@ -54,7 +62,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isDiscreteWriting
     {
@@ -71,7 +79,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isBlockWriting"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isBlockWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isBlockWriting
     {
@@ -88,7 +96,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isDistributedWithinCluster
     {
@@ -105,7 +113,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isConnectedWriting"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isConnectedWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isConnectedWriting
     {
@@ -122,7 +130,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isCursiveWriting"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isCursiveWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isCursiveWriting
     {
@@ -139,7 +147,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.reserved"]/*'/>
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.reserved"]/*' />
     [NativeTypeName("UINT32 : 25")]
     public uint reserved
     {

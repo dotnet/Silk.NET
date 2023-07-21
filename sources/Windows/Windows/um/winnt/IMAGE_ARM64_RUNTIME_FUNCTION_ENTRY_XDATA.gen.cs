@@ -1,23 +1,28 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA"]/*'/>
+
+/// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
 {
-    /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.HeaderData"]/*'/>
+    /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.HeaderData"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint HeaderData;
-    /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.Anonymous"]/*'/>
+
+    /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("__AnonymousRecord_winnt_L20229_C5")]
     public _Anonymous_e__Struct Anonymous;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,7 +38,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Version"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Version"]/*' />
     public uint Version
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,7 +54,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExceptionDataPresent"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExceptionDataPresent"]/*' />
     public uint ExceptionDataPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,7 +70,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogInHeader"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogInHeader"]/*' />
     public uint EpilogInHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -81,7 +86,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogCount"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogCount"]/*' />
     public uint EpilogCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,7 +102,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CodeWords"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CodeWords"]/*' />
     public uint CodeWords
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -113,11 +118,12 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />
         [NativeTypeName("DWORD : 18")]
         public uint FunctionLength
         {
@@ -134,7 +140,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Version"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Version"]/*' />
         [NativeTypeName("DWORD : 2")]
         public uint Version
         {
@@ -151,7 +157,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExceptionDataPresent"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExceptionDataPresent"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint ExceptionDataPresent
         {
@@ -168,7 +174,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogInHeader"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogInHeader"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint EpilogInHeader
         {
@@ -185,7 +191,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogCount"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogCount"]/*' />
         [NativeTypeName("DWORD : 5")]
         public uint EpilogCount
         {
@@ -202,7 +208,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CodeWords"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CodeWords"]/*' />
         [NativeTypeName("DWORD : 5")]
         public uint CodeWords
         {

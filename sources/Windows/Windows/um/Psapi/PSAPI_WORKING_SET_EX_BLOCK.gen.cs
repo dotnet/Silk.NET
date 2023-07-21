@@ -1,24 +1,29 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/Psapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK"]/*'/>
+
+/// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct PSAPI_WORKING_SET_EX_BLOCK
 {
-    /// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK.Flags"]/*'/>
+    /// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK.Flags"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("ULONG_PTR")]
     public nuint Flags;
-    /// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK.Anonymous"]/*'/>
+
+    /// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("__AnonymousRecord_Psapi_L406_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Valid"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Valid"]/*' />
     public nuint Valid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,7 +39,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*' />
     public nuint ShareCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -50,7 +55,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Win32Protection"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Win32Protection"]/*' />
     public nuint Win32Protection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,7 +71,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*' />
     public nuint Shared
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -82,7 +87,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Node"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Node"]/*' />
     public nuint Node
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -98,7 +103,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Locked"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Locked"]/*' />
     public nuint Locked
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,7 +119,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LargePage"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LargePage"]/*' />
     public nuint LargePage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -130,7 +135,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
     public nuint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -146,7 +151,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Bad"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Bad"]/*' />
     public nuint Bad
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -162,7 +167,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedUlong"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedUlong"]/*' />
     public nuint ReservedUlong
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -178,7 +183,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Invalid"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Invalid"]/*' />
     [UnscopedRef]
     public ref _Anonymous_e__Union._Invalid_e__Struct Invalid
     {
@@ -189,23 +194,26 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_Psapi_L407_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Invalid"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Invalid"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_Psapi_L422_C9")]
         public _Invalid_e__Struct Invalid;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public nuint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Valid"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Valid"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Valid
             {
@@ -222,7 +230,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*' />
             [NativeTypeName("ULONG_PTR : 3")]
             public nuint ShareCount
             {
@@ -239,7 +247,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Win32Protection"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Win32Protection"]/*' />
             [NativeTypeName("ULONG_PTR : 11")]
             public nuint Win32Protection
             {
@@ -256,7 +264,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Shared
             {
@@ -273,7 +281,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Node"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Node"]/*' />
             [NativeTypeName("ULONG_PTR : 6")]
             public nuint Node
             {
@@ -290,7 +298,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Locked"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Locked"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Locked
             {
@@ -307,7 +315,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LargePage"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LargePage"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint LargePage
             {
@@ -324,7 +332,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
             [NativeTypeName("ULONG_PTR : 7")]
             public nuint Reserved
             {
@@ -341,7 +349,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Bad"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Bad"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Bad
             {
@@ -358,7 +366,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedUlong"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedUlong"]/*' />
             [NativeTypeName("ULONG_PTR : 32")]
             public nuint ReservedUlong
             {
@@ -376,11 +384,12 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             }
         }
 
-        /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct"]/*'/>
+        /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct"]/*' />
         public partial struct _Invalid_e__Struct
         {
             public nuint _bitfield;
-            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Valid"]/*'/>
+
+            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Valid"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Valid
             {
@@ -397,7 +406,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Reserved0"]/*'/>
+            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Reserved0"]/*' />
             [NativeTypeName("ULONG_PTR : 14")]
             public nuint Reserved0
             {
@@ -414,7 +423,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Shared"]/*'/>
+            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Shared"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Shared
             {
@@ -431,7 +440,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Reserved1"]/*'/>
+            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Reserved1"]/*' />
             [NativeTypeName("ULONG_PTR : 15")]
             public nuint Reserved1
             {
@@ -448,7 +457,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Bad"]/*'/>
+            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.Bad"]/*' />
             [NativeTypeName("ULONG_PTR : 1")]
             public nuint Bad
             {
@@ -465,7 +474,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
                 }
             }
 
-            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.ReservedUlong"]/*'/>
+            /// <include file='_Invalid_e__Struct.xml' path='doc/member[@name="_Invalid_e__Struct.ReservedUlong"]/*' />
             [NativeTypeName("ULONG_PTR : 32")]
             public nuint ReservedUlong
             {

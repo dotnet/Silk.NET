@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE"]/*'/>
+
+/// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE"]/*' />
 public enum MKRREDUCE
 {
-    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_ONE"]/*'/>
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_ONE"]/*' />
     MKRREDUCE_ONE = (3 << 16),
-    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_TOUSER"]/*'/>
+
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_TOUSER"]/*' />
     MKRREDUCE_TOUSER = (2 << 16),
-    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_THROUGHUSER"]/*'/>
+
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_THROUGHUSER"]/*' />
     MKRREDUCE_THROUGHUSER = (1 << 16),
-    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_ALL"]/*'/>
+
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_ALL"]/*' />
     MKRREDUCE_ALL = 0,
 }

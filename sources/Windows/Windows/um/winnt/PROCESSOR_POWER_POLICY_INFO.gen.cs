@@ -1,30 +1,40 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO"]/*'/>
+
+/// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO"]/*' />
 public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
 {
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.TimeCheck"]/*'/>
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.TimeCheck"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeCheck;
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.DemoteLimit"]/*'/>
+
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.DemoteLimit"]/*' />
     [NativeTypeName("DWORD")]
     public uint DemoteLimit;
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.PromoteLimit"]/*'/>
+
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.PromoteLimit"]/*' />
     [NativeTypeName("DWORD")]
     public uint PromoteLimit;
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.DemotePercent"]/*'/>
+
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.DemotePercent"]/*' />
     public byte DemotePercent;
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.PromotePercent"]/*'/>
+
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.PromotePercent"]/*' />
     public byte PromotePercent;
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.Spare"]/*'/>
+
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.Spare"]/*' />
     [NativeTypeName("BYTE[2]")]
     public fixed byte Spare[2];
+
     public uint _bitfield;
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.AllowDemotion"]/*'/>
+
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.AllowDemotion"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint AllowDemotion
     {
@@ -41,7 +51,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
         }
     }
 
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.AllowPromotion"]/*'/>
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.AllowPromotion"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint AllowPromotion
     {
@@ -58,7 +68,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
         }
     }
 
-    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.Reserved"]/*'/>
+    /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.Reserved"]/*' />
     [NativeTypeName("DWORD : 30")]
     public uint Reserved
     {

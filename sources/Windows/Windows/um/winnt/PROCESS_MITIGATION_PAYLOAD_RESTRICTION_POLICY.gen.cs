@@ -1,18 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY"]/*'/>
+
+/// <include file='PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY"]/*' />
 public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
 {
-    /// <include file='PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.Anonymous"]/*'/>
+    /// <include file='PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L12698_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     [UnscopedRef]
     public ref uint Flags
     {
@@ -23,7 +27,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilter"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilter"]/*' />
     public uint EnableExportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,7 +43,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilter"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilter"]/*' />
     public uint AuditExportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,7 +59,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilterPlus"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilterPlus"]/*' />
     public uint EnableExportAddressFilterPlus
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,7 +75,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilterPlus"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilterPlus"]/*' />
     public uint AuditExportAddressFilterPlus
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,7 +91,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableImportAddressFilter"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableImportAddressFilter"]/*' />
     public uint EnableImportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -103,7 +107,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditImportAddressFilter"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditImportAddressFilter"]/*' />
     public uint AuditImportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,7 +123,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopStackPivot"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopStackPivot"]/*' />
     public uint EnableRopStackPivot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -135,7 +139,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopStackPivot"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopStackPivot"]/*' />
     public uint AuditRopStackPivot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -151,7 +155,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopCallerCheck"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopCallerCheck"]/*' />
     public uint EnableRopCallerCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,7 +171,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopCallerCheck"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopCallerCheck"]/*' />
     public uint AuditRopCallerCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -183,7 +187,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopSimExec"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopSimExec"]/*' />
     public uint EnableRopSimExec
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,7 +203,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopSimExec"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopSimExec"]/*' />
     public uint AuditRopSimExec
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -215,7 +219,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -231,23 +235,26 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L12700_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilter"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilter"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableExportAddressFilter
             {
@@ -264,7 +271,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilter"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilter"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditExportAddressFilter
             {
@@ -281,7 +288,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilterPlus"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilterPlus"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableExportAddressFilterPlus
             {
@@ -298,7 +305,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilterPlus"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilterPlus"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditExportAddressFilterPlus
             {
@@ -315,7 +322,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableImportAddressFilter"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableImportAddressFilter"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableImportAddressFilter
             {
@@ -332,7 +339,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditImportAddressFilter"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditImportAddressFilter"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditImportAddressFilter
             {
@@ -349,7 +356,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopStackPivot"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopStackPivot"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableRopStackPivot
             {
@@ -366,7 +373,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopStackPivot"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopStackPivot"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditRopStackPivot
             {
@@ -383,7 +390,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopCallerCheck"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopCallerCheck"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableRopCallerCheck
             {
@@ -400,7 +407,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopCallerCheck"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopCallerCheck"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditRopCallerCheck
             {
@@ -417,7 +424,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopSimExec"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopSimExec"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableRopSimExec
             {
@@ -434,7 +441,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopSimExec"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopSimExec"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditRopSimExec
             {
@@ -451,7 +458,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 20")]
             public uint ReservedFlags
             {

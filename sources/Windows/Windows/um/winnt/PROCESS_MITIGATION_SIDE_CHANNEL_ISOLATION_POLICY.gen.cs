@@ -1,18 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY"]/*'/>
+
+/// <include file='PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY"]/*' />
 public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
 {
-    /// <include file='PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.Anonymous"]/*'/>
+    /// <include file='PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L12737_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     [UnscopedRef]
     public ref uint Flags
     {
@@ -23,7 +27,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmtBranchTargetIsolation"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmtBranchTargetIsolation"]/*' />
     public uint SmtBranchTargetIsolation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,7 +43,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsolateSecurityDomain"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsolateSecurityDomain"]/*' />
     public uint IsolateSecurityDomain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,7 +59,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisablePageCombine"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisablePageCombine"]/*' />
     public uint DisablePageCombine
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,7 +75,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpeculativeStoreBypassDisable"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpeculativeStoreBypassDisable"]/*' />
     public uint SpeculativeStoreBypassDisable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,7 +91,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RestrictCoreSharing"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RestrictCoreSharing"]/*' />
     public uint RestrictCoreSharing
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -103,7 +107,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,23 +123,26 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L12739_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmtBranchTargetIsolation"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmtBranchTargetIsolation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint SmtBranchTargetIsolation
             {
@@ -152,7 +159,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsolateSecurityDomain"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsolateSecurityDomain"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint IsolateSecurityDomain
             {
@@ -169,7 +176,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisablePageCombine"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisablePageCombine"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint DisablePageCombine
             {
@@ -186,7 +193,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpeculativeStoreBypassDisable"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpeculativeStoreBypassDisable"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint SpeculativeStoreBypassDisable
             {
@@ -203,7 +210,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RestrictCoreSharing"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RestrictCoreSharing"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint RestrictCoreSharing
             {
@@ -220,7 +227,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 27")]
             public uint ReservedFlags
             {

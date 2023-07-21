@@ -1,12 +1,15 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from shared/uuids.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
+
 public static partial class EVRConfig
 {
     [NativeTypeName("const GUID")]
@@ -15,16 +18,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x01,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x01, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -34,6 +31,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -45,16 +43,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x02,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x02, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -64,6 +56,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -75,16 +68,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x03,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x03, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -94,6 +81,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -105,16 +93,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x04,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x04, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -124,6 +106,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -135,16 +118,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x05,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x05, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -154,6 +131,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -165,16 +143,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x06,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x06, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -184,6 +156,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -195,16 +168,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x07,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x07, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -214,6 +181,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -225,16 +193,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x08,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x08, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -244,6 +206,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -255,16 +218,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x09,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x09, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -274,6 +231,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -285,16 +243,10 @@ public static partial class EVRConfig
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x0A,
-                0xDF,
-                0x47,
-                0xE4,
-                0xCA,
-                0x10,
-                0x17,
-                0x4D,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x0A, 0xDF, 0x47, 0xE4,
+                0xCA, 0x10,
+                0x17, 0x4D,
                 0xB1,
                 0x7E,
                 0x6A,
@@ -304,6 +256,7 @@ public static partial class EVRConfig
                 0x3A,
                 0x4C
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

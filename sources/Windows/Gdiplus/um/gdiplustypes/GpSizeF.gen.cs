@@ -1,18 +1,23 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF"]/*'/>
+
+/// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF"]/*' />
 public unsafe partial struct GpSizeF
 {
-    /// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF.Width"]/*'/>
+    /// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF.Width"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Width;
-    /// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF.Height"]/*'/>
+
+    /// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF.Height"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Height;
+
     public GpSizeF()
     {
         Width = Height = 0.0f;

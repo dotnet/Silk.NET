@@ -1,43 +1,56 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winternl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='TEB.xml' path='doc/member[@name="TEB"]/*'/>
+
+/// <include file='TEB.xml' path='doc/member[@name="TEB"]/*' />
 public unsafe partial struct TEB
 {
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved1"]/*'/>
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved1"]/*' />
     [NativeTypeName("PVOID[12]")]
     public _Reserved1_e__FixedBuffer Reserved1;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.ProcessEnvironmentBlock"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.ProcessEnvironmentBlock"]/*' />
     [NativeTypeName("PPEB")]
     public PEB* ProcessEnvironmentBlock;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved2"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved2"]/*' />
     [NativeTypeName("PVOID[399]")]
     public _Reserved2_e__FixedBuffer Reserved2;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved3"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved3"]/*' />
     [NativeTypeName("BYTE[1952]")]
     public fixed byte Reserved3[1952];
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsSlots"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsSlots"]/*' />
     [NativeTypeName("PVOID[64]")]
     public _TlsSlots_e__FixedBuffer TlsSlots;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved4"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved4"]/*' />
     [NativeTypeName("BYTE[8]")]
     public fixed byte Reserved4[8];
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved5"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved5"]/*' />
     [NativeTypeName("PVOID[26]")]
     public _Reserved5_e__FixedBuffer Reserved5;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.ReservedForOle"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.ReservedForOle"]/*' />
     [NativeTypeName("PVOID")]
     public void* ReservedForOle;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved6"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved6"]/*' />
     [NativeTypeName("PVOID[4]")]
     public _Reserved6_e__FixedBuffer Reserved6;
-    /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsExpansionSlots"]/*'/>
+
+    /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsExpansionSlots"]/*' />
     [NativeTypeName("PVOID")]
     public void* TlsExpansionSlots;
-    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*'/>
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved1_e__FixedBuffer
     {
         public void* e0;
@@ -52,6 +65,7 @@ public unsafe partial struct TEB
         public void* e9;
         public void* e10;
         public void* e11;
+
         public ref void* this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,7 +79,7 @@ public unsafe partial struct TEB
         }
     }
 
-    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*'/>
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved2_e__FixedBuffer
     {
         public void* e0;
@@ -467,6 +481,7 @@ public unsafe partial struct TEB
         public void* e396;
         public void* e397;
         public void* e398;
+
         public ref void* this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -480,7 +495,7 @@ public unsafe partial struct TEB
         }
     }
 
-    /// <include file='_TlsSlots_e__FixedBuffer.xml' path='doc/member[@name="_TlsSlots_e__FixedBuffer"]/*'/>
+    /// <include file='_TlsSlots_e__FixedBuffer.xml' path='doc/member[@name="_TlsSlots_e__FixedBuffer"]/*' />
     public unsafe partial struct _TlsSlots_e__FixedBuffer
     {
         public void* e0;
@@ -547,6 +562,7 @@ public unsafe partial struct TEB
         public void* e61;
         public void* e62;
         public void* e63;
+
         public ref void* this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -560,7 +576,7 @@ public unsafe partial struct TEB
         }
     }
 
-    /// <include file='_Reserved5_e__FixedBuffer.xml' path='doc/member[@name="_Reserved5_e__FixedBuffer"]/*'/>
+    /// <include file='_Reserved5_e__FixedBuffer.xml' path='doc/member[@name="_Reserved5_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved5_e__FixedBuffer
     {
         public void* e0;
@@ -589,6 +605,7 @@ public unsafe partial struct TEB
         public void* e23;
         public void* e24;
         public void* e25;
+
         public ref void* this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -602,13 +619,14 @@ public unsafe partial struct TEB
         }
     }
 
-    /// <include file='_Reserved6_e__FixedBuffer.xml' path='doc/member[@name="_Reserved6_e__FixedBuffer"]/*'/>
+    /// <include file='_Reserved6_e__FixedBuffer.xml' path='doc/member[@name="_Reserved6_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved6_e__FixedBuffer
     {
         public void* e0;
         public void* e1;
         public void* e2;
         public void* e3;
+
         public ref void* this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

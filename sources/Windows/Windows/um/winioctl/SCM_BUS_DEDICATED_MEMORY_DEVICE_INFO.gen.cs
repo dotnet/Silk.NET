@@ -1,29 +1,37 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO"]/*'/>
+
+/// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO"]/*' />
 public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
 {
-    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceGuid"]/*'/>
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceGuid"]/*' />
     public Guid DeviceGuid;
-    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceNumber"]/*'/>
+
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint DeviceNumber;
-    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.Flags"]/*'/>
+
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.Flags"]/*' />
     [NativeTypeName("__AnonymousRecord_winioctl_L7273_C5")]
     public _Flags_e__Struct Flags;
-    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceSize"]/*'/>
+
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong DeviceSize;
-    /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct"]/*'/>
+
+    /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct"]/*' />
     public partial struct _Flags_e__Struct
     {
         public uint _bitfield;
-        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.ForcedByRegistry"]/*'/>
+
+        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.ForcedByRegistry"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint ForcedByRegistry
         {
@@ -40,7 +48,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
             }
         }
 
-        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.Initialized"]/*'/>
+        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.Initialized"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint Initialized
         {
@@ -57,7 +65,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
             }
         }
 
-        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.Reserved"]/*'/>
+        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 30")]
         public uint Reserved
         {

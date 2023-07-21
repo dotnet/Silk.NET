@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX"]/*'/>
+
+/// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX"]/*' />
 public partial struct SPEVENTEX
 {
     public int _bitfield;
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.eEventId"]/*'/>
+
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.eEventId"]/*' />
     [NativeTypeName("SPEVENTENUM : 16")]
     public SPEVENTENUM eEventId
     {
@@ -25,7 +29,7 @@ public partial struct SPEVENTEX
         }
     }
 
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.elParamType"]/*'/>
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.elParamType"]/*' />
     [NativeTypeName("SPEVENTLPARAMTYPE : 16")]
     public SPEVENTLPARAMTYPE elParamType
     {
@@ -42,17 +46,21 @@ public partial struct SPEVENTEX
         }
     }
 
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.ulStreamNum"]/*'/>
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.ulStreamNum"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulStreamNum;
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.ullAudioStreamOffset"]/*'/>
+
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.ullAudioStreamOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullAudioStreamOffset;
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.wParam"]/*'/>
+
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.wParam"]/*' />
     public WPARAM wParam;
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.lParam"]/*'/>
+
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.lParam"]/*' />
     public LPARAM lParam;
-    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.ullAudioTimeOffset"]/*'/>
+
+    /// <include file='SPEVENTEX.xml' path='doc/member[@name="SPEVENTEX.ullAudioTimeOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullAudioTimeOffset;
 }

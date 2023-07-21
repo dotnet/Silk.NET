@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT"]/*'/>
+
+/// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT"]/*' />
 public partial struct COMSTAT
 {
     public uint _bitfield;
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fCtsHold"]/*'/>
+
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fCtsHold"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fCtsHold
     {
@@ -25,7 +29,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fDsrHold"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fDsrHold"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fDsrHold
     {
@@ -42,7 +46,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fRlsdHold"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fRlsdHold"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fRlsdHold
     {
@@ -59,7 +63,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fXoffHold"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fXoffHold"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fXoffHold
     {
@@ -76,7 +80,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fXoffSent"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fXoffSent"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fXoffSent
     {
@@ -93,7 +97,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fEof"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fEof"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fEof
     {
@@ -110,7 +114,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fTxim"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fTxim"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fTxim
     {
@@ -127,7 +131,7 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fReserved"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.fReserved"]/*' />
     [NativeTypeName("DWORD : 25")]
     public uint fReserved
     {
@@ -144,10 +148,11 @@ public partial struct COMSTAT
         }
     }
 
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.cbInQue"]/*'/>
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.cbInQue"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbInQue;
-    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.cbOutQue"]/*'/>
+
+    /// <include file='COMSTAT.xml' path='doc/member[@name="COMSTAT.cbOutQue"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbOutQue;
 }

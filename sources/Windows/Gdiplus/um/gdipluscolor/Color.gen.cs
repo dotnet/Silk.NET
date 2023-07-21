@@ -1,15 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdipluscolor.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='Color.xml' path='doc/member[@name="Color"]/*'/>
+
+/// <include file='Color.xml' path='doc/member[@name="Color"]/*' />
 public partial struct Color
 {
-    /// <include file='Color.xml' path='doc/member[@name="Color.Argb"]/*'/>
+    /// <include file='Color.xml' path='doc/member[@name="Color.Argb"]/*' />
     [NativeTypeName("Gdiplus::ARGB")]
     public uint Argb;
+
     public Color()
     {
         Argb = (uint)(Black);
@@ -233,10 +237,12 @@ public partial struct Color
     public const uint WhiteSmoke = 0xFFF5F5F5;
     public const uint Yellow = 0xFFFFFF00;
     public const uint YellowGreen = 0xFF9ACD32;
+
     public const int AlphaShift = 24;
     public const int RedShift = 16;
     public const int GreenShift = 8;
     public const int BlueShift = 0;
+
     public const uint AlphaMask = 0xff000000;
     public const uint RedMask = 0x00ff0000;
     public const uint GreenMask = 0x0000ff00;

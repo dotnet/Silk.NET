@@ -1,32 +1,46 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/SyncMgr.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES"]/*'/>
+
+/// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES"]/*' />
 public enum SYNCMGR_HANDLER_CAPABILITIES
 {
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_NONE"]/*'/>
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_NONE"]/*' />
     SYNCMGR_HCM_NONE = 0,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_PROVIDES_ICON"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_PROVIDES_ICON"]/*' />
     SYNCMGR_HCM_PROVIDES_ICON = 0x1,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_EVENT_STORE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_EVENT_STORE"]/*' />
     SYNCMGR_HCM_EVENT_STORE = 0x2,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CONFLICT_STORE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CONFLICT_STORE"]/*' />
     SYNCMGR_HCM_CONFLICT_STORE = 0x4,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_SUPPORTS_CONCURRENT_SESSIONS"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_SUPPORTS_CONCURRENT_SESSIONS"]/*' />
     SYNCMGR_HCM_SUPPORTS_CONCURRENT_SESSIONS = 0x10,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CAN_BROWSE_CONTENT"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CAN_BROWSE_CONTENT"]/*' />
     SYNCMGR_HCM_CAN_BROWSE_CONTENT = 0x10000,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CAN_SHOW_SCHEDULE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_CAN_SHOW_SCHEDULE"]/*' />
     SYNCMGR_HCM_CAN_SHOW_SCHEDULE = 0x20000,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE"]/*' />
     SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE = 0x100000,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_DEACTIVATE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_DEACTIVATE"]/*' />
     SYNCMGR_HCM_QUERY_BEFORE_DEACTIVATE = 0x200000,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_ENABLE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_ENABLE"]/*' />
     SYNCMGR_HCM_QUERY_BEFORE_ENABLE = 0x400000,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_DISABLE"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_QUERY_BEFORE_DISABLE"]/*' />
     SYNCMGR_HCM_QUERY_BEFORE_DISABLE = 0x800000,
-    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_VALID_MASK"]/*'/>
+
+    /// <include file='SYNCMGR_HANDLER_CAPABILITIES.xml' path='doc/member[@name="SYNCMGR_HANDLER_CAPABILITIES.SYNCMGR_HCM_VALID_MASK"]/*' />
     SYNCMGR_HCM_VALID_MASK = 0xf30017,
 }

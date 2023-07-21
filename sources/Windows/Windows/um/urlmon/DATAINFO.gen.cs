@@ -1,20 +1,26 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO"]/*'/>
+
+/// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO"]/*' />
 public partial struct DATAINFO
 {
-    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulTotalSize"]/*'/>
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulTotalSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulTotalSize;
-    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulavrPacketSize"]/*'/>
+
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulavrPacketSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulavrPacketSize;
-    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulConnectSpeed"]/*'/>
+
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulConnectSpeed"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulConnectSpeed;
-    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulProcessorSpeed"]/*'/>
+
+    /// <include file='DATAINFO.xml' path='doc/member[@name="DATAINFO.ulProcessorSpeed"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulProcessorSpeed;
 }

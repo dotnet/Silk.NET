@@ -1,19 +1,26 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/consoleapi2.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO"]/*'/>
+
+/// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO"]/*' />
 public partial struct CONSOLE_SCREEN_BUFFER_INFO
 {
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.dwSize"]/*'/>
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.dwSize"]/*' />
     public COORD dwSize;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.dwCursorPosition"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.dwCursorPosition"]/*' />
     public COORD dwCursorPosition;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.wAttributes"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.wAttributes"]/*' />
     [NativeTypeName("WORD")]
     public ushort wAttributes;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.srWindow"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.srWindow"]/*' />
     public SMALL_RECT srWindow;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.dwMaximumWindowSize"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFO.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFO.dwMaximumWindowSize"]/*' />
     public COORD dwMaximumWindowSize;
 }

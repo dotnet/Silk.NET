@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from shared/nldef.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD"]/*'/>
+
+/// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD"]/*' />
 public partial struct NL_INTERFACE_OFFLOAD_ROD
 {
     public byte _bitfield;
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.NlChecksumSupported"]/*'/>
+
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.NlChecksumSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte NlChecksumSupported
     {
@@ -25,7 +29,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.NlOptionsSupported"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.NlOptionsSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte NlOptionsSupported
     {
@@ -42,7 +46,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlDatagramChecksumSupported"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlDatagramChecksumSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte TlDatagramChecksumSupported
     {
@@ -59,7 +63,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlStreamChecksumSupported"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlStreamChecksumSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte TlStreamChecksumSupported
     {
@@ -76,7 +80,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlStreamOptionsSupported"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlStreamOptionsSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte TlStreamOptionsSupported
     {
@@ -93,7 +97,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.FastPathCompatible"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.FastPathCompatible"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte FastPathCompatible
     {
@@ -110,7 +114,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlLargeSendOffloadSupported"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlLargeSendOffloadSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte TlLargeSendOffloadSupported
     {
@@ -127,7 +131,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
         }
     }
 
-    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlGiantSendOffloadSupported"]/*'/>
+    /// <include file='NL_INTERFACE_OFFLOAD_ROD.xml' path='doc/member[@name="NL_INTERFACE_OFFLOAD_ROD.TlGiantSendOffloadSupported"]/*' />
     [NativeTypeName("BOOLEAN : 1")]
     public byte TlGiantSendOffloadSupported
     {

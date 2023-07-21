@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/DocObj.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='OLECMD.xml' path='doc/member[@name="OLECMD"]/*'/>
+
+/// <include file='OLECMD.xml' path='doc/member[@name="OLECMD"]/*' />
 public partial struct OLECMD
 {
-    /// <include file='OLECMD.xml' path='doc/member[@name="OLECMD.cmdID"]/*'/>
+    /// <include file='OLECMD.xml' path='doc/member[@name="OLECMD.cmdID"]/*' />
     [NativeTypeName("ULONG")]
     public uint cmdID;
-    /// <include file='OLECMD.xml' path='doc/member[@name="OLECMD.cmdf"]/*'/>
+
+    /// <include file='OLECMD.xml' path='doc/member[@name="OLECMD.cmdf"]/*' />
     [NativeTypeName("DWORD")]
     public uint cmdf;
 }

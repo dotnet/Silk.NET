@@ -1,166 +1,247 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS"]/*'/>
+
+/// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS"]/*' />
 public enum BINDSTATUS
 {
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_FINDINGRESOURCE"]/*'/>
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_FINDINGRESOURCE"]/*' />
     BINDSTATUS_FINDINGRESOURCE = 1,
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CONNECTING"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CONNECTING"]/*' />
     BINDSTATUS_CONNECTING = (BINDSTATUS_FINDINGRESOURCE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_REDIRECTING"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_REDIRECTING"]/*' />
     BINDSTATUS_REDIRECTING = (BINDSTATUS_CONNECTING + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINDOWNLOADDATA"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINDOWNLOADDATA"]/*' />
     BINDSTATUS_BEGINDOWNLOADDATA = (BINDSTATUS_REDIRECTING + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DOWNLOADINGDATA"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DOWNLOADINGDATA"]/*' />
     BINDSTATUS_DOWNLOADINGDATA = (BINDSTATUS_BEGINDOWNLOADDATA + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDDOWNLOADDATA"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDDOWNLOADDATA"]/*' />
     BINDSTATUS_ENDDOWNLOADDATA = (BINDSTATUS_DOWNLOADINGDATA + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINDOWNLOADCOMPONENTS"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINDOWNLOADCOMPONENTS"]/*' />
     BINDSTATUS_BEGINDOWNLOADCOMPONENTS = (BINDSTATUS_ENDDOWNLOADDATA + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_INSTALLINGCOMPONENTS"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_INSTALLINGCOMPONENTS"]/*' />
     BINDSTATUS_INSTALLINGCOMPONENTS = (BINDSTATUS_BEGINDOWNLOADCOMPONENTS + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDDOWNLOADCOMPONENTS"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDDOWNLOADCOMPONENTS"]/*' />
     BINDSTATUS_ENDDOWNLOADCOMPONENTS = (BINDSTATUS_INSTALLINGCOMPONENTS + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_USINGCACHEDCOPY"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_USINGCACHEDCOPY"]/*' />
     BINDSTATUS_USINGCACHEDCOPY = (BINDSTATUS_ENDDOWNLOADCOMPONENTS + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SENDINGREQUEST"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SENDINGREQUEST"]/*' />
     BINDSTATUS_SENDINGREQUEST = (BINDSTATUS_USINGCACHEDCOPY + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CLASSIDAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CLASSIDAVAILABLE"]/*' />
     BINDSTATUS_CLASSIDAVAILABLE = (BINDSTATUS_SENDINGREQUEST + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_MIMETYPEAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_MIMETYPEAVAILABLE"]/*' />
     BINDSTATUS_MIMETYPEAVAILABLE = (BINDSTATUS_CLASSIDAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CACHEFILENAMEAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CACHEFILENAMEAVAILABLE"]/*' />
     BINDSTATUS_CACHEFILENAMEAVAILABLE = (BINDSTATUS_MIMETYPEAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINSYNCOPERATION"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINSYNCOPERATION"]/*' />
     BINDSTATUS_BEGINSYNCOPERATION = (BINDSTATUS_CACHEFILENAMEAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDSYNCOPERATION"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDSYNCOPERATION"]/*' />
     BINDSTATUS_ENDSYNCOPERATION = (BINDSTATUS_BEGINSYNCOPERATION + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINUPLOADDATA"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_BEGINUPLOADDATA"]/*' />
     BINDSTATUS_BEGINUPLOADDATA = (BINDSTATUS_ENDSYNCOPERATION + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_UPLOADINGDATA"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_UPLOADINGDATA"]/*' />
     BINDSTATUS_UPLOADINGDATA = (BINDSTATUS_BEGINUPLOADDATA + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDUPLOADDATA"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENDUPLOADDATA"]/*' />
     BINDSTATUS_ENDUPLOADDATA = (BINDSTATUS_UPLOADINGDATA + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PROTOCOLCLASSID"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PROTOCOLCLASSID"]/*' />
     BINDSTATUS_PROTOCOLCLASSID = (BINDSTATUS_ENDUPLOADDATA + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENCODING"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ENCODING"]/*' />
     BINDSTATUS_ENCODING = (BINDSTATUS_PROTOCOLCLASSID + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_VERIFIEDMIMETYPEAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_VERIFIEDMIMETYPEAVAILABLE"]/*' />
     BINDSTATUS_VERIFIEDMIMETYPEAVAILABLE = (BINDSTATUS_ENCODING + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CLASSINSTALLLOCATION"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CLASSINSTALLLOCATION"]/*' />
     BINDSTATUS_CLASSINSTALLLOCATION = (BINDSTATUS_VERIFIEDMIMETYPEAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DECODING"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DECODING"]/*' />
     BINDSTATUS_DECODING = (BINDSTATUS_CLASSINSTALLLOCATION + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LOADINGMIMEHANDLER"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LOADINGMIMEHANDLER"]/*' />
     BINDSTATUS_LOADINGMIMEHANDLER = (BINDSTATUS_DECODING + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CONTENTDISPOSITIONATTACH"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CONTENTDISPOSITIONATTACH"]/*' />
     BINDSTATUS_CONTENTDISPOSITIONATTACH = (BINDSTATUS_LOADINGMIMEHANDLER + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_FILTERREPORTMIMETYPE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_FILTERREPORTMIMETYPE"]/*' />
     BINDSTATUS_FILTERREPORTMIMETYPE = (BINDSTATUS_CONTENTDISPOSITIONATTACH + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CLSIDCANINSTANTIATE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CLSIDCANINSTANTIATE"]/*' />
     BINDSTATUS_CLSIDCANINSTANTIATE = (BINDSTATUS_FILTERREPORTMIMETYPE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_IUNKNOWNAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_IUNKNOWNAVAILABLE"]/*' />
     BINDSTATUS_IUNKNOWNAVAILABLE = (BINDSTATUS_CLSIDCANINSTANTIATE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DIRECTBIND"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DIRECTBIND"]/*' />
     BINDSTATUS_DIRECTBIND = (BINDSTATUS_IUNKNOWNAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RAWMIMETYPE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RAWMIMETYPE"]/*' />
     BINDSTATUS_RAWMIMETYPE = (BINDSTATUS_DIRECTBIND + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PROXYDETECTING"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PROXYDETECTING"]/*' />
     BINDSTATUS_PROXYDETECTING = (BINDSTATUS_RAWMIMETYPE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ACCEPTRANGES"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_ACCEPTRANGES"]/*' />
     BINDSTATUS_ACCEPTRANGES = (BINDSTATUS_PROXYDETECTING + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_SENT"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_SENT"]/*' />
     BINDSTATUS_COOKIE_SENT = (BINDSTATUS_ACCEPTRANGES + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COMPACT_POLICY_RECEIVED"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COMPACT_POLICY_RECEIVED"]/*' />
     BINDSTATUS_COMPACT_POLICY_RECEIVED = (BINDSTATUS_COOKIE_SENT + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_SUPPRESSED"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_SUPPRESSED"]/*' />
     BINDSTATUS_COOKIE_SUPPRESSED = (BINDSTATUS_COMPACT_POLICY_RECEIVED + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_UNKNOWN"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_UNKNOWN"]/*' />
     BINDSTATUS_COOKIE_STATE_UNKNOWN = (BINDSTATUS_COOKIE_SUPPRESSED + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_ACCEPT"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_ACCEPT"]/*' />
     BINDSTATUS_COOKIE_STATE_ACCEPT = (BINDSTATUS_COOKIE_STATE_UNKNOWN + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_REJECT"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_REJECT"]/*' />
     BINDSTATUS_COOKIE_STATE_REJECT = (BINDSTATUS_COOKIE_STATE_ACCEPT + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_PROMPT"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_PROMPT"]/*' />
     BINDSTATUS_COOKIE_STATE_PROMPT = (BINDSTATUS_COOKIE_STATE_REJECT + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_LEASH"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_LEASH"]/*' />
     BINDSTATUS_COOKIE_STATE_LEASH = (BINDSTATUS_COOKIE_STATE_PROMPT + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_DOWNGRADE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_COOKIE_STATE_DOWNGRADE"]/*' />
     BINDSTATUS_COOKIE_STATE_DOWNGRADE = (BINDSTATUS_COOKIE_STATE_LEASH + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_POLICY_HREF"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_POLICY_HREF"]/*' />
     BINDSTATUS_POLICY_HREF = (BINDSTATUS_COOKIE_STATE_DOWNGRADE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_P3P_HEADER"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_P3P_HEADER"]/*' />
     BINDSTATUS_P3P_HEADER = (BINDSTATUS_POLICY_HREF + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SESSION_COOKIE_RECEIVED"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SESSION_COOKIE_RECEIVED"]/*' />
     BINDSTATUS_SESSION_COOKIE_RECEIVED = (BINDSTATUS_P3P_HEADER + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PERSISTENT_COOKIE_RECEIVED"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PERSISTENT_COOKIE_RECEIVED"]/*' />
     BINDSTATUS_PERSISTENT_COOKIE_RECEIVED = (BINDSTATUS_SESSION_COOKIE_RECEIVED + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SESSION_COOKIES_ALLOWED"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SESSION_COOKIES_ALLOWED"]/*' />
     BINDSTATUS_SESSION_COOKIES_ALLOWED = (BINDSTATUS_PERSISTENT_COOKIE_RECEIVED + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CACHECONTROL"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CACHECONTROL"]/*' />
     BINDSTATUS_CACHECONTROL = (BINDSTATUS_SESSION_COOKIES_ALLOWED + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CONTENTDISPOSITIONFILENAME"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_CONTENTDISPOSITIONFILENAME"]/*' />
     BINDSTATUS_CONTENTDISPOSITIONFILENAME = (BINDSTATUS_CACHECONTROL + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_MIMETEXTPLAINMISMATCH"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_MIMETEXTPLAINMISMATCH"]/*' />
     BINDSTATUS_MIMETEXTPLAINMISMATCH = (BINDSTATUS_CONTENTDISPOSITIONFILENAME + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PUBLISHERAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_PUBLISHERAVAILABLE"]/*' />
     BINDSTATUS_PUBLISHERAVAILABLE = (BINDSTATUS_MIMETEXTPLAINMISMATCH + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DISPLAYNAMEAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_DISPLAYNAMEAVAILABLE"]/*' />
     BINDSTATUS_DISPLAYNAMEAVAILABLE = (BINDSTATUS_PUBLISHERAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SSLUX_NAVBLOCKED"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SSLUX_NAVBLOCKED"]/*' />
     BINDSTATUS_SSLUX_NAVBLOCKED = (BINDSTATUS_DISPLAYNAMEAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SERVER_MIMETYPEAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SERVER_MIMETYPEAVAILABLE"]/*' />
     BINDSTATUS_SERVER_MIMETYPEAVAILABLE = (BINDSTATUS_SSLUX_NAVBLOCKED + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SNIFFED_CLASSIDAVAILABLE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_SNIFFED_CLASSIDAVAILABLE"]/*' />
     BINDSTATUS_SNIFFED_CLASSIDAVAILABLE = (BINDSTATUS_SERVER_MIMETYPEAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_64BIT_PROGRESS"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_64BIT_PROGRESS"]/*' />
     BINDSTATUS_64BIT_PROGRESS = (BINDSTATUS_SNIFFED_CLASSIDAVAILABLE + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LAST"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LAST"]/*' />
     BINDSTATUS_LAST = BINDSTATUS_64BIT_PROGRESS,
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_0"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_0"]/*' />
     BINDSTATUS_RESERVED_0 = (BINDSTATUS_LAST + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_1"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_1"]/*' />
     BINDSTATUS_RESERVED_1 = (BINDSTATUS_RESERVED_0 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_2"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_2"]/*' />
     BINDSTATUS_RESERVED_2 = (BINDSTATUS_RESERVED_1 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_3"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_3"]/*' />
     BINDSTATUS_RESERVED_3 = (BINDSTATUS_RESERVED_2 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_4"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_4"]/*' />
     BINDSTATUS_RESERVED_4 = (BINDSTATUS_RESERVED_3 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_5"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_5"]/*' />
     BINDSTATUS_RESERVED_5 = (BINDSTATUS_RESERVED_4 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_6"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_6"]/*' />
     BINDSTATUS_RESERVED_6 = (BINDSTATUS_RESERVED_5 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_7"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_7"]/*' />
     BINDSTATUS_RESERVED_7 = (BINDSTATUS_RESERVED_6 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_8"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_8"]/*' />
     BINDSTATUS_RESERVED_8 = (BINDSTATUS_RESERVED_7 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_9"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_9"]/*' />
     BINDSTATUS_RESERVED_9 = (BINDSTATUS_RESERVED_8 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_A"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_A"]/*' />
     BINDSTATUS_RESERVED_A = (BINDSTATUS_RESERVED_9 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_B"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_B"]/*' />
     BINDSTATUS_RESERVED_B = (BINDSTATUS_RESERVED_A + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_C"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_C"]/*' />
     BINDSTATUS_RESERVED_C = (BINDSTATUS_RESERVED_B + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_D"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_D"]/*' />
     BINDSTATUS_RESERVED_D = (BINDSTATUS_RESERVED_C + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_E"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_E"]/*' />
     BINDSTATUS_RESERVED_E = (BINDSTATUS_RESERVED_D + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_F"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_F"]/*' />
     BINDSTATUS_RESERVED_F = (BINDSTATUS_RESERVED_E + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_10"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_10"]/*' />
     BINDSTATUS_RESERVED_10 = (BINDSTATUS_RESERVED_F + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_11"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_11"]/*' />
     BINDSTATUS_RESERVED_11 = (BINDSTATUS_RESERVED_10 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_12"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_12"]/*' />
     BINDSTATUS_RESERVED_12 = (BINDSTATUS_RESERVED_11 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_13"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_13"]/*' />
     BINDSTATUS_RESERVED_13 = (BINDSTATUS_RESERVED_12 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_14"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_14"]/*' />
     BINDSTATUS_RESERVED_14 = (BINDSTATUS_RESERVED_13 + 1),
-    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LAST_PRIVATE"]/*'/>
+
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LAST_PRIVATE"]/*' />
     BINDSTATUS_LAST_PRIVATE = BINDSTATUS_RESERVED_14,
 }

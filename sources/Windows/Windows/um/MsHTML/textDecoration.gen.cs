@@ -1,20 +1,28 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='textDecoration.xml' path='doc/member[@name="textDecoration"]/*'/>
+
+/// <include file='textDecoration.xml' path='doc/member[@name="textDecoration"]/*' />
 public enum textDecoration
 {
-    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationNone"]/*'/>
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationNone"]/*' />
     textDecorationNone = 0,
-    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationUnderline"]/*'/>
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationUnderline"]/*' />
     textDecorationUnderline = 1,
-    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationOverline"]/*'/>
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationOverline"]/*' />
     textDecorationOverline = 2,
-    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationLineThrough"]/*'/>
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationLineThrough"]/*' />
     textDecorationLineThrough = 3,
-    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationBlink"]/*'/>
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationBlink"]/*' />
     textDecorationBlink = 4,
-    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecoration_Max"]/*'/>
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecoration_Max"]/*' />
     textDecoration_Max = 2147483647,
 }

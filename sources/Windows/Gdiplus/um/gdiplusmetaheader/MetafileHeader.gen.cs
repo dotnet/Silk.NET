@@ -1,6 +1,8 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplusmetaheader.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
@@ -8,42 +10,57 @@ using System.Runtime.InteropServices;
 using static Silk.NET.Gdiplus.MetafileType;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader"]/*'/>
+
+/// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader"]/*' />
 public unsafe partial struct MetafileHeader
 {
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Type"]/*'/>
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Type"]/*' />
     [NativeTypeName("Gdiplus::MetafileType")]
     public MetafileType Type;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Size"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Size"]/*' />
     public uint Size;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Version"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Version"]/*' />
     public uint Version;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.EmfPlusFlags"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.EmfPlusFlags"]/*' />
     public uint EmfPlusFlags;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.DpiX"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.DpiX"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float DpiX;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.DpiY"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.DpiY"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float DpiY;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.X"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.X"]/*' />
     public int X;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Y"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Y"]/*' />
     public int Y;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Width"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Width"]/*' />
     public int Width;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Height"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Height"]/*' />
     public int Height;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Anonymous"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_GdiplusMetaHeader_L129_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.EmfPlusHeaderSize"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.EmfPlusHeaderSize"]/*' />
     public int EmfPlusHeaderSize;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.LogicalDpiX"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.LogicalDpiX"]/*' />
     public int LogicalDpiX;
-    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.LogicalDpiY"]/*'/>
+
+    /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.LogicalDpiY"]/*' />
     public int LogicalDpiY;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.WmfHeader"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.WmfHeader"]/*' />
     [UnscopedRef]
     public ref METAHEADER WmfHeader
     {
@@ -54,7 +71,7 @@ public unsafe partial struct MetafileHeader
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EmfHeader"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EmfHeader"]/*' />
     [UnscopedRef]
     public ref ENHMETAHEADER3 EmfHeader
     {
@@ -147,14 +164,15 @@ public unsafe partial struct MetafileHeader
         return null;
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.WmfHeader"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.WmfHeader"]/*' />
         [FieldOffset(0)]
         public METAHEADER WmfHeader;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EmfHeader"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EmfHeader"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("Gdiplus::ENHMETAHEADER3")]
         public ENHMETAHEADER3 EmfHeader;

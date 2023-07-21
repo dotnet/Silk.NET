@@ -1,13 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
+
 public static unsafe partial class PKCS
 {
     [NativeTypeName("#define PKCS_7_ASN_ENCODING 0x00010000")]
     public const int PKCS_7_ASN_ENCODING = 0x00010000;
+
     [NativeTypeName("#define PKCS_7_NDR_ENCODING 0x00020000")]
     public const int PKCS_7_NDR_ENCODING = 0x00020000;
+
     [NativeTypeName("#define PKCS_UTC_TIME ((LPCSTR) 17)")]
     public static sbyte* PKCS_UTC_TIME => ((sbyte*)(17));
 

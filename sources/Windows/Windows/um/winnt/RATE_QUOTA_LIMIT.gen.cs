@@ -1,23 +1,28 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT"]/*'/>
+
+/// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct RATE_QUOTA_LIMIT
 {
-    /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.RateData"]/*'/>
+    /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.RateData"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint RateData;
-    /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.Anonymous"]/*'/>
+
+    /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("__AnonymousRecord_winnt_L12475_C5")]
     public _Anonymous_e__Struct Anonymous;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />
     public uint RatePercent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,7 +38,7 @@ public partial struct RATE_QUOTA_LIMIT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,11 +54,12 @@ public partial struct RATE_QUOTA_LIMIT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />
         [NativeTypeName("DWORD : 7")]
         public uint RatePercent
         {
@@ -70,7 +76,7 @@ public partial struct RATE_QUOTA_LIMIT
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
         [NativeTypeName("DWORD : 25")]
         public uint Reserved0
         {

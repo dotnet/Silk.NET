@@ -1,44 +1,57 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from shared/udpmib.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2"]/*'/>
+
+/// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2"]/*' />
 public unsafe partial struct MIB_UDP6ROW2
 {
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucLocalAddr"]/*'/>
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucLocalAddr"]/*' />
     [NativeTypeName("UCHAR[16]")]
     public fixed byte ucLocalAddr[16];
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwLocalScopeId"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwLocalScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalScopeId;
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwLocalPort"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwOwningPid"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwOwningPid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOwningPid;
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.liCreateTimestamp"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.liCreateTimestamp"]/*' />
     public LARGE_INTEGER liCreateTimestamp;
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.Anonymous"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_udpmib_L177_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.OwningModuleInfo"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.OwningModuleInfo"]/*' />
     [NativeTypeName("ULONGLONG[16]")]
     public fixed ulong OwningModuleInfo[16];
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucRemoteAddr"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucRemoteAddr"]/*' />
     [NativeTypeName("UCHAR[16]")]
     public fixed byte ucRemoteAddr[16];
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwRemoteScopeId"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwRemoteScopeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteScopeId;
-    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwRemotePort"]/*'/>
+
+    /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,7 +67,7 @@ public unsafe partial struct MIB_UDP6ROW2
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
     [UnscopedRef]
     public ref int dwFlags
     {
@@ -65,22 +78,25 @@ public unsafe partial struct MIB_UDP6ROW2
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_udpmib_L178_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
         [FieldOffset(0)]
         public int dwFlags;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public int _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
             [NativeTypeName("int : 1")]
             public int SpecificPortBind
             {

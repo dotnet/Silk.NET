@@ -1,20 +1,24 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from winrt/roparameterizediid.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.WinRT;
-/// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator"]/*'/>
+
+/// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator"]/*' />
 public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
 {
     public void** lpVtbl;
-    /// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator.Locate"]/*'/>
+
+    /// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator.Locate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT Locate([NativeTypeName("PCWSTR")] ushort* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination)
     {
-        return ((delegate* unmanaged<IRoMetaDataLocator*, ushort*, IRoSimpleMetaDataBuilder*, int> )(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(ref this), nameElement, metaDataDestination);
+        return ((delegate* unmanaged<IRoMetaDataLocator*, ushort*, IRoSimpleMetaDataBuilder*, int>)(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(ref this), nameElement, metaDataDestination);
     }
 
     public interface Interface

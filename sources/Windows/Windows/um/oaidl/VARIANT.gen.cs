@@ -1,18 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/oaidl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='VARIANT.xml' path='doc/member[@name="VARIANT"]/*'/>
+
+/// <include file='VARIANT.xml' path='doc/member[@name="VARIANT"]/*' />
 public unsafe partial struct VARIANT
 {
-    /// <include file='VARIANT.xml' path='doc/member[@name="VARIANT.Anonymous"]/*'/>
+    /// <include file='VARIANT.xml' path='doc/member[@name="VARIANT.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_oaidl_L478_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.vt"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.vt"]/*' />
     [UnscopedRef]
     public ref ushort vt
     {
@@ -23,7 +27,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved1"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved1"]/*' />
     [UnscopedRef]
     public ref ushort wReserved1
     {
@@ -34,7 +38,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved2"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved2"]/*' />
     [UnscopedRef]
     public ref ushort wReserved2
     {
@@ -45,7 +49,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved3"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved3"]/*' />
     [UnscopedRef]
     public ref ushort wReserved3
     {
@@ -56,7 +60,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.llVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.llVal"]/*' />
     [UnscopedRef]
     public ref long llVal
     {
@@ -67,7 +71,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lVal"]/*' />
     [UnscopedRef]
     public ref int lVal
     {
@@ -78,7 +82,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bVal"]/*' />
     [UnscopedRef]
     public ref byte bVal
     {
@@ -89,7 +93,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iVal"]/*' />
     [UnscopedRef]
     public ref short iVal
     {
@@ -100,7 +104,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.fltVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.fltVal"]/*' />
     [UnscopedRef]
     public ref float fltVal
     {
@@ -111,7 +115,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dblVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dblVal"]/*' />
     [UnscopedRef]
     public ref double dblVal
     {
@@ -122,7 +126,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.boolVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.boolVal"]/*' />
     [UnscopedRef]
     public ref short boolVal
     {
@@ -133,7 +137,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_BOOL"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_BOOL"]/*' />
     [UnscopedRef]
     public ref short __OBSOLETE__VARIANT_BOOL
     {
@@ -144,7 +148,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.scode"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.scode"]/*' />
     [UnscopedRef]
     public ref int scode
     {
@@ -155,7 +159,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cyVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cyVal"]/*' />
     [UnscopedRef]
     public ref CY cyVal
     {
@@ -166,7 +170,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.date"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.date"]/*' />
     [UnscopedRef]
     public ref double date
     {
@@ -177,7 +181,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*' />
     [UnscopedRef]
     public ref ushort* bstrVal
     {
@@ -188,7 +192,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.punkVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.punkVal"]/*' />
     [UnscopedRef]
     public ref IUnknown* punkVal
     {
@@ -199,7 +203,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdispVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdispVal"]/*' />
     [UnscopedRef]
     public ref IDispatch* pdispVal
     {
@@ -210,7 +214,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.parray"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.parray"]/*' />
     [UnscopedRef]
     public ref SAFEARRAY* parray
     {
@@ -221,7 +225,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbVal"]/*' />
     [UnscopedRef]
     public ref byte* pbVal
     {
@@ -232,7 +236,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.piVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.piVal"]/*' />
     [UnscopedRef]
     public ref short* piVal
     {
@@ -243,7 +247,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.plVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.plVal"]/*' />
     [UnscopedRef]
     public ref int* plVal
     {
@@ -254,7 +258,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pllVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pllVal"]/*' />
     [UnscopedRef]
     public ref long* pllVal
     {
@@ -265,7 +269,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pfltVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pfltVal"]/*' />
     [UnscopedRef]
     public ref float* pfltVal
     {
@@ -276,7 +280,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdblVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdblVal"]/*' />
     [UnscopedRef]
     public ref double* pdblVal
     {
@@ -287,7 +291,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pboolVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pboolVal"]/*' />
     [UnscopedRef]
     public ref short* pboolVal
     {
@@ -298,7 +302,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_PBOOL"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_PBOOL"]/*' />
     [UnscopedRef]
     public ref short* __OBSOLETE__VARIANT_PBOOL
     {
@@ -309,7 +313,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pscode"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pscode"]/*' />
     [UnscopedRef]
     public ref int* pscode
     {
@@ -320,7 +324,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcyVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcyVal"]/*' />
     [UnscopedRef]
     public ref CY* pcyVal
     {
@@ -331,7 +335,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdate"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdate"]/*' />
     [UnscopedRef]
     public ref double* pdate
     {
@@ -342,7 +346,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*' />
     [UnscopedRef]
     public ref ushort** pbstrVal
     {
@@ -353,7 +357,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppunkVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppunkVal"]/*' />
     [UnscopedRef]
     public ref IUnknown** ppunkVal
     {
@@ -364,7 +368,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppdispVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppdispVal"]/*' />
     [UnscopedRef]
     public ref IDispatch** ppdispVal
     {
@@ -375,7 +379,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pparray"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pparray"]/*' />
     [UnscopedRef]
     public ref SAFEARRAY** pparray
     {
@@ -386,7 +390,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvarVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvarVal"]/*' />
     [UnscopedRef]
     public ref VARIANT* pvarVal
     {
@@ -397,7 +401,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.byref"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.byref"]/*' />
     [UnscopedRef]
     public ref void* byref
     {
@@ -408,7 +412,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cVal"]/*' />
     [UnscopedRef]
     public ref sbyte cVal
     {
@@ -419,7 +423,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uiVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uiVal"]/*' />
     [UnscopedRef]
     public ref ushort uiVal
     {
@@ -430,7 +434,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulVal"]/*' />
     [UnscopedRef]
     public ref uint ulVal
     {
@@ -441,7 +445,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullVal"]/*' />
     [UnscopedRef]
     public ref ulong ullVal
     {
@@ -452,7 +456,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.intVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.intVal"]/*' />
     [UnscopedRef]
     public ref int intVal
     {
@@ -463,7 +467,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uintVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uintVal"]/*' />
     [UnscopedRef]
     public ref uint uintVal
     {
@@ -474,7 +478,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdecVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdecVal"]/*' />
     [UnscopedRef]
     public ref DECIMAL* pdecVal
     {
@@ -485,7 +489,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcVal"]/*' />
     [UnscopedRef]
     public ref sbyte* pcVal
     {
@@ -496,7 +500,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puiVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puiVal"]/*' />
     [UnscopedRef]
     public ref ushort* puiVal
     {
@@ -507,7 +511,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pulVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pulVal"]/*' />
     [UnscopedRef]
     public ref uint* pulVal
     {
@@ -518,7 +522,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pullVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pullVal"]/*' />
     [UnscopedRef]
     public ref ulong* pullVal
     {
@@ -529,7 +533,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pintVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pintVal"]/*' />
     [UnscopedRef]
     public ref int* pintVal
     {
@@ -540,7 +544,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puintVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puintVal"]/*' />
     [UnscopedRef]
     public ref uint* puintVal
     {
@@ -551,7 +555,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pvRecord"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pvRecord"]/*' />
     [UnscopedRef]
     public ref void* pvRecord
     {
@@ -562,7 +566,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pRecInfo"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pRecInfo"]/*' />
     [UnscopedRef]
     public ref IRecordInfo* pRecInfo
     {
@@ -573,7 +577,7 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decVal"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decVal"]/*' />
     [UnscopedRef]
     public ref DECIMAL decVal
     {
@@ -584,206 +588,260 @@ public unsafe partial struct VARIANT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_oaidl_L480_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decVal"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decVal"]/*' />
         [FieldOffset(0)]
         public DECIMAL decVal;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public unsafe partial struct _Anonymous_e__Struct
         {
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.vt"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.vt"]/*' />
             [NativeTypeName("VARTYPE")]
             public ushort vt;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved1"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved1"]/*' />
             [NativeTypeName("WORD")]
             public ushort wReserved1;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved2"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved2"]/*' />
             [NativeTypeName("WORD")]
             public ushort wReserved2;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved3"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved3"]/*' />
             [NativeTypeName("WORD")]
             public ushort wReserved3;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Anonymous"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Anonymous"]/*' />
             [NativeTypeName("__AnonymousRecord_oaidl_L486_C13")]
             public _Anonymous_e__Union Anonymous;
-            /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+
+            /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
             [StructLayout(LayoutKind.Explicit)]
             public unsafe partial struct _Anonymous_e__Union
             {
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.llVal"]/*'/>
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.llVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("LONGLONG")]
                 public long llVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("LONG")]
                 public int lVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bVal"]/*' />
                 [FieldOffset(0)]
                 public byte bVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iVal"]/*' />
                 [FieldOffset(0)]
                 public short iVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.fltVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.fltVal"]/*' />
                 [FieldOffset(0)]
                 public float fltVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dblVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dblVal"]/*' />
                 [FieldOffset(0)]
                 public double dblVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.boolVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.boolVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("VARIANT_BOOL")]
                 public short boolVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_BOOL"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_BOOL"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("VARIANT_BOOL")]
                 public short __OBSOLETE__VARIANT_BOOL;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.scode"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.scode"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("SCODE")]
                 public int scode;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cyVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cyVal"]/*' />
                 [FieldOffset(0)]
                 public CY cyVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.date"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.date"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("DATE")]
                 public double date;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("BSTR")]
                 public ushort* bstrVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.punkVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.punkVal"]/*' />
                 [FieldOffset(0)]
                 public IUnknown* punkVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdispVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdispVal"]/*' />
                 [FieldOffset(0)]
                 public IDispatch* pdispVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.parray"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.parray"]/*' />
                 [FieldOffset(0)]
                 public SAFEARRAY* parray;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbVal"]/*' />
                 [FieldOffset(0)]
                 public byte* pbVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.piVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.piVal"]/*' />
                 [FieldOffset(0)]
                 public short* piVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.plVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.plVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("LONG *")]
                 public int* plVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pllVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pllVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("LONGLONG *")]
                 public long* pllVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pfltVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pfltVal"]/*' />
                 [FieldOffset(0)]
                 public float* pfltVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdblVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdblVal"]/*' />
                 [FieldOffset(0)]
                 public double* pdblVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pboolVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pboolVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("VARIANT_BOOL *")]
                 public short* pboolVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_PBOOL"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.__OBSOLETE__VARIANT_PBOOL"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("VARIANT_BOOL *")]
                 public short* __OBSOLETE__VARIANT_PBOOL;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pscode"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pscode"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("SCODE *")]
                 public int* pscode;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcyVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcyVal"]/*' />
                 [FieldOffset(0)]
                 public CY* pcyVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdate"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdate"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("DATE *")]
                 public double* pdate;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("BSTR *")]
                 public ushort** pbstrVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppunkVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppunkVal"]/*' />
                 [FieldOffset(0)]
                 public IUnknown** ppunkVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppdispVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppdispVal"]/*' />
                 [FieldOffset(0)]
                 public IDispatch** ppdispVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pparray"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pparray"]/*' />
                 [FieldOffset(0)]
                 public SAFEARRAY** pparray;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvarVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvarVal"]/*' />
                 [FieldOffset(0)]
                 public VARIANT* pvarVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.byref"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.byref"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("PVOID")]
                 public void* byref;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("CHAR")]
                 public sbyte cVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uiVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uiVal"]/*' />
                 [FieldOffset(0)]
                 public ushort uiVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("ULONG")]
                 public uint ulVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("ULONGLONG")]
                 public ulong ullVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.intVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.intVal"]/*' />
                 [FieldOffset(0)]
                 public int intVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uintVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uintVal"]/*' />
                 [FieldOffset(0)]
                 public uint uintVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdecVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pdecVal"]/*' />
                 [FieldOffset(0)]
                 public DECIMAL* pdecVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pcVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("CHAR *")]
                 public sbyte* pcVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puiVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puiVal"]/*' />
                 [FieldOffset(0)]
                 public ushort* puiVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pulVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pulVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("ULONG *")]
                 public uint* pulVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pullVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pullVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("ULONGLONG *")]
                 public ulong* pullVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pintVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pintVal"]/*' />
                 [FieldOffset(0)]
                 public int* pintVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puintVal"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.puintVal"]/*' />
                 [FieldOffset(0)]
                 public uint* puintVal;
-                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("__AnonymousRecord_oaidl_L533_C17")]
                 public _Anonymous_e__Struct Anonymous;
-                /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+                /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
                 public unsafe partial struct _Anonymous_e__Struct
                 {
-                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pvRecord"]/*'/>
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pvRecord"]/*' />
                     [NativeTypeName("PVOID")]
                     public void* pvRecord;
-                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pRecInfo"]/*'/>
+
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.pRecInfo"]/*' />
                     public IRecordInfo* pRecInfo;
                 }
             }

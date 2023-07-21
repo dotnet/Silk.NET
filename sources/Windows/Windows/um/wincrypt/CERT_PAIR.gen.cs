@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR"]/*'/>
+
+/// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR"]/*' />
 public partial struct CERT_PAIR
 {
-    /// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR.Forward"]/*'/>
+    /// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR.Forward"]/*' />
     [NativeTypeName("CERT_BLOB")]
     public CRYPT_DATA_BLOB Forward;
-    /// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR.Reverse"]/*'/>
+
+    /// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR.Reverse"]/*' />
     [NativeTypeName("CERT_BLOB")]
     public CRYPT_DATA_BLOB Reverse;
 }

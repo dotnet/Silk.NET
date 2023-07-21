@@ -1,20 +1,24 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='GdiplusAbort.xml' path='doc/member[@name="GdiplusAbort"]/*'/>
+
+/// <include file='GdiplusAbort.xml' path='doc/member[@name="GdiplusAbort"]/*' />
 public unsafe partial struct GdiplusAbort : GdiplusAbort.Interface
 {
     public void** lpVtbl;
-    /// <include file='GdiplusAbort.xml' path='doc/member[@name="GdiplusAbort.Abort"]/*'/>
+
+    /// <include file='GdiplusAbort.xml' path='doc/member[@name="GdiplusAbort.Abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT Abort()
     {
-        return ((delegate* unmanaged<GdiplusAbort*, int> )(lpVtbl[0]))((GdiplusAbort*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<GdiplusAbort*, int>)(lpVtbl[0]))((GdiplusAbort*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface

@@ -1,28 +1,25 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/SpatialAudioHrtf.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
+
 public static partial class IID
 {
     public static ref readonly Guid IID_ISpatialAudioObjectForHrtf
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xDE,
-                0x6A,
-                0x43,
-                0xD7,
-                0x78,
-                0x19,
-                0x14,
-                0x4E,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xDE, 0x6A, 0x43, 0xD7,
+                0x78, 0x19,
+                0x14, 0x4E,
                 0xAB,
                 0xA0,
                 0x55,
@@ -32,6 +29,7 @@ public static partial class IID
                 0x83,
                 0xB4
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -41,16 +39,10 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xF9,
-                0xEE,
-                0x8D,
-                0xE0,
-                0x63,
-                0x53,
-                0x6E,
-                0x40,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF9, 0xEE, 0x8D, 0xE0,
+                0x63, 0x53,
+                0x6E, 0x40,
                 0x9F,
                 0xDC,
                 0x08,
@@ -60,6 +52,7 @@ public static partial class IID
                 0xBB,
                 0xE0
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

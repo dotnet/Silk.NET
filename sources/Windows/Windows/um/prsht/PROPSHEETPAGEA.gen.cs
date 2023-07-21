@@ -1,53 +1,70 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA"]/*'/>
+
+/// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA"]/*' />
 public unsafe partial struct PROPSHEETPAGEA
 {
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.dwSize"]/*'/>
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.dwFlags"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.hInstance"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.hInstance"]/*' />
     public HINSTANCE hInstance;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous1"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous1"]/*' />
     [NativeTypeName("__AnonymousRecord_prsht_L225_C5")]
     public _Anonymous1_e__Union Anonymous1;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous2"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous2"]/*' />
     [NativeTypeName("__AnonymousRecord_prsht_L225_C5")]
     public _Anonymous2_e__Union Anonymous2;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszTitle"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszTitle"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszTitle;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pfnDlgProc"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pfnDlgProc"]/*' />
     [NativeTypeName("DLGPROC")]
     public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> pfnDlgProc;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.lParam"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.lParam"]/*' />
     public LPARAM lParam;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pfnCallback"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pfnCallback"]/*' />
     [NativeTypeName("LPFNPSPCALLBACKA")]
     public delegate* unmanaged<HWND, uint, PROPSHEETPAGEA*, uint> pfnCallback;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pcRefParent"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pcRefParent"]/*' />
     public uint* pcRefParent;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszHeaderTitle"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszHeaderTitle"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszHeaderTitle;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszHeaderSubTitle"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszHeaderSubTitle"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszHeaderSubTitle;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.hActCtx"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.hActCtx"]/*' />
     public HANDLE hActCtx;
-    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous3"]/*'/>
+
+    /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous3"]/*' />
     [NativeTypeName("__AnonymousRecord_prsht_L232_C5")]
     public _Anonymous3_e__Union Anonymous3;
-    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*'/>
+
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />
     [UnscopedRef]
     public ref sbyte* pszTemplate
     {
@@ -58,7 +75,7 @@ public unsafe partial struct PROPSHEETPAGEA
         }
     }
 
-    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pResource"]/*'/>
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pResource"]/*' />
     [UnscopedRef]
     public ref DLGTEMPLATE* pResource
     {
@@ -69,7 +86,7 @@ public unsafe partial struct PROPSHEETPAGEA
         }
     }
 
-    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.hIcon"]/*'/>
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.hIcon"]/*' />
     [UnscopedRef]
     public ref HICON hIcon
     {
@@ -80,7 +97,7 @@ public unsafe partial struct PROPSHEETPAGEA
         }
     }
 
-    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*'/>
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*' />
     [UnscopedRef]
     public ref sbyte* pszIcon
     {
@@ -91,7 +108,7 @@ public unsafe partial struct PROPSHEETPAGEA
         }
     }
 
-    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.hbmHeader"]/*'/>
+    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.hbmHeader"]/*' />
     [UnscopedRef]
     public ref HBITMAP hbmHeader
     {
@@ -102,7 +119,7 @@ public unsafe partial struct PROPSHEETPAGEA
         }
     }
 
-    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.pszbmHeader"]/*'/>
+    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.pszbmHeader"]/*' />
     [UnscopedRef]
     public ref sbyte* pszbmHeader
     {
@@ -113,41 +130,44 @@ public unsafe partial struct PROPSHEETPAGEA
         }
     }
 
-    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*'/>
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous1_e__Union
     {
-        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*'/>
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCSTR")]
         public sbyte* pszTemplate;
-        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pResource"]/*'/>
+
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pResource"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PROPSHEETPAGE_RESOURCE")]
         public DLGTEMPLATE* pResource;
     }
 
-    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*'/>
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous2_e__Union
     {
-        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.hIcon"]/*'/>
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.hIcon"]/*' />
         [FieldOffset(0)]
         public HICON hIcon;
-        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*'/>
+
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCSTR")]
         public sbyte* pszIcon;
     }
 
-    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union"]/*'/>
+    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous3_e__Union
     {
-        /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.hbmHeader"]/*'/>
+        /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.hbmHeader"]/*' />
         [FieldOffset(0)]
         public HBITMAP hbmHeader;
-        /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.pszbmHeader"]/*'/>
+
+        /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.pszbmHeader"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCSTR")]
         public sbyte* pszbmHeader;

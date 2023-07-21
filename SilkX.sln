@@ -76,6 +76,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClangSharp.PInvokeGenerator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClangSharp.Interop", "submodules\ClangSharp\sources\ClangSharp.Interop\ClangSharp.Interop.csproj", "{D4094275-C179-4414-B251-69941A74849F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Win32", "sources\Windows\Silk.NET.Win32.csproj", "{DD70B8DF-0827-45D6-A9E1-E27CFB7B78FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,10 @@ Global
 		{D4094275-C179-4414-B251-69941A74849F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4094275-C179-4414-B251-69941A74849F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4094275-C179-4414-B251-69941A74849F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD70B8DF-0827-45D6-A9E1-E27CFB7B78FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD70B8DF-0827-45D6-A9E1-E27CFB7B78FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD70B8DF-0827-45D6-A9E1-E27CFB7B78FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD70B8DF-0827-45D6-A9E1-E27CFB7B78FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +136,7 @@ Global
 		{6D47D681-085C-49A9-AF06-B45D86FCA51B} = {BD8AAB36-6073-4D20-AE73-0C18E1ADBF9B}
 		{90C95AC4-E2A8-4F21-8A47-845A8B84BE69} = {BD8AAB36-6073-4D20-AE73-0C18E1ADBF9B}
 		{D4094275-C179-4414-B251-69941A74849F} = {8C1FD1FF-F2FA-410D-A126-B2B0D3822114}
+		{DD70B8DF-0827-45D6-A9E1-E27CFB7B78FA} = {DD29EA8F-B1A6-45AA-8D2E-B38DA56D9EF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {78D2CF6A-60A1-43E3-837B-00B73C9DA384}

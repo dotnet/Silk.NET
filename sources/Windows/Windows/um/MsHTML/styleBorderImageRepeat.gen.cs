@@ -1,20 +1,28 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat"]/*'/>
+
+/// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat"]/*' />
 public enum styleBorderImageRepeat
 {
-    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatStretch"]/*'/>
+    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatStretch"]/*' />
     styleBorderImageRepeatStretch = 0,
-    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatRepeat"]/*'/>
+
+    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatRepeat"]/*' />
     styleBorderImageRepeatRepeat = 1,
-    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatRound"]/*'/>
+
+    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatRound"]/*' />
     styleBorderImageRepeatRound = 2,
-    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatSpace"]/*'/>
+
+    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatSpace"]/*' />
     styleBorderImageRepeatSpace = 3,
-    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatNotSet"]/*'/>
+
+    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeatNotSet"]/*' />
     styleBorderImageRepeatNotSet = 4,
-    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeat_Max"]/*'/>
+
+    /// <include file='styleBorderImageRepeat.xml' path='doc/member[@name="styleBorderImageRepeat.styleBorderImageRepeat_Max"]/*' />
     styleBorderImageRepeat_Max = 2147483647,
 }

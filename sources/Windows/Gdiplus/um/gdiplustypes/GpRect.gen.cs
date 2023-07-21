@@ -1,20 +1,27 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='GpRect.xml' path='doc/member[@name="GpRect"]/*'/>
+
+/// <include file='GpRect.xml' path='doc/member[@name="GpRect"]/*' />
 public unsafe partial struct GpRect
 {
-    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.X"]/*'/>
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.X"]/*' />
     public int X;
-    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Y"]/*'/>
+
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Y"]/*' />
     public int Y;
-    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Width"]/*'/>
+
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Width"]/*' />
     public int Width;
-    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Height"]/*'/>
+
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Height"]/*' />
     public int Height;
+
     public GpRect()
     {
         X = Y = Width = Height = 0;
@@ -40,7 +47,7 @@ public unsafe partial struct GpRect
     public GpRect* Clone()
     {
         return cxx_new<GpRect>(sizeof(GpRect));
-        = new GpRect(X, Y, Width, Height)}
+         = new GpRect(X, Y, Width, Height)    }
 
     public void GetLocation([NativeTypeName("Gdiplus::Point *")] GpPoint* point)
     {
@@ -131,6 +138,7 @@ public unsafe partial struct GpRect
         int bottom = (((a->GetBottom()) < (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
         int left = (((a->GetLeft()) > (b->GetLeft())) ? (a->GetLeft()) : (b->GetLeft()));
         int top = (((a->GetTop()) > (b->GetTop())) ? (a->GetTop()) : (b->GetTop()));
+
         c->X = left;
         c->Y = top;
         c->Width = right - left;
@@ -149,6 +157,7 @@ public unsafe partial struct GpRect
         int bottom = (((a->GetBottom()) > (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
         int left = (((a->GetLeft()) < (b->GetLeft())) ? (a->GetLeft()) : (b->GetLeft()));
         int top = (((a->GetTop()) < (b->GetTop())) ? (a->GetTop()) : (b->GetTop()));
+
         c->X = left;
         c->Y = top;
         c->Width = right - left;

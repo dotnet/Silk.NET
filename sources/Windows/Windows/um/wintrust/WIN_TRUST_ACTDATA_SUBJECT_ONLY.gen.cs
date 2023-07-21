@@ -1,15 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 
 namespace Silk.NET.Windows;
-/// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY"]/*'/>
+
+/// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY"]/*' />
 public unsafe partial struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
 {
-    /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY.SubjectType"]/*'/>
+    /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY.SubjectType"]/*' />
     public Guid* SubjectType;
-    /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY.Subject"]/*'/>
+
+    /// <include file='WIN_TRUST_ACTDATA_SUBJECT_ONLY.xml' path='doc/member[@name="WIN_TRUST_ACTDATA_SUBJECT_ONLY.Subject"]/*' />
     [NativeTypeName("WIN_TRUST_SUBJECT")]
     public void* Subject;
 }

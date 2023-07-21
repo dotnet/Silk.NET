@@ -1,9 +1,12 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 
 namespace Silk.NET.Windows;
+
 public static partial class szOID
 {
     [NativeTypeName("#define szOID_TRUSTED_CODESIGNING_CA_LIST \"1.3.6.1.4.1.311.2.2.1\"")]

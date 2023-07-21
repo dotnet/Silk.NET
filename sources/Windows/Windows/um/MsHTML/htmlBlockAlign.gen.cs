@@ -1,20 +1,28 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign"]/*'/>
+
+/// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign"]/*' />
 public enum htmlBlockAlign
 {
-    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignNotSet"]/*'/>
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignNotSet"]/*' />
     htmlBlockAlignNotSet = 0,
-    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignLeft"]/*'/>
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignLeft"]/*' />
     htmlBlockAlignLeft = 1,
-    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignCenter"]/*'/>
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignCenter"]/*' />
     htmlBlockAlignCenter = 2,
-    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignRight"]/*'/>
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignRight"]/*' />
     htmlBlockAlignRight = 3,
-    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignJustify"]/*'/>
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignJustify"]/*' />
     htmlBlockAlignJustify = 4,
-    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlign_Max"]/*'/>
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlign_Max"]/*' />
     htmlBlockAlign_Max = 2147483647,
 }

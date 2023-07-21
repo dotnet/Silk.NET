@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION"]/*'/>
+
+/// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION"]/*' />
 public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
 {
     public uint _bitfield;
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.Machine"]/*'/>
+
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.Machine"]/*' />
     [NativeTypeName("DWORD : 16")]
     public uint Machine
     {
@@ -25,7 +29,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
         }
     }
 
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.KernelMode"]/*'/>
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.KernelMode"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint KernelMode
     {
@@ -42,7 +46,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
         }
     }
 
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.UserMode"]/*'/>
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.UserMode"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint UserMode
     {
@@ -59,7 +63,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
         }
     }
 
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.Native"]/*'/>
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.Native"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint Native
     {
@@ -76,7 +80,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
         }
     }
 
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.Process"]/*'/>
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.Process"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint Process
     {
@@ -93,7 +97,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
         }
     }
 
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.WoW64Container"]/*'/>
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.WoW64Container"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint WoW64Container
     {
@@ -110,7 +114,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
         }
     }
 
-    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.ReservedZero0"]/*'/>
+    /// <include file='SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.xml' path='doc/member[@name="SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION.ReservedZero0"]/*' />
     [NativeTypeName("DWORD : 11")]
     public uint ReservedZero0
     {

@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.DirectX;
-/// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES"]/*'/>
+
+/// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES"]/*' />
 public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
 {
     public ushort _bitfield;
-    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.justification"]/*'/>
+
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.justification"]/*' />
     [NativeTypeName("UINT16 : 4")]
     public ushort justification
     {
@@ -25,7 +29,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart"]/*'/>
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isClusterStart
     {
@@ -42,7 +46,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic"]/*'/>
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isDiacritic
     {
@@ -59,7 +63,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace"]/*'/>
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isZeroWidthSpace
     {
@@ -76,7 +80,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
-    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.reserved"]/*'/>
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.reserved"]/*' />
     [NativeTypeName("UINT16 : 9")]
     public ushort reserved
     {

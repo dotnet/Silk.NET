@@ -1,20 +1,27 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.DirectX;
-/// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS"]/*'/>
+
+/// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS"]/*' />
 public partial struct DXGI_FRAME_STATISTICS
 {
-    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.PresentCount"]/*'/>
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.PresentCount"]/*' />
     public uint PresentCount;
-    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.PresentRefreshCount"]/*'/>
+
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.PresentRefreshCount"]/*' />
     public uint PresentRefreshCount;
-    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncRefreshCount"]/*'/>
+
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncRefreshCount"]/*' />
     public uint SyncRefreshCount;
-    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncQPCTime"]/*'/>
+
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncQPCTime"]/*' />
     public LARGE_INTEGER SyncQPCTime;
-    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncGPUTime"]/*'/>
+
+    /// <include file='DXGI_FRAME_STATISTICS.xml' path='doc/member[@name="DXGI_FRAME_STATISTICS.SyncGPUTime"]/*' />
     public LARGE_INTEGER SyncGPUTime;
 }

@@ -1,20 +1,26 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='DCB.xml' path='doc/member[@name="DCB"]/*'/>
+
+/// <include file='DCB.xml' path='doc/member[@name="DCB"]/*' />
 public partial struct DCB
 {
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.DCBlength"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.DCBlength"]/*' />
     [NativeTypeName("DWORD")]
     public uint DCBlength;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.BaudRate"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.BaudRate"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaudRate;
+
     public uint _bitfield;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fBinary"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fBinary"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fBinary
     {
@@ -31,7 +37,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fParity"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fParity"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fParity
     {
@@ -48,7 +54,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fOutxCtsFlow"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fOutxCtsFlow"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fOutxCtsFlow
     {
@@ -65,7 +71,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fOutxDsrFlow"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fOutxDsrFlow"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fOutxDsrFlow
     {
@@ -82,7 +88,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fDtrControl"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fDtrControl"]/*' />
     [NativeTypeName("DWORD : 2")]
     public uint fDtrControl
     {
@@ -99,7 +105,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fDsrSensitivity"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fDsrSensitivity"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fDsrSensitivity
     {
@@ -116,7 +122,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fTXContinueOnXoff"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fTXContinueOnXoff"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fTXContinueOnXoff
     {
@@ -133,7 +139,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fOutX"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fOutX"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fOutX
     {
@@ -150,7 +156,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fInX"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fInX"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fInX
     {
@@ -167,7 +173,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fErrorChar"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fErrorChar"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fErrorChar
     {
@@ -184,7 +190,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fNull"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fNull"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fNull
     {
@@ -201,7 +207,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fRtsControl"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fRtsControl"]/*' />
     [NativeTypeName("DWORD : 2")]
     public uint fRtsControl
     {
@@ -218,7 +224,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fAbortOnError"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fAbortOnError"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint fAbortOnError
     {
@@ -235,7 +241,7 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.fDummy2"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.fDummy2"]/*' />
     [NativeTypeName("DWORD : 17")]
     public uint fDummy2
     {
@@ -252,37 +258,48 @@ public partial struct DCB
         }
     }
 
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.wReserved"]/*'/>
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.wReserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.XonLim"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.XonLim"]/*' />
     [NativeTypeName("WORD")]
     public ushort XonLim;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.XoffLim"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.XoffLim"]/*' />
     [NativeTypeName("WORD")]
     public ushort XoffLim;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.ByteSize"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.ByteSize"]/*' />
     public byte ByteSize;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.Parity"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.Parity"]/*' />
     public byte Parity;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.StopBits"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.StopBits"]/*' />
     public byte StopBits;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.XonChar"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.XonChar"]/*' />
     [NativeTypeName("char")]
     public sbyte XonChar;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.XoffChar"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.XoffChar"]/*' />
     [NativeTypeName("char")]
     public sbyte XoffChar;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.ErrorChar"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.ErrorChar"]/*' />
     [NativeTypeName("char")]
     public sbyte ErrorChar;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.EofChar"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.EofChar"]/*' />
     [NativeTypeName("char")]
     public sbyte EofChar;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.EvtChar"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.EvtChar"]/*' />
     [NativeTypeName("char")]
     public sbyte EvtChar;
-    /// <include file='DCB.xml' path='doc/member[@name="DCB.wReserved1"]/*'/>
+
+    /// <include file='DCB.xml' path='doc/member[@name="DCB.wReserved1"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved1;
 }

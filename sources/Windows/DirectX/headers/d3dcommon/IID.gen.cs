@@ -1,6 +1,8 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+
 using Silk.NET.DirectX;
 using System;
 using System.Diagnostics;
@@ -8,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
+
 public static partial class IID
 {
     [NativeTypeName("const GUID")]
@@ -16,16 +19,10 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x08,
-                0xFB,
-                0xA5,
-                0x8B,
-                0x95,
-                0x51,
-                0xE2,
-                0x40,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x08, 0xFB, 0xA5, 0x8B,
+                0x95, 0x51,
+                0xE2, 0x40,
                 0xAC,
                 0x58,
                 0x0D,
@@ -35,6 +32,7 @@ public static partial class IID
                 0x01,
                 0x02
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -47,16 +45,10 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0x9A,
-                0xB3,
-                0x6E,
-                0xA0,
-                0xDA,
-                0x50,
-                0x5B,
-                0x42,
+            ReadOnlySpan<byte> data = new byte[] {
+                0x9A, 0xB3, 0x6E, 0xA0,
+                0xDA, 0x50,
+                0x5B, 0x42,
                 0x8C,
                 0x31,
                 0x4E,
@@ -66,6 +58,7 @@ public static partial class IID
                 0x70,
                 0xF3
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

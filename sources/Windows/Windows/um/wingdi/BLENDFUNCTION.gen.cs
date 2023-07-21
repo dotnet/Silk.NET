@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION"]/*'/>
+
+/// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION"]/*' />
 public partial struct BLENDFUNCTION
 {
-    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.BlendOp"]/*'/>
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.BlendOp"]/*' />
     public byte BlendOp;
-    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.BlendFlags"]/*'/>
+
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.BlendFlags"]/*' />
     public byte BlendFlags;
-    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.SourceConstantAlpha"]/*'/>
+
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.SourceConstantAlpha"]/*' />
     public byte SourceConstantAlpha;
-    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.AlphaFormat"]/*'/>
+
+    /// <include file='BLENDFUNCTION.xml' path='doc/member[@name="BLENDFUNCTION.AlphaFormat"]/*' />
     public byte AlphaFormat;
 }

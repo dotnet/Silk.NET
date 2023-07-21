@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap"]/*'/>
+
+/// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap"]/*' />
 public enum htmlWrap
 {
-    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapOff"]/*'/>
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapOff"]/*' />
     htmlWrapOff = 1,
-    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapSoft"]/*'/>
+
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapSoft"]/*' />
     htmlWrapSoft = 2,
-    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapHard"]/*'/>
+
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrapHard"]/*' />
     htmlWrapHard = 3,
-    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrap_Max"]/*'/>
+
+    /// <include file='htmlWrap.xml' path='doc/member[@name="htmlWrap.htmlWrap_Max"]/*' />
     htmlWrap_Max = 2147483647,
 }

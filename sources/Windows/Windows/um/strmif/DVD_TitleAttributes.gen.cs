@@ -1,36 +1,46 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes"]/*'/>
+
+/// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes"]/*' />
 public partial struct DVD_TitleAttributes
 {
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.Anonymous"]/*'/>
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_strmif_L22382_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.VideoAttributes"]/*'/>
+
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.VideoAttributes"]/*' />
     public DVD_VideoAttributes VideoAttributes;
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfAudioStreams"]/*'/>
+
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfAudioStreams"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulNumberOfAudioStreams;
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.AudioAttributes"]/*'/>
+
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.AudioAttributes"]/*' />
     [NativeTypeName("DVD_AudioAttributes[8]")]
     public _AudioAttributes_e__FixedBuffer AudioAttributes;
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.MultichannelAudioAttributes"]/*'/>
+
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.MultichannelAudioAttributes"]/*' />
     [NativeTypeName("DVD_MultichannelAudioAttributes[8]")]
     public _MultichannelAudioAttributes_e__FixedBuffer MultichannelAudioAttributes;
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfSubpictureStreams"]/*'/>
+
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfSubpictureStreams"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulNumberOfSubpictureStreams;
-    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.SubpictureAttributes"]/*'/>
+
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.SubpictureAttributes"]/*' />
     [NativeTypeName("DVD_SubpictureAttributes[32]")]
     public _SubpictureAttributes_e__FixedBuffer SubpictureAttributes;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*' />
     [UnscopedRef]
     public ref DVD_TITLE_APPMODE AppMode
     {
@@ -41,7 +51,7 @@ public partial struct DVD_TitleAttributes
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*' />
     [UnscopedRef]
     public ref DVD_HMSF_TIMECODE TitleLength
     {
@@ -52,19 +62,20 @@ public partial struct DVD_TitleAttributes
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*' />
         [FieldOffset(0)]
         public DVD_TITLE_APPMODE AppMode;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*' />
         [FieldOffset(0)]
         public DVD_HMSF_TIMECODE TitleLength;
     }
 
-    /// <include file='_AudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_AudioAttributes_e__FixedBuffer"]/*'/>
+    /// <include file='_AudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_AudioAttributes_e__FixedBuffer"]/*' />
     public partial struct _AudioAttributes_e__FixedBuffer
     {
         public DVD_AudioAttributes e0;
@@ -75,6 +86,7 @@ public partial struct DVD_TitleAttributes
         public DVD_AudioAttributes e5;
         public DVD_AudioAttributes e6;
         public DVD_AudioAttributes e7;
+
         [UnscopedRef]
         public ref DVD_AudioAttributes this[int index]
         {
@@ -90,7 +102,7 @@ public partial struct DVD_TitleAttributes
         public Span<DVD_AudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
-    /// <include file='_MultichannelAudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_MultichannelAudioAttributes_e__FixedBuffer"]/*'/>
+    /// <include file='_MultichannelAudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_MultichannelAudioAttributes_e__FixedBuffer"]/*' />
     public partial struct _MultichannelAudioAttributes_e__FixedBuffer
     {
         public DVD_MultichannelAudioAttributes e0;
@@ -101,6 +113,7 @@ public partial struct DVD_TitleAttributes
         public DVD_MultichannelAudioAttributes e5;
         public DVD_MultichannelAudioAttributes e6;
         public DVD_MultichannelAudioAttributes e7;
+
         [UnscopedRef]
         public ref DVD_MultichannelAudioAttributes this[int index]
         {
@@ -116,7 +129,7 @@ public partial struct DVD_TitleAttributes
         public Span<DVD_MultichannelAudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
-    /// <include file='_SubpictureAttributes_e__FixedBuffer.xml' path='doc/member[@name="_SubpictureAttributes_e__FixedBuffer"]/*'/>
+    /// <include file='_SubpictureAttributes_e__FixedBuffer.xml' path='doc/member[@name="_SubpictureAttributes_e__FixedBuffer"]/*' />
     public partial struct _SubpictureAttributes_e__FixedBuffer
     {
         public DVD_SubpictureAttributes e0;
@@ -151,6 +164,7 @@ public partial struct DVD_TitleAttributes
         public DVD_SubpictureAttributes e29;
         public DVD_SubpictureAttributes e30;
         public DVD_SubpictureAttributes e31;
+
         [UnscopedRef]
         public ref DVD_SubpictureAttributes this[int index]
         {

@@ -1,12 +1,16 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES"]/*'/>
+
+/// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES"]/*' />
 public enum SYSTEMMINIMIZESTATES
 {
-    /// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES.MSYSMN_NORMAL"]/*'/>
+    /// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES.MSYSMN_NORMAL"]/*' />
     MSYSMN_NORMAL = 1,
-    /// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES.MSYSMN_DISABLED"]/*'/>
+
+    /// <include file='SYSTEMMINIMIZESTATES.xml' path='doc/member[@name="SYSTEMMINIMIZESTATES.MSYSMN_DISABLED"]/*' />
     MSYSMN_DISABLED = 2,
 }

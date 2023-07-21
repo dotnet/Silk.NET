@@ -1,24 +1,32 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdipluseffects.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 using System.Runtime.CompilerServices;
 using static Silk.NET.Gdiplus.Gdiplus;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='Effect.xml' path='doc/member[@name="Effect"]/*'/>
+
+/// <include file='Effect.xml' path='doc/member[@name="Effect"]/*' />
 public unsafe partial struct Effect : Effect.Interface
 {
     public void** lpVtbl;
-    /// <include file='Effect.xml' path='doc/member[@name="Effect.nativeEffect"]/*'/>
+
+    /// <include file='Effect.xml' path='doc/member[@name="Effect.nativeEffect"]/*' />
     [NativeTypeName("Gdiplus::CGpEffect *")]
     public CGpEffect* nativeEffect;
-    /// <include file='Effect.xml' path='doc/member[@name="Effect.auxDataSize"]/*'/>
+
+    /// <include file='Effect.xml' path='doc/member[@name="Effect.auxDataSize"]/*' />
     public int auxDataSize;
-    /// <include file='Effect.xml' path='doc/member[@name="Effect.auxData"]/*'/>
+
+    /// <include file='Effect.xml' path='doc/member[@name="Effect.auxData"]/*' />
     public void* auxData;
-    /// <include file='Effect.xml' path='doc/member[@name="Effect.useAuxData"]/*'/>
+
+    /// <include file='Effect.xml' path='doc/member[@name="Effect.useAuxData"]/*' />
     public BOOL useAuxData;
+
     public int GetAuxDataSize()
     {
         return auxDataSize;
@@ -52,12 +60,12 @@ public unsafe partial struct Effect : Effect.Interface
         return GdipGetEffectParameters(nativeEffect, size, @params);
     }
 
-    /// <include file='Effect.xml' path='doc/member[@name="Effect.Dispose"]/*'/>
+    /// <include file='Effect.xml' path='doc/member[@name="Effect.Dispose"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public void Dispose()
     {
-        ((delegate* unmanaged<Effect*, void> )(lpVtbl[0]))((Effect*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged<Effect*, void>)(lpVtbl[0]))((Effect*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface

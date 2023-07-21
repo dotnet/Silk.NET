@@ -1,28 +1,36 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
+
 public static unsafe partial class Windows
 {
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertySheetPageA"]/*'/>
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertySheetPageA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HPROPSHEETPAGE CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertySheetPageW"]/*'/>
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertySheetPageW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HPROPSHEETPAGE CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyPropertySheetPage"]/*'/>
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyPropertySheetPage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL DestroyPropertySheetPage(HPROPSHEETPAGE param0);
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.PropertySheetA"]/*'/>
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PropertySheetA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint PropertySheetA([NativeTypeName("LPCPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* param0);
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.PropertySheetW"]/*'/>
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PropertySheetW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
+
     [NativeTypeName("#define SNDMSG ::SendMessage")]
     public static delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> SNDMSG => &SendMessageW;
 
@@ -31,12 +39,16 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define MAXPROPPAGES 100")]
     public const int MAXPROPPAGES = 100;
+
     [NativeTypeName("#define PSPCB_ADDREF 0")]
     public const int PSPCB_ADDREF = 0;
+
     [NativeTypeName("#define PSPCB_RELEASE 1")]
     public const int PSPCB_RELEASE = 1;
+
     [NativeTypeName("#define PSPCB_CREATE 2")]
     public const int PSPCB_CREATE = 2;
+
     [NativeTypeName("#define PROPSHEETPAGEA_V1_SIZE sizeof(PROPSHEETPAGEA_V1)")]
     public static uint PROPSHEETPAGEA_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEA_V1))));
 
@@ -87,10 +99,13 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define PSCB_INITIALIZED 1")]
     public const int PSCB_INITIALIZED = 1;
+
     [NativeTypeName("#define PSCB_PRECREATE 2")]
     public const int PSCB_PRECREATE = 2;
+
     [NativeTypeName("#define PSCB_BUTTONPRESSED 3")]
     public const int PSCB_BUTTONPRESSED = 3;
+
     [NativeTypeName("#define CreatePropertySheetPage CreatePropertySheetPageW")]
     public static delegate*<PROPSHEETPAGEW*, HPROPSHEETPAGE> CreatePropertySheetPage => &CreatePropertySheetPageW;
 
@@ -99,66 +114,97 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define PSNRET_NOERROR 0")]
     public const int PSNRET_NOERROR = 0;
+
     [NativeTypeName("#define PSNRET_INVALID 1")]
     public const int PSNRET_INVALID = 1;
+
     [NativeTypeName("#define PSNRET_INVALID_NOCHANGEPAGE 2")]
     public const int PSNRET_INVALID_NOCHANGEPAGE = 2;
+
     [NativeTypeName("#define PSNRET_MESSAGEHANDLED 3")]
     public const int PSNRET_MESSAGEHANDLED = 3;
+
     [NativeTypeName("#define PSWIZB_BACK 0x00000001")]
     public const int PSWIZB_BACK = 0x00000001;
+
     [NativeTypeName("#define PSWIZB_NEXT 0x00000002")]
     public const int PSWIZB_NEXT = 0x00000002;
+
     [NativeTypeName("#define PSWIZB_FINISH 0x00000004")]
     public const int PSWIZB_FINISH = 0x00000004;
+
     [NativeTypeName("#define PSWIZB_DISABLEDFINISH 0x00000008")]
     public const int PSWIZB_DISABLEDFINISH = 0x00000008;
+
     [NativeTypeName("#define PSWIZBF_ELEVATIONREQUIRED 0x00000001")]
     public const int PSWIZBF_ELEVATIONREQUIRED = 0x00000001;
+
     [NativeTypeName("#define PSWIZB_CANCEL 0x00000010")]
     public const int PSWIZB_CANCEL = 0x00000010;
+
     [NativeTypeName("#define PSBTN_BACK 0")]
     public const int PSBTN_BACK = 0;
+
     [NativeTypeName("#define PSBTN_NEXT 1")]
     public const int PSBTN_NEXT = 1;
+
     [NativeTypeName("#define PSBTN_FINISH 2")]
     public const int PSBTN_FINISH = 2;
+
     [NativeTypeName("#define PSBTN_OK 3")]
     public const int PSBTN_OK = 3;
+
     [NativeTypeName("#define PSBTN_APPLYNOW 4")]
     public const int PSBTN_APPLYNOW = 4;
+
     [NativeTypeName("#define PSBTN_CANCEL 5")]
     public const int PSBTN_CANCEL = 5;
+
     [NativeTypeName("#define PSBTN_HELP 6")]
     public const int PSBTN_HELP = 6;
+
     [NativeTypeName("#define PSBTN_MAX 6")]
     public const int PSBTN_MAX = 6;
+
     [NativeTypeName("#define PSWIZF_SETCOLOR ((UINT)(-1))")]
     public const uint PSWIZF_SETCOLOR = unchecked((uint)(-1));
+
     [NativeTypeName("#define PSWIZB_SHOW 0")]
     public const int PSWIZB_SHOW = 0;
+
     [NativeTypeName("#define PSWIZB_RESTORE 1")]
     public const int PSWIZB_RESTORE = 1;
+
     [NativeTypeName("#define WIZ_CXDLG 276")]
     public const int WIZ_CXDLG = 276;
+
     [NativeTypeName("#define WIZ_CYDLG 140")]
     public const int WIZ_CYDLG = 140;
+
     [NativeTypeName("#define WIZ_CXBMP 80")]
     public const int WIZ_CXBMP = 80;
+
     [NativeTypeName("#define WIZ_BODYX 92")]
     public const int WIZ_BODYX = 92;
+
     [NativeTypeName("#define WIZ_BODYCX 184")]
     public const int WIZ_BODYCX = 184;
+
     [NativeTypeName("#define PROP_SM_CXDLG 212")]
     public const int PROP_SM_CXDLG = 212;
+
     [NativeTypeName("#define PROP_SM_CYDLG 188")]
     public const int PROP_SM_CYDLG = 188;
+
     [NativeTypeName("#define PROP_MED_CXDLG 227")]
     public const int PROP_MED_CXDLG = 227;
+
     [NativeTypeName("#define PROP_MED_CYDLG 215")]
     public const int PROP_MED_CYDLG = 215;
+
     [NativeTypeName("#define PROP_LG_CXDLG 252")]
     public const int PROP_LG_CXDLG = 252;
+
     [NativeTypeName("#define PROP_LG_CYDLG 218")]
     public const int PROP_LG_CYDLG = 218;
 }

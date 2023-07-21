@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining"]/*'/>
+
+/// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining"]/*' />
 public enum styleMsContentZoomChaining
 {
-    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingNotSet"]/*'/>
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingNotSet"]/*' />
     styleMsContentZoomChainingNotSet = 0,
-    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingNone"]/*'/>
+
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingNone"]/*' />
     styleMsContentZoomChainingNone = 1,
-    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingChained"]/*'/>
+
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChainingChained"]/*' />
     styleMsContentZoomChainingChained = 2,
-    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChaining_Max"]/*'/>
+
+    /// <include file='styleMsContentZoomChaining.xml' path='doc/member[@name="styleMsContentZoomChaining.styleMsContentZoomChaining_Max"]/*' />
     styleMsContentZoomChaining_Max = 2147483647,
 }

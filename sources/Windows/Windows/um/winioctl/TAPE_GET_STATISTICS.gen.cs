@@ -1,11 +1,14 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='TAPE_GET_STATISTICS.xml' path='doc/member[@name="TAPE_GET_STATISTICS"]/*'/>
+
+/// <include file='TAPE_GET_STATISTICS.xml' path='doc/member[@name="TAPE_GET_STATISTICS"]/*' />
 public partial struct TAPE_GET_STATISTICS
 {
-    /// <include file='TAPE_GET_STATISTICS.xml' path='doc/member[@name="TAPE_GET_STATISTICS.Operation"]/*'/>
+    /// <include file='TAPE_GET_STATISTICS.xml' path='doc/member[@name="TAPE_GET_STATISTICS.Operation"]/*' />
     [NativeTypeName("DWORD")]
     public uint Operation;
 }

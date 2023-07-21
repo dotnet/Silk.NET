@@ -1,38 +1,50 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/consoleapi2.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX"]/*'/>
+
+/// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX"]/*' />
 public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
 {
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.cbSize"]/*'/>
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.dwSize"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.dwSize"]/*' />
     public COORD dwSize;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.dwCursorPosition"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.dwCursorPosition"]/*' />
     public COORD dwCursorPosition;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.wAttributes"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.wAttributes"]/*' />
     [NativeTypeName("WORD")]
     public ushort wAttributes;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.srWindow"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.srWindow"]/*' />
     public SMALL_RECT srWindow;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.dwMaximumWindowSize"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.dwMaximumWindowSize"]/*' />
     public COORD dwMaximumWindowSize;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.wPopupAttributes"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.wPopupAttributes"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPopupAttributes;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.bFullscreenSupported"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.bFullscreenSupported"]/*' />
     public BOOL bFullscreenSupported;
-    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.ColorTable"]/*'/>
+
+    /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.ColorTable"]/*' />
     [NativeTypeName("COLORREF[16]")]
     public _ColorTable_e__FixedBuffer ColorTable;
-    /// <include file='_ColorTable_e__FixedBuffer.xml' path='doc/member[@name="_ColorTable_e__FixedBuffer"]/*'/>
+
+    /// <include file='_ColorTable_e__FixedBuffer.xml' path='doc/member[@name="_ColorTable_e__FixedBuffer"]/*' />
     public partial struct _ColorTable_e__FixedBuffer
     {
         public COLORREF e0;
@@ -51,6 +63,7 @@ public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
         public COLORREF e13;
         public COLORREF e14;
         public COLORREF e15;
+
         [UnscopedRef]
         public ref COLORREF this[int index]
         {

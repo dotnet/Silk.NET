@@ -1,42 +1,61 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID"]/*'/>
+
+/// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID"]/*' />
 public enum WS_LISTENER_PROPERTY_ID
 {
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_LISTEN_BACKLOG"]/*'/>
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_LISTEN_BACKLOG"]/*' />
     WS_LISTENER_PROPERTY_LISTEN_BACKLOG = 0,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_IP_VERSION"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_IP_VERSION"]/*' />
     WS_LISTENER_PROPERTY_IP_VERSION = 1,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_STATE"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_STATE"]/*' />
     WS_LISTENER_PROPERTY_STATE = 2,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_ASYNC_CALLBACK_MODEL"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_ASYNC_CALLBACK_MODEL"]/*' />
     WS_LISTENER_PROPERTY_ASYNC_CALLBACK_MODEL = 3,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CHANNEL_TYPE"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CHANNEL_TYPE"]/*' />
     WS_LISTENER_PROPERTY_CHANNEL_TYPE = 4,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CHANNEL_BINDING"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CHANNEL_BINDING"]/*' />
     WS_LISTENER_PROPERTY_CHANNEL_BINDING = 5,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CONNECT_TIMEOUT"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CONNECT_TIMEOUT"]/*' />
     WS_LISTENER_PROPERTY_CONNECT_TIMEOUT = 6,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_IS_MULTICAST"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_IS_MULTICAST"]/*' />
     WS_LISTENER_PROPERTY_IS_MULTICAST = 7,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_MULTICAST_INTERFACES"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_MULTICAST_INTERFACES"]/*' />
     WS_LISTENER_PROPERTY_MULTICAST_INTERFACES = 8,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_MULTICAST_LOOPBACK"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_MULTICAST_LOOPBACK"]/*' />
     WS_LISTENER_PROPERTY_MULTICAST_LOOPBACK = 9,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CLOSE_TIMEOUT"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CLOSE_TIMEOUT"]/*' />
     WS_LISTENER_PROPERTY_CLOSE_TIMEOUT = 10,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS"]/*' />
     WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS = 11,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS"]/*' />
     WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS = 12,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CUSTOM_LISTENER_CALLBACKS"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CUSTOM_LISTENER_CALLBACKS"]/*' />
     WS_LISTENER_PROPERTY_CUSTOM_LISTENER_CALLBACKS = 13,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CUSTOM_LISTENER_PARAMETERS"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CUSTOM_LISTENER_PARAMETERS"]/*' />
     WS_LISTENER_PROPERTY_CUSTOM_LISTENER_PARAMETERS = 14,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CUSTOM_LISTENER_INSTANCE"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_CUSTOM_LISTENER_INSTANCE"]/*' />
     WS_LISTENER_PROPERTY_CUSTOM_LISTENER_INSTANCE = 15,
-    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_DISALLOWED_USER_AGENT"]/*'/>
+
+    /// <include file='WS_LISTENER_PROPERTY_ID.xml' path='doc/member[@name="WS_LISTENER_PROPERTY_ID.WS_LISTENER_PROPERTY_DISALLOWED_USER_AGENT"]/*' />
     WS_LISTENER_PROPERTY_DISALLOWED_USER_AGENT = 16,
 }

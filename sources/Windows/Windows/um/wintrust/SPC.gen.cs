@@ -1,9 +1,12 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 
 namespace Silk.NET.Windows;
+
 public static unsafe partial class SPC
 {
     [NativeTypeName("#define SPC_COMMON_NAME_OBJID szOID_COMMON_NAME")]
@@ -116,10 +119,13 @@ public static unsafe partial class SPC
 
     [NativeTypeName("#define SPC_UUID_LENGTH 16")]
     public const int SPC_UUID_LENGTH = 16;
+
     [NativeTypeName("#define SPC_URL_LINK_CHOICE 1")]
     public const int SPC_URL_LINK_CHOICE = 1;
+
     [NativeTypeName("#define SPC_MONIKER_LINK_CHOICE 2")]
     public const int SPC_MONIKER_LINK_CHOICE = 2;
+
     [NativeTypeName("#define SPC_FILE_LINK_CHOICE 3")]
     public const int SPC_FILE_LINK_CHOICE = 3;
 }

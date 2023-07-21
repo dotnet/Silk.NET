@@ -1,20 +1,27 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.DirectX;
-/// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY"]/*'/>
+
+/// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY"]/*' />
 public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
 {
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum"]/*' />
     public float expansionMinimum;
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum"]/*'/>
+
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum"]/*' />
     public float expansionMaximum;
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum"]/*'/>
+
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum"]/*' />
     public float compressionMaximum;
+
     public uint _bitfield;
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority"]/*'/>
+
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority"]/*' />
     [NativeTypeName("UINT32 : 8")]
     public uint expansionPriority
     {
@@ -31,7 +38,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority"]/*' />
     [NativeTypeName("UINT32 : 8")]
     public uint compressionPriority
     {
@@ -48,7 +55,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint allowResidualExpansion
     {
@@ -65,7 +72,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint allowResidualCompression
     {
@@ -82,7 +89,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint applyToLeadingEdge
     {
@@ -99,7 +106,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint applyToTrailingEdge
     {
@@ -116,7 +123,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
-    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.reserved"]/*'/>
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.reserved"]/*' />
     [NativeTypeName("UINT32 : 12")]
     public uint reserved
     {

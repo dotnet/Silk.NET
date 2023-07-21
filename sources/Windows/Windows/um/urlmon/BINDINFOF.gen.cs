@@ -1,15 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 
 namespace Silk.NET.Windows;
-/// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF"]/*'/>
+
+/// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF"]/*' />
 [Flags]
 public enum BINDINFOF
 {
-    /// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF.BINDINFOF_URLENCODESTGMEDDATA"]/*'/>
+    /// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF.BINDINFOF_URLENCODESTGMEDDATA"]/*' />
     BINDINFOF_URLENCODESTGMEDDATA = 0x1,
-    /// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF.BINDINFOF_URLENCODEDEXTRAINFO"]/*'/>
+
+    /// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF.BINDINFOF_URLENCODEDEXTRAINFO"]/*' />
     BINDINFOF_URLENCODEDEXTRAINFO = 0x2,
 }

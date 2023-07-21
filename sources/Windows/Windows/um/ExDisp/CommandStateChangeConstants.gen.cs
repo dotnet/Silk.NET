@@ -1,14 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/ExDisp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants"]/*'/>
+
+/// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants"]/*' />
 public enum CommandStateChangeConstants
 {
-    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_UPDATECOMMANDS"]/*'/>
+    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_UPDATECOMMANDS"]/*' />
     CSC_UPDATECOMMANDS = unchecked((int)(0xffffffff)),
-    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_NAVIGATEFORWARD"]/*'/>
+
+    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_NAVIGATEFORWARD"]/*' />
     CSC_NAVIGATEFORWARD = 0x1,
-    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_NAVIGATEBACK"]/*'/>
+
+    /// <include file='CommandStateChangeConstants.xml' path='doc/member[@name="CommandStateChangeConstants.CSC_NAVIGATEBACK"]/*' />
     CSC_NAVIGATEBACK = 0x2,
 }

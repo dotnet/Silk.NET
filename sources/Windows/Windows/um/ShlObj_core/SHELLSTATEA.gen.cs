@@ -1,16 +1,20 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA"]/*'/>
+
+/// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHELLSTATEA
 {
     public BOOL _bitfield1;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowAllObjects"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowAllObjects"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowAllObjects
     {
@@ -27,7 +31,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowExtensions"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowExtensions"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowExtensions
     {
@@ -44,7 +48,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fNoConfirmRecycle"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fNoConfirmRecycle"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNoConfirmRecycle
     {
@@ -61,7 +65,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowSysFiles"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowSysFiles"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowSysFiles
     {
@@ -78,7 +82,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowCompColor"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowCompColor"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowCompColor
     {
@@ -95,7 +99,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fDoubleClickInWebView"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fDoubleClickInWebView"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDoubleClickInWebView
     {
@@ -112,7 +116,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fDesktopHTML"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fDesktopHTML"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDesktopHTML
     {
@@ -129,7 +133,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fWin95Classic"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fWin95Classic"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fWin95Classic
     {
@@ -146,7 +150,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fDontPrettyPath"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fDontPrettyPath"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDontPrettyPath
     {
@@ -163,7 +167,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowAttribCol"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowAttribCol"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowAttribCol
     {
@@ -180,7 +184,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fMapNetDrvBtn"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fMapNetDrvBtn"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fMapNetDrvBtn
     {
@@ -197,7 +201,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowInfoTip"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowInfoTip"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowInfoTip
     {
@@ -214,7 +218,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fHideIcons"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fHideIcons"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fHideIcons
     {
@@ -231,7 +235,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fWebView"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fWebView"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fWebView
     {
@@ -248,7 +252,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fFilter"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fFilter"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fFilter
     {
@@ -265,7 +269,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowSuperHidden"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowSuperHidden"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowSuperHidden
     {
@@ -282,7 +286,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fNoNetCrawling"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fNoNetCrawling"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNoNetCrawling
     {
@@ -299,22 +303,29 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.dwWin95Unused"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.dwWin95Unused"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwWin95Unused;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.uWin95Unused"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.uWin95Unused"]/*' />
     public uint uWin95Unused;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.lParamSort"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.lParamSort"]/*' />
     [NativeTypeName("LONG")]
     public int lParamSort;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.iSortDirection"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.iSortDirection"]/*' />
     public int iSortDirection;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.version"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.version"]/*' />
     public uint version;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.uNotUsed"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.uNotUsed"]/*' />
     public uint uNotUsed;
+
     public BOOL _bitfield2;
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fSepProcess"]/*'/>
+
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fSepProcess"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fSepProcess
     {
@@ -331,7 +342,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fStartPanelOn"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fStartPanelOn"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fStartPanelOn
     {
@@ -348,7 +359,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowStartPage"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowStartPage"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowStartPage
     {
@@ -365,7 +376,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fAutoCheckSelect"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fAutoCheckSelect"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fAutoCheckSelect
     {
@@ -382,7 +393,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fIconsOnly"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fIconsOnly"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fIconsOnly
     {
@@ -399,7 +410,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowTypeOverlay"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowTypeOverlay"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowTypeOverlay
     {
@@ -416,7 +427,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowStatusBar"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fShowStatusBar"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowStatusBar
     {
@@ -433,7 +444,7 @@ public partial struct SHELLSTATEA
         }
     }
 
-    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fSpareFlags"]/*'/>
+    /// <include file='SHELLSTATEA.xml' path='doc/member[@name="SHELLSTATEA.fSpareFlags"]/*' />
     [NativeTypeName("uint : 9")]
     public uint fSpareFlags
     {

@@ -1,28 +1,25 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/windows.graphics.holographic.interop.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
+
 public static partial class IID
 {
     public static ref readonly Guid IID_IHolographicCameraInterop
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xC5,
-                0xF9,
-                0xC1,
-                0x7C,
-                0x02,
-                0x6D,
-                0xFA,
-                0x41,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC5, 0xF9, 0xC1, 0x7C,
+                0x02, 0x6D,
+                0xFA, 0x41,
                 0x95,
                 0x00,
                 0xE1,
@@ -32,6 +29,7 @@ public static partial class IID
                 0x8E,
                 0xEC
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -41,16 +39,10 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xD6,
-                0x68,
-                0x5B,
-                0xF7,
-                0xFD,
-                0xD1,
-                0x07,
-                0x47,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD6, 0x68, 0x5B, 0xF7,
+                0xFD, 0xD1,
+                0x07, 0x47,
                 0xAA,
                 0xFD,
                 0xFA,
@@ -60,6 +52,7 @@ public static partial class IID
                 0x3B,
                 0xF4
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -69,16 +62,10 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xF0,
-                0x88,
-                0xA6,
-                0xCF,
-                0x9E,
-                0x63,
-                0x47,
-                0x4A,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF0, 0x88, 0xA6, 0xCF,
+                0x9E, 0x63,
+                0x47, 0x4A,
                 0x83,
                 0xD7,
                 0x6B,
@@ -88,6 +75,7 @@ public static partial class IID
                 0x7F,
                 0xED
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -97,16 +85,10 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[]
-            {
-                0xCD,
-                0x49,
-                0xF5,
-                0xE5,
-                0x09,
-                0xC9,
-                0x4F,
-                0x44,
+            ReadOnlySpan<byte> data = new byte[] {
+                0xCD, 0x49, 0xF5, 0xE5,
+                0x09, 0xC9,
+                0x4F, 0x44,
                 0x88,
                 0x09,
                 0x7C,
@@ -116,6 +98,7 @@ public static partial class IID
                 0x89,
                 0x20
             };
+
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

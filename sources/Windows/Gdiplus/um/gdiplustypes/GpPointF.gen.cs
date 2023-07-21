@@ -1,18 +1,23 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='GpPointF.xml' path='doc/member[@name="GpPointF"]/*'/>
+
+/// <include file='GpPointF.xml' path='doc/member[@name="GpPointF"]/*' />
 public unsafe partial struct GpPointF
 {
-    /// <include file='GpPointF.xml' path='doc/member[@name="GpPointF.X"]/*'/>
+    /// <include file='GpPointF.xml' path='doc/member[@name="GpPointF.X"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float X;
-    /// <include file='GpPointF.xml' path='doc/member[@name="GpPointF.Y"]/*'/>
+
+    /// <include file='GpPointF.xml' path='doc/member[@name="GpPointF.Y"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Y;
+
     public GpPointF()
     {
         X = Y = 0.0f;

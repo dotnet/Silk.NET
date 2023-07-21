@@ -1,89 +1,130 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.Versioning;
 
 namespace Silk.NET.Windows;
-/// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT"]/*'/>
+
+/// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT"]/*' />
 [SupportedOSPlatform("windows6.2")]
 public enum MF_MEDIA_ENGINE_EVENT
 {
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADSTART"]/*'/>
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADSTART"]/*' />
     MF_MEDIA_ENGINE_EVENT_LOADSTART = 1,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PROGRESS"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PROGRESS"]/*' />
     MF_MEDIA_ENGINE_EVENT_PROGRESS = 2,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUSPEND"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUSPEND"]/*' />
     MF_MEDIA_ENGINE_EVENT_SUSPEND = 3,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ABORT"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ABORT"]/*' />
     MF_MEDIA_ENGINE_EVENT_ABORT = 4,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ERROR"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ERROR"]/*' />
     MF_MEDIA_ENGINE_EVENT_ERROR = 5,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_EMPTIED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_EMPTIED"]/*' />
     MF_MEDIA_ENGINE_EVENT_EMPTIED = 6,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_STALLED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_STALLED"]/*' />
     MF_MEDIA_ENGINE_EVENT_STALLED = 7,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PLAY"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PLAY"]/*' />
     MF_MEDIA_ENGINE_EVENT_PLAY = 8,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PAUSE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PAUSE"]/*' />
     MF_MEDIA_ENGINE_EVENT_PAUSE = 9,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA"]/*' />
     MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA = 10,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADEDDATA"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADEDDATA"]/*' />
     MF_MEDIA_ENGINE_EVENT_LOADEDDATA = 11,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_WAITING"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_WAITING"]/*' />
     MF_MEDIA_ENGINE_EVENT_WAITING = 12,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PLAYING"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PLAYING"]/*' />
     MF_MEDIA_ENGINE_EVENT_PLAYING = 13,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_CANPLAY"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_CANPLAY"]/*' />
     MF_MEDIA_ENGINE_EVENT_CANPLAY = 14,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH"]/*' />
     MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH = 15,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SEEKING"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SEEKING"]/*' />
     MF_MEDIA_ENGINE_EVENT_SEEKING = 16,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SEEKED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SEEKED"]/*' />
     MF_MEDIA_ENGINE_EVENT_SEEKED = 17,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TIMEUPDATE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TIMEUPDATE"]/*' />
     MF_MEDIA_ENGINE_EVENT_TIMEUPDATE = 18,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ENDED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ENDED"]/*' />
     MF_MEDIA_ENGINE_EVENT_ENDED = 19,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RATECHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RATECHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_RATECHANGE = 20,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE = 21,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE = 22,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FORMATCHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FORMATCHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_FORMATCHANGE = 1000,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PURGEQUEUEDEVENTS"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PURGEQUEUEDEVENTS"]/*' />
     MF_MEDIA_ENGINE_EVENT_PURGEQUEUEDEVENTS = 1001,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER"]/*' />
     MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER = 1002,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BALANCECHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BALANCECHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_BALANCECHANGE = 1003,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DOWNLOADCOMPLETE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DOWNLOADCOMPLETE"]/*' />
     MF_MEDIA_ENGINE_EVENT_DOWNLOADCOMPLETE = 1004,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BUFFERINGSTARTED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BUFFERINGSTARTED"]/*' />
     MF_MEDIA_ENGINE_EVENT_BUFFERINGSTARTED = 1005,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BUFFERINGENDED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BUFFERINGENDED"]/*' />
     MF_MEDIA_ENGINE_EVENT_BUFFERINGENDED = 1006,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED"]/*' />
     MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED = 1007,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE"]/*' />
     MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE = 1008,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FIRSTFRAMEREADY"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FIRSTFRAMEREADY"]/*' />
     MF_MEDIA_ENGINE_EVENT_FIRSTFRAMEREADY = 1009,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TRACKSCHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TRACKSCHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_TRACKSCHANGE = 1010,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_OPMINFO"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_OPMINFO"]/*' />
     MF_MEDIA_ENGINE_EVENT_OPMINFO = 1011,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RESOURCELOST"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RESOURCELOST"]/*' />
     MF_MEDIA_ENGINE_EVENT_RESOURCELOST = 1012,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED"]/*' />
     MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED = 1013,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR"]/*' />
     MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR = 1014,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED"]/*' />
     MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED = 1015,
-    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_AUDIOENDPOINTCHANGE"]/*'/>
+
+    /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_AUDIOENDPOINTCHANGE"]/*' />
     MF_MEDIA_ENGINE_EVENT_AUDIOENDPOINTCHANGE = 1016,
 }

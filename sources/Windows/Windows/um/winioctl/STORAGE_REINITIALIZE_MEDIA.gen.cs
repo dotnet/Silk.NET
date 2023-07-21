@@ -1,29 +1,37 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA"]/*'/>
+
+/// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA"]/*' />
 public partial struct STORAGE_REINITIALIZE_MEDIA
 {
-    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.Version"]/*'/>
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
-    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.Size"]/*'/>
+
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
-    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.TimeoutInSeconds"]/*'/>
+
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.TimeoutInSeconds"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeoutInSeconds;
-    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.SanitizeOption"]/*'/>
+
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.SanitizeOption"]/*' />
     [NativeTypeName("__AnonymousRecord_winioctl_L5502_C5")]
     public _SanitizeOption_e__Struct SanitizeOption;
-    /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct"]/*'/>
+
+    /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct"]/*' />
     public partial struct _SanitizeOption_e__Struct
     {
         public uint _bitfield;
-        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.SanitizeMethod"]/*'/>
+
+        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.SanitizeMethod"]/*' />
         [NativeTypeName("DWORD : 4")]
         public uint SanitizeMethod
         {
@@ -40,7 +48,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
             }
         }
 
-        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.DisallowUnrestrictedSanitizeExit"]/*'/>
+        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.DisallowUnrestrictedSanitizeExit"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint DisallowUnrestrictedSanitizeExit
         {
@@ -57,7 +65,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
             }
         }
 
-        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.Reserved"]/*'/>
+        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 27")]
         public uint Reserved
         {

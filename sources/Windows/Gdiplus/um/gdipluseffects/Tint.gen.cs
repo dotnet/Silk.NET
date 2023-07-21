@@ -1,15 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdipluseffects.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='Tint.xml' path='doc/member[@name="Tint"]/*'/>
+
+/// <include file='Tint.xml' path='doc/member[@name="Tint"]/*' />
 [NativeTypeName("struct Tint : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct Tint
 {
     public Effect Base;
+
     public int GetAuxDataSize()
     {
         return Base.GetAuxDataSize();
@@ -47,6 +51,7 @@ public unsafe partial struct Tint
     public GpStatus SetParameters([NativeTypeName("const TintParams *")] TintParams* parameters)
     {
         uint size = 8;
+
         return Base.SetParameters(unchecked((void*)(parameters)), size);
     }
 

@@ -1,12 +1,16 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='NMLVDISPINFOW.xml' path='doc/member[@name="NMLVDISPINFOW"]/*'/>
+
+/// <include file='NMLVDISPINFOW.xml' path='doc/member[@name="NMLVDISPINFOW"]/*' />
 public partial struct NMLVDISPINFOW
 {
-    /// <include file='NMLVDISPINFOW.xml' path='doc/member[@name="NMLVDISPINFOW.hdr"]/*'/>
+    /// <include file='NMLVDISPINFOW.xml' path='doc/member[@name="NMLVDISPINFOW.hdr"]/*' />
     public NMHDR hdr;
-    /// <include file='NMLVDISPINFOW.xml' path='doc/member[@name="NMLVDISPINFOW.item"]/*'/>
+
+    /// <include file='NMLVDISPINFOW.xml' path='doc/member[@name="NMLVDISPINFOW.item"]/*' />
     public LVITEMW item;
 }

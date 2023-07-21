@@ -1,14 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType"]/*'/>
+
+/// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType"]/*' />
 public enum eAVEncMPVQScaleType
 {
-    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Auto"]/*'/>
+    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Auto"]/*' />
     eAVEncMPVQScaleType_Auto = 0,
-    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Linear"]/*'/>
+
+    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_Linear"]/*' />
     eAVEncMPVQScaleType_Linear = 1,
-    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_NonLinear"]/*'/>
+
+    /// <include file='eAVEncMPVQScaleType.xml' path='doc/member[@name="eAVEncMPVQScaleType.eAVEncMPVQScaleType_NonLinear"]/*' />
     eAVEncMPVQScaleType_NonLinear = 2,
 }

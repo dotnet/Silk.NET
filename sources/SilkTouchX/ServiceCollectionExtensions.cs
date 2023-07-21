@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
 using SilkTouchX.Mods;
+using SilkTouchX.Workspace;
 
 namespace SilkTouchX;
 
@@ -84,6 +85,8 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<ClangScraper>();
         services.AddSingleton<ResponseFileHandler>();
+        services.AddSingleton<IWorkspaceSolutionProvider, WorkspaceSolutionProvider>();
+        services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
         if (OperatingSystem.IsWindows())
         {
             services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();

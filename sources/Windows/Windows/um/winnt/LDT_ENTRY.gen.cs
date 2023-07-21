@@ -1,52 +1,64 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY"]/*'/>
+
+/// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY"]/*' />
 public partial struct LDT_ENTRY
 {
-    /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.LimitLow"]/*'/>
+    /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.LimitLow"]/*' />
     [NativeTypeName("WORD")]
     public ushort LimitLow;
-    /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.BaseLow"]/*'/>
+
+    /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.BaseLow"]/*' />
     [NativeTypeName("WORD")]
     public ushort BaseLow;
-    /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.HighWord"]/*'/>
+
+    /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.HighWord"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L8337_C5")]
     public _HighWord_e__Union HighWord;
-    /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union"]/*'/>
+
+    /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _HighWord_e__Union
     {
-        /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bytes"]/*'/>
+        /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bytes"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L8338_C9")]
         public _Bytes_e__Struct Bytes;
-        /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bits"]/*'/>
+
+        /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bits"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L8344_C9")]
         public _Bits_e__Struct Bits;
-        /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct"]/*'/>
+
+        /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct"]/*' />
         public partial struct _Bytes_e__Struct
         {
-            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.BaseMid"]/*'/>
+            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.BaseMid"]/*' />
             public byte BaseMid;
-            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.Flags1"]/*'/>
+
+            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.Flags1"]/*' />
             public byte Flags1;
-            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.Flags2"]/*'/>
+
+            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.Flags2"]/*' />
             public byte Flags2;
-            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.BaseHi"]/*'/>
+
+            /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct.BaseHi"]/*' />
             public byte BaseHi;
         }
 
-        /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct"]/*'/>
+        /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct"]/*' />
         public partial struct _Bits_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.BaseMid"]/*'/>
+
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.BaseMid"]/*' />
             [NativeTypeName("DWORD : 8")]
             public uint BaseMid
             {
@@ -63,7 +75,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Type"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Type"]/*' />
             [NativeTypeName("DWORD : 5")]
             public uint Type
             {
@@ -80,7 +92,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Dpl"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Dpl"]/*' />
             [NativeTypeName("DWORD : 2")]
             public uint Dpl
             {
@@ -97,7 +109,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Pres"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Pres"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint Pres
             {
@@ -114,7 +126,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.LimitHi"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.LimitHi"]/*' />
             [NativeTypeName("DWORD : 4")]
             public uint LimitHi
             {
@@ -131,7 +143,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Sys"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Sys"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint Sys
             {
@@ -148,7 +160,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Reserved_0"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Reserved_0"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint Reserved_0
             {
@@ -165,7 +177,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Default_Big"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Default_Big"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint Default_Big
             {
@@ -182,7 +194,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Granularity"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.Granularity"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint Granularity
             {
@@ -199,7 +211,7 @@ public partial struct LDT_ENTRY
                 }
             }
 
-            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.BaseHi"]/*'/>
+            /// <include file='_Bits_e__Struct.xml' path='doc/member[@name="_Bits_e__Struct.BaseHi"]/*' />
             [NativeTypeName("DWORD : 8")]
             public uint BaseHi
             {

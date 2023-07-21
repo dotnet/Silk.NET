@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming"]/*'/>
+
+/// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming"]/*' />
 public enum styleMsContentZooming
 {
-    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingNotSet"]/*'/>
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingNotSet"]/*' />
     styleMsContentZoomingNotSet = 0,
-    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingNone"]/*'/>
+
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingNone"]/*' />
     styleMsContentZoomingNone = 1,
-    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingZoom"]/*'/>
+
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZoomingZoom"]/*' />
     styleMsContentZoomingZoom = 2,
-    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZooming_Max"]/*'/>
+
+    /// <include file='styleMsContentZooming.xml' path='doc/member[@name="styleMsContentZooming.styleMsContentZooming_Max"]/*' />
     styleMsContentZooming_Max = 2147483647,
 }

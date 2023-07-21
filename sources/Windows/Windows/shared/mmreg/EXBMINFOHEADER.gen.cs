@@ -1,16 +1,20 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER"]/*'/>
+
+/// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct EXBMINFOHEADER
 {
-    /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER.bmi"]/*'/>
+    /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER.bmi"]/*' />
     public BITMAPINFOHEADER bmi;
-    /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER.biExtDataOffset"]/*'/>
+
+    /// <include file='EXBMINFOHEADER.xml' path='doc/member[@name="EXBMINFOHEADER.biExtDataOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint biExtDataOffset;
 }

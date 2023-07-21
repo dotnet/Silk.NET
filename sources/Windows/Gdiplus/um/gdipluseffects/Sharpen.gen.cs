@@ -1,15 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdipluseffects.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='Sharpen.xml' path='doc/member[@name="Sharpen"]/*'/>
+
+/// <include file='Sharpen.xml' path='doc/member[@name="Sharpen"]/*' />
 [NativeTypeName("struct Sharpen : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct Sharpen
 {
     public Effect Base;
+
     public int GetAuxDataSize()
     {
         return Base.GetAuxDataSize();
@@ -47,6 +51,7 @@ public unsafe partial struct Sharpen
     public GpStatus SetParameters([NativeTypeName("const SharpenParams *")] SharpenParams* parameters)
     {
         uint size = 8;
+
         return Base.SetParameters(parameters, size);
     }
 

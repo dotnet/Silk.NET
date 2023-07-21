@@ -1,16 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsiQuery.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION"]/*'/>
+
+/// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION"]/*' />
 public enum MSICONDITION
 {
-    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_FALSE"]/*'/>
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_FALSE"]/*' />
     MSICONDITION_FALSE = 0,
-    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_TRUE"]/*'/>
+
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_TRUE"]/*' />
     MSICONDITION_TRUE = 1,
-    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_NONE"]/*'/>
+
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_NONE"]/*' />
     MSICONDITION_NONE = 2,
-    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_ERROR"]/*'/>
+
+    /// <include file='MSICONDITION.xml' path='doc/member[@name="MSICONDITION.MSICONDITION_ERROR"]/*' />
     MSICONDITION_ERROR = 3,
 }

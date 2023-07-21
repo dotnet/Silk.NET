@@ -1,23 +1,28 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE"]/*'/>
+
+/// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
 {
-    /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.Anonymous"]/*'/>
+    /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("__AnonymousRecord_winioctl_L2183_C5")]
     public _Anonymous_e__Struct Anonymous;
-    /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.AsUlong"]/*'/>
+
+    /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.AsUlong"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint AsUlong;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*' />
     public uint RetainAsynEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,7 +38,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*' />
     public uint LogSpecificField
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,7 +54,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,11 +70,12 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint RetainAsynEvent
         {
@@ -86,7 +92,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*' />
         [NativeTypeName("DWORD : 4")]
         public uint LogSpecificField
         {
@@ -103,7 +109,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 27")]
         public uint Reserved
         {

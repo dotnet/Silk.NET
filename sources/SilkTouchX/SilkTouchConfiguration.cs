@@ -11,6 +11,11 @@ public class SilkTouchConfiguration
     public required string[] ClangSharpResponseFiles { get; set; }
 
     /// <summary>
+    /// The solution in which the given source and test roots are contained.
+    /// </summary>
+    public required string Solution { get; set; }
+
+    /// <summary>
     /// The root output directory as defined in the response files.
     /// </summary>
     public string? InputSourceRoot { get; set; }

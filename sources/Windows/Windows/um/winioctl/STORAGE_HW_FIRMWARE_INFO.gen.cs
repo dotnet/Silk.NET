@@ -1,23 +1,29 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO"]/*'/>
+
+/// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO"]/*' />
 public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
 {
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Version"]/*'/>
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Size"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
+
     public byte _bitfield;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.SupportUpgrade"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.SupportUpgrade"]/*' />
     [NativeTypeName("byte : 1")]
     public byte SupportUpgrade
     {
@@ -34,7 +40,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
         }
     }
 
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Reserved0"]/*'/>
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Reserved0"]/*' />
     [NativeTypeName("byte : 7")]
     public byte Reserved0
     {
@@ -51,31 +57,40 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
         }
     }
 
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.SlotCount"]/*'/>
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.SlotCount"]/*' />
     public byte SlotCount;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ActiveSlot"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ActiveSlot"]/*' />
     public byte ActiveSlot;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.PendingActivateSlot"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.PendingActivateSlot"]/*' />
     public byte PendingActivateSlot;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.FirmwareShared"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.FirmwareShared"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte FirmwareShared;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Reserved"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Reserved"]/*' />
     [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ImagePayloadAlignment"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ImagePayloadAlignment"]/*' />
     [NativeTypeName("DWORD")]
     public uint ImagePayloadAlignment;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ImagePayloadMaxSize"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ImagePayloadMaxSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint ImagePayloadMaxSize;
-    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Slot"]/*'/>
+
+    /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Slot"]/*' />
     [NativeTypeName("STORAGE_HW_FIRMWARE_SLOT_INFO[1]")]
     public _Slot_e__FixedBuffer Slot;
-    /// <include file='_Slot_e__FixedBuffer.xml' path='doc/member[@name="_Slot_e__FixedBuffer"]/*'/>
+
+    /// <include file='_Slot_e__FixedBuffer.xml' path='doc/member[@name="_Slot_e__FixedBuffer"]/*' />
     public partial struct _Slot_e__FixedBuffer
     {
         public STORAGE_HW_FIRMWARE_SLOT_INFO e0;
+
         [UnscopedRef]
         public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
         {

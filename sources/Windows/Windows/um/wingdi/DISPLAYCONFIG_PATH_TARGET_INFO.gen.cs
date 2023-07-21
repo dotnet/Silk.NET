@@ -1,38 +1,51 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO"]/*'/>
+
+/// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO"]/*' />
 public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
 {
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.adapterId"]/*'/>
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.adapterId"]/*' />
     public LUID adapterId;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.id"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.id"]/*' />
     [NativeTypeName("UINT32")]
     public uint id;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.Anonymous"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_wingdi_L2977_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.outputTechnology"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.outputTechnology"]/*' />
     public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.rotation"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.rotation"]/*' />
     public DISPLAYCONFIG_ROTATION rotation;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.scaling"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.scaling"]/*' />
     public DISPLAYCONFIG_SCALING scaling;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.refreshRate"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.refreshRate"]/*' />
     public DISPLAYCONFIG_RATIONAL refreshRate;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.scanLineOrdering"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.scanLineOrdering"]/*' />
     public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.targetAvailable"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.targetAvailable"]/*' />
     public BOOL targetAvailable;
-    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.statusFlags"]/*'/>
+
+    /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.statusFlags"]/*' />
     [NativeTypeName("UINT32")]
     public uint statusFlags;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.modeInfoIdx"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.modeInfoIdx"]/*' />
     [UnscopedRef]
     public ref uint modeInfoIdx
     {
@@ -43,7 +56,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*' />
     public uint desktopModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,7 +72,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*' />
     public uint targetModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,23 +88,26 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.modeInfoIdx"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.modeInfoIdx"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT32")]
         public uint modeInfoIdx;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_wingdi_L2980_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*' />
             [NativeTypeName("UINT32 : 16")]
             public uint desktopModeInfoIdx
             {
@@ -108,7 +124,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*' />
             [NativeTypeName("UINT32 : 16")]
             public uint targetModeInfoIdx
             {

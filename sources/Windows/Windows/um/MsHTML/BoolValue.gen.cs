@@ -1,14 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='BoolValue.xml' path='doc/member[@name="BoolValue"]/*'/>
+
+/// <include file='BoolValue.xml' path='doc/member[@name="BoolValue"]/*' />
 public enum BoolValue
 {
-    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.True"]/*'/>
+    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.True"]/*' />
     True = 1,
-    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.False"]/*'/>
+
+    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.False"]/*' />
     False = 0,
-    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.BoolValue_Max"]/*'/>
+
+    /// <include file='BoolValue.xml' path='doc/member[@name="BoolValue.BoolValue_Max"]/*' />
     BoolValue_Max = 2147483647,
 }

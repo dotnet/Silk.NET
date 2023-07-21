@@ -1,17 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY"]/*'/>
+
+/// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY"]/*' />
 public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
 {
-    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.FuncStart"]/*'/>
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.FuncStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint FuncStart;
+
     public uint _bitfield;
-    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.PrologLen"]/*'/>
+
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.PrologLen"]/*' />
     [NativeTypeName("DWORD : 8")]
     public uint PrologLen
     {
@@ -28,7 +33,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
         }
     }
 
-    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.FuncLen"]/*'/>
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.FuncLen"]/*' />
     [NativeTypeName("DWORD : 22")]
     public uint FuncLen
     {
@@ -45,7 +50,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
         }
     }
 
-    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.ThirtyTwoBit"]/*'/>
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.ThirtyTwoBit"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint ThirtyTwoBit
     {
@@ -62,7 +67,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
         }
     }
 
-    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.ExceptionFlag"]/*'/>
+    /// <include file='IMAGE_CE_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_CE_RUNTIME_FUNCTION_ENTRY.ExceptionFlag"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint ExceptionFlag
     {

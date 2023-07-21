@@ -1,32 +1,40 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
 namespace Silk.NET.Windows;
-/// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION"]/*'/>
+
+/// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION"]/*' />
 [SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
 {
-    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.AllocationBase"]/*'/>
+    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.AllocationBase"]/*' />
     [NativeTypeName("PVOID")]
     public void* AllocationBase;
-    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.AllocationProtect"]/*'/>
+
+    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.AllocationProtect"]/*' />
     [NativeTypeName("ULONG")]
     public uint AllocationProtect;
-    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.Anonymous"]/*'/>
+
+    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_memoryapi_L876_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.RegionSize"]/*'/>
+
+    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.RegionSize"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint RegionSize;
-    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.CommitSize"]/*'/>
+
+    /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.CommitSize"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint CommitSize;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     [UnscopedRef]
     public ref uint Flags
     {
@@ -37,7 +45,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Private"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Private"]/*' />
     public uint Private
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,7 +61,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedDataFile"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedDataFile"]/*' />
     public uint MappedDataFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,7 +77,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedImage"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedImage"]/*' />
     public uint MappedImage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,7 +93,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPageFile"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPageFile"]/*' />
     public uint MappedPageFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,7 +109,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPhysical"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPhysical"]/*' />
     public uint MappedPhysical
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -117,7 +125,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DirectMapped"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DirectMapped"]/*' />
     public uint DirectMapped
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -133,7 +141,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -149,23 +157,26 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG")]
         public uint Flags;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_memoryapi_L879_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Private"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Private"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint Private
             {
@@ -182,7 +193,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedDataFile"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedDataFile"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint MappedDataFile
             {
@@ -199,7 +210,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedImage"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedImage"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint MappedImage
             {
@@ -216,7 +227,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPageFile"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPageFile"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint MappedPageFile
             {
@@ -233,7 +244,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPhysical"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPhysical"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint MappedPhysical
             {
@@ -250,7 +261,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DirectMapped"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DirectMapped"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint DirectMapped
             {
@@ -267,7 +278,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
             [NativeTypeName("ULONG : 26")]
             public uint Reserved
             {

@@ -1,19 +1,23 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT"]/*'/>
+
+/// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT"]/*' />
 public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {
-    /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT.Anonymous"]/*'/>
+    /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_winioctl_L13470_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />
     [UnscopedRef]
     public ref uint BufferLength
     {
@@ -24,7 +28,7 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
     [UnscopedRef]
     public Span<byte> Buffer
     {
@@ -35,15 +39,16 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint BufferLength;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[1]")]
         public fixed byte Buffer[1];

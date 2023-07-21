@@ -1,18 +1,22 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE"]/*'/>
+
+/// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE"]/*' />
 public partial struct HIDP_KEYBOARD_MODIFIER_STATE
 {
-    /// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE.Anonymous"]/*'/>
+    /// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_hidpi_L1937_C4")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*'/>
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
     public uint LeftControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -28,7 +32,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftShift"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftShift"]/*' />
     public uint LeftShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,7 +48,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftAlt"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftAlt"]/*' />
     public uint LeftAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,7 +64,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftGUI"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftGUI"]/*' />
     public uint LeftGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,7 +80,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightControl"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightControl"]/*' />
     public uint RightControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,7 +96,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightShift"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightShift"]/*' />
     public uint RightShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -108,7 +112,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightAlt"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightAlt"]/*' />
     public uint RightAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -124,7 +128,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RigthGUI"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RigthGUI"]/*' />
     public uint RigthGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -140,7 +144,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CapsLock"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CapsLock"]/*' />
     public uint CapsLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -156,7 +160,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ScollLock"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ScollLock"]/*' />
     public uint ScollLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -172,7 +176,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NumLock"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NumLock"]/*' />
     public uint NumLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -188,7 +192,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -204,7 +208,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*' />
     [UnscopedRef]
     public ref uint ul
     {
@@ -215,23 +219,26 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_hidpi_L1938_C7")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG")]
         public uint ul;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint LeftControl
             {
@@ -248,7 +255,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftShift"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftShift"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint LeftShift
             {
@@ -265,7 +272,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftAlt"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftAlt"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint LeftAlt
             {
@@ -282,7 +289,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftGUI"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftGUI"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint LeftGUI
             {
@@ -299,7 +306,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightControl"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightControl"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint RightControl
             {
@@ -316,7 +323,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightShift"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightShift"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint RightShift
             {
@@ -333,7 +340,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightAlt"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightAlt"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint RightAlt
             {
@@ -350,7 +357,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RigthGUI"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RigthGUI"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint RigthGUI
             {
@@ -367,7 +374,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CapsLock"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CapsLock"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint CapsLock
             {
@@ -384,7 +391,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ScollLock"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ScollLock"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint ScollLock
             {
@@ -401,7 +408,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NumLock"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NumLock"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint NumLock
             {
@@ -418,7 +425,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
             [NativeTypeName("ULONG : 21")]
             public uint Reserved
             {

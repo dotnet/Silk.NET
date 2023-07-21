@@ -1,34 +1,43 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Windows;
-/// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD"]/*'/>
+
+/// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD"]/*' />
 public unsafe partial struct EXCEPTION_RECORD
 {
-    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionCode"]/*'/>
+    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExceptionCode;
-    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionFlags"]/*'/>
+
+    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExceptionFlags;
-    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionRecord"]/*'/>
+
+    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionRecord"]/*' />
     [NativeTypeName("struct _EXCEPTION_RECORD *")]
     public EXCEPTION_RECORD* ExceptionRecord;
-    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionAddress"]/*'/>
+
+    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionAddress"]/*' />
     [NativeTypeName("PVOID")]
     public void* ExceptionAddress;
-    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.NumberParameters"]/*'/>
+
+    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.NumberParameters"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberParameters;
-    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionInformation"]/*'/>
+
+    /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionInformation"]/*' />
     [NativeTypeName("ULONG_PTR[15]")]
     public _ExceptionInformation_e__FixedBuffer ExceptionInformation;
-    /// <include file='_ExceptionInformation_e__FixedBuffer.xml' path='doc/member[@name="_ExceptionInformation_e__FixedBuffer"]/*'/>
+
+    /// <include file='_ExceptionInformation_e__FixedBuffer.xml' path='doc/member[@name="_ExceptionInformation_e__FixedBuffer"]/*' />
     public partial struct _ExceptionInformation_e__FixedBuffer
     {
         public nuint e0;
@@ -46,6 +55,7 @@ public unsafe partial struct EXCEPTION_RECORD
         public nuint e12;
         public nuint e13;
         public nuint e14;
+
         [UnscopedRef]
         public ref nuint this[int index]
         {

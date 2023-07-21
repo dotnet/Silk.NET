@@ -1,14 +1,19 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection"]/*'/>
+
+/// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection"]/*' />
 public enum htmlDirection
 {
-    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirectionForward"]/*'/>
+    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirectionForward"]/*' />
     htmlDirectionForward = 99999,
-    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirectionBackward"]/*'/>
+
+    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirectionBackward"]/*' />
     htmlDirectionBackward = -99999,
-    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirection_Max"]/*'/>
+
+    /// <include file='htmlDirection.xml' path='doc/member[@name="htmlDirection.htmlDirection_Max"]/*' />
     htmlDirection_Max = 2147483647,
 }

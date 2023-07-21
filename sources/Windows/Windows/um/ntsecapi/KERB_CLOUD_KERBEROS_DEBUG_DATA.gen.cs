@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA"]/*'/>
+
+/// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA"]/*' />
 public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
 {
     public uint _bitfield;
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.EnabledByPolicy"]/*'/>
+
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.EnabledByPolicy"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint EnabledByPolicy
     {
@@ -25,7 +29,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.AsRepCallbackPresent"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.AsRepCallbackPresent"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint AsRepCallbackPresent
     {
@@ -42,7 +46,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.AsRepCallbackUsed"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.AsRepCallbackUsed"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint AsRepCallbackUsed
     {
@@ -59,7 +63,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.CloudReferralTgtAvailable"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.CloudReferralTgtAvailable"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint CloudReferralTgtAvailable
     {
@@ -76,7 +80,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.SpnOracleConfigured"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.SpnOracleConfigured"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint SpnOracleConfigured
     {
@@ -93,7 +97,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.KdcProxyPresent"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.KdcProxyPresent"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint KdcProxyPresent
     {
@@ -110,7 +114,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.PublicKeyCredsPresent"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.PublicKeyCredsPresent"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint PublicKeyCredsPresent
     {
@@ -127,7 +131,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.PasswordKeysPresent"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.PasswordKeysPresent"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint PasswordKeysPresent
     {
@@ -144,7 +148,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.PasswordPresent"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.PasswordPresent"]/*' />
     [NativeTypeName("unsigned int : 1")]
     public uint PasswordPresent
     {
@@ -161,7 +165,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
         }
     }
 
-    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.AsRepSourceCred"]/*'/>
+    /// <include file='KERB_CLOUD_KERBEROS_DEBUG_DATA.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_DATA.AsRepSourceCred"]/*' />
     [NativeTypeName("unsigned int : 8")]
     public uint AsRepSourceCred
     {

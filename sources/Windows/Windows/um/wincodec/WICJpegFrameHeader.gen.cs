@@ -1,27 +1,37 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.Windows;
-/// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader"]/*'/>
+
+/// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader"]/*' />
 public partial struct WICJpegFrameHeader
 {
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.Width"]/*'/>
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.Width"]/*' />
     public uint Width;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.Height"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.Height"]/*' />
     public uint Height;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.TransferMatrix"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.TransferMatrix"]/*' />
     public WICJpegTransferMatrix TransferMatrix;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.ScanType"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.ScanType"]/*' />
     public WICJpegScanType ScanType;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.cComponents"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.cComponents"]/*' />
     public uint cComponents;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.ComponentIdentifiers"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.ComponentIdentifiers"]/*' />
     [NativeTypeName("DWORD")]
     public uint ComponentIdentifiers;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.SampleFactors"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.SampleFactors"]/*' />
     [NativeTypeName("DWORD")]
     public uint SampleFactors;
-    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.QuantizationTableIndices"]/*'/>
+
+    /// <include file='WICJpegFrameHeader.xml' path='doc/member[@name="WICJpegFrameHeader.QuantizationTableIndices"]/*' />
     [NativeTypeName("DWORD")]
     public uint QuantizationTableIndices;
 }

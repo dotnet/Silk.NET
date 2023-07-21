@@ -1,24 +1,31 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using Silk.NET.Windows;
 
 namespace Silk.NET.Gdiplus;
-/// <include file='GpRectF.xml' path='doc/member[@name="GpRectF"]/*'/>
+
+/// <include file='GpRectF.xml' path='doc/member[@name="GpRectF"]/*' />
 public unsafe partial struct GpRectF
 {
-    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.X"]/*'/>
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.X"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float X;
-    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Y"]/*'/>
+
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Y"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Y;
-    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Width"]/*'/>
+
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Width"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Width;
-    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Height"]/*'/>
+
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Height"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Height;
+
     public GpRectF()
     {
         X = Y = Width = Height = 0.0f;
@@ -44,7 +51,7 @@ public unsafe partial struct GpRectF
     public GpRectF* Clone()
     {
         return cxx_new<GpRectF>(sizeof(GpRectF));
-        = new GpRectF(X, Y, Width, Height)}
+         = new GpRectF(X, Y, Width, Height)    }
 
     public void GetLocation([NativeTypeName("Gdiplus::PointF *")] GpPointF* point)
     {
@@ -139,6 +146,7 @@ public unsafe partial struct GpRectF
         float bottom = (((a->GetBottom()) < (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
         float left = (((a->GetLeft()) > (b->GetLeft())) ? (a->GetLeft()) : (b->GetLeft()));
         float top = (((a->GetTop()) > (b->GetTop())) ? (a->GetTop()) : (b->GetTop()));
+
         c->X = left;
         c->Y = top;
         c->Width = right - left;
@@ -157,6 +165,7 @@ public unsafe partial struct GpRectF
         float bottom = (((a->GetBottom()) > (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
         float left = (((a->GetLeft()) < (b->GetLeft())) ? (a->GetLeft()) : (b->GetLeft()));
         float top = (((a->GetTop()) < (b->GetTop())) ? (a->GetTop()) : (b->GetTop()));
+
         c->X = left;
         c->Y = top;
         c->Width = right - left;

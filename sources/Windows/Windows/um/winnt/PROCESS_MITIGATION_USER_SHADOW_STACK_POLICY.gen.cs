@@ -1,20 +1,24 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
 namespace Silk.NET.Windows;
-/// <include file='PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY"]/*'/>
+
+/// <include file='PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
 {
-    /// <include file='PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.Anonymous"]/*'/>
+    /// <include file='PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L12790_C5")]
     public _Anonymous_e__Union Anonymous;
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     [UnscopedRef]
     public ref uint Flags
     {
@@ -25,7 +29,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStack"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStack"]/*' />
     public uint EnableUserShadowStack
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,7 +45,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditUserShadowStack"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditUserShadowStack"]/*' />
     public uint AuditUserShadowStack
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,7 +61,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidation"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidation"]/*' />
     public uint SetContextIpValidation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -73,7 +77,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditSetContextIpValidation"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditSetContextIpValidation"]/*' />
     public uint AuditSetContextIpValidation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -89,7 +93,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStackStrictMode"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStackStrictMode"]/*' />
     public uint EnableUserShadowStackStrictMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,7 +109,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinaries"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinaries"]/*' />
     public uint BlockNonCetBinaries
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -121,7 +125,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinariesNonEhcont"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinariesNonEhcont"]/*' />
     public uint BlockNonCetBinariesNonEhcont
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -137,7 +141,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditBlockNonCetBinaries"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditBlockNonCetBinaries"]/*' />
     public uint AuditBlockNonCetBinaries
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -153,7 +157,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CetDynamicApisOutOfProcOnly"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CetDynamicApisOutOfProcOnly"]/*' />
     public uint CetDynamicApisOutOfProcOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -169,7 +173,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidationRelaxedMode"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidationRelaxedMode"]/*' />
     public uint SetContextIpValidationRelaxedMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -185,7 +189,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*'/>
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -201,23 +205,26 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*'/>
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*'/>
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*'/>
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("__AnonymousRecord_winnt_L12792_C9")]
         public _Anonymous_e__Struct Anonymous;
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*'/>
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStack"]/*'/>
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStack"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableUserShadowStack
             {
@@ -234,7 +241,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditUserShadowStack"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditUserShadowStack"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditUserShadowStack
             {
@@ -251,7 +258,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidation"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint SetContextIpValidation
             {
@@ -268,7 +275,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditSetContextIpValidation"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditSetContextIpValidation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditSetContextIpValidation
             {
@@ -285,7 +292,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStackStrictMode"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStackStrictMode"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint EnableUserShadowStackStrictMode
             {
@@ -302,7 +309,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinaries"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinaries"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint BlockNonCetBinaries
             {
@@ -319,7 +326,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinariesNonEhcont"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinariesNonEhcont"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint BlockNonCetBinariesNonEhcont
             {
@@ -336,7 +343,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditBlockNonCetBinaries"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditBlockNonCetBinaries"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditBlockNonCetBinaries
             {
@@ -353,7 +360,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CetDynamicApisOutOfProcOnly"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CetDynamicApisOutOfProcOnly"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint CetDynamicApisOutOfProcOnly
             {
@@ -370,7 +377,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidationRelaxedMode"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidationRelaxedMode"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint SetContextIpValidationRelaxedMode
             {
@@ -387,7 +394,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*'/>
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 22")]
             public uint ReservedFlags
             {

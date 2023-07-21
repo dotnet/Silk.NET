@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SilkTouchX.Clang;
@@ -47,11 +48,21 @@ public interface IMod
     /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
     /// <param name="syntax">The generated output from ClangSharp (or the previous mod).</param>
     /// <returns>
-    /// The modified response files to be either passed to the next mod or output from the generator if this is the last
+    /// The modified syntax nodes to be either passed to the next mod or output from the generator if this is the last
     /// mod.
     /// </returns>
     Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
         => Task.FromResult(syntax);
+
+    /// <summary>
+    /// Runs before SilkTouch is going to output the MSBuild workspace. The generated documents have already been added,
+    /// so this gives the opportunity for the mod to modify the workspace further.
+    /// </summary>
+    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
+    /// <param name="workspace">The generated output from scraping.</param>
+    /// <returns>The modified MSBuild solution either to be output or passed to the next mod if applicable.</returns>
+    Task<GeneratorWorkspace> BeforeOutputAsync(string key, GeneratorWorkspace workspace)
+        => Task.FromResult(workspace);
 
     /// <summary>
     /// Runs after all generation activities have completed. Gives each mod an opportunity to clean up its state for

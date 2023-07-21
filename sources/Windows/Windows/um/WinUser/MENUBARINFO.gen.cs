@@ -1,23 +1,31 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO"]/*'/>
+
+/// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO"]/*' />
 public partial struct MENUBARINFO
 {
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.cbSize"]/*'/>
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.rcBar"]/*'/>
+
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.rcBar"]/*' />
     public RECT rcBar;
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.hMenu"]/*'/>
+
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.hMenu"]/*' />
     public HMENU hMenu;
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.hwndMenu"]/*'/>
+
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.hwndMenu"]/*' />
     public HWND hwndMenu;
+
     public BOOL _bitfield;
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fBarFocused"]/*'/>
+
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fBarFocused"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fBarFocused
     {
@@ -34,7 +42,7 @@ public partial struct MENUBARINFO
         }
     }
 
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fFocused"]/*'/>
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fFocused"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fFocused
     {
@@ -51,7 +59,7 @@ public partial struct MENUBARINFO
         }
     }
 
-    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fUnused"]/*'/>
+    /// <include file='MENUBARINFO.xml' path='doc/member[@name="MENUBARINFO.fUnused"]/*' />
     [NativeTypeName("BOOL : 30")]
     public BOOL fUnused
     {

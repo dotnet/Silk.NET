@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/dinput.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 namespace Silk.NET.DirectX;
-/// <include file='DIRAMPFORCE.xml' path='doc/member[@name="DIRAMPFORCE"]/*'/>
+
+/// <include file='DIRAMPFORCE.xml' path='doc/member[@name="DIRAMPFORCE"]/*' />
 public partial struct DIRAMPFORCE
 {
-    /// <include file='DIRAMPFORCE.xml' path='doc/member[@name="DIRAMPFORCE.lStart"]/*'/>
+    /// <include file='DIRAMPFORCE.xml' path='doc/member[@name="DIRAMPFORCE.lStart"]/*' />
     [NativeTypeName("LONG")]
     public int lStart;
-    /// <include file='DIRAMPFORCE.xml' path='doc/member[@name="DIRAMPFORCE.lEnd"]/*'/>
+
+    /// <include file='DIRAMPFORCE.xml' path='doc/member[@name="DIRAMPFORCE.lEnd"]/*' />
     [NativeTypeName("LONG")]
     public int lEnd;
 }

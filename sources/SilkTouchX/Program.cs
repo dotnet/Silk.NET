@@ -4,6 +4,7 @@ using System.CommandLine;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Build.Locator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -31,6 +32,9 @@ rootCommand.SetHandler(async ctx => {
     cb = ctx.ParseResult.GetValueForArgument(configs)
         .Aggregate(cb, (current, file) => current.AddJsonFile(Path.GetFullPath(file)));
     var config = cb.Build();
+
+    // Register MSBuild
+    MSBuildLocator.RegisterDefaults();
 
     var sp = new ServiceCollection()
         .AddLogging(builder => {

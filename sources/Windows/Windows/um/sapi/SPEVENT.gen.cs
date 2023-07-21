@@ -1,14 +1,18 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Windows;
-/// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT"]/*'/>
+
+/// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT"]/*' />
 public partial struct SPEVENT
 {
     public int _bitfield;
-    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.eEventId"]/*'/>
+
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.eEventId"]/*' />
     [NativeTypeName("SPEVENTENUM : 16")]
     public SPEVENTENUM eEventId
     {
@@ -25,7 +29,7 @@ public partial struct SPEVENT
         }
     }
 
-    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.elParamType"]/*'/>
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.elParamType"]/*' />
     [NativeTypeName("SPEVENTLPARAMTYPE : 16")]
     public SPEVENTLPARAMTYPE elParamType
     {
@@ -42,14 +46,17 @@ public partial struct SPEVENT
         }
     }
 
-    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.ulStreamNum"]/*'/>
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.ulStreamNum"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulStreamNum;
-    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.ullAudioStreamOffset"]/*'/>
+
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.ullAudioStreamOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullAudioStreamOffset;
-    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.wParam"]/*'/>
+
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.wParam"]/*' />
     public WPARAM wParam;
-    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.lParam"]/*'/>
+
+    /// <include file='SPEVENT.xml' path='doc/member[@name="SPEVENT.lParam"]/*' />
     public LPARAM lParam;
 }
