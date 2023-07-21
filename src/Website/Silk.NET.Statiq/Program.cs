@@ -46,7 +46,8 @@ public static class Program
                                 new NormalizedPath("_theme/lib").GetRelativePath(x.Path.GetRelativeInputPath())
                             )
                         ),
-                        new CopyFiles("images/**/*")
+                        new CopyFiles("images/**/*"),
+                        new CopyFiles("nuget/**/index.json")
                     )
             )
             .BuildPipeline

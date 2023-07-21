@@ -12,9 +12,8 @@ on:
     # all branches
     paths-ignore:
       - 'documentation/**'
-  merge_group:
-      types: [checks_requested]
-      
+permissions:
+  packages: write
 jobs:
   Build:
     # This will:
@@ -79,9 +78,9 @@ jobs:
     - name: Sign Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       run: .\build.cmd SignPackages --akv-certificate ${{ secrets.AKV_CERTIFICATE }} --akv-client-id ${{ secrets.AKV_CLIENT_ID }} --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }} --akv-tenant ${{ secrets.AKV_TENANT }} --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
-    - name: Push to Azure Experimental Feed
+    - name: Push to Experimental Feed
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
-      run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
+      run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
     - name: Push to GitHub Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
       run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
