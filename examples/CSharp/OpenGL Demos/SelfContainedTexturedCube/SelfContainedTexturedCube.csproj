@@ -5,6 +5,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     
     <ItemGroup><!--<ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
@@ -14,6 +15,12 @@
       <PackageReference Include="Silk.NET.OpenGL" Version="2.17.1" />
     
       <PackageReference Include="Silk.NET.Windowing" Version="2.17.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="Content/**/*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
 </Project>
