@@ -11,7 +11,7 @@
 
 <?# Warning "The experimental feed is not recommended for use for anything beyond playing around with the new features. We don't officially support these builds as they may be unstable, and should not be used in production." /?>
 
-<?# Note "Changes in the experimental feed happen rapidly. We recommend joining the [Silk.NET Discord server](https://discord.gg/DTHHXRt) so that you can keep up with development." /?>
+<?# Info "Changes in the experimental feed happen rapidly. We recommend joining the [Silk.NET Discord server](https://discord.gg/DTHHXRt) so that you can keep up with development." /?>
 
 ## Configure your project
 
