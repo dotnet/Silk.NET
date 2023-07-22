@@ -1246,6 +1246,7 @@ static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(this System.Numerics.Pl
 static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(this System.Numerics.Quaternion value) -> Silk.NET.Maths.Quaternion<float>
 static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(this System.Numerics.Vector2 value) -> Silk.NET.Maths.Vector2D<float>
 static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(this System.Numerics.Vector3 value) -> Silk.NET.Maths.Vector3D<float>
+static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(this System.Numerics.Vector4 value) -> Silk.NET.Maths.Vector4D<float>
 static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(Silk.NET.Maths.Vector4D<float> value) -> System.Numerics.Vector4
 static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Matrix3X2<float> value) -> System.Numerics.Matrix3x2
 static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Matrix4X4<float> value) -> System.Numerics.Matrix4x4
@@ -1253,6 +1254,7 @@ static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Plan
 static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Quaternion<float> value) -> System.Numerics.Quaternion
 static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Vector2D<float> value) -> System.Numerics.Vector2
 static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Vector3D<float> value) -> System.Numerics.Vector3
+static Silk.NET.Maths.SystemNumericsExtensions.ToSystem(this Silk.NET.Maths.Vector4D<float> value) -> System.Numerics.Vector4
 static Silk.NET.Maths.Vector2D.Abs<T>(Silk.NET.Maths.Vector2D<T> value) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.Add<T>(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.Clamp<T>(Silk.NET.Maths.Vector2D<T> value1, Silk.NET.Maths.Vector2D<T> min, Silk.NET.Maths.Vector2D<T> max) -> Silk.NET.Maths.Vector2D<T>
