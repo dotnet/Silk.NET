@@ -1,18 +1,50 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
+
 namespace Silk.NET.Core
 {
     /// <summary>
     /// A 32-bit boolean.
     /// </summary>
-    public readonly struct Bool32
+    public readonly struct Bool32 : IEquatable<Bool32>, IEquatable<uint>, IEquatable<bool>
     {
         /// <summary>
         /// Gets the 32-bit value for this boolean.
         /// </summary>
         public uint Value { get; }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is Bool32 other)
+                return Equals(other);
+
+            return false;
+        }
+
+        /// <summary>
+        /// Compares the current <see cref="Bool32"/> to another <see cref="Bool32"/>. Returns true if they are equal.
+        /// </summary>
+        /// <param name="other">The other value.</param>
+        /// <returns>True if the current <see cref="Bool32"/> is equal to the provided <see cref="bool"/> value.</returns>
+        public bool Equals(Bool32 other) => Value == other.Value;
+
+        /// <summary>
+        /// Compares the current <see cref="Bool32"/> to a <see cref="uint"/>. Returns true if they are equal.
+        /// </summary>
+        /// <param name="other">The other value.</param>
+        /// <returns>True if the current <see cref="Bool32"/> is equal to the provided <see cref="uint"/> value.</returns>
+        public bool Equals(uint other) => Value == other;
+
+        /// <summary>
+        /// Compares the current <see cref="Bool32"/> to a <see cref="bool"/>. Returns true if they are equal.
+        /// </summary>
+        /// <param name="other">The other value.</param>
+        /// <returns>True if the current <see cref="Bool32"/> is equal to the provided <see cref="bool"/> value.</returns>
+        public bool Equals(bool other) => Value == (other ? 1U : 0U);
+
+        #region Cast operators
         /// <summary>
         /// Creates a 32-bit boolean from the given 32-bit unsigned integer.
         /// </summary>
@@ -50,6 +82,7 @@ namespace Silk.NET.Core
         /// </summary>
         /// <param name="val">The 32-bit unsigned integer value.</param>
         public static implicit operator Bool32(uint val) => new Bool32(val);
+        #endregion
 
         #region Bool32 vs Bool32 equality
         /// <summary>
@@ -76,7 +109,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="Bool32"/>.</param>
         /// <param name="right">The right-hand <see cref="bool"/>.</param>
         /// <returns></returns>
-        public static bool operator ==(Bool32 left, bool right) => left.Value == (right ? 1 : 0);
+        public static bool operator ==(Bool32 left, bool right) => left.Value == (right ? 1U : 0U);
 
         /// <summary>
         /// Compares a <see cref="Bool32"/> to a <see cref="bool"/> for inequality.
@@ -84,7 +117,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="Bool32"/>.</param>
         /// <param name="right">The right-hand <see cref="bool"/>.</param>
         /// <returns></returns>
-        public static bool operator !=(Bool32 left, bool right) => left.Value != (right ? 1 : 0);
+        public static bool operator !=(Bool32 left, bool right) => left.Value != (right ? 1U : 0U);
 
         /// <summary>
         /// Compares a <see cref="bool"/> to a <see cref="Bool32"/> for equality.
@@ -92,7 +125,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="bool"/>.</param>
         /// <param name="right">The right-hand <see cref="Bool32"/>.</param>
         /// <returns></returns>
-        public static bool operator ==(bool left, Bool32 right) => right.Value == (left ? 1 : 0);
+        public static bool operator ==(bool left, Bool32 right) => right.Value == (left ? 1U : 0U);
 
         /// <summary>
         /// Compares a <see cref="bool"/> to a <see cref="Bool32"/> for equality.
@@ -100,7 +133,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="bool"/>.</param>
         /// <param name="right">The right-hand <see cref="Bool32"/>.</param>
         /// <returns></returns>
-        public static bool operator !=(bool left, Bool32 right) => right.Value != (left ? 1 : 0);
+        public static bool operator !=(bool left, Bool32 right) => right.Value != (left ? 1U : 0U);
         #endregion
 
         #region Bool32 vs uint equality
@@ -110,7 +143,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="Bool32"/>.</param>
         /// <param name="right">The right-hand <see cref="uint"/>.</param>
         /// <returns></returns>
-        public static bool operator == (Bool32 left, uint right) => left.Value == right;
+        public static bool operator ==(Bool32 left, uint right) => left.Value == right;
 
         /// <summary>
         /// Compares a <see cref="Bool32"/> to a <see cref="uint"/> for inequality.
@@ -118,7 +151,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="Bool32"/>.</param>
         /// <param name="right">The right-hand <see cref="uint"/>.</param>
         /// <returns></returns>
-        public static bool operator != (Bool32 left, uint right) => left.Value != right;
+        public static bool operator !=(Bool32 left, uint right) => left.Value != right;
 
         /// <summary>
         /// Compares a <see cref="uint"/> to a <see cref="Bool32"/> for equality.
@@ -126,7 +159,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="uint"/>.</param>
         /// <param name="right">The right-hand <see cref="Bool32"/>.</param>
         /// <returns></returns>
-        public static bool operator == (uint left, Bool32 right) => left == right.Value;
+        public static bool operator ==(uint left, Bool32 right) => left == right.Value;
 
         /// <summary>
         /// Compares a <see cref="uint"/> to a <see cref="Bool32"/> for inequality.
@@ -134,7 +167,7 @@ namespace Silk.NET.Core
         /// <param name="left">The left-hand <see cref="uint"/>.</param>
         /// <param name="right">The right-hand <see cref="Bool32"/>.</param>
         /// <returns></returns>
-        public static bool operator != (uint left, Bool32 right) => left != right.Value;
+        public static bool operator !=(uint left, Bool32 right) => left != right.Value;
         #endregion
     }
 }
