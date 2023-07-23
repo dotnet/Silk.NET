@@ -19,15 +19,14 @@ namespace Silk.NET.Core
         /// Compares the current <see cref="Bool32"/> to another <see cref="object"/>. Returns true if they are equal.
         /// </summary>
         /// <param name="obj"></param>
-        /// <returns>True if <paramref name="obj"/> is equal to the current <see cref="Bool32"/>. 
-        /// This will always be false if <paramref name="obj"/> is not a <see cref="Bool32"/>.</returns>
-        public override bool Equals(object obj)
+        /// <returns>True if <paramref name="obj"/> is equal to the current <see cref="Bool32"/>.</returns>
+        public override bool Equals(object obj) => obj switch
         {
-            if (obj is Bool32 other)
-                return Equals(other);
-
-            return false;
-        }
+            Bool32 val => Equals(val),
+            bool val => Equals(val),
+            uint val => Equals(val),
+            _ => base.Equals(obj)
+        };
 
         /// <summary>
         /// Compares the current <see cref="Bool32"/> to another <see cref="Bool32"/>. Returns true if they are equal.
