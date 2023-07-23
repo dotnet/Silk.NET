@@ -58,9 +58,3 @@ At the time of writing, the latest version is `2.0.0-build97.0`. Now to install 
 <?# Warning "Experimental Feed builds may be deleted without warning at the Silk.NET team's discretion." /?>
 
 Now you have access to bleeding-edge experimental builds of Silk.NET. Have fun!
-
-## GitHub Packages
-
-`https://dotnet.github.io/Silk.NET/nuget/experimental/index.json` shall always track the most up-to-date anonymous-access experimental feed. However, as an alternative, GitHub Packages can be used which requires authentication.
-
-To add this to your NuGet client, use URL `https://nuget.pkg.github.com/dotnet/index.json` in the configuration described in [the GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry). The latest packages for this feed can be viewed [here](https://github.com/orgs/dotnet/packages?repo_name=Silk.NET).
