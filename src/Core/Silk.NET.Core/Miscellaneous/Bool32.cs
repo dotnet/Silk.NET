@@ -15,6 +15,12 @@ namespace Silk.NET.Core
         /// </summary>
         public uint Value { get; }
 
+        /// <summary>
+        /// Compares the current <see cref="Bool32"/> to another <see cref="object"/>. Returns true if they are equal.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>True if <paramref name="obj"/> is equal to the current <see cref="Bool32"/>. 
+        /// This will always be false if <paramref name="obj"/> is not a <see cref="Bool32"/>.</returns>
         public override bool Equals(object obj)
         {
             if (obj is Bool32 other)
