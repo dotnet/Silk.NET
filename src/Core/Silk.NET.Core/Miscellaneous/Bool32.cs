@@ -16,6 +16,15 @@ namespace Silk.NET.Core
         public uint Value { get; }
 
         /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns> A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+
+        /// <summary>
         /// Compares the current <see cref="Bool32"/> to another <see cref="object"/>. Returns true if they are equal.
         /// </summary>
         /// <param name="obj"></param>
