@@ -2,11 +2,11 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>net6.0;net6.0-android</TargetFrameworks>
+        <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
-        <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
-        <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
+        <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net8.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
+        <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net8.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,7 +22,7 @@
     </ItemGroup>
     
     <!-- Android -->
-    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' != 'net8.0-android'">
         <Compile Remove="\MainActivity.cs" />
     </ItemGroup>
 </Project>

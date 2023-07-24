@@ -29,7 +29,7 @@ namespace Triangle
         
         public static GraphicsAPI API { get; set; } = GraphicsAPI.Default;
 
-#if !NET6_0
+#if !NET8_0
         // Exclude the entry point if we're running in .NET 6, as this file is
         // compiled into the TriangleNET6 project too which has its own
         // entrypoint.
@@ -103,7 +103,7 @@ namespace Triangle
                     (GLEnum.ArrayBuffer, (nuint)( _vertices.Length * sizeof(float)), vertices, GLEnum.StaticDraw);
             }
 
-#if NET6_0
+#if NET8_0
             _shader = new Shader("TriangleNET6.shader.vert", "TriangleNET6.shader.frag", _gl, typeof(Program));
 #else
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
