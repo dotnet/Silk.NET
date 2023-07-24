@@ -36,7 +36,7 @@ jobs:
     - name: Setup .NET 8.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 8.0.100
+        dotnet-version: 8.0.100-preview.6.23330.14
         include-prerelease: true
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
