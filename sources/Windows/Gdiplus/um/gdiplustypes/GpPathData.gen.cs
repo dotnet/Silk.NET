@@ -26,7 +26,4 @@ public unsafe partial struct GpPathData
         Points = null;
         Types = null;
     }
-
-    [DllImport("""", EntryPoint = "??0PathData@Gdiplus@@AEAA@AEBV01@@Z", ExactSpelling = true)]
-    private static extern GpPathData(GpPathData* pThis, [NativeTypeName("const PathData &")] GpPathData* param0);
 }

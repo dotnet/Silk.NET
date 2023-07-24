@@ -5,9 +5,13 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ClangSharp;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace SilkTouchX.Mods;
 
@@ -20,6 +24,7 @@ public class ChangeNamespace : IMod
 {
     private readonly ILogger<ChangeNamespace> _logger;
     private readonly IOptionsSnapshot<Configuration> _config;
+    private readonly Dictionary<string, (HashSet<string>, IReadOnlyList<(Regex, string)>)> _jobs = new();
 
     /// <summary>
     /// The configuration for the change namespace mod.
@@ -93,7 +98,91 @@ public class ChangeNamespace : IMod
             };
         }
 
+        _jobs[key] = (rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
+                .Concat(rsps.SelectMany(x => x.GeneratorConfiguration.WithNamespaces.Select(y => y.Value))).Distinct()
+                .ToHashSet(),
+            regexes);
         File.Delete(tmp);
         return Task.FromResult(rsps);
+    }
+
+    /// <inheritdoc />
+    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    {
+        var (ns, regexes) = _jobs[key];
+        var rewriter = new Rewriter(ns, regexes);
+        foreach (var (fName, node) in syntax.Files)
+        {
+            syntax.Files[fName] = rewriter.Visit(node);
+        }
+
+        return Task.FromResult(syntax);
+    }
+
+    /// <inheritdoc />
+    public Task AfterJobAsync(string key) => Task.FromResult(_jobs.Remove(key));
+
+    private class Rewriter : CSharpSyntaxRewriter
+    {
+        private readonly HashSet<string> _allNamespaces;
+        private readonly IReadOnlyList<(Regex Regex, string Replacement)> _regexes;
+        private readonly List<string> _usingsToAdd = new();
+
+        public Rewriter(HashSet<string> allNamespaces, IReadOnlyList<(Regex Regex, string Replacement)> regexes)
+            => (_allNamespaces, _regexes) = (allNamespaces, regexes);
+
+        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
+        {
+            _usingsToAdd.Clear();
+            return base.VisitCompilationUnit(node) switch {
+                CompilationUnitSyntax syntax => syntax.AddUsings(_usingsToAdd
+                    .Select(x => UsingDirective(NamespaceIntoIdentifierName(x)))
+                    .Where(x => syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())).ToArray()),
+                { } ret => ret,
+                null => null
+            };
+        }
+
+        public override SyntaxNode? VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
+        {
+            var oldNs = node.Name.ToString();
+            var newNs = ModUtils.GroupedRegexReplace(_regexes, oldNs);
+            if (oldNs != newNs && _allNamespaces.Contains(oldNs))
+            {
+                _usingsToAdd.Add(oldNs);
+            }
+            return base.VisitNamespaceDeclaration(node) switch {
+                NamespaceDeclarationSyntax syntax => syntax.WithName(NamespaceIntoIdentifierName(newNs)),
+                { } ret => ret,
+                null => null
+            };
+        }
+
+        public override SyntaxNode? VisitFileScopedNamespaceDeclaration(FileScopedNamespaceDeclarationSyntax node)
+        {
+            var oldNs = node.Name.ToString();
+            var newNs = ModUtils.GroupedRegexReplace(_regexes, oldNs);
+            if (oldNs != newNs && _allNamespaces.Contains(oldNs))
+            {
+                _usingsToAdd.Add(oldNs);
+            }
+            return base.VisitFileScopedNamespaceDeclaration(node) switch {
+                FileScopedNamespaceDeclarationSyntax syntax => syntax.WithName(NamespaceIntoIdentifierName(newNs)),
+                { } ret => ret,
+                null => null
+            };
+        }
+
+        private static NameSyntax NamespaceIntoIdentifierName(ReadOnlySpan<char> ns)
+        {
+            var idx = ns.LastIndexOf('.');
+            if (idx == -1)
+            {
+                return IdentifierName(ns.ToString());
+            }
+
+            return QualifiedName(NamespaceIntoIdentifierName(ns[..idx]),
+                IdentifierName(ns[(idx + 1)..].ToString()));
+        }
     }
 }

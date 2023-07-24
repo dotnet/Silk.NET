@@ -1,4 +1,6 @@
-﻿namespace SilkTouchX;
+﻿using System.Collections.Generic;
+
+namespace SilkTouchX;
 
 /// <summary>
 /// Represents the configuration for a single generation job in SilkTouch.
@@ -9,6 +11,12 @@ public class SilkTouchConfiguration
     /// The response files to read.
     /// </summary>
     public required string[] ClangSharpResponseFiles { get; set; }
+
+    /// <summary>
+    /// Manual overrides for ClangSharp outputs (i.e. manual tweaks of generated output) that should still flow through
+    /// the SilkTouch pipeline as if it came from ClangSharp.
+    /// </summary>
+    public Dictionary<string, string>? ManualOverrides { get; set; }
 
     /// <summary>
     /// The solution in which the given source and test roots are contained.

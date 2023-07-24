@@ -4,6 +4,12 @@
       "ClangSharpResponseFiles": [
         "../../submodules/terrafx.interop.windows/generation/**/generate.rsp"
       ],
+      "ManualOverrides": {
+        "sources/Windows/um/icm/Windows.gen.cs": "../../submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
+        "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "../../submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
+        "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "../../submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
+        "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "../../submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
+      },
       "InputSourceRoot": "../../submodules/terrafx.interop.windows/sources/Interop/Windows",
       "InputTestRoot": "../../submodules/terrafx.interop.windows/tests/Interop/Windows",
       "OutputSourceRoot": "../Windows",

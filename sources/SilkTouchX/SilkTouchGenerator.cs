@@ -117,7 +117,10 @@ public class SilkTouchGenerator
                 }
 
                 relativeKey = relativeKey.Replace('\\', '/').TrimEnd('/');
-                if (!aggregatedBindings.TryAdd(relativeKey, v))
+                if (!aggregatedBindings.TryAdd(relativeKey,
+                        job.ManualOverrides?.TryGetValue(relativeKey, out var @override) ?? false
+                            ? File.OpenRead(@override)
+                            : v))
                 {
                     _logger.LogError("Failed to add {0} - are the response file outputs conflicting?", relativeKey);
                 }

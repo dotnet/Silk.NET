@@ -3,7 +3,7 @@
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using Silk.NET.Windows;
+using TerraFX.Interop.Windows;
 
 namespace Silk.NET.Gdiplus;
 
@@ -46,12 +46,6 @@ public unsafe partial struct GpRectF
         Width = size->Width;
         Height = size->Height;
     }
-
-    [return: NativeTypeName("Gdiplus::RectF *")]
-    public GpRectF* Clone()
-    {
-        return cxx_new<GpRectF>(sizeof(GpRectF));
-         = new GpRectF(X, Y, Width, Height)    }
 
     public void GetLocation([NativeTypeName("Gdiplus::PointF *")] GpPointF* point)
     {
@@ -137,7 +131,10 @@ public unsafe partial struct GpRectF
 
     public BOOL Intersect([NativeTypeName("const RectF &")] GpRectF* rect)
     {
-        return Intersect(this, this, rect);
+        fixed (GpRectF* pThis = &this)
+        {
+            return Intersect(pThis, pThis, rect);
+        }
     }
 
     public static BOOL Intersect([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const RectF &")] GpRectF* a, [NativeTypeName("const RectF &")] GpRectF* b)
