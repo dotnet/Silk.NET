@@ -67,6 +67,7 @@ public class SilkTouchGenerator
         }
 
         // Read the response files
+        _logger.LogInformation("Reading response files for {0}, please wait...", key);
         var rsps = job.ClangSharpResponseFiles.SelectMany(file =>
                 _rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
             .ToList();
@@ -82,6 +83,7 @@ public class SilkTouchGenerator
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in _mods)
         {
+            _logger.LogInformation("Applying {0} mod to response files for {1}...", mod.GetType().Name, key);
             rsps = await mod.BeforeScrapeAsync(key, rsps);
         }
 
@@ -132,6 +134,7 @@ public class SilkTouchGenerator
         }, innerCt));
 
         // Read the bindings as syntax trees
+        _logger.LogInformation("Parsing bindings for {0}...", key);
         var syntaxTrees = aggregatedBindings.ToDictionary(kvp => kvp.Key,
             kvp => CSharpSyntaxTree.ParseText(SourceText.From(kvp.Value)).GetRoot());
         aggregatedBindings.Clear(); // GC ASAP
@@ -141,6 +144,7 @@ public class SilkTouchGenerator
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in _mods)
         {
+            _logger.LogInformation("Applying {0} mod to syntax trees for {1}...", mod.GetType().Name, key);
             bindings = await mod.AfterScrapeAsync(key, bindings);
         }
 
@@ -193,10 +197,11 @@ public class SilkTouchGenerator
         var result = await GenerateSyntaxAsync(key, job, ct);
 
         // Add syntax to workspace & apply mods
-        (string, string)? srcCsprojContents = null;
-        (string, string)? tstCsprojContents = null;
+        //(string, string)? srcCsprojContents = null;
+        //(string, string)? tstCsprojContents = null;
         (string, string)? srcDeps = null;
         (string, string)? tstDeps = null;
+        _logger.LogInformation("Loading workspace for {0}'s solution ({1})...", key, job.Solution);
         var applied = await _workspaceProvider.ApplyChangesAsync(key, async (workspace, sln) => {
             // Try and find the project for the source output
             var (_, tmpSrcProj, srcFiles) =
@@ -212,6 +217,7 @@ public class SilkTouchGenerator
             // ReSharper disable once LoopCanBeConvertedToQuery
             foreach (var mod in _mods)
             {
+                _logger.LogInformation("Applying {0} mod to workspace for {1}...", mod.GetType().Name, key);
                 genWorkspace = await mod.BeforeOutputAsync(key, genWorkspace);
             }
 
@@ -222,7 +228,7 @@ public class SilkTouchGenerator
                 srcProj = genWorkspace.SourceProject;
                 if (srcProj.FilePath is not null)
                 {
-                    srcCsprojContents = (srcProj.FilePath, await File.ReadAllTextAsync(srcProj.FilePath, ct));
+                    //srcCsprojContents = (srcProj.FilePath, await File.ReadAllTextAsync(srcProj.FilePath, ct));
                 }
             }
             if (genWorkspace is { TestProject: not null } && tstFiles is not null)
@@ -231,7 +237,7 @@ public class SilkTouchGenerator
                 tstProj = genWorkspace.TestProject;
                 if (tstProj.FilePath is not null)
                 {
-                    tstCsprojContents = (tstProj.FilePath, await File.ReadAllTextAsync(tstProj.FilePath, ct));
+                    //tstCsprojContents = (tstProj.FilePath, await File.ReadAllTextAsync(tstProj.FilePath, ct));
                 }
             }
 
@@ -252,21 +258,22 @@ public class SilkTouchGenerator
                 tstDeps = (Path.Combine(job.OutputTestRoot!, ".silktouch.d"),
                     DepsFile.Create(Enumerable.Empty<string>(), tstFiles));
             }
+            _logger.LogInformation("Applying changes to workspace for {0}, please wait...", key);
             return srcProj?.Solution ?? tstProj?.Solution ?? sln;
         });
 
         if (applied)
         {
             _logger.LogInformation("{0} processed successfully", key);
-            // HACK: Restore the original csproj contents. https://github.com/dotnet/roslyn/issues/36781
-            if (srcCsprojContents is not null)
-            {
-                await File.WriteAllTextAsync(srcCsprojContents.Value.Item1, srcCsprojContents.Value.Item2, ct);
-            }
-            if (tstCsprojContents is not null)
-            {
-                await File.WriteAllTextAsync(tstCsprojContents.Value.Item1, tstCsprojContents.Value.Item2, ct);
-            }
+            // // HACK: Restore the original csproj contents. https://github.com/dotnet/roslyn/issues/36781
+            // if (srcCsprojContents is not null)
+            // {
+            //     await File.WriteAllTextAsync(srcCsprojContents.Value.Item1, srcCsprojContents.Value.Item2, ct);
+            // }
+            // if (tstCsprojContents is not null)
+            // {
+            //     await File.WriteAllTextAsync(tstCsprojContents.Value.Item1, tstCsprojContents.Value.Item2, ct);
+            // }
             if (srcDeps is not null)
             {
                 await File.WriteAllTextAsync(srcDeps.Value.Item1, srcDeps.Value.Item2, ct);
@@ -300,6 +307,8 @@ public class SilkTouchGenerator
             return (ogSrcProj, null, Array.Empty<string>());
         }
 
+        srcRoot = Path.GetFullPath(srcRoot);
+
         // Try and find the project for the source output
         var srcProj = sln.Projects.Where(x => x.FilePath is not null).FirstOrDefault(x =>
             Path.GetDirectoryName(Path.GetFullPath(x.FilePath!))?.Replace('\\', '/').TrimEnd('/') ==
@@ -316,6 +325,7 @@ public class SilkTouchGenerator
         var file = Path.Combine(srcRoot, ".silktouch.d");
         if (File.Exists(file))
         {
+            _logger.LogTrace("Removing old documents per .silktouch.d...");
             var (_, oldFiles) = DepsFile.Parse(await File.ReadAllTextAsync(file, ct));
             oldFiles = oldFiles.Select(x => Path.GetFullPath(x, srcRoot)
                     .Replace('\\', '/'))
@@ -345,6 +355,7 @@ public class SilkTouchGenerator
             }
 
             var trimmedPath = path[label.Length..];
+            _logger.LogTrace("Adding {}...", trimmedPath);
             var doc = srcProj.AddDocument(trimmedPath, syntaxNode);
             files.Add(trimmedPath);
             srcProj = doc.Project;

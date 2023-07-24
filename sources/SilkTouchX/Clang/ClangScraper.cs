@@ -47,6 +47,7 @@ public sealed class ClangScraper
             return files[Path.ChangeExtension(fileName, ".gen.cs")] = new MemoryStream();
         }
 
+        LogConfiguration(config);
         using var pinvokeGenerator = new PInvokeGenerator(config.GeneratorConfiguration, OutputStreamFactory);
         var diagnostics = new List<Diagnostic>();
         foreach (var file in config.Files)
@@ -148,4 +149,161 @@ public sealed class ClangScraper
 
         return normalizedPath.StartsWith(normalizedBaseDirPath, StringComparison.OrdinalIgnoreCase);
     }
+
+    private void LogConfiguration(ResponseFile cfg) =>
+        _logger.LogTrace(
+            """
+                === Generator configuration ===
+                DefaultClass: {0}
+                DontUseUsingStaticsForEnums: {1}
+                ExcludeAnonymousFieldHelpers: {2}
+                ExcludeComProxies: {3}
+                ExcludeEmptyRecords: {4}
+                ExcludeEnumOperators: {5}
+                ExcludeFnptrCodegen: {6}
+                ExcludeFunctionsWithBody: {7}
+                ExcludeNIntCodegen: {8}
+                GenerateAggressiveInlining: {9}
+                GenerateCompatibleCode: {10}
+                GenerateCppAttributes: {11}
+                GenerateDocIncludes: {12}
+                GenerateExplicitVtbls: {13}
+                GenerateFileScopedNamespaces: {14}
+                GenerateGuidMember: {15}
+                GenerateHelperTypes: {16}
+                GenerateLatestCode: {17}
+                GenerateMacroBindings: {18}
+                GenerateMarkerInterfaces: {19}
+                GenerateMultipleFiles: {20}
+                GenerateNativeBitfieldAttribute: {21}
+                GenerateNativeInheritanceAttribute: {22}
+                GeneratePreviewCode: {23}
+                GenerateSetsLastSystemErrorAttribute: {24}
+                GenerateSourceLocationAttribute: {25}
+                GenerateTemplateBindings: {26}
+                GenerateTestsNUnit: {27}
+                GenerateTestsXUnit: {28}
+                GenerateTrimmableVtbls: {29}
+                GenerateUnixTypes: {30}
+                GenerateUnmanagedConstants: {31}
+                GenerateVtblIndexAttribute: {32}
+                HeaderText: {33}
+                LibraryPath: {34}
+                LogExclusions: {35}
+                LogPotentialTypedefRemappings: {36}
+                LogVisitedFiles: {37}
+                MethodPrefixToStrip: {38}
+                DefaultNamespace: {39}
+                OutputMode: {40}
+                OutputLocation: {41}
+                Language: {42}
+                LanguageStandard: {43}
+                TestOutputLocation: {44}
+                ExcludedNames:
+                    {45}
+                IncludedNames:
+                    {46}
+                NativeTypeNamesToStrip:
+                    {47}
+                ForceRemappedNames:
+                    {48}
+                TraversalNames:
+                    {49}
+                WithManualImports:
+                    {50}
+                WithSetLastErrors:
+                    {51}
+                WithSuppressGCTransitions:
+                    {52}
+                RemappedNames:
+                    {53}
+                WithAccessSpecifiers:
+                    {54}
+                WithCallConvs:
+                    {55}
+                WithClasses:
+                    {56}
+                WithGuids:
+                    {57}
+                WithLibraryPaths:
+                    {58}
+                WithNamespaces:
+                    {59}
+                WithTypes:
+                    {60}
+                WithPackings:
+                    {61}
+                WithTransparentStructs:
+                    {62}
+                WithAttributes:
+                    {63}
+                WithUsings:
+                    {64}
+                """,
+            cfg.GeneratorConfiguration.DefaultClass,
+            cfg.GeneratorConfiguration.DontUseUsingStaticsForEnums,
+            cfg.GeneratorConfiguration.ExcludeAnonymousFieldHelpers,
+            cfg.GeneratorConfiguration.ExcludeComProxies,
+            cfg.GeneratorConfiguration.ExcludeEmptyRecords,
+            cfg.GeneratorConfiguration.ExcludeEnumOperators,
+            cfg.GeneratorConfiguration.ExcludeFnptrCodegen,
+            cfg.GeneratorConfiguration.ExcludeFunctionsWithBody,
+            cfg.GeneratorConfiguration.ExcludeNIntCodegen,
+            cfg.GeneratorConfiguration.GenerateAggressiveInlining,
+            cfg.GeneratorConfiguration.GenerateCompatibleCode,
+            cfg.GeneratorConfiguration.GenerateCppAttributes,
+            cfg.GeneratorConfiguration.GenerateDocIncludes,
+            cfg.GeneratorConfiguration.GenerateExplicitVtbls,
+            cfg.GeneratorConfiguration.GenerateFileScopedNamespaces,
+            cfg.GeneratorConfiguration.GenerateGuidMember,
+            cfg.GeneratorConfiguration.GenerateHelperTypes,
+            cfg.GeneratorConfiguration.GenerateLatestCode,
+            cfg.GeneratorConfiguration.GenerateMacroBindings,
+            cfg.GeneratorConfiguration.GenerateMarkerInterfaces,
+            cfg.GeneratorConfiguration.GenerateMultipleFiles,
+            cfg.GeneratorConfiguration.GenerateNativeBitfieldAttribute,
+            cfg.GeneratorConfiguration.GenerateNativeInheritanceAttribute,
+            cfg.GeneratorConfiguration.GeneratePreviewCode,
+            cfg.GeneratorConfiguration.GenerateSetsLastSystemErrorAttribute,
+            cfg.GeneratorConfiguration.GenerateSourceLocationAttribute,
+            cfg.GeneratorConfiguration.GenerateTemplateBindings,
+            cfg.GeneratorConfiguration.GenerateTestsNUnit,
+            cfg.GeneratorConfiguration.GenerateTestsXUnit,
+            cfg.GeneratorConfiguration.GenerateTrimmableVtbls,
+            cfg.GeneratorConfiguration.GenerateUnixTypes,
+            cfg.GeneratorConfiguration.GenerateUnmanagedConstants,
+            cfg.GeneratorConfiguration.GenerateVtblIndexAttribute,
+            cfg.GeneratorConfiguration.HeaderText,
+            cfg.GeneratorConfiguration.LibraryPath,
+            cfg.GeneratorConfiguration.LogExclusions,
+            cfg.GeneratorConfiguration.LogPotentialTypedefRemappings,
+            cfg.GeneratorConfiguration.LogVisitedFiles,
+            cfg.GeneratorConfiguration.MethodPrefixToStrip,
+            cfg.GeneratorConfiguration.DefaultNamespace,
+            cfg.GeneratorConfiguration.OutputMode,
+            cfg.GeneratorConfiguration.OutputLocation,
+            cfg.GeneratorConfiguration.Language,
+            cfg.GeneratorConfiguration.LanguageStandard,
+            cfg.GeneratorConfiguration.TestOutputLocation,
+            string.Join("\n    ", cfg.GeneratorConfiguration.ExcludedNames),
+            string.Join("\n    ", cfg.GeneratorConfiguration.IncludedNames),
+            string.Join("\n    ", cfg.GeneratorConfiguration.NativeTypeNamesToStrip),
+            string.Join("\n    ", cfg.GeneratorConfiguration.ForceRemappedNames),
+            string.Join("\n    ", cfg.GeneratorConfiguration.TraversalNames),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithManualImports),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithSetLastErrors),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithSuppressGCTransitions),
+            string.Join("\n    ", cfg.GeneratorConfiguration.RemappedNames.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithAccessSpecifiers.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithCallConvs.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithClasses.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithGuids.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithLibraryPaths.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithNamespaces.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithTypes.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithPackings.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithTransparentStructs.Select(x => $"{x.Key} = {x.Value}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithAttributes.Select(x => $"{x.Key} = {string.Join(", ", x.Value)}")),
+            string.Join("\n    ", cfg.GeneratorConfiguration.WithUsings.Select(x => $"{x.Key} = {string.Join(", ", x.Value)}"))
+        );
 }

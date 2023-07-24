@@ -716,6 +716,7 @@ public class ResponseFileHandler
     /// <returns></returns>
     public ResponseFile ReadResponseFile(IReadOnlyList<string> args, string? directory = null)
     {
+        _logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
         var parseResult = new Parser(_rootCommand).Parse(args);
         var additionalArgs = parseResult.GetValueForOption(_additionalOption) ?? Array.Empty<string>();
         var configSwitches = parseResult.GetValueForOption(_configOption) ?? Array.Empty<string>();

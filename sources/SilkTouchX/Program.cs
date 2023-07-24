@@ -8,6 +8,7 @@ using Microsoft.Build.Locator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Options;
 using SilkTouchX;
 using SilkTouchX.Clang;
@@ -19,7 +20,7 @@ var configs = new Argument<string[]>("configs",
 var configOverrides = new Argument<string[]>("overrides",
     Array.Empty<string>,
     "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items.") {
-    Arity = ArgumentArity.ZeroOrMore,
+    Arity = ArgumentArity.ZeroOrMore
 };
 var rootCommand = new RootCommand { configs, configOverrides, logging };
 rootCommand.SetHandler(async ctx => {
@@ -40,6 +41,10 @@ rootCommand.SetHandler(async ctx => {
         .AddLogging(builder => {
             builder.AddSimpleConsole(opts => {
                 opts.SingleLine = true;
+                opts.ColorBehavior = Console.IsOutputRedirected
+                    ? LoggerColorBehavior.Disabled
+                    : LoggerColorBehavior.Default;
+                opts.IncludeScopes = false;
             });
             builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(logging));
         })

@@ -82,10 +82,10 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
             e.HelpKeyword);
 
     private void EventSourceOnProjectStarted(object sender, ProjectStartedEventArgs e) =>
-        _logger.LogDebug("MSBuild started processing project {0}: {1}", e.ProjectFile, e.Message);
+        _logger.LogTrace("MSBuild started processing project {0}: {1}", e.ProjectFile, e.Message);
 
     private void EventSourceOnProjectFinished(object sender, ProjectFinishedEventArgs e) =>
-        _logger.LogDebug("MSBuild finished processing project {0}: {1}", e.ProjectFile, e.Message);
+        _logger.LogTrace("MSBuild finished processing project {0}: {1}", e.ProjectFile, e.Message);
 
     private void EventSourceOnMessageRaised(object sender, BuildMessageEventArgs e) =>
         _logger.LogTrace(
@@ -98,16 +98,8 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
             e.ProjectFile);
 
     private void EventSourceOnBuildFinished(object sender, BuildFinishedEventArgs e)
-    {
-        if (e.Succeeded)
-        {
-            _logger.LogDebug("MSBuild completed successfully");
-        }
-        else
-        {
-            _logger.LogError("MSBuild failed.");
-        }
-    }
+        // was going to be a LogDebug/LogError but it seems this happens in some cases anyway?
+        => _logger.LogDebug(e.Succeeded ? "MSBuild completed successfully" : "MSBuild failed (might be okay?)");
 
     private void EventSourceOnAnyEventRaised(object sender, BuildEventArgs e) =>
         _logger.LogTrace(
