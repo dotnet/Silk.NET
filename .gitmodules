@@ -1,9 +1,12 @@
 [submodule "submodules/Silk.NET"]
-	path = submodules/Silk.NET
+	path = eng/submodules/Silk.NET
 	url = https://github.com/dotnet/Silk.NET
 [submodule "submodules/terrafx.interop.windows"]
-	path = submodules/terrafx.interop.windows
+	path = eng/submodules/terrafx.interop.windows
 	url = https://github.com/terrafx/terrafx.interop.windows
 [submodule "submodules/ClangSharp"]
-	path = submodules/ClangSharp
+	path = eng/submodules/ClangSharp
 	url = https://github.com/dotnet/ClangSharp
+[submodule "eng/submodules/glfw"]
+	path = eng/submodules/glfw
+	url = https://github.com/glfw/glfw

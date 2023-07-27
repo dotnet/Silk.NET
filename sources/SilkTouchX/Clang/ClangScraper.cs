@@ -57,6 +57,7 @@ public sealed class ClangScraper
             _logger.LogTrace("About to process {0} in accordance with the rsp from {1}",
                 filePath,
                 config.FileDirectory);
+            _logger.LogTrace("Clang command line args: {0}", string.Join(" ", config.ClangCommandLineArgs));
 
             var translationUnitError = CXTranslationUnit.TryParse(pinvokeGenerator.IndexHandle, filePath,
                 config.ClangCommandLineArgs, Array.Empty<CXUnsavedFile>(), config.TranslationFlags, out var handle);

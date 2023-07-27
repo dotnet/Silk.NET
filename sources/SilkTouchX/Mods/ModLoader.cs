@@ -15,6 +15,7 @@ public class ModLoader
     public static Type? LoadModByName(string name) => name switch
     {
         nameof(ChangeNamespace) => typeof(ChangeNamespace),
+        nameof(AddStdIncludes) => typeof(AddStdIncludes),
         _ => null
     };
 }

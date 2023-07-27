@@ -198,6 +198,11 @@ public class SilkTouchGenerator
     {
         // Generate syntax
         var result = await GenerateSyntaxAsync(key, job, ct);
+        if (result.Files.Count == 0)
+        {
+            _logger.LogWarning("Not applying workspace mods as no files were generated.");
+            return result.Diagnostics;
+        }
 
         // Add syntax to workspace & apply mods
         //(string, string)? srcCsprojContents = null;
