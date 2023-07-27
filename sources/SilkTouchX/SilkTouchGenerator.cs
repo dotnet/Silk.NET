@@ -364,7 +364,7 @@ public class SilkTouchGenerator
 
             var trimmedPath = path[label.Length..];
             _logger.LogTrace("Adding {}...", trimmedPath);
-            var doc = srcProj.AddDocument(trimmedPath, syntaxNode);
+            var doc = srcProj.AddDocument(trimmedPath, syntaxNode.NormalizeWhitespace());
             files.Add(trimmedPath);
             srcProj = doc.Project;
         }
