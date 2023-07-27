@@ -15,6 +15,7 @@ using SilkTouchX.Clang;
 using SilkTouchX.Mods;
 
 var logging = new Option<LogLevel>(new[] { "--log-level", "-l" }, () => LogLevel.Information);
+var skip = new Option<string[]>(new[] { "--skip", "-s" }, Array.Empty<string>);
 var configs = new Argument<string[]>("configs",
     "Path(s) to JSON SilkTouch configuration(s)") { Arity = ArgumentArity.OneOrMore };
 var configOverrides = new Argument<string[]>("overrides",
@@ -22,7 +23,7 @@ var configOverrides = new Argument<string[]>("overrides",
     "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items.") {
     Arity = ArgumentArity.ZeroOrMore
 };
-var rootCommand = new RootCommand { configs, configOverrides, logging };
+var rootCommand = new RootCommand { configs, configOverrides, logging, skip };
 rootCommand.SetHandler(async ctx => {
     // Create the ConfigurationBuilder with support for env var & command line overrides
     var cb = new ConfigurationBuilder()
@@ -52,12 +53,15 @@ rootCommand.SetHandler(async ctx => {
         .AddSilkTouch(config)
         .BuildServiceProvider();
 
-    await Parallel.ForEachAsync(config.GetSection("Jobs").GetChildren(), async (job, ct) => {
-        var generator = sp.GetRequiredService<SilkTouchGenerator>();
-        await generator.OutputBindingsAsync(job.Key,
-            job.Get<SilkTouchConfiguration>() ??
-            throw new InvalidOperationException("failed to bind configuration"), ct);
-    });
+    var skipped = ctx.ParseResult.GetValueForOption(skip);
+    await Parallel.ForEachAsync(
+        config.GetSection("Jobs").GetChildren().Where(x =>
+            skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true), async (job, ct) => {
+            var generator = sp.GetRequiredService<SilkTouchGenerator>();
+            await generator.OutputBindingsAsync(job.Key,
+                job.Get<SilkTouchConfiguration>() ??
+                throw new InvalidOperationException("failed to bind configuration"), ct);
+        });
 });
 
 await rootCommand.InvokeAsync(args);
