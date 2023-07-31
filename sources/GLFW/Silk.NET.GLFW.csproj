@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="RemoveDuplicateItems">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="**/*.gen.cs" />
@@ -16,6 +17,9 @@
     <Compile Include="glfw3/GLFWvidmode.gen.cs" />
     <!-- because Roslyn is a plonker -->
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Silk.NET.Core.csproj" />
+  </ItemGroup>
   <!-- again because Roslyn is a plonker -->
   <Target Name="RemoveDuplicateItems">
     <RemoveDuplicates Inputs="@(Compile)">
@@ -26,4 +30,5 @@
       <Compile Include="@(SilkDotNetCompile)" />
     </ItemGroup>
   </Target>
+  <Import Project="..\Core\Silk.NET.Core.targets" />
 </Project>

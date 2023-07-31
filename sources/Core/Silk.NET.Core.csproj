@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Silk.NET.Core.cs" />
+    <None Include="FodyWeavers.xml" />
+    <Content Include="Silk.NET.Core.cs" />
+    <Content Include="Silk.NET.Core.targets" PackagePath="build\$(TargetFramework)\$(PackageId).targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
+    <PackageReference Include="InlineIL.Fody" Version="1.7.4" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <!-- Dogfooding -->
+  <Import Project="Silk.NET.Core.targets" />
+
+</Project>
