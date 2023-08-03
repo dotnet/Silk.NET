@@ -321,4 +321,96 @@ public static unsafe class SilkMarshal
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
+
+    /// <summary>
+    /// Creates a pointer from a reference.
+    /// </summary>
+    /// <param name="ref">A reference to a <typeparamref name="T"/>.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The pointer to the given reference.</returns>
+    public static Ptr<T> AsPtrMut<T>(ref this T @ref) where T: unmanaged => new(ref @ref);
+
+    /// <summary>
+    /// Creates a pointer from a span.
+    /// </summary>
+    /// <param name="ref">A span of <typeparamref name="T"/>.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The pointer to the given span's elements.</returns>
+    public static Ptr<T> AsPtrMut<T>(this Span<T> @ref) where T : unmanaged =>
+        new(ref @ref.GetPinnableReference());
+
+    /// <summary>
+    /// Creates a pointer from a reference.
+    /// </summary>
+    /// <param name="ref">A reference to a <see cref="ConstPtr{T}"/>.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The pointer to the given reference.</returns>
+    public static Ptr2D<T> AsPtrMut2D<T>(ref this Ptr<T> @ref) where T : unmanaged => new(ref @ref);
+
+    /// <summary>
+    /// Creates a pointer from a reference.
+    /// </summary>
+    /// <param name="ref">A reference to a <see cref="ConstPtr{T}"/>.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The pointer to the given reference.</returns>
+    public static Ptr2D<T> AsPtrMut2D<T>(ref this Span<T> @ref) where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Newobj(MethodRef.Constructor(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+            TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())));
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
+    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="ConstPtr{T}"/>.
+    /// </summary>
+    /// <param name="ptr">The pointer.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The reinterpreted pointer.</returns>
+    public static Ptr<T> ConstCast<T>(ConstPtr<T> ptr) where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
+    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="ConstPtr{T}"/>.
+    /// </summary>
+    /// <param name="ptr">The pointer.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The reinterpreted pointer.</returns>
+    public static ref Ptr<T> ConstCast<T>(ref ConstPtr<T> ptr) where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
+    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="ConstPtr{T}"/>.
+    /// </summary>
+    /// <param name="ptr">The pointer.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The reinterpreted pointer.</returns>
+    public static Ptr2D<T> ConstCast<T>(ConstPtr2D<T> ptr) where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
+    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="ConstPtr{T}"/>.
+    /// </summary>
+    /// <param name="ptr">The pointer.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The reinterpreted pointer.</returns>
+    public static ref Ptr2D<T> ConstCast<T>(ref ConstPtr2D<T> ptr) where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
 }
