@@ -34,7 +34,8 @@
       "OutputTestRoot": "../../tests/GLFW",
       "Solution": "../../SilkX.sln",
       "Mods": [
-        "AddStdIncludes"
+        "AddStdIncludes",
+        "UseSilkDSL"
       ]
     }
   }

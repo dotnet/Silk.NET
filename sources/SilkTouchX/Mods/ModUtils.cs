@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using ClangSharp;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace SilkTouchX.Mods;
 
@@ -171,4 +176,50 @@ public static class ModUtils
         }
         return options;
     }
+
+    /// <summary>
+    /// Determines (naively) whether the given attribute syntax represents a <see cref="DllImportAttribute"/>.
+    /// </summary>
+    /// <param name="node">The attribute syntax.</param>
+    /// <returns>Whether it is probably a DllImport.</returns>
+    public static bool IsDllImport(this AttributeSyntax node)
+    {
+        var sep = node.Name.ToString().Split("::").Last();
+        return sep == "DllImport" || sep == "DllImportAttribute" ||
+               sep.EndsWith("System.Runtime.InteropServices.DllImport") ||
+               sep.EndsWith("System.Runtime.InteropServices.DllImportAttribute");
+    }
+
+    /// <summary>
+    /// Determines (naively) whether the given attribute syntax represents a <see cref="DllImportAttribute"/> with
+    /// <see cref="DllImportAttribute.ExactSpelling"/> set to <c>true</c>.
+    /// </summary>
+    /// <param name="node">The attribute syntax.</param>
+    /// <returns>Whether it is probably an ExactSpelling DllImport.</returns>
+    public static bool IsExactSpellingDllImport(this AttributeSyntax node) =>
+        node.IsDllImport() && (node.ArgumentList?.Arguments.Any(x =>
+            x.NameEquals?.Name.Identifier.ToString() == nameof(DllImportAttribute.ExactSpelling) &&
+            x.Expression.ToString() == "true") ?? false);
+
+    /// <summary>
+    /// Adds <see cref="MaxOpt"/> to the given <see cref="MethodDeclarationSyntax"/>'s attribute lists.
+    /// </summary>
+    /// <param name="meth">The method.</param>
+    /// <returns>The modified method.</returns>
+    public static MethodDeclarationSyntax AddMaxOpt(this MethodDeclarationSyntax meth) =>
+        meth.AddAttributeLists(MaxOpt);
+
+    /// <summary>
+    /// Gets an attribute list representing a <see cref="System.Runtime.CompilerServices.MethodImplAttribute"/> with
+    /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining"/> and
+    /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization"/> set.
+    /// </summary>
+    public static readonly AttributeListSyntax MaxOpt = AttributeList(SingletonSeparatedList(
+        Attribute(IdentifierName("MethodImpl")).WithArgumentList(AttributeArgumentList(
+            SingletonSeparatedList(AttributeArgument(BinaryExpression(
+                SyntaxKind.BitwiseOrExpression,
+                MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("MethodImplOptions"),
+                    IdentifierName("AggressiveInlining")),
+                MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("MethodImplOptions"),
+                    IdentifierName("AggressiveOptimization")))))))));
 }

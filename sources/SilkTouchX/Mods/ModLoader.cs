@@ -16,6 +16,7 @@ public class ModLoader
     {
         nameof(ChangeNamespace) => typeof(ChangeNamespace),
         nameof(AddStdIncludes) => typeof(AddStdIncludes),
+        nameof(UseSilkDSL) => typeof(UseSilkDSL),
         _ => null
     };
 }

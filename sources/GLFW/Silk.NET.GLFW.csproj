@@ -14,6 +14,19 @@
     <Compile Include="glfw3/GLFWimage.gen.cs" />
     <Compile Include="glfw3/GLFWimage.gen.cs" />
     <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
+    <Compile Include="glfw3/GLFWimage.gen.cs" />
     <Compile Include="glfw3/GLFWvidmode.gen.cs" />
     <!-- because Roslyn is a plonker -->
   </ItemGroup>
