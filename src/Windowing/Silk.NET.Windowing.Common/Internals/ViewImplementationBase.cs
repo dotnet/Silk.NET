@@ -164,6 +164,12 @@ namespace Silk.NET.Windowing.Internals
         // Game loop implementation
         public virtual void Run(Action onFrame)
         {
+#ifdef NET7_0_OR_GREATER
+            if (System.Runtime.Intrinsics.X86Base.IsSupported)
+            {
+                System.Runtime.Intrinsics.X86Base.Pause();
+            }
+#endif
             while (!IsClosing)
             {
                 onFrame();
