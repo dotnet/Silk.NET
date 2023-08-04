@@ -169,7 +169,8 @@ namespace Silk.NET.Windowing.Internals
                !VSync &&
                _renderStopwatch.Elapsed.TotalSeconds < _renderPeriod &&
                _updateStopwatch.Elapsed.TotalSeconds < _updatePeriod &&
-               !AnyInvokes(); }
+               !AnyInvokes();
+    }
 #endif
 
         // Game loop implementation
