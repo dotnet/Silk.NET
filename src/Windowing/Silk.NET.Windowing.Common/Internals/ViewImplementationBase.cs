@@ -161,7 +161,7 @@ namespace Silk.NET.Windowing.Internals
             set => _optionsCache.VideoMode = value;
         }
 
-#ifdef NET7_0_OR_GREATER
+#if NET7_0_OR_GREATER
     private bool ShouldSpin
     {
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -178,7 +178,7 @@ namespace Silk.NET.Windowing.Internals
         {
             while (!IsClosing)
             {
-#ifdef NET7_0_OR_GREATER
+#if NET7_0_OR_GREATER
                 if (System.Runtime.Intrinsics.X86.X86Base.IsSupported)
                 {
                     do
@@ -421,7 +421,7 @@ namespace Silk.NET.Windowing.Internals
             }
         }
 
-#ifdef NET7_0_OR_GREATER
+#if NET7_0_OR_GREATER
         private bool AnyInvokes()
         {
             for (var i = 0; i < _rented + completed && i < _pendingInvocations.Length; i++)
