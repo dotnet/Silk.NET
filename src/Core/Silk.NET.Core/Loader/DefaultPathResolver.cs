@@ -260,8 +260,12 @@ namespace Silk.NET.Core.Loader
                     foreach (var runtimeLib in defaultContext.RuntimeLibraries)
                         foreach (var nativeAsset in runtimeLib.GetRuntimeNativeAssets(defaultContext, rid))
                         {
+#if NETSTANDARD2_0
+                            if (Path.GetFileName(nativeAsset) == name || Path.GetFileNameWithoutExtension(nativeAsset) == name)
+#else
                             var nativeAssetSpan = nativeAsset.AsSpan();
                             if (Path.GetFileName(nativeAssetSpan) == name || Path.GetFileNameWithoutExtension(nativeAssetSpan) == name)
+#endif
                             {
                                 appLocalNativePath = Path.Combine
                                 (
