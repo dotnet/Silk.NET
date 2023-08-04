@@ -424,12 +424,13 @@ namespace Silk.NET.Windowing.Internals
 #if NET7_0_OR_GREATER
         private bool AnyInvokes()
         {
+            var completed = 0;
             for (var i = 0; i < _rented + completed && i < _pendingInvocations.Length; i++)
             {
                 ref var invocation = ref _pendingInvocations[i];
                 if (invocation.IsComplete || invocation.Delegate is null)
                 {
-                    continue;
+                    completed++;
                 }
                 else
                 {
