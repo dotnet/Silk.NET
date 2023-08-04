@@ -161,17 +161,40 @@ namespace Silk.NET.Windowing.Internals
             set => _optionsCache.VideoMode = value;
         }
 
+#ifdef NET7_0_OR_GREATER
+    private bool ShouldSpin
+    {
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        get => !IsClosing &&
+               !VSync &&
+               _renderStopwatch.Elapsed.TotalSeconds < _renderPeriod &&
+               _updateStopwatch.Elapsed.TotalSeconds < _updatePeriod &&
+               !AnyInvokes(); }
+#endif
+
         // Game loop implementation
         public virtual void Run(Action onFrame)
         {
-#ifdef NET7_0_OR_GREATER
-            if (System.Runtime.Intrinsics.X86Base.IsSupported)
-            {
-                System.Runtime.Intrinsics.X86Base.Pause();
-            }
-#endif
             while (!IsClosing)
             {
+#ifdef NET7_0_OR_GREATER
+                if (System.Runtime.Intrinsics.X86.X86Base.IsSupported)
+                {
+                    do
+                    {
+                        System.Runtime.Intrinsics.X86.X86Base.Pause();
+                    }
+                    while (ShouldSpin);
+                }
+                if (System.Runtime.Intrinsics.Arm.ArmBase.IsSupported)
+                {
+                    do
+                    {
+                        System.Runtime.Intrinsics.Arm.ArmBase.Yield();
+                    }
+                    while (ShouldSpin);
+                }
+#endif
                 onFrame();
             }
         }
@@ -396,6 +419,25 @@ namespace Silk.NET.Windowing.Internals
                 }
             }
         }
+
+#ifdef NET7_0_OR_GREATER
+        private bool AnyInvokes()
+        {
+            for (var i = 0; i < _rented + completed && i < _pendingInvocations.Length; i++)
+            {
+                ref var invocation = ref _pendingInvocations[i];
+                if (invocation.IsComplete || invocation.Delegate is null)
+                {
+                    continue;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+#endif
 
         private void EnsureArrayIsReady(int rentalIndex)
         {
