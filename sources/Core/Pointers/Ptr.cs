@@ -170,6 +170,19 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// <inheritdoc />
     public override bool Equals(object? obj) => false;
 
+    /// <inheritdoc />
+    public override string ToString()
+    {
+        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
+            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
+            typeof(T) != typeof(uint))
+        {
+            return typeof(Ptr<>).MakeGenericType(typeof(T)).ToString();
+        }
+
+        return this;
+    }
+
     /// <summary>
     /// Determines whether the given pointer points to the same location as this pointer.
     /// </summary>
