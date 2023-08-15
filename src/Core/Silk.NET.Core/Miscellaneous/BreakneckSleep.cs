@@ -54,6 +54,8 @@ public readonly struct BreakneckSleep : IDisposable
     /// </summary>
     public AccuracyMode Accuracy { get; }
 
+    private long _lastTick;
+
     /// <summary>
     /// Creates a high-resolution timer
     /// </summary>
@@ -78,12 +80,15 @@ public readonly struct BreakneckSleep : IDisposable
         }
     }
 
+    public void Start() {
+        _lastTick = Stopwatch.GetTimestamp();
+    }
+
     /// <summary>
     /// Sleeps for <see cref="Duration"/>.
     /// </summary>
     public void Sleep()
     {
-        var start = Stopwatch.GetTimestamp();
         var emergencySpin = false;
         if (OperatingSystem.IsWindows())
         {
@@ -114,8 +119,9 @@ public readonly struct BreakneckSleep : IDisposable
                 {
                     ArmBase.Yield();
                 }
-            } while (Stopwatch.GetElapsedTime(start, Stopwatch.GetTimestamp()) < Duration);
+            } while (Stopwatch.GetElapsedTime(_lastTick, Stopwatch.GetTimestamp()) < Duration);
         }
+        _lastTick = Stopwatch.GetTimestamp();
     }
 
     private static unsafe (nint Handle, bool IsHighResolution) WindowsCreate()
