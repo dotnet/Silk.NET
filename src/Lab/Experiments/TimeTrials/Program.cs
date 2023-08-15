@@ -5,11 +5,11 @@ using Silk.NET.Core;
 
 for (var fps = 60; fps < 61440; fps *= 2)
 {
-    var sleep = new BreakneckSleep(TimeSpan.FromSeconds(1 / (double)fps));
+    var sleep = new BreakneckSleep();
     for (var t = 0; t < 5; t++)
     {
         var now = Stopwatch.GetTimestamp();
-        sleep.Sleep();
+        sleep.Sleep(TimeSpan.FromSeconds(1 / (double)fps));
         Console.WriteLine
             ($"{fps} FPS = {1 / Stopwatch.GetElapsedTime(now, Stopwatch.GetTimestamp()).TotalSeconds} FPS");
     }
