@@ -1,16 +1,23 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
+using Silk.NET.Core;
 
 namespace Silk.NET.WebGPU.Platforms.MacOS;
 
-internal unsafe struct NSView
+internal struct NSView
 {
-    public readonly IntPtr NativePtr;
-    public static implicit operator IntPtr(NSView nsView) => nsView.NativePtr;
+    public readonly nint NativePtr;
 
-    public NSView(IntPtr ptr) => NativePtr = ptr;
+    public static implicit operator nint(NSView nsView)
+    {
+        return nsView.NativePtr;
+    }
+
+    public NSView(nint ptr)
+    {
+        NativePtr = ptr;
+    }
 
     public Bool8 wantsLayer
     {
@@ -18,9 +25,9 @@ internal unsafe struct NSView
         set => ObjectiveCRuntime.objc_msgSend(NativePtr, "setWantsLayer:", value);
     }
 
-    public IntPtr layer
+    public nint layer
     {
-        get => ObjectiveCRuntime.IntPtr_objc_msgSend(NativePtr, "layer");
-        set => ObjectiveCRuntime.IntPtr_objc_msgSend(NativePtr, "setLayer:", value);
+        get => ObjectiveCRuntime.ptr_objc_msgSend(NativePtr, "layer");
+        set => ObjectiveCRuntime.ptr_objc_msgSend(NativePtr, "setLayer:", value);
     }
 }
