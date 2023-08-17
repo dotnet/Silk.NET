@@ -16,7 +16,9 @@ internal struct Selector
 
     public Selector(string name)
     {
-        NativePtr = ObjectiveCRuntime.sel_registerName(SilkMarshal.StringToPtr(name));
+        var namePtr = SilkMarshal.StringToPtr(name);
+        NativePtr = ObjectiveCRuntime.sel_registerName(namePtr);
+        SilkMarshal.Free(namePtr);
     }
 
     public static implicit operator Selector(string s)

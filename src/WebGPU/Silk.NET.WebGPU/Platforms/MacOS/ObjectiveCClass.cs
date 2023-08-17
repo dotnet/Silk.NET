@@ -17,7 +17,9 @@ internal unsafe struct ObjectiveCClass
 
     public ObjectiveCClass(string name)
     {
-        NativePtr = ObjectiveCRuntime.objc_getClass(SilkMarshal.StringToPtr(name));
+        var namePtr = SilkMarshal.StringToPtr(name);
+        NativePtr = ObjectiveCRuntime.objc_getClass(namePtr);
+        SilkMarshal.Free(namePtr);
     }
 
     public T AllocInit<T>() where T : struct
