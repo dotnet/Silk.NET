@@ -26,7 +26,7 @@
         </Description>
     </PropertyGroup>
     <!-- Date/time based versioning (mainly used by natives) -->
-    <Target Name="SilkAddDateTime" Condition="'$(SilkGitDirForVersion)' != ''">
+    <Target Name="SilkAddDateTime" Condition="'$(SilkGitDirForVersion)' != '' and Exists('$(SilkGitDirForVersion)/.git')">
         <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
             <SilkGitDateTimeFormat>%25%25cI</SilkGitDateTimeFormat>
         </PropertyGroup>
