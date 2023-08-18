@@ -4,6 +4,7 @@
 #if NET7_0_OR_GREATER
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Intrinsics.Arm;
@@ -38,6 +39,22 @@ public readonly struct BreakneckSleep : IDisposable
         /// </summary>
         BusyLoopOnly
     }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static double TrustFactor(AccuracyMode mode) => mode switch
+    {
+        AccuracyMode.HighestResolution => 0.9,
+        _ => 0.75
+    };
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private static bool ShouldTrust(double fps, AccuracyMode mode) => (fps, mode) switch
+    {
+        (>= 200, AccuracyMode.HighestResolution) => false,
+        (>= 100, AccuracyMode.HighResolutionWithBusyLoop) => false,
+        (>= 50, _) => false,
+        _ => true
+    };
 
     /// <summary>
     /// The underlying handle of the timer, if any.
@@ -74,41 +91,41 @@ public readonly struct BreakneckSleep : IDisposable
     /// <summary>
     /// Sleeps for <paramref cref="duration"/>.
     /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Sleep(TimeSpan duration)
     {
         var start = Stopwatch.GetTimestamp();
-        var emergencySpin = false;
-        if (OperatingSystem.IsWindows())
+        if (ShouldTrust(1 / duration.TotalSeconds, Accuracy))
         {
-            emergencySpin = !WindowsWait(duration);
-        }
-
-        if (OperatingSystem.IsLinux())
-        {
-            LinuxWait(duration);
-        }
-
-        if (OperatingSystem.IsMacOS() || OperatingSystem.IsIOS() || OperatingSystem.IsTvOS() ||
-            OperatingSystem.IsWatchOS() || OperatingSystem.IsMacCatalyst())
-        {
-            AppleWait(duration);
-        }
-
-        if (Accuracy is AccuracyMode.HighResolutionWithBusyLoop or AccuracyMode.BusyLoopOnly || emergencySpin)
-        {
-            do
+            if (OperatingSystem.IsWindows())
             {
-                if (X86Base.IsSupported)
-                {
-                    X86Base.Pause();
-                }
+                WindowsWait(duration);
+            }
 
-                if (ArmBase.IsSupported)
-                {
-                    ArmBase.Yield();
-                }
-            } while (Stopwatch.GetElapsedTime(start, Stopwatch.GetTimestamp()) < duration);
+            if (OperatingSystem.IsLinux())
+            {
+                LinuxWait(duration);
+            }
+
+            if (OperatingSystem.IsMacOS() || OperatingSystem.IsIOS() || OperatingSystem.IsTvOS() ||
+                OperatingSystem.IsWatchOS() || OperatingSystem.IsMacCatalyst())
+            {
+                AppleWait(duration);
+            }
         }
+
+        do
+        {
+            if (X86Base.IsSupported)
+            {
+                X86Base.Pause();
+            }
+
+            if (ArmBase.IsSupported)
+            {
+                ArmBase.Yield();
+            }
+        } while (Stopwatch.GetElapsedTime(start, Stopwatch.GetTimestamp()) < duration);
     }
 
     private static unsafe (nint Handle, bool IsHighResolution) WindowsCreate()
@@ -160,7 +177,7 @@ public readonly struct BreakneckSleep : IDisposable
         (
             Accuracy == AccuracyMode.HighestResolution
                 ? duration
-                : TimeSpan.FromMicroseconds(duration.TotalMicroseconds * 0.9)
+                : TimeSpan.FromMicroseconds(duration.TotalMicroseconds * TrustFactor(Accuracy))
         );
         if (SetWaitableTimerEx(Handle, &ft, 0, null, null, null, 0) == 1)
         {
@@ -173,6 +190,8 @@ public readonly struct BreakneckSleep : IDisposable
 
     private unsafe void LinuxWait(TimeSpan duration)
     {
+        duration *= TrustFactor(AccuracyMode.HighResolutionWithBusyLoop);
+
         [DllImport("libc", EntryPoint = "nanosleep")]
         static extern int Nanosleep(Timespec* req, Timespec* rem);
 
@@ -188,7 +207,7 @@ public readonly struct BreakneckSleep : IDisposable
     {
         [DllImport("libc", EntryPoint = "usleep")]
         static extern int Usleep(uint micros);
-        _ = Usleep((uint) (duration.TotalMicroseconds * 0.9));
+        _ = Usleep((uint) (duration.TotalMicroseconds * TrustFactor(AccuracyMode.HighResolutionWithBusyLoop)));
     }
 
     public void Dispose()
