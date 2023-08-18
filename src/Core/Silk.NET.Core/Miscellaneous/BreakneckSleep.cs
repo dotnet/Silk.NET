@@ -45,11 +45,6 @@ public readonly struct BreakneckSleep : IDisposable
     public nint Handle { get; }
 
     /// <summary>
-    /// The duration of the sleep.
-    /// </summary>
-    public TimeSpan Duration { get; }
-
-    /// <summary>
     /// The accuracy of the underlying implementation. 
     /// </summary>
     public AccuracyMode Accuracy { get; }
@@ -57,10 +52,8 @@ public readonly struct BreakneckSleep : IDisposable
     /// <summary>
     /// Creates a high-resolution timer
     /// </summary>
-    /// <param name="duration"></param>
-    public BreakneckSleep(TimeSpan duration)
+    public BreakneckSleep()
     {
-        Duration = duration;
         Accuracy = AccuracyMode.BusyLoopOnly;
         if (OperatingSystem.IsWindows())
         {
@@ -79,26 +72,26 @@ public readonly struct BreakneckSleep : IDisposable
     }
 
     /// <summary>
-    /// Sleeps for <see cref="Duration"/>.
+    /// Sleeps for <paramref cref="duration"/>.
     /// </summary>
-    public void Sleep()
+    public void Sleep(TimeSpan duration)
     {
         var start = Stopwatch.GetTimestamp();
         var emergencySpin = false;
         if (OperatingSystem.IsWindows())
         {
-            emergencySpin = !WindowsWait();
+            emergencySpin = !WindowsWait(duration);
         }
 
         if (OperatingSystem.IsLinux())
         {
-            LinuxWait();
+            LinuxWait(duration);
         }
 
         if (OperatingSystem.IsMacOS() || OperatingSystem.IsIOS() || OperatingSystem.IsTvOS() ||
             OperatingSystem.IsWatchOS() || OperatingSystem.IsMacCatalyst())
         {
-            AppleWait();
+            AppleWait(duration);
         }
 
         if (Accuracy is AccuracyMode.HighResolutionWithBusyLoop or AccuracyMode.BusyLoopOnly || emergencySpin)
@@ -114,7 +107,7 @@ public readonly struct BreakneckSleep : IDisposable
                 {
                     ArmBase.Yield();
                 }
-            } while (Stopwatch.GetElapsedTime(start, Stopwatch.GetTimestamp()) < Duration);
+            } while (Stopwatch.GetElapsedTime(start, Stopwatch.GetTimestamp()) < duration);
         }
     }
 
@@ -139,7 +132,7 @@ public readonly struct BreakneckSleep : IDisposable
             : (CreateWaitableTimerExW(null, null, createWaitableTimerManualReset, timerAllAccess), false);
     }
 
-    private unsafe bool WindowsWait()
+    private unsafe bool WindowsWait(TimeSpan duration)
     {
         [DllImport("kernel32.dll", ExactSpelling = true)]
         static extern uint SetWaitableTimerEx
@@ -166,8 +159,8 @@ public readonly struct BreakneckSleep : IDisposable
         var ft = CreateFileTime
         (
             Accuracy == AccuracyMode.HighestResolution
-                ? Duration
-                : TimeSpan.FromMicroseconds(Duration.TotalMicroseconds * 0.9)
+                ? duration
+                : TimeSpan.FromMicroseconds(duration.TotalMicroseconds * 0.9)
         );
         if (SetWaitableTimerEx(Handle, &ft, 0, null, null, null, 0) == 1)
         {
@@ -178,24 +171,24 @@ public readonly struct BreakneckSleep : IDisposable
         return false;
     }
 
-    private unsafe void LinuxWait()
+    private unsafe void LinuxWait(TimeSpan duration)
     {
         [DllImport("libc", EntryPoint = "nanosleep")]
         static extern int Nanosleep(Timespec* req, Timespec* rem);
 
         var ts = new Timespec
         {
-            Seconds = Duration.Seconds,
-            Nanoseconds = Duration.Nanoseconds - Duration.Seconds * 1000000000
+            Seconds = duration.Seconds,
+            Nanoseconds = duration.Nanoseconds - duration.Seconds * 1000000000
         };
         _ = Nanosleep(&ts, null);
     }
 
-    private void AppleWait()
+    private void AppleWait(TimeSpan duration)
     {
         [DllImport("libc", EntryPoint = "usleep")]
         static extern int Usleep(uint micros);
-        _ = Usleep((uint) (Duration.TotalMicroseconds * 0.9));
+        _ = Usleep((uint) (duration.TotalMicroseconds * 0.9));
     }
 
     public void Dispose()
