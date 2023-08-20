@@ -5,7 +5,7 @@ using System.Diagnostics;
 using Silk.NET.Core;
 using Silk.NET.Windowing;
 
-var timeWindow = new TimeWindow(false);
+var timeWindow = new TimeWindow();
 var bag = new ConcurrentBag<double>();
 var sw = new Stopwatch();
 Console.Write("Enter frames per second: ");
