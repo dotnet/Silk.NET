@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+      <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Glfw\Silk.NET.Windowing.Glfw.csproj" />
     </ItemGroup>
 
 </Project>

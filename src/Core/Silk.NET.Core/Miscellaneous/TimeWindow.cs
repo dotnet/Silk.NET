@@ -110,11 +110,13 @@ public class TimeWindow
     {
 #if NET7_0_OR_GREATER
         var ct = CurrentTime;
-        if (Sleeping && ct < NextWindowStart)
+        var nw = NextWindowStart;
+        if (Sleeping && ct < nw)
         {
-            _sleep.Sleep(NextWindowStart - ct);
+            _sleep.Sleep(nw - ct);
         }
 #endif
+        // ct local var intentionally not used here to ensure we are up-to-date
         return CurrentTime >= NextWindowStart;
     }
 
