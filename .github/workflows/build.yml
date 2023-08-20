@@ -56,7 +56,9 @@ jobs:
         dotnet-version: 3.1.404
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
-      run: dotnet workload install android ios maccatalyst maui
+      run: |
+        sdkmanager "platform-tools" "platforms;android-34"
+        dotnet workload install android ios maccatalyst maui
     - name: Test
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
