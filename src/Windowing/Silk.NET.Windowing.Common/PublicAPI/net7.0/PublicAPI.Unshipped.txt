@@ -1,9 +1,0 @@
-#nullable enable
-Silk.NET.Windowing.IWindowPlatform.Name.get -> string!
-Silk.NET.Windowing.IWindowProperties.TopMost.get -> bool
-Silk.NET.Windowing.IWindowProperties.TopMost.set -> void
-static Silk.NET.Windowing.Window.DefaultWindowClass.get -> string
-Silk.NET.Windowing.VideoMode.AspectRatioEstimate.get -> Silk.NET.Maths.Vector2D<int>?
-Silk.NET.Windowing.WindowOptions.TopMost.get -> bool
-Silk.NET.Windowing.WindowOptions.TopMost.set -> void
-Silk.NET.Windowing.WindowOptions.WindowOptions(bool isVisible, Silk.NET.Maths.Vector2D<int> position, Silk.NET.Maths.Vector2D<int> size, double framesPerSecond, double updatesPerSecond, Silk.NET.Windowing.GraphicsAPI api, string! title, Silk.NET.Windowing.WindowState windowState, Silk.NET.Windowing.WindowBorder windowBorder, bool isVSync, bool shouldSwapAutomatically, Silk.NET.Windowing.VideoMode videoMode, int? preferredDepthBufferBits = null, int? preferredStencilBufferBits = null, Silk.NET.Maths.Vector4D<int>? preferredBitDepth = null, bool transparentFramebuffer = false, bool topMost = false, bool isEventDriven = false, Silk.NET.Core.Contexts.IGLContext? sharedContext = null, int? samples = null, string? windowClass = null, bool isContextControlDisabled = false) -> void
