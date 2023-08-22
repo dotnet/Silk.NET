@@ -8,6 +8,7 @@
     </PropertyGroup>
     <!-- Core properties -->
     <PropertyGroup>
+        <SilkPublicApiExempt>true</SilkPublicApiExempt>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>10</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
