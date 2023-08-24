@@ -5,7 +5,7 @@
       -->
     <PropertyGroup>
         <MsExtensionNugetVersion>7.0.0</MsExtensionNugetVersion>
-        <RoslynPackageVersion>4.6.0</RoslynPackageVersion>
+        <RoslynPackageVersion>4.7.0</RoslynPackageVersion>
         <StatiqVersion>1.0.0-beta.69</StatiqVersion>
     </PropertyGroup>
     <ItemGroup>
