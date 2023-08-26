@@ -35,7 +35,7 @@
         <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5"/>
         <PackageVersion Include="Statiq.Core" Version="$(StatiqVersion)"/>
         <PackageVersion Include="HtmlAgilityPack" Version="1.11.51"/>
-        <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.6.0"/>
+        <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0"/>
         <PackageVersion Include="Statiq.App" Version="$(StatiqVersion)"/>
         <PackageVersion Include="Statiq.Feeds" Version="$(StatiqVersion)"/>
         <PackageVersion Include="Statiq.Markdown" Version="$(StatiqVersion)"/>
