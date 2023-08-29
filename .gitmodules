@@ -49,3 +49,6 @@
 [submodule "build/submodules/shaderc"]
 	path = build/submodules/shaderc
 	url = https://github.com/google/shaderc
+[submodule "build/submodules/MoltenVK"]
+	path = build/submodules/MoltenVK
+	url = https://github.com/KhronosGroup/MoltenVK
