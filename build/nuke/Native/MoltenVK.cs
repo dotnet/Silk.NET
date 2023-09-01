@@ -22,7 +22,6 @@ partial class Build {
                     {
                         var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.MoltenVK.Native" / "runtimes";
 
-                        InheritedShell($"brew install ninja").AssertZeroExitCode();
                         InheritedShell($"./fetchDependencies --ios --iossim --maccat", MoltenVKPath).AssertZeroExitCode();
                         InheritedShell($"make ios iossim maccat", MoltenVKPath).AssertZeroExitCode();
 
