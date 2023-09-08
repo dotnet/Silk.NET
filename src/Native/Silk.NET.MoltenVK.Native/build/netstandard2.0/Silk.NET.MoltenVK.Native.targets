@@ -2,7 +2,7 @@
   <PropertyGroup>
     <_LibMoltenVKPath Condition="'$(RuntimeIdentifier)' == 'maccatalyst-x64' OR '$(RuntimeIdentifier)' == 'maccatalyst-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\maccatalyst\native\libMoltenVK.a</_LibMoltenVKPath>
     <_LibMoltenVKPath Condition="$(RuntimeIdentifier) == 'iossimulator-x64' OR '$(RuntimeIdentifier)' == 'iossimulator-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\iossimulator\native\libMoltenVK.a</_LibMoltenVKPath>
-    <_LibMoltenVKPath Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\ios-arm64\native\libMoltenVK.a</_LibMoltenVKPath>
+    <_LibMoltenVKPath Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\ios\native\libMoltenVK.a</_LibMoltenVKPath>
   </PropertyGroup>
 
   <ItemGroup>

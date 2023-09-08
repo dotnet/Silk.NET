@@ -13,6 +13,11 @@ using Unsafe = System.Runtime.CompilerServices.Unsafe;
 
 namespace Silk.NET.Vulkan
 {
+#if __IOS__
+    [PInvokeOverride(0, "__Internal")]
+    [PInvokeOverride(1, "libVulkan.so")]
+#endif
+    [PreventSilkTouchBug]
     public partial class Vk
     {
         private Instance? _currentInstance;

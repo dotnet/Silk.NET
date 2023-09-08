@@ -353,11 +353,6 @@ namespace Silk.NET.Core.Loader
         {
             protected override nint CoreLoadNativeLibrary(string name)
             {
-#if NET7_0_OR_GREATER
-                if (string.IsNullOrEmpty(name) || name == "__Internal")
-                    return NativeLibrary3.GetMainProgramHandle();
-#endif
-                
                 if (NativeLibrary3.TryLoad(name, out var lib))
                 {
                     return lib;

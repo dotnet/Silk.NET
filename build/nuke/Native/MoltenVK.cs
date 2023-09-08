@@ -27,7 +27,7 @@ partial class Build {
 
                         var xcFrameworkDir = MoltenVKPath / "Package" / "Release" / "MoltenVK" / "MoltenVK.xcframework";
 
-                        CopyFile(xcFrameworkDir / "ios-arm64" / "libMoltenVK.a", runtimes / "ios-arm64" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
+                        CopyFile(xcFrameworkDir / "ios-arm64" / "libMoltenVK.a", runtimes / "ios" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                         CopyFile(xcFrameworkDir / "ios-arm64_x86_64-simulator" / "libMoltenVK.a", runtimes / "iossimulator" / "native"  / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                         CopyFile(xcFrameworkDir / "ios-arm64_x86_64-maccatalyst" / "libMoltenVK.a", runtimes / "maccatalyst" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                     }

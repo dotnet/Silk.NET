@@ -13,9 +13,9 @@
         <IncludeContentInPack>true</IncludeContentInPack>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="runtimes\ios-arm64\native\libMoltenVK.a" PackagePath="runtimes\ios-arm64\native\libMoltenVK.a" />
         <Content Include="runtimes\iossimulator\native\libMoltenVK.a" PackagePath="runtimes\iossimulator\native\libMoltenVK.a" />
         <Content Include="runtimes\maccatalyst\native\libMoltenVK.a" PackagePath="runtimes\maccatalyst\native\libMoltenVK.a" />
+        <Content Include="runtimes\ios\native\libMoltenVK.a" PackagePath="runtimes\ios\native\libMoltenVK.a" />
         <Content Include="build\netstandard2.0\Silk.NET.MoltenVK.Native.targets" PackagePath="build\netstandard2.0\Silk.NET.MoltenVK.Native.targets" />
     </ItemGroup>
 
