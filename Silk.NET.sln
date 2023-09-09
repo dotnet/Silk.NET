@@ -594,6 +594,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Shaderc", "src\SPI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Shaderc.Native", "src\Native\Silk.NET.Shaderc.Native\Silk.NET.Shaderc.Native.csproj", "{D1E4EDC7-0A06-498A-B0F9-275B7D508A0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.MoltenVK.Native", "src\Native\Silk.NET.MoltenVK.Native\Silk.NET.MoltenVK.Native.csproj", "{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3615,6 +3617,18 @@ Global
 		{D1E4EDC7-0A06-498A-B0F9-275B7D508A0E}.Release|x64.Build.0 = Release|Any CPU
 		{D1E4EDC7-0A06-498A-B0F9-275B7D508A0E}.Release|x86.ActiveCfg = Release|Any CPU
 		{D1E4EDC7-0A06-498A-B0F9-275B7D508A0E}.Release|x86.Build.0 = Release|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Debug|x64.Build.0 = Debug|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Debug|x86.Build.0 = Debug|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Release|x64.ActiveCfg = Release|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Release|x64.Build.0 = Release|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Release|x86.ActiveCfg = Release|Any CPU
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3904,6 +3918,7 @@ Global
 		{1E7C6166-58B2-46B3-A9BA-18099BD83AF0} = {20A4A2D1-D699-4D71-AA97-950154638576}
 		{E77BE8DB-3C74-42EB-9B65-67EAAA9AD7DB} = {15FC3D1A-25D7-446B-87A7-B45BA3C2225F}
 		{D1E4EDC7-0A06-498A-B0F9-275B7D508A0E} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
+		{32BE0963-C372-4BCA-A7C2-3CA844FDBB78} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
