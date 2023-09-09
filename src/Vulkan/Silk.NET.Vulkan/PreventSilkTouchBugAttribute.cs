@@ -5,7 +5,7 @@ using System;
 
 namespace Silk.NET.Vulkan;
 
-public class PreventSilkTouchBugAttribute : Attribute
+internal class PreventSilkTouchBugAttribute : Attribute
 {
     
 }
