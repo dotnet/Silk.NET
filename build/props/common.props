@@ -52,6 +52,9 @@
     <!-- SourceLink -->
     <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == ''">
         <DebugType>portable</DebugType>
+        <EmbedAllSources>true</EmbedAllSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
