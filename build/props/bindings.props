@@ -1,4 +1,4 @@
-<Project InitialTargets="SilkGenerateILLinkSubstitutionsAndTargets">
+<Project>
     <ItemGroup>
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.SilkTouch\Silk.NET.SilkTouch.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
@@ -7,7 +7,13 @@
         <SilkPublicApiExempt>true</SilkPublicApiExempt>
     </PropertyGroup>
     <Import Project="common.props" />
+    <PropertyGroup>
+        <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);SilkGenerateILLinkSubstitutionsAndTargets</TargetsForTfmSpecificContentInPackage>
+    </PropertyGroup>
     <Target Name="SilkGenerateILLinkSubstitutionsAndTargets" Condition="$(TargetFramework.Contains('net6')) or $(TargetFramework.Contains('net7')) or $(TargetFramework.Contains('net8'))">
+        <GetNuGetShortFolderName TargetFrameworkMoniker="$(TargetFrameworkMoniker)" TargetPlatformMoniker="$(TargetPlatformMoniker)">
+            <Output TaskParameter="NuGetShortFolderName" PropertyName="_SilkNuGetShortFolderName" />
+        </GetNuGetShortFolderName>
         <PropertyGroup>
             <SilkGeneratedILLinkPath>$(IntermediateOutputPath)$(TargetFramework)/ILLink.Substitutions.xml</SilkGeneratedILLinkPath>
             <SilkGeneratedTargetPath>$(IntermediateOutputPath)$(TargetFramework)/$(PackageId).targets</SilkGeneratedTargetPath>
@@ -43,7 +49,7 @@
         <WriteLinesToFile File="@(SilkGeneratedTargetFile)" Lines="@(SilkGeneratedTargetLine)" Overwrite="true" Encoding="UTF-8" Condition="'@(SilkPInvokeOverride)' != ''" />
         <ItemGroup Condition="'@(SilkPInvokeOverride)' != ''">
             <EmbeddedResource Include="@(SilkGeneratedILLinkFile)" Link="Properties/ILLink.Substitutions.xml" LogicalName="ILLink.Substitutions.xml" />
-            <Content Include="@(SilkGeneratedTargetFile)" PackagePath="build/$(TargetFramework)/$(PackageId).targets" />
+            <TfmSpecificPackageFile Include="@(SilkGeneratedTargetFile)" Link="build/$(_SilkNuGetShortFolderName)/$(PackageId).targets" Pack="true" PackagePath="build/$(_SilkNuGetShortFolderName)/$(PackageId).targets" />
         </ItemGroup>
     </Target>
 </Project>
