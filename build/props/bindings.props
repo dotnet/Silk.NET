@@ -1,4 +1,4 @@
-<Project>
+<Project InitialTargets="SilkGenerateILLinkSubstitutionsAndTargets">
     <ItemGroup>
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.SilkTouch\Silk.NET.SilkTouch.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
@@ -7,4 +7,35 @@
         <SilkPublicApiExempt>true</SilkPublicApiExempt>
     </PropertyGroup>
     <Import Project="common.props" />
+    <Target Name="SilkGenerateILLinkSubstitutionsAndTargets" Condition="$(TargetFramework.Contains('net6')) or $(TargetFramework.Contains('net7')) or $(TargetFramework.Contains('net8'))">
+        <PropertyGroup>
+            <SilkGeneratedILLinkPath>$(IntermediateOutputPath)$(TargetFramework)/ILLink.Substitutions.xml</SilkGeneratedILLinkPath>
+            <SilkGeneratedTargetPath>$(IntermediateOutputPath)$(TargetFramework)/$(PackageId).targets</SilkGeneratedTargetPath>
+        </PropertyGroup>
+        <ItemGroup Condition="'@(SilkPInvokeOverride)' != ''">
+            <SilkGeneratedILLinkLine Include="&lt;linker&gt;" />
+            <SilkGeneratedILLinkLine Include="    &lt;assembly fullname=&quot;$(PackageId)&quot;&gt;" />
+            <SilkGeneratedILLinkLine Include="        &lt;type fullname=&quot;SilkTouchRuntimeConfiguration&quot;&gt;" />
+            <SilkGeneratedILLinkLine Include="            &lt;method signature=&quot;System.Boolean get_HasLinkTimeSubstitutions&quot; body=&quot;stub&quot; value=&quot;true&quot;&gt;" />
+            <SilkGeneratedILLinkLine Include="            &lt;method signature=&quot;System.Boolean get_$([System.String]::Copy('%(SilkPInvokeOverride.SilkClass)').Replace('.', ''))PInvokeOverride%(SilkPInvokeOverride.Identity)&quot; body=&quot;stub&quot; value=&quot;true&quot; feature=&quot;$([System.String]::Copy('%(SilkPInvokeOverride.SilkClass)').Replace('.', '_').ToUpper())_ENABLE_PINVOKE_OVERRIDE_%(SilkPInvokeOverride.Identity)&quot; featurevalue=&quot;true&quot;&gt;" />
+            <SilkGeneratedILLinkLine Include="            &lt;method signature=&quot;System.Boolean get_$([System.String]::Copy('%(SilkPInvokeOverride.SilkClass)').Replace('.', ''))PInvokeOverride%(SilkPInvokeOverride.Identity)&quot; body=&quot;stub&quot; value=&quot;false&quot; feature=&quot;$([System.String]::Copy('%(SilkPInvokeOverride.SilkClass)').Replace('.', '_').ToUpper())_ENABLE_PINVOKE_OVERRIDE_%(SilkPInvokeOverride.Identity)&quot; featurevalue=&quot;false&quot;&gt;" />
+            <SilkGeneratedILLinkLine Include="        &lt;/type&gt;" />
+            <SilkGeneratedILLinkLine Include="    &lt;/assembly&gt;" />
+            <SilkGeneratedILLinkLine Include="&lt;/linker&gt;" />
+            <SilkGeneratedTargetLine Include="&lt;Project&gt;" />
+            <SilkGeneratedTargetLine Include="    &lt;ItemGroup&gt;" />
+            <SilkGeneratedTargetLine Include="        &lt;RuntimeHostConfigurationOption Condition=&quot;%(SilkPInvokeOverride.DownstreamCondition)&quot; Include=&quot;$([System.String]::Copy('%(SilkPInvokeOverride.SilkClass)').Replace('.', '_').ToUpper())_ENABLE_PINVOKE_OVERRIDE_%(SilkPInvokeOverride.Identity)&quot; Value=&quot;true&quot; Trim=&quot;true&quot;&gt;" />
+            <SilkGeneratedTargetLine Include="        &lt;RuntimeHostConfigurationOption Condition=&quot;!(%(SilkPInvokeOverride.DownstreamCondition))&quot; Include=&quot;$([System.String]::Copy('%(SilkPInvokeOverride.SilkClass)').Replace('.', '_').ToUpper())_ENABLE_PINVOKE_OVERRIDE_%(SilkPInvokeOverride.Identity)&quot; Value=&quot;false&quot; Trim=&quot;true&quot;&gt;" />
+            <SilkGeneratedTargetLine Include="    &lt;/ItemGroup&gt;" />
+            <SilkGeneratedTargetLine Include="&lt;/Project&gt;" />
+            <SilkGeneratedILLinkFile Include="$(SilkGeneratedILLinkPath)" />
+            <SilkGeneratedTargetFile Include="$(SilkGeneratedTargetPath)" />
+        </ItemGroup>
+        <WriteLinesToFile File="@(SilkGeneratedILLinkFile)" Lines="@(SilkGeneratedILLinkLine)" Overwrite="true" Encoding="UTF-8" Condition="'@(SilkPInvokeOverride)' != ''" />
+        <WriteLinesToFile File="@(SilkGeneratedTargetFile)" Lines="@(SilkGeneratedTargetLine)" Overwrite="true" Encoding="UTF-8" Condition="'@(SilkPInvokeOverride)' != ''" />
+        <ItemGroup Condition="'@(SilkPInvokeOverride)' != ''">
+            <EmbeddedResource Include="@(SilkGeneratedILLinkFile)" Link="Properties/ILLink.Substitutions.xml" LogicalName="ILLink.Substitutions.xml" />
+            <Content Include="@(SilkGeneratedTargetFile)" PackagePath="build/$(TargetFramework)/$(PackageId).targets" />
+        </ItemGroup>
+    </Target>
 </Project>
