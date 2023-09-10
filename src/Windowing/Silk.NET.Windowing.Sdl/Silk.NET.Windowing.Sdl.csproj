@@ -49,11 +49,6 @@
         <GetNuGetShortFolderName TargetFrameworkMoniker="$(TargetFrameworkMoniker)" TargetPlatformMoniker="$(TargetPlatformMoniker)">
             <Output TaskParameter="NuGetShortFolderName" PropertyName="_NuGetShortFolderName" />
         </GetNuGetShortFolderName>
-        <!-- iOS Specific Bundled Files -->
-        <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios' Or '$(TargetFramework)' == 'net6.0-maccatalyst'">
-            <TfmSpecificPackageFile Include="iOS/libSDL2.a" Pack="true" Link="build/$(_NuGetShortFolderName)/libSDL2.a" PackagePath="build/$(_NuGetShortFolderName)/native/libSDL2.a" CopyToOutputDirectory="PreserveNewest" />
-            <TfmSpecificPackageFile Include="iOS/Silk.NET.Windowing.Sdl.targets" Link="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" Pack="true" PackagePath="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" />
-        </ItemGroup>
         <!-- Android Specific Bundled Files -->
         <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
             <!-- https://github.com/xamarin/xamarin-android/issues/5957 

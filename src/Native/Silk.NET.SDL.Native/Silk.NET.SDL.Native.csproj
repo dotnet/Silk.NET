@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
+    <Content Include="build\netstandard2.0\$(PackageId).targets" PackagePath="build\netstandard2.0\$(PackageId).targets" />
     <Content Include="runtimes/iossimulator/native/libSDL2.a" PackagePath="runtimes/iossimulator/native/libSDL2.a" />
     <Content Include="runtimes/osx/native/libSDL2-2.0.dylib" PackagePath="runtimes/osx/native/libSDL2-2.0.dylib" />
     <Content Include="runtimes/linux-x86/native/libSDL2-2.0.so" PackagePath="runtimes/linux-x86/native/libSDL2-2.0.so" />
