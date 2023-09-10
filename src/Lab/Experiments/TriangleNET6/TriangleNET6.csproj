@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>net6.0;net6.0-android</TargetFrameworks>
+        <TargetFrameworks>net6.0;net6.0-android;net6.0-ios</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
@@ -19,6 +19,8 @@
         <ProjectReference Include="..\..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
         <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
+        <RuntimeHostConfigurationOption Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1" Value="false" Trim="true" />
+        <RuntimeHostConfigurationOption Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0" Value="false" Trim="true" />
     </ItemGroup>
     
     <!-- Android -->

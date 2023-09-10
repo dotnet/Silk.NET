@@ -21,5 +21,9 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <SilkPInvokeOverride Include="0" SilkClass="Silk.NET.Vulkan.Vk" DownstreamCondition="%24(TargetFramework.Contains('ios')) or %24(TargetFramework.Contains('mac')) or %24(TargetFramework.Contains('tvos'))" />
+  </ItemGroup>
+
   <Import Project="..\..\..\build\props\bindings.props" />
 </Project>
