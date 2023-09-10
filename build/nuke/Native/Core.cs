@@ -31,8 +31,12 @@ partial class Build {
     [CanBeNull] string AndroidHomeValue;
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
-        ? $" -j{Environment.ProcessorCount}"
+        ? $" -j{Jobs}"
         : string.Empty;
+    
+    static int Jobs => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
+        ? Environment.ProcessorCount - 1
+        : 1;
 
     public void CopyAs(AbsolutePath @out, string from, string to)
     {
