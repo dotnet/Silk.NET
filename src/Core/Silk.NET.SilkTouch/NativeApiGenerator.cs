@@ -412,22 +412,22 @@ namespace Silk.NET.SilkTouch
             var processedEntrypoints = new List<EntryPoint>();
             bool any = false;
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
-                                                                                     from member in classDeclarations.SelectMany(x => x.Item1.Members.Select(x2 => (x2, x.Item2)))
-                                                                                     where member.x2.IsKind(SyntaxKind.MethodDeclaration)
-                                                                                     select ((MethodDeclarationSyntax) member.x2, member.Item2)
-                                                                                 let symbol = declaration.Item2.GetDeclaredSymbol(declaration.Item1)
-                                                                                 where symbol is not null
-                                                                                 let attribute = ToNativeApiAttribute
-                                                                                 (
-                                                                                     symbol.GetAttributes()
-                                                                                         .FirstOrDefault
-                                                                                             (att => SymbolEqualityComparer.Default.Equals(att.AttributeClass, nativeApiAttributeSymbol))
-                                                                                 )
-                                                                                 where declaration.Item1.Modifiers.Any
-                                                                                     (modifier => modifier.IsKind(SyntaxKind.PartialKeyword)) && symbol.PartialImplementationPart is null
-                                                                                 let entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name)
-                                                                                 let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
-                                                                                 select (declaration, symbol, entryPoint, callingConvention))
+                    from member in classDeclarations.SelectMany(x => x.Item1.Members.Select(x2 => (x2, x.Item2)))
+                    where member.x2.IsKind(SyntaxKind.MethodDeclaration)
+                    select ((MethodDeclarationSyntax) member.x2, member.Item2)
+                let symbol = declaration.Item2.GetDeclaredSymbol(declaration.Item1)
+                where symbol is not null
+                let attribute = ToNativeApiAttribute
+                (
+                    symbol.GetAttributes()
+                        .FirstOrDefault
+                            (att => SymbolEqualityComparer.Default.Equals(att.AttributeClass, nativeApiAttributeSymbol))
+                )
+                where declaration.Item1.Modifiers.Any
+                    (modifier => modifier.IsKind(SyntaxKind.PartialKeyword)) && symbol.PartialImplementationPart is null
+                let entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name)
+                let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
+                select (declaration, symbol, entryPoint, callingConvention))
             {
                 any = true;
 
