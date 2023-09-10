@@ -30,6 +30,7 @@
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <EnableAotAnalyzer>true</EnableAotAnalyzer>
         <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+        <TrimMode>full</TrimMode>
     </PropertyGroup>
     <!-- Date/time based versioning (mainly used by natives) -->
     <Target Name="SilkAddDateTime" Condition="'$(SilkGitDirForVersion)' != '' and Exists('$(SilkGitDirForVersion)/.git')">

@@ -7,6 +7,7 @@
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
+        <TrimMode>full</TrimMode>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,6 +22,7 @@
         <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
         <RuntimeHostConfigurationOption Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1" Value="false" Trim="true" />
         <RuntimeHostConfigurationOption Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0" Value="false" Trim="true" />
+        <TrimmableAssembly Include="Silk.NET.SDL" />
     </ItemGroup>
     
     <!-- Android -->
