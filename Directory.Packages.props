@@ -9,7 +9,7 @@
         <StatiqVersion>1.0.0-beta.69</StatiqVersion>
     </PropertyGroup>
     <ItemGroup>
-        <PackageVersion Include="BenchmarkDotNet" Version="0.13.7"/>
+        <PackageVersion Include="BenchmarkDotNet" Version="0.13.8"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.Text.Json" Version="7.0.3"/>
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="15.0.2"/>
