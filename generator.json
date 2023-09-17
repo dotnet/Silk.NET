@@ -831,6 +831,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/submodules/SDL/include",
                     "-D__IPHONEOS__",
+                    "-D__MACOS__",
                     "-D__ANDROID__",
                     "-D__WIN32__",
                     "-D__WINRT__",
