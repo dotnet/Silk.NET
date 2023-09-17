@@ -903,6 +903,7 @@
                 "linux-x64": "libSDL2-2.0.so",
                 "win-x64": "SDL2.dll",
                 "win-x86": "SDL2.dll",
+                "osx-arm64": "libSDL2-2.0.dylib",
                 "osx-x64": "libSDL2-2.0.dylib",
                 "android": "libSDL2.so",
                 "iOS": "__Internal",

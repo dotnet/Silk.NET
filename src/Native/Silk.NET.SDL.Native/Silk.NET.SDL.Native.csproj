@@ -27,6 +27,7 @@
     <Content Include="runtimes\osx-x64\native\libSDL2-2.0.dylib" PackagePath="runtimes\osx-x64\native\libSDL2-2.0.dylib" />
     <Content Include="runtimes\win-x64\native\SDL2.dll" PackagePath="runtimes\win-x64\native\SDL2.dll" />
     <Content Include="runtimes\win-arm64\native\SDL2.dll" PackagePath="runtimes\win-arm64\native\SDL2.dll" />
+    <Content Include="runtimes\osx-arm64\native\libSDL2-2.0.dylib" PackagePath="runtimes\osx-arm64\native\libSDL2-2.0.dylib" />
   </ItemGroup>
 
 </Project>
