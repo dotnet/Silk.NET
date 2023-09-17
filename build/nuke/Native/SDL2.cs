@@ -25,8 +25,28 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
-partial class Build {
+partial class Build
+{
     AbsolutePath SDL2Path => RootDirectory / "build" / "submodules" / "SDL";
+
+    static readonly (string Sdk, string Arch, string Rid, string Args)[] iPhoneConfigs = new[]
+    {
+        // NB: Xcode has forced us to stop support for i386 archs
+        // NB: Xcode has forced us to stop support for iPhone 5 and below (armv7, armv7s)
+        ("iphonesimulator", "x86_64", "iossimulator", "-target \"Static Library-iOS\""),
+        ("iphonesimulator", "arm64", "iossimulator", "-target \"Static Library-iOS\""),
+        ("iphoneos", "arm64", "ios", "-target \"Static Library-iOS\""),
+        ("iphoneos", "arm64e", "ios", "-target \"Static Library-iOS\""),
+        ("appletvsimulator", "x86_64", "tvossimulator", "-target \"Static Library-tvOS\""),
+        ("appletvsimulator", "arm64", "tvossimulator", "-target \"Static Library-tvOS\""),
+        ("appletvos", "arm64", "tvos", "-target \"Static Library-tvOS\""),
+        ("appletvos", "arm64e", "tvos", "-target \"Static Library-tvOS\""),
+        ("macosx", "x86_64", "osx", "-target \"Shared Library\""),
+        ("macosx", "arm64", "osx", "-target \"Shared Library\""),
+        // TODO figure out how to compile for Mac Catalyst
+        //("macosx", "x86_64", "maccatalyst", "-target \"Shared Library-iOS\" -destination \"platform=macOS,variant=Mac Catalyst\""),
+        //("macosx", "arm64", "maccatalyst", "-target \"Shared Library-iOS\" -destination \"platform=macOS,variant=Mac Catalyst\""),
+    };
 
     Target SDL2 => CommonTarget
         (
@@ -45,7 +65,7 @@ partial class Build {
             EnsureCleanDirectory(x64BuildDir);
             EnsureCleanDirectory(ARM64BuildDir);
 
-            if(OperatingSystem.IsWindows())
+            if (OperatingSystem.IsWindows())
             {
                 var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
                 var build = $"cmake --build . --config Release{JobsArg}";
@@ -64,16 +84,16 @@ partial class Build {
                 CopyFile(ARM64BuildDir / "Release" / "SDL2.dll", runtimes / "win-arm64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
             }
 
-            if(OperatingSystem.IsLinux())
+            if (OperatingSystem.IsLinux())
             {
-                if(RuntimeInformation.OSArchitecture == Architecture.Arm64) 
+                if (RuntimeInformation.OSArchitecture == Architecture.Arm64)
                 {
                     InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
                     InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
 
                     CopyFile(ARM64BuildDir.GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                } 
-                else if (RuntimeInformation.OSArchitecture == Architecture.X64) 
+                }
+                else if (RuntimeInformation.OSArchitecture == Architecture.X64)
                 {
                     var envVars32bit = "CFLAGS='-m32 -O2' CXXFLAGS='-m32 -O2' LDFLAGS=-m32";
                     var envVars64bit = "CFLAGS=-O2 CXXFLAGS=-O2";
@@ -92,26 +112,42 @@ partial class Build {
 
                     CopyFile((x86BuildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                     CopyFile((x64BuildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                } 
-                else 
+                }
+                else
                 {
                     throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
                 }
             }
 
-            if(OperatingSystem.IsMacOS())
+            if (OperatingSystem.IsMacOS())
             {
-                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
-                var build = $"cmake --build . --config Release{JobsArg}";
-
-                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", x64BuildDir).AssertZeroExitCode();
-                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
-
-                InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", ARM64BuildDir).AssertZeroExitCode();
-                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
-
-                CopyAs(x64BuildDir, "**/*.dylib", runtimes / "osx-x64" / "native" / "libSDL2-2.0.dylib");
-                CopyAs(ARM64BuildDir, "**/*.dylib", runtimes / "osx-arm64" / "native" / "libSDL2-2.0.dylib");
+                // iOS build/hackery ported from https://github.com/Ultz/SDL-Xamarin.iOS
+                var mainH = File.ReadAllText(SDL2Path / "include" / "SDL_main.h");
+                try
+                {
+                    File.WriteAllText(SDL2Path / "include" / "SDL_main.h", $"#define SDL_MAIN_HANDLED\n{mainH}");
+                    EnsureCleanDirectory(SDL2Path / "allbuild");
+                    foreach (var (sdk, arch, rid, args) in iPhoneConfigs)
+                    {
+                        InheritedShell($"xcodebuild -project SDL.xcodeproj {args} -sdk {sdk} -arch {arch} -configuration Release clean build -jobs {Jobs}", SDL2Path / "XCode" / "SDL")
+                            .AssertZeroExitCode();
+                        var ext = rid is "maccatalyst" or "osx" ? "dylib" : "a";
+                        var cfg = rid is "maccatalyst" or "osx" ? "Release" : $"Release-{sdk}";
+                        CopyFile(SDL2Path / "XCode" / "SDL" / "build" / cfg / $"libSDL2.{ext}", SDL2Path / "allbuild" / $"libSDL2.{sdk}.{arch}.{rid}.{ext}");
+                    }
+                    foreach (var rid in iPhoneConfigs.GroupBy(x => x.Rid))
+                    {
+                        var ext = rid.Key is "maccatalyst" or "osx" ? "dylib" : "a";
+                        var @in = string.Join("\" \"", rid.Select(x => SDL2Path / "allbuild" / $"libSDL2.{x.Sdk}.{x.Arch}.{rid.Key}.{ext}"));
+                        var @out = runtimes / rid.Key / "native" / (ext is "dylib" ? "libSDL2-2.0.dylib" : "libSDL2.a");
+                        EnsureCleanDirectory(Path.GetDirectoryName(@out));
+                        InheritedShell($"lipo -create -output \"{@out}\" \"{@in}\"").AssertZeroExitCode();
+                    }
+                }
+                finally
+                {
+                    File.WriteAllText(SDL2Path / "include" / "SDL_main.h", mainH);
+                }
             }
 
             PrUpdatedNativeBinary("SDL2");

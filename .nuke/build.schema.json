@@ -142,7 +142,6 @@
           "items": {
             "type": "string",
             "enum": [
-              "Angle",
               "Assimp",
               "BuildLibSilkDroid",
               "Clean",
@@ -161,9 +160,11 @@
               "RegenerateBindings",
               "Restore",
               "SDL2",
+              "Shaderc",
               "ShipApi",
               "SignPackages",
               "Sln",
+              "SPIRVCross",
               "SPIRVReflect",
               "SwiftShader",
               "Test",
@@ -184,7 +185,6 @@
           "items": {
             "type": "string",
             "enum": [
-              "Angle",
               "Assimp",
               "BuildLibSilkDroid",
               "Clean",
@@ -203,9 +203,11 @@
               "RegenerateBindings",
               "Restore",
               "SDL2",
+              "Shaderc",
               "ShipApi",
               "SignPackages",
               "Sln",
+              "SPIRVCross",
               "SPIRVReflect",
               "SwiftShader",
               "Test",

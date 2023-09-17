@@ -25,6 +25,13 @@
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
         </Description>
     </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('net6')) or $(TargetFramework.StartsWith('net7')) or $(TargetFramework.StartsWith('net8'))">
+        <IsTrimmable>true</IsTrimmable>
+        <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+        <EnableAotAnalyzer>true</EnableAotAnalyzer>
+        <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+        <TrimMode>full</TrimMode>
+    </PropertyGroup>
     <!-- Date/time based versioning (mainly used by natives) -->
     <Target Name="SilkAddDateTime" Condition="'$(SilkGitDirForVersion)' != '' and Exists('$(SilkGitDirForVersion)/.git')">
         <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
@@ -45,6 +52,9 @@
     <!-- SourceLink -->
     <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == ''">
         <DebugType>portable</DebugType>
+        <EmbedAllSources>true</EmbedAllSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>

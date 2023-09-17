@@ -15,7 +15,6 @@ namespace Silk.NET.Vulkan
 {
 #if __IOS__
     [PInvokeOverride(0, "__Internal")]
-    [PInvokeOverride(1, "libVulkan.so")]
 #endif
     [PreventSilkTouchBug]
     public partial class Vk
@@ -57,7 +56,7 @@ namespace Silk.NET.Vulkan
 
         public static Version32 MakeVersion
             (uint major, uint minor, uint patch = 0) => new Version32(major, minor, patch);
-        
+
 
         public static Vk GetApi()
         {
@@ -122,7 +121,7 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the extension is available and loaded.</returns>
         public bool TryGetInstanceExtension<T>(Instance instance, out T ext, string layer = null) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name, layer)
-                ? (T) Activator.CreateInstance
+                ? (T)Activator.CreateInstance
                 (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
                 : null) is null);
 
@@ -142,7 +141,7 @@ namespace Silk.NET.Vulkan
         public bool TryGetDeviceExtension<T>
             (Instance instance, Device device, out T ext, string layer = null) where T : NativeExtension<Vk> =>
             !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name, layer)
-                ? (T) Activator.CreateInstance
+                ? (T)Activator.CreateInstance
                     (typeof(T), new LamdaNativeContext(x => GetDeviceProcAddr(device, x)))
                 : null) is null);
 
@@ -171,7 +170,8 @@ namespace Silk.NET.Vulkan
             var cachedInstanceExtensions = _cachedInstanceExtensions;
             if (cachedInstanceExtensions is null)
             {
-                fixed (byte* layerPtr = layer is null ? Array.Empty<byte>() : Encoding.UTF8.GetBytes(layer)) {
+                fixed (byte* layerPtr = layer is null ? Array.Empty<byte>() : Encoding.UTF8.GetBytes(layer))
+                {
                     // Get count of properties
                     var instanceExtPropertiesCount = 0u;
                     EnumerateInstanceExtensionProperties(layerPtr, &instanceExtPropertiesCount, null);
@@ -179,14 +179,15 @@ namespace Silk.NET.Vulkan
                     // Initialise return structure
                     var propsArr = new ExtensionProperties[(int)instanceExtPropertiesCount];
 
-                    fixed(ExtensionProperties* props = propsArr) {
+                    fixed (ExtensionProperties* props = propsArr)
+                    {
                         // Get properties
                         EnumerateInstanceExtensionProperties(layerPtr, &instanceExtPropertiesCount, props);
 
                         cachedInstanceExtensions = new HashSet<(string, string)>();
                         for (var p = 0; p < instanceExtPropertiesCount; p++)
                         {
-                            cachedInstanceExtensions.Add((Marshal.PtrToStringAnsi((nint) props[p].ExtensionName), layer));
+                            cachedInstanceExtensions.Add((Marshal.PtrToStringAnsi((nint)props[p].ExtensionName), layer));
                         }
 
                         // Thread-safe, only one initialisation will actually succeed.
@@ -236,7 +237,7 @@ namespace Silk.NET.Vulkan
             _cachedDeviceExtensionsLock.EnterUpgradeableReadLock();
 
             //If we do not have a cache for this specific device,
-            if(!_cachedDeviceExtensions.ContainsKey(device))
+            if (!_cachedDeviceExtensions.ContainsKey(device))
             {
                 //Create one
                 _cachedDeviceExtensions[device] = new HashSet<string>();
@@ -257,20 +258,22 @@ namespace Silk.NET.Vulkan
                 {
                     var deviceExtPropertiesCount = 0u;
 
-                    fixed (byte* layerPtr = layer is null ? Array.Empty<byte>() : Encoding.UTF8.GetBytes(layer)) {
+                    fixed (byte* layerPtr = layer is null ? Array.Empty<byte>() : Encoding.UTF8.GetBytes(layer))
+                    {
                         // Get number of properties
-                        EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, null);
+                        EnumerateDeviceExtensionProperties(device, (byte*)layerPtr, &deviceExtPropertiesCount, null);
 
                         // Initialise return structure
                         var propsArr = new ExtensionProperties[(int)deviceExtPropertiesCount];
 
-                        fixed(ExtensionProperties* props = propsArr) {
+                        fixed (ExtensionProperties* props = propsArr)
+                        {
                             // Get properties
-                            EnumerateDeviceExtensionProperties(device, (byte*) layerPtr, &deviceExtPropertiesCount, props);
+                            EnumerateDeviceExtensionProperties(device, (byte*)layerPtr, &deviceExtPropertiesCount, props);
                             for (int j = 0; j < deviceExtPropertiesCount; j++)
                             {
                                 // Prefix the extension name
-                                var newKey = prefixSep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
+                                var newKey = prefixSep + Marshal.PtrToStringAnsi((nint)props[j].ExtensionName);
                                 _cachedDeviceExtensions[device].Add(newKey);
                                 if (!result && string.Equals(newKey, fullKey))
                                 {

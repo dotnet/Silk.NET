@@ -31,7 +31,7 @@ namespace Silk.NET.SDL
 
         public const string HintAppleTvRemoteAllowRotation =
             "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION";
-        
+
         [Obsolete("Use HintIosHideHomeIndicator instead.")]
         public const string HintIOSHideHomeIndicator = HintIosHideHomeIndicator;
 
@@ -42,7 +42,7 @@ namespace Silk.NET.SDL
         public const string HintJoystickHidapiPs4 = HintJoystickHidapiPS4;
 
         [Obsolete("Use HintJoystickHidapiPS4Rumble instead.")]
-        public const string HintJoystickHidapiPs4Rumble =HintJoystickHidapiPS4Rumble;
+        public const string HintJoystickHidapiPs4Rumble = HintJoystickHidapiPS4Rumble;
 
         [Obsolete("Use HintVideoX11WindowVisualid instead.")]
         public const string HintVidoX11WindowVisualid = HintVideoX11WindowVisualid;

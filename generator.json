@@ -558,10 +558,8 @@
                     "vk_video.h": "[Core]VkVideo"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "vk_video"
@@ -888,7 +886,7 @@
                         "SDL_IsChromebook",
                         "SDL_IsDeXMode",
                         "SDL_RegisterApp",
-                        "SDL_RenderGetD3D9Device",
+                        "SDL_RenderGetD3D.*",
                         "SDL_SetWindowsMessageHook",
                         "SDL_UnregisterApp",
                         "SDL_WinRT.*",
@@ -954,14 +952,12 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3dcommon.h": "[Core]D3DCommon"
                 }
             },
-            "exclude": [
-            ],
+            "exclude": [],
             "rename": {
                 "_D3D_CBUFFER_TYPE": "D3DCBufferType",
                 "_D3D_SHADER_CBUFFER_FLAGS": "D3DShaderCBufferFlags"
@@ -1139,10 +1135,8 @@
                     "Silk.NET.Core.Native.ID3DInclude"
                 ]
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "dxgi",
@@ -1223,8 +1217,7 @@
                     "dxvahd.h": "[Core]DXVA"
                 }
             },
-            "exclude": [
-            ],
+            "exclude": [],
             "rename": {
                 "_DXVA2_VIDEOSAMPLE": "DXVA2VideoSample"
             },
@@ -1358,8 +1351,7 @@
                 "D2D1GetGradientMeshInteriorPointsFromCoonsPatch",
                 "IDXGISurface"
             ],
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.direct2d.dcommon",
@@ -1481,8 +1473,7 @@
                 "ID2D1SimplifiedGeometrySink",
                 "_D3DCOLORVALUE"
             ],
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.directwrite.dcommon",
@@ -1575,8 +1566,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3d11.h": "[Core]D3D11",
                     "d3d11_1.h": "[Core]D3D11",
@@ -1676,8 +1666,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3d12.h": "[Core]D3D12",
                     "d3d12shader.h": "[Core]D3D12",
@@ -1860,10 +1849,8 @@
                     "Silk.NET.Core.Native.ID3DInclude"
                 ]
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "DXC"
@@ -1924,8 +1911,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3dcompiler.h": "[Core]D3DCompiler"
                 },
@@ -1937,10 +1923,8 @@
                     "Silk.NET.Core.Native.ID3DInclude"
                 ]
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "d3dcompiler"
@@ -2015,8 +1999,7 @@
                 "ID3D12Resource",
                 "ID3D12Fence"
             ],
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.directstorage"
@@ -2202,10 +2185,8 @@
                     "silk.net.xaudio.x3daudio.h": "[Core]X3DAudio"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.xaudio.xaudio2",
@@ -2264,10 +2245,8 @@
                     "silk.net.xinput.xinput.h": "[Core]XInput"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.xinput.xinput"
@@ -2282,8 +2261,7 @@
             "namespace": "Silk.NET.XInput",
             "extensionsNamespace": "Silk.NET.XInput.Extensions",
             "typeMaps": [
-                {
-                },
+                {},
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -2330,8 +2308,7 @@
                     "dawn-webgpu.h": "[Dawn:WebGPU]Dawn"
                 }
             },
-            "exclude": [
-            ],
+            "exclude": [],
             "rename": {
                 "WGPUComputePipelineImpl": "ComputePipeline",
                 "WGPUAdapterImpl": "Adapter",
@@ -2439,8 +2416,7 @@
             "prefixOverrides": {
                 "SpvImageChannelOrder_": "SpvImageChannelOrder"
             },
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "spirv"
@@ -2605,8 +2581,7 @@
                     "spirv_cross_c.h": "[Core]Cross"
                 }
             },
-            "exclude": [
-            ],
+            "exclude": [],
             "rename": {
                 "spvc_compiler_options_s": "CompilerOptions",
                 "spvc_compiler_s": "Compiler",
@@ -2697,10 +2672,8 @@
                     "env.h": "[Core]Shaderc"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "shaderc"
@@ -2723,8 +2696,7 @@
                 "className": "ShadercLibraryNameContainer"
             },
             "typeMaps": [
-                {
-                },
+                {},
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
                     "$include.dxTypeMap": "build/dx_typemap.json"

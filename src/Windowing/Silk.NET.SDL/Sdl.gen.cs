@@ -14581,11 +14581,13 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 107, Column 39 in SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 39 in SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D12Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(Renderer* renderer);
 

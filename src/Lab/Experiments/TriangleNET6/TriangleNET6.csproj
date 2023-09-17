@@ -2,11 +2,12 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>net6.0;net6.0-android</TargetFrameworks>
+        <TargetFrameworks>net6.0;net6.0-android;net6.0-ios</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
+        <TrimMode>full</TrimMode>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,4 +26,24 @@
     <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-android'">
         <Compile Remove="\MainActivity.cs" />
     </ItemGroup>
+
+    <!-- iOS -->
+    <Target Name="SimulateNativePkg" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+        <!--<_Silk_NativePackages_SDL_StaticPath Condition="'$(RuntimeIdentifier)' == 'maccatalyst-x64' OR '$(RuntimeIdentifier)' == 'maccatalyst-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\maccatalyst\native\libSDL2.a</_Silk_NativePackages_SDL_StaticPath>-->
+        <_Silk_NativePackages_SDL_StaticPath Condition="$(RuntimeIdentifier) == 'iossimulator-x64' OR '$(RuntimeIdentifier)' == 'iossimulator-arm64'">$(MSBuildThisFileDirectory)..\..\..\Native\Silk.NET.SDL.Native\runtimes\iossimulator\native\libSDL2.a</_Silk_NativePackages_SDL_StaticPath>
+        <_Silk_NativePackages_SDL_StaticPath Condition="$(RuntimeIdentifier) == 'tvossimulator-x64' OR '$(RuntimeIdentifier)' == 'tvossimulator-arm64'">$(MSBuildThisFileDirectory)..\..\..\Native\Silk.NET.SDL.Native\runtimes\tvossimulator\native\libSDL2.a</_Silk_NativePackages_SDL_StaticPath>
+        <_Silk_NativePackages_SDL_StaticPath Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">$(MSBuildThisFileDirectory)..\..\..\Native\Silk.NET.SDL.Native\runtimes\ios\native\libSDL2.a</_Silk_NativePackages_SDL_StaticPath>
+        <_Silk_NativePackages_SDL_StaticPath Condition="'$(RuntimeIdentifier)' == 'tvos-arm64'">$(MSBuildThisFileDirectory)..\..\..\Native\Silk.NET.SDL.Native\runtimes\tvos\native\libSDL2.a</_Silk_NativePackages_SDL_StaticPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <NativeReference Include="$(_Silk_NativePackages_SDL_StaticPath)" Condition="'$(_Silk_NativePackages_SDL_StaticPath)' != ''">
+            <Kind>Static</Kind>
+            <Forceload>True</Forceload>
+            <IsCxx>True</IsCxx>
+            <SmartLink>False</SmartLink>
+            <LinkerFlags>-framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreHaptics -framework CoreMotion -framework CoreVideo -framework GameController -framework IOKit -framework Metal -framework OpenGLES -framework QuartzCore -framework UIKit</LinkerFlags>
+        </NativeReference>
+    </ItemGroup>
+    </Target>
 </Project>
