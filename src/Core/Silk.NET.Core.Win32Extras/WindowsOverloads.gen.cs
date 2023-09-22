@@ -10905,6 +10905,13142 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxRemoteSetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxRemoteSetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxRemoteSetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteSetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteSetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxRemoteGetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxRemoteGetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxRemoteGetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
+        public static unsafe void IBindCtxRemoteGetBindOptionsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IBindCtxRemoteGetBindOptionsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9455, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerRemoteNextProxy(this Windows thisApi, IEnumMoniker* This, uint celt, IMoniker** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerRemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9455, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerRemoteNextProxy(this Windows thisApi, IEnumMoniker* This, uint celt, ref IMoniker* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerRemoteNextProxy(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9455, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerRemoteNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, IMoniker** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9455, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerRemoteNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, IMoniker** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9455, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerRemoteNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, ref IMoniker* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9455, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerRemoteNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, ref IMoniker* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9462, Column 17 in objidl.h")]
+        public static unsafe void IEnumMonikerRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumMonikerRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9611, Column 43 in objidl.h")]
+        public static unsafe int IRunnableObjectRemoteIsRunningProxy(this Windows thisApi, Span<IRunnableObject> This)
+        {
+            // SpanOverloader
+            return thisApi.IRunnableObjectRemoteIsRunningProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9615, Column 17 in objidl.h")]
+        public static unsafe void IRunnableObjectRemoteIsRunningStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IRunnableObjectRemoteIsRunningStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10382, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10390, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToObjectStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToObjectStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, pbc, pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, pbc, pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10397, Column 43 in objidl.h")]
+        public static unsafe int IMonikerRemoteBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerRemoteBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10405, Column 17 in objidl.h")]
+        public static unsafe void IMonikerRemoteBindToStorageStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IMonikerRemoteBindToStorageStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, IEnumSTATSTG* This, uint celt, STATSTG* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, IEnumSTATSTG* This, uint celt, Span<STATSTG> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, IEnumSTATSTG* This, uint celt, Span<STATSTG> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, STATSTG* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, STATSTG* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, Span<STATSTG> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10649, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGRemoteNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, Span<STATSTG> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10656, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATSTGRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATSTGRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 10998, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11008, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteOpenStreamStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteOpenStreamStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(This, ciidExclude, rgiidExclude, snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(This, ciidExclude, rgiidExclude, ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11015, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11023, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, IStorage* This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(This, reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, IStorage* This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(This, reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, byte* reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, byte* reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(ref This.GetPinnableReference(), reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(ref This.GetPinnableReference(), reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11030, Column 43 in objidl.h")]
+        public static unsafe int IStorageRemoteEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageRemoteEnumElementsProxy(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11039, Column 17 in objidl.h")]
+        public static unsafe void IStorageRemoteEnumElementsStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStorageRemoteEnumElementsStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(This, ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(This, ulOffset, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(This, ulOffset, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(This, ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, byte* pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(ref This.GetPinnableReference(), ulOffset, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(ref This.GetPinnableReference(), ulOffset, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11539, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesRemoteReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteReadAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11547, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteReadAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteReadAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11554, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesRemoteWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesRemoteWriteAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11562, Column 17 in objidl.h")]
+        public static unsafe void ILockBytesRemoteWriteAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ILockBytesRemoteWriteAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
+        public static unsafe void IEnumFORMATETCRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumFORMATETCRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
+        public static unsafe void IEnumSTATDATARemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumSTATDATARemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12255, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnViewChangeProxy(this Windows thisApi, Span<IAdviseSink> This, uint dwAspect, int lindex)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnViewChangeProxy(ref This.GetPinnableReference(), dwAspect, lindex);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12261, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12268, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnRenameProxy(this Windows thisApi, IAdviseSink* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnRenameProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12268, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnRenameProxy(this Windows thisApi, Span<IAdviseSink> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnRenameProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12268, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnRenameProxy(this Windows thisApi, Span<IAdviseSink> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnRenameProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12273, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12280, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnSaveProxy(this Windows thisApi, Span<IAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnSaveProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12284, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12291, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkRemoteOnCloseProxy(this Windows thisApi, Span<IAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkRemoteOnCloseProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12295, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSinkRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12494, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12498, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnDataChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnDataChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12505, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnViewChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, uint dwAspect, int lindex)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeProxy(ref This.GetPinnableReference(), dwAspect, lindex);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12511, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12518, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishRemoteOnViewChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12522, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnViewChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnViewChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12529, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnRenameProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnRenameProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12529, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnRenameProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnRenameProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12529, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnRenameProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnRenameProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12534, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12541, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishRemoteOnRenameProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishRemoteOnRenameProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12545, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnRenameStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnRenameStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12552, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnSaveProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnSaveProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12556, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12563, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishRemoteOnSaveProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishRemoteOnSaveProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12567, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnSaveStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnSaveStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12574, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnCloseProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginRemoteOnCloseProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12578, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12585, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishRemoteOnCloseProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishRemoteOnCloseProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12589, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishRemoteOnCloseStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishRemoteOnCloseStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12740, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSink2RemoteOnLinkSrcChangeProxy(this Windows thisApi, IAdviseSink2* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSink2RemoteOnLinkSrcChangeProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12740, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSink2RemoteOnLinkSrcChangeProxy(this Windows thisApi, Span<IAdviseSink2> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSink2RemoteOnLinkSrcChangeProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12740, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSink2RemoteOnLinkSrcChangeProxy(this Windows thisApi, Span<IAdviseSink2> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSink2RemoteOnLinkSrcChangeProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12745, Column 17 in objidl.h")]
+        public static unsafe void IAdviseSink2RemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2RemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12926, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeProxy(this Windows thisApi, AsyncIAdviseSink2* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12926, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink2> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12926, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink2> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12931, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12938, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink2> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 12942, Column 17 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishRemoteOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(This, pformatetcIn, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(This, pformatetc, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteGetDataHereStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteGetDataHereStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(This, pformatetc, ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(This, ref pformatetc.GetPinnableReference(), pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), pformatetc, pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
+        public static unsafe void IDataObjectRemoteSetDataStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IDataObjectRemoteSetDataStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(This, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(This, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(ref This.GetPinnableReference(), in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(ref This.GetPinnableReference(), in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13830, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAppendProxy(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13837, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAppendStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAppendStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13844, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesRemoteFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesRemoteFillAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 13852, Column 17 in objidl.h")]
+        public static unsafe void IFillLockBytesRemoteFillAtStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IFillLockBytesRemoteFillAtStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
+        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserSize(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
+        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
+        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
+        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.ASYNCSTGMEDIUMUserFree(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
+        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        {
+            // SpanOverloader
+            thisApi.ASYNCSTGMEDIUMUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
+        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.ASYNCSTGMEDIUMUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15468, Column 39 in objidl.h")]
+        public static unsafe uint CLIPFORMATUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserSize(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15468, Column 39 in objidl.h")]
+        public static unsafe uint CLIPFORMATUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15468, Column 39 in objidl.h")]
+        public static unsafe uint CLIPFORMATUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15469, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15470, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15471, Column 39 in objidl.h")]
+        public static unsafe void CLIPFORMATUserFree(this Windows thisApi, uint* arg0, Span<ushort> arg1)
+        {
+            // SpanOverloader
+            thisApi.CLIPFORMATUserFree(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15471, Column 39 in objidl.h")]
+        public static unsafe void CLIPFORMATUserFree(this Windows thisApi, Span<uint> arg0, ushort* arg1)
+        {
+            // SpanOverloader
+            thisApi.CLIPFORMATUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15471, Column 39 in objidl.h")]
+        public static unsafe void CLIPFORMATUserFree(this Windows thisApi, Span<uint> arg0, Span<ushort> arg1)
+        {
+            // SpanOverloader
+            thisApi.CLIPFORMATUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15473, Column 39 in objidl.h")]
+        public static unsafe uint FLAGSTGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserSize(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15473, Column 39 in objidl.h")]
+        public static unsafe uint FLAGSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15473, Column 39 in objidl.h")]
+        public static unsafe uint FLAGSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15474, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15475, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15476, Column 39 in objidl.h")]
+        public static unsafe void FLAGSTGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<FlagStgmedium> arg1)
+        {
+            // SpanOverloader
+            thisApi.FLAGSTGMEDIUMUserFree(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15476, Column 39 in objidl.h")]
+        public static unsafe void FLAGSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, FlagStgmedium* arg1)
+        {
+            // SpanOverloader
+            thisApi.FLAGSTGMEDIUMUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15476, Column 39 in objidl.h")]
+        public static unsafe void FLAGSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<FlagStgmedium> arg1)
+        {
+            // SpanOverloader
+            thisApi.FLAGSTGMEDIUMUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15478, Column 39 in objidl.h")]
+        public static unsafe uint HBITMAPUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15478, Column 39 in objidl.h")]
+        public static unsafe uint HBITMAPUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15481, Column 39 in objidl.h")]
+        public static unsafe void HBITMAPUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
+        {
+            // SpanOverloader
+            thisApi.HBITMAPUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15481, Column 39 in objidl.h")]
+        public static unsafe void HBITMAPUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
+        {
+            // SpanOverloader
+            thisApi.HBITMAPUserFree(ref arg0.GetPinnableReference(), ref arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15483, Column 39 in objidl.h")]
+        public static unsafe uint HDCUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserSize(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15483, Column 39 in objidl.h")]
+        public static unsafe uint HDCUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15483, Column 39 in objidl.h")]
+        public static unsafe uint HDCUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15484, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15485, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15486, Column 39 in objidl.h")]
+        public static unsafe void HDCUserFree(this Windows thisApi, uint* arg0, Span<nint> arg1)
+        {
+            // SpanOverloader
+            thisApi.HDCUserFree(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15486, Column 39 in objidl.h")]
+        public static unsafe void HDCUserFree(this Windows thisApi, Span<uint> arg0, nint* arg1)
+        {
+            // SpanOverloader
+            thisApi.HDCUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15486, Column 39 in objidl.h")]
+        public static unsafe void HDCUserFree(this Windows thisApi, Span<uint> arg0, Span<nint> arg1)
+        {
+            // SpanOverloader
+            thisApi.HDCUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15488, Column 39 in objidl.h")]
+        public static unsafe uint HICONUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15488, Column 39 in objidl.h")]
+        public static unsafe uint HICONUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15491, Column 39 in objidl.h")]
+        public static unsafe void HICONUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
+        {
+            // SpanOverloader
+            thisApi.HICONUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15491, Column 39 in objidl.h")]
+        public static unsafe void HICONUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
+        {
+            // SpanOverloader
+            thisApi.HICONUserFree(ref arg0.GetPinnableReference(), ref arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15493, Column 39 in objidl.h")]
+        public static unsafe uint SNBUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15493, Column 39 in objidl.h")]
+        public static unsafe uint SNBUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15494, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15495, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15496, Column 39 in objidl.h")]
+        public static unsafe void SNBUserFree(this Windows thisApi, Span<uint> arg0, char*** arg1)
+        {
+            // SpanOverloader
+            thisApi.SNBUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15496, Column 39 in objidl.h")]
+        public static unsafe void SNBUserFree(this Windows thisApi, Span<uint> arg0, ref char** arg1)
+        {
+            // SpanOverloader
+            thisApi.SNBUserFree(ref arg0.GetPinnableReference(), ref arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
+        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserSize(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
+        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
+        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
+        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.STGMEDIUMUserFree(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
+        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        {
+            // SpanOverloader
+            thisApi.STGMEDIUMUserFree(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
+        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.STGMEDIUMUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
+        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
+        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
+        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
+        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.ASYNCSTGMEDIUMUserFree64(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
+        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        {
+            // SpanOverloader
+            thisApi.ASYNCSTGMEDIUMUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
+        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.ASYNCSTGMEDIUMUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15508, Column 39 in objidl.h")]
+        public static unsafe uint CLIPFORMATUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15508, Column 39 in objidl.h")]
+        public static unsafe uint CLIPFORMATUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15508, Column 39 in objidl.h")]
+        public static unsafe uint CLIPFORMATUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15509, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ushort* arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15510, Column 29 in objidl.h")]
+        public static unsafe byte* CLIPFORMATUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
+        {
+            // SpanOverloader
+            return thisApi.CLIPFORMATUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15511, Column 39 in objidl.h")]
+        public static unsafe void CLIPFORMATUserFree64(this Windows thisApi, uint* arg0, Span<ushort> arg1)
+        {
+            // SpanOverloader
+            thisApi.CLIPFORMATUserFree64(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15511, Column 39 in objidl.h")]
+        public static unsafe void CLIPFORMATUserFree64(this Windows thisApi, Span<uint> arg0, ushort* arg1)
+        {
+            // SpanOverloader
+            thisApi.CLIPFORMATUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15511, Column 39 in objidl.h")]
+        public static unsafe void CLIPFORMATUserFree64(this Windows thisApi, Span<uint> arg0, Span<ushort> arg1)
+        {
+            // SpanOverloader
+            thisApi.CLIPFORMATUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15513, Column 39 in objidl.h")]
+        public static unsafe uint FLAGSTGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15513, Column 39 in objidl.h")]
+        public static unsafe uint FLAGSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15513, Column 39 in objidl.h")]
+        public static unsafe uint FLAGSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15514, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, FlagStgmedium* arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15515, Column 29 in objidl.h")]
+        public static unsafe byte* FLAGSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<FlagStgmedium> arg2)
+        {
+            // SpanOverloader
+            return thisApi.FLAGSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15516, Column 39 in objidl.h")]
+        public static unsafe void FLAGSTGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<FlagStgmedium> arg1)
+        {
+            // SpanOverloader
+            thisApi.FLAGSTGMEDIUMUserFree64(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15516, Column 39 in objidl.h")]
+        public static unsafe void FLAGSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, FlagStgmedium* arg1)
+        {
+            // SpanOverloader
+            thisApi.FLAGSTGMEDIUMUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15516, Column 39 in objidl.h")]
+        public static unsafe void FLAGSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<FlagStgmedium> arg1)
+        {
+            // SpanOverloader
+            thisApi.FLAGSTGMEDIUMUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15518, Column 39 in objidl.h")]
+        public static unsafe uint HBITMAPUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15518, Column 39 in objidl.h")]
+        public static unsafe uint HBITMAPUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15521, Column 39 in objidl.h")]
+        public static unsafe void HBITMAPUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
+        {
+            // SpanOverloader
+            thisApi.HBITMAPUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15521, Column 39 in objidl.h")]
+        public static unsafe void HBITMAPUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
+        {
+            // SpanOverloader
+            thisApi.HBITMAPUserFree64(ref arg0.GetPinnableReference(), ref arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15523, Column 39 in objidl.h")]
+        public static unsafe uint HDCUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15523, Column 39 in objidl.h")]
+        public static unsafe uint HDCUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15523, Column 39 in objidl.h")]
+        public static unsafe uint HDCUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15524, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, nint* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15525, Column 29 in objidl.h")]
+        public static unsafe byte* HDCUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<nint> arg2)
+        {
+            // SpanOverloader
+            return thisApi.HDCUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15526, Column 39 in objidl.h")]
+        public static unsafe void HDCUserFree64(this Windows thisApi, uint* arg0, Span<nint> arg1)
+        {
+            // SpanOverloader
+            thisApi.HDCUserFree64(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15526, Column 39 in objidl.h")]
+        public static unsafe void HDCUserFree64(this Windows thisApi, Span<uint> arg0, nint* arg1)
+        {
+            // SpanOverloader
+            thisApi.HDCUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15526, Column 39 in objidl.h")]
+        public static unsafe void HDCUserFree64(this Windows thisApi, Span<uint> arg0, Span<nint> arg1)
+        {
+            // SpanOverloader
+            thisApi.HDCUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15528, Column 39 in objidl.h")]
+        public static unsafe uint HICONUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15528, Column 39 in objidl.h")]
+        public static unsafe uint HICONUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
+        {
+            // SpanOverloader
+            return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15531, Column 39 in objidl.h")]
+        public static unsafe void HICONUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
+        {
+            // SpanOverloader
+            thisApi.HICONUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15531, Column 39 in objidl.h")]
+        public static unsafe void HICONUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
+        {
+            // SpanOverloader
+            thisApi.HICONUserFree64(ref arg0.GetPinnableReference(), ref arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15533, Column 39 in objidl.h")]
+        public static unsafe uint SNBUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15533, Column 39 in objidl.h")]
+        public static unsafe uint SNBUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15534, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, char*** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15535, Column 29 in objidl.h")]
+        public static unsafe byte* SNBUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref char** arg2)
+        {
+            // SpanOverloader
+            return thisApi.SNBUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15536, Column 39 in objidl.h")]
+        public static unsafe void SNBUserFree64(this Windows thisApi, Span<uint> arg0, char*** arg1)
+        {
+            // SpanOverloader
+            thisApi.SNBUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15536, Column 39 in objidl.h")]
+        public static unsafe void SNBUserFree64(this Windows thisApi, Span<uint> arg0, ref char** arg1)
+        {
+            // SpanOverloader
+            thisApi.SNBUserFree64(ref arg0.GetPinnableReference(), ref arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
+        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
+        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
+        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        {
+            // SpanOverloader
+            return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
+        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.STGMEDIUMUserFree64(arg0, ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
+        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        {
+            // SpanOverloader
+            thisApi.STGMEDIUMUserFree64(ref arg0.GetPinnableReference(), arg1);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
+        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        {
+            // SpanOverloader
+            thisApi.STGMEDIUMUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
+        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxSetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
+        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS* pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxSetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
+        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxSetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxSetBindOptionsStub(This, ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxSetBindOptionsStub(ref This.GetPinnableReference(), pbindopts);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxSetBindOptionsStub(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
+        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxGetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
+        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS* pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxGetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
+        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxGetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxGetBindOptionsStub(This, ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxGetBindOptionsStub(ref This.GetPinnableReference(), pbindopts);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
+        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        {
+            // SpanOverloader
+            return thisApi.IBindCtxGetBindOptionsStub(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
+        public static unsafe int IEnumMonikerNextProxy(this Windows thisApi, IEnumMoniker* This, uint celt, IMoniker** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
+        public static unsafe int IEnumMonikerNextProxy(this Windows thisApi, IEnumMoniker* This, uint celt, ref IMoniker* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextProxy(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
+        public static unsafe int IEnumMonikerNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, IMoniker** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
+        public static unsafe int IEnumMonikerNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, IMoniker** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
+        public static unsafe int IEnumMonikerNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, ref IMoniker* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
+        public static unsafe int IEnumMonikerNextProxy(this Windows thisApi, Span<IEnumMoniker> This, uint celt, ref IMoniker* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15667, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerNextStub(this Windows thisApi, IEnumMoniker* This, uint celt, IMoniker** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15667, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerNextStub(this Windows thisApi, IEnumMoniker* This, uint celt, ref IMoniker* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextStub(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15667, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerNextStub(this Windows thisApi, Span<IEnumMoniker> This, uint celt, IMoniker** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15667, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerNextStub(this Windows thisApi, Span<IEnumMoniker> This, uint celt, IMoniker** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15667, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerNextStub(this Windows thisApi, Span<IEnumMoniker> This, uint celt, ref IMoniker* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextStub(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15667, Column 43 in objidl.h")]
+        public static unsafe int IEnumMonikerNextStub(this Windows thisApi, Span<IEnumMoniker> This, uint celt, ref IMoniker* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumMonikerNextStub(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15673, Column 38 in objidl.h")]
+        public static unsafe Silk.NET.Core.Bool32 IRunnableObjectIsRunningProxy(this Windows thisApi, Span<IRunnableObject> This)
+        {
+            // SpanOverloader
+            return thisApi.IRunnableObjectIsRunningProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15677, Column 43 in objidl.h")]
+        public static unsafe int IRunnableObjectIsRunningStub(this Windows thisApi, Span<IRunnableObject> This)
+        {
+            // SpanOverloader
+            return thisApi.IRunnableObjectIsRunningStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, void** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15680, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref void* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riidResult, ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, Silk.NET.Core.Native.IUnknown** ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15692, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToObjectStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riidResult, ref Silk.NET.Core.Native.IUnknown* ppvResult)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToObjectStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riidResult.GetPinnableReference(), ref ppvResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, pbc, pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, pbc, pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, void** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15699, Column 41 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageProxy(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref void* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageProxy(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, pbc, pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, pbc, pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, pbc, ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, pbc, ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, IMoniker* This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(This, ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, IBindCtx* pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), pbc, ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, IMoniker* pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), pmkToLeft, ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Guid* riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), riid, ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, Silk.NET.Core.Native.IUnknown** ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15711, Column 43 in objidl.h")]
+        public static unsafe int IMonikerBindToStorageStub(this Windows thisApi, Span<IMoniker> This, Span<IBindCtx> pbc, Span<IMoniker> pmkToLeft, Span<Guid> riid, ref Silk.NET.Core.Native.IUnknown* ppvObj)
+        {
+            // SpanOverloader
+            return thisApi.IMonikerBindToStorageStub(ref This.GetPinnableReference(), ref pbc.GetPinnableReference(), ref pmkToLeft.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, IEnumSTATSTG* This, uint celt, STATSTG* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, IEnumSTATSTG* This, uint celt, Span<STATSTG> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, IEnumSTATSTG* This, uint celt, Span<STATSTG> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, STATSTG* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, STATSTG* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, Span<STATSTG> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15718, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextProxy(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, Span<STATSTG> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, IEnumSTATSTG* This, uint celt, STATSTG* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, IEnumSTATSTG* This, uint celt, Span<STATSTG> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, IEnumSTATSTG* This, uint celt, Span<STATSTG> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, STATSTG* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, STATSTG* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, Span<STATSTG> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15727, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATSTGNextStub(this Windows thisApi, Span<IEnumSTATSTG> This, uint celt, Span<STATSTG> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATSTGNextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, in pwcsName.GetPinnableReference(), reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, in pwcsName.GetPinnableReference(), reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, in pwcsName.GetPinnableReference(), ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, in pwcsName.GetPinnableReference(), ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(This, pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15733, Column 41 in objidl.h")]
+        public static unsafe int IStorageOpenStreamProxy<T0>(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, Span<T0> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamProxy(ref This.GetPinnableReference(), pwcsName, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, IStorage* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(This, pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), in pwcsName.GetPinnableReference(), cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, byte* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, Span<byte> reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, ref reserved1.GetPinnableReference(), grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15745, Column 43 in objidl.h")]
+        public static unsafe int IStorageOpenStreamStub(this Windows thisApi, Span<IStorage> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, uint cbReserved1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        {
+            // SpanOverloader
+            return thisApi.IStorageOpenStreamStub(ref This.GetPinnableReference(), pwcsName, cbReserved1, reserved1, grfMode, reserved2, ref ppstm);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(This, ciidExclude, rgiidExclude, snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(This, ciidExclude, rgiidExclude, ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(This, ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15754, Column 41 in objidl.h")]
+        public static unsafe int IStorageCopyToProxy(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToProxy(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(This, ciidExclude, rgiidExclude, snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(This, ciidExclude, rgiidExclude, ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(This, ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(This, ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(This, ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, IStorage* This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(This, ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, rgiidExclude, ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, char** snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, pstgDest);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15765, Column 43 in objidl.h")]
+        public static unsafe int IStorageCopyToStub(this Windows thisApi, Span<IStorage> This, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> rgiidExclude, ref char* snbExclude, Span<IStorage> pstgDest)
+        {
+            // SpanOverloader
+            return thisApi.IStorageCopyToStub(ref This.GetPinnableReference(), ciidExclude, in rgiidExclude.GetPinnableReference(), ref snbExclude, ref pstgDest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15772, Column 41 in objidl.h")]
+        public static unsafe int IStorageEnumElementsProxy<T0>(this Windows thisApi, IStorage* This, uint reserved1, Span<T0> reserved2, uint reserved3, IEnumSTATSTG** ppenum) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsProxy(This, reserved1, ref reserved2.GetPinnableReference(), reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15772, Column 41 in objidl.h")]
+        public static unsafe int IStorageEnumElementsProxy<T0>(this Windows thisApi, IStorage* This, uint reserved1, Span<T0> reserved2, uint reserved3, ref IEnumSTATSTG* ppenum) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsProxy(This, reserved1, ref reserved2.GetPinnableReference(), reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15772, Column 41 in objidl.h")]
+        public static unsafe int IStorageEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, void* reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsProxy(ref This.GetPinnableReference(), reserved1, reserved2, reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15772, Column 41 in objidl.h")]
+        public static unsafe int IStorageEnumElementsProxy(this Windows thisApi, Span<IStorage> This, uint reserved1, void* reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsProxy(ref This.GetPinnableReference(), reserved1, reserved2, reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15772, Column 41 in objidl.h")]
+        public static unsafe int IStorageEnumElementsProxy<T0>(this Windows thisApi, Span<IStorage> This, uint reserved1, Span<T0> reserved2, uint reserved3, IEnumSTATSTG** ppenum) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsProxy(ref This.GetPinnableReference(), reserved1, ref reserved2.GetPinnableReference(), reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15772, Column 41 in objidl.h")]
+        public static unsafe int IStorageEnumElementsProxy<T0>(this Windows thisApi, Span<IStorage> This, uint reserved1, Span<T0> reserved2, uint reserved3, ref IEnumSTATSTG* ppenum) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsProxy(ref This.GetPinnableReference(), reserved1, ref reserved2.GetPinnableReference(), reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, IStorage* This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(This, reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, IStorage* This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(This, reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, byte* reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, byte* reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(ref This.GetPinnableReference(), reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, Span<byte> reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(ref This.GetPinnableReference(), reserved1, cbReserved2, ref reserved2.GetPinnableReference(), reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved2, uint reserved3, IEnumSTATSTG** ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15784, Column 43 in objidl.h")]
+        public static unsafe int IStorageEnumElementsStub(this Windows thisApi, Span<IStorage> This, uint reserved1, uint cbReserved2, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string reserved2, uint reserved3, ref IEnumSTATSTG* ppenum)
+        {
+            // SpanOverloader
+            return thisApi.IStorageEnumElementsStub(ref This.GetPinnableReference(), reserved1, cbReserved2, reserved2, reserved3, ref ppenum);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, void* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(This, ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy<T0>(this Windows thisApi, ILockBytes* This, ulong ulOffset, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(This, ulOffset, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy<T0>(this Windows thisApi, ILockBytes* This, ulong ulOffset, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(This, ulOffset, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, void* pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, void* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy<T0>(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(ref This.GetPinnableReference(), ulOffset, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15792, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesReadAtProxy<T0>(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtProxy(ref This.GetPinnableReference(), ulOffset, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(This, ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(This, ulOffset, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(This, ulOffset, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(This, ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, byte* pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(ref This.GetPinnableReference(), ulOffset, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(ref This.GetPinnableReference(), ulOffset, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15802, Column 35 in objidl.h")]
+        public static unsafe int ILockBytesReadAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesReadAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy<T0>(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy<T0>(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy<T0>(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15809, Column 41 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtProxy<T0>(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(This, ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(This, ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, ILockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15819, Column 43 in objidl.h")]
+        public static unsafe int ILockBytesWriteAtStub(this Windows thisApi, Span<ILockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ILockBytesWriteAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(This, pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15869, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnViewChangeProxy(this Windows thisApi, Span<IAdviseSink> This, uint dwAspect, int lindex)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnViewChangeProxy(ref This.GetPinnableReference(), dwAspect, lindex);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15875, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnViewChangeStub(this Windows thisApi, Span<IAdviseSink> This, uint dwAspect, int lindex)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnViewChangeStub(ref This.GetPinnableReference(), dwAspect, lindex);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15880, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnRenameProxy(this Windows thisApi, IAdviseSink* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnRenameProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15880, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnRenameProxy(this Windows thisApi, Span<IAdviseSink> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnRenameProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15880, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnRenameProxy(this Windows thisApi, Span<IAdviseSink> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnRenameProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15886, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnRenameStub(this Windows thisApi, IAdviseSink* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnRenameStub(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15886, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnRenameStub(this Windows thisApi, Span<IAdviseSink> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnRenameStub(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15886, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnRenameStub(this Windows thisApi, Span<IAdviseSink> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnRenameStub(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15890, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnSaveProxy(this Windows thisApi, Span<IAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnSaveProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15894, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnSaveStub(this Windows thisApi, Span<IAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnSaveStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15897, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSinkOnCloseProxy(this Windows thisApi, Span<IAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSinkOnCloseProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15901, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSinkOnCloseStub(this Windows thisApi, Span<IAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSinkOnCloseStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(This, pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15917, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishOnDataChangeProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15921, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishOnDataChangeStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15924, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnViewChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, uint dwAspect, int lindex)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnViewChangeProxy(ref This.GetPinnableReference(), dwAspect, lindex);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15930, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnViewChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, uint dwAspect, int lindex)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnViewChangeStub(ref This.GetPinnableReference(), dwAspect, lindex);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15935, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishOnViewChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishOnViewChangeProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15939, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishOnViewChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishOnViewChangeStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15942, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnRenameProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnRenameProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15942, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnRenameProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnRenameProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15942, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnRenameProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnRenameProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15948, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnRenameStub(this Windows thisApi, AsyncIAdviseSink* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnRenameStub(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15948, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnRenameStub(this Windows thisApi, Span<AsyncIAdviseSink> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnRenameStub(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15948, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnRenameStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnRenameStub(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15952, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishOnRenameProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishOnRenameProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15956, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishOnRenameStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishOnRenameStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15959, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnSaveProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnSaveProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15963, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnSaveStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnSaveStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15966, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishOnSaveProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishOnSaveProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15970, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishOnSaveStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishOnSaveStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15973, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkBeginOnCloseProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkBeginOnCloseProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15977, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkBeginOnCloseStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkBeginOnCloseStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15980, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSinkFinishOnCloseProxy(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSinkFinishOnCloseProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15984, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSinkFinishOnCloseStub(this Windows thisApi, Span<AsyncIAdviseSink> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSinkFinishOnCloseStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15987, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSink2OnLinkSrcChangeProxy(this Windows thisApi, IAdviseSink2* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2OnLinkSrcChangeProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15987, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSink2OnLinkSrcChangeProxy(this Windows thisApi, Span<IAdviseSink2> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2OnLinkSrcChangeProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15987, Column 38 in objidl.h")]
+        public static unsafe void IAdviseSink2OnLinkSrcChangeProxy(this Windows thisApi, Span<IAdviseSink2> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.IAdviseSink2OnLinkSrcChangeProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15993, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSink2OnLinkSrcChangeStub(this Windows thisApi, IAdviseSink2* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSink2OnLinkSrcChangeStub(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15993, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSink2OnLinkSrcChangeStub(this Windows thisApi, Span<IAdviseSink2> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSink2OnLinkSrcChangeStub(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15993, Column 43 in objidl.h")]
+        public static unsafe int IAdviseSink2OnLinkSrcChangeStub(this Windows thisApi, Span<IAdviseSink2> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.IAdviseSink2OnLinkSrcChangeStub(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15997, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginOnLinkSrcChangeProxy(this Windows thisApi, AsyncIAdviseSink2* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginOnLinkSrcChangeProxy(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15997, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginOnLinkSrcChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink2> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginOnLinkSrcChangeProxy(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15997, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2BeginOnLinkSrcChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink2> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2BeginOnLinkSrcChangeProxy(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16003, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2BeginOnLinkSrcChangeStub(this Windows thisApi, AsyncIAdviseSink2* This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2BeginOnLinkSrcChangeStub(This, ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16003, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2BeginOnLinkSrcChangeStub(this Windows thisApi, Span<AsyncIAdviseSink2> This, IMoniker* pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2BeginOnLinkSrcChangeStub(ref This.GetPinnableReference(), pmk);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16003, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2BeginOnLinkSrcChangeStub(this Windows thisApi, Span<AsyncIAdviseSink2> This, Span<IMoniker> pmk)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2BeginOnLinkSrcChangeStub(ref This.GetPinnableReference(), ref pmk.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16007, Column 38 in objidl.h")]
+        public static unsafe void AsyncIAdviseSink2FinishOnLinkSrcChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink2> This)
+        {
+            // SpanOverloader
+            thisApi.AsyncIAdviseSink2FinishOnLinkSrcChangeProxy(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16011, Column 43 in objidl.h")]
+        public static unsafe int AsyncIAdviseSink2FinishOnLinkSrcChangeStub(this Windows thisApi, Span<AsyncIAdviseSink2> This)
+        {
+            // SpanOverloader
+            return thisApi.AsyncIAdviseSink2FinishOnLinkSrcChangeStub(ref This.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(This, pformatetcIn, ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), pmedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, pmedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), pmedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(This, pformatetcIn, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(This, ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(This, ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), pformatetcIn, pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), pformatetcIn, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(This, pformatetc, ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), pmedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, pmedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(This, pformatetc, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(This, ref pformatetc.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(This, ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), pformatetc, pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), pformatetc, ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pRemoteMedium);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(This, pformatetc, ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(This, ref pformatetc.GetPinnableReference(), pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), pformatetc, pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(This, pformatetc, ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(This, ref pformatetc.GetPinnableReference(), pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), pformatetc, pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium, fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        {
+            // SpanOverloader
+            return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy<T0>(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(This, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy<T0>(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(This, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy<T0>(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(ref This.GetPinnableReference(), in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendProxy<T0>(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendProxy(ref This.GetPinnableReference(), in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(This, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(This, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, IFillLockBytes* This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(ref This.GetPinnableReference(), in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(ref This.GetPinnableReference(), in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16065, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAppendStub(this Windows thisApi, Span<IFillLockBytes> This, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAppendStub(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy<T0>(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy<T0>(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(This, ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy<T0>(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16071, Column 41 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtProxy<T0>(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtProxy(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(This, ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(This, ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, IFillLockBytes* This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(This, ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(ref This.GetPinnableReference(), ulOffset, in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 16083, Column 35 in objidl.h")]
+        public static unsafe int IFillLockBytesFillAtStub(this Windows thisApi, Span<IFillLockBytes> This, ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IFillLockBytesFillAtStub(ref This.GetPinnableReference(), ulOffset, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 541, Column 1 in evntprov.h")]
         public static unsafe uint EventRegister(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, PfnPenablecallback EnableCallback, void* CallbackContext, Span<ulong> RegHandle)
         {
