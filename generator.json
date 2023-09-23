@@ -1062,7 +1062,7 @@
                 "tagRPCOPT_SERVER_LOCALITY_VALUES": "RPCOptServerLocalityValues",
                 "tagSTGTY": "STGTY",
                 "tagSTREAM_SEEK": "StreamSeek",
-                "tagADVF": "AdviseFlag",
+                "tagADVF": "ADVF",
                 "tagApplicationType": "ApplicationType",
                 "tagBIND_FLAGS": "BindFlags",
                 "tagCALLTYPE": "CallType",
@@ -1084,7 +1084,6 @@
                 "tagRemSTGMEDIUM": "RemSTGMEDIUM",
                 "tagSTATDATA": "STATDATA",
                 "tagSTGMEDIUM": "STGMEDIUM",
-                "TagSTGMEDIUMUnion": "STGMEDIUMUnion",
                 "tagStorageLayout": "StorageLayout"
             },
             "bakery": {

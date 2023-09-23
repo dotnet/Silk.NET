@@ -11,7 +11,7 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Flags]
     [NativeName("Name", "tagADVF")]
-    public enum AdviseFlag : int
+    public enum ADVF : int
     {
         [NativeName("Name", "")]
         None = 0,
