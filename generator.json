@@ -1628,7 +1628,9 @@
                 "ID2D1Device",
                 "ID2D1Image"
             ],
-            "rename": {},
+            "rename": {
+                "WICProgressNotification": "ProgressNotificationEnum"
+            },
             "bakery": {
                 "profileNames": [
                     "silk.net.windowscodecs",

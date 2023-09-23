@@ -11,7 +11,7 @@ namespace Silk.NET.WindowsCodecs
 {
     [Flags]
     [NativeName("Name", "WICProgressNotification")]
-    public enum ProgressNotification : int
+    public enum ProgressNotificationEnum : int
     {
         [NativeName("Name", "")]
         None = 0,
