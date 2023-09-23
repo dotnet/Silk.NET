@@ -223,113 +223,113 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
+        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pbBufferPtr = &pbBuffer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
         SilkMarshal.Free((nint)pbBufferPtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
         var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
         SilkMarshal.Free((nint)pbBufferPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Guid* dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Guid* dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICPalette* pIPalettePtr = &pIPalette)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, ref Guid dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, ref Guid dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* dstFormatPtr = &dstFormat)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, ref Guid dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -337,26 +337,26 @@ public unsafe static class WICFormatConverterVtblExtensions
         {
             fixed (IWICPalette* pIPalettePtr = &pIPalette)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, Guid* dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapSource* pISourcePtr = &pISource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, Guid* dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, Guid* dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -364,14 +364,14 @@ public unsafe static class WICFormatConverterVtblExtensions
         {
             fixed (IWICPalette* pIPalettePtr = &pIPalette)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, ref Guid dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -379,14 +379,14 @@ public unsafe static class WICFormatConverterVtblExtensions
         {
             fixed (Guid* dstFormatPtr = &dstFormat)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, ref Guid dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -396,7 +396,7 @@ public unsafe static class WICFormatConverterVtblExtensions
             {
                 fixed (IWICPalette* pIPalettePtr = &pIPalette)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
                 }
             }
         }
@@ -609,7 +609,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -617,7 +617,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -625,7 +625,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -633,7 +633,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -641,7 +641,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize<TI0, TI1>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, Guid* dstFormat, WICBitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
+    public static unsafe int Initialize<TI0, TI1>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, Guid* dstFormat, BitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -649,7 +649,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Guid* dstFormat, BitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -657,7 +657,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, Guid* dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static unsafe int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, Guid* dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -665,7 +665,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Span<Guid> dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Span<Guid> dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -673,7 +673,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize<TI0, TI1>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, ref Guid dstFormat, WICBitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
+    public static int Initialize<TI0, TI1>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, ref Guid dstFormat, BitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -681,7 +681,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Span<Guid> dstFormat, WICBitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, IWICBitmapSource* pISource, Span<Guid> dstFormat, BitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -689,7 +689,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ComPtr<TI0> pISource, ref Guid dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -697,7 +697,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Guid* dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -705,7 +705,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, Guid* dstFormat, WICBitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
+    public static unsafe int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, Guid* dstFormat, BitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -713,7 +713,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Guid* dstFormat, WICBitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Guid* dstFormat, BitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -721,7 +721,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Span<Guid> dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static unsafe int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Span<Guid> dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -729,7 +729,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
+    public static int Initialize<TI0>(this ComPtr<IWICFormatConverter> thisVtbl, ref IWICBitmapSource pISource, ref Guid dstFormat, BitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -737,7 +737,7 @@ public unsafe static class WICFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Span<Guid> dstFormat, WICBitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+    public static int Initialize(this ComPtr<IWICFormatConverter> thisVtbl, Span<IWICBitmapSource> pISource, Span<Guid> dstFormat, BitmapDitherType dither, Span<IWICPalette> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

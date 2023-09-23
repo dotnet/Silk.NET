@@ -85,22 +85,22 @@ public unsafe static class WICBitmapEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapEncoder> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, WICBitmapEncoderCacheOption cacheOption)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapEncoder> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, BitmapEncoderCacheOption cacheOption)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, WICBitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStream, cacheOption);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, BitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStream, cacheOption);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICBitmapEncoder> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, WICBitmapEncoderCacheOption cacheOption)
+    public static int Initialize(this ComPtr<IWICBitmapEncoder> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, BitmapEncoderCacheOption cacheOption)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Win32Extras.IStream* pIStreamPtr = &pIStream)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, WICBitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStreamPtr, cacheOption);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, BitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStreamPtr, cacheOption);
         }
         return ret;
     }
@@ -335,7 +335,7 @@ public unsafe static class WICBitmapEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize<TI0>(this ComPtr<IWICBitmapEncoder> thisVtbl, ComPtr<TI0> pIStream, WICBitmapEncoderCacheOption cacheOption) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static int Initialize<TI0>(this ComPtr<IWICBitmapEncoder> thisVtbl, ComPtr<TI0> pIStream, BitmapEncoderCacheOption cacheOption) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -343,7 +343,7 @@ public unsafe static class WICBitmapEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICBitmapEncoder> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, WICBitmapEncoderCacheOption cacheOption)
+    public static int Initialize(this ComPtr<IWICBitmapEncoder> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, BitmapEncoderCacheOption cacheOption)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -111,11 +111,11 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Notify(uint uFrameNum, WICProgressOperation operation, double dblProgress)
+        public readonly int Notify(uint uFrameNum, ProgressOperation operation, double dblProgress)
         {
             var @this = (IWICProgressCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICProgressCallback*, uint, WICProgressOperation, double, int>)@this->LpVtbl[3])(@this, uFrameNum, operation, dblProgress);
+            ret = ((delegate* unmanaged[Stdcall]<IWICProgressCallback*, uint, ProgressOperation, double, int>)@this->LpVtbl[3])(@this, uFrameNum, operation, dblProgress);
             return ret;
         }
 

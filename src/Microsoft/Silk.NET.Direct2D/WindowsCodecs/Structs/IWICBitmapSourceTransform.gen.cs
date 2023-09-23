@@ -111,51 +111,51 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pguidDstFormatPtr = &pguidDstFormat)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBuffer);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBuffer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -163,94 +163,94 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (byte* pbBufferPtr = &pbBuffer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pguidDstFormatPtr = &pguidDstFormat)
             {
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prc, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (byte* pbBufferPtr = &pbBuffer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (Guid* pguidDstFormatPtr = &pguidDstFormat)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBuffer);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBuffer);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (Guid* pguidDstFormatPtr = &pguidDstFormat)
                 {
                     fixed (byte* pbBufferPtr = &pbBuffer)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
                     }
                 }
             }
@@ -258,16 +258,16 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (Guid* pguidDstFormatPtr = &pguidDstFormat)
                 {
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, Rect*, uint, uint, Guid*, BitmapTransformOptions, uint, uint, byte*, int>)@this->LpVtbl[3])(@this, prcPtr, uiWidth, uiHeight, pguidDstFormatPtr, dstTransform, nStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
                 }
             }
@@ -344,22 +344,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(WICBitmapTransformOptions dstTransform, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(BitmapTransformOptions dstTransform, int* pfIsSupported)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICBitmapTransformOptions, int*, int>)@this->LpVtbl[6])(@this, dstTransform, pfIsSupported);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, BitmapTransformOptions, int*, int>)@this->LpVtbl[6])(@this, dstTransform, pfIsSupported);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DoesSupportTransform(WICBitmapTransformOptions dstTransform, ref int pfIsSupported)
+        public readonly int DoesSupportTransform(BitmapTransformOptions dstTransform, ref int pfIsSupported)
         {
             var @this = (IWICBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* pfIsSupportedPtr = &pfIsSupported)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, WICBitmapTransformOptions, int*, int>)@this->LpVtbl[6])(@this, dstTransform, pfIsSupportedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapSourceTransform*, BitmapTransformOptions, int*, int>)@this->LpVtbl[6])(@this, dstTransform, pfIsSupportedPtr);
             }
             return ret;
         }

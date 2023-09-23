@@ -158,22 +158,22 @@ public unsafe static class WICColorContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetType(this ComPtr<IWICColorContext> thisVtbl, WICColorContextType* pType)
+    public static unsafe int GetType(this ComPtr<IWICColorContext> thisVtbl, ColorContextType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, WICColorContextType*, int>)@this->LpVtbl[6])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, ColorContextType*, int>)@this->LpVtbl[6])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetType(this ComPtr<IWICColorContext> thisVtbl, ref WICColorContextType pType)
+    public static int GetType(this ComPtr<IWICColorContext> thisVtbl, ref ColorContextType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICColorContextType* pTypePtr = &pType)
+        fixed (ColorContextType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, WICColorContextType*, int>)@this->LpVtbl[6])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, ColorContextType*, int>)@this->LpVtbl[6])(@this, pTypePtr);
         }
         return ret;
     }
@@ -314,7 +314,7 @@ public unsafe static class WICColorContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetType(this ComPtr<IWICColorContext> thisVtbl, Span<WICColorContextType> pType)
+    public static int GetType(this ComPtr<IWICColorContext> thisVtbl, Span<ColorContextType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

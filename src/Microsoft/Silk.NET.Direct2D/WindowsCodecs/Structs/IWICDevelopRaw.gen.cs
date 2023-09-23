@@ -255,73 +255,73 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (byte* pbBufferPtr = &pbBuffer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             }
             return ret;
@@ -418,32 +418,32 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryRawCapabilitiesInfo(WICRawCapabilitiesInfo* pInfo)
+        public readonly unsafe int QueryRawCapabilitiesInfo(RawCapabilitiesInfo* pInfo)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRawCapabilitiesInfo*, int>)@this->LpVtbl[11])(@this, pInfo);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, RawCapabilitiesInfo*, int>)@this->LpVtbl[11])(@this, pInfo);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int QueryRawCapabilitiesInfo(ref WICRawCapabilitiesInfo pInfo)
+        public readonly int QueryRawCapabilitiesInfo(ref RawCapabilitiesInfo pInfo)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRawCapabilitiesInfo* pInfoPtr = &pInfo)
+            fixed (RawCapabilitiesInfo* pInfoPtr = &pInfo)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRawCapabilitiesInfo*, int>)@this->LpVtbl[11])(@this, pInfoPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, RawCapabilitiesInfo*, int>)@this->LpVtbl[11])(@this, pInfoPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadParameterSet(WICRawParameterSet ParameterSet)
+        public readonly int LoadParameterSet(RawParameterSet ParameterSet)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRawParameterSet, int>)@this->LpVtbl[12])(@this, ParameterSet);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, RawParameterSet, int>)@this->LpVtbl[12])(@this, ParameterSet);
             return ret;
         }
 
@@ -616,31 +616,31 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetNamedWhitePoint(WICNamedWhitePoint WhitePoint)
+        public readonly int SetNamedWhitePoint(NamedWhitePoint WhitePoint)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICNamedWhitePoint, int>)@this->LpVtbl[18])(@this, WhitePoint);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, NamedWhitePoint, int>)@this->LpVtbl[18])(@this, WhitePoint);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetNamedWhitePoint(WICNamedWhitePoint* pWhitePoint)
+        public readonly unsafe int GetNamedWhitePoint(NamedWhitePoint* pWhitePoint)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICNamedWhitePoint*, int>)@this->LpVtbl[19])(@this, pWhitePoint);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, NamedWhitePoint*, int>)@this->LpVtbl[19])(@this, pWhitePoint);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetNamedWhitePoint(ref WICNamedWhitePoint pWhitePoint)
+        public readonly int GetNamedWhitePoint(ref NamedWhitePoint pWhitePoint)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICNamedWhitePoint* pWhitePointPtr = &pWhitePoint)
+            fixed (NamedWhitePoint* pWhitePointPtr = &pWhitePoint)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICNamedWhitePoint*, int>)@this->LpVtbl[19])(@this, pWhitePointPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, NamedWhitePoint*, int>)@this->LpVtbl[19])(@this, pWhitePointPtr);
             }
             return ret;
         }
@@ -985,69 +985,69 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetToneCurve(uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurve* pToneCurve)
+        public readonly unsafe int SetToneCurve(uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurve* pToneCurve)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, WICRawToneCurve*, int>)@this->LpVtbl[36])(@this, cbToneCurveSize, pToneCurve);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, RawToneCurve*, int>)@this->LpVtbl[36])(@this, cbToneCurveSize, pToneCurve);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetToneCurve(uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurve pToneCurve)
+        public readonly int SetToneCurve(uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurve pToneCurve)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRawToneCurve* pToneCurvePtr = &pToneCurve)
+            fixed (RawToneCurve* pToneCurvePtr = &pToneCurve)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, WICRawToneCurve*, int>)@this->LpVtbl[36])(@this, cbToneCurveSize, pToneCurvePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, RawToneCurve*, int>)@this->LpVtbl[36])(@this, cbToneCurveSize, pToneCurvePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetToneCurve(uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize)
+        public readonly unsafe int GetToneCurve(uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, WICRawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, RawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetToneCurve(uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize)
+        public readonly unsafe int GetToneCurve(uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pcbActualToneCurveBufferSizePtr = &pcbActualToneCurveBufferSize)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, WICRawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSizePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, RawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSizePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetToneCurve(uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize)
+        public readonly unsafe int GetToneCurve(uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRawToneCurve* pToneCurvePtr = &pToneCurve)
+            fixed (RawToneCurve* pToneCurvePtr = &pToneCurve)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, WICRawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurvePtr, pcbActualToneCurveBufferSize);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, RawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurvePtr, pcbActualToneCurveBufferSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetToneCurve(uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize)
+        public readonly int GetToneCurve(uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRawToneCurve* pToneCurvePtr = &pToneCurve)
+            fixed (RawToneCurve* pToneCurvePtr = &pToneCurve)
             {
                 fixed (uint* pcbActualToneCurveBufferSizePtr = &pcbActualToneCurveBufferSize)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, WICRawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurvePtr, pcbActualToneCurveBufferSizePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, uint, RawToneCurve*, uint*, int>)@this->LpVtbl[37])(@this, cbToneCurveBufferSize, pToneCurvePtr, pcbActualToneCurveBufferSizePtr);
                 }
             }
             return ret;
@@ -1084,31 +1084,31 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetRenderMode(WICRawRenderMode RenderMode)
+        public readonly int SetRenderMode(RawRenderMode RenderMode)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRawRenderMode, int>)@this->LpVtbl[40])(@this, RenderMode);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, RawRenderMode, int>)@this->LpVtbl[40])(@this, RenderMode);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRenderMode(WICRawRenderMode* pRenderMode)
+        public readonly unsafe int GetRenderMode(RawRenderMode* pRenderMode)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRawRenderMode*, int>)@this->LpVtbl[41])(@this, pRenderMode);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, RawRenderMode*, int>)@this->LpVtbl[41])(@this, pRenderMode);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetRenderMode(ref WICRawRenderMode pRenderMode)
+        public readonly int GetRenderMode(ref RawRenderMode pRenderMode)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRawRenderMode* pRenderModePtr = &pRenderMode)
+            fixed (RawRenderMode* pRenderModePtr = &pRenderMode)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, WICRawRenderMode*, int>)@this->LpVtbl[41])(@this, pRenderModePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, RawRenderMode*, int>)@this->LpVtbl[41])(@this, pRenderModePtr);
             }
             return ret;
         }

@@ -85,82 +85,82 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncode, pImageParameters);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncode, pImageParameters);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+        fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncode, pImageParametersPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncode, pImageParametersPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncodePtr, pImageParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncodePtr, pImageParameters);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
         {
-            fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+            fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncodePtr, pImageParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImage, pFrameEncodePtr, pImageParametersPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct2D.ID2D1Image* pImagePtr = &pImage)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncode, pImageParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncode, pImageParameters);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct2D.ID2D1Image* pImagePtr = &pImage)
         {
-            fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+            fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncode, pImageParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncode, pImageParametersPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -168,14 +168,14 @@ public unsafe static class WICImageEncoderVtblExtensions
         {
             fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncodePtr, pImageParameters);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncodePtr, pImageParameters);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,9 +183,9 @@ public unsafe static class WICImageEncoderVtblExtensions
         {
             fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
             {
-                fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+                fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncodePtr, pImageParametersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[3])(@this, pImagePtr, pFrameEncodePtr, pImageParametersPtr);
                 }
             }
         }
@@ -193,82 +193,82 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncode, pImageParameters);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncode, pImageParameters);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+        fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncode, pImageParametersPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncode, pImageParametersPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncodePtr, pImageParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncodePtr, pImageParameters);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
         {
-            fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+            fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncodePtr, pImageParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImage, pFrameEncodePtr, pImageParametersPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct2D.ID2D1Image* pImagePtr = &pImage)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncode, pImageParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncode, pImageParameters);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct2D.ID2D1Image* pImagePtr = &pImage)
         {
-            fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+            fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncode, pImageParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncode, pImageParametersPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -276,14 +276,14 @@ public unsafe static class WICImageEncoderVtblExtensions
         {
             fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncodePtr, pImageParameters);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncodePtr, pImageParameters);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,9 +291,9 @@ public unsafe static class WICImageEncoderVtblExtensions
         {
             fixed (IWICBitmapFrameEncode* pFrameEncodePtr = &pFrameEncode)
             {
-                fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+                fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncodePtr, pImageParametersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapFrameEncode*, ImageParameters*, int>)@this->LpVtbl[4])(@this, pImagePtr, pFrameEncodePtr, pImageParametersPtr);
                 }
             }
         }
@@ -301,82 +301,82 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoder, pImageParameters);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoder, pImageParameters);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+        fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoder, pImageParametersPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoder, pImageParametersPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapEncoder* pEncoderPtr = &pEncoder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoderPtr, pImageParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoderPtr, pImageParameters);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapEncoder* pEncoderPtr = &pEncoder)
         {
-            fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+            fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoderPtr, pImageParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImage, pEncoderPtr, pImageParametersPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct2D.ID2D1Image* pImagePtr = &pImage)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoder, pImageParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoder, pImageParameters);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct2D.ID2D1Image* pImagePtr = &pImage)
         {
-            fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+            fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoder, pImageParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoder, pImageParametersPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -384,14 +384,14 @@ public unsafe static class WICImageEncoderVtblExtensions
         {
             fixed (IWICBitmapEncoder* pEncoderPtr = &pEncoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoderPtr, pImageParameters);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoderPtr, pImageParameters);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters)
+    public static int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -399,9 +399,9 @@ public unsafe static class WICImageEncoderVtblExtensions
         {
             fixed (IWICBitmapEncoder* pEncoderPtr = &pEncoder)
             {
-                fixed (WICImageParameters* pImageParametersPtr = &pImageParameters)
+                fixed (ImageParameters* pImageParametersPtr = &pImageParameters)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoderPtr, pImageParametersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImageEncoder*, Silk.NET.Direct2D.ID2D1Image*, IWICBitmapEncoder*, ImageParameters*, int>)@this->LpVtbl[5])(@this, pImagePtr, pEncoderPtr, pImageParametersPtr);
                 }
             }
         }
@@ -434,7 +434,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -442,7 +442,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -450,7 +450,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -458,7 +458,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -466,7 +466,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -474,7 +474,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -482,7 +482,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -490,7 +490,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -498,7 +498,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static int WriteFrame<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -506,7 +506,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -514,7 +514,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static int WriteFrame(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -522,7 +522,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -530,7 +530,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -538,7 +538,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -546,7 +546,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -554,7 +554,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -562,7 +562,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -570,7 +570,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -578,7 +578,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -586,7 +586,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static int WriteFrameThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -594,7 +594,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -602,7 +602,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static int WriteFrameThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapFrameEncode> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -610,7 +610,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+    public static unsafe int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -618,7 +618,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -626,7 +626,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+    public static unsafe int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -634,7 +634,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -642,7 +642,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Silk.NET.Direct2D.ID2D1Image* pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -650,7 +650,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -658,7 +658,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+    public static unsafe int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -666,7 +666,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -674,7 +674,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+    public static int WriteThumbnail<TI0>(this ComPtr<IWICImageEncoder> thisVtbl, ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -682,7 +682,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICImageParameters* pImageParameters)
+    public static unsafe int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageParameters* pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -690,7 +690,7 @@ public unsafe static class WICImageEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICImageParameters> pImageParameters)
+    public static int WriteThumbnail(this ComPtr<IWICImageEncoder> thisVtbl, Span<Silk.NET.Direct2D.ID2D1Image> pImage, Span<IWICBitmapEncoder> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageParameters> pImageParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

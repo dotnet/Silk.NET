@@ -111,11 +111,11 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InitializePredefined(WICBitmapPaletteType ePaletteType, Silk.NET.Core.Bool32 fAddTransparentColor)
+        public readonly int InitializePredefined(BitmapPaletteType ePaletteType, Silk.NET.Core.Bool32 fAddTransparentColor)
         {
             var @this = (IWICPalette*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, WICBitmapPaletteType, Silk.NET.Core.Bool32, int>)@this->LpVtbl[3])(@this, ePaletteType, fAddTransparentColor);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, BitmapPaletteType, Silk.NET.Core.Bool32, int>)@this->LpVtbl[3])(@this, ePaletteType, fAddTransparentColor);
             return ret;
         }
 
@@ -183,22 +183,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetType(WICBitmapPaletteType* pePaletteType)
+        public readonly unsafe int GetType(BitmapPaletteType* pePaletteType)
         {
             var @this = (IWICPalette*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, WICBitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteType);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, BitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetType(ref WICBitmapPaletteType pePaletteType)
+        public readonly int GetType(ref BitmapPaletteType pePaletteType)
         {
             var @this = (IWICPalette*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPaletteType* pePaletteTypePtr = &pePaletteType)
+            fixed (BitmapPaletteType* pePaletteTypePtr = &pePaletteType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, WICBitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, BitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteTypePtr);
             }
             return ret;
         }

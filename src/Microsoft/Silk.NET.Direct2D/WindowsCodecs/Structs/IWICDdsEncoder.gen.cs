@@ -111,43 +111,43 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetParameters(WICDdsParameters* pParameters)
+        public readonly unsafe int SetParameters(DdsParameters* pParameters)
         {
             var @this = (IWICDdsEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, WICDdsParameters*, int>)@this->LpVtbl[3])(@this, pParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, DdsParameters*, int>)@this->LpVtbl[3])(@this, pParameters);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetParameters(ref WICDdsParameters pParameters)
+        public readonly int SetParameters(ref DdsParameters pParameters)
         {
             var @this = (IWICDdsEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICDdsParameters* pParametersPtr = &pParameters)
+            fixed (DdsParameters* pParametersPtr = &pParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, WICDdsParameters*, int>)@this->LpVtbl[3])(@this, pParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, DdsParameters*, int>)@this->LpVtbl[3])(@this, pParametersPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetParameters(WICDdsParameters* pParameters)
+        public readonly unsafe int GetParameters(DdsParameters* pParameters)
         {
             var @this = (IWICDdsEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, WICDdsParameters*, int>)@this->LpVtbl[4])(@this, pParameters);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, DdsParameters*, int>)@this->LpVtbl[4])(@this, pParameters);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetParameters(ref WICDdsParameters pParameters)
+        public readonly int GetParameters(ref DdsParameters pParameters)
         {
             var @this = (IWICDdsEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICDdsParameters* pParametersPtr = &pParameters)
+            fixed (DdsParameters* pParametersPtr = &pParameters)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, WICDdsParameters*, int>)@this->LpVtbl[4])(@this, pParametersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDdsEncoder*, DdsParameters*, int>)@this->LpVtbl[4])(@this, pParametersPtr);
             }
             return ret;
         }

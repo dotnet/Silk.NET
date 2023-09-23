@@ -111,69 +111,69 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WritePixels(uint lineCount, WICBitmapPlane* pPlanes, uint cPlanes)
+        public readonly unsafe int WritePixels(uint lineCount, BitmapPlane* pPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, uint, WICBitmapPlane*, uint, int>)@this->LpVtbl[3])(@this, lineCount, pPlanes, cPlanes);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, uint, BitmapPlane*, uint, int>)@this->LpVtbl[3])(@this, lineCount, pPlanes, cPlanes);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WritePixels(uint lineCount, ref WICBitmapPlane pPlanes, uint cPlanes)
+        public readonly int WritePixels(uint lineCount, ref BitmapPlane pPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPlane* pPlanesPtr = &pPlanes)
+            fixed (BitmapPlane* pPlanesPtr = &pPlanes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, uint, WICBitmapPlane*, uint, int>)@this->LpVtbl[3])(@this, lineCount, pPlanesPtr, cPlanes);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, uint, BitmapPlane*, uint, int>)@this->LpVtbl[3])(@this, lineCount, pPlanesPtr, cPlanes);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, WICRect* prcSource)
+        public readonly unsafe int WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, Rect* prcSource)
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSource);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSource);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, ref WICRect prcSource)
+        public readonly unsafe int WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, ref Rect prcSource)
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcSourcePtr = &prcSource)
+            fixed (Rect* prcSourcePtr = &prcSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSourcePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSourcePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(ref IWICBitmapSource* ppPlanes, uint cPlanes, WICRect* prcSource)
+        public readonly unsafe int WriteSource(ref IWICBitmapSource* ppPlanes, uint cPlanes, Rect* prcSource)
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmapSource** ppPlanesPtr = &ppPlanes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSource);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSource);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(ref IWICBitmapSource* ppPlanes, uint cPlanes, ref WICRect prcSource)
+        public readonly unsafe int WriteSource(ref IWICBitmapSource* ppPlanes, uint cPlanes, ref Rect prcSource)
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmapSource** ppPlanesPtr = &ppPlanes)
             {
-                fixed (WICRect* prcSourcePtr = &prcSource)
+                fixed (Rect* prcSourcePtr = &prcSource)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSourcePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSourcePtr);
                 }
             }
             return ret;
@@ -189,7 +189,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource<TI0>(ref ComPtr<TI0> ppPlanes, uint cPlanes, WICRect* prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public readonly unsafe int WriteSource<TI0>(ref ComPtr<TI0> ppPlanes, uint cPlanes, Rect* prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -197,7 +197,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteSource<TI0>(ref ComPtr<TI0> ppPlanes, uint cPlanes, ref WICRect prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public readonly int WriteSource<TI0>(ref ComPtr<TI0> ppPlanes, uint cPlanes, ref Rect prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             var @this = (IWICPlanarBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

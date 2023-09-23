@@ -85,22 +85,22 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetComponentType(this ComPtr<IWICMetadataReaderInfo> thisVtbl, WICComponentType* pType)
+    public static unsafe int GetComponentType(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ComponentType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref WICComponentType pType)
+    public static int GetComponentType(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref ComponentType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICComponentType* pTypePtr = &pType)
+        fixed (ComponentType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
         }
         return ret;
     }
@@ -739,40 +739,40 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pcbActualPtr = &pcbActual)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActualPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActualPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pcCountPtr = &pcCount)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -780,66 +780,66 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
         {
             fixed (uint* pcbActualPtr = &pcbActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+        fixed (MetadataPattern* pPatternPtr = &pPattern)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+        fixed (MetadataPattern* pPatternPtr = &pPattern)
         {
             fixed (uint* pcbActualPtr = &pcbActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+        fixed (MetadataPattern* pPatternPtr = &pPattern)
         {
             fixed (uint* pcCountPtr = &pcCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActual);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+        fixed (MetadataPattern* pPatternPtr = &pPattern)
         {
             fixed (uint* pcCountPtr = &pcCount)
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
                 }
             }
         }
@@ -847,19 +847,19 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -867,14 +867,14 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
         {
             fixed (uint* pcbActualPtr = &pcbActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -882,14 +882,14 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
         {
             fixed (uint* pcCountPtr = &pcCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActual);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -899,7 +899,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActualPtr);
                 }
             }
         }
@@ -907,32 +907,32 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActual);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActualPtr);
                 }
             }
         }
@@ -940,17 +940,17 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
                 fixed (uint* pcCountPtr = &pcCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActual);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActual);
                 }
             }
         }
@@ -958,19 +958,19 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
+    public static int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
                 fixed (uint* pcCountPtr = &pcCount)
                 {
                     fixed (uint* pcbActualPtr = &pcbActual)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
                     }
                 }
             }
@@ -1133,7 +1133,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<WICComponentType> pType)
+    public static int GetComponentType(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<ComponentType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1413,7 +1413,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1421,7 +1421,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1429,7 +1429,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1437,7 +1437,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1445,7 +1445,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1453,7 +1453,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1461,7 +1461,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1469,7 +1469,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1477,7 +1477,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1485,7 +1485,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1493,7 +1493,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1501,7 +1501,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1509,7 +1509,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1517,7 +1517,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1525,7 +1525,7 @@ public unsafe static class WICMetadataReaderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+    public static int GetPatterns(this ComPtr<IWICMetadataReaderInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

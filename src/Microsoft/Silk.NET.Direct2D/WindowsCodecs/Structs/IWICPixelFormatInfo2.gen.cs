@@ -117,22 +117,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetComponentType(WICComponentType* pType)
+        public readonly unsafe int GetComponentType(ComponentType* pType)
         {
             var @this = (IWICPixelFormatInfo2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetComponentType(ref WICComponentType pType)
+        public readonly int GetComponentType(ref ComponentType pType)
         {
             var @this = (IWICPixelFormatInfo2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICComponentType* pTypePtr = &pType)
+            fixed (ComponentType* pTypePtr = &pType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
             }
             return ret;
         }
@@ -671,22 +671,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetNumericRepresentation(WICPixelFormatNumericRepresentation* pNumericRepresentation)
+        public readonly unsafe int GetNumericRepresentation(PixelFormatNumericRepresentation* pNumericRepresentation)
         {
             var @this = (IWICPixelFormatInfo2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICPixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentation);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, PixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentation);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetNumericRepresentation(ref WICPixelFormatNumericRepresentation pNumericRepresentation)
+        public readonly int GetNumericRepresentation(ref PixelFormatNumericRepresentation pNumericRepresentation)
         {
             var @this = (IWICPixelFormatInfo2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICPixelFormatNumericRepresentation* pNumericRepresentationPtr = &pNumericRepresentation)
+            fixed (PixelFormatNumericRepresentation* pNumericRepresentationPtr = &pNumericRepresentation)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICPixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentationPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, PixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentationPtr);
             }
             return ret;
         }

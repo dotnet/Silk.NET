@@ -117,22 +117,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetComponentType(WICComponentType* pType)
+        public readonly unsafe int GetComponentType(ComponentType* pType)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetComponentType(ref WICComponentType pType)
+        public readonly int GetComponentType(ref ComponentType pType)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICComponentType* pTypePtr = &pType)
+            fixed (ComponentType* pTypePtr = &pType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
             }
             return ret;
         }
@@ -771,40 +771,40 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pcbActualPtr = &pcbActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActualPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pcCountPtr = &pcCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActual);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -812,66 +812,66 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPattern, pcCountPtr, pcbActualPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActual);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCount, pcbActualPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
                 fixed (uint* pcCountPtr = &pcCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActual);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActual);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+            fixed (MetadataPattern* pPatternPtr = &pPattern)
             {
                 fixed (uint* pcCountPtr = &pcCount)
                 {
                     fixed (uint* pcbActualPtr = &pcbActual)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
                     }
                 }
             }
@@ -879,19 +879,19 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActual);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -899,14 +899,14 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCount, pcbActualPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -914,14 +914,14 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* pcCountPtr = &pcCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActual);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActual);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -931,7 +931,7 @@ namespace Silk.NET.WindowsCodecs
                 {
                     fixed (uint* pcbActualPtr = &pcbActual)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActualPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPattern, pcCountPtr, pcbActualPtr);
                     }
                 }
             }
@@ -939,32 +939,32 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
             {
-                fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+                fixed (MetadataPattern* pPatternPtr = &pPattern)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActual);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActual);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
             {
-                fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+                fixed (MetadataPattern* pPatternPtr = &pPattern)
                 {
                     fixed (uint* pcbActualPtr = &pcbActual)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActualPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCount, pcbActualPtr);
                     }
                 }
             }
@@ -972,17 +972,17 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
+        public readonly unsafe int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
             {
-                fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+                fixed (MetadataPattern* pPatternPtr = &pPattern)
                 {
                     fixed (uint* pcCountPtr = &pcCount)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActual);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActual);
                     }
                 }
             }
@@ -990,19 +990,19 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
+        public readonly int GetPatterns(ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual)
         {
             var @this = (IWICMetadataReaderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
             {
-                fixed (WICMetadataPattern* pPatternPtr = &pPattern)
+                fixed (MetadataPattern* pPatternPtr = &pPattern)
                 {
                     fixed (uint* pcCountPtr = &pcCount)
                     {
                         fixed (uint* pcbActualPtr = &pcbActual)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataReaderInfo*, Guid*, uint, MetadataPattern*, uint*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pPatternPtr, pcCountPtr, pcbActualPtr);
                         }
                     }
                 }

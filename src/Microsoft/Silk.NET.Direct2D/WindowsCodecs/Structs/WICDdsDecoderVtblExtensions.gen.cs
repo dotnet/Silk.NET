@@ -85,22 +85,22 @@ public unsafe static class WICDdsDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParameters(this ComPtr<IWICDdsDecoder> thisVtbl, WICDdsParameters* pParameters)
+    public static unsafe int GetParameters(this ComPtr<IWICDdsDecoder> thisVtbl, DdsParameters* pParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICDdsDecoder*, WICDdsParameters*, int>)@this->LpVtbl[3])(@this, pParameters);
+        ret = ((delegate* unmanaged[Stdcall]<IWICDdsDecoder*, DdsParameters*, int>)@this->LpVtbl[3])(@this, pParameters);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetParameters(this ComPtr<IWICDdsDecoder> thisVtbl, ref WICDdsParameters pParameters)
+    public static int GetParameters(this ComPtr<IWICDdsDecoder> thisVtbl, ref DdsParameters pParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICDdsParameters* pParametersPtr = &pParameters)
+        fixed (DdsParameters* pParametersPtr = &pParameters)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICDdsDecoder*, WICDdsParameters*, int>)@this->LpVtbl[3])(@this, pParametersPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDdsDecoder*, DdsParameters*, int>)@this->LpVtbl[3])(@this, pParametersPtr);
         }
         return ret;
     }
@@ -152,7 +152,7 @@ public unsafe static class WICDdsDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetParameters(this ComPtr<IWICDdsDecoder> thisVtbl, Span<WICDdsParameters> pParameters)
+    public static int GetParameters(this ComPtr<IWICDdsDecoder> thisVtbl, Span<DdsParameters> pParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

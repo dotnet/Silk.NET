@@ -66,46 +66,46 @@ namespace Silk.NET.WindowsCodecs
         public const int WincodecErrBase = unchecked((int) 0x2000);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_ExposureCompensation")]
-        public const int WicrawChangeNotificationExposureCompensation = unchecked((int) 0x1);
+        public const int RawChangeNotificationExposureCompensation = unchecked((int) 0x1);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_NamedWhitePoint")]
-        public const int WicrawChangeNotificationNamedWhitePoint = unchecked((int) 0x2);
+        public const int RawChangeNotificationNamedWhitePoint = unchecked((int) 0x2);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_KelvinWhitePoint")]
-        public const int WicrawChangeNotificationKelvinWhitePoint = unchecked((int) 0x4);
+        public const int RawChangeNotificationKelvinWhitePoint = unchecked((int) 0x4);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_RGBWhitePoint")]
-        public const int WicrawChangeNotificationRgbwhitePoint = unchecked((int) 0x8);
+        public const int RawChangeNotificationRgbwhitePoint = unchecked((int) 0x8);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_Contrast")]
-        public const int WicrawChangeNotificationContrast = unchecked((int) 0x10);
+        public const int RawChangeNotificationContrast = unchecked((int) 0x10);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_Gamma")]
-        public const int WicrawChangeNotificationGamma = unchecked((int) 0x20);
+        public const int RawChangeNotificationGamma = unchecked((int) 0x20);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_Sharpness")]
-        public const int WicrawChangeNotificationSharpness = unchecked((int) 0x40);
+        public const int RawChangeNotificationSharpness = unchecked((int) 0x40);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_Saturation")]
-        public const int WicrawChangeNotificationSaturation = unchecked((int) 0x80);
+        public const int RawChangeNotificationSaturation = unchecked((int) 0x80);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_Tint")]
-        public const int WicrawChangeNotificationTint = unchecked((int) 0x100);
+        public const int RawChangeNotificationTint = unchecked((int) 0x100);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_NoiseReduction")]
-        public const int WicrawChangeNotificationNoiseReduction = unchecked((int) 0x200);
+        public const int RawChangeNotificationNoiseReduction = unchecked((int) 0x200);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_DestinationColorContext")]
-        public const int WicrawChangeNotificationDestinationColorContext = unchecked((int) 0x400);
+        public const int RawChangeNotificationDestinationColorContext = unchecked((int) 0x400);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_ToneCurve")]
-        public const int WicrawChangeNotificationToneCurve = unchecked((int) 0x800);
+        public const int RawChangeNotificationToneCurve = unchecked((int) 0x800);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_Rotation")]
-        public const int WicrawChangeNotificationRotation = unchecked((int) 0x1000);
+        public const int RawChangeNotificationRotation = unchecked((int) 0x1000);
         [NativeName("Type", "int")]
         [NativeName("Name", "WICRawChangeNotification_RenderMode")]
-        public const int WicrawChangeNotificationRenderMode = unchecked((int) 0x2000);
+        public const int RawChangeNotificationRenderMode = unchecked((int) 0x2000);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4968, Column 43 in wincodec.h")]
@@ -210,42 +210,42 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, WICBitmapPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, WICBitmapPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, ref WICBitmapPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, WICBitmapPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, BitmapPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, WICBitmapPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, BitmapPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, ref BitmapPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, ref WICBitmapPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref IWICBitmapDecoderInfo This, ref BitmapPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
@@ -330,412 +330,412 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
+        public unsafe partial int ConvertBitmapSource(Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(Guid* dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst);
+        public unsafe partial int ConvertBitmapSource(Guid* dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(Guid* dstFormat, ref IWICBitmapSource pISrc, IWICBitmapSource** ppIDst);
+        public unsafe partial int ConvertBitmapSource(Guid* dstFormat, ref IWICBitmapSource pISrc, IWICBitmapSource** ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(Guid* dstFormat, ref IWICBitmapSource pISrc, ref IWICBitmapSource* ppIDst);
+        public unsafe partial int ConvertBitmapSource(Guid* dstFormat, ref IWICBitmapSource pISrc, ref IWICBitmapSource* ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(ref Guid dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
+        public unsafe partial int ConvertBitmapSource(ref Guid dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(ref Guid dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst);
+        public unsafe partial int ConvertBitmapSource(ref Guid dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(ref Guid dstFormat, ref IWICBitmapSource pISrc, IWICBitmapSource** ppIDst);
+        public unsafe partial int ConvertBitmapSource(ref Guid dstFormat, ref IWICBitmapSource pISrc, IWICBitmapSource** ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICConvertBitmapSource", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICConvertBitmapSource(ref Guid dstFormat, ref IWICBitmapSource pISrc, ref IWICBitmapSource* ppIDst);
+        public unsafe partial int ConvertBitmapSource(ref Guid dstFormat, ref IWICBitmapSource pISrc, ref IWICBitmapSource* ppIDst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap);
+        public unsafe partial int CreateBitmapFromSection(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap);
+        public unsafe partial int CreateBitmapFromSection(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSection<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSection<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap);
+        public unsafe partial int CreateBitmapFromSection(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap);
+        public unsafe partial int CreateBitmapFromSection(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSection<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSection", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSection<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSection<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
+        public unsafe partial int CreateBitmapFromSectionEx(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap);
+        public unsafe partial int CreateBitmapFromSectionEx(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSectionEx<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSectionEx<T0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
+        public unsafe partial int CreateBitmapFromSectionEx(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap);
+        public unsafe partial int CreateBitmapFromSectionEx(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSectionEx<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICCreateBitmapFromSectionEx", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICCreateBitmapFromSectionEx<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
+        public unsafe partial int CreateBitmapFromSectionEx<T0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(Guid* guid, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapGuidToShortName(Guid* guid, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(Guid* guid, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapGuidToShortName(Guid* guid, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(Guid* guid, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapGuidToShortName(Guid* guid, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(Guid* guid, uint cchName, ref char wzName, ref uint pcchActual);
+        public unsafe partial int MapGuidToShortName(Guid* guid, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapGuidToShortName(Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public unsafe partial int MapGuidToShortName(Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(ref Guid guid, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapGuidToShortName(ref Guid guid, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(ref Guid guid, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapGuidToShortName(ref Guid guid, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(ref Guid guid, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapGuidToShortName(ref Guid guid, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public partial int WICMapGuidToShortName(ref Guid guid, uint cchName, ref char wzName, ref uint pcchActual);
+        public partial int MapGuidToShortName(ref Guid guid, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapGuidToShortName(ref Guid guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapGuidToShortName(ref Guid guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapGuidToShortName", Convention = CallingConvention.StdCall)]
-        public partial int WICMapGuidToShortName(ref Guid guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public partial int MapGuidToShortName(ref Guid guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Guid* pguid);
+        public unsafe partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Guid* pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, ref Guid pguid);
+        public unsafe partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, ref Guid pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, Guid* pguid);
+        public unsafe partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, Guid* pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public partial int WICMapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, ref Guid pguid);
+        public partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, ref Guid pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Guid* pguid);
+        public unsafe partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Guid* pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public partial int WICMapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref Guid pguid);
+        public partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref Guid pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public partial int WICMapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
+        public partial int MapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public partial int WICMapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public partial int MapSchemaToName(ref Guid guidMetadataFormat, ref char pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public partial int WICMapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
+        public partial int MapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, ref char wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
+        public unsafe partial int MapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapSchemaToName", Convention = CallingConvention.StdCall)]
-        public partial int WICMapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
+        public partial int MapSchemaToName(ref Guid guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, ref uint pcchActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, WICRawCapabilitiesInfo* pInfo);
+        public unsafe partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, RawCapabilitiesInfo* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, ref WICRawCapabilitiesInfo pInfo);
+        public unsafe partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, ref RawCapabilitiesInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, WICRawCapabilitiesInfo* pInfo);
+        public unsafe partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, RawCapabilitiesInfo* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, ref WICRawCapabilitiesInfo pInfo);
+        public partial int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, ref RawCapabilitiesInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
@@ -820,22 +820,22 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints);
+        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurvePoint aPoints);
+        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints);
+        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawRemoteSetToneCurveProxy(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurvePoint aPoints);
+        public partial int IWICDevelopRawRemoteSetToneCurveProxy(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
@@ -920,42 +920,42 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, uint* pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, uint* pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, uint* pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, ref uint pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, ref uint pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, ref uint pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(IWICDevelopRaw* This, ref uint pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, uint* pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, uint* pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, uint* pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, ref uint pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, ref uint pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, ref uint pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawRemoteGetToneCurveProxy(ref IWICDevelopRaw This, ref uint pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
@@ -2560,306 +2560,306 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint WICInProcPointerUserSize(uint* arg0, uint arg1, byte** arg2);
+        public unsafe partial uint InProcPointerUserSize(uint* arg0, uint arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint WICInProcPointerUserSize(uint* arg0, uint arg1, ref byte* arg2);
+        public unsafe partial uint InProcPointerUserSize(uint* arg0, uint arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint WICInProcPointerUserSize(ref uint arg0, uint arg1, byte** arg2);
+        public unsafe partial uint InProcPointerUserSize(ref uint arg0, uint arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint WICInProcPointerUserSize(ref uint arg0, uint arg1, ref byte* arg2);
+        public unsafe partial uint InProcPointerUserSize(ref uint arg0, uint arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(uint* arg0, byte* arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(uint* arg0, byte* arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(uint* arg0, byte* arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserMarshal(uint* arg0, byte* arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(uint* arg0, byte* arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserMarshalS(uint* arg0, byte* arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(uint* arg0, ref byte arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(uint* arg0, ref byte arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(uint* arg0, ref byte arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserMarshal(uint* arg0, byte* arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(uint* arg0, ref byte arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserMarshalS(uint* arg0, byte* arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserMarshal(uint* arg0, ref byte arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserMarshalS(uint* arg0, ref byte arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(ref uint arg0, byte* arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(ref uint arg0, byte* arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(ref uint arg0, byte* arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserMarshal(uint* arg0, ref byte arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(ref uint arg0, byte* arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserMarshalS(uint* arg0, ref byte arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(ref uint arg0, ref byte arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(ref uint arg0, ref byte arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(ref uint arg0, ref byte arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(ref uint arg0, ref byte arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserMarshal(ref uint arg0, byte* arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserMarshalS(ref uint arg0, byte* arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserMarshal(ref uint arg0, byte* arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserMarshalS(ref uint arg0, byte* arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserMarshal(ref uint arg0, ref byte arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserMarshalS(ref uint arg0, ref byte arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserMarshal(ref uint arg0, ref byte arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserMarshalS(ref uint arg0, ref byte arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(uint* arg0, byte* arg1, byte** arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(uint* arg0, byte* arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(uint* arg0, byte* arg1, byte** arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(uint* arg0, byte* arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(uint* arg0, byte* arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(uint* arg0, byte* arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(uint* arg0, ref byte arg1, byte** arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(uint* arg0, byte* arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(uint* arg0, ref byte arg1, byte** arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(uint* arg0, byte* arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(uint* arg0, ref byte arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(uint* arg0, ref byte arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(uint* arg0, ref byte arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(uint* arg0, ref byte arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(ref uint arg0, byte* arg1, byte** arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(uint* arg0, ref byte arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(ref uint arg0, byte* arg1, byte** arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(uint* arg0, ref byte arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(ref uint arg0, byte* arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(ref uint arg0, byte* arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(ref uint arg0, ref byte arg1, byte** arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(ref uint arg0, ref byte arg1, byte** arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(ref uint arg0, ref byte arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(ref uint arg0, ref byte arg1, ref byte* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* WICInProcPointerUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+        public unsafe partial byte* InProcPointerUserUnmarshal(ref uint arg0, byte* arg1, byte** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string WICInProcPointerUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+        public unsafe partial string InProcPointerUserUnmarshalS(ref uint arg0, byte* arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserUnmarshal(ref uint arg0, byte* arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserUnmarshalS(ref uint arg0, byte* arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserUnmarshal(ref uint arg0, ref byte arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserUnmarshalS(ref uint arg0, ref byte arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserUnmarshal(ref uint arg0, ref byte arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserUnmarshalS(ref uint arg0, ref byte arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* InProcPointerUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "WICInProcPointer_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string InProcPointerUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void WICInProcPointerUserFree(uint* arg0, byte** arg1);
+        public unsafe partial void InProcPointerUserFree(uint* arg0, byte** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void WICInProcPointerUserFree(uint* arg0, ref byte* arg1);
+        public unsafe partial void InProcPointerUserFree(uint* arg0, ref byte* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void WICInProcPointerUserFree(ref uint arg0, byte** arg1);
+        public unsafe partial void InProcPointerUserFree(ref uint arg0, byte** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "WICInProcPointer_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void WICInProcPointerUserFree(ref uint arg0, ref byte* arg1);
+        public unsafe partial void InProcPointerUserFree(ref uint arg0, ref byte* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9019, Column 41 in wincodec.h")]
@@ -2904,362 +2904,362 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(IWICBitmapDecoderInfo* This, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
+        public partial int IWICBitmapDecoderInfoGetPatternsProxy(ref IWICBitmapDecoderInfo This, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, WICBitmapPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, WICBitmapPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, ref WICBitmapPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, WICBitmapPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, BitmapPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, WICBitmapPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, BitmapPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, ref BitmapPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICBitmapDecoderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, ref WICBitmapPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICBitmapDecoderInfoGetPatternsStub(ref IWICBitmapDecoderInfo This, ref BitmapPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, WICRawCapabilitiesInfo* pInfo);
+        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, RawCapabilitiesInfo* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, ref WICRawCapabilitiesInfo pInfo);
+        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(IWICDevelopRaw* This, ref RawCapabilitiesInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, WICRawCapabilitiesInfo* pInfo);
+        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, RawCapabilitiesInfo* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, ref WICRawCapabilitiesInfo pInfo);
+        public partial int IWICDevelopRawQueryRawCapabilitiesInfoProxy(ref IWICDevelopRaw This, ref RawCapabilitiesInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(IWICDevelopRaw* This, WICRawCapabilitiesInfo* pInfo);
+        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(IWICDevelopRaw* This, RawCapabilitiesInfo* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(IWICDevelopRaw* This, ref WICRawCapabilitiesInfo pInfo);
+        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(IWICDevelopRaw* This, ref RawCapabilitiesInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(ref IWICDevelopRaw This, WICRawCapabilitiesInfo* pInfo);
+        public unsafe partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(ref IWICDevelopRaw This, RawCapabilitiesInfo* pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_QueryRawCapabilitiesInfo_Stub", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(ref IWICDevelopRaw This, ref WICRawCapabilitiesInfo pInfo);
+        public partial int IWICDevelopRawQueryRawCapabilitiesInfoStub(ref IWICDevelopRaw This, ref RawCapabilitiesInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurve* pToneCurve);
+        public unsafe partial int IWICDevelopRawSetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurve* pToneCurve);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurve pToneCurve);
+        public unsafe partial int IWICDevelopRawSetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurve pToneCurve);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurve* pToneCurve);
+        public unsafe partial int IWICDevelopRawSetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurve* pToneCurve);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawSetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurve pToneCurve);
+        public partial int IWICDevelopRawSetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurve pToneCurve);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveStub(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints);
+        public unsafe partial int IWICDevelopRawSetToneCurveStub(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveStub(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurvePoint aPoints);
+        public unsafe partial int IWICDevelopRawSetToneCurveStub(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveStub(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints);
+        public unsafe partial int IWICDevelopRawSetToneCurveStub(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawSetToneCurveStub(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurvePoint aPoints);
+        public partial int IWICDevelopRawSetToneCurveStub(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize);
+        public unsafe partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize);
+        public partial int IWICDevelopRawGetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, uint* pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, uint* pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, uint* pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, ref uint pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, ref uint pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, ref uint pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(IWICDevelopRaw* This, ref uint pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, uint* pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, uint* pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, uint* pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, ref uint pcPoints, WICRawToneCurvePoint** paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, ref uint pcPoints, RawToneCurvePoint** paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_GetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, ref uint pcPoints, ref WICRawToneCurvePoint* paPoints);
+        public unsafe partial int IWICDevelopRawGetToneCurveStub(ref IWICDevelopRaw This, ref uint pcPoints, ref RawToneCurvePoint* paPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_Remote_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoRemoteGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
@@ -3344,42 +3344,42 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, ref WICMetadataHeader pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, ref WICMetadataHeader pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, ref WICMetadataHeader pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_Remote_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, ref WICMetadataHeader pHeader);
+        public partial int IWICMetadataWriterInfoRemoteGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
@@ -3464,162 +3464,162 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public partial int WICMatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
+        public partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
+        public unsafe partial int SerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
+        public unsafe partial int SerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
+        public unsafe partial int SerializeMetadataContent(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
+        public unsafe partial int SerializeMetadataContent(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
+        public unsafe partial int SerializeMetadataContent(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
+        public unsafe partial int SerializeMetadataContent(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICSerializeMetadataContent(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
+        public unsafe partial int SerializeMetadataContent(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICSerializeMetadataContent", Convention = CallingConvention.StdCall)]
-        public partial int WICSerializeMetadataContent(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
+        public partial int SerializeMetadataContent(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize);
+        public unsafe partial int GetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ref ulong pcbSize);
+        public unsafe partial int GetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ref ulong pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, ulong* pcbSize);
+        public unsafe partial int GetMetadataContentSize(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, ulong* pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, ref ulong pcbSize);
+        public unsafe partial int GetMetadataContentSize(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, ref ulong pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize);
+        public unsafe partial int GetMetadataContentSize(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, ref ulong pcbSize);
+        public unsafe partial int GetMetadataContentSize(ref Guid guidContainerFormat, IWICMetadataWriter* pIWriter, ref ulong pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial int WICGetMetadataContentSize(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, ulong* pcbSize);
+        public unsafe partial int GetMetadataContentSize(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, ulong* pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICGetMetadataContentSize", Convention = CallingConvention.StdCall)]
-        public partial int WICGetMetadataContentSize(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, ref ulong pcbSize);
+        public partial int GetMetadataContentSize(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, ref ulong pcbSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2425, Column 39 in wincodecsdk.h")]
@@ -3928,362 +3928,362 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
+        public partial int IWICMetadataReaderInfoGetPatternsProxy(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(IWICMetadataReaderInfo* This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataReaderInfo_GetPatterns_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns);
+        public unsafe partial int IWICMetadataReaderInfoGetPatternsStub(ref IWICMetadataReaderInfo This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual);
+        public partial int IWICMetadataWriterInfoGetHeaderProxy(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, ref WICMetadataHeader pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, Guid* guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, ref WICMetadataHeader pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(IWICMetadataWriterInfo* This, ref Guid guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, ref WICMetadataHeader pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, Guid* guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, WICMetadataHeader* pHeader);
+        public unsafe partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, MetadataHeader* pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "IWICMetadataWriterInfo_GetHeader_Stub", Convention = CallingConvention.StdCall)]
-        public partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, ref WICMetadataHeader pHeader);
+        public partial int IWICMetadataWriterInfoGetHeaderStub(ref IWICMetadataWriterInfo This, ref Guid guidContainerFormat, ref MetadataHeader pHeader);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4968, Column 43 in wincodec.h")]
@@ -4311,7 +4311,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, WICBitmapPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, BitmapPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoRemoteGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, ppPatterns, pcPatterns);
@@ -4319,7 +4319,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, WICBitmapPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, BitmapPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoRemoteGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, ppPatterns, ref pcPatterns);
@@ -4327,7 +4327,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref BitmapPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoRemoteGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, ref ppPatterns, pcPatterns);
@@ -4335,7 +4335,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref WICBitmapPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref BitmapPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoRemoteGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, ref ppPatterns, ref pcPatterns);
@@ -4343,119 +4343,119 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public unsafe int WICConvertBitmapSource<TI0, TI1>(Guid* dstFormat, ComPtr<TI0> pISrc, ref ComPtr<TI1> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI1>
+        public unsafe int ConvertBitmapSource<TI0, TI1>(Guid* dstFormat, ComPtr<TI0> pISrc, ref ComPtr<TI1> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI1>
         {
             // ComPtrOverloader
-            return WICConvertBitmapSource(dstFormat, (IWICBitmapSource*) pISrc.Handle, (IWICBitmapSource**) ppIDst.GetAddressOf());
+            return ConvertBitmapSource(dstFormat, (IWICBitmapSource*) pISrc.Handle, (IWICBitmapSource**) ppIDst.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public unsafe int WICConvertBitmapSource<TI0>(Guid* dstFormat, ComPtr<TI0> pISrc, ref IWICBitmapSource* ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public unsafe int ConvertBitmapSource<TI0>(Guid* dstFormat, ComPtr<TI0> pISrc, ref IWICBitmapSource* ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICConvertBitmapSource(dstFormat, (IWICBitmapSource*) pISrc.Handle, ref ppIDst);
+            return ConvertBitmapSource(dstFormat, (IWICBitmapSource*) pISrc.Handle, ref ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public unsafe int WICConvertBitmapSource<TI0>(Guid* dstFormat, ref IWICBitmapSource pISrc, ref ComPtr<TI0> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public unsafe int ConvertBitmapSource<TI0>(Guid* dstFormat, ref IWICBitmapSource pISrc, ref ComPtr<TI0> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICConvertBitmapSource(dstFormat, ref pISrc, (IWICBitmapSource**) ppIDst.GetAddressOf());
+            return ConvertBitmapSource(dstFormat, ref pISrc, (IWICBitmapSource**) ppIDst.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public unsafe int WICConvertBitmapSource<TI0, TI1>(ref Guid dstFormat, ComPtr<TI0> pISrc, ref ComPtr<TI1> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI1>
+        public unsafe int ConvertBitmapSource<TI0, TI1>(ref Guid dstFormat, ComPtr<TI0> pISrc, ref ComPtr<TI1> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI1>
         {
             // ComPtrOverloader
-            return WICConvertBitmapSource(ref dstFormat, (IWICBitmapSource*) pISrc.Handle, (IWICBitmapSource**) ppIDst.GetAddressOf());
+            return ConvertBitmapSource(ref dstFormat, (IWICBitmapSource*) pISrc.Handle, (IWICBitmapSource**) ppIDst.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public unsafe int WICConvertBitmapSource<TI0>(ref Guid dstFormat, ComPtr<TI0> pISrc, ref IWICBitmapSource* ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public unsafe int ConvertBitmapSource<TI0>(ref Guid dstFormat, ComPtr<TI0> pISrc, ref IWICBitmapSource* ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICConvertBitmapSource(ref dstFormat, (IWICBitmapSource*) pISrc.Handle, ref ppIDst);
+            return ConvertBitmapSource(ref dstFormat, (IWICBitmapSource*) pISrc.Handle, ref ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public unsafe int WICConvertBitmapSource<TI0>(ref Guid dstFormat, ref IWICBitmapSource pISrc, ref ComPtr<TI0> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public unsafe int ConvertBitmapSource<TI0>(ref Guid dstFormat, ref IWICBitmapSource pISrc, ref ComPtr<TI0> ppIDst) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICConvertBitmapSource(ref dstFormat, ref pISrc, (IWICBitmapSource**) ppIDst.GetAddressOf());
+            return ConvertBitmapSource(ref dstFormat, ref pISrc, (IWICBitmapSource**) ppIDst.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSection<TI0>(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSection<TI0>(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSection(width, height, pixelFormat, hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSection(width, height, pixelFormat, hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSection<T0, TI0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSection<T0, TI0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSection(width, height, pixelFormat, ref hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSection(width, height, pixelFormat, ref hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSection<TI0>(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSection<TI0>(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSection(width, height, ref pixelFormat, hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSection(width, height, ref pixelFormat, hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSection<T0, TI0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSection<T0, TI0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSection(width, height, ref pixelFormat, ref hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSection(width, height, ref pixelFormat, ref hSection, stride, offset, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSectionEx<TI0>(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSectionEx<TI0>(uint width, uint height, Guid* pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSectionEx(width, height, pixelFormat, hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSectionEx(width, height, pixelFormat, hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSectionEx<T0, TI0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSectionEx<T0, TI0>(uint width, uint height, Guid* pixelFormat, ref T0 hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSectionEx(width, height, pixelFormat, ref hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSectionEx(width, height, pixelFormat, ref hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSectionEx<TI0>(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSectionEx<TI0>(uint width, uint height, ref Guid pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSectionEx(width, height, ref pixelFormat, hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSectionEx(width, height, ref pixelFormat, hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public unsafe int WICCreateBitmapFromSectionEx<T0, TI0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public unsafe int CreateBitmapFromSectionEx<T0, TI0>(uint width, uint height, ref Guid pixelFormat, ref T0 hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICCreateBitmapFromSectionEx(width, height, ref pixelFormat, ref hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
+            return CreateBitmapFromSectionEx(width, height, ref pixelFormat, ref hSection, stride, offset, desiredAccessLevel, (IWICBitmap**) ppIBitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, WICRawCapabilitiesInfo* pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, RawCapabilitiesInfo* pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy((IWICDevelopRaw*) This.Handle, pInfo);
@@ -4463,7 +4463,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, ref WICRawCapabilitiesInfo pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, ref RawCapabilitiesInfo pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy((IWICDevelopRaw*) This.Handle, ref pInfo);
@@ -4471,7 +4471,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteSetToneCurveProxy((IWICDevelopRaw*) This.Handle, cPoints, aPoints);
@@ -4479,7 +4479,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteSetToneCurveProxy((IWICDevelopRaw*) This.Handle, cPoints, in aPoints);
@@ -4487,7 +4487,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint* pcPoints, WICRawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint* pcPoints, RawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteGetToneCurveProxy((IWICDevelopRaw*) This.Handle, pcPoints, paPoints);
@@ -4495,7 +4495,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint* pcPoints, ref RawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteGetToneCurveProxy((IWICDevelopRaw*) This.Handle, pcPoints, ref paPoints);
@@ -4503,7 +4503,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, ref uint pcPoints, WICRawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, ref uint pcPoints, RawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteGetToneCurveProxy((IWICDevelopRaw*) This.Handle, ref pcPoints, paPoints);
@@ -4511,7 +4511,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, ref uint pcPoints, ref WICRawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteGetToneCurveProxy<TI0>(ComPtr<TI0> This, ref uint pcPoints, ref RawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteGetToneCurveProxy((IWICDevelopRaw*) This.Handle, ref pcPoints, ref paPoints);
@@ -4865,11 +4865,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
-        public unsafe uint WICInProcPointerUserSize(uint* arg0, uint arg1, string[] arg2Sa)
+        public unsafe uint InProcPointerUserSize(uint* arg0, uint arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserSize(arg0, arg1, arg2);
+            var ret = InProcPointerUserSize(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -4877,11 +4877,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
-        public unsafe uint WICInProcPointerUserSize(ref uint arg0, uint arg1, string[] arg2Sa)
+        public unsafe uint InProcPointerUserSize(ref uint arg0, uint arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserSize(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserSize(ref arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -4889,36 +4889,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserMarshal(uint* arg0, byte* arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserMarshal(uint* arg0, byte* arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshal(arg0, arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserMarshalS(uint* arg0, byte* arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshalS(arg0, arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserMarshal(uint* arg0, ref byte arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshal(arg0, ref arg1, arg2);
+            var ret = InProcPointerUserMarshal(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -4927,11 +4902,11 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserMarshalS(uint* arg0, ref byte arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserMarshalS(uint* arg0, byte* arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshalS(arg0, ref arg1, arg2);
+            var ret = InProcPointerUserMarshalS(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -4939,36 +4914,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserMarshal(uint* arg0, ref byte arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshal(arg0, arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshalS(arg0, arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserMarshal(ref uint arg0, byte* arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshal(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserMarshal(arg0, ref arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -4977,11 +4927,11 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserMarshalS(ref uint arg0, byte* arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserMarshalS(uint* arg0, ref byte arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshalS(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserMarshalS(arg0, ref arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -4989,36 +4939,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserMarshal(ref uint arg0, ref byte arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshal(ref arg0, ref arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserMarshalS(ref uint arg0, ref byte arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshalS(ref arg0, ref arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshal(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserMarshal(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5027,11 +4952,86 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserMarshalS(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserMarshalS(arg0, arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        public unsafe byte* InProcPointerUserMarshal(ref uint arg0, byte* arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserMarshal(ref arg0, arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string InProcPointerUserMarshalS(ref uint arg0, byte* arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserMarshalS(ref arg0, arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        public unsafe byte* InProcPointerUserMarshal(ref uint arg0, ref byte arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserMarshal(ref arg0, ref arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string InProcPointerUserMarshalS(ref uint arg0, ref byte arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserMarshalS(ref arg0, ref arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        public unsafe byte* InProcPointerUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserMarshal(ref arg0, arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string InProcPointerUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserMarshalS(ref arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5039,11 +5039,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserUnmarshal(uint* arg0, byte* arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserUnmarshal(uint* arg0, byte* arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshal(arg0, arg1, arg2);
+            var ret = InProcPointerUserUnmarshal(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5052,11 +5052,11 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserUnmarshalS(uint* arg0, byte* arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserUnmarshalS(uint* arg0, byte* arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshalS(arg0, arg1, arg2);
+            var ret = InProcPointerUserUnmarshalS(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5064,36 +5064,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserUnmarshal(uint* arg0, ref byte arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserUnmarshal(uint* arg0, ref byte arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshal(arg0, ref arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserUnmarshalS(uint* arg0, ref byte arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshalS(arg0, ref arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshal(arg0, arg1, arg2);
+            var ret = InProcPointerUserUnmarshal(arg0, ref arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5102,11 +5077,11 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserUnmarshalS(uint* arg0, ref byte arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshalS(arg0, arg1, arg2);
+            var ret = InProcPointerUserUnmarshalS(arg0, ref arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5114,36 +5089,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserUnmarshal(ref uint arg0, byte* arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshal(ref arg0, arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserUnmarshalS(ref uint arg0, byte* arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshalS(ref arg0, arg1, arg2);
-            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
-            SilkMarshal.Free((nint) arg2);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserUnmarshal(ref uint arg0, ref byte arg1, string[] arg2Sa)
-        {
-            // StringArrayOverloader
-            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshal(ref arg0, ref arg1, arg2);
+            var ret = InProcPointerUserUnmarshal(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5152,11 +5102,11 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserUnmarshalS(ref uint arg0, ref byte arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshalS(ref arg0, ref arg1, arg2);
+            var ret = InProcPointerUserUnmarshalS(arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5164,11 +5114,11 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public unsafe byte* WICInProcPointerUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        public unsafe byte* InProcPointerUserUnmarshal(ref uint arg0, byte* arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshal(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserUnmarshal(ref arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5177,11 +5127,61 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string WICInProcPointerUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        public unsafe string InProcPointerUserUnmarshalS(ref uint arg0, byte* arg1, string[] arg2Sa)
         {
             // StringArrayOverloader
             var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
-            var ret = WICInProcPointerUserUnmarshalS(ref arg0, arg1, arg2);
+            var ret = InProcPointerUserUnmarshalS(ref arg0, arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        public unsafe byte* InProcPointerUserUnmarshal(ref uint arg0, ref byte arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserUnmarshal(ref arg0, ref arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string InProcPointerUserUnmarshalS(ref uint arg0, ref byte arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserUnmarshalS(ref arg0, ref arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        public unsafe byte* InProcPointerUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserUnmarshal(ref arg0, arg1, arg2);
+            SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
+            SilkMarshal.Free((nint) arg2);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string InProcPointerUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, string[] arg2Sa)
+        {
+            // StringArrayOverloader
+            var arg2 = (byte**) SilkMarshal.StringArrayToPtr(arg2Sa);
+            var ret = InProcPointerUserUnmarshalS(ref arg0, arg1, arg2);
             SilkMarshal.CopyPtrToStringArray((nint) arg2, arg2Sa);
             SilkMarshal.Free((nint) arg2);
             return ret;
@@ -5189,22 +5189,22 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
-        public unsafe void WICInProcPointerUserFree(uint* arg0, string[] arg1Sa)
+        public unsafe void InProcPointerUserFree(uint* arg0, string[] arg1Sa)
         {
             // StringArrayOverloader
             var arg1 = (byte**) SilkMarshal.StringArrayToPtr(arg1Sa);
-            WICInProcPointerUserFree(arg0, arg1);
+            InProcPointerUserFree(arg0, arg1);
             SilkMarshal.CopyPtrToStringArray((nint) arg1, arg1Sa);
             SilkMarshal.Free((nint) arg1);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
-        public unsafe void WICInProcPointerUserFree(ref uint arg0, string[] arg1Sa)
+        public unsafe void InProcPointerUserFree(ref uint arg0, string[] arg1Sa)
         {
             // StringArrayOverloader
             var arg1 = (byte**) SilkMarshal.StringArrayToPtr(arg1Sa);
-            WICInProcPointerUserFree(ref arg0, arg1);
+            InProcPointerUserFree(ref arg0, arg1);
             SilkMarshal.CopyPtrToStringArray((nint) arg1, arg1Sa);
             SilkMarshal.Free((nint) arg1);
         }
@@ -5251,7 +5251,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
@@ -5259,7 +5259,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, pPatterns, pcPatterns, ref pcbPatternsActual);
@@ -5267,7 +5267,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, pPatterns, ref pcPatterns, pcbPatternsActual);
@@ -5275,7 +5275,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, pPatterns, ref pcPatterns, ref pcbPatternsActual);
@@ -5283,7 +5283,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, ref pPatterns, pcPatterns, pcbPatternsActual);
@@ -5291,7 +5291,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, ref pPatterns, pcPatterns, ref pcbPatternsActual);
@@ -5299,7 +5299,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, ref pPatterns, ref pcPatterns, pcbPatternsActual);
@@ -5307,7 +5307,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsProxy((IWICBitmapDecoderInfo*) This.Handle, cbSizePatterns, ref pPatterns, ref pcPatterns, ref pcbPatternsActual);
@@ -5315,7 +5315,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, WICBitmapPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, BitmapPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsStub((IWICBitmapDecoderInfo*) This.Handle, ppPatterns, pcPatterns);
@@ -5323,7 +5323,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, WICBitmapPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, BitmapPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsStub((IWICBitmapDecoderInfo*) This.Handle, ppPatterns, ref pcPatterns);
@@ -5331,7 +5331,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref BitmapPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsStub((IWICBitmapDecoderInfo*) This.Handle, ref ppPatterns, pcPatterns);
@@ -5339,7 +5339,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref WICBitmapPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
+        public unsafe int IWICBitmapDecoderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref BitmapPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICBitmapDecoderInfoGetPatternsStub((IWICBitmapDecoderInfo*) This.Handle, ref ppPatterns, ref pcPatterns);
@@ -5347,7 +5347,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, WICRawCapabilitiesInfo* pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, RawCapabilitiesInfo* pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawQueryRawCapabilitiesInfoProxy((IWICDevelopRaw*) This.Handle, pInfo);
@@ -5355,7 +5355,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, ref WICRawCapabilitiesInfo pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy<TI0>(ComPtr<TI0> This, ref RawCapabilitiesInfo pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawQueryRawCapabilitiesInfoProxy((IWICDevelopRaw*) This.Handle, ref pInfo);
@@ -5363,7 +5363,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub<TI0>(ComPtr<TI0> This, WICRawCapabilitiesInfo* pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub<TI0>(ComPtr<TI0> This, RawCapabilitiesInfo* pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawQueryRawCapabilitiesInfoStub((IWICDevelopRaw*) This.Handle, pInfo);
@@ -5371,7 +5371,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub<TI0>(ComPtr<TI0> This, ref WICRawCapabilitiesInfo pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub<TI0>(ComPtr<TI0> This, ref RawCapabilitiesInfo pInfo) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawQueryRawCapabilitiesInfoStub((IWICDevelopRaw*) This.Handle, ref pInfo);
@@ -5379,7 +5379,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurve* pToneCurve) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurve* pToneCurve) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawSetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveSize, pToneCurve);
@@ -5387,7 +5387,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurve pToneCurve) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurve pToneCurve) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawSetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveSize, in pToneCurve);
@@ -5395,7 +5395,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawSetToneCurveStub<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawSetToneCurveStub<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawSetToneCurveStub((IWICDevelopRaw*) This.Handle, cPoints, aPoints);
@@ -5403,7 +5403,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawSetToneCurveStub<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawSetToneCurveStub<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawSetToneCurveStub((IWICDevelopRaw*) This.Handle, cPoints, in aPoints);
@@ -5411,7 +5411,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
@@ -5419,7 +5419,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, ref uint pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveBufferSize, pToneCurve, ref pcbActualToneCurveBufferSize);
@@ -5427,7 +5427,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, uint* pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveBufferSize, ref pToneCurve, pcbActualToneCurveBufferSize);
@@ -5435,7 +5435,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, ref WICRawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveBufferSize, ref RawToneCurve pToneCurve, ref uint pcbActualToneCurveBufferSize) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveBufferSize, ref pToneCurve, ref pcbActualToneCurveBufferSize);
@@ -5443,7 +5443,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, uint* pcPoints, WICRawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, uint* pcPoints, RawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveStub((IWICDevelopRaw*) This.Handle, pcPoints, paPoints);
@@ -5451,7 +5451,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, uint* pcPoints, ref RawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveStub((IWICDevelopRaw*) This.Handle, pcPoints, ref paPoints);
@@ -5459,7 +5459,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, ref uint pcPoints, WICRawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, ref uint pcPoints, RawToneCurvePoint** paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveStub((IWICDevelopRaw*) This.Handle, ref pcPoints, paPoints);
@@ -5467,7 +5467,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, ref uint pcPoints, ref WICRawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawGetToneCurveStub<TI0>(ComPtr<TI0> This, ref uint pcPoints, ref RawToneCurvePoint* paPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawGetToneCurveStub((IWICDevelopRaw*) This.Handle, ref pcPoints, ref paPoints);
@@ -5475,7 +5475,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ppPatterns, pcPatterns);
@@ -5483,7 +5483,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ppPatterns, ref pcPatterns);
@@ -5491,7 +5491,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ref ppPatterns, pcPatterns);
@@ -5499,7 +5499,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ref ppPatterns, ref pcPatterns);
@@ -5507,7 +5507,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ppPatterns, pcPatterns);
@@ -5515,7 +5515,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ppPatterns, ref pcPatterns);
@@ -5523,7 +5523,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ref ppPatterns, pcPatterns);
@@ -5531,7 +5531,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoRemoteGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ref ppPatterns, ref pcPatterns);
@@ -5539,7 +5539,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, WICMetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, MetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoRemoteGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, pHeader);
@@ -5547,7 +5547,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref WICMetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref MetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoRemoteGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, ref pHeader);
@@ -5555,7 +5555,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, WICMetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, MetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoRemoteGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, pHeader);
@@ -5563,7 +5563,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref WICMetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref MetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoRemoteGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, ref pHeader);
@@ -5571,151 +5571,151 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
+            return MatchMetadataContent(guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
+            return MatchMetadataContent(guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
+            return MatchMetadataContent(guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
+            return MatchMetadataContent(guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(ref guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
+            return MatchMetadataContent(ref guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(ref guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
+            return MatchMetadataContent(ref guidContainerFormat, pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(ref guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
+            return MatchMetadataContent(ref guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public unsafe int WICMatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICMatchMetadataContent(ref guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
+            return MatchMetadataContent(ref guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public unsafe int WICSerializeMetadataContent<TI0, TI1>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ComPtr<TI1> pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+        public unsafe int SerializeMetadataContent<TI0, TI1>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ComPtr<TI1> pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
         {
             // ComPtrOverloader
-            return WICSerializeMetadataContent(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
+            return SerializeMetadataContent(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public unsafe int WICSerializeMetadataContent<TI0>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public unsafe int SerializeMetadataContent<TI0>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICSerializeMetadataContent(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, ref pIStream);
+            return SerializeMetadataContent(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, ref pIStream);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public unsafe int WICSerializeMetadataContent<TI0>(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ComPtr<TI0> pIStream) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int SerializeMetadataContent<TI0>(Guid* guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ComPtr<TI0> pIStream) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICSerializeMetadataContent(guidContainerFormat, ref pIWriter, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
+            return SerializeMetadataContent(guidContainerFormat, ref pIWriter, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public unsafe int WICSerializeMetadataContent<TI0, TI1>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ComPtr<TI1> pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+        public unsafe int SerializeMetadataContent<TI0, TI1>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ComPtr<TI1> pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
         {
             // ComPtrOverloader
-            return WICSerializeMetadataContent(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
+            return SerializeMetadataContent(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public unsafe int WICSerializeMetadataContent<TI0>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public unsafe int SerializeMetadataContent<TI0>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, uint dwPersistOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICSerializeMetadataContent(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, ref pIStream);
+            return SerializeMetadataContent(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, dwPersistOptions, ref pIStream);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public unsafe int WICSerializeMetadataContent<TI0>(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ComPtr<TI0> pIStream) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int SerializeMetadataContent<TI0>(ref Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint dwPersistOptions, ComPtr<TI0> pIStream) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICSerializeMetadataContent(ref guidContainerFormat, ref pIWriter, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
+            return SerializeMetadataContent(ref guidContainerFormat, ref pIWriter, dwPersistOptions, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public unsafe int WICGetMetadataContentSize<TI0>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, ulong* pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public unsafe int GetMetadataContentSize<TI0>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, ulong* pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICGetMetadataContentSize(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, pcbSize);
+            return GetMetadataContentSize(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public unsafe int WICGetMetadataContentSize<TI0>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, ref ulong pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public unsafe int GetMetadataContentSize<TI0>(Guid* guidContainerFormat, ComPtr<TI0> pIWriter, ref ulong pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICGetMetadataContentSize(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, ref pcbSize);
+            return GetMetadataContentSize(guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, ref pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public unsafe int WICGetMetadataContentSize<TI0>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, ulong* pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public unsafe int GetMetadataContentSize<TI0>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, ulong* pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICGetMetadataContentSize(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, pcbSize);
+            return GetMetadataContentSize(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public unsafe int WICGetMetadataContentSize<TI0>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, ref ulong pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public unsafe int GetMetadataContentSize<TI0>(ref Guid guidContainerFormat, ComPtr<TI0> pIWriter, ref ulong pcbSize) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
-            return WICGetMetadataContentSize(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, ref pcbSize);
+            return GetMetadataContentSize(ref guidContainerFormat, (IWICMetadataWriter*) pIWriter.Handle, ref pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
@@ -5723,7 +5723,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, pPattern, pcCount, ref pcbActual);
@@ -5731,7 +5731,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, pPattern, ref pcCount, pcbActual);
@@ -5739,7 +5739,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, pPattern, ref pcCount, ref pcbActual);
@@ -5747,7 +5747,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, ref pPattern, pcCount, pcbActual);
@@ -5755,7 +5755,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, ref pPattern, pcCount, ref pcbActual);
@@ -5763,7 +5763,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, ref pPattern, ref pcCount, pcbActual);
@@ -5771,7 +5771,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, cbSize, ref pPattern, ref pcCount, ref pcbActual);
@@ -5779,7 +5779,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
@@ -5787,7 +5787,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, pPattern, pcCount, ref pcbActual);
@@ -5795,7 +5795,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, pPattern, ref pcCount, pcbActual);
@@ -5803,7 +5803,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, MetadataPattern* pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, pPattern, ref pcCount, ref pcbActual);
@@ -5811,7 +5811,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, ref pPattern, pcCount, pcbActual);
@@ -5819,7 +5819,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, uint* pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, ref pPattern, pcCount, ref pcbActual);
@@ -5827,7 +5827,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, ref pPattern, ref pcCount, pcbActual);
@@ -5835,7 +5835,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataPattern pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref MetadataPattern pPattern, ref uint pcCount, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsProxy((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, cbSize, ref pPattern, ref pcCount, ref pcbActual);
@@ -5843,7 +5843,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ppPatterns, pcPatterns);
@@ -5851,7 +5851,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ppPatterns, ref pcPatterns);
@@ -5859,7 +5859,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ref ppPatterns, pcPatterns);
@@ -5867,7 +5867,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, guidContainerFormat, ref ppPatterns, ref pcPatterns);
@@ -5875,7 +5875,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ppPatterns, pcPatterns);
@@ -5883,7 +5883,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, WICMetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, MetadataPattern** ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ppPatterns, ref pcPatterns);
@@ -5891,7 +5891,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ref ppPatterns, pcPatterns);
@@ -5899,7 +5899,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref WICMetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataReaderInfoGetPatternsStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref MetadataPattern* ppPatterns, ref uint pcPatterns) where TI0 : unmanaged, IComVtbl<IWICMetadataReaderInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataReaderInfoGetPatternsStub((IWICMetadataReaderInfo*) This.Handle, ref guidContainerFormat, ref ppPatterns, ref pcPatterns);
@@ -5907,7 +5907,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, cbSize, pHeader, pcbActual);
@@ -5915,7 +5915,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, cbSize, pHeader, ref pcbActual);
@@ -5923,7 +5923,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, cbSize, ref pHeader, pcbActual);
@@ -5931,7 +5931,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, cbSize, ref pHeader, ref pcbActual);
@@ -5939,7 +5939,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, cbSize, pHeader, pcbActual);
@@ -5947,7 +5947,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, cbSize, pHeader, ref pcbActual);
@@ -5955,7 +5955,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, cbSize, ref pHeader, pcbActual);
@@ -5963,7 +5963,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderProxy<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderProxy((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, cbSize, ref pHeader, ref pcbActual);
@@ -5971,7 +5971,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, WICMetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, MetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderStub((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, pHeader);
@@ -5979,7 +5979,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref WICMetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, Guid* guidContainerFormat, ref MetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderStub((IWICMetadataWriterInfo*) This.Handle, guidContainerFormat, ref pHeader);
@@ -5987,7 +5987,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, WICMetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, MetadataHeader* pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderStub((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, pHeader);
@@ -5995,7 +5995,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref WICMetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
+        public unsafe int IWICMetadataWriterInfoGetHeaderStub<TI0>(ComPtr<TI0> This, ref Guid guidContainerFormat, ref MetadataHeader pHeader) where TI0 : unmanaged, IComVtbl<IWICMetadataWriterInfo>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICMetadataWriterInfoGetHeaderStub((IWICMetadataWriterInfo*) This.Handle, ref guidContainerFormat, ref pHeader);

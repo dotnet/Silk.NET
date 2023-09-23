@@ -252,113 +252,113 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (byte* pbBufferPtr = &pbBuffer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(IWICBitmapSource* pISource, Guid* dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+            ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(IWICBitmapSource* pISource, Guid* dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICPalette* pIPalettePtr = &pIPalette)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(IWICBitmapSource* pISource, ref Guid dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(IWICBitmapSource* pISource, ref Guid dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* dstFormatPtr = &dstFormat)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(IWICBitmapSource* pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(IWICBitmapSource* pISource, ref Guid dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -366,26 +366,26 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (IWICPalette* pIPalettePtr = &pIPalette)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISource, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(ref IWICBitmapSource pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(ref IWICBitmapSource pISource, Guid* dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmapSource* pISourcePtr = &pISource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+                ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(ref IWICBitmapSource pISource, Guid* dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(ref IWICBitmapSource pISource, Guid* dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -393,14 +393,14 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (IWICPalette* pIPalettePtr = &pIPalette)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormat, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly unsafe int Initialize(ref IWICBitmapSource pISource, ref Guid dstFormat, BitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -408,14 +408,14 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (Guid* dstFormatPtr = &dstFormat)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize(ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
+        public readonly int Initialize(ref IWICBitmapSource pISource, ref Guid dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate)
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -425,7 +425,7 @@ namespace Silk.NET.WindowsCodecs
                 {
                     fixed (IWICPalette* pIPalettePtr = &pIPalette)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICFormatConverter*, IWICBitmapSource*, Guid*, BitmapDitherType, IWICPalette*, double, BitmapPaletteType, int>)@this->LpVtbl[8])(@this, pISourcePtr, dstFormatPtr, dither, pIPalettePtr, alphaThresholdPercent, paletteTranslate);
                     }
                 }
             }
@@ -558,7 +558,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize<TI0, TI1>(ComPtr<TI0> pISource, Guid* dstFormat, WICBitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
+        public readonly unsafe int Initialize<TI0, TI1>(ComPtr<TI0> pISource, Guid* dstFormat, BitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -566,7 +566,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize<TI0>(ComPtr<TI0> pISource, Guid* dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public readonly unsafe int Initialize<TI0>(ComPtr<TI0> pISource, Guid* dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -574,7 +574,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0, TI1>(ComPtr<TI0> pISource, ref Guid dstFormat, WICBitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
+        public readonly int Initialize<TI0, TI1>(ComPtr<TI0> pISource, ref Guid dstFormat, BitmapDitherType dither, ComPtr<TI1> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI1>
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -582,7 +582,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0>(ComPtr<TI0> pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public readonly int Initialize<TI0>(ComPtr<TI0> pISource, ref Guid dstFormat, BitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -590,7 +590,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize<TI0>(ref IWICBitmapSource pISource, Guid* dstFormat, WICBitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
+        public readonly unsafe int Initialize<TI0>(ref IWICBitmapSource pISource, Guid* dstFormat, BitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -598,7 +598,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0>(ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
+        public readonly int Initialize<TI0>(ref IWICBitmapSource pISource, ref Guid dstFormat, BitmapDitherType dither, ComPtr<TI0> pIPalette, double alphaThresholdPercent, BitmapPaletteType paletteTranslate) where TI0 : unmanaged, IComVtbl<IWICPalette>, IComVtbl<TI0>
         {
             var @this = (IWICFormatConverter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

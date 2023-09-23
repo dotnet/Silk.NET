@@ -252,121 +252,121 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
                 fixed (byte* pbBufferPtr = &pbBuffer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
             var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
             SilkMarshal.Free((nint)pbBufferPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prcLock, uint flags, IWICBitmapLock** ppILock)
+        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcLock, uint flags, IWICBitmapLock** ppILock)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLock, flags, ppILock);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLock, flags, ppILock);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prcLock, uint flags, ref IWICBitmapLock* ppILock)
+        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcLock, uint flags, ref IWICBitmapLock* ppILock)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmapLock** ppILockPtr = &ppILock)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLock, flags, ppILockPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLock, flags, ppILockPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prcLock, uint flags, IWICBitmapLock** ppILock)
+        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcLock, uint flags, IWICBitmapLock** ppILock)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcLockPtr = &prcLock)
+            fixed (Rect* prcLockPtr = &prcLock)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLockPtr, flags, ppILock);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLockPtr, flags, ppILock);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prcLock, uint flags, ref IWICBitmapLock* ppILock)
+        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcLock, uint flags, ref IWICBitmapLock* ppILock)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcLockPtr = &prcLock)
+            fixed (Rect* prcLockPtr = &prcLock)
             {
                 fixed (IWICBitmapLock** ppILockPtr = &ppILock)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLockPtr, flags, ppILockPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmap*, Rect*, uint, IWICBitmapLock**, int>)@this->LpVtbl[8])(@this, prcLockPtr, flags, ppILockPtr);
                 }
             }
             return ret;
@@ -420,7 +420,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
+        public readonly unsafe int Lock<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -428,7 +428,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Lock<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
+        public readonly int Lock<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

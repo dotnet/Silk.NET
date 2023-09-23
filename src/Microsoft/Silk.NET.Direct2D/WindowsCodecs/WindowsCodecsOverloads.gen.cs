@@ -162,7 +162,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, WICBitmapPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoRemoteGetPatternsProxy(This, ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -170,7 +170,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, ref WICBitmapPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoRemoteGetPatternsProxy(This, ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -178,7 +178,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, WICBitmapPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ppPatterns, pcPatterns);
@@ -186,7 +186,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, WICBitmapPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -194,7 +194,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ref ppPatterns, pcPatterns);
@@ -202,7 +202,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref WICBitmapPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -330,519 +330,519 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public static unsafe int WICConvertBitmapSource(this WindowsCodecs thisApi, Guid* dstFormat, Span<IWICBitmapSource> pISrc, IWICBitmapSource** ppIDst)
+        public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Guid* dstFormat, Span<IWICBitmapSource> pISrc, IWICBitmapSource** ppIDst)
         {
             // SpanOverloader
-            return thisApi.WICConvertBitmapSource(dstFormat, ref pISrc.GetPinnableReference(), ppIDst);
+            return thisApi.ConvertBitmapSource(dstFormat, ref pISrc.GetPinnableReference(), ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public static unsafe int WICConvertBitmapSource(this WindowsCodecs thisApi, Guid* dstFormat, Span<IWICBitmapSource> pISrc, ref IWICBitmapSource* ppIDst)
+        public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Guid* dstFormat, Span<IWICBitmapSource> pISrc, ref IWICBitmapSource* ppIDst)
         {
             // SpanOverloader
-            return thisApi.WICConvertBitmapSource(dstFormat, ref pISrc.GetPinnableReference(), ref ppIDst);
+            return thisApi.ConvertBitmapSource(dstFormat, ref pISrc.GetPinnableReference(), ref ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public static unsafe int WICConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst)
+        public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst)
         {
             // SpanOverloader
-            return thisApi.WICConvertBitmapSource(ref dstFormat.GetPinnableReference(), pISrc, ppIDst);
+            return thisApi.ConvertBitmapSource(ref dstFormat.GetPinnableReference(), pISrc, ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public static unsafe int WICConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst)
+        public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst)
         {
             // SpanOverloader
-            return thisApi.WICConvertBitmapSource(ref dstFormat.GetPinnableReference(), pISrc, ref ppIDst);
+            return thisApi.ConvertBitmapSource(ref dstFormat.GetPinnableReference(), pISrc, ref ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public static unsafe int WICConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, Span<IWICBitmapSource> pISrc, IWICBitmapSource** ppIDst)
+        public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, Span<IWICBitmapSource> pISrc, IWICBitmapSource** ppIDst)
         {
             // SpanOverloader
-            return thisApi.WICConvertBitmapSource(ref dstFormat.GetPinnableReference(), ref pISrc.GetPinnableReference(), ppIDst);
+            return thisApi.ConvertBitmapSource(ref dstFormat.GetPinnableReference(), ref pISrc.GetPinnableReference(), ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
-        public static unsafe int WICConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, Span<IWICBitmapSource> pISrc, ref IWICBitmapSource* ppIDst)
+        public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, Span<IWICBitmapSource> pISrc, ref IWICBitmapSource* ppIDst)
         {
             // SpanOverloader
-            return thisApi.WICConvertBitmapSource(ref dstFormat.GetPinnableReference(), ref pISrc.GetPinnableReference(), ref ppIDst);
+            return thisApi.ConvertBitmapSource(ref dstFormat.GetPinnableReference(), ref pISrc.GetPinnableReference(), ref ppIDst);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSection(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, ppIBitmap);
+            return thisApi.CreateBitmapFromSection(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSection(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, ref ppIBitmap);
+            return thisApi.CreateBitmapFromSection(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, ref ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSection(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap)
+        public static unsafe int CreateBitmapFromSection(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap)
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, ppIBitmap);
+            return thisApi.CreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSection(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap)
+        public static unsafe int CreateBitmapFromSection(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap)
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, ref ppIBitmap);
+            return thisApi.CreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, ref ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, ppIBitmap);
+            return thisApi.CreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, ref ppIBitmap);
+            return thisApi.CreateBitmapFromSection(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, ref ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSectionEx(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ppIBitmap);
+            return thisApi.CreateBitmapFromSectionEx(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSectionEx(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ref ppIBitmap);
+            return thisApi.CreateBitmapFromSectionEx(width, height, pixelFormat, ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ref ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSectionEx(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap)
+        public static unsafe int CreateBitmapFromSectionEx(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap)
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, desiredAccessLevel, ppIBitmap);
+            return thisApi.CreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, desiredAccessLevel, ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSectionEx(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap)
+        public static unsafe int CreateBitmapFromSectionEx(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap)
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, desiredAccessLevel, ref ppIBitmap);
+            return thisApi.CreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), hSection, stride, offset, desiredAccessLevel, ref ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ppIBitmap);
+            return thisApi.CreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
-        public static unsafe int WICCreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+        public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.WICCreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ref ppIBitmap);
+            return thisApi.CreateBitmapFromSectionEx(width, height, ref pixelFormat.GetPinnableReference(), ref hSection.GetPinnableReference(), stride, offset, desiredAccessLevel, ref ppIBitmap);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(guid, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapGuidToShortName(guid, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(guid, cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapGuidToShortName(guid, cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(guid, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapGuidToShortName(guid, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(guid, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapGuidToShortName(guid, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, char* wzName, uint* pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, pcchActual);
+            return thisApi.MapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(ref guid.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapGuidToShortName(ref guid.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(ref guid.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapGuidToShortName(ref guid.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, pcchActual);
+            return thisApi.MapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
-        public static unsafe int WICMapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapGuidToShortName(ref guid.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
-        public static unsafe int WICMapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Span<Guid> pguid)
+        public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Span<Guid> pguid)
         {
             // SpanOverloader
-            return thisApi.WICMapShortNameToGuid(wzName, ref pguid.GetPinnableReference());
+            return thisApi.MapShortNameToGuid(wzName, ref pguid.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
-        public static unsafe int WICMapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Guid* pguid)
+        public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Guid* pguid)
         {
             // SpanOverloader
-            return thisApi.WICMapShortNameToGuid(in wzName.GetPinnableReference(), pguid);
+            return thisApi.MapShortNameToGuid(in wzName.GetPinnableReference(), pguid);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
-        public static unsafe int WICMapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Span<Guid> pguid)
+        public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Span<Guid> pguid)
         {
             // SpanOverloader
-            return thisApi.WICMapShortNameToGuid(in wzName.GetPinnableReference(), ref pguid.GetPinnableReference());
+            return thisApi.MapShortNameToGuid(in wzName.GetPinnableReference(), ref pguid.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
-        public static unsafe int WICMapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<Guid> pguid)
+        public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<Guid> pguid)
         {
             // SpanOverloader
-            return thisApi.WICMapShortNameToGuid(wzName, ref pguid.GetPinnableReference());
+            return thisApi.MapShortNameToGuid(wzName, ref pguid.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(guidMetadataFormat, pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), ref pwzSchema.GetPinnableReference(), cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, ref wzName.GetPinnableReference(), ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, pcchActual);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
-        public static unsafe int WICMapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
+        public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
-            return thisApi.WICMapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
+            return thisApi.MapSchemaToName(ref guidMetadataFormat.GetPinnableReference(), pwzSchema, cchName, wzName, ref pcchActual.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<WICRawCapabilitiesInfo> pInfo)
+        public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(This, ref pInfo.GetPinnableReference());
@@ -850,7 +850,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, WICRawCapabilitiesInfo* pInfo)
+        public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, RawCapabilitiesInfo* pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(ref This.GetPinnableReference(), pInfo);
@@ -858,7 +858,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<WICRawCapabilitiesInfo> pInfo)
+        public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(ref This.GetPinnableReference(), ref pInfo.GetPinnableReference());
@@ -986,7 +986,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRawToneCurvePoint> aPoints)
+        public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteSetToneCurveProxy(This, cPoints, in aPoints.GetPinnableReference());
@@ -994,7 +994,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints)
+        public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteSetToneCurveProxy(ref This.GetPinnableReference(), cPoints, aPoints);
@@ -1002,7 +1002,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRawToneCurvePoint> aPoints)
+        public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteSetToneCurveProxy(ref This.GetPinnableReference(), cPoints, in aPoints.GetPinnableReference());
@@ -1130,7 +1130,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, WICRawToneCurvePoint** paPoints)
+        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteGetToneCurveProxy(This, ref pcPoints.GetPinnableReference(), paPoints);
@@ -1138,7 +1138,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, ref WICRawToneCurvePoint* paPoints)
+        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteGetToneCurveProxy(This, ref pcPoints.GetPinnableReference(), ref paPoints);
@@ -1146,7 +1146,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, WICRawToneCurvePoint** paPoints)
+        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteGetToneCurveProxy(ref This.GetPinnableReference(), pcPoints, paPoints);
@@ -1154,7 +1154,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints)
+        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteGetToneCurveProxy(ref This.GetPinnableReference(), pcPoints, ref paPoints);
@@ -1162,7 +1162,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, WICRawToneCurvePoint** paPoints)
+        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteGetToneCurveProxy(ref This.GetPinnableReference(), ref pcPoints.GetPinnableReference(), paPoints);
@@ -1170,7 +1170,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, ref WICRawToneCurvePoint* paPoints)
+        public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawRemoteGetToneCurveProxy(ref This.GetPinnableReference(), ref pcPoints.GetPinnableReference(), ref paPoints);
@@ -2098,162 +2098,162 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
-        public static unsafe uint WICInProcPointerUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, byte** arg2)
+        public static unsafe uint InProcPointerUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
+            return thisApi.InProcPointerUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
-        public static unsafe uint WICInProcPointerUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref byte* arg2)
+        public static unsafe uint InProcPointerUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
+            return thisApi.InProcPointerUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+            return thisApi.InProcPointerUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+            return thisApi.InProcPointerUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+            return thisApi.InProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+            return thisApi.InProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+            return thisApi.InProcPointerUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+            return thisApi.InProcPointerUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+            return thisApi.InProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+            return thisApi.InProcPointerUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
+            return thisApi.InProcPointerUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
+            return thisApi.InProcPointerUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+            return thisApi.InProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+            return thisApi.InProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
+            return thisApi.InProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
+            return thisApi.InProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
+            return thisApi.InProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
-        public static unsafe byte* WICInProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2)
+        public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2)
         {
             // SpanOverloader
-            return thisApi.WICInProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
+            return thisApi.InProcPointerUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
-        public static unsafe void WICInProcPointerUserFree(this WindowsCodecs thisApi, Span<uint> arg0, byte** arg1)
+        public static unsafe void InProcPointerUserFree(this WindowsCodecs thisApi, Span<uint> arg0, byte** arg1)
         {
             // SpanOverloader
-            thisApi.WICInProcPointerUserFree(ref arg0.GetPinnableReference(), arg1);
+            thisApi.InProcPointerUserFree(ref arg0.GetPinnableReference(), arg1);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
-        public static unsafe void WICInProcPointerUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref byte* arg1)
+        public static unsafe void InProcPointerUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref byte* arg1)
         {
             // SpanOverloader
-            thisApi.WICInProcPointerUserFree(ref arg0.GetPinnableReference(), ref arg1);
+            thisApi.InProcPointerUserFree(ref arg0.GetPinnableReference(), ref arg1);
         }
 
         /// <summary>To be documented.</summary>
@@ -2306,7 +2306,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, pPatterns, pcPatterns, ref pcbPatternsActual.GetPinnableReference());
@@ -2314,7 +2314,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, pPatterns, ref pcPatterns.GetPinnableReference(), pcbPatternsActual);
@@ -2322,7 +2322,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, WICBitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, pPatterns, ref pcPatterns.GetPinnableReference(), ref pcbPatternsActual.GetPinnableReference());
@@ -2330,7 +2330,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, ref pPatterns.GetPinnableReference(), pcPatterns, pcbPatternsActual);
@@ -2338,7 +2338,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, ref pPatterns.GetPinnableReference(), pcPatterns, ref pcbPatternsActual.GetPinnableReference());
@@ -2346,7 +2346,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, ref pPatterns.GetPinnableReference(), ref pcPatterns.GetPinnableReference(), pcbPatternsActual);
@@ -2354,7 +2354,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(This, cbSizePatterns, ref pPatterns.GetPinnableReference(), ref pcPatterns.GetPinnableReference(), ref pcbPatternsActual.GetPinnableReference());
@@ -2362,7 +2362,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
@@ -2370,7 +2370,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, pPatterns, pcPatterns, ref pcbPatternsActual.GetPinnableReference());
@@ -2378,7 +2378,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, pPatterns, ref pcPatterns.GetPinnableReference(), pcbPatternsActual);
@@ -2386,7 +2386,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, WICBitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, pPatterns, ref pcPatterns.GetPinnableReference(), ref pcbPatternsActual.GetPinnableReference());
@@ -2394,7 +2394,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, ref pPatterns.GetPinnableReference(), pcPatterns, pcbPatternsActual);
@@ -2402,7 +2402,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, ref pPatterns.GetPinnableReference(), pcPatterns, ref pcbPatternsActual.GetPinnableReference());
@@ -2410,7 +2410,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, ref pPatterns.GetPinnableReference(), ref pcPatterns.GetPinnableReference(), pcbPatternsActual);
@@ -2418,7 +2418,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsProxy(ref This.GetPinnableReference(), cbSizePatterns, ref pPatterns.GetPinnableReference(), ref pcPatterns.GetPinnableReference(), ref pcbPatternsActual.GetPinnableReference());
@@ -2426,7 +2426,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, WICBitmapPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsStub(This, ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2434,7 +2434,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, ref WICBitmapPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsStub(This, ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2442,7 +2442,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, WICBitmapPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsStub(ref This.GetPinnableReference(), ppPatterns, pcPatterns);
@@ -2450,7 +2450,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, WICBitmapPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsStub(ref This.GetPinnableReference(), ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2458,7 +2458,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref WICBitmapPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsStub(ref This.GetPinnableReference(), ref ppPatterns, pcPatterns);
@@ -2466,7 +2466,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
-        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref WICBitmapPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICBitmapDecoderInfoGetPatternsStub(ref This.GetPinnableReference(), ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2474,7 +2474,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<WICRawCapabilitiesInfo> pInfo)
+        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawQueryRawCapabilitiesInfoProxy(This, ref pInfo.GetPinnableReference());
@@ -2482,7 +2482,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, WICRawCapabilitiesInfo* pInfo)
+        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, RawCapabilitiesInfo* pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawQueryRawCapabilitiesInfoProxy(ref This.GetPinnableReference(), pInfo);
@@ -2490,7 +2490,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<WICRawCapabilitiesInfo> pInfo)
+        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawQueryRawCapabilitiesInfoProxy(ref This.GetPinnableReference(), ref pInfo.GetPinnableReference());
@@ -2498,7 +2498,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<WICRawCapabilitiesInfo> pInfo)
+        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawQueryRawCapabilitiesInfoStub(This, ref pInfo.GetPinnableReference());
@@ -2506,7 +2506,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, WICRawCapabilitiesInfo* pInfo)
+        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, RawCapabilitiesInfo* pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawQueryRawCapabilitiesInfoStub(ref This.GetPinnableReference(), pInfo);
@@ -2514,7 +2514,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<WICRawCapabilitiesInfo> pInfo)
+        public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawQueryRawCapabilitiesInfoStub(ref This.GetPinnableReference(), ref pInfo.GetPinnableReference());
@@ -2522,7 +2522,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRawToneCurve> pToneCurve)
+        public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurve> pToneCurve)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawSetToneCurveProxy(This, cbToneCurveSize, in pToneCurve.GetPinnableReference());
@@ -2530,7 +2530,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurve* pToneCurve)
+        public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurve* pToneCurve)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawSetToneCurveProxy(ref This.GetPinnableReference(), cbToneCurveSize, pToneCurve);
@@ -2538,7 +2538,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRawToneCurve> pToneCurve)
+        public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurve> pToneCurve)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawSetToneCurveProxy(ref This.GetPinnableReference(), cbToneCurveSize, in pToneCurve.GetPinnableReference());
@@ -2546,7 +2546,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRawToneCurvePoint> aPoints)
+        public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawSetToneCurveStub(This, cPoints, in aPoints.GetPinnableReference());
@@ -2554,7 +2554,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRawToneCurvePoint* aPoints)
+        public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawSetToneCurveStub(ref This.GetPinnableReference(), cPoints, aPoints);
@@ -2562,7 +2562,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRawToneCurvePoint> aPoints)
+        public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawSetToneCurveStub(ref This.GetPinnableReference(), cPoints, in aPoints.GetPinnableReference());
@@ -2570,7 +2570,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(This, cbToneCurveBufferSize, pToneCurve, ref pcbActualToneCurveBufferSize.GetPinnableReference());
@@ -2578,7 +2578,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, Span<WICRawToneCurve> pToneCurve, uint* pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(This, cbToneCurveBufferSize, ref pToneCurve.GetPinnableReference(), pcbActualToneCurveBufferSize);
@@ -2586,7 +2586,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, Span<WICRawToneCurve> pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(This, cbToneCurveBufferSize, ref pToneCurve.GetPinnableReference(), ref pcbActualToneCurveBufferSize.GetPinnableReference());
@@ -2594,7 +2594,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(ref This.GetPinnableReference(), cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
@@ -2602,7 +2602,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(ref This.GetPinnableReference(), cbToneCurveBufferSize, pToneCurve, ref pcbActualToneCurveBufferSize.GetPinnableReference());
@@ -2610,7 +2610,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, Span<WICRawToneCurve> pToneCurve, uint* pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(ref This.GetPinnableReference(), cbToneCurveBufferSize, ref pToneCurve.GetPinnableReference(), pcbActualToneCurveBufferSize);
@@ -2618,7 +2618,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, Span<WICRawToneCurve> pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
+        public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveProxy(ref This.GetPinnableReference(), cbToneCurveBufferSize, ref pToneCurve.GetPinnableReference(), ref pcbActualToneCurveBufferSize.GetPinnableReference());
@@ -2626,7 +2626,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, WICRawToneCurvePoint** paPoints)
+        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveStub(This, ref pcPoints.GetPinnableReference(), paPoints);
@@ -2634,7 +2634,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, ref WICRawToneCurvePoint* paPoints)
+        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveStub(This, ref pcPoints.GetPinnableReference(), ref paPoints);
@@ -2642,7 +2642,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, WICRawToneCurvePoint** paPoints)
+        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveStub(ref This.GetPinnableReference(), pcPoints, paPoints);
@@ -2650,7 +2650,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, ref WICRawToneCurvePoint* paPoints)
+        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveStub(ref This.GetPinnableReference(), pcPoints, ref paPoints);
@@ -2658,7 +2658,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, WICRawToneCurvePoint** paPoints)
+        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveStub(ref This.GetPinnableReference(), ref pcPoints.GetPinnableReference(), paPoints);
@@ -2666,7 +2666,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
-        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, ref WICRawToneCurvePoint* paPoints)
+        public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
             return thisApi.IWICDevelopRawGetToneCurveStub(ref This.GetPinnableReference(), ref pcPoints.GetPinnableReference(), ref paPoints);
@@ -2674,7 +2674,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(This, guidContainerFormat, ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2682,7 +2682,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(This, guidContainerFormat, ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2690,7 +2690,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), ppPatterns, pcPatterns);
@@ -2698,7 +2698,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2706,7 +2706,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, pcPatterns);
@@ -2714,7 +2714,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2722,7 +2722,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, ppPatterns, pcPatterns);
@@ -2730,7 +2730,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2738,7 +2738,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, ref ppPatterns, pcPatterns);
@@ -2746,7 +2746,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2754,7 +2754,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ppPatterns, pcPatterns);
@@ -2762,7 +2762,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2770,7 +2770,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, pcPatterns);
@@ -2778,7 +2778,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoRemoteGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -2906,7 +2906,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(This, guidContainerFormat, ref pHeader.GetPinnableReference());
@@ -2914,7 +2914,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, WICMetadataHeader* pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(This, ref guidContainerFormat.GetPinnableReference(), pHeader);
@@ -2922,7 +2922,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(This, ref guidContainerFormat.GetPinnableReference(), ref pHeader.GetPinnableReference());
@@ -2930,7 +2930,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, WICMetadataHeader* pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(ref This.GetPinnableReference(), guidContainerFormat, pHeader);
@@ -2938,7 +2938,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(ref This.GetPinnableReference(), guidContainerFormat, ref pHeader.GetPinnableReference());
@@ -2946,7 +2946,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, WICMetadataHeader* pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), pHeader);
@@ -2954,7 +2954,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoRemoteGetHeaderProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ref pHeader.GetPinnableReference());
@@ -3082,234 +3082,234 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, pguidVendor, pIStream, ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(guidContainerFormat, pguidVendor, pIStream, ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, pguidVendor, ref pIStream.GetPinnableReference(), pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(guidContainerFormat, pguidVendor, ref pIStream.GetPinnableReference(), pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, pguidVendor, ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(guidContainerFormat, pguidVendor, ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), pIStream, pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), pIStream, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), pIStream, ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), pIStream, ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(guidContainerFormat, in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, pIStream, pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, pIStream, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, pIStream, ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, pIStream, ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, ref pIStream.GetPinnableReference(), pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, ref pIStream.GetPinnableReference(), pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), pguidVendor, ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), pIStream, pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), pIStream, pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), pIStream, ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), pIStream, ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), pguidMetadataFormat);
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), pguidMetadataFormat);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICMatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
+        public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
-            return thisApi.WICMatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
+            return thisApi.MatchMetadataContent(ref guidContainerFormat.GetPinnableReference(), in pguidVendor.GetPinnableReference(), ref pIStream.GetPinnableReference(), ref pguidMetadataFormat.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(guidContainerFormat, pIWriter, dwPersistOptions, ref pIStream.GetPinnableReference());
+            return thisApi.SerializeMetadataContent(guidContainerFormat, pIWriter, dwPersistOptions, ref pIStream.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(guidContainerFormat, ref pIWriter.GetPinnableReference(), dwPersistOptions, pIStream);
+            return thisApi.SerializeMetadataContent(guidContainerFormat, ref pIWriter.GetPinnableReference(), dwPersistOptions, pIStream);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(guidContainerFormat, ref pIWriter.GetPinnableReference(), dwPersistOptions, ref pIStream.GetPinnableReference());
+            return thisApi.SerializeMetadataContent(guidContainerFormat, ref pIWriter.GetPinnableReference(), dwPersistOptions, ref pIStream.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), pIWriter, dwPersistOptions, pIStream);
+            return thisApi.SerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), pIWriter, dwPersistOptions, pIStream);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), pIWriter, dwPersistOptions, ref pIStream.GetPinnableReference());
+            return thisApi.SerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), pIWriter, dwPersistOptions, ref pIStream.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), dwPersistOptions, pIStream);
+            return thisApi.SerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), dwPersistOptions, pIStream);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICSerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
+        public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
-            return thisApi.WICSerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), dwPersistOptions, ref pIStream.GetPinnableReference());
+            return thisApi.SerializeMetadataContent(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), dwPersistOptions, ref pIStream.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, Span<ulong> pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(guidContainerFormat, pIWriter, ref pcbSize.GetPinnableReference());
+            return thisApi.GetMetadataContentSize(guidContainerFormat, pIWriter, ref pcbSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, ulong* pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, ulong* pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(guidContainerFormat, ref pIWriter.GetPinnableReference(), pcbSize);
+            return thisApi.GetMetadataContentSize(guidContainerFormat, ref pIWriter.GetPinnableReference(), pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, Span<ulong> pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(guidContainerFormat, ref pIWriter.GetPinnableReference(), ref pcbSize.GetPinnableReference());
+            return thisApi.GetMetadataContentSize(guidContainerFormat, ref pIWriter.GetPinnableReference(), ref pcbSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), pIWriter, pcbSize);
+            return thisApi.GetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), pIWriter, pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, Span<ulong> pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), pIWriter, ref pcbSize.GetPinnableReference());
+            return thisApi.GetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), pIWriter, ref pcbSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, ulong* pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, ulong* pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), pcbSize);
+            return thisApi.GetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), pcbSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
-        public static unsafe int WICGetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, Span<ulong> pcbSize)
+        public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
-            return thisApi.WICGetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), ref pcbSize.GetPinnableReference());
+            return thisApi.GetMetadataContentSize(ref guidContainerFormat.GetPinnableReference(), ref pIWriter.GetPinnableReference(), ref pcbSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3522,7 +3522,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, pPattern, pcCount, ref pcbActual.GetPinnableReference());
@@ -3530,7 +3530,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, pPattern, ref pcCount.GetPinnableReference(), pcbActual);
@@ -3538,7 +3538,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, pPattern, ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3546,7 +3546,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), pcCount, pcbActual);
@@ -3554,7 +3554,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), pcCount, ref pcbActual.GetPinnableReference());
@@ -3562,7 +3562,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), pcbActual);
@@ -3570,7 +3570,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3578,7 +3578,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, pcCount, pcbActual);
@@ -3586,7 +3586,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, pcCount, ref pcbActual.GetPinnableReference());
@@ -3594,7 +3594,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, ref pcCount.GetPinnableReference(), pcbActual);
@@ -3602,7 +3602,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3610,7 +3610,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), pcCount, pcbActual);
@@ -3618,7 +3618,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), pcCount, ref pcbActual.GetPinnableReference());
@@ -3626,7 +3626,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), pcbActual);
@@ -3634,7 +3634,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3642,7 +3642,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
@@ -3650,7 +3650,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, pPattern, pcCount, ref pcbActual.GetPinnableReference());
@@ -3658,7 +3658,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, pPattern, ref pcCount.GetPinnableReference(), pcbActual);
@@ -3666,7 +3666,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, pPattern, ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3674,7 +3674,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), pcCount, pcbActual);
@@ -3682,7 +3682,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), pcCount, ref pcbActual.GetPinnableReference());
@@ -3690,7 +3690,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), pcbActual);
@@ -3698,7 +3698,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3706,7 +3706,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, pcCount, pcbActual);
@@ -3714,7 +3714,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, pcCount, ref pcbActual.GetPinnableReference());
@@ -3722,7 +3722,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, ref pcCount.GetPinnableReference(), pcbActual);
@@ -3730,7 +3730,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, pPattern, ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3738,7 +3738,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), pcCount, pcbActual);
@@ -3746,7 +3746,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), pcCount, ref pcbActual.GetPinnableReference());
@@ -3754,7 +3754,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), pcbActual);
@@ -3762,7 +3762,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, ref pPattern.GetPinnableReference(), ref pcCount.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3770,7 +3770,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(This, guidContainerFormat, ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3778,7 +3778,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(This, guidContainerFormat, ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3786,7 +3786,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(This, ref guidContainerFormat.GetPinnableReference(), ppPatterns, pcPatterns);
@@ -3794,7 +3794,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(This, ref guidContainerFormat.GetPinnableReference(), ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3802,7 +3802,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(This, ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, pcPatterns);
@@ -3810,7 +3810,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(This, ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3818,7 +3818,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), guidContainerFormat, ppPatterns, pcPatterns);
@@ -3826,7 +3826,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), guidContainerFormat, ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3834,7 +3834,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), guidContainerFormat, ref ppPatterns, pcPatterns);
@@ -3842,7 +3842,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), guidContainerFormat, ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3850,7 +3850,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ppPatterns, pcPatterns);
@@ -3858,7 +3858,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, WICMetadataPattern** ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3866,7 +3866,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, uint* pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, pcPatterns);
@@ -3874,7 +3874,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref WICMetadataPattern* ppPatterns, Span<uint> pcPatterns)
+        public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
             return thisApi.IWICMetadataReaderInfoGetPatternsStub(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ref ppPatterns, ref pcPatterns.GetPinnableReference());
@@ -3882,7 +3882,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, guidContainerFormat, cbSize, pHeader, ref pcbActual.GetPinnableReference());
@@ -3890,7 +3890,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, guidContainerFormat, cbSize, ref pHeader.GetPinnableReference(), pcbActual);
@@ -3898,7 +3898,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, guidContainerFormat, cbSize, ref pHeader.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3906,7 +3906,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, pHeader, pcbActual);
@@ -3914,7 +3914,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, pHeader, ref pcbActual.GetPinnableReference());
@@ -3922,7 +3922,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, ref pHeader.GetPinnableReference(), pcbActual);
@@ -3930,7 +3930,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(This, ref guidContainerFormat.GetPinnableReference(), cbSize, ref pHeader.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3938,7 +3938,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, pHeader, pcbActual);
@@ -3946,7 +3946,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, pHeader, ref pcbActual.GetPinnableReference());
@@ -3954,7 +3954,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, ref pHeader.GetPinnableReference(), pcbActual);
@@ -3962,7 +3962,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), guidContainerFormat, cbSize, ref pHeader.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -3970,7 +3970,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, pHeader, pcbActual);
@@ -3978,7 +3978,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, pHeader, ref pcbActual.GetPinnableReference());
@@ -3986,7 +3986,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, uint* pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, ref pHeader.GetPinnableReference(), pcbActual);
@@ -3994,7 +3994,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, Span<uint> pcbActual)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderProxy(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), cbSize, ref pHeader.GetPinnableReference(), ref pcbActual.GetPinnableReference());
@@ -4002,7 +4002,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(This, guidContainerFormat, ref pHeader.GetPinnableReference());
@@ -4010,7 +4010,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, WICMetadataHeader* pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(This, ref guidContainerFormat.GetPinnableReference(), pHeader);
@@ -4018,7 +4018,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(This, ref guidContainerFormat.GetPinnableReference(), ref pHeader.GetPinnableReference());
@@ -4026,7 +4026,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, WICMetadataHeader* pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(ref This.GetPinnableReference(), guidContainerFormat, pHeader);
@@ -4034,7 +4034,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(ref This.GetPinnableReference(), guidContainerFormat, ref pHeader.GetPinnableReference());
@@ -4042,7 +4042,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, WICMetadataHeader* pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), pHeader);
@@ -4050,7 +4050,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
-        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, Span<WICMetadataHeader> pHeader)
+        public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
             return thisApi.IWICMetadataWriterInfoGetHeaderStub(ref This.GetPinnableReference(), ref guidContainerFormat.GetPinnableReference(), ref pHeader.GetPinnableReference());

@@ -1599,7 +1599,7 @@
                 "no-extra-dir"
             ],
             "converter": {},
-            "prefix": "WIC_",
+            "prefix": "WIC",
             "clang": {
                 "args": [
                     "--language=c++",

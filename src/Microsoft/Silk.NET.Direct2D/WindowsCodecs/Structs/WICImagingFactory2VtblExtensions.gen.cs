@@ -85,40 +85,40 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pguidVendorPtr = &pguidVendor)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoder);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoder);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,26 +126,26 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilename, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* wzFilenamePtr = &wzFilename)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -153,14 +153,14 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -168,14 +168,14 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (Guid* pguidVendorPtr = &pguidVendor)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoder);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoder);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -185,7 +185,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
             {
                 fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, char*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
                 }
             }
         }
@@ -193,46 +193,46 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var wzFilenamePtr = (byte*) SilkMarshal.StringToPtr(wzFilename, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
         SilkMarshal.Free((nint)wzFilenamePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var wzFilenamePtr = (byte*) SilkMarshal.StringToPtr(wzFilename, NativeStringEncoding.LPWStr);
         fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
         }
         SilkMarshal.Free((nint)wzFilenamePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var wzFilenamePtr = (byte*) SilkMarshal.StringToPtr(wzFilename, NativeStringEncoding.LPWStr);
         fixed (Guid* pguidVendorPtr = &pguidVendor)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoder);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoder);
         }
         SilkMarshal.Free((nint)wzFilenamePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, byte*, Guid*, uint, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[3])(@this, wzFilenamePtr, pguidVendorPtr, dwDesiredAccess, metadataOptions, ppIDecoderPtr);
             }
         }
         SilkMarshal.Free((nint)wzFilenamePtr);
@@ -249,40 +249,40 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendor, metadataOptions, ppIDecoder);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendor, metadataOptions, ppIDecoder);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendor, metadataOptions, ppIDecoderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendor, metadataOptions, ppIDecoderPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pguidVendorPtr = &pguidVendor)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendorPtr, metadataOptions, ppIDecoder);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendorPtr, metadataOptions, ppIDecoder);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -290,26 +290,26 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendorPtr, metadataOptions, ppIDecoderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStream, pguidVendorPtr, metadataOptions, ppIDecoderPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Win32Extras.IStream* pIStreamPtr = &pIStream)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendor, metadataOptions, ppIDecoder);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendor, metadataOptions, ppIDecoder);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -317,14 +317,14 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendor, metadataOptions, ppIDecoderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendor, metadataOptions, ppIDecoderPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -332,14 +332,14 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (Guid* pguidVendorPtr = &pguidVendor)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendorPtr, metadataOptions, ppIDecoder);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendorPtr, metadataOptions, ppIDecoder);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -349,7 +349,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
             {
                 fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendorPtr, metadataOptions, ppIDecoderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[4])(@this, pIStreamPtr, pguidVendorPtr, metadataOptions, ppIDecoderPtr);
                 }
             }
         }
@@ -357,40 +357,40 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendor, metadataOptions, ppIDecoder);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendor, metadataOptions, ppIDecoder);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendor, metadataOptions, ppIDecoderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendor, metadataOptions, ppIDecoderPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pguidVendorPtr = &pguidVendor)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendorPtr, metadataOptions, ppIDecoder);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendorPtr, metadataOptions, ppIDecoder);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -398,7 +398,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmapDecoder** ppIDecoderPtr = &ppIDecoder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendorPtr, metadataOptions, ppIDecoderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, nuint, Guid*, DecodeOptions, IWICBitmapDecoder**, int>)@this->LpVtbl[5])(@this, hFile, pguidVendorPtr, metadataOptions, ppIDecoderPtr);
             }
         }
         return ret;
@@ -837,40 +837,40 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Guid* pixelFormat, BitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormat, option, ppIBitmap);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormat, option, ppIBitmap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Guid* pixelFormat, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Guid* pixelFormat, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormat, option, ppIBitmapPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormat, option, ppIBitmapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, ref Guid pixelFormat, BitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pixelFormatPtr = &pixelFormat)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormatPtr, option, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormatPtr, option, ppIBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, ref Guid pixelFormat, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -878,47 +878,47 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormatPtr, option, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, uint, uint, Guid*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[17])(@this, uiWidth, uiHeight, pixelFormatPtr, option, ppIBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, IWICBitmapSource* pIBitmapSource, BitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSource, option, ppIBitmap);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSource, option, ppIBitmap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, IWICBitmapSource* pIBitmapSource, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSource, option, ppIBitmapPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSource, option, ppIBitmapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, ref IWICBitmapSource pIBitmapSource, BitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapSource* pIBitmapSourcePtr = &pIBitmapSource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSourcePtr, option, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSourcePtr, option, ppIBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, ref IWICBitmapSource pIBitmapSource, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -926,7 +926,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, WICBitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSourcePtr, option, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, IWICBitmapSource*, BitmapCreateCacheOption, IWICBitmap**, int>)@this->LpVtbl[18])(@this, pIBitmapSourcePtr, option, ppIBitmapPtr);
             }
         }
         return ret;
@@ -1145,40 +1145,40 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmap);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmapPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, ref T0 hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* hPalettePtr = &hPalette)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, ref T0 hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1186,26 +1186,26 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* hBitmapPtr = &hBitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1213,14 +1213,14 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, ref T1 hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1228,14 +1228,14 @@ public unsafe static class WICImagingFactory2VtblExtensions
         {
             fixed (void* hPalettePtr = &hPalette)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmap);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmap);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, ref T1 hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1245,7 +1245,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
             {
                 fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, WICBitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory2*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmapPtr);
                 }
             }
         }
@@ -1707,7 +1707,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1715,7 +1715,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1723,7 +1723,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1731,7 +1731,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1739,7 +1739,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1747,7 +1747,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1755,7 +1755,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1763,7 +1763,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1771,7 +1771,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1779,7 +1779,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1787,7 +1787,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1795,7 +1795,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1803,7 +1803,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static int CreateDecoderFromFilename<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1811,7 +1811,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFilename(this ComPtr<IWICImagingFactory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1819,7 +1819,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream<TI0, TI1>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref ComPtr<TI1> ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI1>
+    public static unsafe int CreateDecoderFromStream<TI0, TI1>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI1> ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1827,7 +1827,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1835,7 +1835,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1843,7 +1843,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDecoderFromStream<TI0, TI1>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref ComPtr<TI1> ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI1>
+    public static int CreateDecoderFromStream<TI0, TI1>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI1> ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1851,7 +1851,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1859,7 +1859,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1867,7 +1867,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1875,7 +1875,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1883,7 +1883,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1891,7 +1891,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1899,7 +1899,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static int CreateDecoderFromStream<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1907,7 +1907,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromStream(this ComPtr<IWICImagingFactory2> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1915,7 +1915,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateDecoderFromFileHandle<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1923,7 +1923,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1931,7 +1931,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDecoderFromFileHandle<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, WICDecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+    public static int CreateDecoderFromFileHandle<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1939,7 +1939,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, WICDecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+    public static unsafe int CreateDecoderFromFileHandle(this ComPtr<IWICImagingFactory2> thisVtbl, nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2208,7 +2208,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Guid* pixelFormat, WICBitmapCreateCacheOption option, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmap<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Guid* pixelFormat, BitmapCreateCacheOption option, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2216,7 +2216,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Span<Guid> pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Span<Guid> pixelFormat, BitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2224,7 +2224,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmap<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static int CreateBitmap<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, ref Guid pixelFormat, BitmapCreateCacheOption option, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2232,7 +2232,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Span<Guid> pixelFormat, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmap(this ComPtr<IWICImagingFactory2> thisVtbl, uint uiWidth, uint uiHeight, Span<Guid> pixelFormat, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2240,7 +2240,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromSource<TI0, TI1>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIBitmapSource, WICBitmapCreateCacheOption option, ref ComPtr<TI1> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI1>
+    public static int CreateBitmapFromSource<TI0, TI1>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIBitmapSource, BitmapCreateCacheOption option, ref ComPtr<TI1> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2248,7 +2248,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIBitmapSource, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromSource<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ComPtr<TI0> pIBitmapSource, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2256,7 +2256,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, Span<IWICBitmapSource> pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, Span<IWICBitmapSource> pIBitmapSource, BitmapCreateCacheOption option, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2264,7 +2264,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromSource<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static int CreateBitmapFromSource<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref IWICBitmapSource pIBitmapSource, BitmapCreateCacheOption option, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2272,7 +2272,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, Span<IWICBitmapSource> pIBitmapSource, WICBitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromSource(this ComPtr<IWICImagingFactory2> thisVtbl, Span<IWICBitmapSource> pIBitmapSource, BitmapCreateCacheOption option, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2432,7 +2432,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2440,7 +2440,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, Span<T0> hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, Span<T0> hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2448,7 +2448,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0, TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, ref T0 hPalette, WICBitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHBITMAP<T0, TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2456,7 +2456,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, Span<T0> hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, void* hBitmap, Span<T0> hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2464,7 +2464,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2472,7 +2472,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0, TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHBITMAP<T0, TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2480,7 +2480,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, void* hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2488,7 +2488,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, Span<T1> hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, Span<T1> hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2496,7 +2496,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromHBITMAP<T0, T1, TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, ref T1 hPalette, WICBitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static int CreateBitmapFromHBITMAP<T0, T1, TI0>(this ComPtr<IWICImagingFactory2> thisVtbl, ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2504,7 +2504,7 @@ public unsafe static class WICImagingFactory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, Span<T1> hPalette, WICBitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory2> thisVtbl, Span<T0> hBitmap, Span<T1> hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

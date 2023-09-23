@@ -85,11 +85,11 @@ public unsafe static class WICPaletteVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InitializePredefined(this ComPtr<IWICPalette> thisVtbl, WICBitmapPaletteType ePaletteType, Silk.NET.Core.Bool32 fAddTransparentColor)
+    public static int InitializePredefined(this ComPtr<IWICPalette> thisVtbl, BitmapPaletteType ePaletteType, Silk.NET.Core.Bool32 fAddTransparentColor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, WICBitmapPaletteType, Silk.NET.Core.Bool32, int>)@this->LpVtbl[3])(@this, ePaletteType, fAddTransparentColor);
+        ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, BitmapPaletteType, Silk.NET.Core.Bool32, int>)@this->LpVtbl[3])(@this, ePaletteType, fAddTransparentColor);
         return ret;
     }
 
@@ -157,22 +157,22 @@ public unsafe static class WICPaletteVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetType(this ComPtr<IWICPalette> thisVtbl, WICBitmapPaletteType* pePaletteType)
+    public static unsafe int GetType(this ComPtr<IWICPalette> thisVtbl, BitmapPaletteType* pePaletteType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, WICBitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, BitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetType(this ComPtr<IWICPalette> thisVtbl, ref WICBitmapPaletteType pePaletteType)
+    public static int GetType(this ComPtr<IWICPalette> thisVtbl, ref BitmapPaletteType pePaletteType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICBitmapPaletteType* pePaletteTypePtr = &pePaletteType)
+        fixed (BitmapPaletteType* pePaletteTypePtr = &pePaletteType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, WICBitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPalette*, BitmapPaletteType*, int>)@this->LpVtbl[7])(@this, pePaletteTypePtr);
         }
         return ret;
     }
@@ -375,7 +375,7 @@ public unsafe static class WICPaletteVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetType(this ComPtr<IWICPalette> thisVtbl, Span<WICBitmapPaletteType> pePaletteType)
+    public static int GetType(this ComPtr<IWICPalette> thisVtbl, Span<BitmapPaletteType> pePaletteType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

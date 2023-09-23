@@ -85,22 +85,22 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetComponentType(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, WICComponentType* pType)
+    public static unsafe int GetComponentType(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, ComponentType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, ref WICComponentType pType)
+    public static int GetComponentType(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, ref ComponentType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICComponentType* pTypePtr = &pType)
+        fixed (ComponentType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
         }
         return ret;
     }
@@ -1052,40 +1052,40 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActualPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActualPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pcPatternsPtr = &pcPatterns)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1093,66 +1093,66 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
         {
             fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+        fixed (BitmapPattern* pPatternsPtr = &pPatterns)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+        fixed (BitmapPattern* pPatternsPtr = &pPatterns)
         {
             fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+        fixed (BitmapPattern* pPatternsPtr = &pPatterns)
         {
             fixed (uint* pcPatternsPtr = &pcPatterns)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActual);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
+    public static int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+        fixed (BitmapPattern* pPatternsPtr = &pPatterns)
         {
             fixed (uint* pcPatternsPtr = &pcPatterns)
             {
                 fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActualPtr);
                 }
             }
         }
@@ -1254,7 +1254,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, Span<WICComponentType> pType)
+    public static int GetComponentType(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, Span<ComponentType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1670,7 +1670,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1678,7 +1678,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1686,7 +1686,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, WICBitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1694,7 +1694,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1702,7 +1702,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1710,7 +1710,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
+    public static unsafe int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1718,7 +1718,7 @@ public unsafe static class WICBitmapDecoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<WICBitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
+    public static int GetPatterns(this ComPtr<IWICBitmapDecoderInfo> thisVtbl, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

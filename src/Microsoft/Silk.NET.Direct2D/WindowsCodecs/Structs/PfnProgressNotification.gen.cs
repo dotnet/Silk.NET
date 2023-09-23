@@ -19,10 +19,10 @@ namespace Silk.NET.WindowsCodecs
     public unsafe readonly struct PfnProgressNotification : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, uint, WICProgressOperation, double, int> Handle => (delegate* unmanaged[Cdecl]<void*, uint, WICProgressOperation, double, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, uint, ProgressOperation, double, int> Handle => (delegate* unmanaged[Cdecl]<void*, uint, ProgressOperation, double, int>) _handle;
         public PfnProgressNotification
         (
-            delegate* unmanaged[Cdecl]<void*, uint, WICProgressOperation, double, int> ptr
+            delegate* unmanaged[Cdecl]<void*, uint, ProgressOperation, double, int> ptr
         ) => _handle = ptr;
 
         public PfnProgressNotification
@@ -35,7 +35,7 @@ namespace Silk.NET.WindowsCodecs
 
         public static implicit operator nint(PfnProgressNotification pfn) => (nint) pfn.Handle;
         public static explicit operator PfnProgressNotification(nint pfn)
-            => new PfnProgressNotification((delegate* unmanaged[Cdecl]<void*, uint, WICProgressOperation, double, int>) pfn);
+            => new PfnProgressNotification((delegate* unmanaged[Cdecl]<void*, uint, ProgressOperation, double, int>) pfn);
 
         public static implicit operator PfnProgressNotification(ProgressNotification proc)
             => new PfnProgressNotification(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WindowsCodecs
         public static explicit operator ProgressNotification(PfnProgressNotification pfn)
             => SilkMarshal.PtrToDelegate<ProgressNotification>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, uint, WICProgressOperation, double, int>(PfnProgressNotification pfn) => pfn.Handle;
-        public static implicit operator PfnProgressNotification(delegate* unmanaged[Cdecl]<void*, uint, WICProgressOperation, double, int> ptr) => new PfnProgressNotification(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, uint, ProgressOperation, double, int>(PfnProgressNotification pfn) => pfn.Handle;
+        public static implicit operator PfnProgressNotification(delegate* unmanaged[Cdecl]<void*, uint, ProgressOperation, double, int> ptr) => new PfnProgressNotification(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int ProgressNotification(void* arg0, uint arg1, WICProgressOperation arg2, double arg3);
+    public unsafe delegate int ProgressNotification(void* arg0, uint arg1, ProgressOperation arg2, double arg3);
 }
 

@@ -111,22 +111,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetComponentType(WICComponentType* pType)
+        public readonly unsafe int GetComponentType(ComponentType* pType)
         {
             var @this = (IWICComponentInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICComponentInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+            ret = ((delegate* unmanaged[Stdcall]<IWICComponentInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetComponentType(ref WICComponentType pType)
+        public readonly int GetComponentType(ref ComponentType pType)
         {
             var @this = (IWICComponentInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICComponentType* pTypePtr = &pType)
+            fixed (ComponentType* pTypePtr = &pType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
             }
             return ret;
         }

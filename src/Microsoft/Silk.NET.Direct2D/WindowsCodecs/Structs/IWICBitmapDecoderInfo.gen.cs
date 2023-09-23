@@ -117,22 +117,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetComponentType(WICComponentType* pType)
+        public readonly unsafe int GetComponentType(ComponentType* pType)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetComponentType(ref WICComponentType pType)
+        public readonly int GetComponentType(ref ComponentType pType)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICComponentType* pTypePtr = &pType)
+            fixed (ComponentType* pTypePtr = &pType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
             }
             return ret;
         }
@@ -1084,40 +1084,40 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, WICBitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActualPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pcPatternsPtr = &pcPatterns)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActual);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, WICBitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, BitmapPattern* pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1125,66 +1125,66 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatterns, pcPatternsPtr, pcbPatternsActualPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+            fixed (BitmapPattern* pPatternsPtr = &pPatterns)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActual);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, ref WICBitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, ref BitmapPattern pPatterns, uint* pcPatterns, ref uint pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+            fixed (BitmapPattern* pPatternsPtr = &pPatterns)
             {
                 fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatterns, pcbPatternsActualPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPatterns(uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
+        public readonly unsafe int GetPatterns(uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, uint* pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+            fixed (BitmapPattern* pPatternsPtr = &pPatterns)
             {
                 fixed (uint* pcPatternsPtr = &pcPatterns)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActual);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActual);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPatterns(uint cbSizePatterns, ref WICBitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
+        public readonly int GetPatterns(uint cbSizePatterns, ref BitmapPattern pPatterns, ref uint pcPatterns, ref uint pcbPatternsActual)
         {
             var @this = (IWICBitmapDecoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPattern* pPatternsPtr = &pPatterns)
+            fixed (BitmapPattern* pPatternsPtr = &pPatterns)
             {
                 fixed (uint* pcPatternsPtr = &pcPatterns)
                 {
                     fixed (uint* pcbPatternsActualPtr = &pcbPatternsActual)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActualPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapDecoderInfo*, uint, BitmapPattern*, uint*, uint*, int>)@this->LpVtbl[23])(@this, cbSizePatterns, pPatternsPtr, pcPatternsPtr, pcbPatternsActualPtr);
                     }
                 }
             }

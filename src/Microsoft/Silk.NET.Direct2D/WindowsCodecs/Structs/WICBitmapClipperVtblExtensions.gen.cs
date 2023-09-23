@@ -223,121 +223,121 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBuffer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pbBufferPtr = &pbBuffer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prc, cbStride, cbBufferSize, pbBufferPtr);
         SilkMarshal.Free((nint)pbBufferPtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBuffer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
         var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[7])(@this, prcPtr, cbStride, cbBufferSize, pbBufferPtr);
         SilkMarshal.Free((nint)pbBufferPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, IWICBitmapSource* pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, IWICBitmapSource* pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, WICRect*, int>)@this->LpVtbl[8])(@this, pISource, prc);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[8])(@this, pISource, prc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, IWICBitmapSource* pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, IWICBitmapSource* pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICRect* prcPtr = &prc)
+        fixed (Rect* prcPtr = &prc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, WICRect*, int>)@this->LpVtbl[8])(@this, pISource, prcPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[8])(@this, pISource, prcPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, ref IWICBitmapSource pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, ref IWICBitmapSource pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapSource* pISourcePtr = &pISource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, WICRect*, int>)@this->LpVtbl[8])(@this, pISourcePtr, prc);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[8])(@this, pISourcePtr, prc);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, ref IWICBitmapSource pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc)
+    public static int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, ref IWICBitmapSource pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapSource* pISourcePtr = &pISource)
         {
-            fixed (WICRect* prcPtr = &prc)
+            fixed (Rect* prcPtr = &prc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, WICRect*, int>)@this->LpVtbl[8])(@this, pISourcePtr, prcPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapClipper*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[8])(@this, pISourcePtr, prcPtr);
             }
         }
         return ret;
@@ -441,7 +441,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -449,7 +449,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -457,7 +457,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -465,7 +465,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmapClipper> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -473,7 +473,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize<TI0>(this ComPtr<IWICBitmapClipper> thisVtbl, ComPtr<TI0> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static unsafe int Initialize<TI0>(this ComPtr<IWICBitmapClipper> thisVtbl, ComPtr<TI0> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -481,7 +481,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, IWICBitmapSource* pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, IWICBitmapSource* pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -489,7 +489,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize<TI0>(this ComPtr<IWICBitmapClipper> thisVtbl, ComPtr<TI0> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static int Initialize<TI0>(this ComPtr<IWICBitmapClipper> thisVtbl, ComPtr<TI0> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -497,7 +497,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, Span<IWICBitmapSource> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prc)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, Span<IWICBitmapSource> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -505,7 +505,7 @@ public unsafe static class WICBitmapClipperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, Span<IWICBitmapSource> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WICRect> prc)
+    public static int Initialize(this ComPtr<IWICBitmapClipper> thisVtbl, Span<IWICBitmapSource> pISource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -111,107 +111,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* pfIsSupportedPtr = &pfIsSupported)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+            fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
-            {
-                fixed (int* pfIsSupportedPtr = &pfIsSupported)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
-        {
-            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
-        {
-            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+            fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
             {
                 fixed (int* pfIsSupportedPtr = &pfIsSupported)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
             {
-                fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        {
+            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+            {
+                fixed (int* pfIsSupportedPtr = &pfIsSupported)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
             {
-                fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        {
+            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+            {
+                fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                 {
                     fixed (int* pfIsSupportedPtr = &pfIsSupported)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                     }
                 }
             }
@@ -219,19 +219,19 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puiHeightPtr = &puiHeight)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -239,72 +239,39 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (int* pfIsSupportedPtr = &pfIsSupported)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puiHeightPtr = &puiHeight)
             {
-                fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puiHeightPtr = &puiHeight)
             {
-                fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
-                {
-                    fixed (int* pfIsSupportedPtr = &pfIsSupported)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
-        {
-            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* puiHeightPtr = &puiHeight)
-            {
-                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
-        {
-            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* puiHeightPtr = &puiHeight)
-            {
-                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+                fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                 {
                     fixed (int* pfIsSupportedPtr = &pfIsSupported)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                     }
                 }
             }
@@ -312,7 +279,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -320,9 +287,24 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                 {
-                    fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        {
+            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* puiHeightPtr = &puiHeight)
+            {
+                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+                {
+                    fixed (int* pfIsSupportedPtr = &pfIsSupported)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                     }
                 }
             }
@@ -330,7 +312,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -338,11 +320,29 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                 {
-                    fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DoesSupportTransform(uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        {
+            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* puiHeightPtr = &puiHeight)
+            {
+                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+                {
+                    fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                     {
                         fixed (int* pfIsSupportedPtr = &pfIsSupported)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidth, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                         }
                     }
                 }
@@ -351,19 +351,19 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puiWidthPtr = &puiWidth)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -371,72 +371,39 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (int* pfIsSupportedPtr = &pfIsSupported)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puiWidthPtr = &puiWidth)
             {
-                fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puiWidthPtr = &puiWidth)
             {
-                fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
-                {
-                    fixed (int* pfIsSupportedPtr = &pfIsSupported)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
-        {
-            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* puiWidthPtr = &puiWidth)
-            {
-                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
-        {
-            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* puiWidthPtr = &puiWidth)
-            {
-                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+                fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                 {
                     fixed (int* pfIsSupportedPtr = &pfIsSupported)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                     }
                 }
             }
@@ -444,7 +411,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -452,9 +419,24 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                 {
-                    fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        {
+            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* puiWidthPtr = &puiWidth)
+            {
+                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+                {
+                    fixed (int* pfIsSupportedPtr = &pfIsSupported)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                     }
                 }
             }
@@ -462,7 +444,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -470,11 +452,29 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                 {
-                    fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        {
+            var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* puiWidthPtr = &puiWidth)
+            {
+                fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
+                {
+                    fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                     {
                         fixed (int* pfIsSupportedPtr = &pfIsSupported)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                         }
                     }
                 }
@@ -483,7 +483,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -491,14 +491,14 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* puiHeightPtr = &puiHeight)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -508,7 +508,7 @@ namespace Silk.NET.WindowsCodecs
                 {
                     fixed (int* pfIsSupportedPtr = &pfIsSupported)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                     }
                 }
             }
@@ -516,7 +516,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -524,9 +524,9 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* puiHeightPtr = &puiHeight)
                 {
-                    fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
                     }
                 }
             }
@@ -534,7 +534,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -542,11 +542,11 @@ namespace Silk.NET.WindowsCodecs
             {
                 fixed (uint* puiHeightPtr = &puiHeight)
                 {
-                    fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                    fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                     {
                         fixed (int* pfIsSupportedPtr = &pfIsSupported)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                         }
                     }
                 }
@@ -555,7 +555,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -565,7 +565,7 @@ namespace Silk.NET.WindowsCodecs
                 {
                     fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupported);
                     }
                 }
             }
@@ -573,7 +573,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -585,7 +585,7 @@ namespace Silk.NET.WindowsCodecs
                     {
                         fixed (int* pfIsSupportedPtr = &pfIsSupported)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptions, cPlanes, pfIsSupportedPtr);
                         }
                     }
                 }
@@ -594,7 +594,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+        public readonly unsafe int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -604,9 +604,9 @@ namespace Silk.NET.WindowsCodecs
                 {
                     fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                     {
-                        fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                        fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupported);
                         }
                     }
                 }
@@ -615,7 +615,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref WICBitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+        public readonly int DoesSupportTransform(ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -625,11 +625,11 @@ namespace Silk.NET.WindowsCodecs
                 {
                     fixed (Guid* pguidDstFormatsPtr = &pguidDstFormats)
                     {
-                        fixed (WICBitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
+                        fixed (BitmapPlaneDescription* pPlaneDescriptionsPtr = &pPlaneDescriptions)
                         {
                             fixed (int* pfIsSupportedPtr = &pfIsSupported)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, WICBitmapTransformOptions, WICPlanarOptions, Guid*, WICBitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, uint*, uint*, BitmapTransformOptions, PlanarOptions, Guid*, BitmapPlaneDescription*, uint, int*, int>)@this->LpVtbl[3])(@this, puiWidthPtr, puiHeightPtr, dstTransform, dstPlanarOptions, pguidDstFormatsPtr, pPlaneDescriptionsPtr, cPlanes, pfIsSupportedPtr);
                             }
                         }
                     }
@@ -639,48 +639,48 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prcSource, uint uiWidth, uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICBitmapPlane* pDstPlanes, uint cPlanes)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, WICRect*, uint, uint, WICBitmapTransformOptions, WICPlanarOptions, WICBitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] WICRect* prcSource, uint uiWidth, uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICBitmapPlane pDstPlanes, uint cPlanes)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapPlane pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICBitmapPlane* pDstPlanesPtr = &pDstPlanes)
+            fixed (BitmapPlane* pDstPlanesPtr = &pDstPlanes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, WICRect*, uint, uint, WICBitmapTransformOptions, WICPlanarOptions, WICBitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prcSource, uint uiWidth, uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WICBitmapPlane* pDstPlanes, uint cPlanes)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcSourcePtr = &prcSource)
+            fixed (Rect* prcSourcePtr = &prcSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, WICRect*, uint, uint, WICBitmapTransformOptions, WICPlanarOptions, WICBitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICRect prcSource, uint uiWidth, uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WICBitmapPlane pDstPlanes, uint cPlanes)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapPlane pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICRect* prcSourcePtr = &prcSource)
+            fixed (Rect* prcSourcePtr = &prcSource)
             {
-                fixed (WICBitmapPlane* pDstPlanesPtr = &pDstPlanes)
+                fixed (BitmapPlane* pDstPlanesPtr = &pDstPlanes)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, WICRect*, uint, uint, WICBitmapTransformOptions, WICPlanarOptions, WICBitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
                 }
             }
             return ret;

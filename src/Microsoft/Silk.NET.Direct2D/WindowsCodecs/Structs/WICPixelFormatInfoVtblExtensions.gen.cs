@@ -85,22 +85,22 @@ public unsafe static class WICPixelFormatInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetComponentType(this ComPtr<IWICPixelFormatInfo> thisVtbl, WICComponentType* pType)
+    public static unsafe int GetComponentType(this ComPtr<IWICPixelFormatInfo> thisVtbl, ComponentType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo> thisVtbl, ref WICComponentType pType)
+    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo> thisVtbl, ref ComponentType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICComponentType* pTypePtr = &pType)
+        fixed (ComponentType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
         }
         return ret;
     }
@@ -643,7 +643,7 @@ public unsafe static class WICPixelFormatInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo> thisVtbl, Span<WICComponentType> pType)
+    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo> thisVtbl, Span<ComponentType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

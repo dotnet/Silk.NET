@@ -85,22 +85,22 @@ public unsafe static class WICMetadataHandlerInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetComponentType(this ComPtr<IWICMetadataHandlerInfo> thisVtbl, WICComponentType* pType)
+    public static unsafe int GetComponentType(this ComPtr<IWICMetadataHandlerInfo> thisVtbl, ComponentType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataHandlerInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataHandlerInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICMetadataHandlerInfo> thisVtbl, ref WICComponentType pType)
+    public static int GetComponentType(this ComPtr<IWICMetadataHandlerInfo> thisVtbl, ref ComponentType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICComponentType* pTypePtr = &pType)
+        fixed (ComponentType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataHandlerInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataHandlerInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
         }
         return ret;
     }
@@ -764,7 +764,7 @@ public unsafe static class WICMetadataHandlerInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICMetadataHandlerInfo> thisVtbl, Span<WICComponentType> pType)
+    public static int GetComponentType(this ComPtr<IWICMetadataHandlerInfo> thisVtbl, Span<ComponentType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

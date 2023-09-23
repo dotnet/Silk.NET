@@ -111,22 +111,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(Silk.NET.Core.Win32Extras.IStream* pIStream, WICBitmapEncoderCacheOption cacheOption)
+        public readonly unsafe int Initialize(Silk.NET.Core.Win32Extras.IStream* pIStream, BitmapEncoderCacheOption cacheOption)
         {
             var @this = (IWICBitmapEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, WICBitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStream, cacheOption);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, BitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStream, cacheOption);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize(ref Silk.NET.Core.Win32Extras.IStream pIStream, WICBitmapEncoderCacheOption cacheOption)
+        public readonly int Initialize(ref Silk.NET.Core.Win32Extras.IStream pIStream, BitmapEncoderCacheOption cacheOption)
         {
             var @this = (IWICBitmapEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* pIStreamPtr = &pIStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, WICBitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStreamPtr, cacheOption);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, Silk.NET.Core.Win32Extras.IStream*, BitmapEncoderCacheOption, int>)@this->LpVtbl[3])(@this, pIStreamPtr, cacheOption);
             }
             return ret;
         }
@@ -345,7 +345,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0>(ComPtr<TI0> pIStream, WICBitmapEncoderCacheOption cacheOption) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly int Initialize<TI0>(ComPtr<TI0> pIStream, BitmapEncoderCacheOption cacheOption) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICBitmapEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

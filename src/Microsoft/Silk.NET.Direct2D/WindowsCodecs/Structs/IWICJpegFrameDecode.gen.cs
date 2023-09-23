@@ -132,11 +132,11 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetIndexing(WICJpegIndexingOptions options, uint horizontalIntervalSize)
+        public readonly int SetIndexing(JpegIndexingOptions options, uint horizontalIntervalSize)
         {
             var @this = (IWICJpegFrameDecode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, WICJpegIndexingOptions, uint, int>)@this->LpVtbl[4])(@this, options, horizontalIntervalSize);
+            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, JpegIndexingOptions, uint, int>)@this->LpVtbl[4])(@this, options, horizontalIntervalSize);
             return ret;
         }
 
@@ -213,43 +213,43 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFrameHeader(WICJpegFrameHeader* pFrameHeader)
+        public readonly unsafe int GetFrameHeader(JpegFrameHeader* pFrameHeader)
         {
             var @this = (IWICJpegFrameDecode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, WICJpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeader);
+            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, JpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetFrameHeader(ref WICJpegFrameHeader pFrameHeader)
+        public readonly int GetFrameHeader(ref JpegFrameHeader pFrameHeader)
         {
             var @this = (IWICJpegFrameDecode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICJpegFrameHeader* pFrameHeaderPtr = &pFrameHeader)
+            fixed (JpegFrameHeader* pFrameHeaderPtr = &pFrameHeader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, WICJpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, JpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetScanHeader(uint scanIndex, WICJpegScanHeader* pScanHeader)
+        public readonly unsafe int GetScanHeader(uint scanIndex, JpegScanHeader* pScanHeader)
         {
             var @this = (IWICJpegFrameDecode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeader);
+            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, JpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetScanHeader(uint scanIndex, ref WICJpegScanHeader pScanHeader)
+        public readonly int GetScanHeader(uint scanIndex, ref JpegScanHeader pScanHeader)
         {
             var @this = (IWICJpegFrameDecode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICJpegScanHeader* pScanHeaderPtr = &pScanHeader)
+            fixed (JpegScanHeader* pScanHeaderPtr = &pScanHeader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, JpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeaderPtr);
             }
             return ret;
         }

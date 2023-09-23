@@ -85,11 +85,11 @@ public unsafe static class WICProgressCallbackVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Notify(this ComPtr<IWICProgressCallback> thisVtbl, uint uFrameNum, WICProgressOperation operation, double dblProgress)
+    public static int Notify(this ComPtr<IWICProgressCallback> thisVtbl, uint uFrameNum, ProgressOperation operation, double dblProgress)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICProgressCallback*, uint, WICProgressOperation, double, int>)@this->LpVtbl[3])(@this, uFrameNum, operation, dblProgress);
+        ret = ((delegate* unmanaged[Stdcall]<IWICProgressCallback*, uint, ProgressOperation, double, int>)@this->LpVtbl[3])(@this, uFrameNum, operation, dblProgress);
         return ret;
     }
 

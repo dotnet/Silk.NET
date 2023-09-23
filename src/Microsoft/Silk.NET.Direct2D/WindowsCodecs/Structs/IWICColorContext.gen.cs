@@ -184,22 +184,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetType(WICColorContextType* pType)
+        public readonly unsafe int GetType(ColorContextType* pType)
         {
             var @this = (IWICColorContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, WICColorContextType*, int>)@this->LpVtbl[6])(@this, pType);
+            ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, ColorContextType*, int>)@this->LpVtbl[6])(@this, pType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetType(ref WICColorContextType pType)
+        public readonly int GetType(ref ColorContextType pType)
         {
             var @this = (IWICColorContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (WICColorContextType* pTypePtr = &pType)
+            fixed (ColorContextType* pTypePtr = &pType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, WICColorContextType*, int>)@this->LpVtbl[6])(@this, pTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICColorContext*, ColorContextType*, int>)@this->LpVtbl[6])(@this, pTypePtr);
             }
             return ret;
         }

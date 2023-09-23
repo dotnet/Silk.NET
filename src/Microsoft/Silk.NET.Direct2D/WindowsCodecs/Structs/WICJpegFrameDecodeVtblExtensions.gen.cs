@@ -106,11 +106,11 @@ public unsafe static class WICJpegFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetIndexing(this ComPtr<IWICJpegFrameDecode> thisVtbl, WICJpegIndexingOptions options, uint horizontalIntervalSize)
+    public static int SetIndexing(this ComPtr<IWICJpegFrameDecode> thisVtbl, JpegIndexingOptions options, uint horizontalIntervalSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, WICJpegIndexingOptions, uint, int>)@this->LpVtbl[4])(@this, options, horizontalIntervalSize);
+        ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, JpegIndexingOptions, uint, int>)@this->LpVtbl[4])(@this, options, horizontalIntervalSize);
         return ret;
     }
 
@@ -187,43 +187,43 @@ public unsafe static class WICJpegFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFrameHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, WICJpegFrameHeader* pFrameHeader)
+    public static unsafe int GetFrameHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, JpegFrameHeader* pFrameHeader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, WICJpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeader);
+        ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, JpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeader);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFrameHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, ref WICJpegFrameHeader pFrameHeader)
+    public static int GetFrameHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, ref JpegFrameHeader pFrameHeader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICJpegFrameHeader* pFrameHeaderPtr = &pFrameHeader)
+        fixed (JpegFrameHeader* pFrameHeaderPtr = &pFrameHeader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, WICJpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, JpegFrameHeader*, int>)@this->LpVtbl[9])(@this, pFrameHeaderPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetScanHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, uint scanIndex, WICJpegScanHeader* pScanHeader)
+    public static unsafe int GetScanHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, uint scanIndex, JpegScanHeader* pScanHeader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeader);
+        ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, JpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeader);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetScanHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, uint scanIndex, ref WICJpegScanHeader pScanHeader)
+    public static int GetScanHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, uint scanIndex, ref JpegScanHeader pScanHeader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICJpegScanHeader* pScanHeaderPtr = &pScanHeader)
+        fixed (JpegScanHeader* pScanHeaderPtr = &pScanHeader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeaderPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICJpegFrameDecode*, uint, JpegScanHeader*, int>)@this->LpVtbl[10])(@this, scanIndex, pScanHeaderPtr);
         }
         return ret;
     }
@@ -432,7 +432,7 @@ public unsafe static class WICJpegFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFrameHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, Span<WICJpegFrameHeader> pFrameHeader)
+    public static int GetFrameHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, Span<JpegFrameHeader> pFrameHeader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -440,7 +440,7 @@ public unsafe static class WICJpegFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetScanHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, uint scanIndex, Span<WICJpegScanHeader> pScanHeader)
+    public static int GetScanHeader(this ComPtr<IWICJpegFrameDecode> thisVtbl, uint scanIndex, Span<JpegScanHeader> pScanHeader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

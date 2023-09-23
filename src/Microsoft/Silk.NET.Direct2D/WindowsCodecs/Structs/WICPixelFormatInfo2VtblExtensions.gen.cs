@@ -85,22 +85,22 @@ public unsafe static class WICPixelFormatInfo2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetComponentType(this ComPtr<IWICPixelFormatInfo2> thisVtbl, WICComponentType* pType)
+    public static unsafe int GetComponentType(this ComPtr<IWICPixelFormatInfo2> thisVtbl, ComponentType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo2> thisVtbl, ref WICComponentType pType)
+    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo2> thisVtbl, ref ComponentType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICComponentType* pTypePtr = &pType)
+        fixed (ComponentType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
         }
         return ret;
     }
@@ -639,22 +639,22 @@ public unsafe static class WICPixelFormatInfo2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetNumericRepresentation(this ComPtr<IWICPixelFormatInfo2> thisVtbl, WICPixelFormatNumericRepresentation* pNumericRepresentation)
+    public static unsafe int GetNumericRepresentation(this ComPtr<IWICPixelFormatInfo2> thisVtbl, PixelFormatNumericRepresentation* pNumericRepresentation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICPixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentation);
+        ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, PixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentation);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetNumericRepresentation(this ComPtr<IWICPixelFormatInfo2> thisVtbl, ref WICPixelFormatNumericRepresentation pNumericRepresentation)
+    public static int GetNumericRepresentation(this ComPtr<IWICPixelFormatInfo2> thisVtbl, ref PixelFormatNumericRepresentation pNumericRepresentation)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICPixelFormatNumericRepresentation* pNumericRepresentationPtr = &pNumericRepresentation)
+        fixed (PixelFormatNumericRepresentation* pNumericRepresentationPtr = &pNumericRepresentation)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, WICPixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentationPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPixelFormatInfo2*, PixelFormatNumericRepresentation*, int>)@this->LpVtbl[17])(@this, pNumericRepresentationPtr);
         }
         return ret;
     }
@@ -685,7 +685,7 @@ public unsafe static class WICPixelFormatInfo2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo2> thisVtbl, Span<WICComponentType> pType)
+    public static int GetComponentType(this ComPtr<IWICPixelFormatInfo2> thisVtbl, Span<ComponentType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -917,7 +917,7 @@ public unsafe static class WICPixelFormatInfo2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetNumericRepresentation(this ComPtr<IWICPixelFormatInfo2> thisVtbl, Span<WICPixelFormatNumericRepresentation> pNumericRepresentation)
+    public static int GetNumericRepresentation(this ComPtr<IWICPixelFormatInfo2> thisVtbl, Span<PixelFormatNumericRepresentation> pNumericRepresentation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

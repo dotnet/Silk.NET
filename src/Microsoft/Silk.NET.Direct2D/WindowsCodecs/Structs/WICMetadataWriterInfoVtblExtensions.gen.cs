@@ -85,22 +85,22 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetComponentType(this ComPtr<IWICMetadataWriterInfo> thisVtbl, WICComponentType* pType)
+    public static unsafe int GetComponentType(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ComponentType* pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pType);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref WICComponentType pType)
+    public static int GetComponentType(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref ComponentType pType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICComponentType* pTypePtr = &pType)
+        fixed (ComponentType* pTypePtr = &pType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, WICComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, ComponentType*, int>)@this->LpVtbl[3])(@this, pTypePtr);
         }
         return ret;
     }
@@ -739,107 +739,107 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeader, pcbActual);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeader, pcbActual);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pcbActualPtr = &pcbActual)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeader, pcbActualPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeader, pcbActualPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICMetadataHeader* pHeaderPtr = &pHeader)
+        fixed (MetadataHeader* pHeaderPtr = &pHeader)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeaderPtr, pcbActual);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeaderPtr, pcbActual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (WICMetadataHeader* pHeaderPtr = &pHeader)
-        {
-            fixed (uint* pcbActualPtr = &pcbActual)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeaderPtr, pcbActualPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeader, pcbActual);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, ref uint pcbActual)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
+        fixed (MetadataHeader* pHeaderPtr = &pHeader)
         {
             fixed (uint* pcbActualPtr = &pcbActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeader, pcbActualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormat, cbSize, pHeaderPtr, pcbActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, uint* pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            fixed (WICMetadataHeader* pHeaderPtr = &pHeader)
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeader, pcbActual);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, MetadataHeader* pHeader, ref uint pcbActual)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
+        {
+            fixed (uint* pcbActualPtr = &pcbActual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeaderPtr, pcbActual);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeader, pcbActualPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref WICMetadataHeader pHeader, ref uint pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
         {
-            fixed (WICMetadataHeader* pHeaderPtr = &pHeader)
+            fixed (MetadataHeader* pHeaderPtr = &pHeader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeaderPtr, pcbActual);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, ref Guid guidContainerFormat, uint cbSize, ref MetadataHeader pHeader, ref uint pcbActual)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidContainerFormatPtr = &guidContainerFormat)
+        {
+            fixed (MetadataHeader* pHeaderPtr = &pHeader)
             {
                 fixed (uint* pcbActualPtr = &pcbActual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeaderPtr, pcbActualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriterInfo*, Guid*, uint, MetadataHeader*, uint*, int>)@this->LpVtbl[18])(@this, guidContainerFormatPtr, cbSize, pHeaderPtr, pcbActualPtr);
                 }
             }
         }
@@ -893,7 +893,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetComponentType(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<WICComponentType> pType)
+    public static int GetComponentType(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<ComponentType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1173,7 +1173,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, Span<uint> pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1181,7 +1181,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, uint* pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1189,7 +1189,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, Span<uint> pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1197,7 +1197,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1205,7 +1205,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, Span<uint> pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1213,7 +1213,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, uint* pcbActual)
+    public static unsafe int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1221,7 +1221,7 @@ public unsafe static class WICMetadataWriterInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<WICMetadataHeader> pHeader, Span<uint> pcbActual)
+    public static int GetHeader(this ComPtr<IWICMetadataWriterInfo> thisVtbl, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
