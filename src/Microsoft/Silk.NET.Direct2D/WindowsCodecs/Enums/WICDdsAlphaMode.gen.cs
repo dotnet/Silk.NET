@@ -12,24 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICDdsAlphaMode")]
     public enum WICDdsAlphaMode : int
     {
-        [Obsolete("Deprecated in favour of \"DdsAlphaModeUnknown\"")]
-        [NativeName("Name", "WICDdsAlphaModeUnknown")]
-        WicddsAlphaModeUnknown = 0x0,
-        [Obsolete("Deprecated in favour of \"DdsAlphaModeStraight\"")]
-        [NativeName("Name", "WICDdsAlphaModeStraight")]
-        WicddsAlphaModeStraight = 0x1,
-        [Obsolete("Deprecated in favour of \"DdsAlphaModePremultiplied\"")]
-        [NativeName("Name", "WICDdsAlphaModePremultiplied")]
-        WicddsAlphaModePremultiplied = 0x2,
-        [Obsolete("Deprecated in favour of \"DdsAlphaModeOpaque\"")]
-        [NativeName("Name", "WICDdsAlphaModeOpaque")]
-        WicddsAlphaModeOpaque = 0x3,
-        [Obsolete("Deprecated in favour of \"DdsAlphaModeCustom\"")]
-        [NativeName("Name", "WICDdsAlphaModeCustom")]
-        WicddsAlphaModeCustom = 0x4,
-        [Obsolete("Deprecated in favour of \"DsalphamodeForceDword\"")]
-        [NativeName("Name", "WICDDSALPHAMODE_FORCE_DWORD")]
-        WicddsalphamodeForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICDdsAlphaModeUnknown")]
         DdsAlphaModeUnknown = 0x0,
         [NativeName("Name", "WICDdsAlphaModeStraight")]

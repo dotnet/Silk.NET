@@ -12,24 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICHeifHdrProperties")]
     public enum WICHeifHdrProperties : int
     {
-        [Obsolete("Deprecated in favour of \"MaximumLuminanceLevel\"")]
-        [NativeName("Name", "WICHeifHdrMaximumLuminanceLevel")]
-        WicheifHdrMaximumLuminanceLevel = 0x1,
-        [Obsolete("Deprecated in favour of \"MaximumFrameAverageLuminanceLevel\"")]
-        [NativeName("Name", "WICHeifHdrMaximumFrameAverageLuminanceLevel")]
-        WicheifHdrMaximumFrameAverageLuminanceLevel = 0x2,
-        [Obsolete("Deprecated in favour of \"MinimumMasteringDisplayLuminanceLevel\"")]
-        [NativeName("Name", "WICHeifHdrMinimumMasteringDisplayLuminanceLevel")]
-        WicheifHdrMinimumMasteringDisplayLuminanceLevel = 0x3,
-        [Obsolete("Deprecated in favour of \"MaximumMasteringDisplayLuminanceLevel\"")]
-        [NativeName("Name", "WICHeifHdrMaximumMasteringDisplayLuminanceLevel")]
-        WicheifHdrMaximumMasteringDisplayLuminanceLevel = 0x4,
-        [Obsolete("Deprecated in favour of \"CustomVideoPrimaries\"")]
-        [NativeName("Name", "WICHeifHdrCustomVideoPrimaries")]
-        WicheifHdrCustomVideoPrimaries = 0x5,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICHeifHdrProperties_FORCE_DWORD")]
-        WicheifHdrPropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICHeifHdrMaximumLuminanceLevel")]
         MaximumLuminanceLevel = 0x1,
         [NativeName("Name", "WICHeifHdrMaximumFrameAverageLuminanceLevel")]

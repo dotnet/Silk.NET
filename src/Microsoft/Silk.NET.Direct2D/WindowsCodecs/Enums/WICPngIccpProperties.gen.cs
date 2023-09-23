@@ -12,15 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICPngIccpProperties")]
     public enum WICPngIccpProperties : int
     {
-        [Obsolete("Deprecated in favour of \"ProfileName\"")]
-        [NativeName("Name", "WICPngIccpProfileName")]
-        WicpngIccpProfileName = 0x1,
-        [Obsolete("Deprecated in favour of \"ProfileData\"")]
-        [NativeName("Name", "WICPngIccpProfileData")]
-        WicpngIccpProfileData = 0x2,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICPngIccpProperties_FORCE_DWORD")]
-        WicpngIccpPropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICPngIccpProfileName")]
         ProfileName = 0x1,
         [NativeName("Name", "WICPngIccpProfileData")]

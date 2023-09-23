@@ -15,15 +15,6 @@ namespace Silk.NET.WindowsCodecs
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Read\"")]
-        [NativeName("Name", "WICSectionAccessLevelRead")]
-        WicsectionAccessLevelRead = 0x1,
-        [Obsolete("Deprecated in favour of \"ReadWrite\"")]
-        [NativeName("Name", "WICSectionAccessLevelReadWrite")]
-        WicsectionAccessLevelReadWrite = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "WICSectionAccessLevel_FORCE_DWORD")]
-        WicsectionAccessLevelForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICSectionAccessLevelRead")]
         Read = 0x1,
         [NativeName("Name", "WICSectionAccessLevelReadWrite")]

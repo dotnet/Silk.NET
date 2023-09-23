@@ -12,15 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICBitmapLockFlags")]
     public enum WICBitmapLockFlags : int
     {
-        [Obsolete("Deprecated in favour of \"BitmapLockRead\"")]
-        [NativeName("Name", "WICBitmapLockRead")]
-        WicbitmapLockRead = 0x1,
-        [Obsolete("Deprecated in favour of \"BitmapLockWrite\"")]
-        [NativeName("Name", "WICBitmapLockWrite")]
-        WicbitmapLockWrite = 0x2,
-        [Obsolete("Deprecated in favour of \"ItmaplockflagsForceDword\"")]
-        [NativeName("Name", "WICBITMAPLOCKFLAGS_FORCE_DWORD")]
-        WicbitmaplockflagsForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICBitmapLockRead")]
         BitmapLockRead = 0x1,
         [NativeName("Name", "WICBitmapLockWrite")]

@@ -12,12 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICJpegLuminanceProperties")]
     public enum WICJpegLuminanceProperties : int
     {
-        [Obsolete("Deprecated in favour of \"Table\"")]
-        [NativeName("Name", "WICJpegLuminanceTable")]
-        WicjpegLuminanceTable = 0x1,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICJpegLuminanceProperties_FORCE_DWORD")]
-        WicjpegLuminancePropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICJpegLuminanceTable")]
         Table = 0x1,
         [NativeName("Name", "WICJpegLuminanceProperties_FORCE_DWORD")]

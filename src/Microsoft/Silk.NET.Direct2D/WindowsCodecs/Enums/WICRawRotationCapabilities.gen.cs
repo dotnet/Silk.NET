@@ -12,21 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICRawRotationCapabilities")]
     public enum WICRawRotationCapabilities : int
     {
-        [Obsolete("Deprecated in favour of \"RawRotationCapabilityNotSupported\"")]
-        [NativeName("Name", "WICRawRotationCapabilityNotSupported")]
-        WicrawRotationCapabilityNotSupported = 0x0,
-        [Obsolete("Deprecated in favour of \"RawRotationCapabilityGetSupported\"")]
-        [NativeName("Name", "WICRawRotationCapabilityGetSupported")]
-        WicrawRotationCapabilityGetSupported = 0x1,
-        [Obsolete("Deprecated in favour of \"RawRotationCapabilityNinetyDegreesSupported\"")]
-        [NativeName("Name", "WICRawRotationCapabilityNinetyDegreesSupported")]
-        WicrawRotationCapabilityNinetyDegreesSupported = 0x2,
-        [Obsolete("Deprecated in favour of \"RawRotationCapabilityFullySupported\"")]
-        [NativeName("Name", "WICRawRotationCapabilityFullySupported")]
-        WicrawRotationCapabilityFullySupported = 0x3,
-        [Obsolete("Deprecated in favour of \"AwrotationcapabilitiesForceDword\"")]
-        [NativeName("Name", "WICRAWROTATIONCAPABILITIES_FORCE_DWORD")]
-        WicrawrotationcapabilitiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICRawRotationCapabilityNotSupported")]
         RawRotationCapabilityNotSupported = 0x0,
         [NativeName("Name", "WICRawRotationCapabilityGetSupported")]

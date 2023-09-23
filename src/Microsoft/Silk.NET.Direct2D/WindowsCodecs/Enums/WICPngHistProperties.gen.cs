@@ -12,12 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICPngHistProperties")]
     public enum WICPngHistProperties : int
     {
-        [Obsolete("Deprecated in favour of \"Frequencies\"")]
-        [NativeName("Name", "WICPngHistFrequencies")]
-        WicpngHistFrequencies = 0x1,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICPngHistProperties_FORCE_DWORD")]
-        WicpngHistPropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICPngHistFrequencies")]
         Frequencies = 0x1,
         [NativeName("Name", "WICPngHistProperties_FORCE_DWORD")]

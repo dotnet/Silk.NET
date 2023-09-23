@@ -1552,7 +1552,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-pre-2.17-obsolete-enums",
+                "no-pre-2.18-obsolete-enums",
                 "no-csproj",
                 "no-extra-dir"
             ],

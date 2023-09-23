@@ -12,33 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICPngChrmProperties")]
     public enum WICPngChrmProperties : int
     {
-        [Obsolete("Deprecated in favour of \"WhitePointX\"")]
-        [NativeName("Name", "WICPngChrmWhitePointX")]
-        WicpngChrmWhitePointX = 0x1,
-        [Obsolete("Deprecated in favour of \"WhitePointY\"")]
-        [NativeName("Name", "WICPngChrmWhitePointY")]
-        WicpngChrmWhitePointY = 0x2,
-        [Obsolete("Deprecated in favour of \"RedX\"")]
-        [NativeName("Name", "WICPngChrmRedX")]
-        WicpngChrmRedX = 0x3,
-        [Obsolete("Deprecated in favour of \"RedY\"")]
-        [NativeName("Name", "WICPngChrmRedY")]
-        WicpngChrmRedY = 0x4,
-        [Obsolete("Deprecated in favour of \"GreenX\"")]
-        [NativeName("Name", "WICPngChrmGreenX")]
-        WicpngChrmGreenX = 0x5,
-        [Obsolete("Deprecated in favour of \"GreenY\"")]
-        [NativeName("Name", "WICPngChrmGreenY")]
-        WicpngChrmGreenY = 0x6,
-        [Obsolete("Deprecated in favour of \"BlueX\"")]
-        [NativeName("Name", "WICPngChrmBlueX")]
-        WicpngChrmBlueX = 0x7,
-        [Obsolete("Deprecated in favour of \"BlueY\"")]
-        [NativeName("Name", "WICPngChrmBlueY")]
-        WicpngChrmBlueY = 0x8,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICPngChrmProperties_FORCE_DWORD")]
-        WicpngChrmPropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICPngChrmWhitePointX")]
         WhitePointX = 0x1,
         [NativeName("Name", "WICPngChrmWhitePointY")]

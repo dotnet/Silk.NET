@@ -12,15 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICJpegIndexingOptions")]
     public enum WICJpegIndexingOptions : int
     {
-        [Obsolete("Deprecated in favour of \"GenerateOnDemand\"")]
-        [NativeName("Name", "WICJpegIndexingOptionsGenerateOnDemand")]
-        WicjpegIndexingOptionsGenerateOnDemand = 0x0,
-        [Obsolete("Deprecated in favour of \"GenerateOnLoad\"")]
-        [NativeName("Name", "WICJpegIndexingOptionsGenerateOnLoad")]
-        WicjpegIndexingOptionsGenerateOnLoad = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "WICJpegIndexingOptions_FORCE_DWORD")]
-        WicjpegIndexingOptionsForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICJpegIndexingOptionsGenerateOnDemand")]
         GenerateOnDemand = 0x0,
         [NativeName("Name", "WICJpegIndexingOptionsGenerateOnLoad")]

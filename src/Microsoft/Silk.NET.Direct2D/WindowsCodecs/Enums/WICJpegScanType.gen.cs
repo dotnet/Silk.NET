@@ -12,18 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICJpegScanType")]
     public enum WICJpegScanType : int
     {
-        [Obsolete("Deprecated in favour of \"Interleaved\"")]
-        [NativeName("Name", "WICJpegScanTypeInterleaved")]
-        WicjpegScanTypeInterleaved = 0x0,
-        [Obsolete("Deprecated in favour of \"PlanarComponents\"")]
-        [NativeName("Name", "WICJpegScanTypePlanarComponents")]
-        WicjpegScanTypePlanarComponents = 0x1,
-        [Obsolete("Deprecated in favour of \"Progressive\"")]
-        [NativeName("Name", "WICJpegScanTypeProgressive")]
-        WicjpegScanTypeProgressive = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "WICJpegScanType_FORCE_DWORD")]
-        WicjpegScanTypeForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICJpegScanTypeInterleaved")]
         Interleaved = 0x0,
         [NativeName("Name", "WICJpegScanTypePlanarComponents")]

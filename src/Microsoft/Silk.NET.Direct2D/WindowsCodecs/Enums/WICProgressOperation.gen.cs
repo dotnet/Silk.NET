@@ -15,18 +15,6 @@ namespace Silk.NET.WindowsCodecs
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"ProgressOperationCopyPixels\"")]
-        [NativeName("Name", "WICProgressOperationCopyPixels")]
-        WicprogressOperationCopyPixels = 0x1,
-        [Obsolete("Deprecated in favour of \"ProgressOperationWritePixels\"")]
-        [NativeName("Name", "WICProgressOperationWritePixels")]
-        WicprogressOperationWritePixels = 0x2,
-        [Obsolete("Deprecated in favour of \"ProgressOperationAll\"")]
-        [NativeName("Name", "WICProgressOperationAll")]
-        WicprogressOperationAll = 0xFFFF,
-        [Obsolete("Deprecated in favour of \"RogressoperationForceDword\"")]
-        [NativeName("Name", "WICPROGRESSOPERATION_FORCE_DWORD")]
-        WicprogressoperationForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICProgressOperationCopyPixels")]
         ProgressOperationCopyPixels = 0x1,
         [NativeName("Name", "WICProgressOperationWritePixels")]

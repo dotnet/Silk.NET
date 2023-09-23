@@ -15,24 +15,6 @@ namespace Silk.NET.WindowsCodecs
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"BitmapDecoderCapabilitySameEncoder\"")]
-        [NativeName("Name", "WICBitmapDecoderCapabilitySameEncoder")]
-        WicbitmapDecoderCapabilitySameEncoder = 0x1,
-        [Obsolete("Deprecated in favour of \"BitmapDecoderCapabilityCanDecodeAllImages\"")]
-        [NativeName("Name", "WICBitmapDecoderCapabilityCanDecodeAllImages")]
-        WicbitmapDecoderCapabilityCanDecodeAllImages = 0x2,
-        [Obsolete("Deprecated in favour of \"BitmapDecoderCapabilityCanDecodeSomeImages\"")]
-        [NativeName("Name", "WICBitmapDecoderCapabilityCanDecodeSomeImages")]
-        WicbitmapDecoderCapabilityCanDecodeSomeImages = 0x4,
-        [Obsolete("Deprecated in favour of \"BitmapDecoderCapabilityCanEnumerateMetadata\"")]
-        [NativeName("Name", "WICBitmapDecoderCapabilityCanEnumerateMetadata")]
-        WicbitmapDecoderCapabilityCanEnumerateMetadata = 0x8,
-        [Obsolete("Deprecated in favour of \"BitmapDecoderCapabilityCanDecodeThumbnail\"")]
-        [NativeName("Name", "WICBitmapDecoderCapabilityCanDecodeThumbnail")]
-        WicbitmapDecoderCapabilityCanDecodeThumbnail = 0x10,
-        [Obsolete("Deprecated in favour of \"ItmapdecodercapabilitiesForceDword\"")]
-        [NativeName("Name", "WICBITMAPDECODERCAPABILITIES_FORCE_DWORD")]
-        WicbitmapdecodercapabilitiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICBitmapDecoderCapabilitySameEncoder")]
         BitmapDecoderCapabilitySameEncoder = 0x1,
         [NativeName("Name", "WICBitmapDecoderCapabilityCanDecodeAllImages")]

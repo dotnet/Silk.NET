@@ -15,21 +15,6 @@ namespace Silk.NET.WindowsCodecs
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"ComponentSigned\"")]
-        [NativeName("Name", "WICComponentSigned")]
-        WiccomponentSigned = 0x1,
-        [Obsolete("Deprecated in favour of \"ComponentUnsigned\"")]
-        [NativeName("Name", "WICComponentUnsigned")]
-        WiccomponentUnsigned = 0x2,
-        [Obsolete("Deprecated in favour of \"ComponentSafe\"")]
-        [NativeName("Name", "WICComponentSafe")]
-        WiccomponentSafe = 0x4,
-        [Obsolete("Deprecated in favour of \"ComponentDisabled\"")]
-        [NativeName("Name", "WICComponentDisabled")]
-        WiccomponentDisabled = unchecked((int) 0xFFFFFFFF80000000),
-        [Obsolete("Deprecated in favour of \"OmponentsigningForceDword\"")]
-        [NativeName("Name", "WICCOMPONENTSIGNING_FORCE_DWORD")]
-        WiccomponentsigningForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICComponentSigned")]
         ComponentSigned = 0x1,
         [NativeName("Name", "WICComponentUnsigned")]

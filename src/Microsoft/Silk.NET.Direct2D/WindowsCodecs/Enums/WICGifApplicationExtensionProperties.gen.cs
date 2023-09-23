@@ -12,15 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICGifApplicationExtensionProperties")]
     public enum WICGifApplicationExtensionProperties : int
     {
-        [Obsolete("Deprecated in favour of \"Application\"")]
-        [NativeName("Name", "WICGifApplicationExtensionApplication")]
-        WicgifApplicationExtensionApplication = 0x1,
-        [Obsolete("Deprecated in favour of \"Data\"")]
-        [NativeName("Name", "WICGifApplicationExtensionData")]
-        WicgifApplicationExtensionData = 0x2,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICGifApplicationExtensionProperties_FORCE_DWORD")]
-        WicgifApplicationExtensionPropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICGifApplicationExtensionApplication")]
         Application = 0x1,
         [NativeName("Name", "WICGifApplicationExtensionData")]

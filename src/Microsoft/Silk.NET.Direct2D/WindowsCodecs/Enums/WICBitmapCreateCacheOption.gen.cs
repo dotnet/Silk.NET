@@ -12,18 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICBitmapCreateCacheOption")]
     public enum WICBitmapCreateCacheOption : int
     {
-        [Obsolete("Deprecated in favour of \"BitmapNoCache\"")]
-        [NativeName("Name", "WICBitmapNoCache")]
-        WicbitmapNoCache = 0x0,
-        [Obsolete("Deprecated in favour of \"BitmapCacheOnDemand\"")]
-        [NativeName("Name", "WICBitmapCacheOnDemand")]
-        WicbitmapCacheOnDemand = 0x1,
-        [Obsolete("Deprecated in favour of \"BitmapCacheOnLoad\"")]
-        [NativeName("Name", "WICBitmapCacheOnLoad")]
-        WicbitmapCacheOnLoad = 0x2,
-        [Obsolete("Deprecated in favour of \"ItmapcreatecacheoptionForceDword\"")]
-        [NativeName("Name", "WICBITMAPCREATECACHEOPTION_FORCE_DWORD")]
-        WicbitmapcreatecacheoptionForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICBitmapNoCache")]
         BitmapNoCache = 0x0,
         [NativeName("Name", "WICBitmapCacheOnDemand")]

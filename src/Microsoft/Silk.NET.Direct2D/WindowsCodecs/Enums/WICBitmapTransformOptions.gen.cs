@@ -13,27 +13,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICBitmapTransformOptions")]
     public enum WICBitmapTransformOptions : int
     {
-        [Obsolete("Deprecated in favour of \"BitmapTransformRotate0\"")]
-        [NativeName("Name", "WICBitmapTransformRotate0")]
-        WicbitmapTransformRotate0 = 0x0,
-        [Obsolete("Deprecated in favour of \"BitmapTransformRotate90\"")]
-        [NativeName("Name", "WICBitmapTransformRotate90")]
-        WicbitmapTransformRotate90 = 0x1,
-        [Obsolete("Deprecated in favour of \"BitmapTransformRotate180\"")]
-        [NativeName("Name", "WICBitmapTransformRotate180")]
-        WicbitmapTransformRotate180 = 0x2,
-        [Obsolete("Deprecated in favour of \"BitmapTransformRotate270\"")]
-        [NativeName("Name", "WICBitmapTransformRotate270")]
-        WicbitmapTransformRotate270 = 0x3,
-        [Obsolete("Deprecated in favour of \"BitmapTransformFlipHorizontal\"")]
-        [NativeName("Name", "WICBitmapTransformFlipHorizontal")]
-        WicbitmapTransformFlipHorizontal = 0x8,
-        [Obsolete("Deprecated in favour of \"BitmapTransformFlipVertical\"")]
-        [NativeName("Name", "WICBitmapTransformFlipVertical")]
-        WicbitmapTransformFlipVertical = 0x10,
-        [Obsolete("Deprecated in favour of \"ItmaptransformoptionsForceDword\"")]
-        [NativeName("Name", "WICBITMAPTRANSFORMOPTIONS_FORCE_DWORD")]
-        WicbitmaptransformoptionsForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICBitmapTransformRotate0")]
         BitmapTransformRotate0 = 0x0,
         [NativeName("Name", "WICBitmapTransformRotate90")]

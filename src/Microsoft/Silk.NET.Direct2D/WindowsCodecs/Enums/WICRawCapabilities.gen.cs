@@ -12,18 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICRawCapabilities")]
     public enum WICRawCapabilities : int
     {
-        [Obsolete("Deprecated in favour of \"RawCapabilityNotSupported\"")]
-        [NativeName("Name", "WICRawCapabilityNotSupported")]
-        WicrawCapabilityNotSupported = 0x0,
-        [Obsolete("Deprecated in favour of \"RawCapabilityGetSupported\"")]
-        [NativeName("Name", "WICRawCapabilityGetSupported")]
-        WicrawCapabilityGetSupported = 0x1,
-        [Obsolete("Deprecated in favour of \"RawCapabilityFullySupported\"")]
-        [NativeName("Name", "WICRawCapabilityFullySupported")]
-        WicrawCapabilityFullySupported = 0x2,
-        [Obsolete("Deprecated in favour of \"AwcapabilitiesForceDword\"")]
-        [NativeName("Name", "WICRAWCAPABILITIES_FORCE_DWORD")]
-        WicrawcapabilitiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICRawCapabilityNotSupported")]
         RawCapabilityNotSupported = 0x0,
         [NativeName("Name", "WICRawCapabilityGetSupported")]

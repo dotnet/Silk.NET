@@ -12,12 +12,6 @@ namespace Silk.NET.WindowsCodecs
     [NativeName("Name", "WICWebpAnimProperties")]
     public enum WICWebpAnimProperties : int
     {
-        [Obsolete("Deprecated in favour of \"LoopCount\"")]
-        [NativeName("Name", "WICWebpAnimLoopCount")]
-        WicwebpAnimLoopCount = 0x1,
-        [Obsolete("Deprecated in favour of \"PropertiesForceDword\"")]
-        [NativeName("Name", "WICWebpAnimProperties_FORCE_DWORD")]
-        WicwebpAnimPropertiesForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICWebpAnimLoopCount")]
         LoopCount = 0x1,
         [NativeName("Name", "WICWebpAnimProperties_FORCE_DWORD")]

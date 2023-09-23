@@ -15,42 +15,6 @@ namespace Silk.NET.WindowsCodecs
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"WhitePointDefault\"")]
-        [NativeName("Name", "WICWhitePointDefault")]
-        WicwhitePointDefault = 0x1,
-        [Obsolete("Deprecated in favour of \"WhitePointDaylight\"")]
-        [NativeName("Name", "WICWhitePointDaylight")]
-        WicwhitePointDaylight = 0x2,
-        [Obsolete("Deprecated in favour of \"WhitePointCloudy\"")]
-        [NativeName("Name", "WICWhitePointCloudy")]
-        WicwhitePointCloudy = 0x4,
-        [Obsolete("Deprecated in favour of \"WhitePointShade\"")]
-        [NativeName("Name", "WICWhitePointShade")]
-        WicwhitePointShade = 0x8,
-        [Obsolete("Deprecated in favour of \"WhitePointTungsten\"")]
-        [NativeName("Name", "WICWhitePointTungsten")]
-        WicwhitePointTungsten = 0x10,
-        [Obsolete("Deprecated in favour of \"WhitePointFluorescent\"")]
-        [NativeName("Name", "WICWhitePointFluorescent")]
-        WicwhitePointFluorescent = 0x20,
-        [Obsolete("Deprecated in favour of \"WhitePointFlash\"")]
-        [NativeName("Name", "WICWhitePointFlash")]
-        WicwhitePointFlash = 0x40,
-        [Obsolete("Deprecated in favour of \"WhitePointUnderwater\"")]
-        [NativeName("Name", "WICWhitePointUnderwater")]
-        WicwhitePointUnderwater = 0x80,
-        [Obsolete("Deprecated in favour of \"WhitePointCustom\"")]
-        [NativeName("Name", "WICWhitePointCustom")]
-        WicwhitePointCustom = 0x100,
-        [Obsolete("Deprecated in favour of \"WhitePointAutoWhiteBalance\"")]
-        [NativeName("Name", "WICWhitePointAutoWhiteBalance")]
-        WicwhitePointAutoWhiteBalance = 0x200,
-        [Obsolete("Deprecated in favour of \"WhitePointAsShot\"")]
-        [NativeName("Name", "WICWhitePointAsShot")]
-        WicwhitePointAsShot = 0x1,
-        [Obsolete("Deprecated in favour of \"AmedwhitepointForceDword\"")]
-        [NativeName("Name", "WICNAMEDWHITEPOINT_FORCE_DWORD")]
-        WicnamedwhitepointForceDword = 0x7FFFFFFF,
         [NativeName("Name", "WICWhitePointDefault")]
         WhitePointDefault = 0x1,
         [NativeName("Name", "WICWhitePointDaylight")]
