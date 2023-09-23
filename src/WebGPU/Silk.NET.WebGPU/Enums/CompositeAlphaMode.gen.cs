@@ -7,7 +7,7 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU
 {
     [NativeName("Name", "WGPUCompositeAlphaMode")]
     public enum CompositeAlphaMode : int
@@ -16,10 +16,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         Auto = 0x0,
         [NativeName("Name", "WGPUCompositeAlphaMode_Opaque")]
         Opaque = 0x1,
-        [NativeName("Name", "WGPUCompositeAlphaMode_PreMultiplied")]
-        PreMultiplied = 0x2,
-        [NativeName("Name", "WGPUCompositeAlphaMode_PostMultiplied")]
-        PostMultiplied = 0x3,
+        [NativeName("Name", "WGPUCompositeAlphaMode_Premultiplied")]
+        Premultiplied = 0x2,
+        [NativeName("Name", "WGPUCompositeAlphaMode_Unpremultiplied")]
+        Unpremultiplied = 0x3,
         [NativeName("Name", "WGPUCompositeAlphaMode_Inherit")]
         Inherit = 0x4,
         [NativeName("Name", "WGPUCompositeAlphaMode_Force32")]

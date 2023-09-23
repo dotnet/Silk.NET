@@ -84,13 +84,13 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "flipY")]
         public Silk.NET.Core.Bool32 FlipY;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "needsColorSpaceConversion")]
         public Silk.NET.Core.Bool32 NeedsColorSpaceConversion;
 
@@ -119,8 +119,8 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "dstAlphaMode")]
         public AlphaMode DstAlphaMode;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "internalUsage")]
         public Silk.NET.Core.Bool32 InternalUsage;
     }

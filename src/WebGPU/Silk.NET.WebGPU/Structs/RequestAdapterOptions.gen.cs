@@ -75,8 +75,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "backendType")]
         public BackendType BackendType;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "forceFallbackAdapter")]
         public Silk.NET.Core.Bool32 ForceFallbackAdapter;
     }

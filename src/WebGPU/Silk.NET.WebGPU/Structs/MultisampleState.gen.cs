@@ -64,8 +64,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "mask")]
         public uint Mask;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "alphaToCoverageEnabled")]
         public Silk.NET.Core.Bool32 AlphaToCoverageEnabled;
     }

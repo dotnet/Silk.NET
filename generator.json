@@ -2364,7 +2364,8 @@
                     "WGPUMapModeFlags": "Silk.NET.WebGPU.MapMode",
                     "WGPUShaderStageFlags": "Silk.NET.WebGPU.ShaderStage",
                     "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage",
-                    "WGPUInstanceBackendFlags": "Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend"
+                    "WGPUInstanceBackendFlags": "Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend",
+                    "WGPUBool": "Silk.NET.Core.Bool32"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",

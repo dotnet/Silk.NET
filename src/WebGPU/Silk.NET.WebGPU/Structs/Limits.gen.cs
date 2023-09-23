@@ -26,6 +26,7 @@ namespace Silk.NET.WebGPU
             uint? maxTextureDimension3D = null,
             uint? maxTextureArrayLayers = null,
             uint? maxBindGroups = null,
+            uint? maxBindGroupsPlusVertexBuffers = null,
             uint? maxBindingsPerBindGroup = null,
             uint? maxDynamicUniformBuffersPerPipelineLayout = null,
             uint? maxDynamicStorageBuffersPerPipelineLayout = null,
@@ -77,6 +78,11 @@ namespace Silk.NET.WebGPU
             if (maxBindGroups is not null)
             {
                 MaxBindGroups = maxBindGroups.Value;
+            }
+
+            if (maxBindGroupsPlusVertexBuffers is not null)
+            {
+                MaxBindGroupsPlusVertexBuffers = maxBindGroupsPlusVertexBuffers.Value;
             }
 
             if (maxBindingsPerBindGroup is not null)
@@ -235,6 +241,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxBindGroups")]
         public uint MaxBindGroups;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxBindGroupsPlusVertexBuffers")]
+        public uint MaxBindGroupsPlusVertexBuffers;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

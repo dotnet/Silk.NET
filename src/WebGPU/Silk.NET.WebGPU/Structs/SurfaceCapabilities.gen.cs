@@ -14,13 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU
 {
     [NativeName("Name", "WGPUSurfaceCapabilities")]
     public unsafe partial struct SurfaceCapabilities
     {
         public SurfaceCapabilities
         (
+            ChainedStructOut* nextInChain = null,
             nuint? formatCount = null,
             TextureFormat* formats = null,
             nuint? presentModeCount = null,
@@ -29,6 +30,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             CompositeAlphaMode* alphaModes = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (formatCount is not null)
             {
                 FormatCount = formatCount.Value;
@@ -60,6 +66,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             }
         }
 
+
+        [NativeName("Type", "WGPUChainedStructOut *")]
+        [NativeName("Type.Name", "WGPUChainedStructOut *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStructOut* NextInChain;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

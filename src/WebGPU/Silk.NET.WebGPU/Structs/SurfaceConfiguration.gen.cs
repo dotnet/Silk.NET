@@ -16,15 +16,18 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPUSwapChainDescriptor")]
-    public unsafe partial struct SwapChainDescriptor
+    [NativeName("Name", "WGPUSurfaceConfiguration")]
+    public unsafe partial struct SurfaceConfiguration
     {
-        public SwapChainDescriptor
+        public SurfaceConfiguration
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
-            Silk.NET.WebGPU.TextureUsage? usage = null,
+            Device* device = null,
             TextureFormat? format = null,
+            Silk.NET.WebGPU.TextureUsage? usage = null,
+            nuint? viewFormatCount = null,
+            TextureFormat* viewFormats = null,
+            CompositeAlphaMode? alphaMode = null,
             uint? width = null,
             uint? height = null,
             PresentMode? presentMode = null
@@ -35,9 +38,14 @@ namespace Silk.NET.WebGPU
                 NextInChain = nextInChain;
             }
 
-            if (label is not null)
+            if (device is not null)
             {
-                Label = label;
+                Device = device;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
             }
 
             if (usage is not null)
@@ -45,9 +53,19 @@ namespace Silk.NET.WebGPU
                 Usage = usage.Value;
             }
 
-            if (format is not null)
+            if (viewFormatCount is not null)
             {
-                Format = format.Value;
+                ViewFormatCount = viewFormatCount.Value;
+            }
+
+            if (viewFormats is not null)
+            {
+                ViewFormats = viewFormats;
+            }
+
+            if (alphaMode is not null)
+            {
+                AlphaMode = alphaMode.Value;
             }
 
             if (width is not null)
@@ -72,20 +90,35 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "label")]
-        public byte* Label;
+        [NativeName("Type", "WGPUDevice")]
+        [NativeName("Type.Name", "WGPUDevice")]
+        [NativeName("Name", "device")]
+        public Device* Device;
+
+        [NativeName("Type", "WGPUTextureFormat")]
+        [NativeName("Type.Name", "WGPUTextureFormat")]
+        [NativeName("Name", "format")]
+        public TextureFormat Format;
 
         [NativeName("Type", "WGPUTextureUsageFlags")]
         [NativeName("Type.Name", "WGPUTextureUsageFlags")]
         [NativeName("Name", "usage")]
         public Silk.NET.WebGPU.TextureUsage Usage;
 
-        [NativeName("Type", "WGPUTextureFormat")]
-        [NativeName("Type.Name", "WGPUTextureFormat")]
-        [NativeName("Name", "format")]
-        public TextureFormat Format;
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "viewFormatCount")]
+        public nuint ViewFormatCount;
+
+        [NativeName("Type", "const WGPUTextureFormat *")]
+        [NativeName("Type.Name", "const WGPUTextureFormat *")]
+        [NativeName("Name", "viewFormats")]
+        public TextureFormat* ViewFormats;
+
+        [NativeName("Type", "WGPUCompositeAlphaMode")]
+        [NativeName("Type.Name", "WGPUCompositeAlphaMode")]
+        [NativeName("Name", "alphaMode")]
+        public CompositeAlphaMode AlphaMode;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
     [NativeName("Name", "WGPUSwapChainImpl")]
     public unsafe partial struct SwapChain
