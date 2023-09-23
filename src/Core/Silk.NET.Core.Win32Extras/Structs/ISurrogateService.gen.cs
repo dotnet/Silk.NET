@@ -219,22 +219,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ApplicationLaunch(Guid* rguidApplID, TagApplicationType appType)
+        public readonly unsafe int ApplicationLaunch(Guid* rguidApplID, ApplicationType appType)
         {
             var @this = (ISurrogateService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, TagApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplID, appType);
+            ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, ApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplID, appType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ApplicationLaunch(ref Guid rguidApplID, TagApplicationType appType)
+        public readonly int ApplicationLaunch(ref Guid rguidApplID, ApplicationType appType)
         {
             var @this = (ISurrogateService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* rguidApplIDPtr = &rguidApplID)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, TagApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplIDPtr, appType);
+                ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, ApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplIDPtr, appType);
             }
             return ret;
         }
@@ -270,11 +270,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ProcessShutdown(TagShutdownType shutdownType)
+        public readonly int ProcessShutdown(ShutdownType shutdownType)
         {
             var @this = (ISurrogateService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, TagShutdownType, int>)@this->LpVtbl[7])(@this, shutdownType);
+            ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, ShutdownType, int>)@this->LpVtbl[7])(@this, shutdownType);
             return ret;
         }
 

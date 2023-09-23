@@ -85,40 +85,40 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnection);
+        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnection);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pdwConnectionPtr = &pdwConnection)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnectionPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnectionPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IAdviseSink* pAdvisePtr = &pAdvise)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnection);
+            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnection);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,66 +126,66 @@ public unsafe static class DataAdviseHolderVtblExtensions
         {
             fixed (uint* pdwConnectionPtr = &pdwConnection)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagFORMATETC* pFetcPtr = &pFetc)
+        fixed (FORMATETC* pFetcPtr = &pFetc)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnection);
+            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnection);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagFORMATETC* pFetcPtr = &pFetc)
+        fixed (FORMATETC* pFetcPtr = &pFetc)
         {
             fixed (uint* pdwConnectionPtr = &pdwConnection)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagFORMATETC* pFetcPtr = &pFetc)
+        fixed (FORMATETC* pFetcPtr = &pFetc)
         {
             fixed (IAdviseSink* pAdvisePtr = &pAdvise)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnection);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagFORMATETC* pFetcPtr = &pFetc)
+        fixed (FORMATETC* pFetcPtr = &pFetc)
         {
             fixed (IAdviseSink* pAdvisePtr = &pAdvise)
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
                 }
             }
         }
@@ -193,19 +193,19 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDataObject* pDataObjectPtr = &pDataObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnection);
+            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnection);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -213,14 +213,14 @@ public unsafe static class DataAdviseHolderVtblExtensions
         {
             fixed (uint* pdwConnectionPtr = &pdwConnection)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnectionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnectionPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -228,14 +228,14 @@ public unsafe static class DataAdviseHolderVtblExtensions
         {
             fixed (IAdviseSink* pAdvisePtr = &pAdvise)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnection);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -245,7 +245,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
                 }
             }
         }
@@ -253,32 +253,32 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDataObject* pDataObjectPtr = &pDataObject)
         {
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnection);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDataObject* pDataObjectPtr = &pDataObject)
         {
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
                 }
             }
         }
@@ -286,17 +286,17 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDataObject* pDataObjectPtr = &pDataObject)
         {
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
                 fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnection);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnection);
                 }
             }
         }
@@ -304,19 +304,19 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+    public static int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDataObject* pDataObjectPtr = &pDataObject)
         {
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
                 fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                 {
                     fixed (uint* pdwConnectionPtr = &pdwConnection)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
                     }
                 }
             }
@@ -401,7 +401,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+    public static unsafe int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -409,7 +409,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -417,7 +417,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+    public static unsafe int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -425,7 +425,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -433,7 +433,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -441,7 +441,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, FORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -449,7 +449,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -457,7 +457,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<TagFORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<FORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -465,7 +465,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+    public static unsafe int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -473,7 +473,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<TagFORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<FORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -481,7 +481,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+    public static int Advise<TI0, TI1>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -489,7 +489,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<TagFORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<FORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -497,7 +497,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -505,7 +505,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<TagFORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, IDataObject* pDataObject, Span<FORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -513,7 +513,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+    public static int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -521,7 +521,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -529,7 +529,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -537,7 +537,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -545,7 +545,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -553,7 +553,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, TagFORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, FORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -561,7 +561,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, TagFORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, FORMATETC* pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -569,7 +569,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<TagFORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<FORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -577,7 +577,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+    public static unsafe int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -585,7 +585,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<TagFORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<FORMATETC> pFetc, uint advf, IAdviseSink* pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -593,7 +593,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+    public static int Advise<TI0>(this ComPtr<IDataAdviseHolder> thisVtbl, ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -601,7 +601,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<TagFORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
+    public static unsafe int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<FORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, uint* pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -609,7 +609,7 @@ public unsafe static class DataAdviseHolderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<TagFORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
+    public static int Advise(this ComPtr<IDataAdviseHolder> thisVtbl, Span<IDataObject> pDataObject, Span<FORMATETC> pFetc, uint advf, Span<IAdviseSink> pAdvise, Span<uint> pdwConnection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

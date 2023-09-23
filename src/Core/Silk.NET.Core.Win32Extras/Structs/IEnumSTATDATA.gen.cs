@@ -111,48 +111,48 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        public readonly unsafe int Next(uint celt, STATDATA* rgelt, uint* pceltFetched)
         {
             var @this = (IEnumSTATDATA*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, TagSTATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetched);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, STATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetched);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, TagSTATDATA* rgelt, ref uint pceltFetched)
+        public readonly unsafe int Next(uint celt, STATDATA* rgelt, ref uint pceltFetched)
         {
             var @this = (IEnumSTATDATA*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pceltFetchedPtr = &pceltFetched)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, TagSTATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, STATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, ref TagSTATDATA rgelt, uint* pceltFetched)
+        public readonly unsafe int Next(uint celt, ref STATDATA rgelt, uint* pceltFetched)
         {
             var @this = (IEnumSTATDATA*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTATDATA* rgeltPtr = &rgelt)
+            fixed (STATDATA* rgeltPtr = &rgelt)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, TagSTATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, STATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Next(uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched)
+        public readonly int Next(uint celt, ref STATDATA rgelt, ref uint pceltFetched)
         {
             var @this = (IEnumSTATDATA*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTATDATA* rgeltPtr = &rgelt)
+            fixed (STATDATA* rgeltPtr = &rgelt)
             {
                 fixed (uint* pceltFetchedPtr = &pceltFetched)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, TagSTATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IEnumSTATDATA*, uint, STATDATA*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
                 }
             }
             return ret;

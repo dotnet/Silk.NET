@@ -18353,22 +18353,22 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteSetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxRemoteSetBindOptionsProxy(IBindCtx* This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxRemoteSetBindOptionsProxy(IBindCtx* This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteSetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxRemoteSetBindOptionsProxy(IBindCtx* This, ref TagBINDOPTS2 pbindopts);
+        public unsafe partial int IBindCtxRemoteSetBindOptionsProxy(IBindCtx* This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteSetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxRemoteSetBindOptionsProxy(ref IBindCtx This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxRemoteSetBindOptionsProxy(ref IBindCtx This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteSetBindOptions_Proxy")]
-        public partial int IBindCtxRemoteSetBindOptionsProxy(ref IBindCtx This, ref TagBINDOPTS2 pbindopts);
+        public partial int IBindCtxRemoteSetBindOptionsProxy(ref IBindCtx This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9311, Column 17 in objidl.h")]
@@ -18453,22 +18453,22 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteGetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxRemoteGetBindOptionsProxy(IBindCtx* This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxRemoteGetBindOptionsProxy(IBindCtx* This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteGetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxRemoteGetBindOptionsProxy(IBindCtx* This, ref TagBINDOPTS2 pbindopts);
+        public unsafe partial int IBindCtxRemoteGetBindOptionsProxy(IBindCtx* This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteGetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxRemoteGetBindOptionsProxy(ref IBindCtx This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxRemoteGetBindOptionsProxy(ref IBindCtx This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_RemoteGetBindOptions_Proxy")]
-        public partial int IBindCtxRemoteGetBindOptionsProxy(ref IBindCtx This, ref TagBINDOPTS2 pbindopts);
+        public partial int IBindCtxRemoteGetBindOptionsProxy(ref IBindCtx This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9323, Column 17 in objidl.h")]
@@ -20203,42 +20203,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, ref FORMATETC rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(IEnumFORMATETC* This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, FORMATETC* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, FORMATETC* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public unsafe partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, ref FORMATETC rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_RemoteNext_Proxy")]
-        public partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched);
+        public partial int IEnumFORMATETCRemoteNextProxy(ref IEnumFORMATETC This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11726, Column 17 in objidl.h")]
@@ -20323,42 +20323,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, STATDATA* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, STATDATA* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, ref STATDATA rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(IEnumSTATDATA* This, uint celt, ref STATDATA rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, STATDATA* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, STATDATA* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public unsafe partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, ref STATDATA rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_RemoteNext_Proxy")]
-        public partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched);
+        public partial int IEnumSTATDATARemoteNextProxy(ref IEnumSTATDATA This, uint celt, ref STATDATA rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11887, Column 17 in objidl.h")]
@@ -20443,42 +20443,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(IAdviseSink* This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_RemoteOnDataChange_Proxy")]
-        public partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public partial int IAdviseSinkRemoteOnDataChangeProxy(ref IAdviseSink This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12248, Column 17 in objidl.h")]
@@ -20933,42 +20933,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(AsyncIAdviseSink* This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_RemoteOnDataChange_Proxy")]
-        public partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public partial int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref AsyncIAdviseSink This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12487, Column 17 in objidl.h")]
@@ -22163,42 +22163,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, FORMATETC* pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, ref FORMATETC pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(IDataObject* This, ref FORMATETC pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, FORMATETC* pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, ref FORMATETC pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetData_Proxy")]
-        public partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public partial int IDataObjectRemoteGetDataProxy(ref IDataObject This, ref FORMATETC pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13178, Column 17 in objidl.h")]
@@ -22283,42 +22283,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, FORMATETC* pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, ref FORMATETC pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(IDataObject* This, ref FORMATETC pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, FORMATETC* pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public unsafe partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, ref FORMATETC pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteGetDataHere_Proxy")]
-        public partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public partial int IDataObjectRemoteGetDataHereProxy(ref IDataObject This, ref FORMATETC pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13191, Column 17 in objidl.h")]
@@ -22403,42 +22403,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, TagFORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, FORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, ref TagFORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, ref FORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, ref TagFORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(IDataObject* This, ref FORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, TagFORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, FORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public unsafe partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, ref FORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_RemoteSetData_Proxy")]
-        public partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public partial int IDataObjectRemoteSetDataProxy(ref IDataObject This, ref FORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13205, Column 17 in objidl.h")]
@@ -22803,306 +22803,306 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize")]
-        public unsafe partial uint ASYNCSTGMEDIUMUserSize(uint* arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint ASYNCSTGMEDIUMUserSize(uint* arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize")]
-        public unsafe partial uint ASYNCSTGMEDIUMUserSize(uint* arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial uint ASYNCSTGMEDIUMUserSize(uint* arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize")]
-        public unsafe partial uint ASYNCSTGMEDIUMUserSize(ref uint arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint ASYNCSTGMEDIUMUserSize(ref uint arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize")]
-        public partial uint ASYNCSTGMEDIUMUserSize(ref uint arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public partial uint ASYNCSTGMEDIUMUserSize(ref uint arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
-        public partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal")]
+        public partial string ASYNCSTGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
-        public partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal")]
+        public partial string ASYNCSTGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree")]
-        public unsafe partial void ASYNCSTGMEDIUMUserFree(uint* arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void ASYNCSTGMEDIUMUserFree(uint* arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree")]
-        public unsafe partial void ASYNCSTGMEDIUMUserFree(uint* arg0, ref TagSTGMEDIUM arg1);
+        public unsafe partial void ASYNCSTGMEDIUMUserFree(uint* arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree")]
-        public unsafe partial void ASYNCSTGMEDIUMUserFree(ref uint arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void ASYNCSTGMEDIUMUserFree(ref uint arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree")]
-        public partial void ASYNCSTGMEDIUMUserFree(ref uint arg0, ref TagSTGMEDIUM arg1);
+        public partial void ASYNCSTGMEDIUMUserFree(ref uint arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15468, Column 39 in objidl.h")]
@@ -24931,610 +24931,610 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize")]
-        public unsafe partial uint STGMEDIUMUserSize(uint* arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint STGMEDIUMUserSize(uint* arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize")]
-        public unsafe partial uint STGMEDIUMUserSize(uint* arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial uint STGMEDIUMUserSize(uint* arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize")]
-        public unsafe partial uint STGMEDIUMUserSize(ref uint arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint STGMEDIUMUserSize(ref uint arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize")]
-        public partial uint STGMEDIUMUserSize(ref uint arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public partial uint STGMEDIUMUserSize(ref uint arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public partial string STGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
-        public partial string STGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public partial string STGMEDIUMUserMarshalS(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial string STGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public unsafe partial byte* STGMEDIUMUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal")]
+        public partial string STGMEDIUMUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public partial string STGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
-        public partial string STGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public partial string STGMEDIUMUserUnmarshalS(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial string STGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal")]
+        public partial string STGMEDIUMUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree")]
-        public unsafe partial void STGMEDIUMUserFree(uint* arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void STGMEDIUMUserFree(uint* arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree")]
-        public unsafe partial void STGMEDIUMUserFree(uint* arg0, ref TagSTGMEDIUM arg1);
+        public unsafe partial void STGMEDIUMUserFree(uint* arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree")]
-        public unsafe partial void STGMEDIUMUserFree(ref uint arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void STGMEDIUMUserFree(ref uint arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree")]
-        public partial void STGMEDIUMUserFree(ref uint arg0, ref TagSTGMEDIUM arg1);
+        public partial void STGMEDIUMUserFree(ref uint arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize64")]
-        public unsafe partial uint ASYNCSTGMEDIUMUserSize64(uint* arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint ASYNCSTGMEDIUMUserSize64(uint* arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize64")]
-        public unsafe partial uint ASYNCSTGMEDIUMUserSize64(uint* arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial uint ASYNCSTGMEDIUMUserSize64(uint* arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize64")]
-        public unsafe partial uint ASYNCSTGMEDIUMUserSize64(ref uint arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint ASYNCSTGMEDIUMUserSize64(ref uint arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserSize64")]
-        public partial uint ASYNCSTGMEDIUMUserSize64(ref uint arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public partial uint ASYNCSTGMEDIUMUserSize64(ref uint arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
-        public partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserMarshal64")]
+        public partial string ASYNCSTGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
-        public partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* ASYNCSTGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserUnmarshal64")]
+        public partial string ASYNCSTGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree64")]
-        public unsafe partial void ASYNCSTGMEDIUMUserFree64(uint* arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void ASYNCSTGMEDIUMUserFree64(uint* arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree64")]
-        public unsafe partial void ASYNCSTGMEDIUMUserFree64(uint* arg0, ref TagSTGMEDIUM arg1);
+        public unsafe partial void ASYNCSTGMEDIUMUserFree64(uint* arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree64")]
-        public unsafe partial void ASYNCSTGMEDIUMUserFree64(ref uint arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void ASYNCSTGMEDIUMUserFree64(ref uint arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "ASYNC_STGMEDIUM_UserFree64")]
-        public partial void ASYNCSTGMEDIUMUserFree64(ref uint arg0, ref TagSTGMEDIUM arg1);
+        public partial void ASYNCSTGMEDIUMUserFree64(ref uint arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15508, Column 39 in objidl.h")]
@@ -27363,386 +27363,386 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize64")]
-        public unsafe partial uint STGMEDIUMUserSize64(uint* arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint STGMEDIUMUserSize64(uint* arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize64")]
-        public unsafe partial uint STGMEDIUMUserSize64(uint* arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial uint STGMEDIUMUserSize64(uint* arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize64")]
-        public unsafe partial uint STGMEDIUMUserSize64(ref uint arg0, uint arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial uint STGMEDIUMUserSize64(ref uint arg0, uint arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserSize64")]
-        public partial uint STGMEDIUMUserSize64(ref uint arg0, uint arg1, ref TagSTGMEDIUM arg2);
+        public partial uint STGMEDIUMUserSize64(ref uint arg0, uint arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public partial string STGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserMarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
-        public partial string STGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserMarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public partial string STGMEDIUMUserMarshal64S(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial string STGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public unsafe partial byte* STGMEDIUMUserMarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserMarshal64")]
+        public partial string STGMEDIUMUserMarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, byte* arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, ref byte arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, ref TagSTGMEDIUM arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
-        public partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref TagSTGMEDIUM arg2);
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, byte* arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, ref byte arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public unsafe partial byte* STGMEDIUMUserUnmarshal64(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "STGMEDIUM_UserUnmarshal64")]
+        public partial string STGMEDIUMUserUnmarshal64S(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref STGMEDIUM arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree64")]
-        public unsafe partial void STGMEDIUMUserFree64(uint* arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void STGMEDIUMUserFree64(uint* arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree64")]
-        public unsafe partial void STGMEDIUMUserFree64(uint* arg0, ref TagSTGMEDIUM arg1);
+        public unsafe partial void STGMEDIUMUserFree64(uint* arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree64")]
-        public unsafe partial void STGMEDIUMUserFree64(ref uint arg0, TagSTGMEDIUM* arg1);
+        public unsafe partial void STGMEDIUMUserFree64(ref uint arg0, STGMEDIUM* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
         [NativeApi(EntryPoint = "STGMEDIUM_UserFree64")]
-        public partial void STGMEDIUMUserFree64(ref uint arg0, ref TagSTGMEDIUM arg1);
+        public partial void STGMEDIUMUserFree64(ref uint arg0, ref STGMEDIUM arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxSetBindOptionsProxy(IBindCtx* This, TagBINDOPTS* pbindopts);
+        public unsafe partial int IBindCtxSetBindOptionsProxy(IBindCtx* This, BindOpts* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxSetBindOptionsProxy(IBindCtx* This, ref TagBINDOPTS pbindopts);
+        public unsafe partial int IBindCtxSetBindOptionsProxy(IBindCtx* This, ref BindOpts pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxSetBindOptionsProxy(ref IBindCtx This, TagBINDOPTS* pbindopts);
+        public unsafe partial int IBindCtxSetBindOptionsProxy(ref IBindCtx This, BindOpts* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Proxy")]
-        public partial int IBindCtxSetBindOptionsProxy(ref IBindCtx This, ref TagBINDOPTS pbindopts);
+        public partial int IBindCtxSetBindOptionsProxy(ref IBindCtx This, ref BindOpts pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Stub")]
-        public unsafe partial int IBindCtxSetBindOptionsStub(IBindCtx* This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxSetBindOptionsStub(IBindCtx* This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Stub")]
-        public unsafe partial int IBindCtxSetBindOptionsStub(IBindCtx* This, ref TagBINDOPTS2 pbindopts);
+        public unsafe partial int IBindCtxSetBindOptionsStub(IBindCtx* This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Stub")]
-        public unsafe partial int IBindCtxSetBindOptionsStub(ref IBindCtx This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxSetBindOptionsStub(ref IBindCtx This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_SetBindOptions_Stub")]
-        public partial int IBindCtxSetBindOptionsStub(ref IBindCtx This, ref TagBINDOPTS2 pbindopts);
+        public partial int IBindCtxSetBindOptionsStub(ref IBindCtx This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxGetBindOptionsProxy(IBindCtx* This, TagBINDOPTS* pbindopts);
+        public unsafe partial int IBindCtxGetBindOptionsProxy(IBindCtx* This, BindOpts* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxGetBindOptionsProxy(IBindCtx* This, ref TagBINDOPTS pbindopts);
+        public unsafe partial int IBindCtxGetBindOptionsProxy(IBindCtx* This, ref BindOpts pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Proxy")]
-        public unsafe partial int IBindCtxGetBindOptionsProxy(ref IBindCtx This, TagBINDOPTS* pbindopts);
+        public unsafe partial int IBindCtxGetBindOptionsProxy(ref IBindCtx This, BindOpts* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Proxy")]
-        public partial int IBindCtxGetBindOptionsProxy(ref IBindCtx This, ref TagBINDOPTS pbindopts);
+        public partial int IBindCtxGetBindOptionsProxy(ref IBindCtx This, ref BindOpts pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Stub")]
-        public unsafe partial int IBindCtxGetBindOptionsStub(IBindCtx* This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxGetBindOptionsStub(IBindCtx* This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Stub")]
-        public unsafe partial int IBindCtxGetBindOptionsStub(IBindCtx* This, ref TagBINDOPTS2 pbindopts);
+        public unsafe partial int IBindCtxGetBindOptionsStub(IBindCtx* This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Stub")]
-        public unsafe partial int IBindCtxGetBindOptionsStub(ref IBindCtx This, TagBINDOPTS2* pbindopts);
+        public unsafe partial int IBindCtxGetBindOptionsStub(ref IBindCtx This, BindOpts2* pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IBindCtx_GetBindOptions_Stub")]
-        public partial int IBindCtxGetBindOptionsStub(ref IBindCtx This, ref TagBINDOPTS2 pbindopts);
+        public partial int IBindCtxGetBindOptionsStub(ref IBindCtx This, ref BindOpts2 pbindopts);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15658, Column 41 in objidl.h")]
@@ -29327,242 +29327,242 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, ref FORMATETC rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(IEnumFORMATETC* This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, FORMATETC* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, FORMATETC* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public unsafe partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, ref FORMATETC rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Proxy")]
-        public partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched);
+        public partial int IEnumFORMATETCNextProxy(ref IEnumFORMATETC This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, ref FORMATETC rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(IEnumFORMATETC* This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, FORMATETC* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, FORMATETC* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public unsafe partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, ref FORMATETC rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumFORMATETC_Next_Stub")]
-        public partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched);
+        public partial int IEnumFORMATETCNextStub(ref IEnumFORMATETC This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, STATDATA* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, STATDATA* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, ref STATDATA rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(IEnumSTATDATA* This, uint celt, ref STATDATA rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, STATDATA* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, STATDATA* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public unsafe partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, ref STATDATA rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Proxy")]
-        public partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched);
+        public partial int IEnumSTATDATANextProxy(ref IEnumSTATDATA This, uint celt, ref STATDATA rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, STATDATA* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, STATDATA* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, ref STATDATA rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(IEnumSTATDATA* This, uint celt, ref STATDATA rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, STATDATA* rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, STATDATA* rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public unsafe partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched);
+        public unsafe partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, ref STATDATA rgelt, uint* pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IEnumSTATDATA_Next_Stub")]
-        public partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched);
+        public partial int IEnumSTATDATANextStub(ref IEnumSTATDATA This, uint celt, ref STATDATA rgelt, ref uint pceltFetched);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(IAdviseSink* This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public unsafe partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Proxy")]
-        public partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public partial void IAdviseSinkOnDataChangeProxy(ref IAdviseSink This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(IAdviseSink* This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public unsafe partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IAdviseSink_OnDataChange_Stub")]
-        public partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public partial int IAdviseSinkOnDataChangeStub(ref IAdviseSink This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15869, Column 38 in objidl.h")]
@@ -29667,82 +29667,82 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(AsyncIAdviseSink* This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Proxy")]
-        public partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public partial void AsyncIAdviseSinkBeginOnDataChangeProxy(ref AsyncIAdviseSink This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(AsyncIAdviseSink* This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed);
+        public unsafe partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "AsyncIAdviseSink_Begin_OnDataChange_Stub")]
-        public partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed);
+        public partial int AsyncIAdviseSinkBeginOnDataChangeStub(ref AsyncIAdviseSink This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15917, Column 38 in objidl.h")]
@@ -30047,242 +30047,242 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, FORMATETC* pformatetcIn, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, FORMATETC* pformatetcIn, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, ref FORMATETC pformatetcIn, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(IDataObject* This, ref FORMATETC pformatetcIn, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(ref IDataObject This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(ref IDataObject This, FORMATETC* pformatetcIn, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(ref IDataObject This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(ref IDataObject This, FORMATETC* pformatetcIn, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public unsafe partial int IDataObjectGetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataProxy(ref IDataObject This, ref FORMATETC pformatetcIn, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Proxy")]
-        public partial int IDataObjectGetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pmedium);
+        public partial int IDataObjectGetDataProxy(ref IDataObject This, ref FORMATETC pformatetcIn, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, FORMATETC* pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, ref FORMATETC pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(IDataObject* This, ref FORMATETC pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(ref IDataObject This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(ref IDataObject This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(ref IDataObject This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(ref IDataObject This, FORMATETC* pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public unsafe partial int IDataObjectGetDataStub(ref IDataObject This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataStub(ref IDataObject This, ref FORMATETC pformatetcIn, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetData_Stub")]
-        public partial int IDataObjectGetDataStub(ref IDataObject This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pRemoteMedium);
+        public partial int IDataObjectGetDataStub(ref IDataObject This, ref FORMATETC pformatetcIn, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, FORMATETC* pformatetc, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, FORMATETC* pformatetc, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, ref FORMATETC pformatetc, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(IDataObject* This, ref FORMATETC pformatetc, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(ref IDataObject This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(ref IDataObject This, FORMATETC* pformatetc, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(ref IDataObject This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(ref IDataObject This, FORMATETC* pformatetc, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public unsafe partial int IDataObjectGetDataHereProxy(ref IDataObject This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium);
+        public unsafe partial int IDataObjectGetDataHereProxy(ref IDataObject This, ref FORMATETC pformatetc, STGMEDIUM* pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Proxy")]
-        public partial int IDataObjectGetDataHereProxy(ref IDataObject This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium);
+        public partial int IDataObjectGetDataHereProxy(ref IDataObject This, ref FORMATETC pformatetc, ref STGMEDIUM pmedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, FORMATETC* pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, ref FORMATETC pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(IDataObject* This, ref FORMATETC pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(ref IDataObject This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(ref IDataObject This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(ref IDataObject This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(ref IDataObject This, FORMATETC* pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public unsafe partial int IDataObjectGetDataHereStub(ref IDataObject This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pRemoteMedium);
+        public unsafe partial int IDataObjectGetDataHereStub(ref IDataObject This, ref FORMATETC pformatetc, STGMEDIUM* pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_GetDataHere_Stub")]
-        public partial int IDataObjectGetDataHereStub(ref IDataObject This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pRemoteMedium);
+        public partial int IDataObjectGetDataHereStub(ref IDataObject This, ref FORMATETC pformatetc, ref STGMEDIUM pRemoteMedium);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, FORMATETC* pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, FORMATETC* pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, ref FORMATETC pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(IDataObject* This, ref FORMATETC pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(ref IDataObject This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(ref IDataObject This, FORMATETC* pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(ref IDataObject This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(ref IDataObject This, FORMATETC* pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public unsafe partial int IDataObjectSetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataProxy(ref IDataObject This, ref FORMATETC pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Proxy")]
-        public partial int IDataObjectSetDataProxy(ref IDataObject This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
+        public partial int IDataObjectSetDataProxy(ref IDataObject This, ref FORMATETC pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, TagFORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, FORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, ref TagFORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, ref FORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, ref TagFORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(IDataObject* This, ref FORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(ref IDataObject This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(ref IDataObject This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(ref IDataObject This, TagFORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(ref IDataObject This, FORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public unsafe partial int IDataObjectSetDataStub(ref IDataObject This, ref TagFORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
+        public unsafe partial int IDataObjectSetDataStub(ref IDataObject This, ref FORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
         [NativeApi(EntryPoint = "IDataObject_SetData_Stub")]
-        public partial int IDataObjectSetDataStub(ref IDataObject This, ref TagFORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
+        public partial int IDataObjectSetDataStub(ref IDataObject This, ref FORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16055, Column 41 in objidl.h")]
@@ -35139,7 +35139,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
-        public unsafe int IBindCtxRemoteSetBindOptionsProxy<TI0>(ComPtr<TI0> This, TagBINDOPTS2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxRemoteSetBindOptionsProxy<TI0>(ComPtr<TI0> This, BindOpts2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxRemoteSetBindOptionsProxy((IBindCtx*) This.Handle, pbindopts);
@@ -35147,7 +35147,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
-        public unsafe int IBindCtxRemoteSetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref TagBINDOPTS2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxRemoteSetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref BindOpts2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxRemoteSetBindOptionsProxy((IBindCtx*) This.Handle, ref pbindopts);
@@ -35251,7 +35251,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
-        public unsafe int IBindCtxRemoteGetBindOptionsProxy<TI0>(ComPtr<TI0> This, TagBINDOPTS2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxRemoteGetBindOptionsProxy<TI0>(ComPtr<TI0> This, BindOpts2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxRemoteGetBindOptionsProxy((IBindCtx*) This.Handle, pbindopts);
@@ -35259,7 +35259,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
-        public unsafe int IBindCtxRemoteGetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref TagBINDOPTS2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxRemoteGetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref BindOpts2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxRemoteGetBindOptionsProxy((IBindCtx*) This.Handle, ref pbindopts);
@@ -37483,7 +37483,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, FORMATETC* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCRemoteNextProxy((IEnumFORMATETC*) This.Handle, celt, rgelt, pceltFetched);
@@ -37491,7 +37491,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, FORMATETC* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCRemoteNextProxy((IEnumFORMATETC*) This.Handle, celt, rgelt, ref pceltFetched);
@@ -37499,7 +37499,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref FORMATETC rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCRemoteNextProxy((IEnumFORMATETC*) This.Handle, celt, ref rgelt, pceltFetched);
@@ -37507,7 +37507,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCRemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCRemoteNextProxy((IEnumFORMATETC*) This.Handle, celt, ref rgelt, ref pceltFetched);
@@ -37611,7 +37611,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, STATDATA* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATARemoteNextProxy((IEnumSTATDATA*) This.Handle, celt, rgelt, pceltFetched);
@@ -37619,7 +37619,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, STATDATA* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATARemoteNextProxy((IEnumSTATDATA*) This.Handle, celt, rgelt, ref pceltFetched);
@@ -37627,7 +37627,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref STATDATA rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATARemoteNextProxy((IEnumSTATDATA*) This.Handle, celt, ref rgelt, pceltFetched);
@@ -37635,7 +37635,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATARemoteNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref STATDATA rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATARemoteNextProxy((IEnumSTATDATA*) This.Handle, celt, ref rgelt, ref pceltFetched);
@@ -37739,7 +37739,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkRemoteOnDataChangeProxy((IAdviseSink*) This.Handle, pFormatetc, pStgmed);
@@ -37747,7 +37747,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkRemoteOnDataChangeProxy((IAdviseSink*) This.Handle, pFormatetc, ref pStgmed);
@@ -37755,7 +37755,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkRemoteOnDataChangeProxy((IAdviseSink*) This.Handle, ref pFormatetc, pStgmed);
@@ -37763,7 +37763,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkRemoteOnDataChangeProxy((IAdviseSink*) This.Handle, ref pFormatetc, ref pStgmed);
@@ -38299,7 +38299,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginRemoteOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, pFormatetc, pStgmed);
@@ -38307,7 +38307,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginRemoteOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, pFormatetc, ref pStgmed);
@@ -38315,7 +38315,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginRemoteOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, ref pFormatetc, pStgmed);
@@ -38323,7 +38323,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginRemoteOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, ref pFormatetc, ref pStgmed);
@@ -39723,7 +39723,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataProxy((IDataObject*) This.Handle, pformatetcIn, pRemoteMedium);
@@ -39731,7 +39731,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetcIn, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataProxy((IDataObject*) This.Handle, pformatetcIn, ref pRemoteMedium);
@@ -39739,7 +39739,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetcIn, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataProxy((IDataObject*) This.Handle, ref pformatetcIn, pRemoteMedium);
@@ -39747,7 +39747,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetcIn, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataProxy((IDataObject*) This.Handle, ref pformatetcIn, ref pRemoteMedium);
@@ -39851,7 +39851,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataHereProxy((IDataObject*) This.Handle, pformatetc, pRemoteMedium);
@@ -39859,7 +39859,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataHereProxy((IDataObject*) This.Handle, pformatetc, ref pRemoteMedium);
@@ -39867,7 +39867,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataHereProxy((IDataObject*) This.Handle, ref pformatetc, pRemoteMedium);
@@ -39875,7 +39875,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteGetDataHereProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteGetDataHereProxy((IDataObject*) This.Handle, ref pformatetc, ref pRemoteMedium);
@@ -39979,7 +39979,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteSetDataProxy((IDataObject*) This.Handle, pformatetc, pmedium, fRelease);
@@ -39987,7 +39987,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteSetDataProxy((IDataObject*) This.Handle, pformatetc, ref pmedium, fRelease);
@@ -39995,7 +39995,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteSetDataProxy((IDataObject*) This.Handle, ref pformatetc, pmedium, fRelease);
@@ -40003,7 +40003,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectRemoteSetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectRemoteSetDataProxy((IDataObject*) This.Handle, ref pformatetc, ref pmedium, fRelease);
@@ -40395,7 +40395,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
-        public unsafe int IBindCtxSetBindOptionsProxy<TI0>(ComPtr<TI0> This, TagBINDOPTS* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxSetBindOptionsProxy<TI0>(ComPtr<TI0> This, BindOpts* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxSetBindOptionsProxy((IBindCtx*) This.Handle, pbindopts);
@@ -40403,7 +40403,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
-        public unsafe int IBindCtxSetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref TagBINDOPTS pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxSetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref BindOpts pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxSetBindOptionsProxy((IBindCtx*) This.Handle, ref pbindopts);
@@ -40411,7 +40411,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
-        public unsafe int IBindCtxSetBindOptionsStub<TI0>(ComPtr<TI0> This, TagBINDOPTS2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxSetBindOptionsStub<TI0>(ComPtr<TI0> This, BindOpts2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxSetBindOptionsStub((IBindCtx*) This.Handle, pbindopts);
@@ -40419,7 +40419,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
-        public unsafe int IBindCtxSetBindOptionsStub<TI0>(ComPtr<TI0> This, ref TagBINDOPTS2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxSetBindOptionsStub<TI0>(ComPtr<TI0> This, ref BindOpts2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxSetBindOptionsStub((IBindCtx*) This.Handle, ref pbindopts);
@@ -40427,7 +40427,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
-        public unsafe int IBindCtxGetBindOptionsProxy<TI0>(ComPtr<TI0> This, TagBINDOPTS* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxGetBindOptionsProxy<TI0>(ComPtr<TI0> This, BindOpts* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxGetBindOptionsProxy((IBindCtx*) This.Handle, pbindopts);
@@ -40435,7 +40435,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
-        public unsafe int IBindCtxGetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref TagBINDOPTS pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxGetBindOptionsProxy<TI0>(ComPtr<TI0> This, ref BindOpts pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxGetBindOptionsProxy((IBindCtx*) This.Handle, ref pbindopts);
@@ -40443,7 +40443,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
-        public unsafe int IBindCtxGetBindOptionsStub<TI0>(ComPtr<TI0> This, TagBINDOPTS2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxGetBindOptionsStub<TI0>(ComPtr<TI0> This, BindOpts2* pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxGetBindOptionsStub((IBindCtx*) This.Handle, pbindopts);
@@ -40451,7 +40451,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
-        public unsafe int IBindCtxGetBindOptionsStub<TI0>(ComPtr<TI0> This, ref TagBINDOPTS2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public unsafe int IBindCtxGetBindOptionsStub<TI0>(ComPtr<TI0> This, ref BindOpts2 pbindopts) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IBindCtxGetBindOptionsStub((IBindCtx*) This.Handle, ref pbindopts);
@@ -42635,7 +42635,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, FORMATETC* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextProxy((IEnumFORMATETC*) This.Handle, celt, rgelt, pceltFetched);
@@ -42643,7 +42643,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, FORMATETC* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextProxy((IEnumFORMATETC*) This.Handle, celt, rgelt, ref pceltFetched);
@@ -42651,7 +42651,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref FORMATETC rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextProxy((IEnumFORMATETC*) This.Handle, celt, ref rgelt, pceltFetched);
@@ -42659,7 +42659,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextProxy<TI0>(ComPtr<TI0> This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextProxy((IEnumFORMATETC*) This.Handle, celt, ref rgelt, ref pceltFetched);
@@ -42667,7 +42667,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, FORMATETC* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextStub((IEnumFORMATETC*) This.Handle, celt, rgelt, pceltFetched);
@@ -42675,7 +42675,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, FORMATETC* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextStub((IEnumFORMATETC*) This.Handle, celt, rgelt, ref pceltFetched);
@@ -42683,7 +42683,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, ref FORMATETC rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextStub((IEnumFORMATETC*) This.Handle, celt, ref rgelt, pceltFetched);
@@ -42691,7 +42691,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
+        public unsafe int IEnumFORMATETCNextStub<TI0>(ComPtr<TI0> This, uint celt, ref FORMATETC rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumFORMATETC>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumFORMATETCNextStub((IEnumFORMATETC*) This.Handle, celt, ref rgelt, ref pceltFetched);
@@ -42699,7 +42699,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, STATDATA* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextProxy((IEnumSTATDATA*) This.Handle, celt, rgelt, pceltFetched);
@@ -42707,7 +42707,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, STATDATA* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextProxy((IEnumSTATDATA*) This.Handle, celt, rgelt, ref pceltFetched);
@@ -42715,7 +42715,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, ref STATDATA rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextProxy((IEnumSTATDATA*) This.Handle, celt, ref rgelt, pceltFetched);
@@ -42723,7 +42723,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextProxy<TI0>(ComPtr<TI0> This, uint celt, ref STATDATA rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextProxy((IEnumSTATDATA*) This.Handle, celt, ref rgelt, ref pceltFetched);
@@ -42731,7 +42731,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, STATDATA* rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextStub((IEnumSTATDATA*) This.Handle, celt, rgelt, pceltFetched);
@@ -42739,7 +42739,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, TagSTATDATA* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, STATDATA* rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextStub((IEnumSTATDATA*) This.Handle, celt, rgelt, ref pceltFetched);
@@ -42747,7 +42747,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, ref TagSTATDATA rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, ref STATDATA rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextStub((IEnumSTATDATA*) This.Handle, celt, ref rgelt, pceltFetched);
@@ -42755,7 +42755,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, ref TagSTATDATA rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
+        public unsafe int IEnumSTATDATANextStub<TI0>(ComPtr<TI0> This, uint celt, ref STATDATA rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<IEnumSTATDATA>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IEnumSTATDATANextStub((IEnumSTATDATA*) This.Handle, celt, ref rgelt, ref pceltFetched);
@@ -42763,7 +42763,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             IAdviseSinkOnDataChangeProxy((IAdviseSink*) This.Handle, pFormatetc, pStgmed);
@@ -42771,7 +42771,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             IAdviseSinkOnDataChangeProxy((IAdviseSink*) This.Handle, pFormatetc, ref pStgmed);
@@ -42779,7 +42779,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             IAdviseSinkOnDataChangeProxy((IAdviseSink*) This.Handle, ref pFormatetc, pStgmed);
@@ -42787,7 +42787,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe void IAdviseSinkOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             IAdviseSinkOnDataChangeProxy((IAdviseSink*) This.Handle, ref pFormatetc, ref pStgmed);
@@ -42795,7 +42795,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkOnDataChangeStub((IAdviseSink*) This.Handle, pFormatetc, pStgmed);
@@ -42803,7 +42803,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkOnDataChangeStub((IAdviseSink*) This.Handle, pFormatetc, ref pStgmed);
@@ -42811,7 +42811,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkOnDataChangeStub((IAdviseSink*) This.Handle, ref pFormatetc, pStgmed);
@@ -42819,7 +42819,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public unsafe int IAdviseSinkOnDataChangeStub<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IAdviseSinkOnDataChangeStub((IAdviseSink*) This.Handle, ref pFormatetc, ref pStgmed);
@@ -42923,7 +42923,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             AsyncIAdviseSinkBeginOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, pFormatetc, pStgmed);
@@ -42931,7 +42931,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             AsyncIAdviseSinkBeginOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, pFormatetc, ref pStgmed);
@@ -42939,7 +42939,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             AsyncIAdviseSinkBeginOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, ref pFormatetc, pStgmed);
@@ -42947,7 +42947,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             AsyncIAdviseSinkBeginOnDataChangeProxy((AsyncIAdviseSink*) This.Handle, ref pFormatetc, ref pStgmed);
@@ -42955,7 +42955,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginOnDataChangeStub((AsyncIAdviseSink*) This.Handle, pFormatetc, pStgmed);
@@ -42963,7 +42963,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginOnDataChangeStub((AsyncIAdviseSink*) This.Handle, pFormatetc, ref pStgmed);
@@ -42971,7 +42971,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginOnDataChangeStub((AsyncIAdviseSink*) This.Handle, ref pFormatetc, pStgmed);
@@ -42979,7 +42979,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
+        public unsafe int AsyncIAdviseSinkBeginOnDataChangeStub<TI0>(ComPtr<TI0> This, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed) where TI0 : unmanaged, IComVtbl<AsyncIAdviseSink>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AsyncIAdviseSinkBeginOnDataChangeStub((AsyncIAdviseSink*) This.Handle, ref pFormatetc, ref pStgmed);
@@ -43275,7 +43275,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetcIn, STGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataProxy((IDataObject*) This.Handle, pformatetcIn, pmedium);
@@ -43283,7 +43283,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetcIn, ref STGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataProxy((IDataObject*) This.Handle, pformatetcIn, ref pmedium);
@@ -43291,7 +43291,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetcIn, STGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataProxy((IDataObject*) This.Handle, ref pformatetcIn, pmedium);
@@ -43299,7 +43299,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetcIn, ref STGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataProxy((IDataObject*) This.Handle, ref pformatetcIn, ref pmedium);
@@ -43307,7 +43307,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataStub((IDataObject*) This.Handle, pformatetcIn, pRemoteMedium);
@@ -43315,7 +43315,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, FORMATETC* pformatetcIn, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataStub((IDataObject*) This.Handle, pformatetcIn, ref pRemoteMedium);
@@ -43323,7 +43323,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetcIn, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataStub((IDataObject*) This.Handle, ref pformatetcIn, pRemoteMedium);
@@ -43331,7 +43331,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataStub<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetcIn, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataStub((IDataObject*) This.Handle, ref pformatetcIn, ref pRemoteMedium);
@@ -43339,7 +43339,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, STGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereProxy((IDataObject*) This.Handle, pformatetc, pmedium);
@@ -43347,7 +43347,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, ref STGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereProxy((IDataObject*) This.Handle, pformatetc, ref pmedium);
@@ -43355,7 +43355,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, STGMEDIUM* pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereProxy((IDataObject*) This.Handle, ref pformatetc, pmedium);
@@ -43363,7 +43363,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, ref STGMEDIUM pmedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereProxy((IDataObject*) This.Handle, ref pformatetc, ref pmedium);
@@ -43371,7 +43371,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereStub((IDataObject*) This.Handle, pformatetc, pRemoteMedium);
@@ -43379,7 +43379,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereStub((IDataObject*) This.Handle, pformatetc, ref pRemoteMedium);
@@ -43387,7 +43387,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, STGMEDIUM* pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereStub((IDataObject*) This.Handle, ref pformatetc, pRemoteMedium);
@@ -43395,7 +43395,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectGetDataHereStub<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, ref STGMEDIUM pRemoteMedium) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectGetDataHereStub((IDataObject*) This.Handle, ref pformatetc, ref pRemoteMedium);
@@ -43403,7 +43403,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataProxy((IDataObject*) This.Handle, pformatetc, pmedium, fRelease);
@@ -43411,7 +43411,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataProxy((IDataObject*) This.Handle, pformatetc, ref pmedium, fRelease);
@@ -43419,7 +43419,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataProxy((IDataObject*) This.Handle, ref pformatetc, pmedium, fRelease);
@@ -43427,7 +43427,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataProxy<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataProxy((IDataObject*) This.Handle, ref pformatetc, ref pmedium, fRelease);
@@ -43435,7 +43435,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataStub((IDataObject*) This.Handle, pformatetc, pmedium, fRelease);
@@ -43443,7 +43443,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, TagFORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, FORMATETC* pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataStub((IDataObject*) This.Handle, pformatetc, ref pmedium, fRelease);
@@ -43451,7 +43451,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataStub((IDataObject*) This.Handle, ref pformatetc, pmedium, fRelease);
@@ -43459,7 +43459,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, ref TagFORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public unsafe int IDataObjectSetDataStub<TI0>(ComPtr<TI0> This, ref FORMATETC pformatetc, ref FlagStgmedium pmedium, Silk.NET.Core.Bool32 fRelease) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IDataObjectSetDataStub((IDataObject*) This.Handle, ref pformatetc, ref pmedium, fRelease);

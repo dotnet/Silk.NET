@@ -111,22 +111,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LayoutScript(TagStorageLayout* pStorageLayout, uint nEntries, uint glfInterleavedFlag)
+        public readonly unsafe int LayoutScript(StorageLayout* pStorageLayout, uint nEntries, uint glfInterleavedFlag)
         {
             var @this = (ILayoutStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, TagStorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayout, nEntries, glfInterleavedFlag);
+            ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, StorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayout, nEntries, glfInterleavedFlag);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LayoutScript(ref TagStorageLayout pStorageLayout, uint nEntries, uint glfInterleavedFlag)
+        public readonly int LayoutScript(ref StorageLayout pStorageLayout, uint nEntries, uint glfInterleavedFlag)
         {
             var @this = (ILayoutStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagStorageLayout* pStorageLayoutPtr = &pStorageLayout)
+            fixed (StorageLayout* pStorageLayoutPtr = &pStorageLayout)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, TagStorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayoutPtr, nEntries, glfInterleavedFlag);
+                ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, StorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayoutPtr, nEntries, glfInterleavedFlag);
             }
             return ret;
         }

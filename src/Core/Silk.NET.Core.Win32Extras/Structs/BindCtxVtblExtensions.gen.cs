@@ -136,43 +136,43 @@ public unsafe static class BindCtxVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBindOptions(this ComPtr<IBindCtx> thisVtbl, TagBINDOPTS* pbindopts)
+    public static unsafe int SetBindOptions(this ComPtr<IBindCtx> thisVtbl, BindOpts* pbindopts)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[6])(@this, pbindopts);
+        ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[6])(@this, pbindopts);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBindOptions(this ComPtr<IBindCtx> thisVtbl, ref TagBINDOPTS pbindopts)
+    public static int SetBindOptions(this ComPtr<IBindCtx> thisVtbl, ref BindOpts pbindopts)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagBINDOPTS* pbindoptsPtr = &pbindopts)
+        fixed (BindOpts* pbindoptsPtr = &pbindopts)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[6])(@this, pbindoptsPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[6])(@this, pbindoptsPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBindOptions(this ComPtr<IBindCtx> thisVtbl, TagBINDOPTS* pbindopts)
+    public static unsafe int GetBindOptions(this ComPtr<IBindCtx> thisVtbl, BindOpts* pbindopts)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[7])(@this, pbindopts);
+        ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[7])(@this, pbindopts);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBindOptions(this ComPtr<IBindCtx> thisVtbl, ref TagBINDOPTS pbindopts)
+    public static int GetBindOptions(this ComPtr<IBindCtx> thisVtbl, ref BindOpts pbindopts)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagBINDOPTS* pbindoptsPtr = &pbindopts)
+        fixed (BindOpts* pbindoptsPtr = &pbindopts)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[7])(@this, pbindoptsPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[7])(@this, pbindoptsPtr);
         }
         return ret;
     }
@@ -455,7 +455,7 @@ public unsafe static class BindCtxVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBindOptions(this ComPtr<IBindCtx> thisVtbl, Span<TagBINDOPTS> pbindopts)
+    public static int SetBindOptions(this ComPtr<IBindCtx> thisVtbl, Span<BindOpts> pbindopts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -463,7 +463,7 @@ public unsafe static class BindCtxVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBindOptions(this ComPtr<IBindCtx> thisVtbl, Span<TagBINDOPTS> pbindopts)
+    public static int GetBindOptions(this ComPtr<IBindCtx> thisVtbl, Span<BindOpts> pbindopts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

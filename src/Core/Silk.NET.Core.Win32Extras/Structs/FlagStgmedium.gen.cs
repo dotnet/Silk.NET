@@ -23,7 +23,7 @@ namespace Silk.NET.Core.Win32Extras
         (
             int? contextFlags = null,
             int? fPassOwnership = null,
-            TagSTGMEDIUM? stgmed = null
+            STGMEDIUM? stgmed = null
         ) : this()
         {
             if (contextFlags is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "STGMEDIUM")]
         [NativeName("Type.Name", "STGMEDIUM")]
         [NativeName("Name", "Stgmed")]
-        public TagSTGMEDIUM Stgmed;
+        public STGMEDIUM Stgmed;
     }
 }

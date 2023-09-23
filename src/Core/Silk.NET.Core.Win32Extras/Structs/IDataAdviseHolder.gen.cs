@@ -111,40 +111,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnection);
+            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnection);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pdwConnectionPtr = &pdwConnection)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnectionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvise, pdwConnectionPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IAdviseSink* pAdvisePtr = &pAdvise)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnection);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -152,66 +152,66 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnection);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
                 fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnection);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnection);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(IDataObject* pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(IDataObject* pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pFetcPtr = &pFetc)
+            fixed (FORMATETC* pFetcPtr = &pFetc)
             {
                 fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                 {
                     fixed (uint* pdwConnectionPtr = &pdwConnection)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObject, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
                     }
                 }
             }
@@ -219,19 +219,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDataObject* pDataObjectPtr = &pDataObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnection);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -239,14 +239,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvise, pdwConnectionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -254,14 +254,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnection);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnection);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -271,7 +271,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pdwConnectionPtr = &pdwConnection)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetc, advf, pAdvisePtr, pdwConnectionPtr);
                     }
                 }
             }
@@ -279,32 +279,32 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDataObject* pDataObjectPtr = &pDataObject)
             {
-                fixed (TagFORMATETC* pFetcPtr = &pFetc)
+                fixed (FORMATETC* pFetcPtr = &pFetc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnection);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnection);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, IAdviseSink* pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDataObject* pDataObjectPtr = &pDataObject)
             {
-                fixed (TagFORMATETC* pFetcPtr = &pFetc)
+                fixed (FORMATETC* pFetcPtr = &pFetc)
                 {
                     fixed (uint* pdwConnectionPtr = &pdwConnection)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvise, pdwConnectionPtr);
                     }
                 }
             }
@@ -312,17 +312,17 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise(ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
+        public readonly unsafe int Advise(ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDataObject* pDataObjectPtr = &pDataObject)
             {
-                fixed (TagFORMATETC* pFetcPtr = &pFetc)
+                fixed (FORMATETC* pFetcPtr = &pFetc)
                 {
                     fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnection);
+                        ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnection);
                     }
                 }
             }
@@ -330,19 +330,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Advise(ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
+        public readonly int Advise(ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection)
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDataObject* pDataObjectPtr = &pDataObject)
             {
-                fixed (TagFORMATETC* pFetcPtr = &pFetc)
+                fixed (FORMATETC* pFetcPtr = &pFetc)
                 {
                     fixed (IAdviseSink* pAdvisePtr = &pAdvise)
                     {
                         fixed (uint* pdwConnectionPtr = &pdwConnection)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[3])(@this, pDataObjectPtr, pFetcPtr, advf, pAdvisePtr, pdwConnectionPtr);
                         }
                     }
                 }
@@ -411,7 +411,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+        public readonly unsafe int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -419,7 +419,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+        public readonly unsafe int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -427,7 +427,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0>(ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public readonly unsafe int Advise<TI0>(ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -435,7 +435,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0>(ComPtr<TI0> pDataObject, TagFORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public readonly unsafe int Advise<TI0>(ComPtr<TI0> pDataObject, FORMATETC* pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -443,7 +443,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+        public readonly unsafe int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -451,7 +451,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
+        public readonly int Advise<TI0, TI1>(ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI1> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI1>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -459,7 +459,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0>(ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public readonly unsafe int Advise<TI0>(ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -467,7 +467,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Advise<TI0>(ComPtr<TI0> pDataObject, ref TagFORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
+        public readonly int Advise<TI0>(ComPtr<TI0> pDataObject, ref FORMATETC pFetc, uint advf, ref IAdviseSink pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IDataObject>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -475,7 +475,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0>(ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly unsafe int Advise<TI0>(ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -483,7 +483,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0>(ref IDataObject pDataObject, TagFORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly unsafe int Advise<TI0>(ref IDataObject pDataObject, FORMATETC* pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -491,7 +491,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Advise<TI0>(ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly unsafe int Advise<TI0>(ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -499,7 +499,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Advise<TI0>(ref IDataObject pDataObject, ref TagFORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly int Advise<TI0>(ref IDataObject pDataObject, ref FORMATETC pFetc, uint advf, ComPtr<TI0> pAdvise, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataAdviseHolder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

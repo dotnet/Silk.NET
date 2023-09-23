@@ -162,43 +162,43 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetBindOptions(TagBINDOPTS* pbindopts)
+        public readonly unsafe int SetBindOptions(BindOpts* pbindopts)
         {
             var @this = (IBindCtx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[6])(@this, pbindopts);
+            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[6])(@this, pbindopts);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBindOptions(ref TagBINDOPTS pbindopts)
+        public readonly int SetBindOptions(ref BindOpts pbindopts)
         {
             var @this = (IBindCtx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagBINDOPTS* pbindoptsPtr = &pbindopts)
+            fixed (BindOpts* pbindoptsPtr = &pbindopts)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[6])(@this, pbindoptsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[6])(@this, pbindoptsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBindOptions(TagBINDOPTS* pbindopts)
+        public readonly unsafe int GetBindOptions(BindOpts* pbindopts)
         {
             var @this = (IBindCtx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[7])(@this, pbindopts);
+            ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[7])(@this, pbindopts);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBindOptions(ref TagBINDOPTS pbindopts)
+        public readonly int GetBindOptions(ref BindOpts pbindopts)
         {
             var @this = (IBindCtx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagBINDOPTS* pbindoptsPtr = &pbindopts)
+            fixed (BindOpts* pbindoptsPtr = &pbindopts)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, TagBINDOPTS*, int>)@this->LpVtbl[7])(@this, pbindoptsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IBindCtx*, BindOpts*, int>)@this->LpVtbl[7])(@this, pbindoptsPtr);
             }
             return ret;
         }

@@ -193,22 +193,22 @@ public unsafe static class SurrogateServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ApplicationLaunch(this ComPtr<ISurrogateService> thisVtbl, Guid* rguidApplID, TagApplicationType appType)
+    public static unsafe int ApplicationLaunch(this ComPtr<ISurrogateService> thisVtbl, Guid* rguidApplID, ApplicationType appType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, TagApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplID, appType);
+        ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, ApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplID, appType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ApplicationLaunch(this ComPtr<ISurrogateService> thisVtbl, ref Guid rguidApplID, TagApplicationType appType)
+    public static int ApplicationLaunch(this ComPtr<ISurrogateService> thisVtbl, ref Guid rguidApplID, ApplicationType appType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* rguidApplIDPtr = &rguidApplID)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, TagApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplIDPtr, appType);
+            ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, Guid*, ApplicationType, int>)@this->LpVtbl[4])(@this, rguidApplIDPtr, appType);
         }
         return ret;
     }
@@ -244,11 +244,11 @@ public unsafe static class SurrogateServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessShutdown(this ComPtr<ISurrogateService> thisVtbl, TagShutdownType shutdownType)
+    public static int ProcessShutdown(this ComPtr<ISurrogateService> thisVtbl, ShutdownType shutdownType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, TagShutdownType, int>)@this->LpVtbl[7])(@this, shutdownType);
+        ret = ((delegate* unmanaged[Cdecl]<ISurrogateService*, ShutdownType, int>)@this->LpVtbl[7])(@this, shutdownType);
         return ret;
     }
 
@@ -366,7 +366,7 @@ public unsafe static class SurrogateServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ApplicationLaunch(this ComPtr<ISurrogateService> thisVtbl, Span<Guid> rguidApplID, TagApplicationType appType)
+    public static int ApplicationLaunch(this ComPtr<ISurrogateService> thisVtbl, Span<Guid> rguidApplID, ApplicationType appType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

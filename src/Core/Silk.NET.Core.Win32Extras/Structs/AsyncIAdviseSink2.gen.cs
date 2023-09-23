@@ -114,41 +114,41 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginOnDataChange(TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public readonly unsafe void BeginOnDataChange(FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             var @this = (AsyncIAdviseSink2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmed);
+            ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmed);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginOnDataChange(TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed)
+        public readonly unsafe void BeginOnDataChange(FORMATETC* pFormatetc, ref STGMEDIUM pStgmed)
         {
             var @this = (AsyncIAdviseSink2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (TagSTGMEDIUM* pStgmedPtr = &pStgmed)
+            fixed (STGMEDIUM* pStgmedPtr = &pStgmed)
             {
-                ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmedPtr);
+                ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmedPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginOnDataChange(ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed)
+        public readonly unsafe void BeginOnDataChange(ref FORMATETC pFormatetc, STGMEDIUM* pStgmed)
         {
             var @this = (AsyncIAdviseSink2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (TagFORMATETC* pFormatetcPtr = &pFormatetc)
+            fixed (FORMATETC* pFormatetcPtr = &pFormatetc)
             {
-                ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmed);
+                ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmed);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginOnDataChange(ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed)
+        public readonly void BeginOnDataChange(ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed)
         {
             var @this = (AsyncIAdviseSink2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (TagFORMATETC* pFormatetcPtr = &pFormatetc)
+            fixed (FORMATETC* pFormatetcPtr = &pFormatetc)
             {
-                fixed (TagSTGMEDIUM* pStgmedPtr = &pStgmed)
+                fixed (STGMEDIUM* pStgmedPtr = &pStgmed)
                 {
-                    ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmedPtr);
+                    ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink2*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmedPtr);
                 }
             }
         }

@@ -10906,7 +10906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxRemoteSetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
@@ -10914,7 +10914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, BindOpts2* pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxRemoteSetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
@@ -10922,7 +10922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9306, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxRemoteSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxRemoteSetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
@@ -11050,7 +11050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxRemoteGetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
@@ -11058,7 +11058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, BindOpts2* pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxRemoteGetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
@@ -11066,7 +11066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9318, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxRemoteGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxRemoteGetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
@@ -13546,7 +13546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -13554,7 +13554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -13562,7 +13562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -13570,7 +13570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, FORMATETC* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
@@ -13578,7 +13578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -13586,7 +13586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -13594,7 +13594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11719, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCRemoteNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -13722,7 +13722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, STATDATA* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -13730,7 +13730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<STATDATA> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -13738,7 +13738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<STATDATA> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -13746,7 +13746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, STATDATA* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
@@ -13754,7 +13754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, STATDATA* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -13762,7 +13762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<STATDATA> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -13770,7 +13770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 11880, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATARemoteNextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<STATDATA> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATARemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -13898,7 +13898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
@@ -13906,7 +13906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -13914,7 +13914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -13922,7 +13922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
@@ -13930,7 +13930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
@@ -13938,7 +13938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -13946,7 +13946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12242, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkRemoteOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -14602,7 +14602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
@@ -14610,7 +14610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -14618,7 +14618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -14626,7 +14626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
@@ -14634,7 +14634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
@@ -14642,7 +14642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -14650,7 +14650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 12481, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginRemoteOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -16362,7 +16362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, FORMATETC* pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(This, pformatetcIn, ref pRemoteMedium.GetPinnableReference());
@@ -16370,7 +16370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetcIn, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
@@ -16378,7 +16378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -16386,7 +16386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, pRemoteMedium);
@@ -16394,7 +16394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, ref pRemoteMedium.GetPinnableReference());
@@ -16402,7 +16402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetcIn, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
@@ -16410,7 +16410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13172, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -16538,7 +16538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, FORMATETC* pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(This, pformatetc, ref pRemoteMedium.GetPinnableReference());
@@ -16546,7 +16546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), pRemoteMedium);
@@ -16554,7 +16554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -16562,7 +16562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, pRemoteMedium);
@@ -16570,7 +16570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, ref pRemoteMedium.GetPinnableReference());
@@ -16578,7 +16578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pRemoteMedium);
@@ -16586,7 +16586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13185, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectRemoteGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -16714,7 +16714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, FORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(This, pformatetc, ref pmedium.GetPinnableReference(), fRelease);
@@ -16722,7 +16722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(This, ref pformatetc.GetPinnableReference(), pmedium, fRelease);
@@ -16730,7 +16730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
@@ -16738,7 +16738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), pformatetc, pmedium, fRelease);
@@ -16746,7 +16746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference(), fRelease);
@@ -16754,7 +16754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium, fRelease);
@@ -16762,7 +16762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 13198, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectRemoteSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectRemoteSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
@@ -17290,7 +17290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
-        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserSize(arg0, arg1, ref arg2.GetPinnableReference());
@@ -17298,7 +17298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
-        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17306,7 +17306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15463, Column 39 in objidl.h")]
-        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint ASYNCSTGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -17314,7 +17314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -17322,7 +17322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -17330,7 +17330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -17338,7 +17338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -17346,7 +17346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17354,7 +17354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -17362,7 +17362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -17370,7 +17370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -17378,7 +17378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17386,7 +17386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15464, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -17394,7 +17394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -17402,7 +17402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -17410,7 +17410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -17418,7 +17418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -17426,7 +17426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17434,7 +17434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -17442,7 +17442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -17450,7 +17450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -17458,7 +17458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17466,7 +17466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15465, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -17474,7 +17474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
-        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.ASYNCSTGMEDIUMUserFree(arg0, ref arg1.GetPinnableReference());
@@ -17482,7 +17482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
-        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, STGMEDIUM* arg1)
         {
             // SpanOverloader
             thisApi.ASYNCSTGMEDIUMUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -17490,7 +17490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15466, Column 39 in objidl.h")]
-        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void ASYNCSTGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.ASYNCSTGMEDIUMUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
@@ -18602,7 +18602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
-        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, uint* arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserSize(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18610,7 +18610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
-        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18618,7 +18618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15498, Column 39 in objidl.h")]
-        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint STGMEDIUMUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18626,7 +18626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18634,7 +18634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18642,7 +18642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18650,7 +18650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18658,7 +18658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18666,7 +18666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18674,7 +18674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18682,7 +18682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18690,7 +18690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18698,7 +18698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15499, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18706,7 +18706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18714,7 +18714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18722,7 +18722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18730,7 +18730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18738,7 +18738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18746,7 +18746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18754,7 +18754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18762,7 +18762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18770,7 +18770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18778,7 +18778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15500, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18786,7 +18786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
-        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, uint* arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.STGMEDIUMUserFree(arg0, ref arg1.GetPinnableReference());
@@ -18794,7 +18794,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
-        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, STGMEDIUM* arg1)
         {
             // SpanOverloader
             thisApi.STGMEDIUMUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -18802,7 +18802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15501, Column 39 in objidl.h")]
-        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void STGMEDIUMUserFree(this Windows thisApi, Span<uint> arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.STGMEDIUMUserFree(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
@@ -18810,7 +18810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
-        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18818,7 +18818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
-        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18826,7 +18826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15503, Column 39 in objidl.h")]
-        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint ASYNCSTGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18834,7 +18834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18842,7 +18842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18850,7 +18850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18858,7 +18858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18866,7 +18866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18874,7 +18874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18882,7 +18882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18890,7 +18890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18898,7 +18898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18906,7 +18906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15504, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18914,7 +18914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18922,7 +18922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18930,7 +18930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18938,7 +18938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -18946,7 +18946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18954,7 +18954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18962,7 +18962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18970,7 +18970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -18978,7 +18978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18986,7 +18986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15505, Column 29 in objidl.h")]
-        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* ASYNCSTGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.ASYNCSTGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -18994,7 +18994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
-        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.ASYNCSTGMEDIUMUserFree64(arg0, ref arg1.GetPinnableReference());
@@ -19002,7 +19002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
-        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, STGMEDIUM* arg1)
         {
             // SpanOverloader
             thisApi.ASYNCSTGMEDIUMUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -19010,7 +19010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15506, Column 39 in objidl.h")]
-        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void ASYNCSTGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.ASYNCSTGMEDIUMUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
@@ -20122,7 +20122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
-        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, uint* arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserSize64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -20130,7 +20130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
-        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, TagSTGMEDIUM* arg2)
+        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -20138,7 +20138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15538, Column 39 in objidl.h")]
-        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe uint STGMEDIUMUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -20146,7 +20146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -20154,7 +20154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -20162,7 +20162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -20170,7 +20170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -20178,7 +20178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -20186,7 +20186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -20194,7 +20194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -20202,7 +20202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -20210,7 +20210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -20218,7 +20218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15539, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -20226,7 +20226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -20234,7 +20234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -20242,7 +20242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -20250,7 +20250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(arg0, arg1, ref arg2.GetPinnableReference());
@@ -20258,7 +20258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -20266,7 +20266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -20274,7 +20274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -20282,7 +20282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2.GetPinnableReference());
@@ -20290,7 +20290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, TagSTGMEDIUM* arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, STGMEDIUM* arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -20298,7 +20298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15540, Column 29 in objidl.h")]
-        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<TagSTGMEDIUM> arg2)
+        public static unsafe byte* STGMEDIUMUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<STGMEDIUM> arg2)
         {
             // SpanOverloader
             return thisApi.STGMEDIUMUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference());
@@ -20306,7 +20306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
-        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, uint* arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.STGMEDIUMUserFree64(arg0, ref arg1.GetPinnableReference());
@@ -20314,7 +20314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
-        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, TagSTGMEDIUM* arg1)
+        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, STGMEDIUM* arg1)
         {
             // SpanOverloader
             thisApi.STGMEDIUMUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -20322,7 +20322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15541, Column 39 in objidl.h")]
-        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<TagSTGMEDIUM> arg1)
+        public static unsafe void STGMEDIUMUserFree64(this Windows thisApi, Span<uint> arg0, Span<STGMEDIUM> arg1)
         {
             // SpanOverloader
             thisApi.STGMEDIUMUserFree64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference());
@@ -20330,7 +20330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
-        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS> pbindopts)
+        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<BindOpts> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxSetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
@@ -20338,7 +20338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
-        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS* pbindopts)
+        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, BindOpts* pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxSetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
@@ -20346,7 +20346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15638, Column 41 in objidl.h")]
-        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS> pbindopts)
+        public static unsafe int IBindCtxSetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<BindOpts> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxSetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
@@ -20354,7 +20354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, IBindCtx* This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxSetBindOptionsStub(This, ref pbindopts.GetPinnableReference());
@@ -20362,7 +20362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, BindOpts2* pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxSetBindOptionsStub(ref This.GetPinnableReference(), pbindopts);
@@ -20370,7 +20370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15644, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxSetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxSetBindOptionsStub(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
@@ -20378,7 +20378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
-        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS> pbindopts)
+        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, IBindCtx* This, Span<BindOpts> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxGetBindOptionsProxy(This, ref pbindopts.GetPinnableReference());
@@ -20386,7 +20386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
-        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS* pbindopts)
+        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, BindOpts* pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxGetBindOptionsProxy(ref This.GetPinnableReference(), pbindopts);
@@ -20394,7 +20394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15648, Column 41 in objidl.h")]
-        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS> pbindopts)
+        public static unsafe int IBindCtxGetBindOptionsProxy(this Windows thisApi, Span<IBindCtx> This, Span<BindOpts> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxGetBindOptionsProxy(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
@@ -20402,7 +20402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, IBindCtx* This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, IBindCtx* This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxGetBindOptionsStub(This, ref pbindopts.GetPinnableReference());
@@ -20410,7 +20410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, TagBINDOPTS2* pbindopts)
+        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, BindOpts2* pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxGetBindOptionsStub(ref This.GetPinnableReference(), pbindopts);
@@ -20418,7 +20418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15654, Column 43 in objidl.h")]
-        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, Span<TagBINDOPTS2> pbindopts)
+        public static unsafe int IBindCtxGetBindOptionsStub(this Windows thisApi, Span<IBindCtx> This, Span<BindOpts2> pbindopts)
         {
             // SpanOverloader
             return thisApi.IBindCtxGetBindOptionsStub(ref This.GetPinnableReference(), ref pbindopts.GetPinnableReference());
@@ -22602,7 +22602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22610,7 +22610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22618,7 +22618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22626,7 +22626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, FORMATETC* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
@@ -22634,7 +22634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22642,7 +22642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22650,7 +22650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15826, Column 41 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextProxy(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22658,7 +22658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22666,7 +22666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22674,7 +22674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, IEnumFORMATETC* This, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22682,7 +22682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, FORMATETC* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
@@ -22690,7 +22690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22698,7 +22698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22706,7 +22706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15835, Column 43 in objidl.h")]
-        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumFORMATETCNextStub(this Windows thisApi, Span<IEnumFORMATETC> This, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumFORMATETCNextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22714,7 +22714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, STATDATA* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22722,7 +22722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<STATDATA> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22730,7 +22730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<STATDATA> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22738,7 +22738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, STATDATA* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
@@ -22746,7 +22746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, STATDATA* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22754,7 +22754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<STATDATA> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22762,7 +22762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15841, Column 41 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextProxy(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<STATDATA> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextProxy(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22770,7 +22770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, STATDATA* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22778,7 +22778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<STATDATA> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(This, celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22786,7 +22786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, IEnumSTATDATA* This, uint celt, Span<STATDATA> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(This, celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22794,7 +22794,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, STATDATA* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
@@ -22802,7 +22802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, TagSTATDATA* rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, STATDATA* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
@@ -22810,7 +22810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, uint* pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<STATDATA> rgelt, uint* pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), pceltFetched);
@@ -22818,7 +22818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15850, Column 43 in objidl.h")]
-        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<TagSTATDATA> rgelt, Span<uint> pceltFetched)
+        public static unsafe int IEnumSTATDATANextStub(this Windows thisApi, Span<IEnumSTATDATA> This, uint celt, Span<STATDATA> rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
             return thisApi.IEnumSTATDATANextStub(ref This.GetPinnableReference(), celt, ref rgelt.GetPinnableReference(), ref pceltFetched.GetPinnableReference());
@@ -22826,7 +22826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
@@ -22834,7 +22834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -22842,7 +22842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, IAdviseSink* This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -22850,7 +22850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
@@ -22858,7 +22858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
@@ -22866,7 +22866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -22874,7 +22874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15856, Column 38 in objidl.h")]
-        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void IAdviseSinkOnDataChangeProxy(this Windows thisApi, Span<IAdviseSink> This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.IAdviseSinkOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -22882,7 +22882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(This, pFormatetc, ref pStgmed.GetPinnableReference());
@@ -22890,7 +22890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -22898,7 +22898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, IAdviseSink* This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -22906,7 +22906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, pStgmed);
@@ -22914,7 +22914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
@@ -22922,7 +22922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -22930,7 +22930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15864, Column 43 in objidl.h")]
-        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int IAdviseSinkOnDataChangeStub(this Windows thisApi, Span<IAdviseSink> This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.IAdviseSinkOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -23034,7 +23034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(This, pFormatetc, ref pStgmed.GetPinnableReference());
@@ -23042,7 +23042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -23050,7 +23050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, AsyncIAdviseSink* This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -23058,7 +23058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, pStgmed);
@@ -23066,7 +23066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
@@ -23074,7 +23074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -23082,7 +23082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15904, Column 38 in objidl.h")]
-        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe void AsyncIAdviseSinkBeginOnDataChangeProxy(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             thisApi.AsyncIAdviseSinkBeginOnDataChangeProxy(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -23090,7 +23090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(This, pFormatetc, ref pStgmed.GetPinnableReference());
@@ -23098,7 +23098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -23106,7 +23106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, AsyncIAdviseSink* This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(This, ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -23114,7 +23114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, pStgmed);
@@ -23122,7 +23122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), pFormatetc, ref pStgmed.GetPinnableReference());
@@ -23130,7 +23130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), pStgmed);
@@ -23138,7 +23138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15912, Column 43 in objidl.h")]
-        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+        public static unsafe int AsyncIAdviseSinkBeginOnDataChangeStub(this Windows thisApi, Span<AsyncIAdviseSink> This, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
         {
             // SpanOverloader
             return thisApi.AsyncIAdviseSinkBeginOnDataChangeStub(ref This.GetPinnableReference(), ref pFormatetc.GetPinnableReference(), ref pStgmed.GetPinnableReference());
@@ -23434,7 +23434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, FORMATETC* pformatetcIn, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(This, pformatetcIn, ref pmedium.GetPinnableReference());
@@ -23442,7 +23442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetcIn, STGMEDIUM* pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), pmedium);
@@ -23450,7 +23450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetcIn, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(This, ref pformatetcIn.GetPinnableReference(), ref pmedium.GetPinnableReference());
@@ -23458,7 +23458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetcIn, STGMEDIUM* pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, pmedium);
@@ -23466,7 +23466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetcIn, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), pformatetcIn, ref pmedium.GetPinnableReference());
@@ -23474,7 +23474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetcIn, STGMEDIUM* pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), pmedium);
@@ -23482,7 +23482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16014, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetcIn, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataProxy(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), ref pmedium.GetPinnableReference());
@@ -23490,7 +23490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, FORMATETC* pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(This, pformatetcIn, ref pRemoteMedium.GetPinnableReference());
@@ -23498,7 +23498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetcIn, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(This, ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
@@ -23506,7 +23506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(This, ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -23514,7 +23514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetcIn, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), pformatetcIn, pRemoteMedium);
@@ -23522,7 +23522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), pformatetcIn, ref pRemoteMedium.GetPinnableReference());
@@ -23530,7 +23530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetcIn, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), pRemoteMedium);
@@ -23538,7 +23538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16022, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetcIn, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataStub(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetcIn, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataStub(ref This.GetPinnableReference(), ref pformatetcIn.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -23546,7 +23546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, FORMATETC* pformatetc, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(This, pformatetc, ref pmedium.GetPinnableReference());
@@ -23554,7 +23554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, STGMEDIUM* pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), pmedium);
@@ -23562,7 +23562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference());
@@ -23570,7 +23570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, STGMEDIUM* pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, pmedium);
@@ -23578,7 +23578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference());
@@ -23586,7 +23586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, STGMEDIUM* pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium);
@@ -23594,7 +23594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16027, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium)
+        public static unsafe int IDataObjectGetDataHereProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pmedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference());
@@ -23602,7 +23602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, FORMATETC* pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(This, pformatetc, ref pRemoteMedium.GetPinnableReference());
@@ -23610,7 +23610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(This, ref pformatetc.GetPinnableReference(), pRemoteMedium);
@@ -23618,7 +23618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(This, ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -23626,7 +23626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), pformatetc, pRemoteMedium);
@@ -23634,7 +23634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), pformatetc, ref pRemoteMedium.GetPinnableReference());
@@ -23642,7 +23642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, STGMEDIUM* pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pRemoteMedium);
@@ -23650,7 +23650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16035, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pRemoteMedium)
+        public static unsafe int IDataObjectGetDataHereStub(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pRemoteMedium)
         {
             // SpanOverloader
             return thisApi.IDataObjectGetDataHereStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pRemoteMedium.GetPinnableReference());
@@ -23658,7 +23658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, FORMATETC* pformatetc, Span<STGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(This, pformatetc, ref pmedium.GetPinnableReference(), fRelease);
@@ -23666,7 +23666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(This, ref pformatetc.GetPinnableReference(), pmedium, fRelease);
@@ -23674,7 +23674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
@@ -23682,7 +23682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), pformatetc, pmedium, fRelease);
@@ -23690,7 +23690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, Span<STGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference(), fRelease);
@@ -23698,7 +23698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium, fRelease);
@@ -23706,7 +23706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16040, Column 41 in objidl.h")]
-        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<TagSTGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataProxy(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, Span<STGMEDIUM> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataProxy(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
@@ -23714,7 +23714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, FORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(This, pformatetc, ref pmedium.GetPinnableReference(), fRelease);
@@ -23722,7 +23722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(This, ref pformatetc.GetPinnableReference(), pmedium, fRelease);
@@ -23730,7 +23730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, IDataObject* This, Span<FORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(This, ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);
@@ -23738,7 +23738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), pformatetc, pmedium, fRelease);
@@ -23746,7 +23746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, TagFORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, FORMATETC* pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), pformatetc, ref pmedium.GetPinnableReference(), fRelease);
@@ -23754,7 +23754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, FlagStgmedium* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), pmedium, fRelease);
@@ -23762,7 +23762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 16049, Column 43 in objidl.h")]
-        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, Span<TagFORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
+        public static unsafe int IDataObjectSetDataStub(this Windows thisApi, Span<IDataObject> This, Span<FORMATETC> pformatetc, Span<FlagStgmedium> pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             // SpanOverloader
             return thisApi.IDataObjectSetDataStub(ref This.GetPinnableReference(), ref pformatetc.GetPinnableReference(), ref pmedium.GetPinnableReference(), fRelease);

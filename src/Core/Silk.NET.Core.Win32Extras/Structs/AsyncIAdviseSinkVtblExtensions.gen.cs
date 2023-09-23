@@ -85,41 +85,41 @@ public unsafe static class AsyncIAdviseSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, TagFORMATETC* pFormatetc, TagSTGMEDIUM* pStgmed)
+    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmed);
+        ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmed);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, TagFORMATETC* pFormatetc, ref TagSTGMEDIUM pStgmed)
+    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, FORMATETC* pFormatetc, ref STGMEDIUM pStgmed)
     {
         var @this = thisVtbl.Handle;
-        fixed (TagSTGMEDIUM* pStgmedPtr = &pStgmed)
+        fixed (STGMEDIUM* pStgmedPtr = &pStgmed)
         {
-            ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmedPtr);
+            ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetc, pStgmedPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, ref TagFORMATETC pFormatetc, TagSTGMEDIUM* pStgmed)
+    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, ref FORMATETC pFormatetc, STGMEDIUM* pStgmed)
     {
         var @this = thisVtbl.Handle;
-        fixed (TagFORMATETC* pFormatetcPtr = &pFormatetc)
+        fixed (FORMATETC* pFormatetcPtr = &pFormatetc)
         {
-            ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmed);
+            ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmed);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, ref TagFORMATETC pFormatetc, ref TagSTGMEDIUM pStgmed)
+    public static void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, ref FORMATETC pFormatetc, ref STGMEDIUM pStgmed)
     {
         var @this = thisVtbl.Handle;
-        fixed (TagFORMATETC* pFormatetcPtr = &pFormatetc)
+        fixed (FORMATETC* pFormatetcPtr = &pFormatetc)
         {
-            fixed (TagSTGMEDIUM* pStgmedPtr = &pStgmed)
+            fixed (STGMEDIUM* pStgmedPtr = &pStgmed)
             {
-                ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, TagFORMATETC*, TagSTGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmedPtr);
+                ((delegate* unmanaged[Cdecl]<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)@this->LpVtbl[3])(@this, pFormatetcPtr, pStgmedPtr);
             }
         }
     }
@@ -223,7 +223,7 @@ public unsafe static class AsyncIAdviseSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, TagFORMATETC* pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, FORMATETC* pFormatetc, Span<STGMEDIUM> pStgmed)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -231,7 +231,7 @@ public unsafe static class AsyncIAdviseSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, Span<TagFORMATETC> pFormatetc, TagSTGMEDIUM* pStgmed)
+    public static unsafe void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, Span<FORMATETC> pFormatetc, STGMEDIUM* pStgmed)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -239,7 +239,7 @@ public unsafe static class AsyncIAdviseSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, Span<TagFORMATETC> pFormatetc, Span<TagSTGMEDIUM> pStgmed)
+    public static void BeginOnDataChange(this ComPtr<AsyncIAdviseSink> thisVtbl, Span<FORMATETC> pFormatetc, Span<STGMEDIUM> pStgmed)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

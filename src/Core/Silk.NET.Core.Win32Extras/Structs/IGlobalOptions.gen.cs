@@ -111,31 +111,31 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Set(TagGLOBALOPTPROPERTIES dwProperty, nuint dwValue)
+        public readonly int Set(GlobalOptProperties dwProperty, nuint dwValue)
         {
             var @this = (IGlobalOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, TagGLOBALOPTPROPERTIES, nuint, int>)@this->LpVtbl[3])(@this, dwProperty, dwValue);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, GlobalOptProperties, nuint, int>)@this->LpVtbl[3])(@this, dwProperty, dwValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Query(TagGLOBALOPTPROPERTIES dwProperty, nuint* pdwValue)
+        public readonly unsafe int Query(GlobalOptProperties dwProperty, nuint* pdwValue)
         {
             var @this = (IGlobalOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, TagGLOBALOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValue);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, GlobalOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Query(TagGLOBALOPTPROPERTIES dwProperty, ref nuint pdwValue)
+        public readonly int Query(GlobalOptProperties dwProperty, ref nuint pdwValue)
         {
             var @this = (IGlobalOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (nuint* pdwValuePtr = &pdwValue)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, TagGLOBALOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValuePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, GlobalOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValuePtr);
             }
             return ret;
         }

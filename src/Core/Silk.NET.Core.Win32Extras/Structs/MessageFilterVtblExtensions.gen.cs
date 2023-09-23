@@ -85,48 +85,48 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, TagINTERFACEINFO* lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, TagINTERFACEINFO*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
+        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, ref TagINTERFACEINFO lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        fixed (TagINTERFACEINFO* lpInterfaceInfoPtr = &lpInterfaceInfo)
+        fixed (InterfaceInfo* lpInterfaceInfoPtr = &lpInterfaceInfo)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, TagINTERFACEINFO*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfoPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfoPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref T0 htaskCaller, uint dwTickCount, TagINTERFACEINFO* lpInterfaceInfo) where T0 : unmanaged
+    public static unsafe uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref T0 htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
         fixed (void* htaskCallerPtr = &htaskCaller)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, TagINTERFACEINFO*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfo);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfo);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref T0 htaskCaller, uint dwTickCount, ref TagINTERFACEINFO lpInterfaceInfo) where T0 : unmanaged
+    public static uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref T0 htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
         fixed (void* htaskCallerPtr = &htaskCaller)
         {
-            fixed (TagINTERFACEINFO* lpInterfaceInfoPtr = &lpInterfaceInfo)
+            fixed (InterfaceInfo* lpInterfaceInfoPtr = &lpInterfaceInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, TagINTERFACEINFO*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfoPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfoPtr);
             }
         }
         return ret;
@@ -200,7 +200,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, Span<TagINTERFACEINFO> lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, Span<InterfaceInfo> lpInterfaceInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -208,7 +208,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<T0> htaskCaller, uint dwTickCount, TagINTERFACEINFO* lpInterfaceInfo) where T0 : unmanaged
+    public static unsafe uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<T0> htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -216,7 +216,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<T0> htaskCaller, uint dwTickCount, Span<TagINTERFACEINFO> lpInterfaceInfo) where T0 : unmanaged
+    public static uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<T0> htaskCaller, uint dwTickCount, Span<InterfaceInfo> lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

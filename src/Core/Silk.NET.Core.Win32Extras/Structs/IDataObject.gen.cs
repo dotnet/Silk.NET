@@ -111,213 +111,213 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetData(TagFORMATETC* pformatetcIn, TagSTGMEDIUM* pmedium)
+        public readonly unsafe int GetData(FORMATETC* pformatetcIn, STGMEDIUM* pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcIn, pmedium);
+            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcIn, pmedium);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetData(TagFORMATETC* pformatetcIn, ref TagSTGMEDIUM pmedium)
+        public readonly unsafe int GetData(FORMATETC* pformatetcIn, ref STGMEDIUM pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTGMEDIUM* pmediumPtr = &pmedium)
+            fixed (STGMEDIUM* pmediumPtr = &pmedium)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcIn, pmediumPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcIn, pmediumPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetData(ref TagFORMATETC pformatetcIn, TagSTGMEDIUM* pmedium)
+        public readonly unsafe int GetData(ref FORMATETC pformatetcIn, STGMEDIUM* pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcInPtr = &pformatetcIn)
+            fixed (FORMATETC* pformatetcInPtr = &pformatetcIn)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcInPtr, pmedium);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcInPtr, pmedium);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetData(ref TagFORMATETC pformatetcIn, ref TagSTGMEDIUM pmedium)
+        public readonly int GetData(ref FORMATETC pformatetcIn, ref STGMEDIUM pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcInPtr = &pformatetcIn)
+            fixed (FORMATETC* pformatetcInPtr = &pformatetcIn)
             {
-                fixed (TagSTGMEDIUM* pmediumPtr = &pmedium)
+                fixed (STGMEDIUM* pmediumPtr = &pmedium)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcInPtr, pmediumPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[3])(@this, pformatetcInPtr, pmediumPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataHere(TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium)
+        public readonly unsafe int GetDataHere(FORMATETC* pformatetc, STGMEDIUM* pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetc, pmedium);
+            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetc, pmedium);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataHere(TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium)
+        public readonly unsafe int GetDataHere(FORMATETC* pformatetc, ref STGMEDIUM pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTGMEDIUM* pmediumPtr = &pmedium)
+            fixed (STGMEDIUM* pmediumPtr = &pmedium)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetc, pmediumPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetc, pmediumPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataHere(ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium)
+        public readonly unsafe int GetDataHere(ref FORMATETC pformatetc, STGMEDIUM* pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetcPtr, pmedium);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetcPtr, pmedium);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDataHere(ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium)
+        public readonly int GetDataHere(ref FORMATETC pformatetc, ref STGMEDIUM pmedium)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
-                fixed (TagSTGMEDIUM* pmediumPtr = &pmedium)
+                fixed (STGMEDIUM* pmediumPtr = &pmedium)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetcPtr, pmediumPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)@this->LpVtbl[4])(@this, pformatetcPtr, pmediumPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryGetData(TagFORMATETC* pformatetc)
+        public readonly unsafe int QueryGetData(FORMATETC* pformatetc)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, int>)@this->LpVtbl[5])(@this, pformatetc);
+            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, int>)@this->LpVtbl[5])(@this, pformatetc);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int QueryGetData(ref TagFORMATETC pformatetc)
+        public readonly int QueryGetData(ref FORMATETC pformatetc)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, int>)@this->LpVtbl[5])(@this, pformatetcPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, int>)@this->LpVtbl[5])(@this, pformatetcPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCanonicalFormatEtc(TagFORMATETC* pformatectIn, TagFORMATETC* pformatetcOut)
+        public readonly unsafe int GetCanonicalFormatEtc(FORMATETC* pformatectIn, FORMATETC* pformatetcOut)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagFORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectIn, pformatetcOut);
+            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, FORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectIn, pformatetcOut);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCanonicalFormatEtc(TagFORMATETC* pformatectIn, ref TagFORMATETC pformatetcOut)
+        public readonly unsafe int GetCanonicalFormatEtc(FORMATETC* pformatectIn, ref FORMATETC pformatetcOut)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcOutPtr = &pformatetcOut)
+            fixed (FORMATETC* pformatetcOutPtr = &pformatetcOut)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagFORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectIn, pformatetcOutPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, FORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectIn, pformatetcOutPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCanonicalFormatEtc(ref TagFORMATETC pformatectIn, TagFORMATETC* pformatetcOut)
+        public readonly unsafe int GetCanonicalFormatEtc(ref FORMATETC pformatectIn, FORMATETC* pformatetcOut)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatectInPtr = &pformatectIn)
+            fixed (FORMATETC* pformatectInPtr = &pformatectIn)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagFORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectInPtr, pformatetcOut);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, FORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectInPtr, pformatetcOut);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetCanonicalFormatEtc(ref TagFORMATETC pformatectIn, ref TagFORMATETC pformatetcOut)
+        public readonly int GetCanonicalFormatEtc(ref FORMATETC pformatectIn, ref FORMATETC pformatetcOut)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatectInPtr = &pformatectIn)
+            fixed (FORMATETC* pformatectInPtr = &pformatectIn)
             {
-                fixed (TagFORMATETC* pformatetcOutPtr = &pformatetcOut)
+                fixed (FORMATETC* pformatetcOutPtr = &pformatetcOut)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagFORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectInPtr, pformatetcOutPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, FORMATETC*, int>)@this->LpVtbl[6])(@this, pformatectInPtr, pformatetcOutPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetData(TagFORMATETC* pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public readonly unsafe int SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetc, pmedium, fRelease);
+            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetc, pmedium, fRelease);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetData(TagFORMATETC* pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease)
+        public readonly unsafe int SetData(FORMATETC* pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagSTGMEDIUM* pmediumPtr = &pmedium)
+            fixed (STGMEDIUM* pmediumPtr = &pmedium)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetc, pmediumPtr, fRelease);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetc, pmediumPtr, fRelease);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetData(ref TagFORMATETC pformatetc, TagSTGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
+        public readonly unsafe int SetData(ref FORMATETC pformatetc, STGMEDIUM* pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetcPtr, pmedium, fRelease);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetcPtr, pmedium, fRelease);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetData(ref TagFORMATETC pformatetc, ref TagSTGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease)
+        public readonly int SetData(ref FORMATETC pformatetc, ref STGMEDIUM pmedium, Silk.NET.Core.Bool32 fRelease)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
-                fixed (TagSTGMEDIUM* pmediumPtr = &pmedium)
+                fixed (STGMEDIUM* pmediumPtr = &pmedium)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, TagSTGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetcPtr, pmediumPtr, fRelease);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, STGMEDIUM*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, pformatetcPtr, pmediumPtr, fRelease);
                 }
             }
             return ret;
@@ -345,40 +345,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(TagFORMATETC* pformatetc, uint advf, IAdviseSink* pAdvSink, uint* pdwConnection)
+        public readonly unsafe int DAdvise(FORMATETC* pformatetc, uint advf, IAdviseSink* pAdvSink, uint* pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSink, pdwConnection);
+            ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSink, pdwConnection);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(TagFORMATETC* pformatetc, uint advf, IAdviseSink* pAdvSink, ref uint pdwConnection)
+        public readonly unsafe int DAdvise(FORMATETC* pformatetc, uint advf, IAdviseSink* pAdvSink, ref uint pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pdwConnectionPtr = &pdwConnection)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSink, pdwConnectionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSink, pdwConnectionPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(TagFORMATETC* pformatetc, uint advf, ref IAdviseSink pAdvSink, uint* pdwConnection)
+        public readonly unsafe int DAdvise(FORMATETC* pformatetc, uint advf, ref IAdviseSink pAdvSink, uint* pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IAdviseSink* pAdvSinkPtr = &pAdvSink)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSinkPtr, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSinkPtr, pdwConnection);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(TagFORMATETC* pformatetc, uint advf, ref IAdviseSink pAdvSink, ref uint pdwConnection)
+        public readonly unsafe int DAdvise(FORMATETC* pformatetc, uint advf, ref IAdviseSink pAdvSink, ref uint pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -386,66 +386,66 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSinkPtr, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetc, advf, pAdvSinkPtr, pdwConnectionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(ref TagFORMATETC pformatetc, uint advf, IAdviseSink* pAdvSink, uint* pdwConnection)
+        public readonly unsafe int DAdvise(ref FORMATETC pformatetc, uint advf, IAdviseSink* pAdvSink, uint* pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSink, pdwConnection);
+                ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSink, pdwConnection);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(ref TagFORMATETC pformatetc, uint advf, IAdviseSink* pAdvSink, ref uint pdwConnection)
+        public readonly unsafe int DAdvise(ref FORMATETC pformatetc, uint advf, IAdviseSink* pAdvSink, ref uint pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
                 fixed (uint* pdwConnectionPtr = &pdwConnection)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSink, pdwConnectionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSink, pdwConnectionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise(ref TagFORMATETC pformatetc, uint advf, ref IAdviseSink pAdvSink, uint* pdwConnection)
+        public readonly unsafe int DAdvise(ref FORMATETC pformatetc, uint advf, ref IAdviseSink pAdvSink, uint* pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
                 fixed (IAdviseSink* pAdvSinkPtr = &pAdvSink)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSinkPtr, pdwConnection);
+                    ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSinkPtr, pdwConnection);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DAdvise(ref TagFORMATETC pformatetc, uint advf, ref IAdviseSink pAdvSink, ref uint pdwConnection)
+        public readonly int DAdvise(ref FORMATETC pformatetc, uint advf, ref IAdviseSink pAdvSink, ref uint pdwConnection)
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (TagFORMATETC* pformatetcPtr = &pformatetc)
+            fixed (FORMATETC* pformatetcPtr = &pformatetc)
             {
                 fixed (IAdviseSink* pAdvSinkPtr = &pAdvSink)
                 {
                     fixed (uint* pdwConnectionPtr = &pdwConnection)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDataObject*, TagFORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSinkPtr, pdwConnectionPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)@this->LpVtbl[9])(@this, pformatetcPtr, advf, pAdvSinkPtr, pdwConnectionPtr);
                     }
                 }
             }
@@ -500,7 +500,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise<TI0>(TagFORMATETC* pformatetc, uint advf, ComPtr<TI0> pAdvSink, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly unsafe int DAdvise<TI0>(FORMATETC* pformatetc, uint advf, ComPtr<TI0> pAdvSink, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -508,7 +508,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise<TI0>(TagFORMATETC* pformatetc, uint advf, ComPtr<TI0> pAdvSink, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly unsafe int DAdvise<TI0>(FORMATETC* pformatetc, uint advf, ComPtr<TI0> pAdvSink, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -516,7 +516,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DAdvise<TI0>(ref TagFORMATETC pformatetc, uint advf, ComPtr<TI0> pAdvSink, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly unsafe int DAdvise<TI0>(ref FORMATETC pformatetc, uint advf, ComPtr<TI0> pAdvSink, uint* pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -524,7 +524,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DAdvise<TI0>(ref TagFORMATETC pformatetc, uint advf, ComPtr<TI0> pAdvSink, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
+        public readonly int DAdvise<TI0>(ref FORMATETC pformatetc, uint advf, ComPtr<TI0> pAdvSink, ref uint pdwConnection) where TI0 : unmanaged, IComVtbl<IAdviseSink>, IComVtbl<TI0>
         {
             var @this = (IDataObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

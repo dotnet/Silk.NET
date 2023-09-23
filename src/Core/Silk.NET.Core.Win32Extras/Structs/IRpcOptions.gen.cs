@@ -111,61 +111,61 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Set(Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue)
+        public readonly unsafe int Set(Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, nuint dwValue)
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint, int>)@this->LpVtbl[3])(@this, pPrx, dwProperty, dwValue);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint, int>)@this->LpVtbl[3])(@this, pPrx, dwProperty, dwValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Set(ref Silk.NET.Core.Native.IUnknown pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue)
+        public readonly int Set(ref Silk.NET.Core.Native.IUnknown pPrx, RPCOptProperties dwProperty, nuint dwValue)
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pPrxPtr = &pPrx)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint, int>)@this->LpVtbl[3])(@this, pPrxPtr, dwProperty, dwValue);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint, int>)@this->LpVtbl[3])(@this, pPrxPtr, dwProperty, dwValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Query(Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue)
+        public readonly unsafe int Query(Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, nuint* pdwValue)
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValue);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Query(Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, ref nuint pdwValue)
+        public readonly unsafe int Query(Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, ref nuint pdwValue)
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (nuint* pdwValuePtr = &pdwValue)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValuePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValuePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Query(ref Silk.NET.Core.Native.IUnknown pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue)
+        public readonly unsafe int Query(ref Silk.NET.Core.Native.IUnknown pPrx, RPCOptProperties dwProperty, nuint* pdwValue)
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pPrxPtr = &pPrx)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValue);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Query(ref Silk.NET.Core.Native.IUnknown pPrx, TagRPCOPTPROPERTIES dwProperty, ref nuint pdwValue)
+        public readonly int Query(ref Silk.NET.Core.Native.IUnknown pPrx, RPCOptProperties dwProperty, ref nuint pdwValue)
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -173,7 +173,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (nuint* pdwValuePtr = &pdwValue)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValuePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValuePtr);
                 }
             }
             return ret;
@@ -189,7 +189,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Set<TI0>(ComPtr<TI0> pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int Set<TI0>(ComPtr<TI0> pPrx, RPCOptProperties dwProperty, nuint dwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -197,7 +197,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Query<TI0>(ComPtr<TI0> pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int Query<TI0>(ComPtr<TI0> pPrx, RPCOptProperties dwProperty, nuint* pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -205,7 +205,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Query<TI0>(ComPtr<TI0> pPrx, TagRPCOPTPROPERTIES dwProperty, ref nuint pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int Query<TI0>(ComPtr<TI0> pPrx, RPCOptProperties dwProperty, ref nuint pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IRpcOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

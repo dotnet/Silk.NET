@@ -85,22 +85,22 @@ public unsafe static class LayoutStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LayoutScript(this ComPtr<ILayoutStorage> thisVtbl, TagStorageLayout* pStorageLayout, uint nEntries, uint glfInterleavedFlag)
+    public static unsafe int LayoutScript(this ComPtr<ILayoutStorage> thisVtbl, StorageLayout* pStorageLayout, uint nEntries, uint glfInterleavedFlag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, TagStorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayout, nEntries, glfInterleavedFlag);
+        ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, StorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayout, nEntries, glfInterleavedFlag);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int LayoutScript(this ComPtr<ILayoutStorage> thisVtbl, ref TagStorageLayout pStorageLayout, uint nEntries, uint glfInterleavedFlag)
+    public static int LayoutScript(this ComPtr<ILayoutStorage> thisVtbl, ref StorageLayout pStorageLayout, uint nEntries, uint glfInterleavedFlag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagStorageLayout* pStorageLayoutPtr = &pStorageLayout)
+        fixed (StorageLayout* pStorageLayoutPtr = &pStorageLayout)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, TagStorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayoutPtr, nEntries, glfInterleavedFlag);
+            ret = ((delegate* unmanaged[Cdecl]<ILayoutStorage*, StorageLayout*, uint, uint, int>)@this->LpVtbl[3])(@this, pStorageLayoutPtr, nEntries, glfInterleavedFlag);
         }
         return ret;
     }
@@ -202,7 +202,7 @@ public unsafe static class LayoutStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LayoutScript(this ComPtr<ILayoutStorage> thisVtbl, Span<TagStorageLayout> pStorageLayout, uint nEntries, uint glfInterleavedFlag)
+    public static int LayoutScript(this ComPtr<ILayoutStorage> thisVtbl, Span<StorageLayout> pStorageLayout, uint nEntries, uint glfInterleavedFlag)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

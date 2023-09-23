@@ -85,48 +85,48 @@ public unsafe static class EnumFORMATETCVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, TagFORMATETC* rgelt, uint* pceltFetched)
+    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, FORMATETC* rgelt, uint* pceltFetched)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, TagFORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetched);
+        ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetched);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, TagFORMATETC* rgelt, ref uint pceltFetched)
+    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, FORMATETC* rgelt, ref uint pceltFetched)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pceltFetchedPtr = &pceltFetched)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, TagFORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, ref TagFORMATETC rgelt, uint* pceltFetched)
+    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, ref FORMATETC rgelt, uint* pceltFetched)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagFORMATETC* rgeltPtr = &rgelt)
+        fixed (FORMATETC* rgeltPtr = &rgelt)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, TagFORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, ref TagFORMATETC rgelt, ref uint pceltFetched)
+    public static int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, ref FORMATETC rgelt, ref uint pceltFetched)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (TagFORMATETC* rgeltPtr = &rgelt)
+        fixed (FORMATETC* rgeltPtr = &rgelt)
         {
             fixed (uint* pceltFetchedPtr = &pceltFetched)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, TagFORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
             }
         }
         return ret;
@@ -197,7 +197,7 @@ public unsafe static class EnumFORMATETCVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, TagFORMATETC* rgelt, Span<uint> pceltFetched)
+    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, FORMATETC* rgelt, Span<uint> pceltFetched)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -205,7 +205,7 @@ public unsafe static class EnumFORMATETCVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, Span<TagFORMATETC> rgelt, uint* pceltFetched)
+    public static unsafe int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, Span<FORMATETC> rgelt, uint* pceltFetched)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -213,7 +213,7 @@ public unsafe static class EnumFORMATETCVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, Span<TagFORMATETC> rgelt, Span<uint> pceltFetched)
+    public static int Next(this ComPtr<IEnumFORMATETC> thisVtbl, uint celt, Span<FORMATETC> rgelt, Span<uint> pceltFetched)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
