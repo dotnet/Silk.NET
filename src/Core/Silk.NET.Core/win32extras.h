@@ -10,3 +10,4 @@
 #include <handleapi.h>
 #include <fileapi.h>
 #include <objidlbase.h>
+#include <objidl.h>

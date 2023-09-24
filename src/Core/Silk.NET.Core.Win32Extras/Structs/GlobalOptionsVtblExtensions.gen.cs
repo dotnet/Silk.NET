@@ -85,31 +85,31 @@ public unsafe static class GlobalOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Set(this ComPtr<IGlobalOptions> thisVtbl, TagGLOBALOPTPROPERTIES dwProperty, nuint dwValue)
+    public static int Set(this ComPtr<IGlobalOptions> thisVtbl, GlobalOptProperties dwProperty, nuint dwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, TagGLOBALOPTPROPERTIES, nuint, int>)@this->LpVtbl[3])(@this, dwProperty, dwValue);
+        ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, GlobalOptProperties, nuint, int>)@this->LpVtbl[3])(@this, dwProperty, dwValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IGlobalOptions> thisVtbl, TagGLOBALOPTPROPERTIES dwProperty, nuint* pdwValue)
+    public static unsafe int Query(this ComPtr<IGlobalOptions> thisVtbl, GlobalOptProperties dwProperty, nuint* pdwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, TagGLOBALOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValue);
+        ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, GlobalOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query(this ComPtr<IGlobalOptions> thisVtbl, TagGLOBALOPTPROPERTIES dwProperty, ref nuint pdwValue)
+    public static int Query(this ComPtr<IGlobalOptions> thisVtbl, GlobalOptProperties dwProperty, ref nuint pdwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nuint* pdwValuePtr = &pdwValue)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, TagGLOBALOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValuePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalOptions*, GlobalOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, dwProperty, pdwValuePtr);
         }
         return ret;
     }
@@ -140,7 +140,7 @@ public unsafe static class GlobalOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query(this ComPtr<IGlobalOptions> thisVtbl, TagGLOBALOPTPROPERTIES dwProperty, Span<nuint> pdwValue)
+    public static int Query(this ComPtr<IGlobalOptions> thisVtbl, GlobalOptProperties dwProperty, Span<nuint> pdwValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
